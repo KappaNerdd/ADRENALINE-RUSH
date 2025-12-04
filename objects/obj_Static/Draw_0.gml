@@ -1,0 +1,1 @@
+draw_sprite_tiled_ext(sprite_index, image_index, x, y, xscale, yscale, c_white, 0.25);

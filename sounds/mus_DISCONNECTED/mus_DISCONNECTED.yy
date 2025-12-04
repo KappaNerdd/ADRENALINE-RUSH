@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_DISCONNECTED",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":56.161816,
+  "exportDir":"",
+  "name":"mus_DISCONNECTED",
+  "parent":{
+    "name":"Mind",
+    "path":"folders/Sounds/Music/Overworld/Mind.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_DISCONNECTED.ogg",
+  "volume":1.0,
+}

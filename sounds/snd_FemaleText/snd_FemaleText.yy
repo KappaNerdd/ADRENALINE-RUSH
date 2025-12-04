@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_FemaleText",
+  "audioGroupId":{
+    "name":"Audio_Text",
+    "path":"audiogroups/Audio_Text",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.0,
+  "exportDir":"",
+  "name":"snd_FemaleText",
+  "parent":{
+    "name":"Voices",
+    "path":"folders/Sounds/Sound Effects/Textbox/Voices.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_FemaleText.ogg",
+  "volume":0.6,
+}

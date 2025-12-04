@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_KnucklesLand",
+  "audioGroupId":{
+    "name":"Audio_CharGeneral",
+    "path":"audiogroups/Audio_CharGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.16782314,
+  "exportDir":"",
+  "name":"snd_KnucklesLand",
+  "parent":{
+    "name":"General",
+    "path":"folders/Sounds/Sound Effects/General.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_KnucklesLand.wav",
+  "volume":0.5,
+}

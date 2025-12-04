@@ -1,0 +1,1 @@
+charChecker = global.stageData.test_Level2.player_Char;

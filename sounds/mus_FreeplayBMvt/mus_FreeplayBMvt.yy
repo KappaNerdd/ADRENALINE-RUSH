@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_FreeplayBMvt",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":36.0,
+  "exportDir":"",
+  "name":"mus_FreeplayBMvt",
+  "parent":{
+    "name":"Brock",
+    "path":"folders/Sounds/Music/Freeplay/Brock.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_FreeplayBMvt.ogg",
+  "volume":1.0,
+}

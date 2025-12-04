@@ -1,0 +1,2 @@
+newCostume = true;
+costumeName = "Hideki.";

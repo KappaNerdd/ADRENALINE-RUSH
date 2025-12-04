@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_AkiraSlide",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":144.0,
+  "exportDir":"",
+  "name":"mus_AkiraSlide",
+  "parent":{
+    "name":"Neegi",
+    "path":"folders/Sounds/Music/Character Specific/Neegi.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_AkiraSlide.ogg",
+  "volume":1.0,
+}

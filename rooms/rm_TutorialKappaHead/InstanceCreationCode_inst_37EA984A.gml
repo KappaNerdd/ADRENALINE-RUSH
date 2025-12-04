@@ -1,0 +1,4 @@
+messageKeyboard = "When being launched by certain \nthings, you can do directional \ntricks. Hold [UP], [LEFT], or \n[RIGHT] and press [SPACE] to \nperform 'em.";
+messageXbox = "When being launched by certain \nthings, you can do directional \ntricks. Hold [UP], [LEFT], or \n[RIGHT] and press [RB] to \nperform 'em.";
+messagePS4 = "When being launched by certain \nthings, you can do directional \ntricks. Hold [UP], [LEFT], or \n[RIGHT] and press [R1] to \nperform 'em.";
+messageSwitch = "When being launched by certain \nthings, you can do directional \ntricks. Hold [UP], [LEFT], or \n[RIGHT] and press [R] to \nperform 'em.";

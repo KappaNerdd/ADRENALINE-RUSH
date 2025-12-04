@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_JoderSi",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":41.142857,
+  "exportDir":"",
+  "name":"mus_JoderSi",
+  "parent":{
+    "name":"Roxxane",
+    "path":"folders/Sounds/Music/Results/Roxxane.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_JoderSi.ogg",
+  "volume":1.0,
+}

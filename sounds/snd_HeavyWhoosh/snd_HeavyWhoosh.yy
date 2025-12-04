@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_HeavyWhoosh",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.87657595,
+  "exportDir":"",
+  "name":"snd_HeavyWhoosh",
+  "parent":{
+    "name":"DRAGON BALL FIGHTERZ Shit",
+    "path":"folders/Sounds/Sound Effects/DRAGON BALL FIGHTERZ Shit.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_HeavyWhoosh.ogg",
+  "volume":1.0,
+}

@@ -1,0 +1,4 @@
+messageKeyboard = "Hold [C] to boost. You can \nboost forever until your \nboost meter is depleted \ncompletely. You can also boost \nin the air once every time \nyou get off the ground.";
+messageXbox = "Hold [X] to boost. You can \nboost forever until your \nboost meter is depleted \ncompletely. You can also boost \nin the air once every time \nyou get off the ground.";
+messagePS4 = "Hold [SQUARE] to boost. You \ncan boost forever until your \nboost meter is depleted \ncompletely. You can also boost \nin the air once every time \nyou get off the ground.";
+messageSwitch = "Hold [Y] to boost. You can \nboost forever until your \nboost meter is depleted \ncompletely. You can also boost \nin the air once every time \nyou get off the ground.";

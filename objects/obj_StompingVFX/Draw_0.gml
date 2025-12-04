@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, obj_Player.x, obj_Player.y + 25, 1, 1, 0, image_blend, 1);

@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, obj_Player.x, obj_Player.y, image_xscale, image_yscale, 0, global.fullRGB, image_alpha);

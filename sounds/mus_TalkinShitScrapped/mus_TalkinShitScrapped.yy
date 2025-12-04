@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_TalkinShitScrapped",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":34.285713,
+  "exportDir":"",
+  "name":"mus_TalkinShitScrapped",
+  "parent":{
+    "name":"This is just a bad remix of Talkin' Smack from FNF specifically.",
+    "path":"folders/Sounds/Music/General/This is just a bad remix of Talkin' Smack from FNF specifically..yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_TalkinShitScrapped.ogg",
+  "volume":0.5,
+}

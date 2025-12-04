@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_PlayerHurtSpikes",
+  "audioGroupId":{
+    "name":"Audio_CharSpeed",
+    "path":"audiogroups/Audio_CharSpeed",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.7000227,
+  "exportDir":"",
+  "name":"snd_PlayerHurtSpikes",
+  "parent":{
+    "name":"Universal",
+    "path":"folders/Sounds/Sound Effects/Characters/Universal.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_PlayerHurtSpikes.wav",
+  "volume":1.0,
+}

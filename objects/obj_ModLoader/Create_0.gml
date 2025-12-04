@@ -1,0 +1,2 @@
+global.modsLoader = [];
+global.activeMods = [];

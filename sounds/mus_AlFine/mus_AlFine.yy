@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_AlFine",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":9.178208,
+  "exportDir":"",
+  "name":"mus_AlFine",
+  "parent":{
+    "name":"Lone",
+    "path":"folders/Sounds/Music/Results/Lone.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_AlFine.ogg",
+  "volume":1.0,
+}

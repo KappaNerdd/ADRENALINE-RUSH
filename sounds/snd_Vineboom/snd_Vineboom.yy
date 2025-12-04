@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Vineboom",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.1346939,
+  "exportDir":"",
+  "name":"snd_Vineboom",
+  "parent":{
+    "name":"Meme",
+    "path":"folders/Sounds/Sound Effects/Meme.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Vineboom.mp3",
+  "volume":1.0,
+}

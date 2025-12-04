@@ -1,0 +1,475 @@
+#region //Attack based on moves
+	if ((jumping) or stomping or backTrick or rightTrick or leftTrick or upTrick) {
+		attacking = true;
+	} else {
+		attacking = false;
+	}
+	
+	if boost or sliding {
+		megaAttacking = true;
+	} else {
+		megaAttacking = false;
+	}
+#endregion
+	
+#region //Basic Speed 1	
+	scr_BasicControlsSpeedStep1();
+#endregion
+
+if can_MoveFULL {
+	#region //Movement
+		//Left Movement
+		if left_Key && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
+			scr_PlayerMoveLeft();				
+        
+		    if !sliding && !wallJump {
+				if !leftFacer {
+					image_xscale = -1;
+				} else {
+					face_Left = true;
+				}
+			}
+		}
+
+		//Right Movement
+		if right_Key && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
+			scr_PlayerMoveRight();
+				
+		    if !sliding && !wallJump {
+				if !leftFacer {
+					image_xscale = 1;
+				} else {
+					face_Left = false;
+				}
+			}
+		}
+	#endregion
+
+	#region //Basic Speed 2
+		scr_BasicControlsSpeedStep2();
+	#endregion
+
+	#region //Sprite & Animation Handler
+		if !instance_exists(obj_CutsceneParent) {
+			#region //Ground
+				if ground && !ducking && !sliding && !airDash && !stomping && !stomped && !railGrind && !railGrindCrouch && !jumping && !dJumping && !skid && !prepare && !specialIdle {
+					if abs(vel) == 0 {
+						if !leftFacer {
+							sprite_index = sprIdle;
+						} else {
+							if face_Left {
+								sprite_index = sprIdleLeft;
+							} else {
+								sprite_index = sprIdleRight;
+							}
+						}
+					
+						image_speed = 1;
+					} else {
+						if abs(vel) < max_Speed {
+							if !leftFacer {
+								sprite_index = sprWalk;
+							} else {
+								if face_Left {
+									sprite_index = sprWalkLeft;
+								} else {
+									sprite_index = sprWalkRight;
+								}
+							}
+						
+							if abs(vel) < max_Speed / 6 {
+								image_speed = 0.25;
+							} else if abs(vel) >= max_Speed / 6 && abs(vel) < max_Speed / 3 {
+								image_speed = 0.5;
+							} else if abs(vel) >= max_Speed / 3 && abs(vel) < max_Speed / 1.5 {
+								image_speed = 1;
+							} else if abs(vel) >= max_Speed / 1.5 && abs(vel) < max_Speed / 1.3 {
+								image_speed = 1.25;
+							} else if abs(vel) >= max_Speed / 1.3 && abs(vel) < max_Speed {
+								image_speed = 1.75;
+							}
+						} else if abs(vel) >= max_Speed && abs(vel) < full_Speed {
+							if !leftFacer {
+								sprite_index = sprRun;
+							} else {
+								if face_Left {
+									sprite_index = sprRunLeft;
+								} else {
+									sprite_index = sprRunRight;
+								}
+							}
+						
+							if abs(vel) < max_Speed * 1.5 {
+								image_speed = 2;
+							} else {
+								image_speed = 2.25;
+							}
+						} else if abs(vel) >= full_Speed {
+							if !leftFacer {
+								sprite_index = sprFullSpeedRun;
+							} else {
+								if face_Left {
+									sprite_index = sprFullSpeedRunLeft;
+								} else {
+									sprite_index = sprFullSpeedRunRight;
+								}
+							}
+						
+							image_speed = 2.5;
+						}
+					}
+					
+					mask_index = idle_Mask;
+				}
+			#endregion
+			
+			#region //General Animations
+				scr_GeneralAnimationsSpeed();
+			#endregion
+			
+			#region //Other Animations
+				scr_OtherAnimationsSpeed();
+			#endregion
+			
+			#region //Double Jumping
+				if dJumping && yspd < 0 {
+					sprite_index = sprDJump;
+					image_speed = 1.2;
+					mask_index = idle_Mask;
+				}
+			#endregion 
+
+			#region //Falling
+				if (jumping or dJumping) && !rampRing && !playerHurt && !wallJump && !afterRailJump && !railGrind && !trick && yspd > 0 && yspd < 3 {
+					if !leftFacer {
+						sprite_index = sprFall;
+					} else {
+						if face_Left {
+							sprite_index = sprFallLeft;
+						} else {
+							sprite_index = sprFallRight;
+						}
+					}
+					
+					image_speed = 1;
+					mask_index = idle_Mask;
+				}
+			
+				if !ground && yspd > 3 && !playerHurt && !rampRing && !wallJump && !afterRailJump && !trick {
+					if !leftFacer {
+						sprite_index = sprFalling;
+					} else {
+						if face_Left {
+							sprite_index = sprFallingLeft;
+						} else {
+							sprite_index = sprFallingRight;
+						}
+					}
+				
+					image_speed = 1;
+					mask_index = idle_Mask;
+				}
+			#endregion
+
+			#region //Special Idle
+				if specialIdle {
+					sprite_index = sprSpecialIdle;
+				
+					if floor(image_index) >= image_number - 1 {
+						image_index = image_number - 1;
+					}
+				
+					mask_index = idle_Mask;
+				}
+			#endregion
+
+			#region //Stomping
+				if stomping {
+					sprite_index = sprStomping;
+					image_speed = 1;
+					mask_index = idle_Mask;
+				} else if stomped {
+					sprite_index = sprStomp;
+					image_speed = 1;
+					mask_index = crouch_Mask;
+				}
+			#endregion
+
+			#region //Air-Dash
+				if airDash {
+					sprite_index = sprAirDash;
+					image_speed = 1;
+					mask_index = idle_Mask;
+				}
+			#endregion
+
+			#region //Wall-Jump
+				scr_WallJumpAnimation();
+			
+				if afterWallJump {
+					sprite_index = sprAirDash;
+					mask_index = idle_Mask;
+				}
+			#endregion
+			
+			#region //Directional-Tricks
+				if !rushTrick {
+					if upTrick {
+						image_speed = 1;
+						sprite_index = sprTrickUp;
+						mask_index = idle_Mask;
+					} else if rightTrick or leftTrick or backTrick {
+						image_speed = 1;
+						sprite_index = sprTrickSide;
+						mask_index = idle_Mask;
+					}
+				}
+			#endregion
+		}
+	#endregion
+
+	//If you're seein' this, do you like Garfield? I like Garfield. I actually really like the 3D show.
+	//Kinda grew up with it so I do have a lil' bias, but even now I really like it. Might rewatch it soon.
+
+	#region //Visual Effects
+		#region //Basic Visual Effects
+			scr_BasicVisualEffectsSpeed1();
+		#endregion
+	
+		#region //Side Trick
+			if rightTrick or leftTrick or backTrick {
+				scr_RushAdventureKickParticles(-1);
+			}
+			
+			if !rightTrick && !leftTrick && !backTrick {
+				if instance_exists(obj_SideTrickVFXKappa) {
+					instance_destroy(obj_SideTrickVFXKappa);
+				}
+			}
+		#endregion
+		
+		#region //Air-Dash After-Images
+			if airDash && !stomping && !wallJump && !boost && !speedBreak {
+				scr_PlayerTrail();
+			}
+		#endregion
+	#endregion
+		
+	#region //Basic Speed 3
+		scr_BasicControlsSpeedStep3();
+	#endregion
+
+	#region //Jumping
+		if jump_Key && ground && !ducking && !jumping && !stomping && !airDash && !prepare && !afterRailJump && !collide {
+			scr_JumpManipulate();
+			
+			realJumping = true;
+			jumping = true;
+			ground = false;
+			sliding = false;
+			ducking = false;
+			stomped = false;
+			
+			//Sound Effect
+			obj_SFXManager.jumpSound = true;
+		}
+	#endregion
+
+	#region //Double Jump
+		if jump_Key && !ground && jumpinTimer <= 0 && !wallJump && jumping && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -4 {
+			scr_JumpManipulate();
+			
+			realJumping = true;
+			dJumping = true;
+			airDash = false;
+	
+			//Sound Effect
+			obj_SFXManager.doubleJumpSound = true;
+		}
+	#endregion
+
+	#region //Variable Jumping	
+		scr_VariableJumping();
+	#endregion
+
+	#region //Fail-Safe for infinite double jumping from ceiling
+		if collide && !ground && dJumping {
+			dJumping = true;
+		}
+	#endregion
+
+	#region //Sliding
+		scr_SlidingSpeed();
+		scr_StartSlideSpeed();
+		scr_BasicControlsSpeedStep5();
+	#endregion
+
+	#region //Stomping
+		if !ground && !stomping && (down_Key && action_Key) {
+			stomping = true
+			airDash = false;
+			wallJump = false;
+			afterWallJump = false;
+			afterRailJump = false;
+			rampRing = false;
+			
+			leftTrick = false;
+			rightTrick = false;
+			upTrick = false;
+			backTrick = false;
+	
+			//Sound Effect
+			obj_SFXManager.stompingSound = true;
+		}
+			
+		if stomping {
+			yspd = termVel;
+			vel = 0;
+			dJumping = false;
+		} else {
+			if audio_is_playing(snd_Stomping) {
+				audio_stop_sound(snd_Stomping)
+			}
+		}
+	#endregion
+
+	#region //Stomped
+		if !place_meeting(x, y + yspd + 1, obj_BreakableFloor) && stomping && ground {
+			stomped = true;
+			stomping = false;
+			stompedTimer = stompedFrames;
+			obj_SFXManager.stompSound = true;
+		}
+		
+		#region //Slam-Dash
+			if stomped {
+				vel = 0;
+				
+				if stompedTimer > 0 {
+					stompedTimer--;
+				}
+
+				if stompedTimer <= 0 {
+					stomped = false;
+				}
+			
+				if action2_Key {
+					if right_Key {
+						if !speedBreak {
+							vel = max_Speed;
+						} else {
+							vel = full_Speed;
+						}
+					
+						stompedTimer = 0;
+						stomped = false;
+				
+						//Sound Effect
+						obj_SFXManager.airDashSound = true;
+					} else if left_Key {
+						if !speedBreak {
+							vel = -max_Speed;
+						} else {
+							vel = -full_Speed;
+						}
+						
+						stompedTimer = 0;
+						stomped = false;
+				
+						//Sound Effect
+						obj_SFXManager.airDashSound = true;
+					}
+				}
+			}
+		#endregion
+	#endregion
+
+	#region //Air-Dash
+		if !ground && !airDash && !rampRing && !afterRailJump && !trick && !stomping && !global.Death && action2_Key {
+			airDash = true;
+			scr_ControllerRumble();
+			
+			if wallJump {
+				wallJump = false;
+				afterWallJump = false;
+			}
+	
+			if image_xscale == 1 {
+				if !speedBreak {
+					if vel < max_Speed {
+						vel += 4;
+					}
+				} else {
+					if vel < full_Speed {
+						vel += 4;
+					}
+				}
+			} else if image_xscale == -1 {
+				if !speedBreak {
+					if vel > -max_Speed {
+						vel -= 4;
+					}
+				} else {
+					if vel > -full_Speed {
+						vel -= 4;
+					}
+				}
+			}
+	
+			//Sound Effect
+			obj_SFXManager.airDashSound = true;
+		}
+
+		if airDash && airDashTimer > 0 {
+			jumping = true;
+			yspd = 0;
+			airDashTimer--;
+		}
+			
+		if !airDash {
+			airDashTimer = airDashFrames;
+		}
+
+		if ground {
+			airDash = false;
+		}
+	#endregion
+
+	#region //Wall-Jump
+		if !ground && can_Move && yspd > -4 && !stomping && !instance_exists(obj_GOAL) {
+			scr_WallClingStep();
+		}
+			
+		if wallJump {
+			if jumpKeyBuffered {
+				afterWallJump = true;
+				wallJump = false;
+				realJumping = true;
+				obj_SFXManager.jumpSound = true;
+					
+				yspd = -jspd;
+				vel = onWall * -(wallJumpVel + 1.5);
+			}
+				
+			termVel = 4;
+				
+			afterRailJump = false;
+			rampRing = false;
+			trick = false;
+			upTrick = false;
+			leftTrick = false;
+			rightTrick = false;
+			backTrick = false;
+			altFinish = false;
+			airDash = false;
+		}
+			
+		if ground or rampRing or stomping or afterRailJump or airDash {
+			wallJump = false;
+			afterWallJump = false;
+			onWall = false;
+		}
+	#endregion
+}
+
+scr_BasicControlsSpeedStep4();

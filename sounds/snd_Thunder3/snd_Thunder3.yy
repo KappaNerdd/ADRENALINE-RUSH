@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Thunder3",
+  "audioGroupId":{
+    "name":"Audio_EnviroGeneral",
+    "path":"audiogroups/Audio_EnviroGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":12.0,
+  "exportDir":"",
+  "name":"snd_Thunder3",
+  "parent":{
+    "name":"Thunder",
+    "path":"folders/Sounds/Sound Effects/Weather/Thunder.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Thunder3.ogg",
+  "volume":1.0,
+}

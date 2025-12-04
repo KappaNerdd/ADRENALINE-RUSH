@@ -1,0 +1,1 @@
+rankChecker = global.stageData.test_Level2.rank;

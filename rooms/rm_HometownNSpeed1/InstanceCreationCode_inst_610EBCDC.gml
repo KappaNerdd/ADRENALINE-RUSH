@@ -1,0 +1,1 @@
+launchYspd = -13.5;

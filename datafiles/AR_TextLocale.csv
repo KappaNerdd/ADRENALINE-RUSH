@@ -1,0 +1,353 @@
+I might swerve-,ENGLISH,ESPAÑOL
+wind_Title,ADRENALINE RUSH,ADRENALINE RUSH
+,,
+fs_FileSelect,FILE SELECT,ELIJE UN ARCHIVO
+fs_Select,SELECT,SELECCIONAR
+fs_Copy,COPY,COPIAR
+fs_Delete,DELETE,BORRAR
+fs_Back,BACK,ATRÁS
+fs_Cancel,CANCEL,CANCELAR
+fs_Empty,EMPTY,VACÍO
+fs_Save,SAVE,GUARDAR
+,,
+conDet_Player,PLAYER,JUGADOR
+conDet_Conn,CONNECTED,CONECTADO
+conDet_ConUnd,CONTROLLER UNDETECTED,CONTROL DESCONECTADO
+,,
+game_Quitting,QUITTING,SALIR
+game_Prototype,PROTOTYPE,PROTOTIPO
+game_Demo,DEMO,DEMO
+game_NP,NOW PLAYING,REPRODUCIENDO
+game_Track,TRACK,PISTA
+game_By,BY,POR
+game_Length,LENGTH,DURACIÓN
+,,
+opt_Audio,AUDIO,SONIDO
+opt_Master,MASTER,GENERAL
+opt_Music,MUSIC,MÚSICA
+opt_SFX,SFX,EFECTOS
+opt_Text,TEXT,TEXTO
+opt_Ambiance,AMBIANCE,AMBIENTE
+opt_Pause,UNIQUE PAUSE THEME,TEMA DE PAUSA ÚNICO
+,,
+opt_Visual,VISUAL,VISUALES
+opt_SimpVFX,SIMPLIFY VFX,SIMPLIFICAR EFECTOS
+opt_ScrShk,SCREEN SHAKE,TEMBLOR DE PANTALLA
+opt_Part,PARTICLES,PARTÍCULAS
+opt_TextSpd,TEXT SPEED,VEL. DE TEXTO
+opt_Lang,LANGUAGE,IDIOMA
+opt_ConDis,KEYBOARD/CONTROLLER DISPLAY,TECLADO/MUESTRA DE CONTROL
+opt_Outline,OUTLINE,CONTORNO
+,,
+opt_Misc,MISC,MISCELÁNEO
+opt_Fullscr,FULLSCREEN,PANTALLA COMPLETA
+opt_MusTag,MUSIC TAG,INFORMACIÓN DE MÚSICA
+opt_ConType,CONTROLLER TYPE,TIPO DE CONTROL
+opt_ConRum,CONTROLLER RUMBLE,VIBRACIÓN DE CONTROL
+opt_ExtCam,EXTENDED CAMERA,CAMARA EXTENDIDA
+opt_FPS,FPS,FPS
+opt_Speedrun,SPEEDRUN TIMER,TEMPORIZADOR
+,,
+opt_Online,ONLINE,EN LÍNEA
+opt_Discord,DISCORD RICH PRESCENCE,PRESENCIA DE DISCORD
+opt_Ghost,SHOW GHOST,MOSTRAR FANTASMA
+,,
+opt_ConGen,CONTROLS (GENERAL),CONTROL (GENERAL)
+opt_ConSpeed1,CONTROLS (SPEED/MENU) 1,CONTROL (VELOCIDAD/MENU) 1
+opt_ConSpeed2,CONTROLS (SPEED/MENU) 2,CONTROL (VELOCIDAD/MENU) 2
+opt_ConAction1,CONTROLS (ACTION) 1,CONTROL (ACCIÓN) 1
+opt_ConAction2,CONTROLS (ACTION) 2,CONTROL (ACCIÓN) 2
+opt_ConAction3,CONTROLS (ACTION) 3,CONTROL (ACCIÓN) 3
+opt_ConLeft,LEFT,IZQUIERDA
+opt_ConRight,RIGHT,DERECHA
+opt_ConUp,UP,ARRIBA
+opt_ConDown,DOWN,ABAJO
+opt_ConJump,JUMP,SALTO
+opt_ConAct1,ACTION 1,ACCIÓN 1
+opt_ConBoost,BOOST,TURBO
+opt_ConSpec1,SPECIAL 1,ESPECIAL 1
+opt_ConSwap,SWAP,INTERCAMBIO
+opt_ConSpec2,SPECIAL 2,ESPECIAL 2
+opt_ConStart,START,START
+opt_ConSelect,SELECT,SELECT
+,,
+opt_ActLeft,LEFT,IZQUIERDA
+opt_ActRight,RIGHT,DERECHA
+opt_ActUp,UP,ARRIBA
+opt_ActDown,DOWN,ABAJO
+opt_ActLight,LIGHT ATTACK,ATAQUE LIGERO
+opt_ActMedium,MEDIUM ATTACK,ATAQUE MEDIO
+opt_ActHeavy,HEAVY ATTACK,ATAQUE PESADO
+opt_ActJump,JUMP,SALTO
+opt_ActDash,RUN,CORRER
+opt_ActSuper,DASH,TURBO
+opt_Parry,PARRY,PARRY/CONTRA
+opt_Charge,CHARGE-BOOST,CARGAR TURBO
+,,
+opt_JoyDead,JOYSTICK DEADZONE,ZONA MUERTA PALANCA
+opt_TrigDead,TRIGGER DEADZONE,ZONA MUERTA GATILLO
+,,
+opt_No,NO,NO
+opt_Yes,YES,SÍ
+opt_Off,OFF,APAGADO
+opt_On,ON,ENCENDIDO
+opt_Default,DEFAULT,POR DEFECTO
+opt_ChangeBind,CHANGING BIND...,CAMBIANDO BOTÓN...
+,,
+title_Start,START,INICIO
+title_NewGame,NEW GAME,NUEVO JUEGO
+title_Continue,CONTINUE,CONTINUAR
+title_Freeplay,FREEPLAY,JUEGO LIBRE
+title_Options,OPTIONS,OPCIONES
+title_QuitGame,QUIT GAME,SALIR
+,,
+freeplay_Speed,SPEED STAGES,ETAPA DE VELOCIDAD
+freeplay_Action,ACTION STAGES,ETAPA DE ACCIÓN
+freeplay_Level,LEVEL ,NIVEL 
+freeplay_Boss,BOSS,JEFE
+freeplay_Bonus,BONUS ,BONUS 
+freeplay_CharSel,SELECT A CHARACTER,ELIGE UN PERSONAJE
+freeplay_ChooseChar1,PRESS,PRESIONA
+freeplay_ChooseChar2,TO CHANGE CHARACTERS,PARA CAMBIAR PERSONAJES
+freeplay_Mix,CHOOSE YER MIX!!,¡¡SELECCIONÁ TU MIX!!
+freeplay_Stage,STAGE,ETAPA
+,,
+charSel_Acc,ACCELERATION,ACELERACIÓN
+charSel_Jump,JUMP POWER,SALTO
+charSel_Grav,GRAVITY FORCE,GRAVEDAD
+charSel_Max,MAX SPEED,VELOCIDAD
+charSel_Break,BREAK SPEED,VEL. DE BREAK
+charSel_Boost,BOOST SPEED,VEL. DE TURBO
+charSel_Ground,GROUND,EN SUELO
+charSel_Midair,MID-AIR,EN EL AIRE
+charSel_Wall,ON WALL,EN MUROS
+charSel_Slide,SLIDING,DESLIZAMIENTO
+charSel_Twirl,TWIRLING,GIRO
+charSel_Charge,CHARGEABLE,RECARGABLE
+charSel_Ret,RETICLE,RETÍCULA
+,,
+level_MIND,MIND,MENTE
+level_OTHERTOWN,OTHERTOWN,OTHERTOWN
+level_OTD,OTHERTOWN (DAY),OTHERTOWN (DÍA)
+level_OTN,OTHERTOWN (NIGHT),OTHERTOWN (NOCHE)
+,,
+chap_Prologue,PROLOGUE // MY MIND,PRÓLOGO // MI MENTE
+chap_Volume1,VOLUME 1 // REUNION,VOLUMEN 1 // REUNIÓN
+,,
+menu_Paused,PAUSED,PAUSA
+menu_Resume,RESUME,CONTINUAR
+menu_Restart,RESTART,REINICIO
+menu_QRestart,QUICK-RESTART,REINICIO-RÁPIDO
+menu_HUB,HUB,HUB
+menu_MainMenu,MAIN MENU,MENÚ PRINCIPAL
+menu_NameAsk,What is YOUR name?,¿Cuál es TU nombre?
+menu_ConLetter,CONFIRM LETTER,COLOCAR LETRA
+menu_ReLetter,REMOVE LETTER,QUITAR LETRA
+menu_AddSpace,ADD SPACE,AÑADIR ESPACIO
+,,
+move_Acc,ACCELERATE,ACELERAR
+move_Jump,JUMP,SALTO
+move_DJump,DOUBLE-JUMP,DOBLE-SALTO
+move_Stomp,STOMP,PISOTÓN
+move_SDash,STOMP-DASH,PISOTÓN-IMPULSO
+move_SSlide,START SLIDE,DESLIZAR
+move_Sliding,SLIDING,DESLIZANDO
+move_SCancel,SLIDE-CANCEL,CANCELAR DESLIZAR
+move_AirDash,AIR-DASH,IMPULSO-AÉREO
+move_WJump,WALL-KICK,SALTO DE MURO
+move_Boost,BOOST,TURBO
+move_RTricks,RUSH-TRICKS,TRUCOS
+move_DTricks,DIRECTIONAL-TRICKS,TRUCOS-DIRECCIONALES
+move_Enemy,ENEMIES,ENEMIGOS
+move_Rails,RAIL-GRINDING,DESLICE-EN-RIEL
+,,
+story_NOBJ,NEW OBJECTIVE,NUEVO OBJETIVO
+story_UOBJ,UPDATED OBJECTIVE,OBJETIVO ACTUALIZADO
+story_OBJ,OBJECTIVE,OBJETIVO
+story_Chal,CHALLENGE,DESAFÍO
+,,
+name_Kappa,KAPPA SUKI,KAPPA SUKI
+name_Kap,KAPPA,KAPPA
+name_Sarah,SARAH SUKI,SARAH SUKI
+name_Sar,SARAH,SARAH
+name_Alone,LONE SUKI,LONE SUKI
+name_Lone,LONE,LONE
+name_Brock,"BROCK ""KONG"" SANCHEZ","BROCK ""KONG"" SANCHEZ"
+name_Bro,BROCK,BROCK
+name_Neegi,NEEGI BUTCHER,NEEGI BUTCHER
+name_Nee,NEEGI,NEEGI
+name_Cloee,CLOEE BUTCHER,CLOEE BUTCHER
+name_Clo,CLOEE,CLOEE
+name_Akira,"AKIRA ""A.K."" KAGEMORI","AKIRA ""A.K."" KAGEMORI"
+name_AK,AKIRA,AKIRA
+name_Taylor,"TAYLOR ""T.J."" JACKSON","TAYLOR ""T.J."" JACKSON"
+name_TJ,TAYLOR,TAYLOR
+name_Ayana,"AYANA ""A.A."" ASHLEY","AYANA ""A.A."" ASHLEY"
+name_AA,AYANA,AYANA
+name_Rush,RUSH MAURICE,RUSH MAURICE
+name_Ru,RUSH,RUSH
+name_Edge,EDGE TERIOS,EDGE TERIOS
+name_Ed,EDGE,EDGE
+name_Roxxane,ROXXANE GONZÁLEZ,ROXXANE GONZÁLEZ
+name_Rocks,ROXXANE,ROXXANE
+name_Lucifer,LUCIFER CULA,LUCIFER CULA
+name_Luci,LUCIFER,LUCIFER
+name_Ivy,IVY,IVY
+name_Sophi,SOPHI SUKI,SOPHI SUKI
+name_Sop,SOPHI,SOPHI
+name_Scott,SCOTT SUKI,SCOTT SUKI
+name_Sco,SCOTT,SCOTT
+,,
+mus_Fade,Fading Dreams,Sueños Desvaneciendose
+mus_Accept,It Takes a Lot to Accept Reality,Es Difícil Aceptar La Realidad
+,,
+mus_Solemn,Solemn,Solemne
+mus_Wakey,Wakey-Wakey,A Levantarse
+mus_Cest,C'est La Vie,C'est La Vie
+,,
+mus_FKap,Waitin' (Freeplay Kappa Mvt.),Waitin' (Freeplay Kappa Mvt.)
+mus_FSar,No Rush (Freeplay Sarah Mvt.),No Rush (Freeplay Sarah Mvt.)
+mus_FLon,Arpeggio (Freeplay Lone Mvt.),Arpeggio (Freeplay Lone Mvt.)
+mus_FBro,(Empty for now. I'm not proud of his freeplay track),                 Okay bro
+mus_FNee,Euro-Step (Freeplay Neegi Mvt.),Euro-Step (Freeplay Neegi Mvt.)
+mus_FClo,Star-Bright (Freeplay Cloee Mvt.),Star-Bright (Freeplay Cloee Mvt.)
+mus_FAki,Flamerunner (Freeplay Akira Mvt.),Flamerunner (Freeplay Akira Mvt.)
+mus_FTay,Knuckleblaster (Freeplay Taylor Mvt.),Knuckleblaster (Freeplay Taylor Mvt.)
+mus_FAya,Sharpshooter (Freeplay Ayana Mvt.),Sharpshooter (Freeplay Ayana Mvt.)
+mus_FRus,Hurry Up (Freeplay Rush Mvt.),Hurry Up (Freeplay Rush Mvt.)
+mus_FEdg,Black Arms (Freeplay Edge Mvt.),Black Arms (Freeplay Edge Mvt.)
+mus_FRox,Perra-Culo (Freeplay Roxxane Mvt.),Bitch-Ass (Freeplay Roxxane Mvt.)
+mus_FIvy,Holster (Freeplay Ivy Mvt.),Holster (Freeplay Ivy Mvt.)
+,,
+mus_Funk,Funk 'n' Rush,Funk 'n' Rush
+,,
+mus_Dis,DISCONNECTED,DESCONECTADO
+mus_Lost,Lost Reason,Sin Razón
+mus_Mind,My Mind,Mi Mente
+mus_MindG,My Mind (Girly Mix),Mi Mente (Girly Mix)
+mus_Dist,Disturbing the Mind,Desastre Mental
+mus_DistG,Disturbing the Mind (Girly Mix),Desastre Mental (Girly Mix)
+,,
+mus_NewDay,"New Night, New Day","Nueva Noche, Nuevo Día"
+mus_Sunlight,Clair De Soleil,Clair De Soleil
+mus_SunlightG,Clair De Soleil (Girly Mix),Clair De Soleil (Girly Mix)
+mus_NewNight,"New Day, New Night","Nuevo Día, Nueva Noche"
+mus_Moonlight,Clair De Lune,Clair De Lune
+mus_MoonlightG,Clair De Lune (Girly Mix),Clair De Lune (Girly Mix)
+,,
+mus_NextTime,You'll Get 'em Next Time,Quizás A La Próxima
+mus_Stand,Stand Proud,Que Orgullo
+mus_Sonic,Honorary Sonic,Honorary Sonic
+,,
+mus_YourBest,You Did Your Best,Diste Lo Mejor
+mus_InYou,I Knew You Had it in You,Sabía Que Podías
+mus_Hearts,Hearts All Around,Corazones Por Doquier
+,,
+mus_Kiddin,You Gotta be Kiddin' Me,No Bromees
+mus_NotBad,"Ayy, Not Bad","Ey, Nada Mal"
+mus_Talkin,That's What I'm TALKIN' About,A ESO Me Refería
+,,
+mus_Shot,Shot Down,Caído
+mus_Pardner,"It's Arright, Pardner","Esta Bien, Compañero"
+mus_JUSTICE,JUSTICE,JUSTICIA
+,,
+bon_Time,TIME BONUS,BONUS DE TIEMPO
+bon_Ring,RING BONUS,BONUS DE ANILLO
+bon_Trink,TRINKET BONUS,BONUS DE TRINQUETE
+bon_Perf,PERFECT BONUS,BONUS PERFECTO
+bon_Enemy,ENEMY BONUS,BONUS DE ENEMIGOS
+,,
+cost_Cost,COSTUME,TRAJES
+,,
+cost_Kap1,RUSH-STYLE,ESTILO-RUSH
+cost_Kap2,HIDEKI NERD,HIDEKI NERD
+,,
+cost_Sar1,HEARTACHE,HEARTACHE
+,,
+cost_Lon1,BUN-BUN,BUN-BUN
+,,
+cost_Bro1,BRAVERY,VALENTÍA
+,,
+cost_Nee1,FOUR-STAR,CUATRO-ESTRELLAS
+,,
+cost_Clo1,BASIL,BASIL
+,,
+cost_Aki1,UZI-STYLE,ESTILO-UZI
+,,
+cost_Tay1,BOON-DOCK,BOON-DOCK
+,,
+cost_Aya!,MEAREST,MEAREST
+,,
+cost_Rus1,JET-SET,SET-JET
+,,
+cost_Edg1,JET-SET,SET-JET
+,,
+cost_Rox1,LAZULI,LAZULI
+,,
+cost_Luc1,RUSH-STYLE,ESTILO-RUSH
+,,
+cost_Ivy1,BUTTERCUP,FLOR DORADA
+,,
+desc_Master,Change the game's overall volume. (Decreases by 10% per press.),Cambia el volumen general del juego. (Disminuye 10% al presionar)
+desc_Music,Change the game's BGM volume. (Decreases by 10% per press.),Cambia el volumen de fondo del juego. (Disminuye 10% al presionar)
+desc_SFX,Change the game's sound effect volume. (Decreases by 10% per press.),Cambia el volumen de los efectos de sonido. (Disminuye 10% al presionar)
+desc_Text,Change the game's textbox type-writer volume. (Decreases by 10% per press.),Cambia el volumen del efecto cuadro de texto. (Disminuye 10% al presionar)
+desc_Ambiance,Change the game's world ambiance volume. (Decreases by 10% per press.),Cambia el volumen del ambiente. (Disminuye 10% al presionar)
+desc_Pause,Have a BGM track play based on the character you're playing as while the game is paused.,Un tema de pausa se reproduce dependiendo del personaje que estes usando.
+,,
+desc_SimpVFX,"Reduce, stop, or get rid of things that could be eye-straining. (I.E., flashing lights, textbox animations, 'n' some moving assets.)","Reduce, detiene o elimina los elementos que cansen la vista. (Ejemplo: luces, animaciones y algunos movimientos)."
+desc_Part,Have tiny sprites and effects appear or not.,Hace que pequeños sprites y efectos aparezcan o no.
+desc_ScrShk,Have the screen shake during certain events and actions.,La pantalla se agita durante ciertos eventos y acciones.
+desc_TextSpd,Change the how fast text appears during dialogue.,Cambie lo rápido que el texto aparece en diálogos.
+desc_Lang,"Change the game's text language and assets to your liking. (English, Spanish)","Cambia el idioma del juego. (Inglés, Español)"
+desc_ConDis,Have your keyboard or controller inputs appear at the bottom-right of the screen.,Muestra tu teclado o control en la esquina inferior derecha de la pantalla.
+desc_Outline,Have black 'n' white outlines around the characters and certain objects during gameplay.,Activa un contorno blanco y negro en algunos personajes y objetos durante el gameplay.
+,,
+desc_Fullscr,Have the game display at your machine's full resolution.,Pone el juego en la resolución completa de tu pantalla.
+desc_MusTag,"Have the current BGM track's name, composer, and length display at the top-right at certain points.","El nombre del tema de fondo, compositor y duración aparezca en ciertos puntos."
+desc_ConType,Change the controls' input display based on a console. (Controller only.),Cambia el tipo de botón que se muestra. (Solo Control)
+desc_ConRum,Have your controller shake during certain events and actions. (Controller only.),Vibración durante ciertos eventos y acciones. (Solo Control)
+desc_ExtCam,Have the camera move ahead of you based on your speed and how fast you're falling. (Overworld & Speed Stages only.),La cámara se adelanta basado en tu velocidad al correr y caer. (Solo Overworld y Etapas de Velocidad)
+desc_FPS,"Have the game's framerate, real framerate, 'n' version display at the top-right and bottom-right of the screen.","Muestra los FPS, FPS Reales y versión del juego arriba a la izquierda y abajo a la derecha."
+desc_Speedrun,"Display a speedrun timer that stops during cutscenes, transitions, and the game being paused.","Muestra un temporizador de speedrun que se detiene en cinemáticas, transiciones y pausa."
+,,
+desc_Control,Change this input bind.,Cambia el botón de esta acción.
+desc_JoyDead,Change how far you need to move your controller's joystick. (Controller only.) (Decreases by 10% per press.),Cambia lo rápido que tienes que mover la palanca. (Solo Control) (Disminuye 10% al presionar)
+desc_TrigDead,Change how hard you need to push your controller's triggers. (Controller only.) (Decreases by 10% per press.),Cambia cuanto debes presionar los gatillos. (Solo Control) (Disminuye 10% al presionar)
+,,
+con_Circle,CIRCLE,CÍRCULO
+con_Triangle,TRIANGLE,TRIÁNGULO
+con_Square,SQUARE,CUADRADO
+con_Touchpad,TOUCHPAD,TOUCHPAD
+,,
+freeplay_DescMind1,"A section that's conjoined to a more devious part of one's mind. While not dangerous to the real body of the user experiencing it, any damage taken or fake deaths that occure can cause extreme anxiety and distress. (Every bit of one's mind does not look the same as another person's, with 1 exception.)","Una sección conectada a una parte más retorcida de la mente. Si bien no es peligroso para el cuerpo del usuario, cualquier daño recibido o muertes simuladas puede causar ansiedad y angustia extremas. (La mente de uno no es idéntica a la de otra persona, con 1 excepción)."
+freeplay_DescMind2,"A section that's conjoined to a more devious part of one's mind. While not dangerous to the real body of the user experiencing it, any damage taken or fake deaths that occure can cause extreme anxiety and distress. (Every bit of one's mind does not look the same as another person's, with 1 exception.)","Una sección conectada a una parte más retorcida de la mente. Si bien no es peligroso para el cuerpo del usuario, cualquier daño recibido o muertes simuladas puede causar ansiedad y angustia extremas. (La mente de uno no es idéntica a la de otra persona, con 1 excepción)."
+freeplay_DescMindBoss,"A section far below the rest of one's mind. No one dares jump down due to fear of severe anxiety attacks, but under your circumstances, you have no choice.","Una sección muy por debajo del resto de la mente. Nadie se atreve a saltar por miedo a sufrir ataques de ansiedad severos, pero dadas tus circunstancias, no tienes otra opción."
+freeplay_DescMindBon1,An unused part of the mind that's normally inaccessible unless specific conditions are met.,Una parte no utilizada de la mente a la que no se puede acceder a menos que se cumplan ciertas condiciones.
+freeplay_DescMindBon2,An unused part of the mind that's normally inaccessible unless specific conditions are met.,Una parte no utilizada de la mente a la que no se puede acceder a menos que se cumplan ciertas condiciones.
+,,
+freeplay_DescOTD1,"An unfinished portion of the town. Construction died down today, so you're safe to roam around without gettin' caught. Usually people don't mess around there, but it's the fastest route to the cemetary.","Una parte inacabada del pueblo. Las obras pararon hoy, así que puedes pasear con seguridad sin que te pillen. Normalmente la gente no entra por ahí, pero es la ruta más rápida al cementerio."
+freeplay_DescOTN1,"A far-off place from the town. Thanks to how vast the area is, you'll hardly ever see other people near you. Even if you do, no one's gonna bother you.","Un lugar alejado del pueblo. Gracias a lo grande del lugar, casi nunca verás gente. Incluso si lo haces, nadie te molestará."
+,,
+freeplay_Desc,LEVEL DESCRIPTION,DESCRIPCIÓN DEL NIVEL
+,,
+condit_Available,UNAVAILABLE,NO DISPONIBLE
+condit_StoryMode,BEAT THE STAGE IN THE MAIN STORY,PASA LA ETAPA EN MODO HISTORIA
+condit_CRankMind,GET A C-RANK OR HIGHER IN THE 3 MAIN MIND LEVELS,OBTIENE UN RANGO C O MAS ALTO EN LOS 3 NIVELES DE MENTE
+,,
+freeplay_Trinkets,TRINKETS:,OBJETOS:
+freeplay_BestTime,BEST TIME:,MEJOR TIEMPO:
+freeplay_BestScore,BEST SCORE:,MEJOR PUNTAJE:
+freeplay_Enemies,ENEMIES:,ENEMIGOS:
+freeplay_Rank,RANK:,RANGO:
+,,
+freeplay_Track,LEVEL TRACK,TEMA DEL NIVEL
+freeplay_StopTrack,STOP TRACK,DETENER TEMA
+,,
+results_Cont,CONTINUE,CONTINUAR
+results_Retry,RETRY LEVEL,REINTENTAR
+results_Ghost,SAVE GHOST,GUARDAR FANTASMA
+results_GhostSaved,GHOST SAVED,FANTASMA GUARDADO
+results_Replay,SAVE REPLAY,GUARDAR REPLAY
+results_ReplaySaved,REPLAY SAVED,REPLAY GUARDADO
+results_ReplayText,REPLAY,REPLAY

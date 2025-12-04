@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_ParticleController",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ParticleController",
+  "parent":{
+    "name":"Particles",
+    "path":"folders/Scripts/Particles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_RGBShifter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_RGBShifter",
+  "parent":{
+    "name":"RGB",
+    "path":"folders/Scripts/RGB.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,1 @@
+draw_text_color(x, y, "BACK", c_white, c_white, c_white, c_white, image_alpha);

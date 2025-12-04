@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_EnemyExplode",
+  "audioGroupId":{
+    "name":"Audio_EnviroGeneral",
+    "path":"audiogroups/Audio_EnviroGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.3264626,
+  "exportDir":"",
+  "name":"snd_EnemyExplode",
+  "parent":{
+    "name":"Universal",
+    "path":"folders/Sounds/Sound Effects/Characters/Universal.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_EnemyExplode.ogg",
+  "volume":0.25,
+}

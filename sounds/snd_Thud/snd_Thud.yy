@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Thud",
+  "audioGroupId":{
+    "name":"Audio_CharSpeed",
+    "path":"audiogroups/Audio_CharSpeed",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":6.0,
+  "exportDir":"",
+  "name":"snd_Thud",
+  "parent":{
+    "name":"Environment",
+    "path":"folders/Sounds/Sound Effects/Environment.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Thud.ogg",
+  "volume":0.7,
+}

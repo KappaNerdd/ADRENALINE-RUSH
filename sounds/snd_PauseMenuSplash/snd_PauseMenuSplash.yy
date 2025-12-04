@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_PauseMenuSplash",
+  "audioGroupId":{
+    "name":"Audio_MenuGeneral",
+    "path":"audiogroups/Audio_MenuGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.8328345,
+  "exportDir":"",
+  "name":"snd_PauseMenuSplash",
+  "parent":{
+    "name":"Menu",
+    "path":"folders/Sounds/Sound Effects/Menu.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_PauseMenuSplash.ogg",
+  "volume":1.0,
+}

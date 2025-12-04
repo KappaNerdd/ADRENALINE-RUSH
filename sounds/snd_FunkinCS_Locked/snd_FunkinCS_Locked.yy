@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_FunkinCS_Locked",
+  "audioGroupId":{
+    "name":"Audio_MenuGeneral",
+    "path":"audiogroups/Audio_MenuGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.64285713,
+  "exportDir":"",
+  "name":"snd_FunkinCS_Locked",
+  "parent":{
+    "name":"Friday Night Funkin' Shit",
+    "path":"folders/Sounds/Sound Effects/Friday Night Funkin' Shit.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_FunkinCS_Locked.ogg",
+  "volume":0.3,
+}

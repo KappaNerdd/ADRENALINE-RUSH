@@ -1,0 +1,1 @@
+image_blend = make_color_rgb(207, 41, 229);

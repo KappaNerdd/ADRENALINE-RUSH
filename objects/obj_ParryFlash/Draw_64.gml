@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_RainSplash, 0, 0, 0, 320, 180, 0, c_white, 0.25);

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_Pendejo",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":150.85715,
+  "exportDir":"",
+  "name":"mus_Pendejo",
+  "parent":{
+    "name":"Roxxane",
+    "path":"folders/Sounds/Music/Character Specific/Roxxane.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_Pendejo.ogg",
+  "volume":1.0,
+}

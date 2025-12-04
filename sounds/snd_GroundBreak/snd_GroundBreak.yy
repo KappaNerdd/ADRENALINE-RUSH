@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_GroundBreak",
+  "audioGroupId":{
+    "name":"Audio_EnviroGeneral",
+    "path":"audiogroups/Audio_EnviroGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.3126304,
+  "exportDir":"",
+  "name":"snd_GroundBreak",
+  "parent":{
+    "name":"Environment",
+    "path":"folders/Sounds/Sound Effects/Environment.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_GroundBreak.wav",
+  "volume":0.4,
+}

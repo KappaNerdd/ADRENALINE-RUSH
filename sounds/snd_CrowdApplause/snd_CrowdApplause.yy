@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_CrowdApplause",
+  "audioGroupId":{
+    "name":"Audio_MenuGeneral",
+    "path":"audiogroups/Audio_MenuGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":6.0270295,
+  "exportDir":"",
+  "name":"snd_CrowdApplause",
+  "parent":{
+    "name":"Results",
+    "path":"folders/Sounds/Sound Effects/Results.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_CrowdApplause.wav",
+  "volume":1.0,
+}

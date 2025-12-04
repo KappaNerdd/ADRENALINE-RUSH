@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"amb_SukiCar",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":16.0,
+  "exportDir":"",
+  "name":"amb_SukiCar",
+  "parent":{
+    "name":"Car",
+    "path":"folders/Sounds/Ambience/Car.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"amb_SukiCar.ogg",
+  "volume":0.3,
+}

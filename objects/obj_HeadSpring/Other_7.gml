@@ -1,0 +1,2 @@
+bounce = false;
+active = false;

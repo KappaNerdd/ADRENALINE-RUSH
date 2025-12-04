@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_Skrrrt",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":11.224286,
+  "exportDir":"",
+  "name":"mus_Skrrrt",
+  "parent":{
+    "name":"Edge",
+    "path":"folders/Sounds/Music/Results/Edge.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_Skrrrt.ogg",
+  "volume":0.5,
+}

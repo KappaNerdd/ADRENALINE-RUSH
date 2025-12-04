@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_FreeplayRXMvt",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":36.0,
+  "exportDir":"",
+  "name":"mus_FreeplayRXMvt",
+  "parent":{
+    "name":"Roxxane",
+    "path":"folders/Sounds/Music/Freeplay/Roxxane.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_FreeplayRXMvt.ogg",
+  "volume":1.0,
+}

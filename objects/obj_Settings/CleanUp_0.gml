@@ -1,0 +1,8 @@
+font_delete(global.font_main);
+font_delete(global.TrickFont);
+font_delete(global.TimerFont);
+font_delete(global.CheckpointTimerFont);
+font_delete(global.CheckpointTimerFontHead);
+font_delete(global.LifeFont);
+font_delete(global.EnemyComboFont);
+font_delete(global.EnemyComboFontHead);

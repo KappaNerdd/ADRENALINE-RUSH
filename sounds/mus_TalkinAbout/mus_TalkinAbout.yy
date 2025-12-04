@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_TalkinAbout",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":51.601994,
+  "exportDir":"",
+  "name":"mus_TalkinAbout",
+  "parent":{
+    "name":"Rush",
+    "path":"folders/Sounds/Music/Results/Rush.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_TalkinAbout.ogg",
+  "volume":0.75,
+}

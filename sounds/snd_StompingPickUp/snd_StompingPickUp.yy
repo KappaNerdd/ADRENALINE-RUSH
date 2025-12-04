@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_StompingPickUp",
+  "audioGroupId":{
+    "name":"Audio_CharSpeed",
+    "path":"audiogroups/Audio_CharSpeed",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.888254,
+  "exportDir":"",
+  "name":"snd_StompingPickUp",
+  "parent":{
+    "name":"Sarah",
+    "path":"folders/Sounds/Sound Effects/Characters/Sarah.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_StompingPickUp.ogg",
+  "volume":0.3,
+}

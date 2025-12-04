@@ -1,0 +1,4 @@
+messageKeyboard = "Sometimes at the end of a \nrail, a prompt will show up. \nIf you press " + string(obj_CustomAct3KeySpeed.keyText) + " while the \nprompt is there, you'll do a Rail \nJump. \After that, you can do \nan RUSH TRICKS.";
+messageXbox = "Sometimes at the end of a \nrail, a prompt will show up. \nIf you press " + string(obj_CustomAct3KeySpeed.keyText) + "  while the \nprompt is there, you'll do a Rail \nJump. After that, you can do \nan RUSH TRICKS.";
+messagePS4 = "Sometimes at the end of a \nrail, a prompt will show up. \nIf you press " + string(obj_CustomAct3KeySpeed.keyText) + " while the \nprompt is there, you'll do a Rail \nJump. After that, you can do \nan RUSH TRICKS.";
+messageSwitch = "Sometimes at the end of a \nrail, a prompt will show up. \nIf you press " + string(obj_CustomAct3KeySpeed.keyText) + " while the \nprompt is there, you'll do a Rail \nJump. After that, you can do \nan RUSH TRICKS.";

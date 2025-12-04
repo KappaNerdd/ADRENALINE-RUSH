@@ -1,0 +1,4 @@
+messageKeyboard = "You can also press [Z] to do \nRush Tricks, giving you boost \nenergy. You can press [X] to \nget a trick combo bonus. Doing \ndirectional tricks reset it and \nyou can do more tricks.";
+messageXbox = "You can also press [A] to do \nRush Tricks, giving you boost \nenergy. You can press [B] to \nget a trick combo bonus. Doing \ndirectional tricks reset it and \nyou can do more tricks.";
+messagePS4 = "You can also press [X] to do \nRush Tricks, giving you boost \nenergy. You can press [CIRCLE] \nto get a trick combo bonus. \nDoing directional tricks reset \nit and you can do more tricks.";
+messageSwitch = "You can also press [A] to do \nRush Tricks, giving you boost \nenergy. You can press [B] to \nget a trick combo bonus. Doing \ndirectional tricks reset it and \nyou can do more tricks.";

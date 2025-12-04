@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_HeartsAround",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":16.13932,
+  "exportDir":"",
+  "name":"mus_HeartsAround",
+  "parent":{
+    "name":"Sarah",
+    "path":"folders/Sounds/Music/Results/Sarah.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_HeartsAround.ogg",
+  "volume":1.0,
+}

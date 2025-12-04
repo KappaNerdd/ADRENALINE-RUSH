@@ -1,0 +1,4 @@
+messageKeyboard = "Or if there's no room to \ngain speed, stay still, hold \n" + string(obj_CustomDownKeySpeed.keyText) + " and press " + string(obj_CustomJumpKeySpeed.keyText) + " to slide.";
+messageXbox = "Or if there's no room to \ngain speed, stay still, hold \n" + string(obj_CustomDownKeySpeed.keyText) + " and press " + string(obj_CustomJumpKeySpeed.keyText) + " to slide.";
+messagePS4 = "Or if there's no room to \ngain speed, stay still, hold \n" + string(obj_CustomDownKeySpeed.keyText) + " and press " + string(obj_CustomJumpKeySpeed.keyText) + " to slide.";
+messageSwitch = "Or if there's no room to \ngain speed, stay still, hold \n" + string(obj_CustomDownKeySpeed.keyText) + " and press " + string(obj_CustomJumpKeySpeed.keyText) + " to slide.";

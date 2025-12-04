@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, (camera_get_view_x(view_camera[0]) + x) * 0.9, camera_get_view_y(view_camera[0]), image_xscale, image_yscale, 0, thunderCol, image_alpha);

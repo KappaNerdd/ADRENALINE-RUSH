@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_LostReason",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":111.990654,
+  "exportDir":"",
+  "name":"mus_LostReason",
+  "parent":{
+    "name":"Mind",
+    "path":"folders/Sounds/Music/Overworld/Mind.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_LostReason.ogg",
+  "volume":1.0,
+}

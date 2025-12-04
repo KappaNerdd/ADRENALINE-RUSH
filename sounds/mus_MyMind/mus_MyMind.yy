@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_MyMind",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":131.12195,
+  "exportDir":"",
+  "name":"mus_MyMind",
+  "parent":{
+    "name":"Mind",
+    "path":"folders/Sounds/Music/Speed/Mind.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_MyMind.ogg",
+  "volume":1.0,
+}

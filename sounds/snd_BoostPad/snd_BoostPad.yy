@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_BoostPad",
+  "audioGroupId":{
+    "name":"Audio_CharGeneral",
+    "path":"audiogroups/Audio_CharGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.0,
+  "exportDir":"",
+  "name":"snd_BoostPad",
+  "parent":{
+    "name":"Rush & Edge",
+    "path":"folders/Sounds/Sound Effects/Characters/Rush & Edge.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_BoostPad.wav",
+  "volume":0.6,
+}

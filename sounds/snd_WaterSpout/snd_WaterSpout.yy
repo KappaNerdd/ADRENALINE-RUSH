@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_WaterSpout",
+  "audioGroupId":{
+    "name":"Audio_EnviroGeneral",
+    "path":"audiogroups/Audio_EnviroGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.0996599,
+  "exportDir":"",
+  "name":"snd_WaterSpout",
+  "parent":{
+    "name":"General",
+    "path":"folders/Sounds/Sound Effects/General.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_WaterSpout.wav",
+  "volume":0.25,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_IvyGunShoot",
+  "audioGroupId":{
+    "name":"Audio_CharIvy",
+    "path":"audiogroups/Audio_CharIvy",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.36716554,
+  "exportDir":"",
+  "name":"snd_IvyGunShoot",
+  "parent":{
+    "name":"Ivy",
+    "path":"folders/Sounds/Sound Effects/Characters/Ivy.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_IvyGunShoot.wav",
+  "volume":0.6,
+}

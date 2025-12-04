@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_BattleBounceHit",
+  "audioGroupId":{
+    "name":"Audio_CharAction",
+    "path":"audiogroups/Audio_CharAction",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.39582765,
+  "exportDir":"",
+  "name":"snd_BattleBounceHit",
+  "parent":{
+    "name":"Sonic Battle Shit",
+    "path":"folders/Sounds/Sound Effects/Sonic Battle Shit.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_BattleBounceHit.wav",
+  "volume":1.0,
+}

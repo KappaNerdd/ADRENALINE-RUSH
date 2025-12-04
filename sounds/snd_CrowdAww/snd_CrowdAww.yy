@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_CrowdAww",
+  "audioGroupId":{
+    "name":"Audio_MenuGeneral",
+    "path":"audiogroups/Audio_MenuGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.4945352,
+  "exportDir":"",
+  "name":"snd_CrowdAww",
+  "parent":{
+    "name":"Results",
+    "path":"folders/Sounds/Sound Effects/Results.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_CrowdAww.wav",
+  "volume":1.0,
+}

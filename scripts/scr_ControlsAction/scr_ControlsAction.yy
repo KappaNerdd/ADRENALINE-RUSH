@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_ControlsAction",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ControlsAction",
+  "parent":{
+    "name":"Gameplay",
+    "path":"folders/Scripts/Controls/Gameplay.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_NewDay",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":9,
+  "conversionMode":0,
+  "duration":71.83238,
+  "exportDir":"",
+  "name":"mus_NewDay",
+  "parent":{
+    "name":"Hometown",
+    "path":"folders/Sounds/Music/Overworld/Hometown.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_NewDay.ogg",
+  "volume":1.0,
+}

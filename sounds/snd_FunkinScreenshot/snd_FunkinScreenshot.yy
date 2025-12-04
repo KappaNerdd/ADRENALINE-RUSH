@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_FunkinScreenshot",
+  "audioGroupId":{
+    "name":"Audio_MenuGeneral",
+    "path":"audiogroups/Audio_MenuGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.40537414,
+  "exportDir":"",
+  "name":"snd_FunkinScreenshot",
+  "parent":{
+    "name":"Friday Night Funkin' Shit",
+    "path":"folders/Sounds/Sound Effects/Friday Night Funkin' Shit.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_FunkinScreenshot.ogg",
+  "volume":0.25,
+}

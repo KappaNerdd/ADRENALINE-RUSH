@@ -1,0 +1,1 @@
+//draw_text_transformed(0, 30, string(global.modsLoader), 0.6, 1, 0);

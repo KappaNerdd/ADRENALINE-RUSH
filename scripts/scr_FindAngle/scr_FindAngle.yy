@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_FindAngle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_FindAngle",
+  "parent":{
+    "name":"Angles",
+    "path":"folders/Scripts/Angles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

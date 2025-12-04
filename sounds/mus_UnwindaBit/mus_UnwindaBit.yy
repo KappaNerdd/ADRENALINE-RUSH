@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_UnwindaBit",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":71.843994,
+  "exportDir":"",
+  "name":"mus_UnwindaBit",
+  "parent":{
+    "name":"Misc",
+    "path":"folders/Sounds/Music/Misc.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_UnwindaBit.ogg",
+  "volume":1.0,
+}

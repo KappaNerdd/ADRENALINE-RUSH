@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_RandomizeString",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_RandomizeString",
+  "parent":{
+    "name":"Randomizers",
+    "path":"folders/Scripts/Randomizers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

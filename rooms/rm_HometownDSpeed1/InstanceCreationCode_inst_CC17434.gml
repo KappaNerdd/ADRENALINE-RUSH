@@ -1,0 +1,1 @@
+wallJumpable = false;

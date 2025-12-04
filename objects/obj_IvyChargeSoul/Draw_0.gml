@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, obj_Player.x, obj_Player.y + 9, 0.5, 0.5, 0, c_white, image_alpha);

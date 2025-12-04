@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_HonorarySonic",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":16.179955,
+  "exportDir":"",
+  "name":"mus_HonorarySonic",
+  "parent":{
+    "name":"Kappa",
+    "path":"folders/Sounds/Music/Results/Kappa.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_HonorarySonic.ogg",
+  "volume":0.6,
+}

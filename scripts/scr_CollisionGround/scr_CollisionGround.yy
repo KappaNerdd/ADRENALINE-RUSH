@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_CollisionGround",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_CollisionGround",
+  "parent":{
+    "name":"Bruh",
+    "path":"folders/Scripts/Collisions/Bruh.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

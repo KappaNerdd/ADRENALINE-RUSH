@@ -1,0 +1,1 @@
+draw_text(obj_SavBox.x + 280, obj_SavBox.y + 10, string(global.statData[0].player_Name));

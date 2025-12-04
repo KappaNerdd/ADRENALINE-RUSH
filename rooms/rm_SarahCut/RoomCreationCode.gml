@@ -1,0 +1,1 @@
+save_game(global.saveFile);

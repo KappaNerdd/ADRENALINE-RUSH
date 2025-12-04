@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"amb_NormalRain",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":60.0,
+  "exportDir":"",
+  "name":"amb_NormalRain",
+  "parent":{
+    "name":"Rain",
+    "path":"folders/Sounds/Ambience/Weather/Rain.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"amb_NormalRain.ogg",
+  "volume":0.5,
+}

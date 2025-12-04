@@ -1,0 +1,1 @@
+rankChecker = global.speedStageData[0].rank;

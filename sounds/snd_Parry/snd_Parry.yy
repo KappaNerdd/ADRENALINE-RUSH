@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Parry",
+  "audioGroupId":{
+    "name":"Audio_CharGeneral",
+    "path":"audiogroups/Audio_CharGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.7435827,
+  "exportDir":"",
+  "name":"snd_Parry",
+  "parent":{
+    "name":"ULTRAKILL Shit",
+    "path":"folders/Sounds/Sound Effects/ULTRAKILL Shit.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Parry.wav",
+  "volume":0.5,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_DeltaruneTwinkle",
+  "audioGroupId":{
+    "name":"Audio_EnviroGeneral",
+    "path":"audiogroups/Audio_EnviroGeneral",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.2682993,
+  "exportDir":"",
+  "name":"snd_DeltaruneTwinkle",
+  "parent":{
+    "name":"Death",
+    "path":"folders/Sounds/Sound Effects/Death.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_DeltaruneTwinkle.ogg",
+  "volume":1.0,
+}

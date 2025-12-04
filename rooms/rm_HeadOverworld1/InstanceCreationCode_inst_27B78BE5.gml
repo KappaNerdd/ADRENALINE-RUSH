@@ -1,0 +1,4 @@
+messageKeyboard = "Jump against a wall to \nslide on it, then press " + string(obj_CustomJumpKeySpeed.keyText) + " to \nkick off it. \n(You don't need to \nhold a direction.)"
+messageXbox = "Jump against a wall to \nslide on it, then press " + string(obj_CustomJumpKeySpeed.keyText) + "  to \nkick off it. \n(You don't need to \nhold a direction.)"
+messagePS4 = "Jump against a wall to \nslide on it, then press " + string(obj_CustomJumpKeySpeed.keyText) + " to \nkick off it. \n(You don't need to \nhold a direction.)"
+messageSwitch = "Jump against a wall to \nslide on it, then press " + string(obj_CustomJumpKeySpeed.keyText) + " to \nkick off it. \n(You don't need to \nhold a direction.)"

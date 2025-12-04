@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, obj_FileBoxChecker.x + 150, obj_FileBoxChecker.y + 120, 1, 1, 0, sprCol, image_alpha);

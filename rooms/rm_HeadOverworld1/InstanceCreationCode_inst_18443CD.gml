@@ -1,0 +1,4 @@
+messageKeyboard = "Checkpoints are 1-time use until \nyou re-enter a room. \nYou'll likely not encounter a \ncheckpoint in the Overworld \nagain though.";
+messageXbox = "Checkpoints are 1-time use until \nyou re-enter a room. \nYou'll likely not encounter a \ncheckpoint in the Overworld \nagain though.";
+messagePS4 = "Checkpoints are 1-time use until \nyou re-enter a room. \nYou'll likely not encounter a \ncheckpoint in the Overworld \nagain though.";
+messageSwitch = "Checkpoints are 1-time use until \nyou re-enter a room. \nYou'll likely not encounter a \ncheckpoint in the Overworld \nagain though.";

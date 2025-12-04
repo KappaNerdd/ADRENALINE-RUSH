@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_JSRSprayComplete",
+  "audioGroupId":{
+    "name":"Audio_Text",
+    "path":"audiogroups/Audio_Text",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.4033787,
+  "exportDir":"",
+  "name":"snd_JSRSprayComplete",
+  "parent":{
+    "name":"Funny Sounds",
+    "path":"folders/Sounds/Sound Effects/Textbox/Funny Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_JSRSprayComplete.ogg",
+  "volume":1.0,
+}

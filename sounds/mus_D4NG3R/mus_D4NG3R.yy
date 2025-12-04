@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_D4NG3R",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":46.54544,
+  "exportDir":"",
+  "name":"mus_D4NG3R",
+  "parent":{
+    "name":"Ayana",
+    "path":"folders/Sounds/Music/Results/Ayana.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_D4NG3R.ogg",
+  "volume":1.0,
+}

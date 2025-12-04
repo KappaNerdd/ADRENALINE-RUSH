@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_IvyStomp",
+  "audioGroupId":{
+    "name":"Audio_CharIvy",
+    "path":"audiogroups/Audio_CharIvy",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.61678004,
+  "exportDir":"",
+  "name":"snd_IvyStomp",
+  "parent":{
+    "name":"Ivy",
+    "path":"folders/Sounds/Sound Effects/Characters/Ivy.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_IvyStomp.wav",
+  "volume":1.0,
+}

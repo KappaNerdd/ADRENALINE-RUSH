@@ -1,0 +1,4 @@
+messageKeyboard = "While on the ground after \nstomping, hold " + string(obj_CustomLeftKeySpeed.keyText) + " or \n" + string(obj_CustomRightKeySpeed.keyText) + " and press " + string(obj_CustomAct3KeySpeed.keyText) + " \nto do a slam-dash.";
+messageXbox = "While on the ground after \nstomping, hold " + string(obj_CustomLeftKeySpeed.keyText) + " or \n" + string(obj_CustomRightKeySpeed.keyText) + " and press " + string(obj_CustomAct3KeySpeed.keyText) + " \nto do a slam-dash.";
+messagePS4 = "While on the ground after \nstomping, hold " + string(obj_CustomLeftKeySpeed.keyText) + " or \n" + string(obj_CustomRightKeySpeed.keyText) + " and press " + string(obj_CustomAct3KeySpeed.keyText) + " \nto do a slam-dash.";
+messageSwitch = "While on the ground after \nstomping, hold " + string(obj_CustomLeftKeySpeed.keyText) + " or \n" + string(obj_CustomRightKeySpeed.keyText) + " and press " + string(obj_CustomAct3KeySpeed.keyText) + " \nto do a slam-dash.";

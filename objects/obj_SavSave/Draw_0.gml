@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, obj_SavBox.x + 3, obj_SavBox.y + 125, 1, 1, 0, sprCol, image_alpha);

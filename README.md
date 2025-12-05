@@ -36,7 +36,7 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 ## ACTION STAGES (Not implemented yet)
 
 
-#CREDITS 'N' SPECIAL THANKS
+# CREDITS 'N' SPECIAL THANKS
 
 ## THE NERDS
 - [Nerd](https://bsky.app/profile/kappanerd.bsky.social) - Yo. I do everything lol. Call me an amalgamation the way I have everything. (Except hand-drawn animation and 3d modeling.)

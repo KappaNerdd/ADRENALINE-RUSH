@@ -180,6 +180,7 @@ display_set_gui_size(768, 432);
 		#region //Overall Rank
 			var _rankOA = _levelDesc.rank;
 			var _rankChar = _levelDesc.player_Sprite;
+			var _rankCharCost = _levelDesc.player_Costume;
 			var _rankSprite = spr_ResultsRank;
 			
 			if _levelDesc.mind {
@@ -192,13 +193,14 @@ display_set_gui_size(768, 432);
 			draw_sprite_ext(ranks[_rankOA + _plusUltra], 0, 69, 183, 1, 1, 0, c_black, chosenTextAlpha);
 			draw_sprite_ext(ranks[_rankOA + _plusUltra], 0, 72, 180, 1, 1, 0, c_white, chosenTextAlpha);
 			
-			draw_sprite_ext(_rankChar, 0, 122, 183, 1, 1, 0, c_black, chosenTextAlpha);
-			draw_sprite_ext(_rankChar, 0, 125, 180, 1, 1, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(_rankChar, _rankCharCost, 122, 183, 1, 1, 0, c_black, chosenTextAlpha);
+			draw_sprite_ext(_rankChar, _rankCharCost, 125, 180, 1, 1, 0, c_white, chosenTextAlpha);
 		#endregion
 		
 		#region //Best Time
 			var _rankTime = _levelDesc.rankTime;
 			var _rankTChar = _levelDesc.player_SpriteTime;
+			var _rankTCharCost = _levelDesc.player_CostumeTime;
 			var _timeCheck = string(_levelDesc.minutes) + ":0" + string(_levelDesc.seconds);
 			
 			if _levelDesc.seconds >= 10 or _levelDesc.minutes >= 10 {
@@ -210,16 +212,17 @@ display_set_gui_size(768, 432);
 			
 			draw_text_transformed_color(197, 123, _rankTimeText, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
 			draw_sprite_ext(ranks[_rankTime + _plusUltra], 0, 197 + (_rankTextWidth + 14), 123, 0.5, 0.5, 0, c_black, chosenTextAlpha);
-			draw_sprite_ext(_rankTChar, 0, 225 + (_rankTextWidth + 14), 123, 0.5, 0.5, 0, c_black, chosenTextAlpha);
+			draw_sprite_ext(_rankTChar, _rankTCharCost, 225 + (_rankTextWidth + 14), 123, 0.5, 0.5, 0, c_black, chosenTextAlpha);
 			
 			draw_text_transformed_color(200, 120, _rankTimeText, 1, 1, 0, c_white, c_white, c_white, c_white, chosenTextAlpha);
 			draw_sprite_ext(ranks[_rankTime + _plusUltra], 0, 200 + (_rankTextWidth + 14), 120, 0.5, 0.5, 0, c_white, chosenTextAlpha);
-			draw_sprite_ext(_rankTChar, 0, 228 + (_rankTextWidth + 14), 120, 0.5, 0.5, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(_rankTChar, _rankTCharCost, 228 + (_rankTextWidth + 14), 120, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 		#endregion
 		
 		#region //Best Score
 			var _actualScore = _levelDesc.rankScore;
 			var _rankSChar = _levelDesc.player_SpriteScore;
+			var _rankSCharCost = _levelDesc.player_CostumeScore;
 			var _score0 = "000000";
 			var _scoreCheck = string(round(_levelDesc.gameScore));
 			
@@ -244,11 +247,11 @@ display_set_gui_size(768, 432);
 			
 			draw_text_transformed_color(197, 153, _rankScoreText + _score0 + _scoreCheck, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
 			draw_sprite_ext(ranks[_actualScore + _plusUltra], 0, 197 + (_rankSTextWidth + 14), 153, 0.5, 0.5, 0, c_black, chosenTextAlpha);
-			draw_sprite_ext(_rankSChar, 0, 225 + (_rankSTextWidth + 14), 153, 0.5, 0.5, 0, c_black, chosenTextAlpha);
+			draw_sprite_ext(_rankSChar, _rankSCharCost, 225 + (_rankSTextWidth + 14), 153, 0.5, 0.5, 0, c_black, chosenTextAlpha);
 			
 			draw_text_transformed_color(200, 150, _rankScoreText + _score0 + _scoreCheck, 1, 1, 0, c_white, c_white, c_white, c_white, chosenTextAlpha);
 			draw_sprite_ext(ranks[_actualScore + _plusUltra], 0, 200 + (_rankSTextWidth + 14), 150, 0.5, 0.5, 0, c_white, chosenTextAlpha);
-			draw_sprite_ext(_rankSChar, 0, 228 + (_rankSTextWidth + 14), 150, 0.5, 0.5, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(_rankSChar, _rankSCharCost, 228 + (_rankSTextWidth + 14), 150, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 		#endregion
 		
 		#region //Trinkets
@@ -291,8 +294,9 @@ display_set_gui_size(768, 432);
 				var _replayCol = c_grey;
 				var _replayText = scr_LocalText("results_ReplayText");
 				var _replayBut = obj_CustomAct2KeySpeed.image_index;
-				
-				if file_exists(string(global.speedStageData[global.SpeedSelected].record_File) + "Replay.sav") {
+				var _dir = working_directory + "/replay" + string(global.speedStageData[global.SpeedSelected].folder_Name);
+			
+				if file_exists(_dir + string(global.speedStageData[global.SpeedSelected].record_File) + "Replay.sav") && file_exists(_dir + "Char" + string(global.speedStageData[global.SpeedSelected].record_File) + "Replay.sav") {
 					_replayCol = c_white;
 				}
 				

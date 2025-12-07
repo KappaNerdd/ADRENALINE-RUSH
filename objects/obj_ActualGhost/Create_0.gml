@@ -1,7 +1,8 @@
 frame = 0;
 image_blend = c_white;
 
-var _recordName = string(global.speedStageData[global.SpeedSelected].record_File) + ".sav";
+var _dir = working_directory + "/ghosts" + string(global.speedStageData[global.SpeedSelected].folder_Name);
+var _recordName = _dir + string(global.speedStageData[global.SpeedSelected].record_File) + ".sav";
 
 ghostFileName = _recordName;
 

@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_Replay",
+    "path":"sprites/spr_Replay/spr_Replay.yy",
+  },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

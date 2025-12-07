@@ -19,7 +19,9 @@ if !transComplete {
 			if !transComplete {
 				transComplete = true;
 				
-				if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+				var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
+				
+				if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 					load_game(global.saveFile);
 				}
 			}
@@ -37,8 +39,10 @@ if !transComplete {
 			obj_Player.can_Move = true;
 			obj_Player.can_MoveFULL = true;
 		}
+		
+		var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
 			
-		if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+		if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 			if instance_exists(obj_Player) {
 				obj_Player.x = global.statData[0].save_x;
 				obj_Player.y = global.statData[0].save_y;

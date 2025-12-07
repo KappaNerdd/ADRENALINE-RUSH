@@ -16,8 +16,9 @@ if instance_exists(obj_TitleCursor) {
 	}
 }
 
+var _dir = working_directory + "/saves/" + string(global.saveFile);
 
-if file_exists("TBAHSSaveData" + string(global.saveFile) + ".sav") {
+if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 	if instance_exists(obj_TitleCursor) {
 		if obj_TitleCursor.canMove == true {
 			if place_meeting(x, y, obj_TitleCursor) && (jump_Key or device_mouse_check_button_pressed(0, mb_left)) && newGame == false && !instance_exists(obj_RoomTransParent) {

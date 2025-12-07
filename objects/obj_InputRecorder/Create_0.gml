@@ -2,6 +2,8 @@ if instance_number(object_index) > 1 {
     instance_destroy();
 }
 
+x = -100000;
+
 //Keys Enum
 enum eKey {
     LeftPressed,
@@ -9,47 +11,31 @@ enum eKey {
     UpPressed,
     DownPressed,
 	
+	LeftReleased,
+    RightReleased,
+    UpReleased,
+    DownReleased,
+	
+	
     JumpPressed,
 	JumpHeld,
+	JumpReleased,
 	
 	ActionPressed,
 	ActionHeld,
+	ActionReleased,
 	
 	BoostPressed,
 	BoostHeld,
+	BoostReleased,
 	
 	SwapPressed,
 	
 	Special1Pressed,
 	Special1Held,
+	Special1Released,
 	
 	Special2Pressed,
-	Special2Held,
-
-
-
-    LeftReleased,
-    RightReleased,
-    UpReleased,
-    DownReleased,
-	
-	JumpReleased,
-	JumpPReleased,
-	
-	ActionReleased,
-	ActionPReleased,
-	
-	BoostReleased,
-	BoostPReleased,
-	
-	SwapReleased,
-	
-	Special1Released,
-	Special1PReleased,
-	
-	Special2Released,
-	Special2PReleased,
-	
 
     NUM_KEYS
 }
@@ -75,3 +61,12 @@ index = 0;
 //Arrays to store the keys to record, and the recorded values and frames
 input = array_create(eKey.NUM_KEYS, false);
 inputSequence = [0, 0];
+
+holdSpec1 = false;
+reSpec1 = false;
+
+if global.MIND or global.PlayerChar == 0 {
+	sprite_index = spr_ReplayHead;
+}
+
+visibleTimer = 30;

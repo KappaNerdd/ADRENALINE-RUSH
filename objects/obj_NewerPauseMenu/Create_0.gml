@@ -147,10 +147,6 @@ instance_activate_object(obj_StageTrackerSpeed);
 instance_activate_object(obj_NekoPresenceDemo);
 instance_activate_object(obj_ControllerSystem);
 
-if instance_exists(obj_InputRecorder) {
-	instance_activate_object(obj_InputRecorder);
-}
-
 instance_activate_object(obj_CustomLeftKeySpeed);
 instance_activate_object(obj_CustomRightKeySpeed);
 instance_activate_object(obj_CustomUpKeySpeed);

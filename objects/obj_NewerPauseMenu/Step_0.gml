@@ -297,7 +297,7 @@ if !done {
 						if _choiceLength[choice][1] == freeplayS {
 							var _transit = instance_create_depth(-100000, 0, depth, _trans);
 							
-							_transit.target_rm = rm_Freeplay;
+							_transit.target_rm = rm_FreeplayNew;
 							
 							if !audio_is_paused(pause) {
 								audio_stop_sound(pause);

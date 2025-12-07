@@ -37,6 +37,11 @@ if movedX <= -495 && goal && !instance_exists(obj_RoomTransitionSEGAMenu) {
 		if instance_exists(obj_InputRecorder) {
 			instance_destroy(obj_InputRecorder);
 		}
+		
+		global.Replay = false;
+		global.PlayerChar = global.SelectedPlayer;
+		global.PlayerCostume = global.SelectedCostume;
+		global.Girly = global.PlayerSelection[global.SelectedPlayer][0][1];
 	}
 	
 	with(instance_create_depth(-1000000, 0, 0, obj_RoomTransitionSEGAMenu)) {

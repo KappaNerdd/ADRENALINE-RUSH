@@ -83,7 +83,8 @@ function save_Speed_Stage(_fileNum = 0) {
 
 	//Saving Level Data
 	if instance_exists(obj_SavBox) or global.Freeplay {
-		var _filename = string(global.SpeedDataFile) + string(_fileNum) + ".sav";
+		var _dir = working_directory + "/saves/" + string(_fileNum);
+		var _filename = _dir + string(global.SpeedDataFile) + string(_fileNum) + ".sav";
 		var _json = json_stringify(global.speedStageData);
 		var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);
 	
@@ -97,7 +98,8 @@ function save_Speed_Stage(_fileNum = 0) {
 ///Speed Stage Loading
 function load_Speed_Stage(_fileNum = 0) {
 	//Loading our save data
-	var _filename = string(global.SpeedDataFile) + string(_fileNum) + ".sav";
+	var _dir = working_directory + "/saves/" + string(_fileNum);
+	var _filename = _dir + string(global.SpeedDataFile) + string(_fileNum) + ".sav";
 		
 	if !file_exists(_filename) {
 		exit;

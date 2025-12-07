@@ -11,6 +11,7 @@ if ghostRecord && instance_exists(obj_Player) {
 		_frametoRecord[? "y"] = y;
 		_frametoRecord[? "xscale"] = image_xscale;
 		_frametoRecord[? "yscale"] = image_yscale;
+		_frametoRecord[? "angle"] = drawAngle;
 		_frametoRecord[? "sprite"] = sprite_index;
 		_frametoRecord[? "image"] = image_index;
 	}

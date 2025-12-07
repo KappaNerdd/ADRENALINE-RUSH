@@ -238,10 +238,10 @@ if !finished {
 					
 					obj_SFXManager.homingLockOn = true;
 					
-					if global.PlayerCostume > 0 {
-						global.PlayerCostume--;
+					if global.SelectedCostume > 0 {
+						global.SelectedCostume--;
 					} else {
-						global.PlayerCostume = _costumeLength - 1;
+						global.SelectedCostume = _costumeLength - 1;
 					}
 				}
 				
@@ -254,17 +254,17 @@ if !finished {
 					
 					obj_SFXManager.homingLockOn = true;
 					
-					if global.PlayerCostume < _costumeLength - 1 {
-						global.PlayerCostume++;
+					if global.SelectedCostume < _costumeLength - 1 {
+						global.SelectedCostume++;
 					} else {
-						global.PlayerCostume = 0;
+						global.SelectedCostume = 0;
 					}
 				}
 			}
 		}
 		
-		if global.PlayerCostume > _costumeLength - 1 {
-			global.PlayerCostume = _costumeLength - 1;
+		if global.SelectedCostume > _costumeLength - 1 {
+			global.SelectedCostume = _costumeLength - 1;
 		}
 	#endregion
 	
@@ -322,6 +322,7 @@ if !finished {
 		charSpriteAlpha = lerp(charSpriteAlpha, 1, 0.05);
 		charSpriteX = lerp(charSpriteX, 50, 0.05);
 		global.PlayerChar = global.SelectedPlayer;
+		global.PlayerCostume = global.SelectedCostume;
 		
 		if ballScale < 1.5 {
 			ballScale += 0.075;
@@ -364,7 +365,7 @@ if !finished {
 	if ballScale <= 0.5 {
 		if !instance_exists(obj_RoomTransParent) {
 			with(instance_create_depth(-1000000, 0, 0, obj_RoomTransitionSEGAMenu)) {
-				target_rm = rm_Freeplay;
+				target_rm = rm_FreeplayNew;
 			}
 		}
 	}

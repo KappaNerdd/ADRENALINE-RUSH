@@ -2,7 +2,9 @@ getCharacterControls();
 
 sprite_index = obj_TitleBoxParent.sprite_index;
 
-if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
+
+if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 	if place_meeting(x, y, obj_TitleCursor) && global.TitleOpt == "MAIN MENU" && !obj_SAGE2025Chars.characters {
 		image_blend = c_blue;
 		

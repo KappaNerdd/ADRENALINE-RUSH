@@ -13,7 +13,9 @@ if fileHovered {
 	_backHealthCol = c_maroon;
 }
 
-if file_exists(string(global.MainDataFile) + string(fileNum) + ".sav") {	
+var _dir = working_directory + "/saves/" + string(fileNum) + "/";
+
+if file_exists(_dir + string(global.MainDataFile) + string(fileNum) + ".sav") {	
 	//Player
 	_liveSprite = playerSprite;
 	_charCostume = playerCostume;

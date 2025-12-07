@@ -29,7 +29,9 @@
 
 ///-----File Select-----///
 if room == rm_FileSelect {
-	if !file_exists(string(global.PastMindDataFile) + ".sav") {
+	var _dir = working_directory + "/saves/";
+	
+	if !file_exists(_dir + string(global.PastMindDataFile) + ".sav") {
 		set_song_ingame(noone, 60, 0);
 	} else {
 		set_song_ingame(mus_CestLaVie, 30, 20);

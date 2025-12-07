@@ -1,5 +1,5 @@
 #region //Depth, Image Alpha, Image Scale & BPM
-	depth = -1;
+	depth = -10;
 	image_alpha = 0;
 	image_xscale = 12;
 	image_yscale = 12;

@@ -5,7 +5,7 @@ zoomHeight = 0.5;
 
 depth = -100000000000;
 
-show_debug_overlay(true);
+//show_debug_overlay(true);
 
 showConText = false;
 finConText = true;

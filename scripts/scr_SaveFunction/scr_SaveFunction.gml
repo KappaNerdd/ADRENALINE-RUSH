@@ -23,7 +23,8 @@ function save_game(_fileNum = 0) {
 
 	
 	//Actual Saving
-	var _filename = string(global.MainDataFile) + string(_fileNum) + ".sav";
+	var _dir = working_directory + "/saves/" + string(_fileNum) + "/";
+	var _filename = _dir + string(global.MainDataFile) + string(_fileNum) + ".sav";
 	var _json = json_stringify(global.statData);
 	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);
 	
@@ -36,7 +37,8 @@ function save_game(_fileNum = 0) {
 //Overall Loading
 function load_game(_fileNum = 0) {
 	//Loading our save data
-	var _filename = string(global.MainDataFile) + string(_fileNum) + ".sav";
+	var _dir = working_directory + "/saves/" + string(_fileNum) + "/";
+	var _filename = _dir + string(global.MainDataFile) + string(_fileNum) + ".sav";
 	
 	if !file_exists(_filename) {
 		exit;
@@ -91,7 +93,6 @@ function load_game(_fileNum = 0) {
 	global.PlayerTimeHours = global.statData[0].player_TimeHours;
 	global.PlayerExtraLives = global.statData[0].player_ExtraLives;
 }
-
 
 
 
@@ -281,7 +282,8 @@ function scr_SaveFiles() {
 	
 	
 	//Actual Saving
-	var _filename = "SAVEFILESDATA.sav";
+	var _dir = working_directory + "/global/";
+	var _filename = _dir + "SAVEFILESDATA.sav";
 	var _json = json_stringify(_saveArray);
 	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);
 	
@@ -294,7 +296,8 @@ function scr_SaveFiles() {
 //Loading Files
 function scr_LoadFiles() {
 	//Loading our save data
-	var _filename = "SAVEFILESDATA.sav";
+	var _dir = working_directory + "/saves/"
+	var _filename = _dir + "SAVEFILESDATA.sav";
 	
 	if !file_exists(_filename) {
 		exit;

@@ -32,7 +32,7 @@ if image_index >= 36 {
 		instance_create_depth(x, y, depth, obj_ActualGhost);
 	}
 	
-	if instance_exists(obj_GhostRecorder) {
+	if instance_exists(obj_GhostRecorder) && !global.Replay {
 		obj_GhostRecorder.ghostRecord = true;
 	}
 	

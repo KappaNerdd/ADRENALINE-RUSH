@@ -26,7 +26,8 @@ function save_options() {
 	
 
 	//Actual Saving
-	var _filename = string(global.OptionsDataFile) + ".sav";
+	var _dir = working_directory + "/options/";
+	var _filename = _dir + string(global.OptionsDataFile) + ".sav";
 	var _json = json_stringify(global.optionsData);
 	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);
 	
@@ -39,7 +40,8 @@ function save_options() {
 	
 function load_options() {
 	//Loading our save data
-	var _filename = string(global.OptionsDataFile) + ".sav";
+	var _dir = working_directory + "/options/";
+	var _filename = _dir + string(global.OptionsDataFile) + ".sav";
 		
 	if !file_exists(_filename) {
 		exit;
@@ -169,7 +171,8 @@ function scr_SaveControls() {
 	global.optionsControls[3].charge = global.ChargeButtonAction;
 	
 	//Actual Saving
-	var _filename = string(global.ControlsDataFile) + ".sav";
+	var _dir = working_directory + "/options/";
+	var _filename = _dir + string(global.ControlsDataFile) + ".sav";
 	var _json = json_stringify(global.optionsControls);
 	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);
 	
@@ -182,7 +185,8 @@ function scr_SaveControls() {
 //Load Controls
 function scr_LoadControls() {
 	//Loading our save data
-	var _filename = string(global.ControlsDataFile) + ".sav";
+	var _dir = working_directory + "/options/";
+	var _filename = _dir + string(global.ControlsDataFile) + ".sav";
 		
 	if !file_exists(_filename) {
 		exit;

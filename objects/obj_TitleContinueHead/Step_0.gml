@@ -1,6 +1,8 @@
 getCharacterControls();
 
-if !file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
+
+if !file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 	image_alpha = 0.5;
 } else {
 	image_alpha = 1;
@@ -28,7 +30,7 @@ if instance_exists(obj_TitleCursor) {
 }
 
 
-if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 	if place_meeting(x, y, obj_TitleCursor) && (jump_Key or device_mouse_check_button_pressed(0, mb_left)) && continueGame == false && !instance_exists(obj_RoomTransParent) {
 		continueGame = true;
 		obj_SFXManager.menuConfirm = true;
@@ -51,6 +53,6 @@ if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 		obj_TitleCursor.canMove = true;
 	}
 
-} else if !file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") && place_meeting(x, y, obj_TitleCursor) && (jump_Key or device_mouse_check_button_pressed(0, mb_left)) {
+} else if !file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") && place_meeting(x, y, obj_TitleCursor) && (jump_Key or device_mouse_check_button_pressed(0, mb_left)) {
 	obj_SFXManager.menuCancel = true;
 }

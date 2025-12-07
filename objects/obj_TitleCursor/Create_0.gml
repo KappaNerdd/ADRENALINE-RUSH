@@ -14,9 +14,9 @@ image_speed = 0;
 preMouseX = 0;
 preMouseY = 0;
 
+var _dir = working_directory + "/saves/";
 
-
-if room == rm_TitleNormal or room == rm_Freeplay or (room == rm_FileSelect && file_exists(string(global.PastMindDataFile) + ".sav")) {
+if room == rm_TitleNormal or room == rm_Freeplay or (room == rm_FileSelect && file_exists(_dir + string(global.PastMindDataFile) + ".sav")) {
 	normalCursor = spr_MCursorNormal;
 	confirmCursor = spr_MCursorConfirm;
 } else {

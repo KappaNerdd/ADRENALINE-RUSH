@@ -82,7 +82,9 @@ if !global.copyFile && !global.deleteFile {
 	
 	
 		if confirmedTimer > 115 {
-			if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+			var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
+			
+			if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 				load_Speed_Stage(global.saveFile);
 			}
 		}
@@ -94,9 +96,10 @@ if !global.copyFile && !global.deleteFile {
 		if confirmedTimer <= 0 {
 			if !instance_exists(obj_RoomTransitionSEGAMenu) {
 				var instantiated = instance_create_depth(0, 0, -99999999, obj_RoomTransitionSEGAMenu);
-			
-				if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
-					if !file_exists(string(global.NoMindDataFile) + string(global.saveFile) + ".sav") {
+				var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
+				
+				if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+					if !file_exists(_dir + string(global.NoMindDataFile) + string(global.saveFile) + ".sav") {
 						instantiated.target_rm = rm_Splash1;
 					} else {
 						instantiated.target_rm = rm_Splash1Normal;
@@ -120,7 +123,9 @@ if !global.copyFile && !global.deleteFile {
 		
 		if !global.copyingFile {
 			if jump_Key or device_mouse_check_button_pressed(0, mb_left) {
-				if !file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+				var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
+				
+				if !file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 					obj_SFXManager.menuCancel = true;
 					image_blend = c_red;
 				} else {
@@ -158,20 +163,21 @@ if !global.copyFile && !global.deleteFile {
 					obj_SFXManager.funkinLocked = true;
 					image_blend = c_red;
 				} else {
+					var _dir = working_directory + "/saves/" + string(global.copiedFileNum) + "/";
 					obj_SFXManager.rushTrickFinish = true;
 					
-					if file_exists(string(global.MainDataFile) + string(global.copiedFileNum) + ".sav") {
-						file_copy(string(global.MainDataFile) + string(global.copiedFileNum) + ".sav", string(global.MainDataFile) + string(global.saveFile) + ".sav");
+					if file_exists(_dir + string(global.MainDataFile) + string(global.copiedFileNum) + ".sav") {
+						file_copy(_dir + string(global.MainDataFile) + string(global.copiedFileNum) + ".sav", _dir + string(global.MainDataFile) + string(global.saveFile) + ".sav");
 					}
 	
 					//Delete saved rank data
-					if file_exists(string(global.SpeedDataFile) + string(global.copiedFileNum) + ".sav") {
-						file_copy(string(global.SpeedDataFile) + string(global.copiedFileNum) + ".sav", string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
+					if file_exists(_dir + string(global.SpeedDataFile) + string(global.copiedFileNum) + ".sav") {
+						file_copy(_dir + string(global.SpeedDataFile) + string(global.copiedFileNum) + ".sav", _dir + string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
 					}
 	
 					//Delete saved rank data
-					if file_exists(string(global.ActionDataFile) + string(global.copiedFileNum) + ".sav") {
-						file_copy(string(global.ActionDataFile) + string(global.copiedFileNum) + ".sav", string(global.ActionDataFile) + string(global.saveFile) + ".sav");
+					if file_exists(_dir + string(global.ActionDataFile) + string(global.copiedFileNum) + ".sav") {
+						file_copy(_dir + string(global.ActionDataFile) + string(global.copiedFileNum) + ".sav", _dir + string(global.ActionDataFile) + string(global.saveFile) + ".sav");
 					}
 					
 					if file_exists(string(global.NoMindDataFile) + string(global.copiedFileNum) + ".sav") {
@@ -359,7 +365,9 @@ if !global.copyFile && !global.deleteFile {
 		
 		if !global.deletingFile {
 			if jump_Key or device_mouse_check_button_pressed(0, mb_left) {
-				if !file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+				var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
+				
+				if !file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
 					obj_SFXManager.menuCancel = true;
 					image_blend = c_red;
 				} else {
@@ -372,23 +380,24 @@ if !global.copyFile && !global.deleteFile {
 			if jump_Key or device_mouse_check_button_pressed(0, mb_left) {
 				obj_SFXManager.crowdAww = true;
 				obj_SFXManager.funkinLocked = true;
+				var _dir = working_directory + "/saves/" + string(global.saveFile) + "/";
 				
-				if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
-					file_delete(string(global.MainDataFile) + string(global.saveFile) + ".sav");
+				if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+					file_delete(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav");
 				}
 	
 				//Delete saved rank data
-				if file_exists(string(global.SpeedDataFile) + string(global.saveFile) + ".sav") {
-					file_delete(string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
+				if file_exists(_dir + string(global.SpeedDataFile) + string(global.saveFile) + ".sav") {
+					file_delete(_dir + string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
 				}
 	
 				//Delete saved rank data
-				if file_exists(string(global.ActionDataFile) + string(global.saveFile) + ".sav") {
-					file_delete(string(global.ActionDataFile) + string(global.saveFile) + ".sav");
+				if file_exists(_dir + string(global.ActionDataFile) + string(global.saveFile) + ".sav") {
+					file_delete(_dir + string(global.ActionDataFile) + string(global.saveFile) + ".sav");
 				}
 				
-				if file_exists(string(global.NoMindDataFile) + string(global.saveFile) + ".sav") {
-					file_delete(string(global.NoMindDataFile) + string(global.saveFile) + ".sav");
+				if file_exists(_dir + string(global.NoMindDataFile) + string(global.saveFile) + ".sav") {
+					file_delete(_dir + string(global.NoMindDataFile) + string(global.saveFile) + ".sav");
 				}
 				
 				

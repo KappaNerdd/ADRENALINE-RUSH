@@ -1,5 +1,7 @@
-var _camX = camera_get_view_x(view_camera[0]);
-var _camY = camera_get_view_y(view_camera[0]);
+display_set_gui_size(768, 432);
+
+var _camX = 0;
+var _camY = 0;
 
 //[28][3]
 

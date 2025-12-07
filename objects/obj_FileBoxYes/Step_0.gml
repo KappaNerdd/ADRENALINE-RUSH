@@ -26,19 +26,21 @@ if hovered == true && confirmed == false && confirm_Key {
 	obj_FileBoxNo.visible = false;
 	confirmed = true;
 	
+	var _dir = working_directory + "/saves/" + string(global.saveFile);
+	
 	//Delete overall data
-	if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
-		file_delete(string(global.MainDataFile) + string(global.saveFile) + ".sav");
+	if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+		file_delete(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav");
 	}
 	
 	//Delete saved rank data
-	if file_exists(string(global.SpeedDataFile) + string(global.saveFile) + ".sav") {
-		file_delete(string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
+	if file_exists(_dir + string(global.SpeedDataFile) + string(global.saveFile) + ".sav") {
+		file_delete(_dir + string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
 	}
 	
 	//Delete saved rank data
-	if file_exists(string(global.ActionDataFile) + string(global.saveFile) + ".sav") {
-		file_delete(string(global.ActionDataFile) + string(global.saveFile) + ".sav");
+	if file_exists(_dir + string(global.ActionDataFile) + string(global.saveFile) + ".sav") {
+		file_delete(_dir + string(global.ActionDataFile) + string(global.saveFile) + ".sav");
 	}
 	
 	//Delete save file array

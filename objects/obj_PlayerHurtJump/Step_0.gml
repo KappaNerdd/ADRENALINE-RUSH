@@ -10,7 +10,7 @@ if instance_exists(obj_Player) && !instance_exists(obj_CutsceneParent) {
 		}
 		
 		
-		if action1_Key {
+		if obj_Player.action1_Key {
 			if obj_Player.sonicRush {
 				obj_SFXManager.sonicRushTrick = true;
 				obj_SFXManager.sonicRush = true;

@@ -28,16 +28,6 @@ function scr_EnemyCreate() {
 function scr_EnemyStep() {
 	var _touchedPlayer = instance_place(x, y, obj_Player);
 	
-	var _time = current_time;
-	
-	while current_time - _time < _hitLag {  
-		
-	}
-
-	if _hitLag > 0 {
-		_hitLag -= _hitLag;
-	}
-	
 	if enemyHealth > 0 && (place_meeting(x, y, obj_StompVFX) or place_meeting(x, y, obj_StompingVFX) or place_meeting(x, y, obj_RushBoostBreak)) {
 		enemyHealth -= enemyHealth;
 		obj_SFXManager.enemyExplode = true;
@@ -49,7 +39,7 @@ function scr_EnemyStep() {
 	if _touchedPlayer && (!killed && !launched && enemyHealth > 0) {
 		if (_touchedPlayer.attacking && !_touchedPlayer.playerHurt) {
 			enemyHealth -= enemyHealth;
-			obj_SFXManager.enemyExplode = true;
+			obj_SFXManager.UndertaleDamage = true;
 			
 			scr_ScreenShake();
 			scr_ControllerRumble();
@@ -140,7 +130,7 @@ function scr_EnemyStep() {
 				}
 				
 				instance_destroy();
-				obj_SFXManager.enemyExplode = true;
+				obj_SFXManager.UndertaleDamage = true;
 			}
 		} else {
 			if !launched {
@@ -203,9 +193,10 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 		global.Health -= _damage / _ringMult;
 		
 		scr_StopCharShit();
-		
 		scr_ScreenShake();
 		scr_ControllerRumble();
+		scr_LoseTrinkets();
+		scr_StopCharControls();
 		
 		scr_BonusPoints(-1000 * (_damage / 100000));
 	
@@ -228,6 +219,7 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 		obj_Player.playerHurt = true;
 		obj_Player.invincible = true;
 		
+		
 		if obj_Player.enemyCombo > 0 {
 			obj_Player.enemyCombo = 0;
 		}
@@ -247,8 +239,6 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 		
 		obj_SFXManager.playerHurt = true;
 	}
-	
-	scr_LoseTrinkets();
 }
 
 function scr_LoseTrinkets(_loseRings = 50) {

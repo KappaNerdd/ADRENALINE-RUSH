@@ -1,6 +1,8 @@
 image_alpha = 0;
 depth = -10;
 
+x = -1000000;
+
 transComplete = false;
 color = c_black;
 colorRed = 0;

@@ -136,6 +136,88 @@ function scr_RenameFiles() {
 			file_rename("TBAHSCONTROLSDATA.sav", global.ControlsDataFile + ".sav");
 		}
 	#endregion
+	
+	#region //Move Files
+		scr_MoveFiles();
+	#endregion
 }
 
-
+function scr_MoveFiles() {
+	var _dir = working_directory;
+	
+	#region //Main
+		var _mainDir = working_directory + "/saves/";
+		
+		for(var m = 0; m < 7; m++) {
+			if file_exists(_dir + string(global.MainDataFile) + string(m) + ".sav") {
+				file_copy(_dir + string(global.MainDataFile) + string(m) + ".sav", _mainDir + string(m) + "/" + string(global.MainDataFile) + string(m) + ".sav");
+				
+				file_delete(_dir + string(global.MainDataFile) + string(m) + ".sav");
+			}
+		}
+	#endregion
+	
+	#region //Speed
+		for(var s = 0; s < 7; s++) {
+			if file_exists(_dir + string(global.SpeedDataFile) + string(s) + ".sav") {
+				file_copy(_dir + string(global.SpeedDataFile) + string(s) + ".sav", _mainDir + string(s) + "/" + string(global.SpeedDataFile) + string(s) + ".sav");
+				
+				file_delete(_dir + string(global.SpeedDataFile) + string(s) + ".sav");
+			}
+		}
+	#endregion
+	
+	#region //Action
+		for(var a = 0; a < 7; a++) {
+			if file_exists(_dir + string(global.ActionDataFile) + string(a) + ".sav") {
+				file_copy(_dir + string(global.ActionDataFile) + string(a) + ".sav", _mainDir + string(a) + "/" + string(global.ActionDataFile) + string(a) + ".sav");
+				
+				file_delete(_dir + string(global.ActionDataFile) + string(a) + ".sav");
+			}
+		}
+	#endregion
+	
+	#region //All Saves
+		if file_exists(_dir + "SAVEFILESDATA.sav") {
+			file_copy(_dir + "SAVEFILESDATA.sav", _mainDir + "SAVEFILESDATA.sav");
+			
+			file_delete(_dir + "SAVEFILESDATA.sav");
+		}
+	#endregion
+	
+	#region //No Mind
+		for(var n = 0; n < 7; n++) {
+			if file_exists(_dir + string(global.NoMindDataFile) + string(n) + ".sav") {
+				file_copy(_dir + string(global.NoMindDataFile) + string(n) + ".sav", _mainDir + string(n) + "/" + string(global.NoMindDataFile) + string(n) + ".sav");
+				
+				file_delete(_dir + string(global.NoMindDataFile) + string(n) + ".sav");
+			}
+		}
+	#endregion
+	
+	#region //Past Mind
+		if file_exists(_dir + string(global.PastMindDataFile) + ".sav") {
+			file_copy(_dir + string(global.PastMindDataFile) + ".sav", _mainDir + string(global.PastMindDataFile) + ".sav");
+			
+			file_delete(_dir + string(global.PastMindDataFile) + ".sav");
+		}
+	#endregion
+	
+	#region //Options
+		var _optDir = working_directory + "/options/";
+	
+		if file_exists(_dir + string(global.OptionsDataFile) + ".sav") {
+			file_copy(_dir + string(global.OptionsDataFile) + ".sav", _optDir + string(global.OptionsDataFile) + ".sav");
+			
+			file_delete(_dir + string(global.OptionsDataFile) + ".sav");
+		}
+	#endregion
+	
+	#region //Controls	
+		if file_exists(_dir + string(global.ControlsDataFile) + ".sav") {
+			file_copy(_dir + string(global.ControlsDataFile) + ".sav", _optDir + string(global.ControlsDataFile) + ".sav");
+			
+			file_delete(_dir + string(global.ControlsDataFile) + ".sav");
+		}
+	#endregion
+}

@@ -107,6 +107,26 @@
 #endregion
 
 #region ///-----File BS-----///
+	if !directory_exists("saves") {
+		directory_create("saves");
+	}
+	
+	if !directory_exists("global") {
+		directory_create("global");
+	}
+	
+	if !directory_exists("options") {
+		directory_create("options");
+	}
+
+	if !directory_exists("ghosts") {
+		directory_create("ghosts");
+	}
+	
+	if !directory_exists("replay") {
+		directory_create("replay");
+	}
+
 	global.Replay = false;
 
 	//File Names
@@ -1215,7 +1235,7 @@
 			
 			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly,
 		
-			requirement: "condit_StoryMode", record_File: "mind1_Ghost",
+			requirement: "condit_StoryMode", record_File: "mind1_Ghost", folder_Name: "/mind1/",
 		},
 	
 		{ //MIND Level 2
@@ -1239,7 +1259,7 @@
 			
 			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly,
 		
-			requirement: "condit_StoryMode", record_File: "mind2_Ghost",
+			requirement: "condit_StoryMode", record_File: "mind2_Ghost", folder_Name: "/mind2/",
 		},
 		
 		{ //MIND Level Boss
@@ -1263,7 +1283,7 @@
 			
 			musicTrack: mus_DisturbingMind, musicTrackGirly: mus_DisturbingMindGirly, 
 		
-			requirement: "condit_StoryMode", record_File: "mindBoss_Ghost",
+			requirement: "condit_StoryMode", record_File: "mindBoss_Ghost", folder_Name: "/mind_boss/",
 		},
 		
 		{ //MIND Bonus 1
@@ -1287,7 +1307,7 @@
 			
 			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly,
 		
-			requirement: "condit_CRankMind", record_File: "mindBonus1_Ghost",
+			requirement: "condit_CRankMind", record_File: "mindBonus1_Ghost", folder_Name: "/mind_b1/",
 		},
 		
 		{ //MIND Bonus 2
@@ -1311,7 +1331,7 @@
 			
 			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly, 
 		
-			requirement: "condit_CRankMind", record_File: "mindBonus2_Ghost",
+			requirement: "condit_CRankMind", record_File: "mindBonus2_Ghost", folder_Name: "/mind_b2/",
 		},
 		
 		{ //HOMETOWN (DAY) Level 1
@@ -1335,7 +1355,7 @@
 			
 			musicTrack: mus_Sunlight, musicTrackGirly: mus_SunlightGirly, 
 		
-			requirement: "condit_StoryMode", record_File: "OTD1_Ghost",
+			requirement: "condit_StoryMode", record_File: "OTD1_Ghost", folder_Name: "/othertown_day1/",
 		},
 		
 		{ //HOMETOWN (DAY) Level 2
@@ -1359,7 +1379,7 @@
 			
 			musicTrack: mus_Sunlight, musicTrackGirly: mus_SunlightGirly, 
 		
-			requirement: "condit_Available", record_File: "OTD2_Ghost",
+			requirement: "condit_Available", record_File: "OTD2_Ghost", folder_Name: "/othertown_day2/",
 		},
 		
 		{ //HOMETOWN (DAY) Level 3
@@ -1383,7 +1403,7 @@
 			
 			musicTrack: mus_Sunlight, musicTrackGirly: mus_SunlightGirly, 
 		
-			requirement: "condit_Available", record_File: "OTD3_Ghost",
+			requirement: "condit_Available", record_File: "OTD3_Ghost", folder_Name: "/othertown_day3/",
 		},
 		
 		{ //HOMETOWN (NIGHT) Level 1
@@ -1407,11 +1427,11 @@
 			
 			musicTrack: mus_Moonlight, musicTrackGirly: mus_MoonlightGirly, 
 		
-			requirement: "condit_StoryMode", record_File: "OTN1_Ghost",
+			requirement: "condit_StoryMode", record_File: "OTN1_Ghost", folder_Name: "/othertown_night1/",
 		},
 		
 		{ //HOMETOWN (NIGHT) Level 2
-			stage_Name: "level_OTN", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescOTD2", level_Num: 2, level_Icon: spr_LevelIconOTN, stage_RM: rm_HometownNSpeed1, levelForced: false,
+			stage_Name: "level_OTN", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescOTN2", level_Num: 2, level_Icon: spr_LevelIconOTN, stage_RM: rm_HometownNSpeed1, levelForced: false,
 		
 			rankS_Time: 114, rankA_Time: 119, rankB_Time: 124, rankC_Time: 129, rankD_Time: 134, rankF_Time: 139,
 			
@@ -1431,7 +1451,7 @@
 			
 			musicTrack: mus_Moonlight, musicTrackGirly: mus_MoonlightGirly, 
 		
-			requirement: "condit_Available", record_File: "OTN2_Ghost",
+			requirement: "condit_Available", record_File: "OTN2_Ghost", folder_Name: "/othertown_night2/",
 		},
 	
 	]

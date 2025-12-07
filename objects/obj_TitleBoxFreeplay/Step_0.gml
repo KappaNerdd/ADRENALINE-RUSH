@@ -55,7 +55,7 @@ if continuing {
 				global.PlayerChar = 1;
 			}
 			
-			_inst.target_rm = rm_Freeplay;
+			_inst.target_rm = rm_FreeplayNew;
 		}
 	}
 } else {

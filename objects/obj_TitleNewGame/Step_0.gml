@@ -22,22 +22,24 @@ if jump_Key && newGameYes && !deleting {
 	obj_SFXManager.menuPop = true;
 	deleting = true;
 	
-	if file_exists(string(global.MainDataFile) + string(global.saveFile) + ".sav") {
-		file_delete(string(global.MainDataFile) + string(global.saveFile) + ".sav");
+	var _dir = working_directory + "/saves/" + string(global.saveFile);
+	
+	if file_exists(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav") {
+		file_delete(_dir + string(global.MainDataFile) + string(global.saveFile) + ".sav");
 	}
 	
 	//Delete saved rank data
-	if file_exists(string(global.SpeedDataFile) + string(global.saveFile) + ".sav") {
-		file_delete(string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
+	if file_exists(_dir + string(global.SpeedDataFile) + string(global.saveFile) + ".sav") {
+		file_delete(_dir + string(global.SpeedDataFile) + string(global.saveFile) + ".sav");
 	}
 	
 	//Delete saved rank data
-	if file_exists(string(global.ActionDataFile) + string(global.saveFile) + ".sav") {
-		file_delete(string(global.ActionDataFile) + string(global.saveFile) + ".sav");
+	if file_exists(_dir + string(global.ActionDataFile) + string(global.saveFile) + ".sav") {
+		file_delete(_dir + string(global.ActionDataFile) + string(global.saveFile) + ".sav");
 	}
 	
-	if file_exists(string(global.NoMindDataFile) + string(global.saveFile) + ".sav") {
-		file_delete(string(global.NoMindDataFile) + string(global.saveFile) + ".sav");
+	if file_exists(_dir + string(global.NoMindDataFile) + string(global.saveFile) + ".sav") {
+		file_delete(_dir + string(global.NoMindDataFile) + string(global.saveFile) + ".sav");
 	}
 }
 

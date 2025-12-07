@@ -172,7 +172,9 @@ if !confirm {
 	
 	#region //Replay Button
 		if speedStage && chosen {
-			if file_exists(string(global.speedStageData[global.SpeedSelected].record_File) + "Replay.sav") {
+			var _dir = working_directory + "/replay" + string(global.speedStageData[global.SpeedSelected].folder_Name);
+			
+			if file_exists(_dir + string(global.speedStageData[global.SpeedSelected].record_File) + "Replay.sav") && file_exists(_dir + "Char" + string(global.speedStageData[global.SpeedSelected].record_File) + "Replay.sav") {
 				if action1_Key {
 					global.Replay = true;
 					obj_SFXManager.funkinCheckpoint = true;

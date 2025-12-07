@@ -1,13 +1,10 @@
-x = -1000000;
-instance_create_depth(-100000, 0, 0, obj_MusicTag);
+if global.Replay {
+	fileName = string(global.speedStageData[global.SpeedSelected].record_File) + "Replay.sav";
 
-if !global.Girly {
-	playTrack = global.speedStageData[global.SpeedSelected].musicTrack;
-} else {
-	playTrack = global.speedStageData[global.SpeedSelected].musicTrackGirly;
+	scr_LoadReplayChar(fileName);
 }
-	
-set_song_ingame(playTrack, 60, 30);
+
+x = -1000000;
 
 #region //Depth
 	depth = 2;

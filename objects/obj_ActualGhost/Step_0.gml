@@ -6,6 +6,7 @@ if instance_exists(obj_StageTrackerSpeed) {
 		y = frameData[? "y"];
 		image_xscale = frameData[? "xscale"];
 		image_yscale = frameData[? "yscale"];
+		image_angle = frameData[? "angle"];
 		sprite_index = frameData[? "sprite"];
 		image_index = frameData[? "image"];
 	

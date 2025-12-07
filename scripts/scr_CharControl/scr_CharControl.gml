@@ -38,6 +38,7 @@ function scr_BasicVariablesSpeedCreate() {
 		
 		jump_Key = false;
 		jump_Key_Held = false;
+		jump_Key_Released = false;
 		
 		action_Key = false;
 		action_Key_Held = false;
@@ -45,6 +46,7 @@ function scr_BasicVariablesSpeedCreate() {
 		
 		action1_Key = false;
 		action1_Key_Held = false;
+		action1_Key_Released = false;
 		
 		action2_Key = false;
 		action2_Key_Held = false;
@@ -52,9 +54,11 @@ function scr_BasicVariablesSpeedCreate() {
 		
 		action3_Key = false;
 		action3_Key_Held = false;
+		action3_Key_Released = false;
 	
 		action4_Key = false;
 		action4_Key_Held = false;
+		action4_Key_Released = false;
 	
 		pause_Key = false;
 	
@@ -153,9 +157,13 @@ function scr_BasicVariablesSpeedCreate() {
 function scr_BasicControlsSpeedStep1() {
 	#region //General Controls
 		if can_Move {
-			var _recorder = instance_find(obj_InputRecorder, 0);
+			if instance_exists(obj_StageTrackerSpeed) {
+				var _recorder = instance_find(obj_InputRecorder, 0);
 
-			if _recorder != noone && !_recorder.isPlaying {
+				if _recorder != noone && !_recorder.isPlaying {
+					getCharacterControls();
+				}
+			} else {
 				getCharacterControls();
 			}
 		} else {
@@ -913,77 +921,102 @@ function scr_StopPlayerHurt() {
 	obj_Player.can_Move = true;
 }
 
+function scr_StopCharControls() {
+	obj_Player.left_Key = false;
+	obj_Player.right_Key = false;
+	obj_Player.up_Key = false;
+	obj_Player.down_Key = false;
+	
+	obj_Player.jump_Key_Held = false;
+	obj_Player.action_Key_Held = false;
+	obj_Player.action1_Key_Held = false;
+	obj_Player.action2_Key_Held = false;
+}
+	
+function scr_StopCharControls2() {
+	left_Key = false;
+	right_Key = false;
+	up_Key = false;
+	down_Key = false;
+	
+	jump_Key_Held = false;
+	action_Key_Held = false;
+	action1_Key_Held = false;
+	action2_Key_Held = false;
+}
 
 function scr_Deceleration() {
-	if !railGrind && !sliding && !stomped {
-		if vel > 0 && !right_Key {
-			vel -= acc;
-		} else if vel < -2 && right_Key && !skid {
-			if ground {
-				vel += dcc * 8;
-				slowSkid = true;
+	if !playerHurt && !prepare {
+		if !railGrind && !sliding && !stomped {
+			if vel > 0 && !right_Key {
+				vel -= dcc / 2;
+			} else if vel < -2 && right_Key && !skid {
+				if ground {
+					vel += dcc * 7;
+					slowSkid = true;
+				} else {
+					vel += dcc;
+				}
 			} else {
-				vel += dcc;
+				slowSkid = false;
 			}
-		} else {
-			slowSkid = false;
-		}
 			
-		if vel < 0 && !left_Key {
-			vel += acc;
-		} else if vel > 2 && left_Key && !skid {
-			if ground {
-				vel -= dcc * 8;
-				slowSkid = true;
+			if vel < 0 && !left_Key {
+				vel += dcc / 2;
+			} else if vel > 2 && left_Key && !skid {
+				if ground {
+					vel -= dcc * 7;
+					slowSkid = true;
+				} else {
+					vel -= dcc;
+				}
 			} else {
-				vel -= dcc;
+				slowSkid = false;
 			}
-		} else {
+		}
+		
+		if !ground or railGrind {
 			slowSkid = false;
 		}
-	}
-		
-	if !ground or railGrind {
-		slowSkid = false;
-	}
 	
-	if !ground && !boost {
-		if yspd >= -5 && yspd < 0 && abs(vel) > max_Speed {
+		if !ground && !boost {
+			if yspd >= -5 && yspd < 0 && abs(vel) > max_Speed {
+				if vel > 0 {
+					vel -= dcc;
+				} else if vel < 0 {
+					vel += dcc;
+				}
+			}
+		}
+		
+		
+		if sliding {
 			if vel > 0 {
-				vel -= dcc;
+				vel -= dcc / 4;
 			} else if vel < 0 {
-				vel += dcc;
+				vel += dcc / 4;
 			}
 		}
-	}
-		
-		
-	if sliding {
-		if vel > 0 {
-			vel -= dcc / 4;
-		} else if vel < 0 {
-			vel += dcc / 4;
-		}
-	}
 	
-	//Give you a boost if you press SPACE while slowing down
-	if slowSkid {
-		if left_Key && action2_Key {
-			if !speedBreak {
-				vel = -max_Speed;
-			} else {
-				vel = -full_Speed;
-			}
+		//Give you a boost if you press SPACE while slowing down
+		if slowSkid {
+			if left_Key && action2_Key {
+				if !speedBreak {
+					vel = -max_Speed;
+				} else {
+					vel = -full_Speed;
+				}
 				
-			obj_SFXManager.airDashSound = true;
-		} else if right_Key && action2_Key {
-			if !speedBreak {
-				vel = max_Speed;
-			} else {
-				vel = full_Speed;
-			}
+				obj_SFXManager.airDashSound = true;
+			} else if right_Key && action2_Key {
+				if !speedBreak {
+					vel = max_Speed;
+				} else {
+					vel = full_Speed;
+				}
 			
-			obj_SFXManager.airDashSound = true;
+				obj_SFXManager.airDashSound = true;
+			}
 		}
 	}
 }
@@ -1122,7 +1155,7 @@ function scr_VariableJumping() {
 
 //Player Movement
 function scr_PlayerMoveLeft() {
-	if !playerHurt {
+	if !playerHurt && !prepare {
 		if !speedBreak {
 			if vel > -max_Speed {
 				vel -= acc;
@@ -1142,7 +1175,7 @@ function scr_PlayerMoveLeft() {
 }
 
 function scr_PlayerMoveRight() {
-	if !playerHurt {
+	if !playerHurt && !prepare {
 		if !speedBreak {
 			if vel < max_Speed {
 				vel += acc;

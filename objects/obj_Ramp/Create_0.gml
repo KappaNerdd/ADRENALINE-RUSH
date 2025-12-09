@@ -15,5 +15,7 @@ floorAngle = 0;
 angleChecking = 0;
 wallJumpable = false;
 
+floorType = "hard";
+
 vel = 0;
 yspd = 0;

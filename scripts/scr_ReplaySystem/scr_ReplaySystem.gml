@@ -64,6 +64,7 @@ function scr_PlayInputRecording() {
 		_player.action_Key = false;
 		_player.action1_Key = false;
 		_player.action2_Key = false;
+		_player.action2_Key_Released = false;
 		_player.action3_Key = false;
 		_player.action4_Key = false;
 		

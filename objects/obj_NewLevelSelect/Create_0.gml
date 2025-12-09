@@ -3,9 +3,11 @@ x = -1000000;
 
 global.Freeplay = true;
 global.MIND = false;
+global.Health = global.MaxHealth;
 
 if global.PlayerChar == 0 {
 	global.PlayerChar = 1;
+	global.SelectedPlayer = 1;
 }
 
 stages = [

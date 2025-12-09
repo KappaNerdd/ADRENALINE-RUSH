@@ -12,9 +12,15 @@ function scr_BasicVariablesSpeedCreate() {
 		railGrindCheck = false;
 		downSlopeSemiSolid = noone;
 		
+		footStepTimer = 1;
+		footStepFrames = 40;
+		footStep = "hard";
+		
 		myFloorPlat = noone;
 		movePlatVel = 0;
 		movePlatYspd = 0;
+		
+		extraXscale = 1;
 		
 		coyoteJumpTimer = 0;
 		coyoteJumpFrames = 5;
@@ -162,6 +168,35 @@ function scr_BasicControlsSpeedStep1() {
 
 				if _recorder != noone && !_recorder.isPlaying {
 					getCharacterControls();
+					
+					_recorder.input[eKey.LeftPressed] = left_Key;
+					_recorder.input[eKey.RightPressed] = right_Key;
+					_recorder.input[eKey.UpPressed] = up_Key;
+					_recorder.input[eKey.DownPressed] = down_Key;
+					_recorder.input[eKey.LeftReleased] = !left_Key;
+					_recorder.input[eKey.RightReleased] = !right_Key;
+					_recorder.input[eKey.UpReleased] = !up_Key;
+					_recorder.input[eKey.DownReleased] = !down_Key;
+
+					_recorder.input[eKey.JumpPressed] = jump_Key;
+					_recorder.input[eKey.JumpHeld] = jump_Key_Held;
+					_recorder.input[eKey.JumpReleased] = jump_Key_Released;
+
+					_recorder.input[eKey.ActionPressed] = action_Key;
+					_recorder.input[eKey.ActionHeld] = action_Key_Held;
+					_recorder.input[eKey.ActionReleased] = action_Key_Released;
+
+					_recorder.input[eKey.BoostPressed] = action1_Key;
+					_recorder.input[eKey.BoostHeld] = action1_Key_Held;
+					_recorder.input[eKey.BoostReleased] = action1_Key_Released;
+
+					_recorder.input[eKey.SwapPressed] = action3_Key_Held;
+
+					_recorder.input[eKey.Special1Pressed] = action2_Key;
+					_recorder.input[eKey.Special1Held] = action2_Key_Held;
+					_recorder.input[eKey.Special1Released] = action2_Key_Released
+
+					_recorder.input[eKey.Special2Pressed] = action4_Key;
 				}
 			} else {
 				getCharacterControls();
@@ -173,6 +208,7 @@ function scr_BasicControlsSpeedStep1() {
 				if _recorder != noone && !_recorder.isPlaying {
 					jump_Key = keyboard_check_pressed(global.JumpKeySpeed) or gamepad_button_check_pressed(global.Player1Con, global.JumpButtonSpeed);
 					jump_Key = clamp(jump_Key, 0, 1);
+					_recorder.input[eKey.JumpPressed] = jump_Key;
 				}
 			}
 			
@@ -248,6 +284,7 @@ function scr_BasicControlsSpeedStep1() {
 
 	#region //Ceiling Detection
 		scr_CeilingDetect();
+		scr_FootSteps(footStep);
 	#endregion
 	
 }
@@ -265,7 +302,7 @@ function scr_BasicControlsSpeedStep2() {
 		if down_Key && ground && !look_up && !stomping && !prepare && !railGrind && abs(vel) == 0 && !sliding && !stomped {
 		    if !ducking {
 				image_index = 0;
-				obj_SFXManager.jab = true;
+				obj_SFXManager.block = true;
 			}
 			
 			vel = 0;
@@ -510,8 +547,24 @@ function scr_StartSlideSpeed() {
 }
 	
 	
-function scr_Stomped() {
-	
+function scr_FootSteps(_type = "hard") {
+	if global.Footstep {
+		if ground && vel != 0 && !sliding && !railGrind {
+			if ceil(image_index) == 3 or ceil(image_index) == 7 {
+				if footStepTimer <= 0 {
+					if _type == "grass" {
+						obj_SFXManager.footStepGrass = true;
+					} else {
+						obj_SFXManager.footStepHard = true;
+					}
+				
+					footStepTimer = 3;
+				}
+			} else {
+				footStepTimer = 0;
+			}
+		}
+	}
 }
 	
 //Animations
@@ -949,7 +1002,9 @@ function scr_Deceleration() {
 	if !playerHurt && !prepare {
 		if !railGrind && !sliding && !stomped {
 			if vel > 0 && !right_Key {
-				vel -= dcc / 2;
+				if ground {
+					vel -= dcc / 2;
+				}
 			} else if vel < -2 && right_Key && !skid {
 				if ground {
 					vel += dcc * 7;
@@ -962,7 +1017,9 @@ function scr_Deceleration() {
 			}
 			
 			if vel < 0 && !left_Key {
-				vel += dcc / 2;
+				if ground {
+					vel += dcc / 2;
+				}
 			} else if vel > 2 && left_Key && !skid {
 				if ground {
 					vel -= dcc * 7;
@@ -1082,6 +1139,7 @@ function scr_AngleShitStep() {
 	if ground && instance_exists(_angleChecker) && (_angleChecker.sprite_index != spr_SolidGround or _angleChecker.sprite_index != spr_SolidRail) {
 		groundAngle = _angleChecker.floorAngle;
 		drawAngle = _angleChecker.angleChecking;
+		footStep = _angleChecker.floorType;
 	} else {
 		groundAngle = 0;
 		drawAngle = 0;
@@ -1092,6 +1150,7 @@ function scr_AngleShitStep() {
 	
 	if instance_exists(_winnerAngle) && !ground {
 		winningAngle = _winnerAngle.floorAngle;
+		footStep = _winnerAngle.floorType;
 	} else if !instance_exists(_winnerAngle) {
 		winningAngle = 0;
 	}
@@ -1115,26 +1174,48 @@ function scr_AngleShitStep() {
 //Manipulate jump with slopes
 function scr_JumpManipulate() {
 	realJumping = true;
+	railGrind = false;
+	railGrindCrouch = false;
+	angleChecked = false;
 	
-	if ground {
-		if isSlope or railGrindCheck {
-			vel -= normalJspd * sin(degtorad(drawAngle));
-			//vel += (cos(degtorad(drawAngle)) * vel) + (sin(degtorad(drawAngle)) * -normalJspd);  
-			//yspd -= normalJspd * (cos(degtorad(drawAngle)) * vel);
-			yspd += -(sin(degtorad(drawAngle)) * vel) + (cos(degtorad(drawAngle)) * -normalJspd);
-		} else {
-			if instance_exists(myFloorPlat) {
-				vel += myFloorPlat.vel;
+	if global.Squash {
+		extraXscale = 0.5;
+	}
+	
+	if !playerHurt {
+		if ground {
+			if global.Particles {
+				instance_create_depth(x + 7, y + 26, depth, obj_SlideDustVFX);
+				instance_create_depth(x + 14, y + 26, depth, obj_SlideDustVFX);
+				instance_create_depth(x - 10, y + 26, depth, obj_SlideDustVFX);
+				instance_create_depth(x - 17, y + 26, depth, obj_SlideDustVFX);
+			}
+		
+			if isSlope or railGrindCheck {
+				vel -= normalJspd * sin(degtorad(drawAngle));
+				//vel += (cos(degtorad(drawAngle)) * vel) + (sin(degtorad(drawAngle)) * -normalJspd);  
+				//yspd -= normalJspd * (cos(degtorad(drawAngle)) * vel);
+				yspd += -(sin(degtorad(drawAngle)) * vel) + (cos(degtorad(drawAngle)) * -normalJspd);
+			} else {
+				if instance_exists(myFloorPlat) {
+					vel += myFloorPlat.vel;
 			
-				if myFloorPlat.yspd < 0 {
-					yspd = -normalJspd + myFloorPlat.yspd / 1.5;
-				} else {
-					yspd = -normalJspd;
+					if myFloorPlat.yspd < 0 {
+						yspd = -normalJspd + myFloorPlat.yspd / 1.5;
+					} else {
+						yspd = -normalJspd;
+					}
 				}
 			}
+		} else {
+			yspd = -normalJspd;
 		}
 	} else {
-		yspd = -normalJspd;
+		if yspd > 2 {
+			playerHurt = false;
+			can_Move = true;
+			obj_SFXManager.jumpSound = true;
+		}
 	}
 	
 	image_index = 0;

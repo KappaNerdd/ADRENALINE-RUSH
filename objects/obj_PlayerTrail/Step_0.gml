@@ -11,13 +11,5 @@ if lookingTimer > 0 {
 }
 
 if !global.SimplifyVFX {
-	if lookingTimer <= 0 {
-		if visible {
-			visible = false;
-		} else {
-			visible = true;
-		}
-	
-		lookingTimer = lookingFrames;
-	}
+	visible = !visible;
 }

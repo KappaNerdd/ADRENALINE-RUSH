@@ -48,6 +48,8 @@ if !global.Replay {
 	isRecording = true;
 	isPlaying = false;
 } else {
+	scr_ReadInputRecording(fileName);
+	
 	isRecording = false;
 	isPlaying = true;
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_RushTrickCats",
   "parent":{
-    "name":"Rush Trick Cats",
-    "path":"folders/Scripts/Character Data/Speed/Sonic Rush/Rush Trick Cats.yy",
+    "name":"Sonic Rush",
+    "path":"folders/Scripts/Character Data/Speed/Sonic Rush.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

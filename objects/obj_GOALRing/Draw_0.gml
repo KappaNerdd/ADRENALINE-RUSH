@@ -6,10 +6,6 @@
 	var _change2 = 2;
 	var _col1 = c_white;
 	var _col2 = c_black;
-	var _spr = _ringBack;
-	var _spr2 = _ringFront;
-	var _spr3 = _ringWhole;
-	var _spr4 = iconSprite;
 	
 	if global.MIND or global.PlayerChar == 0 {
 		_col1 = c_black;
@@ -18,6 +14,11 @@
 		_ringFront = spr_GoalRingFrontHalfHead;
 		_ringWhole = spr_GoalRingWholeStillHead
 	}
+	
+	var _spr = _ringBack;
+	var _spr2 = _ringFront;
+	var _spr3 = _ringWhole;
+	var _spr4 = iconSprite;
 
 	if goalTimer > 0 or image_speed != 0 {
 		if global.Outline {

@@ -99,11 +99,17 @@ if !done {
 				} else if opt == 2 {
 					_optArray = misc;
 				} else if opt == 3 {
-					_optArray = conGeneral;
+					_optArray = online;
 				} else if opt == 4 {
-					_optArray = conSpeed1;
+					_optArray = conGeneral;
 				} else if opt == 5 {
+					_optArray = conSpeed1;
+				} else if opt == 6 {
 					_optArray = conSpeed2;
+				} else if opt == 7 {
+					_optArray = conAct1;
+				} else if opt == 8 {
+					_optArray = conAct2;
 				}
 			
 				var _array = array_length(_optArray);
@@ -139,7 +145,7 @@ if !done {
 	if jump_Key && !changeBind {
 		obj_SFXManager.funkinFav = true;
 		
-		#region //Audio Confirms
+		#region //Audio
 			if opt == 0 {
 				if choice == 0 {
 					if global.MASTER_VOL > 0 {
@@ -182,11 +188,11 @@ if !done {
 				}
 				
 				if choice == 5 {
-					if global.UniquePauseTheme {
-						global.UniquePauseTheme = false;
-					} else {
-						global.UniquePauseTheme = true;
-					}
+					global.UniquePauseTheme = !global.UniquePauseTheme;
+				}
+				
+				if choice == 6 {
+					global.Footstep = !global.Footstep;
 				}
 			}
 		#endregion
@@ -194,58 +200,42 @@ if !done {
 		#region //Visual
 			if opt == 1 {
 				if choice == 0 {
-					if global.SimplifyVFX {
-						global.SimplifyVFX = false;
-					} else {
-						global.SimplifyVFX = true;
-					}
+					global.SimplifyVFX = !global.SimplifyVFX;
 				}
 				
 				if choice == 1 {
-					if global.Particles {
-						global.Particles = false;
-					} else {
-						global.Particles = true;
-					}
+					global.Particles = !global.Particles;
 				}
 				
 				if choice == 2 {
-					if global.ScreenShake {
-						global.ScreenShake = false;
-					} else {
-						global.ScreenShake = true;
-					}
+					global.ScreenShake = !global.ScreenShake;
 				}
 				
 				if choice == 3 {
-					if global.Outline {
-						global.Outline = false;
-					} else {
-						global.Outline = true;
-					}
+					global.Outline = !global.Outline;
 				}
 				
 				if choice == 4 {
-					if global.ConDisplay {
-						global.ConDisplay = false;
-					} else {
-						global.ConDisplay = true;
-					}
+					global.Squash = !global.Squash;
 				}
 				
 				if choice == 5 {
+					global.ConDisplay = !global.ConDisplay;
+				}
+				
+				if choice == 6 {
 					if global.TextSpd == 0.5 {
 						global.TextSpd = 1
 					} else if global.TextSpd == 1 {
 						global.TextSpd = 2;
 					} else if global.TextSpd == 2 {
-						global.TextSpd = 4;
-					} else if global.TextSpd == 4 {
+						global.TextSpd = 3;
+					} else if global.TextSpd == 3 {
 						global.TextSpd = 0.5;
 					}
 				}
 				
-				if choice == 6 {
+				if choice == 7 {
 					if global.Language == 1 {
 						global.Language = 2;
 					} else {
@@ -258,19 +248,11 @@ if !done {
 		#region //Misc
 			if opt == 2 {
 				if choice == 0 {
-					if global.FullScreen {
-						global.FullScreen = false;
-					} else {
-						global.FullScreen = true;
-					}
+					global.FullScreen = !global.FullScreen;
 				}
 				
 				if choice == 1 {
-					if global.SongTag {
-						global.SongTag = false;
-					} else {
-						global.SongTag = true;
-					}
+					global.SongTag = !global.SongTag;
 				}
 				
 				if choice == 2 {
@@ -282,41 +264,35 @@ if !done {
 				}
 				
 				if choice == 3 {
-					if global.ConRumble {
-						global.ConRumble = false;
-					} else {
-						global.ConRumble = true;
-					}
+					global.ConRumble = !global.ConRumble;
 				}
 				
 				if choice == 4 {
-					if global.ExtendCamera {
-						global.ExtendCamera = false;
-					} else {
-						global.ExtendCamera = true;
-					}
+					global.ExtendCamera = !global.ExtendCamera;
 				}
 				
 				if choice == 5 {
-					if global.Speedrun {
-						global.Speedrun = false;
-					} else {
-						global.Speedrun = true;
-					}
+					global.Speedrun = !global.Speedrun;
 				}
 				
 				if choice == 6 {
-					if global.FPSOn {
-						global.FPSOn = false;
-					} else {
-						global.FPSOn = true;
-					}
+					global.FPSOn = !global.FPSOn;
 				}
 			}
 		#endregion
 		
+		#region //Online
+			if choice == 0 {
+				global.DiscordRich = !global.DiscordRich;
+			}
+			
+			if choice == 1 {
+				global.ShowGhost = !global.ShowGhost;
+			}
+		#endregion
+		
 		#region //Con General
-			if opt == 3 {
+			if opt == 4 {
 				if choice == 0 or choice == 1 {
 					changeBind = true;
 				}
@@ -340,13 +316,13 @@ if !done {
 		#endregion
 		
 		#region //Con Speed
-			if opt == 4 or opt == 5 {
+			if opt == 5 or opt == 6 {
 				changeBind = true;
 			}
 		#endregion
 		
 		#region //Con Action
-			if opt == 6 or opt == 7 {
+			if opt == 7 or opt == 8 {
 				changeBind = true;
 			}
 		#endregion
@@ -363,12 +339,14 @@ if !done {
 			global.TEXT_VOL = 1;
 			global.AMBIENCE_VOL = 1;
 			global.UniquePauseTheme = false;
+			global.Footstep = true;
 
 			//Visual
 			global.SimplifyVFX = false;
 			global.ScreenShake = true;
 			global.Particles = true;
 			global.Outline = true;
+			global.Squash = true;
 			global.ConDisplay = false;
 			global.TextSpd = 1;
 
@@ -380,7 +358,11 @@ if !done {
 			global.ExtendCamera = true;
 			global.FPSOn = true;
 			global.Speedrun = false;
-
+			
+			//Online
+			global.DiscordRich = true;
+			global.ShowGhost = true;
+			
 			//Controls
 			global.ConDeadZone = 0.5;
 			global.TrigDeadZone = 0.5;
@@ -450,8 +432,10 @@ if !done {
 			global.ChargeButtonAction = gp_shoulderlb;
 		#endregion
 		
-		file_delete(string(global.OptionsDataFile) + ".sav");
-		file_delete(string(global.ControlsDataFile) + ".sav");
+		var _dir = working_directory + "/options/"
+		
+		file_delete(_dir + string(global.OptionsDataFile) + ".sav");
+		file_delete(_dir + string(global.ControlsDataFile) + ".sav");
 	}
 	
 	if action_Key && !changeBind {
@@ -466,7 +450,7 @@ if !done {
 			changeBindY = lerp(changeBindY, 48, 0.2);
 			
 			if waitTimer <= 1 {
-				if opt == 3 {
+				if opt == 4 {
 					#region //Con General
 						if choice == 0 {
 							if !gamepad_is_connected(global.Player1Con) {
@@ -486,7 +470,7 @@ if !done {
 					#endregion
 				}
 				
-				if opt == 4 {
+				if opt == 5 {
 					#region //Con Speed 1
 						if choice == 0 {
 							if !gamepad_is_connected(global.Player1Con) {
@@ -538,7 +522,7 @@ if !done {
 					#endregion
 				}
 				
-				if opt == 5 {
+				if opt == 6 {
 					#region //Con Speed 2
 						if choice == 0 {
 							if !gamepad_is_connected(global.Player1Con) {
@@ -574,7 +558,7 @@ if !done {
 					#endregion
 				}
 				
-				if opt == 6 {
+				if opt == 7 {
 					#region //Con Action 1
 						if choice == 0 {
 							if !gamepad_is_connected(global.Player1Con) {
@@ -626,7 +610,7 @@ if !done {
 					#endregion
 				}
 				
-				if opt == 7 {
+				if opt == 8 {
 					#region //Con Action 2
 						if choice == 0 {
 							if !gamepad_is_connected(global.Player1Con) {

@@ -1,5 +1,53 @@
 //Get Volume
 var _sfxVol = global.MASTER_VOL * global.SFX_VOL;
+var _ambVol = global.MASTER_VOL * global.AMBIENCE_VOL;
+
+
+//Environment
+
+//Foot Step Hard
+if footStepHard {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_FootHard, 8, false);
+	audio_sound_pitch(_snd, random_range(0.5, 1.5));
+	audio_sound_gain(_snd, _ambVol, 0);
+	
+	footStepHard = false;
+}
+
+//Land Hard
+if landHard {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_LandHard, 8, false);
+	audio_sound_gain(_snd, _ambVol, 0);
+	
+	landHard = false;
+}
+
+
+//Foot Step Grass
+if footStepGrass {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_FootGrass, 8, false);
+	audio_sound_pitch(_snd, random_range(0.8, 1.2));
+	audio_sound_gain(_snd, _ambVol, 0);
+	
+	footStepGrass = false;
+}
+
+//Land Grass
+if landGrass {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_LandGrass, 8, false);
+	audio_sound_gain(_snd, _ambVol, 0);
+	
+	landGrass = false;
+}
+
 
 ///-----General-----///
 

@@ -4,6 +4,9 @@ if place_meeting(x, y, obj_Player) && goal == false && !global.Death {
 	goal = true;
 	obj_InputRecorder.isRecording = false;
 	
+	scr_StopCharShit();
+	scr_StopCharControls();
+	
 	obj_Player.enemyComboTimer = 1;
 	
 	obj_Player.speedBreak = false;

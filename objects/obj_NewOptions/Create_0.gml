@@ -58,6 +58,7 @@ allOpts = [
 	["opt_Audio"],
 	["opt_Visual"],
 	["opt_Misc"],
+	["opt_Online"],
 	["opt_ConGen"],
 	["opt_ConSpeed1"],
 	["opt_ConSpeed2"],
@@ -72,6 +73,7 @@ audio = [
 	["opt_Text", "desc_Text"],
 	["opt_Ambiance", "desc_Ambiance"],
 	["opt_Pause", "desc_Pause"],
+	["opt_Footstep", "desc_Footstep"]
 ]
 
 visual = [
@@ -79,6 +81,7 @@ visual = [
 	["opt_Part", "desc_Part"],
 	["opt_ScrShk", "desc_ScrShk"],
 	["opt_Outline", "desc_Outline"],
+	["opt_Squash", "desc_Squash"],
 	["opt_ConDis", "desc_ConDis"],
 	["opt_TextSpd", "desc_TextSpd"],
 	["opt_Lang", "desc_Lang"],
@@ -92,6 +95,11 @@ misc = [
 	["opt_ExtCam", "desc_ExtCam"],
 	["opt_Speedrun", "desc_Speedrun"],
 	["opt_FPS", "desc_FPS"],
+]
+
+online = [
+	["opt_Discord", "desc_Discord"],
+	["opt_Ghost", "desc_Ghost"],
 ]
 
 conGeneral = [

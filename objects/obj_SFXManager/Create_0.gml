@@ -1,6 +1,14 @@
 global.SFX_VOL = 1;
 global.MASTER_VOL = 1;
 
+//Environment
+footStepHard = false;
+landHard = false;
+
+footStepGrass = false;
+landGrass = false;
+
+
 //General
 clench = false;
 balloonPop = false;

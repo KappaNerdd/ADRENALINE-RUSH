@@ -38,7 +38,49 @@ if can_MoveFULL {
 	#endregion
 		
 	#region //Basic Speed 2
-		scr_BasicControlsSpeedStep2();
+		#region //Deceleration
+			scr_Deceleration();
+		#endregion
+		
+		#region //X Collision
+			scr_XCollision();
+		#endregion
+
+		#region //Crouching
+			if down_Key && ground && !shootGround && !look_up && !stomping && !prepare && !railGrind && abs(vel) == 0 && !sliding && !stomped {
+			    if !ducking {
+					image_index = 0;
+					obj_SFXManager.block = true;
+				}
+			
+				vel = 0;
+				ducking = true;
+				mask_index = crouch_Mask;
+			} else {
+				ducking = false;
+			}
+		#endregion
+	
+		#region //Looking up
+			if ground && !prepare && !shootGround && !railGrind && abs(vel) <= 0.5 && !stomped && !ducking && up_Key {
+				look_up = true;
+				vel = 0;
+			} else {
+				look_up = false;
+			}
+		#endregion
+	
+		#region //Speed limit
+			scr_SpeedLimit();
+		#endregion
+		
+		#region //Change Draw Angle
+			scr_ChangeDrawAngle();
+		#endregion
+		
+		#region //Fuck with momentum
+			scr_SlopeMomentum();
+		#endregion
 	#endregion
 
 	#region //Sprite & Animation Handler

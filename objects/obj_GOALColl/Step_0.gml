@@ -3,6 +3,10 @@ if goal {
 	obj_Player.sliding = false;
 	obj_Player.rushModeTimer = 0;
 	
+	if instance_exists(obj_InputRecorder) {
+		obj_InputRecorder.isRecording = false;
+	}
+	
 	if obj_Player.ground && obj_Player.vel != 0 {
 		obj_Player.skid = true;
 	} else if obj_Player.ground && obj_Player.vel == 0 {
@@ -22,7 +26,8 @@ if goal {
 		obj_Player.speedBreak = false;
 	}
 	
-	obj_Player.boost = false;
+	scr_StopCharShit();
+	scr_StopCharControls();
 }
 
 if goal && !resultsCreate && obj_Player.vel == 0 {

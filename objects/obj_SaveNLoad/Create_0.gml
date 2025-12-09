@@ -6,6 +6,7 @@
 	global.TEXT_VOL = 1;
 	global.AMBIENCE_VOL = 1;
 	global.UniquePauseTheme = false;
+	global.Footstep = true;
 
 	//Visual
 	global.SimplifyVFX = false;
@@ -13,6 +14,7 @@
 	global.Particles = true;
 	global.ConDisplay = false;
 	global.Outline = true;
+	global.Squash = true;
 	global.TextSpd = 1;
 	global.Language = 1;
 
@@ -1033,6 +1035,7 @@
 			txt: 1, //Text Volume
 			ambience: 1, //Ambience Volume
 			uniquePause: false, //Unique Pause Theme
+			footStep: true, //Character Foot Steps
 		},
 	
 		{ //Visual Options
@@ -1041,6 +1044,7 @@
 			part: true, //Particles
 			conDis: false, //Controller Display
 			outline: true, //Character Outline
+			squash: true, //Squash 'n' Stretch
 			textSpd: 1, //Text Speed
 			lang: 0, //Language
 		},
@@ -1053,6 +1057,11 @@
 			extCam: true, //Extended Camera
 			speedrun: false, //Speedrun Timer
 			FPS: true, //FPS
+		},
+		
+		{ //Online Options
+			discord: true,
+			ghost: true,
 		},
 
 	]

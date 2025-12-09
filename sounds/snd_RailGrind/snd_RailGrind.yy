@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_RailGrind.ogg",
-  "volume":0.06,
+  "volume":0.2,
 }

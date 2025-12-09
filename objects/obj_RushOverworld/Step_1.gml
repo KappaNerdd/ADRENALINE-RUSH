@@ -54,6 +54,7 @@ if can_MoveFULL {
 			if down_Key && ground && !spindash && !spindashRev && !superPeelout && !look_up && !stomping && !prepare && !railGrind && abs(vel) == 0 && !sliding && !stomped {
 			    if !ducking {
 					image_index = 0;
+					obj_SFXManager.block = true;
 				}
 			
 				vel = 0;

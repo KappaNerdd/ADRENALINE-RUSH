@@ -81,13 +81,6 @@ function scr_YCollision() {
 		
 						scr_GivePoints(500);
 		
-						if !rushMode {
-							boostEnergy += 5;
-						} else {
-							rushModeTimer = rushModeFrames;
-							obj_SFXManager.rushModeTrick = true;
-						}
-		
 						if global.Particles {
 							instance_create_depth(_floor.x + 144, _floor.y + 80, depth, obj_HeadFloorPiece1);
 							instance_create_depth(_floor.x + 149, _floor.y + 9, depth, obj_HeadFloorPiece2);
@@ -110,19 +103,12 @@ function scr_YCollision() {
 				var _floor1 = instance_place(x + vel, y, obj_HeadWallBreakable);
 
 				if _floor1 {
-					if abs(vel) >= max_Speed {
+					if abs(vel) >= max_Speed or boost {
 						obj_SFXManager.breakableGround = true;
 						scr_ScreenShake();
 						scr_ControllerRumble();
 		
 						scr_GivePoints(500);
-		
-						if !rushMode {
-							boostEnergy += 5;
-						} else {
-							rushModeTimer = rushModeFrames;
-							obj_SFXManager.rushModeTrick = true;
-						}
 		
 						if global.Particles {
 							with (instance_create_depth(_floor1.x, _floor1.y, depth, obj_HeadFloorPiece1)) {
@@ -182,13 +168,6 @@ function scr_YCollision() {
 		
 						scr_GivePoints(500);
 		
-						if !rushMode {
-							boostEnergy += 5;
-						} else {
-							rushModeTimer = rushModeFrames;
-							obj_SFXManager.rushModeTrick = true;
-						}
-		
 						if global.Particles {
 							instance_create_depth(_floor2.x, _floor2.y, depth, obj_HometownBreak1);
 							instance_create_depth(_floor2.x + 10, _floor2.y + 4, depth, obj_HometownBreak2);
@@ -245,9 +224,22 @@ function scr_YCollision() {
 						}
 						
 						if !angleChecked {
+							if global.Squash {
+								extraXscale = 1.25;
+							}
+							
+							if global.Particles {
+								instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
+								instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
+								instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
+								instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
+							}
+							
 							if winningAngle != 0 {
 								vel += yspd * 0.5 * -sign(sin(winningAngle));
 							}
+							
+							scr_Landing(footStep);
 							
 							angleChecked = true;
 						}
@@ -266,9 +258,26 @@ function scr_YCollision() {
 					}
 					
 					if !angleChecked {
+						if global.Squash {
+							extraXscale = 1.25;
+						}
+							
+						if global.Particles {
+							instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
+							instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
+							instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
+							instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
+						}
+						
 						if winningAngle != 0 {
 							vel += yspd * 0.5 * -sign(sin(winningAngle));
 						}
+						
+						if myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent) {
+							obj_SFXManager.railGrindOn = true;
+						}
+						
+						scr_Landing(footStep);
 							
 						angleChecked = true;
 					}
@@ -299,9 +308,22 @@ function scr_YCollision() {
 						}
 						
 						if !angleChecked {
+							if global.Squash {
+								extraXscale = 1.25;
+							}
+							
+							if global.Particles {
+								instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
+								instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
+								instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
+								instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
+							}
+							
 							if winningAngle != 0 {
 								vel += yspd * 0.5 * -sign(sin(winningAngle));
 							}
+							
+							scr_Landing(footStep);
 							
 							angleChecked = true;
 						}
@@ -320,9 +342,22 @@ function scr_YCollision() {
 					}
 					
 					if !angleChecked {
+						if global.Squash {
+							extraXscale = 1.25;
+						}
+							
+						if global.Particles {
+							instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
+							instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
+							instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
+							instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
+						}
+						
 						if winningAngle != 0 {
 							vel += yspd * 0.5 * -sign(sin(winningAngle));
 						}
+						
+						scr_Landing(footStep);
 							
 						angleChecked = true;
 					}
@@ -672,7 +707,7 @@ function scr_YCollision() {
 			#region //Rail-Trick Collision
 				var _block = instance_place(x, y, obj_RailTrickColl);
 
-				if _block && (action2_Key) && railGrind && !global.Death {
+				if _block && (jump_Key) && railGrind && !global.Death {
 					yspd = -10;
 					ground = false;
 					jumping = true;
@@ -847,7 +882,7 @@ function scr_YCollision() {
 						preTrickTimer = preTrickFrames;
 						
 						if yspd < 20 {
-							yspd = -(yspd + 5)
+							yspd = -(yspd + 2)
 						} else {
 							yspd = -25;
 						}
@@ -983,6 +1018,7 @@ function scr_YCollision() {
 						
 						obj_SFXManager.clench = true;
 						scr_StopCharShit();
+						scr_StopCharControls();
 						scr_StopPlayerHurt();
 		
 						array_push(_pully.pulledChars, id);
@@ -1026,6 +1062,7 @@ function scr_YCollision() {
 							obj_SFXManager.spikeHurt = true;
 		
 							scr_StopCharShit();
+							scr_StopCharControls();
 	
 							rampRing = false;
 							afterRailJump = false;
@@ -1057,6 +1094,7 @@ function scr_YCollision() {
 							obj_SFXManager.spikeHurt = true;
 		
 							scr_StopCharShit();
+							scr_StopCharControls();
 	
 							rampRing = false;
 							afterRailJump = false;
@@ -1088,6 +1126,7 @@ function scr_YCollision() {
 							obj_SFXManager.spikeHurt = true;
 		
 							scr_StopCharShit();
+							scr_StopCharControls();
 	
 							rampRing = false;
 							afterRailJump = false;
@@ -1112,13 +1151,14 @@ function scr_YCollision() {
 				#endregion
 				
 				#region //Left
-					if _spikeDown {
+					if _spikeLeft {
 						if !boost && !invincible && !playerHurt && _spikeLeft.image_angle == 270 {
 							scr_HurtPlayer(200000, 5, 1, -7);
 							obj_SFXManager.playerHurt = true;
 							obj_SFXManager.spikeHurt = true;
 		
 							scr_StopCharShit();
+							scr_StopCharControls();
 	
 							rampRing = false;
 							afterRailJump = false;
@@ -1188,6 +1228,7 @@ function scr_YCollision() {
 					sprite_index = sprDeath;
 	
 					scr_StopCharShit();
+					scr_StopCharControls();
 	
 					if audio_is_playing(snd_Stomping) {
 						audio_stop_sound(snd_Stomping);
@@ -1206,6 +1247,7 @@ function scr_YCollision() {
 						enemyComboTimer = 1;
 	
 						scr_StopCharShit();
+						scr_StopCharControls();
 						scr_StopPlayerHurt();
 	
 						with (instance_create_depth(-100000, 0, 0, obj_MoreBonus)) {
@@ -1260,6 +1302,16 @@ function scr_YCollision() {
 	}
 }
 
+function scr_Landing(_type = "hard") {
+	if global.Footstep {
+		if _type == "grass" {
+			obj_SFXManager.landGrass = true;
+		} else {
+			obj_SFXManager.landHard = true;
+		}
+	}
+}
+
 
 //Rail-Grind
 function scr_RailGrindCreate() {
@@ -1288,13 +1340,13 @@ function scr_RailGrindingStep() {
 			
 			array_push(_array, obj_RailParent);
 			
-			var _collision = instance_place_list(x, y + 5, _array, _list, false);
-			var _collision2 = instance_place(x, y + 5, obj_RailParent);
+			var _collision = instance_place_list(x, y + 1, _array, _list, false);
+			var _collision2 = instance_place(x, y + 1, obj_RailParent);
 			
 			for(var i = 0; i < _collision; i++) {
 				var _listInst = _list[| i];
 				
-				if (_listInst.yspd < yspd or instance_exists(railGrindFloor)) && (_listInst.yspd > 0 or place_meeting(x, y + 5, _listInst)) {
+				if (_listInst.yspd < yspd or instance_exists(railGrindFloor)) && (_listInst.yspd > 0 or place_meeting(x, y + 1, _listInst)) {
 					if (_listInst.object_index == obj_RailParent or object_is_ancestor(_listInst.object_index, obj_RailParent)) or floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd) {
 						if !instance_exists(railGrindFloor) or _listInst.bbox_top + _listInst.yspd <= railGrindFloor.bbox_top + railGrindFloor.yspd or _listInst.bbox_top + _listInst.yspd <= bbox_bottom {
 							if railGrindCheckingTimer <= 0 {
@@ -1307,7 +1359,7 @@ function scr_RailGrindingStep() {
 			
 			ds_list_destroy(_list);
 		
-			if instance_exists(railGrindFloor) && railGrindCheck && yspd >= 0 {
+			if instance_exists(railGrindFloor) && ground && railGrindCheck && yspd >= 0 {
 				railGrind = true;
 				
 				if !leftFacer {
@@ -1326,7 +1378,7 @@ function scr_RailGrindingStep() {
 				railGrindCrouch = false;
 			}
 			
-			if instance_exists(railGrindFloor) && !place_meeting(x, y + termVel, railGrindFloor) {
+			if instance_exists(railGrindFloor) && !place_meeting(x, y + 1, railGrindFloor) {
 				railGrindFloor = noone;
 			}
 		}
@@ -1334,7 +1386,6 @@ function scr_RailGrindingStep() {
 		if railGrind {
 			obj_SFXManager.railGrinding = true;
 			
-			ground = true;
 			jumping = false;
 			dJumping = false;
 			sliding = false;
@@ -1435,18 +1486,21 @@ function scr_WallClingStep() {
 	}
 		
 	if !global.Death && !playerHurt {
-		if onWall != 0 && !ground && yspd >= -2 {
+		if onWall != 0 && !ground && yspd >= -3 {
 			if _wall {
 				canWallJump = _wall.wallJumpable;
 			}
 				
 			if canWallJump {
-				wallJump = true;
+				if !wallJump {
+					wallJump = true;
+					obj_SFXManager.clench = true;
+				}
 				
-				if wallJumpVel > 5 {
+				if wallJumpVel > max_Speed {
 					wallJumpVel -= 1;
-				} else if wallJumpVel <= 5 {
-					wallJumpVel = 5;
+				} else if wallJumpVel <= max_Speed {
+					wallJumpVel = max_Speed;
 				}
 				
 				afterWallJump = false;

@@ -24,7 +24,7 @@ if _relX <= 80 {
 
 
 if instance_exists(obj_Player) {
-	var _boost = floor(personalBoost)
+	var _boost = personalBoost;
 	var _maxBoost = obj_Player.maxBoostEnergy;
 
 	var _rushMode = obj_Player.rushModeTimer;
@@ -115,41 +115,21 @@ if instance_exists(obj_Player) {
 		draw_sprite_ext(rushEmblem, emblemSpeed, 8 + newX, 60 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 	}
 
-	
-	draw_sprite_ext(spr_BoostMeterBackTop, 0, 2 + newX, 93 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 108 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 123 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 143 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 163 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 183 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 203 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 223 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 243 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackMid, 0, 2 + newX, 263 + newY, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(spr_BoostMeterBackBottom, 0, 2 + newX, 283 + newY, 1, 1, 0, c_black, image_alpha);
-	
-	
 	var _top = spr_BoostMeterBackBottom;
 	var _mid = spr_BoostMeterBackMid;
-	var _bottom = spr_BoostMeterBackTop;
+	var _bottom = spr_Speedometer;
+	var _speedMeter = abs(obj_Player.vel);
 	
-	if global.MIND or global.PlayerChar == 0 {
-		_top = spr_BoostMeterBackTopHead;
-		_mid = spr_BoostMeterBackMidHead;
-		_bottom = spr_BoostMeterBackBottomHead;
+	if abs(obj_Player.vel) >= 25 {
+		_speedMeter = 25;
 	}
 	
-	draw_sprite_ext(_bottom, 0, 5 + newX, 90 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 105 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 120 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 140 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 160 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 180 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 200 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 220 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 240 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_mid, 0, 5 + newX, 260 + newY, 1, 1, 0, charColor, image_alpha);
-	draw_sprite_ext(_top, 0, 5 + newX, 280 + newY, 1, 1, 0, charColor, image_alpha);
+	if global.MIND or global.PlayerChar == 0 {
+		_bottom = spr_SpeedometerHead;
+	}
+	
+	draw_sprite_ext(_bottom, _speedMeter, 2 + newX, 88 + newY, 1, 1.5, 0, c_black, image_alpha);
+	draw_sprite_ext(_bottom, _speedMeter, 5 + newX, 85 + newY, 1, 1.5, 0, c_white, image_alpha);
 	
 	var _mainSize = 2.5;
 

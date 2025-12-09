@@ -7,12 +7,14 @@ function save_options() {
 	global.optionsData[0].txt = global.TEXT_VOL;
 	global.optionsData[0].ambience = global.AMBIENCE_VOL;
 	global.optionsData[0].uniquePause = global.UniquePauseTheme;
+	global.optionsData[0].footStep = global.Footstep;
 	
 	global.optionsData[1].simpVFX = global.SimplifyVFX;
 	global.optionsData[1].screenShake = global.ScreenShake;
 	global.optionsData[1].part = global.Particles;
 	global.optionsData[1].conDis = global.ConDisplay;
 	global.optionsData[1].outline = global.Outline;
+	global.optionsData[1].squash = global.Squash;
 	global.optionsData[1].textSpd = global.TextSpd;
 	global.optionsData[1].lang = global.Language;
 	
@@ -24,6 +26,8 @@ function save_options() {
 	global.optionsData[2].speedrun = global.Speedrun;
 	global.optionsData[2].FPS = global.FPSOn;
 	
+	global.optionsData[3].discord = global.DiscordRich;
+	global.optionsData[3].ghost = global.ShowGhost;
 
 	//Actual Saving
 	var _dir = working_directory + "/options/";
@@ -79,12 +83,14 @@ function load_options() {
 		global.TEXT_VOL = global.optionsData[0].txt;
 		global.AMBIENCE_VOL = global.optionsData[0].ambience;
 		global.UniquePauseTheme = global.optionsData[0].uniquePause;
+		global.Footstep = global.optionsData[0].footStep;
 		
 		global.SimplifyVFX = global.optionsData[1].simpVFX;
 		global.ScreenShake = global.optionsData[1].screenShake;
 		global.Particles = global.optionsData[1].part;
 		global.ConDisplay = global.optionsData[1].conDis;
 		global.Outline = global.optionsData[1].outline;
+		global.Squash = global.optionsData[1].squash;
 		global.TextSpd = global.optionsData[1].textSpd;
 		global.Language = global.optionsData[1].lang;
 		
@@ -95,6 +101,9 @@ function load_options() {
 		global.ExtendCamera = global.optionsData[2].extCam;
 		global.Speedrun = global.optionsData[2].speedrun;
 		global.FPSOn = global.optionsData[2].FPS;
+		
+		global.DiscordRich = global.optionsData[3].discord;
+		global.ShowGhost = global.optionsData[3].ghost;
 }
 
 

@@ -241,6 +241,14 @@ if !done {
 					global.Health = global.StarterHealth;
 				}
 				
+				if instance_exists(obj_GhostRecorder) {
+					instance_destroy(obj_GhostRecorder);
+				}
+				
+				if instance_exists(obj_InputRecorder) {
+					instance_destroy(obj_InputRecorder);
+				}
+				
 				if !audio_is_paused(pause) {
 					audio_stop_sound(pause);
 					audio_resume_sound(obj_MusicManager.targetSongAsset);
@@ -288,6 +296,14 @@ if !done {
 								global.Health = global.StarterHealth;
 							}
 							
+							if instance_exists(obj_GhostRecorder) {
+								instance_destroy(obj_GhostRecorder);
+							}
+				
+							if instance_exists(obj_InputRecorder) {
+								instance_destroy(obj_InputRecorder);
+							}
+							
 							if !audio_is_paused(pause) {
 								audio_stop_sound(pause);
 								audio_resume_sound(obj_MusicManager.targetSongAsset);
@@ -298,6 +314,14 @@ if !done {
 							var _transit = instance_create_depth(-100000, 0, depth, _trans);
 							
 							_transit.target_rm = rm_FreeplayNew;
+							
+							if instance_exists(obj_GhostRecorder) {
+								instance_destroy(obj_GhostRecorder);
+							}
+				
+							if instance_exists(obj_InputRecorder) {
+								instance_destroy(obj_InputRecorder);
+							}
 							
 							if !audio_is_paused(pause) {
 								audio_stop_sound(pause);
@@ -311,6 +335,16 @@ if !done {
 						
 						if _choiceLength[choice][1] == mainMenu {
 							var _transit = instance_create_depth(-100000, 0, depth, _trans);
+							
+							if instance_exists(obj_GhostRecorder) {
+								instance_destroy(obj_GhostRecorder);
+							}
+				
+							if instance_exists(obj_InputRecorder) {
+								instance_destroy(obj_InputRecorder);
+							}
+							
+							var _dir = working_directory + "/saves/" + string(global.saveFile) + "/"
 							
 							if file_exists(string(global.NoMindDataFile) + string(global.saveFile) + ".sav") {
 								_transit.target_rm = rm_TitleNormal;

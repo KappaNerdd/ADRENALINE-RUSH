@@ -14,7 +14,7 @@ function scr_SpeedBreakStep() {
 		}
 	
 		if speedBreakTimer <= 0 && ground {
-			scr_StopCamMove(2, 10);
+			scr_StopCamMove();
 			scr_ControllerRumble();
 			speedBreak = true;
 			obj_SFXManager.airDashSound = true;
@@ -112,9 +112,14 @@ function scr_BoostingStep() {
 		if !ground && !airBoost {
 			yspd = 0;
 			airBoost = true;
+			gravTimer = 7;
+			
+			if !rushMode {
+				boostEnergy -= 25;
+			}
 		}
 		
-		if !rushMode {
+		if !rushMode && ground {
 			boostEnergy -= 10;
 		}
 		
@@ -253,7 +258,7 @@ function scr_BoostingStep() {
 		camShakeTimer = camShakeFrames;
 		acc = normalAcc;
 	} else {
-		acc = normalAcc * 4;
+		acc = normalAcc * 3;
 	}
 }
 
@@ -944,27 +949,29 @@ function scr_RushModeColorDraw() {
 		_col2 = c_white;
 	}
 	
+	extraXscale = lerp(extraXscale, 1, 0.1);
+	
 	if global.Outline {
 		gpu_set_fog(true, _col2, 0, 1);
-			draw_sprite_ext(sprite_index, image_index, round(x) + _change2, round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x) - _change2, round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change2, image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change2, image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x) + _change2, round(y), image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x) - _change2, round(y), image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change2, image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change2, image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
 		gpu_set_fog(false, c_black, 0, 1);
 	
 		gpu_set_fog(true, _col1, 0, 1);
-			draw_sprite_ext(sprite_index, image_index, round(x) + _change, round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x) - _change, round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change, image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change, image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x) + _change, round(y), image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x) - _change, round(y), image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change, image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change, image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
 		gpu_set_fog(false, c_black, 0, 1);
 	}
 	
-	draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, image_blend, image_alpha);
+	draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
 	
 	if rushMode {
 		gpu_set_fog(true, rushColor, 0, 1);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale, image_yscale, drawAngle, rushColor, rushModeAlpha);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y), image_xscale * extraXscale, image_yscale, drawAngle, rushColor, rushModeAlpha);
 		gpu_set_fog(false, c_black, 0, 1);
 	}
 	

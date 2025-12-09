@@ -1,6 +1,6 @@
 ///Overall Saving
 function save_game(_fileNum = 0) {
-	save_Speed_Stage(global.saveFile);
+	save_Speed_Stage(_fileNum);
 	
 	//Save player position and room (Very big thanks to PeytonBurnham for his many tutorials)
 	if instance_exists(obj_Player) {
@@ -282,7 +282,7 @@ function scr_SaveFiles() {
 	
 	
 	//Actual Saving
-	var _dir = working_directory + "/global/";
+	var _dir = working_directory + "/saves/";
 	var _filename = _dir + "SAVEFILESDATA.sav";
 	var _json = json_stringify(_saveArray);
 	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);

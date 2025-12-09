@@ -26,8 +26,10 @@ if isPlaying {
 		scr_ReadInputRecording(fileName);
 		confirmPlay = true;
 	} else {
-		scr_PlayInputRecording();	
+		
 	}
+	
+	scr_PlayInputRecording();	
 }
 
 if global.Replay {

@@ -12,8 +12,10 @@ instance_create_depth(camera_get_view_x(view_camera[0]), camera_get_view_y(view_
 with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 	movedX = 0;
 	movedY = 0;
+	
+	var _dir = working_directory + "/saves/1/";
 
-	if file_exists(string(global.MainDataFile) + "1.sav") {
+	if file_exists(_dir + string(global.MainDataFile) + "1.sav") {
 		player = global.file1.player_Char;
 		playerCostume = global.file1.player_Costume;
 		playerSprite = global.file1.player_Sprite;
@@ -40,8 +42,10 @@ with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 	movedX = 37;
 	movedY = 80;
+	
+	var _dir = working_directory + "/saves/2/";
 
-	if file_exists(string(global.MainDataFile) + "2.sav") {
+	if file_exists(_dir + string(global.MainDataFile) + "2.sav") {
 		player = global.file2.player_Char;
 		playerCostume = global.file2.player_Costume;
 		playerSprite = global.file2.player_Sprite;
@@ -68,8 +72,10 @@ with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 	movedX = 74;
 	movedY = 160;
+	
+	var _dir = working_directory + "/saves/3/";
 
-	if file_exists(string(global.MainDataFile) + "3.sav") {
+	if file_exists(_dir + string(global.MainDataFile) + "3.sav") {
 		player = global.file3.player_Char;
 		playerCostume = global.file3.player_Costume;
 		playerSprite = global.file3.player_Sprite;
@@ -96,8 +102,10 @@ with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 	movedX = 111;
 	movedY = 240;
+	
+	var _dir = working_directory + "/saves/4/";
 
-	if file_exists(string(global.MainDataFile) + "4.sav") {
+	if file_exists(_dir + string(global.MainDataFile) + "4.sav") {
 		player = global.file4.player_Char;
 		playerCostume = global.file4.player_Costume;
 		playerSprite = global.file4.player_Sprite;
@@ -124,8 +132,10 @@ with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 	movedX = 148;
 	movedY = 320;
+	
+	var _dir = working_directory + "/saves/5/";
 
-	if file_exists(string(global.MainDataFile) + "5.sav") {
+	if file_exists(_dir + string(global.MainDataFile) + "5.sav") {
 		player = global.file5.player_Char;
 		playerCostume = global.file5.player_Costume;
 		playerSprite = global.file5.player_Sprite;
@@ -152,8 +162,10 @@ with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 	movedX = 185;
 	movedY = 400;
+	
+	var _dir = working_directory + "/saves/6/";
 
-	if file_exists(string(global.MainDataFile) + "6.sav") {
+	if file_exists(_dir + string(global.MainDataFile) + "6.sav") {
 		player = global.file6.player_Char;
 		playerCostume = global.file6.player_Costume;
 		playerSprite = global.file6.player_Sprite;
@@ -180,8 +192,10 @@ with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 with(instance_create_depth(x, y, depth, obj_FileSelectBox)) {
 	movedX = 222;
 	movedY = 480;
+	
+	var _dir = working_directory + "/saves/7/";
 
-	if file_exists(string(global.MainDataFile) + "7.sav") {
+	if file_exists(_dir + string(global.MainDataFile) + "7.sav") {
 		player = global.file7.player_Char;
 		playerCostume = global.file7.player_Costume;
 		playerSprite = global.file7.player_Sprite;

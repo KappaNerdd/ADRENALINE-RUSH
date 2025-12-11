@@ -1,5 +1,4 @@
-
-<img width="900" height="420" alt="New Title-4 png" src="https://github.com/user-attachments/assets/b18efafe-3511-4c58-bbe9-b3e7433a8d8c" />
+<img width="960" height="800" alt="image" src="https://github.com/user-attachments/assets/0e0bc294-0a93-4520-810f-064193a6df36" />
 
 # ADRENALINE RUSH is a (mostly) fast-paced, Sonic Rush trilogy 'n' Dragon Ball FighterZ-inspired game revolvin' around a boy, his adoptive family, and his group of friends havin' growin', unnatural powers.
 (The game is in active development and bugs WILL be plentiful.)

@@ -35,20 +35,38 @@ if !global.LevelForced {
 	} else {
 		instance_create_depth(x, y, depth, obj_Countdown);
 	}
+	
+	if instance_exists(obj_Player) {
+		obj_Player.can_Move = false;
+	}
 } else {
 	instance_create_depth(-10000000, 0, 0, obj_LevelCardMinor);
 	
 	if !instance_exists(obj_ActualGhost) {
-		instance_create_depth(x, y, depth, obj_GhostRecorder);
 		instance_create_depth(x, y, depth, obj_ActualGhost);
 	}
 }
 
-if !global.Girly {
-	playTrack = global.speedStageData[global.SpeedSelected].musicTrack;
-} else {
-	playTrack = global.speedStageData[global.SpeedSelected].musicTrackGirly;
+if instance_exists(obj_InputRecorder) {
+	obj_InputRecorder.index = 0;
+	obj_InputRecorder.frame = 0;
 }
+	
+if instance_exists(obj_GhostRecorder) {
+	obj_GhostRecorder.ghostRecordFrames = 0;
+}
+
+if !global.CustomMus {
+	if !global.Girly {
+		playTrack = global.speedStageData[global.SpeedSelected].musicTrack;
+	} else {
+		playTrack = global.speedStageData[global.SpeedSelected].musicTrackGirly;
+	}
+} else {
+	playTrack = global.CustomMusic;
+}
+
+
 	
 set_song_ingame(playTrack, 60, 30);
 

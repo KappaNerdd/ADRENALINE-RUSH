@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_RailTrickBlaze1",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.3289568,
+  "exportDir":"",
+  "name":"snd_RailTrickBlaze1",
+  "parent":{
+    "name":"Sonic Rush Shit",
+    "path":"folders/Sounds/Sound Effects/Sonic Rush Shit.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_RailTrickBlaze1.wav",
+  "volume":1.0,
+}

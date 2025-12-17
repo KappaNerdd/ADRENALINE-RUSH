@@ -50,6 +50,7 @@ if active && (place_meeting(x, y, obj_Player) or place_meeting(x, y, obj_StompVF
 	}
 		
 	obj_SFXManager.parry = true;
+	obj_SFXManager.itemBreak = true;
 	
 	if obj_Player.yspd > 0 && !obj_Player.ground && !obj_Player.stomping {
 		obj_Player.yspd = -4;

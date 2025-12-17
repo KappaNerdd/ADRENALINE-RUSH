@@ -161,7 +161,7 @@ display_set_gui_size(global.CamWidth, global.CamHeight);
 	draw_sprite_ext(spr_CharSelectRushBallWhite, 0, rushBallX, global.CamHeight - 90, 1, 1, rushBallAngle, c_white, 1);
 	draw_sprite_ext(spr_CharSelectRushBall2, 0, rushBallX, global.CamHeight - 90, 1, 1, rushBallAngle, global.fullRGB, 1);
 	draw_sprite_ext(spr_CharSelectRushBall2, 1, rushBallX, global.CamHeight - 90, 1, 1, 0, global.fullRGB, 1);
-	draw_sprite_ext(global.PlayerSelection[global.SelectedPlayer][28][3], mindFrames, rushBallX, global.CamHeight - 90, 1, 1, rushBallAngle, c_white, 1);
+	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][28][3], mindFrames, rushBallX, global.CamHeight - 90, 1, 1, rushBallAngle, c_white, 1);
 	
 	draw_sprite_ext(_pauseArrow, mindFrames, rushBallX * 2.55 - 3, global.CamHeight - 40 + 15, 1, 0.5, 0, c_black, 1);
 	draw_text_transformed_color(rushBallX * 2.55 - 3, global.CamHeight - 40 + 3, _choicesNames, 1, 1, 0, c_black, c_black, c_black, c_black, 1);

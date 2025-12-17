@@ -17,7 +17,12 @@ function scr_SpeedBreakStep() {
 			scr_StopCamMove();
 			scr_ControllerRumble();
 			speedBreak = true;
-			obj_SFXManager.airDashSound = true;
+			
+			if sonicRush {
+				obj_SFXManager.breakSonic = true;
+			} else if blazeRush {
+				obj_SFXManager.breakBlaze = true;
+			}
 		}
 	} else if abs(vel) < max_Speed && !speedBreak && ground && !stomping && !stomped {
 		speedBreakTimer = 240;
@@ -99,7 +104,7 @@ function scr_BoostingStep() {
 	}
 	
 	//Activate Boost
-	if (action1_Key) && !playerHurt && !instance_exists(obj_CutsceneParent) && can_MoveFULL && can_Move && !stomping && !airBoost && !rampRing && !afterRailJump && !global.Death && boostEnergy > 0 && !prepare {
+	if (action1_Key) && !playerHurt && !instance_exists(obj_CutsceneParent) && can_MoveFULL && can_Move && !stomping && !airBoost && !global.Death && boostEnergy > 0 && !prepare {
 		boost = true;
 		initiateBoost = true;
 		speedBreak = true;
@@ -117,6 +122,24 @@ function scr_BoostingStep() {
 			if !rushMode {
 				boostEnergy -= 25;
 			}
+			
+			rampRing = false;
+			afterRailJump = false;
+			trick = false;
+			altTrick = true;
+			leftTrick = false;
+			rushTrick = false;
+			rushTrickFinish = false;
+			altFinish = false;
+			backTrick = false;
+			rightTrick = false;
+			upTrick = false;
+			altTrickTimer = altTrickFrames;
+			preTrickTimer = preTrickFrames;
+			rushTrickBufferTimer = 0;
+			rushTrickFinaleBufferTimer = 0;
+			rushTrickCombo = 0;
+			rushTrickTimer = 0;
 		}
 		
 		if !rushMode && ground {
@@ -224,9 +247,6 @@ function scr_BoostingStep() {
 			if !instance_exists(obj_Boost) {
 				instance_create_depth(x, y, depth, obj_Boost);
 			}
-			
-			instance_create_depth(x, y, depth, obj_BoostBlock);
-			instance_create_depth(x, y, depth, obj_BoostParticles);
 		}
 		
 		if abs(vel) < max_Speed / 2 && ground && !stomping && !stomped {

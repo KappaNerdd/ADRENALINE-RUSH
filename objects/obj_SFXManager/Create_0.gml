@@ -1,6 +1,33 @@
 global.SFX_VOL = 1;
 global.MASTER_VOL = 1;
 
+
+//More Sonic Rush Shit
+breakSonic = false;
+breakBlaze = false;
+
+jumpDash = false;
+
+railTrickSonic1 = false;
+railTrickSonic2 = false;
+railTrickSonic3 = false;
+
+railTrickBlaze1 = false;
+railTrickBlaze2 = false;
+railTrickBlaze3 = false;
+
+dashPanel = false;
+trickPanel = false;
+
+rankSlam = false;
+rushDeath = false;
+
+rushCheckpoint = false;
+rushSpring = false;
+
+itemBreak = false;
+
+
 //Environment
 footStepHard = false;
 landHard = false;

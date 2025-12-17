@@ -2,6 +2,176 @@
 var _sfxVol = global.MASTER_VOL * global.SFX_VOL;
 var _ambVol = global.MASTER_VOL * global.AMBIENCE_VOL;
 
+//More Sonic Rush Shit
+
+//Break Sonic
+if breakSonic {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_SpeedBreakSonic, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	breakSonic = false;
+}
+
+//Break Blaze
+if breakBlaze {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_SpeedBreakBlaze, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	breakBlaze = false;
+}
+
+//Jump Dash
+if jumpDash {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_JumpDash, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	jumpDash = false;
+}
+
+//Rail Trick Sonic 1
+if railTrickSonic1 {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RailTrickSonic1, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	railTrickSonic1 = false;
+}
+
+//Rail Trick Sonic 2
+if railTrickSonic2 {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RailTrickSonic2, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	railTrickSonic2 = false;
+}
+
+//Rail Trick Sonic 3
+if railTrickSonic3 {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RailTrickSonic2, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	audio_sound_pitch(_snd, 1.25);
+	
+	railTrickSonic3 = false;
+}
+
+
+//Rail Trick Blaze 1
+if railTrickBlaze1 {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RailTrickBlaze1, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	railTrickBlaze1 = false;
+}
+
+//Rail Trick Blaze 2
+if railTrickBlaze2 {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RailTrickBlaze2, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	railTrickBlaze2 = false;
+}
+
+//Rail Trick Blaze 3
+if railTrickBlaze3 {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RailTrickBlaze2, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	audio_sound_pitch(_snd, 1.25);
+	
+	railTrickBlaze3 = false;
+}
+
+
+//Dash Panel
+if dashPanel {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_DashPanel, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	dashPanel = false;
+}
+
+//Trick Panel
+if trickPanel {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_DashTrick, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	trickPanel = false;
+}
+
+
+//Rank Slam
+if rankSlam {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RankSlam, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	rankSlam = false;
+}
+
+//Rush Death
+if rushDeath {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_YouDiedBitch, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	rushDeath = false;
+}
+
+
+//Rush Checkpoint
+if rushCheckpoint {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RushCheckpoint, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	rushCheckpoint = false;
+}
+
+//Rush Spring
+if rushSpring {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_SpringBounce, 8, false);
+	audio_sound_gain(_snd, _sfxVol * 1.5, 0);
+	
+	rushSpring = false;
+}
+
+
+//Item Break
+if itemBreak {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_ItemBreak, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	itemBreak = false;
+}
+
+
 
 //Environment
 
@@ -323,7 +493,7 @@ if homingLockOn == true {
 if homingAttack == true {
 	
 	//Play Sound
-	var _snd = audio_play_sound(snd_HomingAttack, 8, false);
+	var _snd = audio_play_sound(snd_RushHomingAttack, 8, false);
 	audio_sound_gain(_snd, _sfxVol, 0);
 	
 	homingAttack = false;
@@ -483,7 +653,7 @@ if stompingSound == true {
 if stompingRev == true {
 	
 	//Play Sound
-	var _snd = audio_play_sound(snd_StompingPickUp, 8, false);
+	var _snd = audio_play_sound(snd_Spindash, 8, false);
 	audio_sound_gain(_snd, _sfxVol, 0);
 	
 	stompingRev = false;
@@ -493,7 +663,7 @@ if stompingRev == true {
 if stompingCharged == true {
 	
 	//Play Sound
-	var _snd = audio_play_sound(snd_StompingFullCharge, 8, false);
+	var _snd = audio_play_sound(snd_SpindashLaunch, 8, false);
 	audio_sound_gain(_snd, _sfxVol, 0);
 	
 	stompingCharged = false;
@@ -629,7 +799,7 @@ if airDashSound == true {
 if railGrindOn == true {
 	
 	//Play Sound
-	var _snd = audio_play_sound(snd_RailOn, 8, false);
+	var _snd = audio_play_sound(snd_RushRailGrindOn, 8, false);
 	audio_sound_gain(_snd, _sfxVol, 0);
 	
 	railGrindOn = false;
@@ -638,7 +808,7 @@ if railGrindOn == true {
 
 //Rail Grinding (Loop)
 if railGrinding == true && !audio_is_playing(railGrindingInst) {
-	railGrindingInst = audio_play_sound(snd_RailGrind, 1, true);
+	railGrindingInst = audio_play_sound(snd_RushRailGrind, 1, true);
 }
 
 if railGrinding == false && audio_is_playing(railGrindingInst) {

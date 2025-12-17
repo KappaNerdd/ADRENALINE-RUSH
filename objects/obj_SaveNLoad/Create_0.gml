@@ -1203,6 +1203,8 @@
 	global.GameScore = 0;
 	global.Rings = 0;
 	global.EnemyCount = 0;
+	global.CustomMus = false
+	global.CustomMusic = noone;
 
 	global.FRankTime = 0;
 	global.DRankTime = 0;

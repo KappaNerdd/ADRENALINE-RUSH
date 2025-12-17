@@ -508,7 +508,7 @@ if can_MoveFULL {
 		}
 
 		if stomping {
-			termVel = normalTermVel * 2;
+			termVel = normalTermVel * 1.5;
 			yspd = termVel;
 		}
 

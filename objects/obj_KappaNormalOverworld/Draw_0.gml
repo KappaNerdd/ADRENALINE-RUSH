@@ -22,7 +22,7 @@ if global.DEBUG {
 
 	draw_sprite_ext(mask_index, 0, x, y, 1, 1, image_angle, c_red, 0.5);
 	draw_sprite_ext(mask_index, 0, x, y + 4, 1, 1, image_angle, c_green, 0.5);
-	draw_sprite_ext(mask_index, 0, x + vel, y - abs(vel) - 30, 1, 1, image_angle, c_blue, 0.5);
+	draw_line_color(vel + bbox_left, y, vel + bbox_right, y + 85, c_red, global.fullRGB);
 	draw_sprite_ext(mask_index, 0, x + vel, y + 50, 1, 1, image_angle, c_yellow, 0.5);
 	draw_point_color(x, y - 10, c_fuchsia);
 }

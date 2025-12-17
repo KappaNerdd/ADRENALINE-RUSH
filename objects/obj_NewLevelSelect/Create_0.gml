@@ -4,6 +4,8 @@ x = -1000000;
 global.Freeplay = true;
 global.MIND = false;
 global.Health = global.MaxHealth;
+global.CustomMus = false
+global.CustomMusic = noone;
 
 if global.PlayerChar == 0 {
 	global.PlayerChar = 1;
@@ -110,3 +112,5 @@ lockFrames = 0;
 
 mindAnim = 1 / 12;
 mindFrames = 0;
+
+custMusFile = "";

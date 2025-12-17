@@ -22,7 +22,7 @@ if _dist <= 150 && active == false {
 		obj_SFXManager.rushModeTrick = true;
 	}
 	
-	obj_SFXManager.funkinCheckpoint = true;
+	obj_SFXManager.rushCheckpoint = true;
 	
 	if global.Particles {
 		instance_create_depth(x, y, depth, obj_CheckpointPart);

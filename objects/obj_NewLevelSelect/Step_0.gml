@@ -170,6 +170,25 @@ if !confirm {
 		}
 	#endregion
 	
+	#region //Custom Music
+		if right_Key_Once && chosen {
+			var _chooseSpeed = global.speedStageData[chosenSpeed];
+			
+			if _chooseSpeed.complete {
+				var _customMus = get_open_filename(".OGG Files|*.ogg", "");
+				
+				if _customMus != "" {
+					custMusFile = _customMus;
+					global.CustomMusic = audio_create_stream(_customMus);
+					global.CustomMus = true;
+					obj_SFXManager.homingLockOn = true;
+				}
+			} else {
+				obj_SFXManager.menuCancel = true;
+			}
+		}
+	#endregion
+	
 	#region //Replay Button
 		if speedStage && chosen {
 			var _dir = working_directory + "/replay" + string(global.speedStageData[global.SpeedSelected].folder_Name);

@@ -363,10 +363,6 @@ if can_MoveFULL {
 				}
 			}
 			
-			if stompingTimer == 1 {
-				obj_SFXManager.stompingCharged = true;
-			}
-			
 			if !action_Key_Held && stompingTimer > 0 {
 				normalStomp = true;
 			} else if action_Key_Held && stompingTimer <= 0 {
@@ -374,7 +370,7 @@ if can_MoveFULL {
 			}
 			
 			if normalStomp {
-				yspd = termVel;
+				yspd = termVel * 1.25;
 				termVel = normalTermVel;
 			}
 			
@@ -387,10 +383,11 @@ if can_MoveFULL {
 				
 				if omegaStompingTimer <= 0 {
 					termVel = omegaTermVel;
-					yspd = omegaTermVel;
+					yspd = omegaTermVel * 1.1;
 					
 					if !stompedSound {
 						stompedSound = true;
+						obj_SFXManager.stompingCharged = true;
 						obj_SFXManager.omegaStomping = true;
 					}
 				}
@@ -534,7 +531,7 @@ if can_MoveFULL {
 				sideWallJump = false;
 					
 				if specialKeyBuffered {
-					vel = -wallJumpVel;
+					vel = -12;
 					yspd = -5;
 					
 					face_Left = true;
@@ -543,14 +540,14 @@ if can_MoveFULL {
 					sideWallJump = true;
 					wallJump = false;
 					
-					obj_SFXManager.airDashSound = true;
+					obj_SFXManager.jumpDash = true;
 				}
 			} else if place_meeting(x - 1, y, obj_Solid) {
 				face_Left = true;
 				sideWallJump = false;
 					
 				if specialKeyBuffered {
-					vel = wallJumpVel;
+					vel = 12;
 					yspd = -5;
 						
 					face_Left = false;
@@ -559,7 +556,7 @@ if can_MoveFULL {
 					sideWallJump = true;
 					wallJump = false;
 					
-					obj_SFXManager.airDashSound = true;
+					obj_SFXManager.jumpDash = true;
 				}
 			}
 				

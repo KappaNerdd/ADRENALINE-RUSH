@@ -44,7 +44,7 @@ if !global.ExtendCamera {
 	_camX = floor(((following.x + _changeX) - _camWidth / 2));
 	_camY = floor(((following.y + _changeY) - _camHeight / 2));
 	
-	_changeX = lerp(_changeX, obj_Player.vel * 12.4, 0.05);
+	_changeX = lerp(_changeX, obj_Player.vel * 12, 0.05);
 	
 	if obj_Player.yspd >= 0 && !obj_Player.ground {
 		_changeY = lerp(_changeY, obj_Player.yspd * 8, 0.05);

@@ -29,6 +29,7 @@ function scr_BasicVariablesSpeedCreate() {
 	#region //Movement Checks
 		can_Move = true;
 		can_MoveFULL = true;
+		noMoveTimer = 0;
 		
 		left_Key = false;
 		left_Key_Once = false;
@@ -108,6 +109,8 @@ function scr_BasicVariablesSpeedCreate() {
 		skid = false;
 		sliding = false;
 		face_Left = false;
+		
+		mask_index = idle_Mask;
 	#endregion
 	
 	#region //Some Extra Bullshits
@@ -287,6 +290,12 @@ function scr_BasicControlsSpeedStep1() {
 		scr_FootSteps(footStep);
 	#endregion
 	
+	#region //Run Fast Particles
+		if abs(vel) >= 15 && ground && global.Particles {
+			instance_create_depth(x, y + 21, depth + 1, obj_BoostParticles);
+		}
+	#endregion
+	
 }
 
 function scr_BasicControlsSpeedStep2() {
@@ -424,13 +433,13 @@ function scr_BasicVisualEffectsSpeed1() {
 	#endregion
 
 	#region //Sliding After Images
-		if sliding && abs(vel) >= max_Speed {
+		if sliding && abs(vel) >= max_Speed && !speedBreak {
 			scr_PlayerTrail();
 		}
 	#endregion	
 			
 	#region //Speed Break
-		if speedBreak && !boost {
+		if speedBreak {
 			scr_PlayerTrail();
 			scr_SpeedBreakVFX();
 			scr_RailGrindParticles(x);
@@ -455,7 +464,7 @@ function scr_BasicVisualEffectsSpeed1() {
 	#endregion
 
 	#region //Stomped
-		scr_StompedVFX();
+		//scr_StompedVFX();
 	#endregion
 
 	#region //Stomped Screen Shake
@@ -469,7 +478,7 @@ function scr_BasicVisualEffectsSpeed1() {
 		if wallJump && place_meeting(x + 1, y, obj_Solid) {
 			scr_DustParticles();
 		} else if wallJump && place_meeting(x - 1, y, obj_Solid) {
-			scr_DustParticles(x - 18);
+			scr_DustParticles(-18);
 		}
 	#endregion
 		
@@ -483,10 +492,6 @@ function scr_BasicVisualEffectsSpeed1() {
 		if railGrind {
 			scr_RailGrindParticles();
 		}
-	#endregion
-			
-	#region //Before Trick
-		scr_BodyGlowVFX();
 	#endregion
 }
 
@@ -669,6 +674,12 @@ function scr_GeneralAnimationsSpeed() {
 				image_speed = 1;
 				mask_index = idle_Mask;
 			}
+		}
+		
+		if global.Death {
+			sprite_index = sprDeath;
+			image_speed = 1;
+			mask_index = idle_Mask;
 		}
 	#endregion
 	
@@ -999,7 +1010,11 @@ function scr_StopCharControls2() {
 }
 
 function scr_Deceleration() {
-	if !playerHurt && !prepare {
+	if noMoveTimer > 0 {
+		noMoveTimer--;
+	}
+	
+	if !playerHurt && !prepare && noMoveTimer == 0 {
 		if !railGrind && !sliding && !stomped {
 			if vel > 0 && !right_Key {
 				if ground {
@@ -1037,7 +1052,7 @@ function scr_Deceleration() {
 		}
 	
 		if !ground && !boost {
-			if yspd >= -5 && yspd < 0 && abs(vel) > max_Speed {
+			if yspd >= -6 && yspd < 0 && abs(vel) > max_Speed {
 				if vel > 0 {
 					vel -= dcc;
 				} else if vel < 0 {
@@ -1083,10 +1098,10 @@ function scr_SpeedLimit() {
 	    vel = 0;
 	}
  
-	if vel >= 25 {
-		vel = 25;
-	} else if vel <= -25 {
-		vel = -25;
+	if vel >= 29 {
+		vel = 29;
+	} else if vel <= -29 {
+		vel = -29;
 	}
 }
 
@@ -1185,10 +1200,10 @@ function scr_JumpManipulate() {
 	if !playerHurt {
 		if ground {
 			if global.Particles {
-				instance_create_depth(x + 7, y + 26, depth, obj_SlideDustVFX);
-				instance_create_depth(x + 14, y + 26, depth, obj_SlideDustVFX);
-				instance_create_depth(x - 10, y + 26, depth, obj_SlideDustVFX);
-				instance_create_depth(x - 17, y + 26, depth, obj_SlideDustVFX);
+				instance_create_depth(x, y + 21, depth, obj_SlideDustVFX);
+				instance_create_depth(x + 7, y + 21, depth, obj_SlideDustVFX);
+				instance_create_depth(x - 17, y + 21, depth, obj_SlideDustVFX);
+				instance_create_depth(x - 24, y + 21, depth, obj_SlideDustVFX);
 			}
 		
 			if isSlope or railGrindCheck {
@@ -1236,7 +1251,7 @@ function scr_VariableJumping() {
 
 //Player Movement
 function scr_PlayerMoveLeft() {
-	if !playerHurt && !prepare {
+	if !playerHurt && !prepare && noMoveTimer == 0 {
 		if !speedBreak {
 			if vel > -max_Speed {
 				vel -= acc;
@@ -1256,7 +1271,7 @@ function scr_PlayerMoveLeft() {
 }
 
 function scr_PlayerMoveRight() {
-	if !playerHurt && !prepare {
+	if !playerHurt && !prepare && noMoveTimer == 0 {
 		if !speedBreak {
 			if vel < max_Speed {
 				vel += acc;

@@ -4,7 +4,7 @@ if instance_exists(obj_RoomTransParent) or instance_exists(obj_Textbox) or insta
 	xMove = lerp(xMove, 0, 0.1);
 }
 
-personalBoost = lerp(personalBoost, obj_Player.boostEnergy, 0.1);
+personalBoost = lerp(personalBoost, obj_Player.boostEnergy, 0.25);
 
 if instance_exists(obj_Player) {
 	if obj_Player.rushMode == false {

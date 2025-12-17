@@ -121,19 +121,16 @@ if !completed {
 			if !rankShook {
 				rankShakeValue = 2;
 				rankShook = true;
+				obj_SFXManager.rankSlam = true;
 				
 				if global.Rank == 0 or global.Rank == 1 {
 					set_song_ingame(global.PlayerSelection[global.PlayerChar][23][0], 0, 60);
-					obj_SFXManager.springBounce = true;
 				} else if global.Rank == 2 or global.Rank == 3 or global.Rank == 4 {
 					set_song_ingame(global.PlayerSelection[global.PlayerChar][23][1], 0, 60);
-					obj_SFXManager.omegaConfirm = true;
 				} else if global.Rank == 5 {
 					set_song_ingame(global.PlayerSelection[global.PlayerChar][23][2], 0, 60);
-					obj_SFXManager.funkinCheckpoint = true;
 				} else if global.Rank == 6 {
 					set_song_ingame(global.PlayerSelection[global.PlayerChar][23][3], 0, 60);
-					obj_SFXManager.funkinCheckpoint = true;
 				}
 				
 				save_Speed_Stage(global.saveFile);

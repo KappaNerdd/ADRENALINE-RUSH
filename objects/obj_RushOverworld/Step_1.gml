@@ -506,7 +506,7 @@ if can_MoveFULL {
 		if spindash && !down_Key {
 			ducking = false;
 		    sliding = true;
-		    vel = image_xscale * spindashTimer / 10;
+		    vel = image_xscale * spindashTimer / 9;
 			yspd = 0;
 		    spindash = false;
 			spindashRev = false;
@@ -514,7 +514,7 @@ if can_MoveFULL {
 			
 			scr_StopCamMove();
 			
-			obj_SFXManager.spindashRev = true;
+			obj_SFXManager.stompingCharged = true;
 		}
 	#endregion
 		
@@ -555,7 +555,7 @@ if can_MoveFULL {
 		}
 		
 		if superPeelout && !up_Key {
-		    vel = image_xscale * superPeeloutTimer / 13;
+		    vel = image_xscale * superPeeloutTimer / 11.5;
 			yspd = 0;
 			look_up = false;
 		    superPeelout = false;
@@ -567,7 +567,7 @@ if can_MoveFULL {
 				speedBreak = true;
 			}
 			
-			obj_SFXManager.spindashRev = true;
+			obj_SFXManager.stompingCharged = true;
 		}
 	#endregion
 
@@ -589,7 +589,7 @@ if can_MoveFULL {
 			rushTrickFinish = false;
 			image_index = 0;
 			
-			obj_SFXManager.homingAttack = true;
+			obj_SFXManager.block = true;
 		}
 		
 		if ground or afterRailJump or rampRing or airBoost  {
@@ -724,7 +724,7 @@ if can_MoveFULL {
 				obj_SFXManager.sonicJump = true;
 					
 				yspd = -jspd;
-				vel = onWall * -wallJumpVel;
+				vel = onWall * -7;
 			}
 				
 			termVel = 4;

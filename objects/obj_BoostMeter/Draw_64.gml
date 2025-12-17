@@ -118,10 +118,10 @@ if instance_exists(obj_Player) {
 	var _top = spr_BoostMeterBackBottom;
 	var _mid = spr_BoostMeterBackMid;
 	var _bottom = spr_Speedometer;
-	var _speedMeter = abs(obj_Player.vel);
+	var _speedMeter = abs(obj_Player.vel) * 1.04;
 	
-	if abs(obj_Player.vel) >= 25 {
-		_speedMeter = 25;
+	if abs(obj_Player.vel) * 1.04 >= 30 {
+		_speedMeter = 30;
 	}
 	
 	if global.MIND or global.PlayerChar == 0 {

@@ -354,6 +354,27 @@ display_set_gui_size(768, 432);
 				draw_sprite_ext(_button, _butSelect, 70 + _extraWidth2, 380, 1, 1, 0, c_white, chosenTextAlpha);
 				draw_text_transformed_color(70 + _extraWidth2 + _backWidth + 10, 370, _selectText, 1, 1, 0, c_white, c_white, c_white, c_white, chosenTextAlpha);
 			#endregion
+			
+			#region //Custom Music (I'm Shadow Freddy. I'm so awesome and black.)
+				var _custCol = c_grey;
+				var _custText = "freeplay_CustMus";
+				
+				if global.CustomMusic != noone {
+					_custText = "freeplay_CustMusLoad";
+				}
+				
+				if _levelDesc.complete {
+					_custCol = c_white;
+				}
+			
+				draw_set_halign(fa_right);
+					draw_text_transformed_color(703, 173, scr_LocalText(_custText), 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
+					draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 623, 148, 1, 1, 0, c_black, chosenTextAlpha);
+				
+					draw_text_transformed_color(700, 170, scr_LocalText(_custText), 1, 1, 0, c_white, c_white, _custCol, _custCol, chosenTextAlpha);
+					draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 620, 145, 1, 1, 0, _custCol, chosenTextAlpha);
+				draw_set_halign(fa_left);
+			#endregion
 		#endregion
 	}
 #endregion
@@ -377,5 +398,5 @@ display_set_gui_size(768, 432);
 	}
 
 	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesFrames, 0 - srSpikesX, 0, 2, 2, 0, global.fullRGB, 1);
-	draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 20, 768 + srSpikesX, 0, -2, 2, 0, global.fullRGB, 1);
+	draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 20, 769 + srSpikesX, 0, -2, 2, 0, global.fullRGB, 1);
 #endregion

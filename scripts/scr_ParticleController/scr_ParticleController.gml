@@ -1,12 +1,21 @@
 function scr_PlayerTrail() {
-	if !global.SimplifyVFX && !boost {
-		instance_create_depth(x, y, depth + 1, obj_PlayerTrail);
+	if !global.SimplifyVFX {
+		with(instance_create_depth(x, y, depth + 1, obj_PlayerTrail)) {
+			x = other.x;
+			y = other.y;
+			
+			sprite_index = other.sprite_index;
+			image_index = other.image_index;
+			image_angle = other.drawAngle;
+			image_xscale = other.image_xscale;
+			image_yscale = other.image_yscale;
+		}
 	}
 }
 
-function scr_DustParticles(_x = 0, _y = 18) {
-	if !instance_exists(obj_SlideDustVFX) && global.Particles {
-		instance_create_depth(x, y + 18, depth + 1, obj_SlideDustVFX);
+function scr_DustParticles(_x = 0, _y = 15) {
+	if global.Particles {
+		instance_create_depth(x + _x, y + _y, depth + 1, obj_SlideDustVFX);
 	}
 }
 
@@ -22,15 +31,12 @@ function scr_SpeedBreakVFX() {
 
 function scr_StompVFX() {
 	if stomping && !instance_exists(obj_StompingVFX) && !instance_exists(obj_NewPauseMenu) && global.Particles {
-		instance_create_depth(x, y, depth - 1, obj_StompingVFX)
+		instance_create_depth(x, y, depth - 1, obj_StompingVFX);
 	}
 }
 
 function scr_StompedVFX() {
-	if stomped && !stompedCheck && !instance_exists(obj_StompVFX) {
-		instance_create_depth(x, y + 2, depth, obj_StompVFX);
-		stompedCheck = true;
-	}
+	instance_create_depth(x, y + 2, depth, obj_StompVFX);
 }
 
 function scr_RailGrindParticles(_x = 0, _y = 30) {

@@ -28,7 +28,9 @@ function scr_XCollision() {
 
 	    if place_meeting(x + vel, y, obj_Solid) {
 			//First check if there is a slope to go up
-			if !place_meeting(x + vel, y - abs(vel) - 30, obj_Solid) {
+			var _blockCheck = collision_rectangle(vel + bbox_left, y - 50, vel + bbox_right, y - 40, obj_Solid, true, true);
+			
+			if !_blockCheck {
 				if (isSlope or railGrindCheck) {
 					while(place_meeting(x + vel, y, obj_Solid)) {
 						y -= _subPixel;
@@ -42,11 +44,6 @@ function scr_XCollision() {
 					while !place_meeting(x + _pixelCheck, y, obj_Solid) {
 					   x += _pixelCheck;
 					}
-
-					//Set velocity to zero to "collide"
-					if abs(vel) > 5 && !ground {
-						wallJumpVel = abs(vel);
-					}
 					
 					vel = 0;
 					groundSpeed = 0;
@@ -57,7 +54,9 @@ function scr_XCollision() {
 		//Slope collision
 		downSlopeSemiSolid = noone;
 		
-		if yspd >= 0 && (isSlope or railGrindCheck) && ground && (!place_meeting(x + vel, y + 1, obj_Solid)) && (place_meeting(x + vel, y + 55, obj_Solid) or place_meeting(x + vel, y + 25, obj_Solid)) {
+		var _lineCheck = collision_rectangle(vel + bbox_left, y, vel + bbox_right, y + 85, obj_Solid, false, true);
+		
+		if yspd >= 0 && (isSlope or railGrindCheck) && ground && (!place_meeting(x + vel, y + 1, obj_Solid) && _lineCheck) {
 			while(!place_meeting(x + vel, y + _subPixel, obj_Solid)) {
 				y += _subPixel;
 			}
@@ -228,13 +227,6 @@ function scr_YCollision() {
 								extraXscale = 1.25;
 							}
 							
-							if global.Particles {
-								instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
-								instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
-								instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
-								instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
-							}
-							
 							if winningAngle != 0 {
 								vel += yspd * 0.5 * -sign(sin(winningAngle));
 							}
@@ -260,13 +252,6 @@ function scr_YCollision() {
 					if !angleChecked {
 						if global.Squash {
 							extraXscale = 1.25;
-						}
-							
-						if global.Particles {
-							instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
-							instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
-							instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
-							instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
 						}
 						
 						if winningAngle != 0 {
@@ -312,13 +297,6 @@ function scr_YCollision() {
 								extraXscale = 1.25;
 							}
 							
-							if global.Particles {
-								instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
-								instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
-								instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
-								instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
-							}
-							
 							if winningAngle != 0 {
 								vel += yspd * 0.5 * -sign(sin(winningAngle));
 							}
@@ -344,13 +322,6 @@ function scr_YCollision() {
 					if !angleChecked {
 						if global.Squash {
 							extraXscale = 1.25;
-						}
-							
-						if global.Particles {
-							instance_create_depth(x + 7, y + 22, depth, obj_SlideDustVFX);
-							instance_create_depth(x + 14, y + 22, depth, obj_SlideDustVFX);
-							instance_create_depth(x - 10, y + 22, depth, obj_SlideDustVFX);
-							instance_create_depth(x - 17, y + 22, depth, obj_SlideDustVFX);
 						}
 						
 						if winningAngle != 0 {
@@ -587,7 +558,7 @@ function scr_YCollision() {
 				if _ramp && !global.Death {
 					if !_ramp.launchConfirmed {
 						if ground && yspd >= 0 {
-							obj_SFXManager.boostPad = true;
+							obj_SFXManager.jumpDash = true;
 							_ramp.launchConfirmed = true;
 	
 							scr_StopPlayerHurt();
@@ -648,7 +619,7 @@ function scr_YCollision() {
 	
 						scr_StopPlayerHurt();
 	
-						obj_SFXManager.boostPad = true;
+						obj_SFXManager.dashPanel = true;
 	
 						x = _launchRing.x + lengthdir_x(0, _launchRing.image_angle) + (_launchRing.sprite_width / 2);
 						y = _launchRing.y + lengthdir_y(0, _launchRing.image_angle) + (_launchRing.sprite_height / 2);
@@ -707,13 +678,13 @@ function scr_YCollision() {
 			#region //Rail-Trick Collision
 				var _block = instance_place(x, y, obj_RailTrickColl);
 
-				if _block && (jump_Key) && railGrind && !global.Death {
+				if _block && (action2_Key) && railGrind && !global.Death {
 					yspd = -10;
 					ground = false;
 					jumping = true;
 					rampRing = true;
 					trickWait = 2;
-					obj_SFXManager.boostPad = true;
+					obj_SFXManager.trickPanel = true;
 	
 					if _block.giveScore {
 						_block.giveScore = false;
@@ -781,7 +752,7 @@ function scr_YCollision() {
 			
 				if _spring {
 					if !_spring.active {
-						obj_SFXManager.springBounce = true;
+						obj_SFXManager.rushSpring = true;
 						_spring.active = true;
 						_spring.image_speed = 1;
 						
@@ -840,7 +811,7 @@ function scr_YCollision() {
 				
 				if _tramp {
 					if yspd >= 0 {
-						obj_SFXManager.springBounce = true;
+						obj_SFXManager.rushSpring = true;
 						_tramp.active = true;
 						_tramp.image_speed = 1;
 						_tramp.image_index = 0;
@@ -1302,6 +1273,8 @@ function scr_YCollision() {
 	}
 }
 
+
+
 function scr_Landing(_type = "hard") {
 	if global.Footstep {
 		if _type == "grass" {
@@ -1309,6 +1282,17 @@ function scr_Landing(_type = "hard") {
 		} else {
 			obj_SFXManager.landHard = true;
 		}
+	}
+	
+	if global.Particles {
+		if stomping {
+			scr_StompedVFX();
+		}
+		
+		instance_create_depth(x, y + 21, depth, obj_SlideDustVFX);
+		instance_create_depth(x + 7, y + 21, depth, obj_SlideDustVFX);
+		instance_create_depth(x - 17, y + 21, depth, obj_SlideDustVFX);
+		instance_create_depth(x - 24, y + 21, depth, obj_SlideDustVFX);
 	}
 }
 
@@ -1432,6 +1416,10 @@ function scr_RailGrindingStep() {
 			}
 			
 		} else {
+			if audio_is_playing(snd_RushRailGrindOn) {
+				audio_stop_sound(snd_RushRailGrindOn);
+			}
+			
 			obj_SFXManager.railGrinding = false;
 		}
 		
@@ -1491,16 +1479,14 @@ function scr_WallClingStep() {
 				canWallJump = _wall.wallJumpable;
 			}
 				
-			if canWallJump {
+			if canWallJump && action4_Key_Held {
 				if !wallJump {
+					if yspd > 0 {
+						yspd = 0;
+					}
+					
 					wallJump = true;
 					obj_SFXManager.clench = true;
-				}
-				
-				if wallJumpVel > max_Speed {
-					wallJumpVel -= 1;
-				} else if wallJumpVel <= max_Speed {
-					wallJumpVel = max_Speed;
 				}
 				
 				afterWallJump = false;

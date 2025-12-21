@@ -10,8 +10,8 @@
   "name":"obj_Spikes",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/Objects/Environments/General.yy",
+    "name":"Hurting",
+    "path":"folders/Objects/Environments/General/Hurting.yy",
   },
   "parentObjectId":{
     "name":"obj_Solid",

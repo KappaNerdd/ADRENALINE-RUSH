@@ -8,6 +8,14 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 
 #region //Depth
 	depth = 2;
+	
+	if global.PlayerChar == 0 or global.MIND {
+		rankAnim = 1 / 12;
+	} else {
+		rankAnim = 1 / 4;
+	}
+	
+	rankFrames = 0;
 #endregion
 
 #region //Stop player from movin' and have 'em do their Prepare animation

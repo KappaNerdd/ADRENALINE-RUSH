@@ -385,8 +385,9 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Air-Dash
-		if !ground && !airDash && !rampRing && !afterRailJump && !trick && !stomping && !global.Death && action2_Key {
+		if !ground && !airDash && !playerHurt && !rampRing && !afterRailJump && !trick && !stomping && !global.Death && action2_Key {
 			airDash = true;
+			yspd = 0;
 			gravTimer = 10;
 			scr_ControllerRumble();
 			
@@ -443,7 +444,7 @@ if can_MoveFULL {
 				obj_SFXManager.jumpSound = true;
 					
 				yspd = -jspd;
-				vel = onWall * -(wallJumpVel + 1.5);
+				vel = onWall * -7;
 			}
 				
 			termVel = 4;

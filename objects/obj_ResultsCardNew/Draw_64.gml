@@ -71,6 +71,18 @@ draw_text_transformed_color(_camX + 125 + timeMoveX + 5, _camY + 195 + 5, string
 draw_text_transformed(_camX + 125 + timeMoveX, _camY + 195, string(ceil(savedScore)), _xscale, _yscale, _ang);
 draw_set_font(global.font_main);
 
+rankFrames += rankAnim;
+
+var _animCheck = 60
+
+if global.MIND or global.PlayerChar == 0 {
+	_animCheck = 3;
+}
+
+if rankFrames >= _animCheck {
+	rankFrames = 0;
+}
+
 var _scoreRank = spr_RankFHead;
 var _mod2 = global.speedStageData[global.SpeedSelected];
 var _totalSeconds = (savedMinutes * 100) + savedSeconds;
@@ -107,9 +119,9 @@ if !global.MIND && global.PlayerChar != 0 {
 
 
 draw_sprite_ext(timeSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 165 + 2 + 5, 1, 1, 0, c_black, 0.5);
-draw_sprite_ext(_scoreRank, mindImageIndex, _camX + timeMoveX + 220, _camY + 165 + 5, 0.5, 0.5, 0, c_black, 0.5);
+draw_sprite_ext(_scoreRank, rankFrames, _camX + timeMoveX + 220, _camY + 165 + 5, 0.5, 0.5, 0, c_black, 0.5);
 draw_sprite_ext(timeSprite, mindImageIndex, _camX + timeMoveX, _camY + 165 + 2, 1, 1, 0, _col, 1);
-draw_sprite_ext(_scoreRank, mindImageIndex, _camX + timeMoveX + 220, _camY + 165, 0.5, 0.5, 0, c_white, 1);
+draw_sprite_ext(_scoreRank, rankFrames, _camX + timeMoveX + 220, _camY + 165, 0.5, 0.5, 0, c_white, 1);
 
 
 var _timeRank = spr_RankFNew;
@@ -147,9 +159,9 @@ if !global.MIND && global.PlayerChar != 0 {
 
 
 draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 195 + 2 + 5, 1, 1, 0, c_black, 0.5);
-draw_sprite_ext(_timeRank, mindImageIndex, _camX + timeMoveX + 230, _camY + 195 + 5, 0.5, 0.5, 0, c_black, 0.5);
+draw_sprite_ext(_timeRank, rankFrames, _camX + timeMoveX + 230, _camY + 195 + 5, 0.5, 0.5, 0, c_black, 0.5);
 draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX, _camY + 195 + 2, 1, 1, 0, _col, 1);
-draw_sprite_ext(_timeRank, mindImageIndex, _camX + timeMoveX + 230, _camY + 195, 0.5, 0.5, 0, c_white, 1);
+draw_sprite_ext(_timeRank, rankFrames, _camX + timeMoveX + 230, _camY + 195, 0.5, 0.5, 0, c_white, 1);
 
 draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 280 + 5, 0.5, 0.3, 0, c_black, 0.5);
 draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 280, 0.5, 0.3, 0, _col, 1);
@@ -196,8 +208,8 @@ if !global.MIND && global.PlayerChar != 0 {
 }
 
 if createRank {
-	draw_sprite_ext(_rank, 0, _camX + rankShakeX + rankAltX + 220 + 5, _camY + rankShakeY + 255 + 5, 1 + rankSize, 1 + rankSize, 0, c_black, 0.5);
-	draw_sprite_ext(_rank, 0, _camX + rankShakeX + rankAltX + 220, _camY + rankShakeY + 255, 1 + rankSize, 1 + rankSize, 0, c_white, 1);
+	draw_sprite_ext(_rank, rankFrames, _camX + rankShakeX + rankAltX + 220 + 5, _camY + rankShakeY + 255 + 5, 1 + rankSize, 1 + rankSize, 0, c_black, 0.5);
+	draw_sprite_ext(_rank, rankFrames, _camX + rankShakeX + rankAltX + 220, _camY + rankShakeY + 255, 1 + rankSize, 1 + rankSize, 0, c_white, 1);
 }
 
 //Draw Sonic Rush Spikes

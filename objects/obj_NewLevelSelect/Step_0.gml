@@ -289,12 +289,12 @@ if !confirm {
 			if !instance_exists(obj_RoomTransParent) {
 				with(instance_create_depth(-100000, 0, depth, obj_RoomTransitionSEGAMenu)) {
 					if !global.speedStageData[global.SpeedSelected].levelForced {
-						target_rm = _level;
 						global.LevelForced = false;
 					} else {
-						target_rm = global.speedStageData[global.SpeedSelected].stage_RM;
 						global.LevelForced = true;
 					}
+					
+					target_rm = global.speedStageData[global.SpeedSelected].stage_RM;
 				}
 			}
 		}

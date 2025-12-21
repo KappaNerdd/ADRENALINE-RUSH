@@ -155,6 +155,21 @@ display_set_gui_size(768, 432);
 	if _levelDesc.mind {
 		_plusUltra = 7;
 	}
+
+	var _animCheck = 60
+
+	if _levelDesc.mind {
+		_animCheck = 3;
+		rankAnim = 1 / 12;
+	} else {
+		rankAnim = 1 / 4;
+	}
+	
+	rankFrames += rankAnim;
+
+	if rankFrames >= _animCheck {
+		rankFrames = 0;
+	}
 	
 	if actionStage {
 		_levelDesc = global.actionStageData[chosenAction];
@@ -190,8 +205,8 @@ display_set_gui_size(768, 432);
 			draw_sprite_ext(_rankSprite, mindFrames, 69, 153, 0.3, 0.3, 0, c_black, chosenTextAlpha);
 			draw_sprite_ext(_rankSprite, mindFrames, 72, 150, 0.3, 0.3, 0, c_white, chosenTextAlpha);
 			
-			draw_sprite_ext(ranks[_rankOA + _plusUltra], 0, 69, 183, 1, 1, 0, c_black, chosenTextAlpha);
-			draw_sprite_ext(ranks[_rankOA + _plusUltra], 0, 72, 180, 1, 1, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(ranks[_rankOA + _plusUltra], rankFrames, 69, 183, 1, 1, 0, c_black, chosenTextAlpha);
+			draw_sprite_ext(ranks[_rankOA + _plusUltra], rankFrames, 72, 180, 1, 1, 0, c_white, chosenTextAlpha);
 			
 			draw_sprite_ext(_rankChar, _rankCharCost, 122, 183, 1, 1, 0, c_black, chosenTextAlpha);
 			draw_sprite_ext(_rankChar, _rankCharCost, 125, 180, 1, 1, 0, c_white, chosenTextAlpha);
@@ -211,11 +226,11 @@ display_set_gui_size(768, 432);
 			var _rankTextWidth = string_width(_rankTimeText);
 			
 			draw_text_transformed_color(197, 123, _rankTimeText, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
-			draw_sprite_ext(ranks[_rankTime + _plusUltra], 0, 197 + (_rankTextWidth + 14), 123, 0.5, 0.5, 0, c_black, chosenTextAlpha);
+			draw_sprite_ext(ranks[_rankTime + _plusUltra], rankFrames, 197 + (_rankTextWidth + 14), 123, 0.5, 0.5, 0, c_black, chosenTextAlpha);
 			draw_sprite_ext(_rankTChar, _rankTCharCost, 225 + (_rankTextWidth + 14), 123, 0.5, 0.5, 0, c_black, chosenTextAlpha);
 			
 			draw_text_transformed_color(200, 120, _rankTimeText, 1, 1, 0, c_white, c_white, c_white, c_white, chosenTextAlpha);
-			draw_sprite_ext(ranks[_rankTime + _plusUltra], 0, 200 + (_rankTextWidth + 14), 120, 0.5, 0.5, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(ranks[_rankTime + _plusUltra], rankFrames, 200 + (_rankTextWidth + 14), 120, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 			draw_sprite_ext(_rankTChar, _rankTCharCost, 228 + (_rankTextWidth + 14), 120, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 		#endregion
 		
@@ -246,11 +261,11 @@ display_set_gui_size(768, 432);
 			var _rankSTextWidth = string_width(_rankScoreText + string(_score0) + _scoreCheck);
 			
 			draw_text_transformed_color(197, 153, _rankScoreText + _score0 + _scoreCheck, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
-			draw_sprite_ext(ranks[_actualScore + _plusUltra], 0, 197 + (_rankSTextWidth + 14), 153, 0.5, 0.5, 0, c_black, chosenTextAlpha);
+			draw_sprite_ext(ranks[_actualScore + _plusUltra], rankFrames, 197 + (_rankSTextWidth + 14), 153, 0.5, 0.5, 0, c_black, chosenTextAlpha);
 			draw_sprite_ext(_rankSChar, _rankSCharCost, 225 + (_rankSTextWidth + 14), 153, 0.5, 0.5, 0, c_black, chosenTextAlpha);
 			
 			draw_text_transformed_color(200, 150, _rankScoreText + _score0 + _scoreCheck, 1, 1, 0, c_white, c_white, c_white, c_white, chosenTextAlpha);
-			draw_sprite_ext(ranks[_actualScore + _plusUltra], 0, 200 + (_rankSTextWidth + 14), 150, 0.5, 0.5, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(ranks[_actualScore + _plusUltra], rankFrames, 200 + (_rankSTextWidth + 14), 150, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 			draw_sprite_ext(_rankSChar, _rankSCharCost, 228 + (_rankSTextWidth + 14), 150, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 		#endregion
 		

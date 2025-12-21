@@ -10,8 +10,8 @@
   "name":"obj_ParryFlash",
   "overriddenProperties":[],
   "parent":{
-    "name":"New",
-    "path":"folders/Objects/Debug/Action Sonic/New.yy",
+    "name":"VFX",
+    "path":"folders/Objects/VFX.yy",
   },
   "parentObjectId":null,
   "persistent":false,

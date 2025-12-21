@@ -385,7 +385,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Air-Dash
-		if !ground && !airDash && !rampRing && !afterRailJump && !trick && !stomping && !global.Death && action2_Key {
+		if !ground && !airDash && !playerHurt && !rampRing && !afterRailJump && !trick && !stomping && !global.Death && action2_Key {
 			airDash = true;
 			yspd = 0;
 			gravTimer = 10;

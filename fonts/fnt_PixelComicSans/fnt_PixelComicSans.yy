@@ -135,8 +135,8 @@
   "size":10.0,
   "styleName":"Regular",
   "textureGroupId":{
-    "name":"Title_Head",
-    "path":"texturegroups/Title_Head",
+    "name":"TextPorts",
+    "path":"texturegroups/TextPorts",
   },
   "TTFName":"",
   "usesSDF":false,

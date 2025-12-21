@@ -8,8 +8,8 @@
   "name":"obj_LevelCardMinor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Minor",
-    "path":"folders/Objects/Level Cards/Minor.yy",
+    "name":"Minor Old",
+    "path":"folders/Objects/Level Cards/Minor Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

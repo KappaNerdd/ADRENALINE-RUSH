@@ -113,4 +113,12 @@ lockFrames = 0;
 mindAnim = 1 / 12;
 mindFrames = 0;
 
+if global.MIND or global.PlayerChar == 0 {
+	rankAnim = 1 / 12;
+} else {
+	rankAnim = 1 / 4;
+}
+
+rankFrames = 0;
+
 custMusFile = "";

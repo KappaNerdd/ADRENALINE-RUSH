@@ -637,7 +637,7 @@ function scr_GeneralAnimationsSpeed() {
 	#endregion
 		
 	#region //Tricking
-		if (afterRailJump or rampRing) && !rushTrick && !trick && !altTrick {
+		if (afterRailJump or rampRing) && !rushTrick && !rushTrickFinish && !trick && !upTrick && !rightTrick && !leftTrick && !backTrick && !altTrick {
 			sprite_index = sprRailJump;
 					
 			if !leftFacer {

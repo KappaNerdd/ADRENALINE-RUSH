@@ -9,8 +9,8 @@
   "name":"obj_LauncherRampBlue",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/Objects/Environments/General.yy",
+    "name":"Gimmicks",
+    "path":"folders/Objects/Environments/General/Gimmicks.yy",
   },
   "parentObjectId":{
     "name":"obj_Ramp",

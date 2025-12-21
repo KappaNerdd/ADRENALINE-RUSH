@@ -157,8 +157,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"LevelCard_ResultsScreen",
-    "path":"texturegroups/LevelCard_ResultsScreen",
+    "name":"ResultsScreen",
+    "path":"texturegroups/ResultsScreen",
   },
   "type":0,
   "VTile":false,

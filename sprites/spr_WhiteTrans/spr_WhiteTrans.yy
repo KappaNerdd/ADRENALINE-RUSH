@@ -100,8 +100,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"Transitions",
-    "path":"texturegroups/Transitions",
+    "name":"General_Environment",
+    "path":"texturegroups/General_Environment",
   },
   "type":0,
   "VTile":false,

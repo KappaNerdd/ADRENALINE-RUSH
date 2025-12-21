@@ -81,8 +81,6 @@ function scr_GetCharLevelCardPort() {
 		_charCheck = global.PlayerSelection[global.PlayerChar][9][0];
 	}
 	
-	sprite_index = _charCheck;
-	image_index = _charCostume;
 }
 
 //Freeplay Shit

@@ -30,21 +30,15 @@ extraLife = [
 global.PlayerID = noone;
 
 if !global.LevelForced {
-	if (global.PlayerChar == 0 or global.MIND) {
-		instance_create_depth(x, y, depth, obj_CountdownHead);
-	} else {
-		instance_create_depth(x, y, depth, obj_Countdown);
+	with(instance_create_depth(-10000000, 0, 0, obj_SonicRushIntroCard)) {
+		kysTimer = 240;
 	}
 	
 	if instance_exists(obj_Player) {
 		obj_Player.can_Move = false;
 	}
 } else {
-	instance_create_depth(-10000000, 0, 0, obj_LevelCardMinor);
-	
-	if !instance_exists(obj_ActualGhost) {
-		instance_create_depth(x, y, depth, obj_ActualGhost);
-	}
+	instance_create_depth(-10000000, 0, 0, obj_SonicRushIntroCard);
 }
 
 if instance_exists(obj_InputRecorder) {
@@ -66,19 +60,13 @@ if !global.CustomMus {
 	playTrack = global.CustomMusic;
 }
 
-
-	
 set_song_ingame(playTrack, 60, 30);
 
-instance_create_depth(x, y, depth, obj_PlayerExtraLives);
-instance_create_depth(x, y, depth, obj_Timer);
-instance_create_depth(x, y, depth, obj_HUDRankDisplayer);
-instance_create_depth(x, y, depth, obj_LevelCoords);
-instance_create_depth(x, y, depth, obj_CameraExtended);
-instance_create_depth(x, y, depth, obj_CreatePauseSpeed);
-instance_create_depth(x, y, depth, obj_GhostRecorder);
-instance_create_depth(x, y, depth, obj_InputRecorder);
-
-
-
-
+instance_create_depth(-10000, y, -9, obj_PlayerExtraLives);
+instance_create_depth(-10000, y, -9, obj_Timer);
+instance_create_depth(-10000, y, -9, obj_HUDRankDisplayer);
+instance_create_depth(-10000, y, -9, obj_LevelCoords);
+instance_create_depth(-10000, y, -9, obj_CameraExtended);
+instance_create_depth(-10000, y, -9, obj_CreatePauseSpeed);
+instance_create_depth(-10000, y, -9, obj_GhostRecorder);
+instance_create_depth(-10000, y, -9, obj_InputRecorder);

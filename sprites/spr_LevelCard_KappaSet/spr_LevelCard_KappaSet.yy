@@ -87,8 +87,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"LevelCard_ResultsScreen",
-    "path":"texturegroups/LevelCard_ResultsScreen",
+    "name":"IntroCard",
+    "path":"texturegroups/IntroCard",
   },
   "type":0,
   "VTile":false,

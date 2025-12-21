@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":16.206078,
+  "duration":0.0,
   "exportDir":"",
   "name":"mus_DisturbingMind",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_DisturbingMind.ogg",
-  "volume":0.5,
+  "volume":0.6,
 }

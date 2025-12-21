@@ -16,6 +16,8 @@ if global.PlayerChar == 0 or global.MIND {
 	rankA = spr_RankAHead;
 	rankS = spr_RankSHead;
 	rankP = spr_RankPHead;
+	
+	rankAnim = 1 / 12;
 } else {
 	rankF = spr_RankFNew;
 	rankD = spr_RankDNew;
@@ -24,7 +26,11 @@ if global.PlayerChar == 0 or global.MIND {
 	rankA = spr_RankANew;
 	rankS = spr_RankSNew;
 	rankP = spr_RankPNew;
+	
+	rankAnim = 1 / 4;
 }
+
+rankFrames = 0;
 
 image_alpha = 1;
 

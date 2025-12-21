@@ -217,7 +217,7 @@
 
 	confirmed = false;
 	confirmedTimer = 0;
-	confirmedFrames = 90;
+	confirmedFrames = 60;
 	confirmedOpacity = 0;
 	
 	finished = false;

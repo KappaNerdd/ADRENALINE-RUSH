@@ -9,8 +9,8 @@
   "name":"obj_GOALRingSil1",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/Objects/Environments/General.yy",
+    "name":"GOAL Ring",
+    "path":"folders/Objects/Environments/General/GOAL Ring.yy",
   },
   "parentObjectId":null,
   "persistent":false,

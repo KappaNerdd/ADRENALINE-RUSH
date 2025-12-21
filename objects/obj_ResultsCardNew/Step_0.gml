@@ -265,8 +265,10 @@ if !completed {
 			if restartTimer > 0 {
 				restartTimer -= 1;
 			} else {
-				if global.SimplifyVFX {
-					room_goto(rm_LevelCard);
+				if !instance_exists(obj_RoomTransParent) {
+					with(instance_create_depth(-100000, 0, 0, obj_RoomTransitionSEGAMenu)) {
+						target_rm = global.speedStageData[global.SpeedSelected].stage_RM;
+					}
 				}
 			}
 		}

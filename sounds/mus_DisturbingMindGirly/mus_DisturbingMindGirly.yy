@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":16.187845,
+  "duration":139.63637,
   "exportDir":"",
   "name":"mus_DisturbingMindGirly",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_DisturbingMindGirly.ogg",
-  "volume":0.5,
+  "volume":0.6,
 }

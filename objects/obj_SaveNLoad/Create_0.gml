@@ -231,7 +231,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_KappaHead, 1], //Results Portrait
 			["stagecharkappahead",],
-			[spr_CheckpointHead, spr_RingHeadIcon, spr_RingKappaHandHead, spr_CharSelectKappaIcon, 1],
+			[spr_CheckpointHead, spr_RingHeadIcon, spr_RingKappaHandHead, spr_CharSelectKappaIcon, spr_IntroQuoteKappa, 1],
 		],
 	
 		//Kappa
@@ -286,7 +286,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_KappaSet, 1], //Results Portrait
 			["stagecharkappanormal",],
-			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectKappaIcon, 1],
+			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectKappaIcon, spr_IntroQuoteKappa, 1],
 		],
 	
 		//Sarah
@@ -339,7 +339,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_SarahSet, 1], //Results Portrait
 			["stagecharsarahnormal",],
-			[spr_CheckpointSarah, spr_RingSarahIcon, spr_RingSarahHand, spr_CharSelectSarahIcon, 1],
+			[spr_CheckpointSarah, spr_RingSarahIcon, spr_RingSarahHand, spr_CharSelectSarahIcon, spr_IntroQuoteSarah, 1],
 		],
 	
 		//Lone
@@ -392,7 +392,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_LoneSet, 1], //Results Portrait
 			["stagecharlonenormal",],
-			[spr_CheckpointSarah, spr_RingLoneIcon, spr_RingLoneHand, spr_CharSelectLoneIcon, 1],
+			[spr_CheckpointSarah, spr_RingLoneIcon, spr_RingLoneHand, spr_CharSelectLoneIcon, spr_IntroQuoteLone, 1],
 		],
 	
 		//Brock
@@ -445,7 +445,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_BrockSet, 1], //Results Portrait
 			["stagecharbrocknormal",],
-			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectBrockIcon, 1],
+			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectBrockIcon, spr_IntroQuoteBrock, 1],
 		],
 	
 		//Neegi
@@ -498,7 +498,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_NeegiSet, 1], //Results Portrait
 			["stagecharneeginormal",],
-			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectNeegiIcon, 1],
+			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectNeegiIcon, spr_IntroQuoteNeegi, 1],
 		],
 	
 		//Cloee
@@ -551,7 +551,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_CloeeSet, 1], //Results Portrait
 			["stagecharcloeenormal",],
-			[spr_CheckpointSarah, spr_RingCloeeIcon, spr_RingCloeeHand, spr_CharSelectCloeeIcon, 1],
+			[spr_CheckpointSarah, spr_RingCloeeIcon, spr_RingCloeeHand, spr_CharSelectCloeeIcon, spr_IntroQuoteCloee, 1],
 		],
 	
 		//Akira
@@ -604,7 +604,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_AkiraSet, 1], //Results Portrait
 			["stagecharakiranormal",],
-			[spr_CheckpointKappa, spr_RingAkiraIcon, spr_RingAkiraHand, spr_CharSelectAkiraIcon, 1],
+			[spr_CheckpointKappa, spr_RingAkiraIcon, spr_RingAkiraHand, spr_CharSelectAkiraIcon, spr_IntroQuoteAkira, 1],
 		],
 	
 		//Taylor
@@ -657,7 +657,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_TaylorSet, 1], //Results Portrait
 			["stagechartaylornormal",],
-			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectTaylorIcon, 1],
+			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectTaylorIcon, spr_IntroQuoteTaylor, 1],
 		],
 	
 		//Ayana
@@ -710,7 +710,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_AyanaSet, 1], //Results Portrait
 			["stagecharayananormal",],
-			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectAyanaIcon, 1],
+			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectAyanaIcon, spr_IntroQuoteAyana, 1],
 		],
 	
 		//Rush
@@ -763,7 +763,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_RushSet, 1], //Results Portrait
 			["stagecharrushnormal",],
-			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, 1],
+			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, spr_IntroQuoteRush, 1],
 		],
 	
 		//Edge
@@ -816,7 +816,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_EdgeSet, 1], //Results Portrait
 			["stageCharEdgeNormal",],
-			[spr_CheckpointRush, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectEdgeIcon, 1],
+			[spr_CheckpointRush, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectEdgeIcon, spr_IntroQuoteEdge, 1],
 		],
 	
 		//Roxxane
@@ -869,7 +869,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_RoxxaneSet, 1], //Results Portrait
 			["stagecharroxxanenormal",],
-			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectRoxxaneIcon, 1],
+			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectRoxxaneIcon, spr_IntroQuoteRoxxane, 1],
 		],
 	
 		//Lucifer
@@ -922,7 +922,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_RoxxaneSet, 1], //Results Portrait
 			["stagecharroxxanenormal",],
-			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectLuciferIcon, 1],
+			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
 		],
 	
 		//Ivy
@@ -975,7 +975,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_IvySet, 1], //Results Portrait
 			["stagecharivynormal",],
-			[spr_CheckpointIvy, spr_RingIvyIcon, spr_RingIvyHand, spr_CharSelectIvyIcon, 1],
+			[spr_CheckpointIvy, spr_RingIvyIcon, spr_RingIvyHand, spr_CharSelectIvyIcon, spr_IntroQuoteIvy, 1],
 		],
 	
 	

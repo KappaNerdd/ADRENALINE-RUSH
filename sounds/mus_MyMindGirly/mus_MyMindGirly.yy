@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":115.64844,
+  "duration":131.12195,
   "exportDir":"",
   "name":"mus_MyMindGirly",
   "parent":{

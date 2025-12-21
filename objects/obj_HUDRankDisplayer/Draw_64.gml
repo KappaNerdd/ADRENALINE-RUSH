@@ -22,10 +22,22 @@ if _relY <= 100 {
 	image_alpha = lerp(image_alpha, 1, 0.25);
 }
 
+rankFrames += rankAnim;
+
+var _animCheck = 60
+
+if global.MIND or global.PlayerChar == 0 {
+	_animCheck = 3;
+}
+
+if rankFrames >= _animCheck {
+	rankFrames = 0;
+}
+
 if _level.complete {	
-	draw_sprite_ext(sprite_index, image_index, 307, moveY + 3, image_xscale, image_yscale, 0, c_black, image_alpha);
-	draw_sprite_ext(rankGraphic2, image_index, 292, moveY + 33, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(sprite_index, rankFrames, 307, moveY + 3, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(rankGraphic2, rankFrames, 292, moveY + 33, image_xscale, image_yscale, 0, c_black, image_alpha);
 	
-	draw_sprite_ext(sprite_index, image_index, 310, moveY, image_xscale, image_yscale, 0, c_white, image_alpha);
-	draw_sprite_ext(rankGraphic2, image_index, 295, moveY + 30, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(sprite_index, rankFrames, 310, moveY, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(rankGraphic2, rankFrames, 295, moveY + 30, image_xscale, image_yscale, 0, c_white, image_alpha);
 }

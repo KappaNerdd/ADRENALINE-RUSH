@@ -1,13 +1,13 @@
 /// @desc Stop Any Extra Bullshit
-airDash = false;
+hover = false;
 
 dJumping = false;
 sliding = false;
 
 stomping = false;
 stomped = false;
-
-slowSkid = false;
+normalStomp = false;
+omegaStomp = false;
 
 wallJump = false;
-afterWallJump = false;
+sideWallJump = false;

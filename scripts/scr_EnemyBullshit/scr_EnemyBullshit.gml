@@ -1,4 +1,6 @@
 function scr_EnemyCreate() {
+	charKiller = noone;
+	
 	enemyHealth = 100;
 	enemyType = 1;
 	enemyDamage = 100;
@@ -28,49 +30,6 @@ function scr_EnemyCreate() {
 function scr_EnemyStep() {
 	var _touchedPlayer = instance_place(x, y, obj_Player);
 	
-	if enemyHealth > 0 && (place_meeting(x, y, obj_StompVFX) or place_meeting(x, y, obj_StompingVFX) or place_meeting(x, y, obj_RushBoostBreak)) {
-		enemyHealth -= enemyHealth;
-		obj_SFXManager.enemyExplode = true;
-		
-		scr_ScreenShake();
-		scr_ControllerRumble();
-	}
-	
-	if _touchedPlayer && (!killed && !launched && enemyHealth > 0) {
-		if (_touchedPlayer.attacking && !_touchedPlayer.playerHurt) {
-			enemyHealth -= enemyHealth;
-			obj_SFXManager.UndertaleDamage = true;
-			
-			scr_ScreenShake();
-			scr_ControllerRumble();
-			
-			if _touchedPlayer.jumping {
-				if _touchedPlayer.yspd > 0 {
-					if _touchedPlayer.jump_Key_Held {
-						_touchedPlayer.yspd = -_touchedPlayer.yspd + 1;
-					} else {
-						_touchedPlayer.yspd = -2;
-					}
-				}
-			}
-			
-			_hitLag = 30;
-			
-		} else if _touchedPlayer.megaAttacking && !_touchedPlayer.playerHurt {
-			obj_SFXManager.enemyExplode = true;
-			
-			if !launched {
-				launched = true;
-				enemyHealth -= enemyHealth;
-				
-				scr_ScreenShake();
-				scr_ControllerRumble();
-			}
-			
-			_hitLag = 15;
-		}
-	}
-	
 	//Kys *LowTierGod lightning image*
 	if launched {
 		if launchedTimer > 0 {
@@ -92,6 +51,9 @@ function scr_EnemyStep() {
 				if global.Particles {
 					scr_EnemyDeathParticles(particleDeath, particleAmount);
 				}
+				
+				scr_ScreenShake();
+				scr_ControllerRumble();
 					
 				obj_Player.enemyCombo += 1;
 				obj_Player.enemyComboTimer = obj_Player.enemyComboFrames;
@@ -100,26 +62,26 @@ function scr_EnemyStep() {
 				if instance_exists(obj_GOALColl) {
 					if !obj_GOALColl.goal {	
 						if obj_Player.enemyCombo == 0 {
-							obj_Player.boostEnergy += 10;
+							charKiller.boostEnergy += 10;
 						} else {
-							obj_Player.boostEnergy += 10 * obj_Player.enemyCombo / 4;
+							charKiller.boostEnergy += 10 * obj_Player.enemyCombo / 4;
 						}
 					}
 				
-					if obj_Player.rushMode && !obj_GOALColl.goal {
+					if charKiller.rushMode && !obj_GOALColl.goal {
 						obj_SFXManager.rushModeTrick = true;
-						obj_Player.rushModeTimer = obj_Player.rushModeFrames;
+						charKiller.rushModeTimer = charKiller.rushModeFrames;
 					}
 				} else {
 					if obj_Player.enemyCombo == 0 {
-						obj_Player.boostEnergy += 10;
+						 charKiller.boostEnergy += 10;
 					} else {
-						obj_Player.boostEnergy += 10 * obj_Player.enemyCombo / 4;
+						charKiller.boostEnergy += 10 * charKiller.enemyCombo / 4;
 					}
 				
-				if obj_Player.rushMode {
+				if charKiller.rushMode {
 						obj_SFXManager.rushModeTrick = true;
-						obj_Player.rushModeTimer = obj_Player.rushModeFrames;
+						charKiller.rushModeTimer = charKiller.rushModeFrames;
 					}
 				}
 				
@@ -142,8 +104,8 @@ function scr_EnemyStep() {
 	
 	if launched && !killed {
 		killed = true;
-		vel = obj_Player.vel;
-		yspd = -0.5;
+		vel = charKiller.vel;
+		yspd = -1;
 	}
 	
 	if launched {
@@ -156,6 +118,71 @@ function scr_EnemyStep() {
 	
 	x += vel;
 	y += yspd;
+}
+
+function scr_PlayerToEnemyShit() {
+	var _toji = instance_place(x, y, obj_EnemyParent);
+	var _stompedVFX = instance_find(obj_StompVFX, 1);
+	var _boostBreakVFX = instance_find(obj_RushBoostBreak, 1);
+	
+	if _stompedVFX != noone {
+		var _toji2 = instance_place(_stompedVFX.x, _stompedVFX.y, obj_EnemyParent);
+		
+		if _toji2 {
+			_toji2.charKiller = id;
+				
+			scr_ScreenShake();
+			scr_ControllerRumble();
+		
+			_toji2.enemyHealth -= _toji2.enemyHealth;
+			obj_SFXManager.UndertaleDamage = true;
+		}
+	}
+	
+	if _boostBreakVFX != noone {
+		var _toji2 = instance_place(_boostBreakVFX.x, _boostBreakVFX.y, obj_EnemyParent);
+		
+		if _toji2 {
+			_toji2.charKiller = id;
+				
+			scr_ScreenShake();
+			scr_ControllerRumble();
+		
+			_toji2.enemyHealth -= _toji2.enemyHealth;
+			obj_SFXManager.UndertaleDamage = true;
+		}
+	}
+	
+	if _toji {
+		//If not attacking
+		if !attacking && !megaAttacking {
+			scr_HurtPlayer(_toji.enemyDamage, _toji.enemyKnockback, false, _toji.enemyKnockbackY);
+		} else if attacking or megaAttacking { //If attacking
+			if !playerHurt && !global.Death {
+				_toji.charKiller = id;
+				
+				scr_ScreenShake();
+				scr_ControllerRumble();
+				
+				if attacking {
+					if jumping && yspd > 0 && !stomping {
+						if jump_Key_Held {
+							yspd = -yspd - 1;
+						} else {
+							yspd = -3;
+						}
+					}
+					
+					_toji.enemyHealth -= _toji.enemyHealth;
+					obj_SFXManager.UndertaleDamage = true;
+				} else if megaAttacking {
+					_toji.launched = true;
+					_toji.enemyHealth -= _toji.enemyHealth;
+					obj_SFXManager.enemyExplode = true;
+				}
+			}
+		}
+	}
 }
 
 function scr_EnemyDeathParticles(_particle, _amount) {
@@ -181,7 +208,7 @@ function scr_EnemyDeathParticles(_particle, _amount) {
 
 
 function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
-	if !obj_Player.invincible {
+	if !invincible {
 		var _ringMult = 1;
 		
 		if instance_exists(obj_StageTrackerSpeed) {
@@ -202,39 +229,41 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 	
 		var _basedX = _imageXscale;
 
-		if obj_Player.leftFacer {
-			if !obj_Player.face_Left {
-				obj_Player.vel = -_knockback;
+		if leftFacer {
+			if !face_Left {
+				vel = -_knockback;
 			} else {
-				obj_Player.vel = _knockback;
+				vel = _knockback;
 			}
 		} else {
-			obj_Player.vel = -_knockback * obj_Player.image_xscale;
+			vel = -_knockback * image_xscale;
 		}
 		
-		obj_Player.ground = false;
-		obj_Player.jumping = true;
-		obj_Player.yspd = _yKnockback;
-		obj_Player.speedBreak = false;
-		obj_Player.playerHurt = true;
-		obj_Player.invincible = true;
+		ground = false;
+		jumping = true;
+		yspd = _yKnockback;
+		speedBreak = false;
+		playerHurt = true;
+		invincible = true;
 		
+		event_user(0);
+		event_user(3);
 		
-		if obj_Player.enemyCombo > 0 {
-			obj_Player.enemyCombo = 0;
+		if enemyCombo > 0 {
+			enemyCombo = 0;
 		}
 		
-		if obj_Player.rushTrickCombo > 0 {
+		if rushTrickCombo > 0 {
 			obj_SFXManager.crowdAww = true;
-			obj_Player.rushTrick = false;
-			obj_Player.rushTrickCombo = 0;
+			event_user(1);
+			rushTrickCombo = 0;
 		}
 		
-		if !obj_Player.rushMode {
-			obj_Player.boostEnergy -= 50;
+		if !rushMode {
+			boostEnergy -= 50;
 		} else {
-			obj_Player.rushModeTimer = 0;
-			obj_Player.boostEnergy -= 150;
+			rushModeTimer = 0;
+			boostEnergy -= 150;
 		}
 		
 		obj_SFXManager.playerHurt = true;
@@ -242,7 +271,7 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 }
 
 function scr_LoseTrinkets(_loseRings = 50) {
-	if instance_exists(obj_StageTrackerSpeed) {
+	if instance_exists(obj_StageTrackerSpeed) && id == global.PlayerID {
 		//Lose Trinkets
 		var _rings = 0;
 		var _ringStartAngle = 101.25;
@@ -258,7 +287,7 @@ function scr_LoseTrinkets(_loseRings = 50) {
 		//Perform loop while the ring counter is less than number of lost rings
 		while _rings < _ringCheck {
 		    //Create the ring
-			var _ringID = instance_create_depth(global.PlayerID.x - 10, global.PlayerID.y - 7, global.PlayerID.depth + 1, obj_LostTrinkets);
+			var _ringID = instance_create_depth(global.PlayerID.x - 10, global.PlayerID.y - 10, global.PlayerID.depth - 1, obj_LostTrinkets);
 		
 		    _ringID.ringXSpeed = cos(_ringAngle) * _ringSpeed;
 		    _ringID.ringYSpeed = -sin(_ringAngle) * _ringSpeed;

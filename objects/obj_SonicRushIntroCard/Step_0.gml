@@ -46,6 +46,7 @@ if kysTimer > 0 {
 		} else {
 			obj_Player.can_MoveFULL = true;
 			obj_Player.vel = obj_Player.full_Speed - 1;
+			obj_Player.noMoveTimer = 30;
 		}
 		
 		if instance_exists(obj_InputRecorder) {

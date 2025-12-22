@@ -102,8 +102,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"ResultsScreen",
-    "path":"texturegroups/ResultsScreen",
+    "name":"Transitions",
+    "path":"texturegroups/Transitions",
   },
   "type":0,
   "VTile":false,

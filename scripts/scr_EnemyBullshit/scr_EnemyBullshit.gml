@@ -126,39 +126,45 @@ function scr_PlayerToEnemyShit() {
 	var _boostBreakVFX = instance_find(obj_RushBoostBreak, 1);
 	
 	if _stompedVFX != noone {
-		var _toji2 = instance_place(_stompedVFX.x, _stompedVFX.y, obj_EnemyParent);
+		with(_stompedVFX) {
+			var _toji2 = instance_place(x, y, obj_EnemyParent);
 		
-		if _toji2 {
-			_toji2.charKiller = id;
+			if _toji2 {
+				_toji2.charKiller = other.id;
 				
-			scr_ScreenShake();
-			scr_ControllerRumble();
+				scr_ScreenShake();
+				scr_ControllerRumble();
 		
-			_toji2.enemyHealth -= _toji2.enemyHealth;
-			obj_SFXManager.UndertaleDamage = true;
+				_toji2.enemyHealth -= _toji2.enemyHealth;
+				obj_SFXManager.UndertaleDamage = true;
+			}
 		}
 	}
 	
 	if _boostBreakVFX != noone {
-		var _toji2 = instance_place(_boostBreakVFX.x, _boostBreakVFX.y, obj_EnemyParent);
+		with(_boostBreakVFX) {
+			var _toji2 = instance_place(x, y, obj_EnemyParent);
 		
-		if _toji2 {
-			_toji2.charKiller = id;
+			if _toji2 {
+				_toji2.charKiller = other.id;
 				
-			scr_ScreenShake();
-			scr_ControllerRumble();
+				scr_ScreenShake();
+				scr_ControllerRumble();
 		
-			_toji2.enemyHealth -= _toji2.enemyHealth;
-			obj_SFXManager.UndertaleDamage = true;
+				_toji2.enemyHealth -= _toji2.enemyHealth;
+				obj_SFXManager.UndertaleDamage = true;
+			}
 		}
 	}
 	
 	if _toji {
 		//If not attacking
 		if !attacking && !megaAttacking {
-			scr_HurtPlayer(_toji.enemyDamage, _toji.enemyKnockback, false, _toji.enemyKnockbackY);
+			if !_toji.launched {
+				scr_HurtPlayer(_toji.enemyDamage, _toji.enemyKnockback, false, _toji.enemyKnockbackY);
+			}
 		} else if attacking or megaAttacking { //If attacking
-			if !playerHurt && !global.Death {
+			if !playerHurt && !global.Death && !_toji.launched {
 				_toji.charKiller = id;
 				
 				scr_ScreenShake();

@@ -81,8 +81,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"ResultsScreen",
-    "path":"texturegroups/ResultsScreen",
+    "name":"File_Select",
+    "path":"texturegroups/File_Select",
   },
   "type":0,
   "VTile":false,

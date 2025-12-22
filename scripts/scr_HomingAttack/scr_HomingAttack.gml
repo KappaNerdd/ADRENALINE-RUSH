@@ -98,7 +98,7 @@ function scr_HomingAttackStep() {
 			}
 			
 			vel = _fullXspd;
-			yspd = normalJspd;
+			yspd = -normalJspd;
 		
 			var _enemyTouched = instance_place(x, y, obj_EnemyParent);
 		

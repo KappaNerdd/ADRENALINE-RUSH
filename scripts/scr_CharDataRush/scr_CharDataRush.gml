@@ -22,8 +22,8 @@ function scr_CharDataRush() {
 	jspd = 7.25;
 	normalJspd = 7.25;
 	
-	termVel = 20;
-	normalTermVel = 20;
+	termVel = 25;
+	normalTermVel = 25;
 	
 	backTrickBoost = 10;
 	backTrickUpBoost = -6;

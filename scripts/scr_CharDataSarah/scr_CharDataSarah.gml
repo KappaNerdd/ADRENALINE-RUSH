@@ -22,9 +22,9 @@ function scr_CharDataSarah() {
 	jspd = 7.25;
 	normalJspd = 7.25;
 	
-	termVel = 15;
-	normalTermVel = 15;
-	full_TermVel = 30;
+	termVel = 20;
+	normalTermVel = 20;
+	full_TermVel = 35;
 	
 	backTrickBoost = 8;
 	backTrickUpBoost = -5;

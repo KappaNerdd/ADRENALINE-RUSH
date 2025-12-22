@@ -24,8 +24,8 @@ function scr_CharDataKappa() {
 	normalJspd = 7.1;
 	railJspd = -14.2;
 	
-	termVel = 20;
-	normalTermVel = 20;
+	termVel = 25;
+	normalTermVel = 25;
 	
 	backTrickBoost = 9;
 	backTrickUpBoost = -5.5;

@@ -333,19 +333,12 @@ if can_MoveFULL {
 			wallJump = false;
 			afterWallJump = false;
 			afterRailJump = false;
-			rampRing = false;
 			sideWallJump = false;
 			
 			drawAngle = 0;
 			
-			rightTrick = false;
-			leftTrick = false;
-			upTrick = false;
-			backTrick = false;
-			trick = false;
-			rushTrick = false;
-			altFinish = false;
-			rushTrickFinish = false;
+			event_user(1);
+			event_user(3);
 	
 			//Sound Effect
 			obj_SFXManager.stompingRev = true;
@@ -370,7 +363,7 @@ if can_MoveFULL {
 			}
 			
 			if normalStomp {
-				yspd = termVel * 1.25;
+				yspd = termVel;
 				termVel = normalTermVel;
 			}
 			
@@ -383,7 +376,7 @@ if can_MoveFULL {
 				
 				if omegaStompingTimer <= 0 {
 					termVel = omegaTermVel;
-					yspd = omegaTermVel * 1.1;
+					yspd = omegaTermVel;
 					
 					if !stompedSound {
 						stompedSound = true;

@@ -101,7 +101,7 @@ function scr_YCollision() {
 			#region //Breakable Wall (Head)
 				var _floor1 = instance_nearest(x + vel, y, obj_HeadWallBreakable);
 
-				if _floor1 < 200 {
+				if distance_to_object(_floor1) <= 80 {
 					if abs(vel) >= max_Speed or boost {
 						obj_SFXManager.breakableGround = true;
 						scr_ScreenShake();
@@ -180,132 +180,93 @@ function scr_YCollision() {
 			#endregion
 		#endregion
 		
-		//Floor Y Collision
-		var _subPixel = 0.5;
-		var _clampYspd = max(0, yspd);
-		var _list = ds_list_create();
-		var _array = array_create(0);
+		#region //Floor Y Collision
+			var _subPixel = 0.5;
+			var _clampYspd = max(0, yspd);
+			var _list = ds_list_create();
+			var _array = array_create(0);
 		
-		array_push(_array, obj_Solid, obj_SemiSolid, obj_RailParent);
+			array_push(_array, obj_Solid, obj_SemiSolid, obj_RailParent);
 		
-		var _listSize = instance_place_list(x, y + 5 + _clampYspd + termVel, _array, _list, false);
+			var _listSize = instance_place_list(x, y + 5 + _clampYspd + termVel, _array, _list, false);
 		
-		for(var i = 0; i < _listSize; i++) {
-			var _listInst = _list[| i];
+			for(var i = 0; i < _listSize; i++) {
+				var _listInst = _list[| i];
 			
-			if _listInst != forgetSemiSolid && (_listInst.yspd <= yspd or instance_exists(myFloorPlat)) && (_listInst.yspd > 0 or place_meeting(x, y + 5 + _clampYspd, _listInst)) {
-				if (_listInst.object_index == obj_Solid or object_is_ancestor(_listInst.object_index, obj_Solid)) or floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd) {
-					if !instance_exists(myFloorPlat) or _listInst.bbox_top + _listInst.yspd <= myFloorPlat.bbox_top + myFloorPlat.yspd or _listInst.bbox_top + _listInst.yspd <= bbox_bottom {
-						myFloorPlat = _listInst;
+				if _listInst != forgetSemiSolid && (_listInst.yspd <= yspd or instance_exists(myFloorPlat)) && (_listInst.yspd > 0 or place_meeting(x, y + 5 + _clampYspd, _listInst)) {
+					if (_listInst.object_index == obj_Solid or object_is_ancestor(_listInst.object_index, obj_Solid)) or floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd) {
+						if !instance_exists(myFloorPlat) or _listInst.bbox_top + _listInst.yspd <= myFloorPlat.bbox_top + myFloorPlat.yspd or _listInst.bbox_top + _listInst.yspd <= bbox_bottom {
+							myFloorPlat = _listInst;
+						}
 					}
 				}
 			}
-		}
 		
-		ds_list_destroy(_list);
+			ds_list_destroy(_list);
 		
-		if instance_exists(myFloorPlat) && !place_meeting(x, y + termVel, myFloorPlat) && !place_meeting(x, y + termVel / 2, myFloorPlat) && !place_meeting(x, y + termVel / 2.5, myFloorPlat) {
-			myFloorPlat = noone;
-			isSlope = false;
-			railGrindCheck = false;
-		}
-		
-		if instance_exists(myFloorPlat) {
-			while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_Solid) {
-				y += _subPixel;
-			}
-			
-			if ((myFloorPlat.object_index == obj_SemiSolid or object_is_ancestor(myFloorPlat.object_index, obj_SemiSolid)) or (myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent)) && railGrindCheckingTimer <= 0) {
-				if railGrind {
-					if railGrindCheckingTimer <= 0 {
-						while place_meeting(x, y, myFloorPlat) {
-							y -= _subPixel;
-						}
-						
-						if !angleChecked {
-							if global.Squash {
-								extraXscale = 1.25;
-							}
-							
-							if winningAngle != 0 {
-								vel += yspd * 0.5 * -sign(sin(winningAngle));
-							}
-							
-							scr_Landing(footStep);
-							
-							angleChecked = true;
-						}
-						
-						yspd = 0;
-						wallJumpVel = 0;
-						ground = true;
-						jumping = false;
-						dJumping = false;
-						rampRing = false;
-						afterRailJump = false;
-					}
-				} else {
-					while place_meeting(x, y, myFloorPlat) {
-						y -= _subPixel;
-					}
-					
-					if !angleChecked {
-						if global.Squash {
-							extraXscale = 1.25;
-						}
-						
-						if winningAngle != 0 {
-							vel += yspd * 0.5 * -sign(sin(winningAngle));
-						}
-						
-						if myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent) {
-							obj_SFXManager.railGrindOn = true;
-						}
-						
-						scr_Landing(footStep);
-							
-						angleChecked = true;
-					}
-					
-					yspd = 0;
-					wallJumpVel = 0;
-					ground = true;
-					jumping = false;
-					dJumping = false;
-					rampRing = false;
-					afterRailJump = false;
-				}
-				
+			if instance_exists(myFloorPlat) && !place_meeting(x, y + termVel, myFloorPlat) && !place_meeting(x, y + termVel / 2, myFloorPlat) && !place_meeting(x, y + termVel / 2.5, myFloorPlat) {
+				myFloorPlat = noone;
 				isSlope = false;
-				
-				if railGrindCheckingTimer <= 0 {
-					if myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent) {
-						railGrindCheck = true;
-					} else {
-						railGrindCheck = false;
-					}
+				railGrindCheck = false;
+			}
+		
+			if instance_exists(myFloorPlat) {
+				while !place_meeting(x, y + _subPixel, myFloorPlat) && !place_meeting(x, y, obj_Solid) {
+					y += _subPixel;
 				}
-			} else {
-				if railGrind {
-					if railGrindCheckingTimer <= 0 {
+			
+				if ((myFloorPlat.object_index == obj_SemiSolid or object_is_ancestor(myFloorPlat.object_index, obj_SemiSolid)) or (myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent)) && railGrindCheckingTimer <= 0) {
+					if railGrind {
+						if railGrindCheckingTimer <= 0 {
+							while place_meeting(x, y, myFloorPlat) {
+								y -= _subPixel;
+							}
+						
+							if !angleChecked {
+								if global.Squash {
+									extraXscale = 1.25;
+								}
+							
+								if winningAngle != 0 {
+									vel += yspd * 0.5 * -sign(sin(winningAngle));
+								}
+							
+								scr_Landing(footStep);
+							
+								angleChecked = true;
+							}
+						
+							yspd = 0;
+							wallJumpVel = 0;
+							ground = true;
+							jumping = false;
+							dJumping = false;
+							rampRing = false;
+							afterRailJump = false;
+						}
+					} else {
 						while place_meeting(x, y, myFloorPlat) {
 							y -= _subPixel;
 						}
-						
+					
 						if !angleChecked {
 							if global.Squash {
 								extraXscale = 1.25;
 							}
-							
+						
 							if winningAngle != 0 {
 								vel += yspd * 0.5 * -sign(sin(winningAngle));
 							}
-							
+						
+							if myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent) {
+								obj_SFXManager.railGrindOn = true;
+							}
+						
 							scr_Landing(footStep);
 							
 							angleChecked = true;
 						}
-						
+					
 						yspd = 0;
 						wallJumpVel = 0;
 						ground = true;
@@ -314,190 +275,230 @@ function scr_YCollision() {
 						rampRing = false;
 						afterRailJump = false;
 					}
+				
+					isSlope = false;
+				
+					if railGrindCheckingTimer <= 0 {
+						if myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent) {
+							railGrindCheck = true;
+						} else {
+							railGrindCheck = false;
+						}
+					}
 				} else {
-					while place_meeting(x, y, myFloorPlat) {
-						y -= _subPixel;
-					}
-					
-					if !angleChecked {
-						if global.Squash {
-							extraXscale = 1.25;
-						}
+					if railGrind {
+						if railGrindCheckingTimer <= 0 {
+							while place_meeting(x, y, myFloorPlat) {
+								y -= _subPixel;
+							}
 						
-						if winningAngle != 0 {
-							vel += yspd * 0.5 * -sign(sin(winningAngle));
-						}
-						
-						scr_Landing(footStep);
+							if !angleChecked {
+								if global.Squash {
+									extraXscale = 1.25;
+								}
 							
-						angleChecked = true;
-					}
-					
-					yspd = 0;
-					wallJumpVel = 0;
-					ground = true;
-					jumping = false;
-					dJumping = false;
-					rampRing = false;
-					afterRailJump = false;
-				}
-				
-				isSlope = true;
-				
-				if railGrindCheckingTimer <= 0 {
-					if myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent) {
-						railGrindCheck = true;
+								if winningAngle != 0 {
+									vel += yspd * 0.5 * -sign(sin(winningAngle));
+								}
+							
+								scr_Landing(footStep);
+							
+								angleChecked = true;
+							}
+						
+							yspd = 0;
+							wallJumpVel = 0;
+							ground = true;
+							jumping = false;
+							dJumping = false;
+							rampRing = false;
+							afterRailJump = false;
+						}
 					} else {
-						railGrindCheck = false;
+						while place_meeting(x, y, myFloorPlat) {
+							y -= _subPixel;
+						}
+					
+						if !angleChecked {
+							if global.Squash {
+								extraXscale = 1.25;
+							}
+						
+							if winningAngle != 0 {
+								vel += yspd * 0.5 * -sign(sin(winningAngle));
+							}
+						
+							scr_Landing(footStep);
+							
+							angleChecked = true;
+						}
+					
+						yspd = 0;
+						wallJumpVel = 0;
+						ground = true;
+						jumping = false;
+						dJumping = false;
+						rampRing = false;
+						afterRailJump = false;
+					}
+				
+					isSlope = true;
+				
+					if railGrindCheckingTimer <= 0 {
+						if myFloorPlat.object_index == obj_RailParent or object_is_ancestor(myFloorPlat.object_index, obj_RailParent) {
+							railGrindCheck = true;
+						} else {
+							railGrindCheck = false;
+						}
 					}
 				}
-			}
 			
-			y = floor(y);
-			coyoteJumpTimer = coyoteJumpFrames;
-		} else {
-			ground = false;
-			jumping = true;
-		}
-		
-		if place_meeting(x, y + yspd, obj_Solid) && !place_meeting(x, y + yspd, obj_RailParent) && !ground && yspd < 0 {
-			//Scoot up to wall precisely
-			var _pixelCheck = _subPixel * sign(yspd);
-		
-			while !place_meeting(x, y + _pixelCheck, obj_Solid) {
-				y += _pixelCheck;
-			}
-	
-			//Bonk
-			if yspd == 0 {
-				yspd = 0;
-			}
-			
-			yspd = 0;
-		}
-		
-		
-		#region //Old Y Collision
-			/*var _subPixel = 0.5;
-		
-			if place_meeting(x, y + yspd, obj_Solid) && yspd > -1 {
-				//Scoot up to wall precisely
-				var _pixelCheck = _subPixel * sign(yspd);
-		
-				while !place_meeting(x, y + _pixelCheck, obj_Solid) {
-					y += _pixelCheck;
-				}
-
-				//Bonk
-				if yspd == 0 {
-					yspd = 0;
-				}
-		
-				if dJumping == true && ground == false {
-					dJumping = true;
-				}
-	
-				//Set gravity to collide
-				yspd = 0;
-				ground = true;
-				jumping = false;
-				dJumping = false;
-				afterRailJump = false;
-				rampRing = false;
-		
-			} else if place_meeting(x, y + yspd, obj_Solid) && ground == false {
-				//Scoot up to wall precisely
-				var _pixelCheck = _subPixel * sign(yspd);
-		
-				while !place_meeting(x, y + _pixelCheck, obj_Solid) {
-					y += _pixelCheck;
-				}
-	
-				//Bonk
-				if yspd == 0 {
-					yspd = 0;
-				}
-		
-				yspd = 0;
-			}
-
-			//Check if touching a ground
-			if place_meeting(x, y + 4, obj_Solid) && yspd > -1 {
-				ground = true;
+				y = floor(y);
+				coyoteJumpTimer = coyoteJumpFrames;
 			} else {
 				ground = false;
-			}
-
-			//If no ground, turn state to jumping without jumping
-			if ground == false {
 				jumping = true;
+			}
+		
+			if place_meeting(x, y + yspd, obj_Solid) && !place_meeting(x, y + yspd, obj_RailParent) && !ground && yspd < 0 {
+				//Scoot up to wall precisely
+				var _pixelCheck = _subPixel * sign(yspd);
+		
+				while !place_meeting(x, y + _pixelCheck, obj_Solid) {
+					y += _pixelCheck;
+				}
+	
+				//Bonk
+				if yspd == 0 {
+					yspd = 0;
+				}
+			
+				yspd = 0;
+			}
+		
+		
+			#region //Old Y Collision
+				/*var _subPixel = 0.5;
+		
+				if place_meeting(x, y + yspd, obj_Solid) && yspd > -1 {
+					//Scoot up to wall precisely
+					var _pixelCheck = _subPixel * sign(yspd);
+		
+					while !place_meeting(x, y + _pixelCheck, obj_Solid) {
+						y += _pixelCheck;
+					}
+
+					//Bonk
+					if yspd == 0 {
+						yspd = 0;
+					}
+		
+					if dJumping == true && ground == false {
+						dJumping = true;
+					}
+	
+					//Set gravity to collide
+					yspd = 0;
+					ground = true;
+					jumping = false;
+					dJumping = false;
+					afterRailJump = false;
+					rampRing = false;
+		
+				} else if place_meeting(x, y + yspd, obj_Solid) && ground == false {
+					//Scoot up to wall precisely
+					var _pixelCheck = _subPixel * sign(yspd);
+		
+					while !place_meeting(x, y + _pixelCheck, obj_Solid) {
+						y += _pixelCheck;
+					}
+	
+					//Bonk
+					if yspd == 0 {
+						yspd = 0;
+					}
+		
+					yspd = 0;
+				}
+
+				//Check if touching a ground
+				if place_meeting(x, y + 4, obj_Solid) && yspd > -1 {
+					ground = true;
+				} else {
+					ground = false;
+				}
+
+				//If no ground, turn state to jumping without jumping
+				if ground == false {
+					jumping = true;
+				}*/
+			#endregion
+		
+			//Y position influenced by yspd variable
+			y += yspd;
+	
+			//Gravity
+			if gravTimer > 0 {
+				gravTimer--;
+			} else {
+				yspd += grav;
+			}
+		
+			//Terminal Velocity
+			if yspd >= termVel { 
+				yspd = termVel;
+			}
+		
+			#region //Vel BS
+				movePlatVel = 0;
+			
+				if instance_exists(myFloorPlat) {
+					movePlatVel = myFloorPlat.vel;
+				}
+			
+				if place_meeting(x + movePlatVel, y, obj_Solid) {
+					var _subPixel = 0.5;
+					var _pixelCheck = _subPixel * sign(movePlatVel);
+				
+					while !place_meeting(x + _pixelCheck, y, obj_Solid) {
+						x += _pixelCheck;
+					}
+				
+					movePlatVel = 0;
+				}
+			
+				x += movePlatVel;
+			#endregion
+		
+			#region //Yspd BS
+				if instance_exists(myFloorPlat) && myFloorPlat.yspd != 0 {
+					if myFloorPlat.yspd < 0 && place_meeting(x, y + myFloorPlat.yspd, obj_Solid) {
+						if myFloorPlat.object_index == obj_SemiSolid or object_is_ancestor(myFloorPlat.object_index, obj_SemiSolid) {
+							var _subPixel = 0.25;
+					
+							while place_meeting(x, y + myFloorPlat.yspd, obj_Solid) {
+								y += _subPixel;
+							}
+					
+							while place_meeting(x, y, obj_Solid) {
+								y -= _subPixel
+							}
+					
+							y = round(y);
+						}
+					
+						global.Health = 0;
+						global.Death = true;
+					}
+				}
+			#endregion
+		
+			/*if instance_exists(myFloorPlat) && myFloorPlat.yspd != 0 {
+				if !place_meeting(x, myFloorPlat.bbox_top, obj_Solid) && myFloorPlat.bbox_top >= bbox_bottom - 1 {
+					y = myFloorPlat.bbox_top;
+				}
 			}*/
 		#endregion
-		
-		//Y position influenced by yspd variable
-		y += yspd;
-	
-		//Gravity
-		if gravTimer > 0 {
-			gravTimer--;
-		} else {
-			yspd += grav;
-		}
-		
-		//Terminal Velocity
-		if yspd >= termVel { 
-			yspd = termVel;
-		}
-		
-		#region //Vel BS
-			movePlatVel = 0;
-			
-			if instance_exists(myFloorPlat) {
-				movePlatVel = myFloorPlat.vel;
-			}
-			
-			if place_meeting(x + movePlatVel, y, obj_Solid) {
-				var _subPixel = 0.5;
-				var _pixelCheck = _subPixel * sign(movePlatVel);
-				
-				while !place_meeting(x + _pixelCheck, y, obj_Solid) {
-					x += _pixelCheck;
-				}
-				
-				movePlatVel = 0;
-			}
-			
-			x += movePlatVel;
-		#endregion
-		
-		#region //Yspd BS
-			if instance_exists(myFloorPlat) && myFloorPlat.yspd != 0 {
-				if myFloorPlat.yspd < 0 && place_meeting(x, y + myFloorPlat.yspd, obj_Solid) {
-					if myFloorPlat.object_index == obj_SemiSolid or object_is_ancestor(myFloorPlat.object_index, obj_SemiSolid) {
-						var _subPixel = 0.25;
-					
-						while place_meeting(x, y + myFloorPlat.yspd, obj_Solid) {
-							y += _subPixel;
-						}
-					
-						while place_meeting(x, y, obj_Solid) {
-							y -= _subPixel
-						}
-					
-						y = round(y);
-					}
-					
-					global.Health = 0;
-					global.Death = true;
-				}
-			}
-		#endregion
-		
-		/*if instance_exists(myFloorPlat) && myFloorPlat.yspd != 0 {
-			if !place_meeting(x, myFloorPlat.bbox_top, obj_Solid) && myFloorPlat.bbox_top >= bbox_bottom - 1 {
-				y = myFloorPlat.bbox_top;
-			}
-		}*/
 		
 		#region //Special BS
 			#region //Trinkets
@@ -552,6 +553,90 @@ function scr_YCollision() {
 				}
 			#endregion
 			
+			#region //Power-Ups
+				var _power = instance_place(x, y, obj_PowerOrb);
+				
+				if _power {
+					if _power.active {
+						if !global.SimplifyVFX {
+							instance_create_depth(-1000000, 0, -20, obj_ParryFlash);
+						}
+						
+						scr_ControllerRumble();
+						
+						//Powers
+						if _power.powerUp == 0 or _power.powerUp == 1 or _power.powerUp == 2 {
+							boostEnergy += _power.powers[_power.powerUp][0];
+		
+							if rushMode {
+								rushModeTimer = rushModeFrames;
+								obj_SFXManager.rushModeTrick = true;
+							}
+		
+							with (instance_create_depth(-1000000, 0, 0, obj_PowerUpHUD)) {
+								powerUp = _power.powerUp;
+							}
+						} else if _power.powerUp == 3 or _power.powerUp == 4 or _power.powerUp == 5 or _power.powerUp == 6 {
+							global.Rings += _power.powers[_power.powerUp][0];
+							obj_SFXManager.funkinFav = true;
+						} else if _power.powerUp == 7 {
+							var _randomRing = random(round(5));
+		
+							obj_SFXManager.funkinFav = true;
+							global.Rings += _power.powers[_power.powerUp][_randomRing];
+						}
+	
+						if global.Particles {
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
+						}
+		
+						obj_SFXManager.parry = true;
+						obj_SFXManager.itemBreak = true;
+	
+						if yspd > 0 && !ground && !stomping {
+							yspd = -4;
+						}
+						
+						_power.hitLag = 240;
+						_power.active = false;
+					}
+				}
+			#endregion
+			
+			#region //Extra Life
+				var _extraLife = instance_place(x, y, obj_CollectableExtraLife);
+				
+				if _extraLife {
+					with (instance_create_depth(_extraLife.x, _extraLife.y, depth, obj_ExtraLifeSil)) {
+						sprite_index = _extraLife.sprite_index;
+						image_index = _extraLife.image_index;
+					}
+	
+					if !global.Freeplay {
+						global.PlayerExtraLives += 1;
+						global.CollectedLives += 1;
+						obj_PlayerExtraLives.lifeScale = 1.5;
+						obj_SFXManager.funkinCheckpoint = true;
+					} else {
+						obj_SFXManager.rushModeGain = true;
+						rushMode = true;
+						boostEnergy = 300;
+						rushModeTimer = rushModeFrames;
+					}
+					
+					instance_destroy(_extraLife);
+				}
+			#endregion
+			
 			#region //Launcher Ramp
 				var _ramp = instance_place(x, y + 1, obj_Ramp);
 
@@ -567,6 +652,14 @@ function scr_YCollision() {
 							event_user(1);
 							event_user(2);
 							rampRing = true;
+							
+							rushTrickTimer = 0;
+		
+							if rushTrickFinish {
+								rushTrickFinish = false;
+								rushTrickCombo = 0;
+							}
+							
 		
 							if _ramp.giveScore {
 								getScore = true;
@@ -584,11 +677,9 @@ function scr_YCollision() {
 							}
 		
 							yspd = _ramp.launchYspd;
-							noMoveTimer = 10;
 							jumping = true;
+							ground = false;
 						}
-	
-						scr_StopCharShit();
 	
 						if audio_is_playing(snd_Stomping) {
 							audio_stop_sound(snd_Stomping);
@@ -619,6 +710,8 @@ function scr_YCollision() {
 						event_user(0);
 						event_user(1);
 						event_user(2);
+						
+						rushTrickTimer = 0;
 		
 						if rushTrickFinish {
 							rushTrickFinish = false;
@@ -634,6 +727,9 @@ function scr_YCollision() {
 						yspd = _launchRing.launchYspd;
 						gravTimer = _launchRing.launchFrames;
 						noMoveTimer = _launchRing.launchFrames;
+						
+						ground = false;
+						jumping = true;
 					}
 				}
 			#endregion
@@ -648,6 +744,13 @@ function scr_YCollision() {
 					rampRing = true;
 					trickWait = 2;
 					obj_SFXManager.trickPanel = true;
+					
+					rushTrickTimer = 0;
+		
+					if rushTrickFinish {
+						rushTrickFinish = false;
+						rushTrickCombo = 0;
+					}
 	
 					if _block.giveScore {
 						_block.giveScore = false;
@@ -732,6 +835,8 @@ function scr_YCollision() {
 						event_user(1);
 						event_user(2);
 		
+						rushTrickTimer = 0;
+		
 						if rushTrickFinish {
 							rushTrickFinish = false;
 							rushTrickCombo = 0;
@@ -781,6 +886,8 @@ function scr_YCollision() {
 						
 						rampRing = true;
 		
+						rushTrickTimer = 0;
+		
 						if rushTrickFinish {
 							rushTrickFinish = false;
 							rushTrickCombo = 0;
@@ -789,11 +896,10 @@ function scr_YCollision() {
 						can_MoveFULL = true;
 						preTrickTimer = preTrickFrames;
 						
-						if yspd < termVel {
-							yspd = -(yspd + 2)
-						} else {
-							yspd = -23;
-						}
+						ground = false;
+						jumping = true;
+						
+						yspd = -(yspd + 1);
 					}
 				}
 			#endregion
@@ -828,6 +934,8 @@ function scr_YCollision() {
 							} else {
 								getScore = false;
 							}
+		
+							rushTrickTimer = 0;
 		
 							if rushTrickFinish {
 								rushTrickFinish = false;
@@ -882,6 +990,8 @@ function scr_YCollision() {
 					event_user(1);
 					event_user(2);
 		
+					rushTrickTimer = 0;
+		
 					if rushTrickFinish {
 						rushTrickFinish = false;
 						rushTrickCombo = 0;
@@ -903,11 +1013,11 @@ function scr_YCollision() {
 						jumping = true;
 						
 						obj_SFXManager.clench = true;
-						scr_StopCharShit();
 						scr_StopCharControls();
-						scr_StopPlayerHurt();
 		
 						array_push(_pully.pulledChars, id);
+		
+						rushTrickTimer = 0;
 		
 						if rushTrickFinish {
 							rushTrickFinish = false;
@@ -1026,6 +1136,70 @@ function scr_YCollision() {
 				#endregion
 			#endregion
 			
+			#region //Checkpoint
+				var _checkpoint = instance_nearest(x, y, obj_Checkpoint);
+				
+				if distance_to_object(_checkpoint) <= 100 && !_checkpoint.active {
+					global.RespawnX = _checkpoint.x;
+					global.RespawnY = _checkpoint.y;
+	
+					scr_BonusPoints(2000);
+	
+					if instance_exists(obj_Timer) {
+						with (instance_create_depth(-100000000, y, depth, obj_CheckpointTimer)) {
+							selfMinutes = global.minutes;
+							selfSeconds = global.seconds;
+						}
+					}
+	
+					_checkpoint.sprColor = c_gray;
+					_checkpoint.active = true;
+					boostEnergy += 50;
+	
+					if rushMode {
+						rushModeTimer = rushModeFrames;
+						obj_SFXManager.rushModeTrick = true;
+					}
+	
+					obj_SFXManager.rushCheckpoint = true;
+	
+					if global.Particles {
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+						instance_create_depth(x, y, depth, obj_CheckpointPart);
+					}
+				}
+			#endregion
+			
+			#region //Rain
+				var _rain = instance_place(x, y, obj_Rain);
+				
+				if _rain {
+					repeat(_rain.selRandom) {
+						instance_create_depth(_rain.x, _rain.y + 20, _rain.depth, obj_RainSplash);
+					}
+	
+					instance_destroy(_rain);
+				}
+			#endregion
+			
 			#region //Dying (Bottomless)
 				var _death = instance_place(x, y, obj_KillColl);
 
@@ -1139,6 +1313,10 @@ function scr_YCollision() {
 			
 					scr_HurtPlayer(200000, -8, false, -6);
 				}
+			#endregion
+			
+			#region //Kill & Get Hurt By Enemies
+				scr_PlayerToEnemyShit();
 			#endregion
 		#endregion
 	}

@@ -523,8 +523,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"General_Environment",
-    "path":"texturegroups/General_Environment",
+    "name":"TextPorts",
+    "path":"texturegroups/TextPorts",
   },
   "type":0,
   "VTile":false,

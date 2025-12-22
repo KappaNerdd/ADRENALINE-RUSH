@@ -1,4 +1,6 @@
 /// @desc Stop Any Extra Bullshit
+airBoost = false;
+
 shootAir = false;
 hShoot = false;
 hShootWeak = false;

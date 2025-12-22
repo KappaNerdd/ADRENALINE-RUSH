@@ -22,8 +22,8 @@ function scr_CharDataIvy() {
 	jspd = 6.75;
 	normalJspd = 6.75;
 	
-	termVel = 14;
-	normalTermVel = 14;
+	termVel = 19;
+	normalTermVel = 19;
 	
 	backTrickBoost = 7;
 	backTrickUpBoost = -7;

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Checkpoints",
-    "path":"folders/Objects/Death/Checkpoints.yy",
+    "path":"folders/Objects/Environments/Collectables/Checkpoints.yy",
   },
   "parentObjectId":null,
   "persistent":false,

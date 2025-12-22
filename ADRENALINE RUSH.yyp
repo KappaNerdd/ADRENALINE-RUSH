@@ -67,7 +67,7 @@
     {"$GMFolder":"","%Name":"Parent & System","folderPath":"folders/Objects/Cutscenes/Parent & System.yy","name":"Parent & System","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Death","folderPath":"folders/Objects/Death.yy","name":"Death","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Character Messages","folderPath":"folders/Objects/Death/Character Messages.yy","name":"Character Messages","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Checkpoints","folderPath":"folders/Objects/Death/Checkpoints.yy","name":"Checkpoints","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Checkpoints","folderPath":"folders/Objects/Environments/Collectables/Checkpoints.yy","name":"Checkpoints","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Forced Shit","folderPath":"folders/Objects/Death/Forced Shit.yy","name":"Forced Shit","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Game Over","folderPath":"folders/Objects/Death/Game Over.yy","name":"Game Over","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Game Over BETA","folderPath":"folders/Objects/Death/Game Over/Game Over BETA.yy","name":"Game Over BETA","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -2958,5 +2958,7 @@
     {"$GMTextureGroup":"","%Name":"Characters","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Characters","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMTextureGroup":"","%Name":"Side_Characters","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Side_Characters","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMTextureGroup":"","%Name":"IntroCard","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"IntroCard","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"HUD","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"HUD","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"File_Select","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"File_Select","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }

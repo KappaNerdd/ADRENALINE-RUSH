@@ -1,4 +1,6 @@
 /// @desc Stop Any Extra Bullshit
+airBoost = false;
+
 airDash = false;
 
 dJumping = false;

@@ -612,6 +612,7 @@ function scr_AirTricksStep() {
 			preTrickTimer = preTrickFrames;
 			rushTrickBufferTimer = 0;
 			rushTrickFinaleBufferTimer = 0;
+			noMoveTimer = 0;
 			
 			image_index = 0;
 			scr_ControllerRumble();
@@ -676,6 +677,7 @@ function scr_AirTricksStep() {
 			preTrickTimer = preTrickFrames;
 			rushTrickBufferTimer = 0;
 			rushTrickFinaleBufferTimer = 0;
+			noMoveTimer = 0;
 			
 			scr_ControllerRumble();
 			
@@ -729,6 +731,7 @@ function scr_AirTricksStep() {
 			preTrickTimer = preTrickFrames;
 			rushTrickBufferTimer = 0;
 			rushTrickFinaleBufferTimer = 0;
+			noMoveTimer = 0;
 			
 			scr_ControllerRumble();
 			
@@ -782,6 +785,7 @@ function scr_AirTricksStep() {
 			preTrickTimer = preTrickFrames;
 			rushTrickBufferTimer = 0;
 			rushTrickFinaleBufferTimer = 0;
+			noMoveTimer = 0;
 			
 			scr_ControllerRumble();
 			

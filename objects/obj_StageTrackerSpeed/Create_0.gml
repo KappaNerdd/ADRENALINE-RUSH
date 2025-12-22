@@ -60,7 +60,7 @@ if !global.CustomMus {
 	playTrack = global.CustomMusic;
 }
 
-set_song_ingame(playTrack, 60, 30);
+set_song_ingame(playTrack, 60, 0);
 
 instance_create_depth(-10000, y, -9, obj_PlayerExtraLives);
 instance_create_depth(-10000, y, -9, obj_Timer);

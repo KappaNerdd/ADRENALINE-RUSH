@@ -1530,11 +1530,10 @@ function scr_WallClingStep() {
 				
 			if canWallJump {
 				if !wallJump {
-					if yspd > 0 {
-						yspd = 0;
+					if yspd > 1 {
+						yspd = 1;
 					}
 					
-					event_user(0);
 					event_user(1);
 					event_user(3);
 					

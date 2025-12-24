@@ -39,7 +39,7 @@ choice = 0;
 choiceX = 0;
 cursorY = 0;
 
-chosenSpeed = 0;
+chosenSpeed = global.SpeedSelected;
 choiceSpeedX = 0;
 choiceSpeedY = 500;
 
@@ -57,8 +57,11 @@ chosenTextAlpha = 0;
 textboxAnim = 1 / 2;
 textboxFrames = 0;
 
+yes = false;
+yesTimer = 80;
+
 confirm = false;
-confirmTimer = 90;
+confirmTimer = 10;
 levelChosen = false;
 levelAlphas = 0.5;
 

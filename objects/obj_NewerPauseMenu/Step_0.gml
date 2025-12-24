@@ -233,7 +233,9 @@ if !done {
 		
 		#region //Quick-Restart
 			if select_Key && !instance_exists(obj_RoomTransParent) && (instance_exists(obj_StageTrackerSpeed) or instance_exists(obj_StageTrackerAction)) {
-				instance_create_depth(-100000, 0, depth, _transRestart);
+				with(instance_create_depth(-100000, 0, depth, obj_RushTransition)) {
+					restart = true;
+				}
 				
 				if global.Freeplay {
 					global.Health = global.MaxHealth;
@@ -288,7 +290,9 @@ if !done {
 				if confirmChoice == 0 {
 					if !instance_exists(obj_RoomTransParent) {
 						if _choiceLength[choice][1] == restart {
-							instance_create_depth(-100000, 0, depth, _transRestart);
+							with(instance_create_depth(-100000, 0, depth, obj_RushTransition)) {
+								restart = true;
+							}
 							
 							if global.Freeplay {
 								global.Health = global.MaxHealth;
@@ -311,7 +315,7 @@ if !done {
 						}
 					
 						if _choiceLength[choice][1] == freeplayS {
-							var _transit = instance_create_depth(-100000, 0, depth, _trans);
+							var _transit = instance_create_depth(-100000, 0, depth, obj_RushTransition);
 							
 							_transit.target_rm = rm_FreeplayNew;
 							

@@ -48,6 +48,7 @@ ranks = [
 	spr_RankPHead,
 ]
 
+mainAlpha = 0;
 otheralpha = 1;
 spikeInX = 0;
 spikeX = 0;

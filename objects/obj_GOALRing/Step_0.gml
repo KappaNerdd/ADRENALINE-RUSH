@@ -1,8 +1,15 @@
 depth = obj_Player.depth - 10;
 
-if place_meeting(x, y, obj_Player) && goal == false && !global.Death {
+if image_speed <= 0 {
+	image_speed = 0;
+}
+
+if place_meeting(x, y, obj_Player) && !goal && !global.Death {
 	goal = true;
-	obj_InputRecorder.isRecording = false;
+	
+	if instance_exists(obj_InputRecorder) {
+		obj_InputRecorder.isRecording = false;
+	}
 	
 	scr_StopCharShit();
 	scr_StopCharControls();
@@ -18,19 +25,19 @@ if place_meeting(x, y, obj_Player) && goal == false && !global.Death {
 	
 	with(obj_Player) {
 		if abs(vel) <= 5 {
-			other.image_speed = 0.5;
+			other.image_speed = 0.3;
 			other.spinBonus = 1000;
 		} else if abs(vel) > 5 && abs(vel) < 10 {
-			other.image_speed = 1;
+			other.image_speed = 0.96;
 			other.spinBonus = 2500;
 		} else if abs(vel) >= 10 && abs(vel) < 15 {
 			other.image_speed = 3;
 			other.spinBonus = 5000;
 		} else if abs(vel) >= 15 && abs(vel) < 20 {
-			other.image_speed = 4;
+			other.image_speed = 4.025;
 			other.spinBonus = 10000;
 		} else if abs(vel) >= 20 {
-			other.image_speed = 5;
+			other.image_speed = 5.01;
 			other.spinBonus = 20000;
 		}
 	}
@@ -46,18 +53,16 @@ if place_meeting(x, y, obj_Player) && goal == false && !global.Death {
 if goal {
 	global.countUp = false;
 	obj_Player.can_Move = false;
-	obj_Player.sliding = false;
-	obj_Player.rushModeTimer = 0;
 	
-	//---Character Specific---//
-	
-	scr_StopCharShit();
+	scr_StopCharControls();
 	
 	with(obj_Player) {
+		event_user(0);
+		event_user(1);
+		event_user(2);
+		event_user(3);
+		
 		right_Key = true;
-		action1_Key_Held = false;
-		left_Key = false;
-		jump_Key_Held = false;
 	}
 } else {
 	if createRingTimer > 0 {

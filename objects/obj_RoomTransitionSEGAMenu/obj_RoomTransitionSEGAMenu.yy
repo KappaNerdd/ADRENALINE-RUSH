@@ -11,8 +11,8 @@
   "name":"obj_RoomTransitionSEGAMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"SEGA Genesis",
-    "path":"folders/Objects/Room Transitions/SEGA Genesis.yy",
+    "name":"SEGA Genesis Trans",
+    "path":"folders/Objects/Room Transitions/SEGA Genesis Trans.yy",
   },
   "parentObjectId":{
     "name":"obj_RoomTransParent",

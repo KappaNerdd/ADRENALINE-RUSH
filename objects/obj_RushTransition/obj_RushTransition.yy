@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_RoomTransitionSEGALoad",
+  "%Name":"obj_RushTransition",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_RoomTransitionSEGALoad",
+  "name":"obj_RushTransition",
   "overriddenProperties":[],
   "parent":{
-    "name":"SEGA Genesis Trans",
-    "path":"folders/Objects/Room Transitions/SEGA Genesis Trans.yy",
+    "name":"Rush Trans",
+    "path":"folders/Objects/Room Transitions/Rush Trans.yy",
   },
   "parentObjectId":{
     "name":"obj_RoomTransParent",
@@ -36,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_SEGAGenesisTrans",
-    "path":"sprites/spr_SEGAGenesisTrans/spr_SEGAGenesisTrans.yy",
+    "name":"spr_SonicRushTrans",
+    "path":"sprites/spr_SonicRushTrans/spr_SonicRushTrans.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -262,10 +262,10 @@ if rankSize == 0 {
 		
 		#region //Replay
 			if !replayGotSaved {
-				draw_sprite_ext(_button, obj_CustomAct2KeySpeed.image_index, _camX + 570 - _replayWidth, _camY + 20, 1, 1, 0, c_white, image_alpha * 2);
+				draw_sprite_ext(_button, obj_CustomAct2KeySpeed.image_index, _camX + 570 - _replayWidth, _camY + 20, 1, 1, 0, c_grey, image_alpha * 2);
 			}
 			
-			draw_text_transformed_color(_camX + 635, _camY + 10, scr_LocalText(_replayText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
+			draw_text_transformed_color(_camX + 635, _camY + 10, scr_LocalText(_replayText), 1, 1, 0, c_white, c_white, c_grey, c_grey, image_alpha * 2);
 		#endregion
 		
 		#region //Ghost

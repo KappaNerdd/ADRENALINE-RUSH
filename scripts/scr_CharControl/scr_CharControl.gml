@@ -166,7 +166,9 @@ function scr_BasicVariablesSpeedCreate() {
 function scr_BasicControlsSpeedStep1() {
 	#region //General Controls
 		if can_Move {
-			if instance_exists(obj_StageTrackerSpeed) {
+			getCharacterControls();
+			
+			/*if instance_exists(obj_StageTrackerSpeed) {
 				var _recorder = instance_find(obj_InputRecorder, 0);
 
 				if _recorder != noone && !_recorder.isPlaying {
@@ -203,7 +205,7 @@ function scr_BasicControlsSpeedStep1() {
 				}
 			} else {
 				getCharacterControls();
-			}
+			}*/
 		} else {
 			if instance_exists(obj_Countdown) or instance_exists(obj_CountdownHead) {
 				var _recorder = instance_find(obj_InputRecorder, 0);

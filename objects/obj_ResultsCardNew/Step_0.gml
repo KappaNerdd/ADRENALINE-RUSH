@@ -160,12 +160,14 @@ if !completed {
 					obj_SFXManager.menuPop = true;
 				}
 				
-				with(obj_InputRecorder) {
-					if other.action1_Key && !other.replayGotSaved {
-						other.replayGotSaved = true;
-						obj_SFXManager.homingLockOn = true;
-						scr_WriteInputRecording(fileName);
-						scr_SaveReplayChar(fileName);
+				if instance_exists(obj_InputRecorder) {
+					with(obj_InputRecorder) {
+						if other.action1_Key && !other.replayGotSaved {
+							other.replayGotSaved = true;
+							obj_SFXManager.homingLockOn = true;
+							scr_WriteInputRecording(fileName);
+							scr_SaveReplayChar(fileName);
+						}
 					}
 				}
 				
@@ -247,6 +249,7 @@ if !completed {
 			if !global.Freeplay {
 				if !instance_exists(obj_RoomTransParent) {
 					var instantiated = instance_create_depth(0, 0, -100000000000, obj_RoomTransitionBasicStage);
+					
 					instantiated.target_x = global.TargetX;
 					instantiated.target_y = global.TargetY;
 					instantiated.target_rm = global.TargetRM;
@@ -257,7 +260,7 @@ if !completed {
 				}
 				
 				if !instance_exists(obj_RoomTransParent) {
-					var instantiated = instance_create_depth(0, 0, -100000000000, obj_RoomTransitionSEGAMenu);
+					var instantiated = instance_create_depth(0, 0, -100000000000, obj_RushTransition);
 					instantiated.target_rm = rm_FreeplayNew;
 				}
 			}
@@ -266,8 +269,9 @@ if !completed {
 				restartTimer -= 1;
 			} else {
 				if !instance_exists(obj_RoomTransParent) {
-					with(instance_create_depth(-100000, 0, 0, obj_RoomTransitionSEGAMenu)) {
+					with(instance_create_depth(-100000, 0, 0, obj_RushTransition)) {
 						target_rm = global.speedStageData[global.SpeedSelected].stage_RM;
+						speedStage = true;
 					}
 				}
 			}

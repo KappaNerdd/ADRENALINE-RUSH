@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_NextTime",
+  "%Name":"mus_BeenBetter",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":64.0,
   "exportDir":"",
-  "name":"mus_NextTime",
+  "name":"mus_BeenBetter",
   "parent":{
-    "name":"Kappa",
-    "path":"folders/Sounds/Music/Results/Kappa.yy",
+    "name":"Lucifer",
+    "path":"folders/Sounds/Music/Results/Lucifer.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_NextTime.ogg",
-  "volume":0.6,
+  "soundFile":"mus_BeenBetter.ogg",
+  "volume":1.0,
 }

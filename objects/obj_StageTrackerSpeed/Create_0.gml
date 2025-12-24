@@ -41,10 +41,10 @@ if !global.LevelForced {
 	instance_create_depth(-10000000, 0, 0, obj_SonicRushIntroCard);
 }
 
-if instance_exists(obj_InputRecorder) {
+/*if instance_exists(obj_InputRecorder) {
 	obj_InputRecorder.index = 0;
 	obj_InputRecorder.frame = 0;
-}
+}*/
 	
 if instance_exists(obj_GhostRecorder) {
 	obj_GhostRecorder.ghostRecordFrames = 0;
@@ -69,4 +69,4 @@ instance_create_depth(-10000, y, -9, obj_LevelCoords);
 instance_create_depth(-10000, y, -9, obj_CameraExtended);
 instance_create_depth(-10000, y, -9, obj_CreatePauseSpeed);
 instance_create_depth(-10000, y, -9, obj_GhostRecorder);
-instance_create_depth(-10000, y, -9, obj_InputRecorder);
+//instance_create_depth(-10000, y, -9, obj_InputRecorder);

@@ -1,6 +1,10 @@
 getCharacterControls();
 
 if kysTimer > 0 {	
+	if mainAlpha < 1 {
+		mainAlpha += 0.025;
+	}
+	
 	kysTimer--;
 	
 	if kysTimer < 180 {
@@ -13,6 +17,7 @@ if kysTimer > 0 {
 	} else {
 		if jump_Key && !global.Replay {
 			kysTimer = 0;
+			mainAlpha = 1;
 		}
 		
 		obj_Player.can_MoveFULL = false;
@@ -24,7 +29,7 @@ if kysTimer > 0 {
 		}
 		
 		if kysTimer > 120 {
-			obj_Player.image_speed = 0.5;
+			obj_Player.image_speed = 0.3;
 		} else {
 			obj_Player.image_speed += 0.0175;
 		}
@@ -45,6 +50,7 @@ if kysTimer > 0 {
 			obj_Player.can_Move = true;
 		} else {
 			obj_Player.can_MoveFULL = true;
+			obj_Player.can_Move = true;
 			obj_Player.vel = obj_Player.full_Speed - 1;
 			obj_Player.noMoveTimer = 30;
 		}

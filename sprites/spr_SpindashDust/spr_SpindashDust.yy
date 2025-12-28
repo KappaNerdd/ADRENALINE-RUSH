@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Rush",
-    "path":"folders/Sprites/Characters/VFX/Normal/Rush.yy",
+    "name":"VFX",
+    "path":"folders/Sprites/Characters/Players/Rush/VFX.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -36,5 +36,5 @@
     "path":"sprites/spr_SarahBoostSimple/spr_SarahBoostSimple.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

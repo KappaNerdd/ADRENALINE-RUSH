@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Homing Attack",
-    "path":"folders/Sprites/Characters/VFX/Normal/Rush/Homing Attack.yy",
+    "path":"folders/Sprites/Characters/Players/Rush/Homing Attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

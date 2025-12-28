@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":8,
   "parent":{
-    "name":"Kappa",
-    "path":"folders/Sprites/Characters/VFX/Normal/Kappa.yy",
+    "name":"Old",
+    "path":"folders/Sprites/Characters/VFX/Old.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

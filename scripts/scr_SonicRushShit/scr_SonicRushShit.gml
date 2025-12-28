@@ -153,13 +153,13 @@ function scr_BoostingStep() {
 						vel = -boost_Speed;
 					}
 				
-					(instance_create_depth(x - 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(-40);
 				} else {
 					if vel < boost_Speed {
 						vel = boost_Speed;
 					}
 				
-					(instance_create_depth(x + 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(40);
 				}
 			} else {
 				if image_xscale == -1 {
@@ -167,13 +167,13 @@ function scr_BoostingStep() {
 						vel = -boost_Speed;
 					}
 				
-					(instance_create_depth(x - 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(-40);
 				} else {
 					if vel < boost_Speed {
 						vel = boost_Speed;
 					}
 				
-					(instance_create_depth(x + 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(40);
 				}
 			}
 		} else if left_Key {
@@ -181,13 +181,13 @@ function scr_BoostingStep() {
 				vel = -boost_Speed;
 			}
 				
-			(instance_create_depth(x - 40, y, depth - 1, obj_RushBoostBreak));
+			scr_RushBoostBreakVFX(-40);
 		} else if right_Key {
 			if vel < boost_Speed {
 				vel = boost_Speed;
 			}
 				
-			(instance_create_depth(x + 40, y, depth - 1, obj_RushBoostBreak));
+			scr_RushBoostBreakVFX(40);
 		} else if right_Key && left_Key {
 			if leftFacer {
 				if face_Left {
@@ -195,13 +195,13 @@ function scr_BoostingStep() {
 						vel = -boost_Speed;
 					}
 				
-					(instance_create_depth(x - 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(-40);
 				} else {
 					if vel < boost_Speed {
 						vel = boost_Speed;
 					}
 				
-					(instance_create_depth(x + 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(40);
 				}
 			} else {
 				if image_xscale == -1 {
@@ -209,13 +209,13 @@ function scr_BoostingStep() {
 						vel = -boost_Speed;
 					}
 				
-					(instance_create_depth(x - 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(-40);
 				} else {
 					if vel < boost_Speed {
 						vel = boost_Speed;
 					}
 				
-					(instance_create_depth(x + 40, y, depth - 1, obj_RushBoostBreak));
+					scr_RushBoostBreakVFX(40);
 				}
 			}
 		}
@@ -960,6 +960,17 @@ function scr_RushModeColorCreate() {
 	rushModeColor = false;
 	rushModeAlpha = 0;
 	rushColor = global.fullRGB;
+	
+	anims = 1 / 2;
+	
+	boostingSprite = global.PlayerSelection[global.PlayerChar][18][0];
+	boostingSpriteSimple = global.PlayerSelection[global.PlayerChar][18][1];
+	boostingFrames = 0;
+	
+	stompingSprite = global.PlayerSelection[global.PlayerChar][18][2];
+	stompingSprFrames = 0;
+	
+	stompedSprite = global.PlayerSelection[global.PlayerChar][18][3];
 }
 
 function scr_RushModeColorDraw() {
@@ -1016,4 +1027,80 @@ function scr_RushModeColorDraw() {
 			rushModeColor = true;
 		}
 	}
+	
+	
+	if boost {
+		var _boosting = boostingSprite;
+		var _boostXscale = 1;
+		
+		if vel < 0 {
+			_boostXscale = -1;
+		}
+		
+		var _boostAngle = point_direction(0, 0, _boostXscale * vel, _boostXscale * yspd);
+		
+		if ground {
+			_boostAngle = drawAngle;
+		}
+		
+		if global.SimplifyVFX {
+			_boosting = boostingSpriteSimple;
+		}
+		
+		var _boostingFrames = sprite_get_number(_boosting);
+		
+		if boostingFrames < _boostingFrames {
+			boostingFrames += anims;
+		} else {
+			boostingFrames = 0;
+		}
+		
+		draw_sprite_ext(_boosting, boostingFrames, x, y, _boostXscale, 1, _boostAngle, c_white, 0.5);
+	} else {
+		boostingFrames = 0;
+	}
+	
+	
+	if speedBreak && !stomping && !boost && abs(vel) >= max_Speed / 2 {
+		var _stompingSprite = stompingSprite;
+		var _stompingFrames = sprite_get_number(_stompingSprite);	
+		var _stompingAngle = point_direction(0, 0, vel, yspd);
+		var _stompingXscale = 1;
+		var _stompingExtraAngle = 0;
+		
+		if vel < 0 {
+			_stompingXscale = -1;
+			_stompingExtraAngle = 180;
+		}
+		
+		if ground {
+			_stompingAngle = _stompingExtraAngle + drawAngle;
+		}
+		
+		var _extraX = lengthdir_x(20, _stompingAngle);
+		var _extraY = lengthdir_y(20, _stompingAngle);
+		
+		if stompingSprFrames < _stompingFrames {
+			stompingSprFrames += anims;
+		} else {
+			stompingSprFrames = 0;
+		}
+		
+		draw_sprite_ext(_stompingSprite, stompingSprFrames, x + _extraX, y + _extraY, 1, 1, _stompingAngle + 90, c_white, 1);
+	}
+	
+	
+	if stomping {
+		var _stompingSprite = stompingSprite;
+		var _stompingFrames = sprite_get_number(_stompingSprite);
+		
+		if stompingSprFrames < _stompingFrames {
+			stompingSprFrames += anims;
+		} else {
+			stompingSprFrames = 0;
+		}
+		
+		draw_sprite_ext(_stompingSprite, stompingSprFrames, x, y + 20, 1, 1, 0, c_white, 1);
+	}
+	
 }

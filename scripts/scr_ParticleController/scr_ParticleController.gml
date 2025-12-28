@@ -20,23 +20,39 @@ function scr_DustParticles(_x = 0, _y = 15) {
 }
 
 function scr_SpeedBreakVFX() {
-	if !instance_exists(obj_SpeedBreakVFX) && !instance_exists(obj_NewPauseMenu) && global.Particles {
+	/*if !instance_exists(obj_SpeedBreakVFX) && !instance_exists(obj_NewPauseMenu) && global.Particles {
 		instance_create_depth(x, y, depth - 1, obj_SpeedBreakVFX);
 	}
 	
 	if !speedBreak {
 		instance_destroy(obj_SpeedBreakVFX);
-	}
+	}*/
 }
 
 function scr_StompVFX() {
-	if stomping && !instance_exists(obj_StompingVFX) && !instance_exists(obj_NewPauseMenu) && global.Particles {
+	/*if stomping && !instance_exists(obj_StompingVFX) && !instance_exists(obj_NewPauseMenu) && global.Particles {
 		instance_create_depth(x, y, depth - 1, obj_StompingVFX);
-	}
+	}*/
 }
 
 function scr_StompedVFX() {
-	instance_create_depth(x, y + 2, depth, obj_StompVFX);
+	with(instance_create_depth(x, y, depth, obj_StompVFX)) {
+		sprite_index = other.stompedSprite;
+	}
+}
+
+function scr_RushBoostBreakVFX(_x = 0, _y = 0) {
+	with(instance_create_depth(x + _x, y + _y, depth, obj_RushBoostBreak)) {
+		sprite_index = other.stompedSprite;
+		
+		if other.vel > 0 {
+			image_xscale = 1.35;
+		} else if other.vel < 0 {
+			image_xscale = -1.35;
+		}
+
+		image_angle = other.drawAngle + (90 * sign(image_xscale));
+	}
 }
 
 function scr_RailGrindParticles(_x = 0, _y = 30) {

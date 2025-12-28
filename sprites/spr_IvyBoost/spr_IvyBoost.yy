@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Ivy",
-    "path":"folders/Sprites/Characters/VFX/Normal/Ivy.yy",
+    "name":"VFX",
+    "path":"folders/Sprites/Characters/Players/Ivy/VFX.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

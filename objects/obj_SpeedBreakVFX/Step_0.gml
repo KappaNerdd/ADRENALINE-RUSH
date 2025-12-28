@@ -1,4 +1,4 @@
-if instance_exists(obj_Player) {
+/*if instance_exists(obj_Player) {
 	if obj_Player.vel > 0 {
 		image_xscale = 1;
 	} else if obj_Player.vel < 0 {

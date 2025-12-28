@@ -36,5 +36,5 @@
     "path":"sprites/spr_StompingVFXKappa/spr_StompingVFXKappa.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

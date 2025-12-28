@@ -122,11 +122,11 @@ function scr_EnemyStep() {
 
 function scr_PlayerToEnemyShit() {
 	var _toji = instance_place(x, y, obj_EnemyParent);
-	var _stompedVFX = instance_find(obj_StompVFX, 1);
-	var _boostBreakVFX = instance_find(obj_RushBoostBreak, 1);
+	var _stompedVFX = instance_find(obj_StompVFX, 0);
+	var _boostBreakVFX = instance_find(obj_RushBoostBreak, 0);
 	
 	if _stompedVFX != noone {
-		with(_stompedVFX) {
+		with(_stompedVFX) {			
 			var _toji2 = instance_place(x, y, obj_EnemyParent);
 		
 			if _toji2 {

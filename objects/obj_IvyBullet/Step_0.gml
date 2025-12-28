@@ -61,17 +61,3 @@ if image_yscale < 1 {
 	image_yscale += 0.2;
 }
 
-
-var _enemy = instance_place(x, y, obj_EnemyParent);
-
-if _enemy {
-	if _enemy.enemyHealth > 0 {
-		_enemy.enemyHealth -= _enemy.enemyHealth;
-		obj_SFXManager.enemyExplode = true;
-		instance_destroy();
-	}
-}
-
-if place_meeting(x, y, obj_PowerOrb) {
-	instance_destroy();
-}

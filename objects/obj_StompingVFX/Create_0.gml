@@ -1,4 +1,4 @@
-visible = true;
+visible = false;
 
 if global.PlayerChar == 0 {
 	sprite_index = spr_StompingVFXHead;

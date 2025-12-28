@@ -7,6 +7,8 @@ depth = obj_Player.depth - 1;
 sprite_index = fullBoost;
 image_speed = 3;
 
+visible = false;
+
 if obj_Player.vel > 0 {
 	image_xscale = 1;
 } else if obj_Player.vel < 0 {

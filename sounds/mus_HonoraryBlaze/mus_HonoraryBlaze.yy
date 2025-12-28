@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_HonoraryBlaze",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":54.857143,
+  "exportDir":"",
+  "name":"mus_HonoraryBlaze",
+  "parent":{
+    "name":"Lucifer",
+    "path":"folders/Sounds/Music/Results/Lucifer.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_HonoraryBlaze.ogg",
+  "volume":1.0,
+}

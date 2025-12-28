@@ -1,12 +1,6 @@
 depth = obj_Player.depth - 3;
 
-if global.PlayerChar == 0 {
-	sprite_index = spr_StompVFXHead;
-} else {
-	sprite_index = spr_StompVFXKappa;
-	image_blend = global.fullRGB;
-}
+image_speed = 1.5;
 
-if !global.Particles {
-	visible = false;
-}
+image_xscale = 1.35;
+image_yscale = 1.35;

@@ -219,7 +219,7 @@
 			[spr_BoostEmblemKappaHead, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemKappaHeadRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeKappaHead, spr_LifeKappaHead, spr_StageCharKappaHead, spr_LifeKappaHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_KappaHeadBoost, spr_KappaHeadBoostSimple, 1],
+			[spr_KappaHeadBoost, spr_KappaHeadBoostSimple, spr_HeadStompingVFX, spr_HeadStompedVFX, 1],
 			[spr_KappaHeadTrickFinishVFX, 1],
 		
 			mus_FreeplayKMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -274,7 +274,7 @@
 			[spr_BoostEmblemKappa, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemKappaRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeKappaSet, spr_LifeKappaSetColor, spr_StageCharKappaSet, spr_LifeKappaHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_KappaBoost, spr_KappaBoostSimple, 1],
+			[spr_KappaBoost, spr_KappaBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, 1],
 			[spr_KappaTrickFinalVFX, 1],
 		
 			mus_FreeplayKMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -327,7 +327,7 @@
 			[spr_BoostEmblemSarah, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemSarahRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeSarahSet, spr_LifeSarahSetColor, spr_StageCharSarahSet, spr_LifeSarahHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplaySMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -380,7 +380,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeLoneSet, spr_LifeLoneSetColor, spr_StageCharLoneSet, spr_LifeLoneSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplayLMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -433,7 +433,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeBrockSet, spr_LifeBrockSetColor, spr_StageCharBrockSet, spr_LifeBrockSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_KappaBoost, spr_KappaBoostSimple, 1],
+			[spr_KappaBoost, spr_KappaBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, 1],
 			[spr_KappaTrickFinalVFX, 1],
 		
 			mus_FreeplayBMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -486,7 +486,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeNeegiSet, spr_LifeNeegiSetColor, spr_StageCharNeegiSet, spr_LifeNeegiSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplayNMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -539,7 +539,7 @@
 			[spr_BoostEmblemCloee, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemCloeeRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeCloeeSet, spr_LifeCloeeSetColor, spr_StageCharCloeSet, spr_LifeCloeeSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplayCMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -592,7 +592,7 @@
 			[spr_BoostEmblemAkira, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemAkiraRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeAkiraSet, spr_LifeAkiraSetColor, spr_StageCharAkiraSet, spr_LifeAkiraSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_KappaBoost, spr_KappaBoostSimple, 1],
+			[spr_KappaBoost, spr_KappaBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, 1],
 			[spr_KappaTrickFinalVFX, 1],
 		
 			mus_FreeplayAMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -645,7 +645,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeTaylorSet, spr_LifeTaylorSetColor, spr_StageCharTaylorSet, spr_LifeTaylorSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplayTMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -698,7 +698,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeAyanaSet, spr_LifeAyanaSetColor, spr_StageCharAyanaSet, spr_LifeAyanaSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplayAYMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -751,7 +751,7 @@
 			[spr_BoostEmblemRush, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemRushRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeRushSet, spr_LifeRushSetColor, spr_StageCharRushSet, spr_LifeRushHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_RushBoost, spr_RushBoostSimple, 1], //Boost
+			[spr_RushBoost, spr_RushBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, 1], //Boost
 			[spr_RushTrickFinalVFX, 1], //Final Trick VFX
 		
 			mus_FreeplayRMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -804,7 +804,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeEdgeSet, spr_LifeEdgeSetColor, spr_StageCharEdgeSet, spr_LifeEdgeSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_RushBoost, spr_RushBoostSimple, 1], //Boost
+			[spr_RushBoost, spr_RushBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, 1], //Boost
 			[spr_RushTrickFinalVFX, 1], //Final Trick VFX
 		
 			mus_FreeplayEMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -857,7 +857,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeRoxxaneSet, spr_LifeRoxxaneSetColor, spr_StageCharRoxxaneSet, spr_LifeRoxxaneSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1], //Boost [Normal, Simple, Frames]
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_KappaStompedVFX, 1], //Boost [Normal, Simple, Frames]
 			[spr_SarahTrickFinalVFX, 1], //Final Trick VFX
 		
 			mus_FreeplayRXMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -876,8 +876,8 @@
 		[
 			["name_Lucifer", true, "name_Luci"], //Char Name (Name of your Character)
 		
-			false, //Char Playable (If false, your character will not appear in Character Select screen at all)
-			true, //Char Locked (If true, your character will appear blacked out and won't be selectable)
+			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
+			false, //Char Locked (If true, your character will appear blacked out and won't be selectable)
 			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
 		
 			[ //Char Costumes (Must Have at least 1)
@@ -894,15 +894,16 @@
 			[spr_LevelCard_RoxxaneSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
 			[spr_LevelCard_RoxxaneSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
 			[spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
-			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
+			[spr_CharNameLucifer, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
+				//Because of how I coded this in source, you'll have to interpret your character's stats
 				17, //Char Age (Optional)
-				19,
-				15,
-				11,
-				11,
-				16,
+				19, //Acceleration (Max: 20)
+				14, //Jump Height (Max: 20)
+				13, //Weight (Max: 20)
+				11, //Max Speed (Grab from your max_Speed variable)
+				16, //Break Speed (Grab from your full_Speed variable)
 				18,
 			],
 		
@@ -910,19 +911,19 @@
 			[spr_BoostEmblemLucifer, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLuciferRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeLuciferSet, spr_LifeLuciferSetColor, spr_StageCharKappaSet, spr_LifeLuciferSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, 1], //Boost [Normal, Simple, Frames]
-			[spr_SarahTrickFinalVFX, 1], //Final Trick VFX
+			[spr_LuciferBoost, spr_LuciferBoostSimple, spr_LuciferStompingVFX, spr_LuciferStompedVFX, 1], //Boost [Normal, Simple, Frames]
+			[spr_LuciferTrickFinalVFX, 1], //Final Trick VFX
 		
-			mus_FreeplayRXMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
-			mus_PerraCulo, //Pause Theme (Ditto for Freeplay)
-			"Perra-Culo (Freeplay Roxxane Mvt.)",
+			mus_FreeplayLuMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
+			mus_Waiting, //Pause Theme (Ditto for Freeplay)
+			"Waiting (Freeplay Lucifer Mvt.)",
 		
-			[mus_HijoDePuta, mus_KnewYouHadIt, mus_JoderSi, mus_JoderSi, mus_ImDoneHere], //Results Theme Tracks [shit, good, sick, perfect]
-			["¡HIJO DE PUTA!", "I Knew You Had it in You", "¡JODER SÍ!", "¡JODER SÍ!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
+			[mus_BeenBetter, mus_KnewYouHadIt, mus_HonoraryBlaze, mus_HonoraryBlaze, mus_ItsDone], //Results Theme Tracks [shit, good, sick, perfect]
+			["That Could've Been Better", "I Knew You Had it in You", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_RoxxaneSet, 1], //Results Portrait
-			["stagecharroxxanenormal",],
-			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
+			["stagecharlucifernormal",],
+			[spr_CheckpointSarah, spr_RingLuciferIcon, spr_RingLuciferHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
 		],
 	
 		//Ivy
@@ -963,7 +964,7 @@
 			[spr_BoostEmblemIvy, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemIvyRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeIvySet, spr_LifeIvySetColor, spr_StageCharIvySet, spr_LifeIvyHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_IvyBoost, spr_IvyBoostSimple, 1], //Boost
+			[spr_IvyBoost, spr_IvyBoostSimple, spr_LuciferStompingVFX, spr_LuciferStompedVFX, 1], //Boost
 			[spr_IvyFinalTrickVFX, 1], //Trick Icon that appears when you do a Rush Trick Finish (Optional (Animated): Sprite Strip)
 		
 			mus_FreeplayIMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)

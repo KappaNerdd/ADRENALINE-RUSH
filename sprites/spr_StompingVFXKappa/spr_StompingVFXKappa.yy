@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Kappa",
-    "path":"folders/Sprites/Characters/VFX/Normal/Kappa.yy",
+    "name":"Old",
+    "path":"folders/Sprites/Characters/VFX/Old.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":8,
   "parent":{
-    "name":"Head",
-    "path":"folders/Sprites/Characters/VFX/Head.yy",
+    "name":"Old",
+    "path":"folders/Sprites/Characters/VFX/Old.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

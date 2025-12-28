@@ -854,6 +854,44 @@ if can_MoveFULL {
 		#endregion
 
 	#endregion
+	
+	#region //Extras
+		var _normalBull = instance_find(obj_IvyBullet, 0);
+		var _bigBull = instance_find(obj_IvyBigBullet, 0);
+	
+		if _normalBull != noone {
+			with(_normalBull) {			
+				var _toji2 = instance_place(x, y, obj_EnemyParent);
+		
+				if _toji2 {
+					_toji2.charKiller = other.id;
+				
+					scr_ScreenShake();
+					scr_ControllerRumble();
+		
+					_toji2.enemyHealth -= _toji2.enemyHealth;
+					obj_SFXManager.UndertaleDamage = true;
+					instance_destroy();
+				}
+			}
+		}
+		
+		if _bigBull != noone {
+			with(_bigBull) {			
+				var _toji2 = instance_place(x, y, obj_EnemyParent);
+		
+				if _toji2 {
+					_toji2.charKiller = other.id;
+				
+					scr_ScreenShake();
+					scr_ControllerRumble();
+		
+					_toji2.enemyHealth -= _toji2.enemyHealth;
+					obj_SFXManager.UndertaleDamage = true;
+				}
+			}
+		}
+	#endregion
 }
 	
 scr_BasicControlsSpeedStep4();

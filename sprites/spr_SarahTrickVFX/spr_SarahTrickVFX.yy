@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sarah",
-    "path":"folders/Sprites/Characters/VFX/Normal/Sarah.yy",
+    "name":"VFX",
+    "path":"folders/Sprites/Characters/Players/Sarah/VFX.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

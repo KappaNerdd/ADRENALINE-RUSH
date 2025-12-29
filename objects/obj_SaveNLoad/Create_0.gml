@@ -892,8 +892,8 @@
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
 			[spr_LevelCard_RoxxaneSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_RoxxaneSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_LuciferSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_Freeplay_Lucifer_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameLucifer, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -921,7 +921,7 @@
 			[mus_BeenBetter, mus_KnewYouHadIt, mus_HonoraryBlaze, mus_HonoraryBlaze, mus_ItsDone], //Results Theme Tracks [shit, good, sick, perfect]
 			["That Could've Been Better", "I Knew You Had it in You", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_RoxxaneSet, 1], //Results Portrait
+			[spr_LevelCard_LuciferSet, 1], //Results Portrait
 			["stagecharlucifernormal",],
 			[spr_CheckpointSarah, spr_RingLuciferIcon, spr_RingLuciferHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
 		],

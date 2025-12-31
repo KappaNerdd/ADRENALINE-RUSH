@@ -14,7 +14,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Discord Rich Presence",
-    "path":"folders/Objects/Discord Rich Presence.yy",
+    "path":"folders/Objects/Initialization/Discord Rich Presence.yy",
   },
   "parentObjectId":null,
   "persistent":true,

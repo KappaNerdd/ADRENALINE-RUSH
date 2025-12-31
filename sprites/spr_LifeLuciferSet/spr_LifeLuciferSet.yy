@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_LifeLuciferSet",
   "bboxMode":0,
-  "bbox_bottom":46,
-  "bbox_left":0,
-  "bbox_right":47,
+  "bbox_bottom":39,
+  "bbox_left":6,
+  "bbox_right":49,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e568e079-740d-4fe2-a08b-050ff3886f8d","name":"e568e079-740d-4fe2-a08b-050ff3886f8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"03a39185-478d-4a63-8d6a-ab34243347d3","name":"03a39185-478d-4a63-8d6a-ab34243347d3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":50,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"d24d5c65-9d4d-443e-9693-0e87561c4360","blendMode":0,"displayName":"default","isLocked":false,"name":"d24d5c65-9d4d-443e-9693-0e87561c4360","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"bd84e9c1-06e9-4d1c-8b26-eb601e7cd47c","blendMode":0,"displayName":"default","isLocked":false,"name":"bd84e9c1-06e9-4d1c-8b26-eb601e7cd47c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_LifeLuciferSet",
   "nineSlice":null,
@@ -71,8 +71,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e568e079-740d-4fe2-a08b-050ff3886f8d","path":"sprites/spr_LifeLuciferSet/spr_LifeLuciferSet.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6fe4641d-4ba5-4238-a2aa-d5782956ef2e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"03a39185-478d-4a63-8d6a-ab34243347d3","path":"sprites/spr_LifeLuciferSet/spr_LifeLuciferSet.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"98615ca5-307f-4f75-b679-0468a40ebc2b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

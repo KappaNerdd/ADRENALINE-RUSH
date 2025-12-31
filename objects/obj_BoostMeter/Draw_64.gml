@@ -128,8 +128,8 @@ if instance_exists(obj_Player) {
 		_bottom = spr_SpeedometerHead;
 	}
 	
-	draw_sprite_ext(_bottom, _speedMeter, 2 + newX, 88 + newY, 1, 1.5, 0, c_black, image_alpha);
-	draw_sprite_ext(_bottom, _speedMeter, 5 + newX, 85 + newY, 1, 1.5, 0, c_white, image_alpha);
+	draw_sprite_ext(_bottom, _speedMeter, 2 + newX, 153 + newY, 1, 1, 0, c_black, image_alpha);
+	draw_sprite_ext(_bottom, _speedMeter, 5 + newX, 150 + newY, 1, 1, 0, c_white, image_alpha);
 	
 	var _mainSize = 2.5;
 

@@ -29,7 +29,7 @@ opt_SFX,SFX,EFECTOS
 opt_Text,TEXT,TEXTO
 opt_Ambiance,AMBIANCE,AMBIENTE
 opt_Pause,UNIQUE PAUSE THEME,TEMA DE PAUSA ÚNICO
-opt_Footstep,FOOTSTEPS,
+opt_Footstep,FOOTSTEPS,PASOS
 ,,
 opt_Visual,VISUAL,VISUALES
 opt_SimpVFX,SIMPLIFY VFX,SIMPLIFICAR EFECTOS
@@ -39,7 +39,8 @@ opt_TextSpd,TEXT SPEED,VEL. DE TEXTO
 opt_Lang,LANGUAGE,IDIOMA
 opt_ConDis,KEYBOARD/CONTROLLER DISPLAY,TECLADO/MUESTRA DE CONTROL
 opt_Outline,OUTLINE,CONTORNO
-opt_Squash,SQUASH 'N' STRETCH,
+opt_Squash,SQUASH 'N' STRETCH,ESTIRAMIENTO
+opt_VSync,VSYNC,SINCRONIZACIÓN VERTICAL
 ,,
 opt_Misc,MISC,MISCELÁNEO
 opt_Fullscr,FULLSCREEN,PANTALLA COMPLETA
@@ -49,6 +50,11 @@ opt_ConRum,CONTROLLER RUMBLE,VIBRACIÓN DE CONTROL
 opt_ExtCam,EXTENDED CAMERA,CAMARA EXTENDIDA
 opt_FPS,FPS,FPS
 opt_Speedrun,SPEEDRUN TIMER,TEMPORIZADOR
+,,
+opt_Pref,PREFERENCES,PREFERENCIAS
+opt_ColorCode,CHARACTER COLOR-CODING,COLOREADO DE PERSONAJE
+opt_FocusLoss,AUTO-PAUSE ON FOCUS LOSS,PAUSAR AL PERDER FOCO
+opt_ChangeColor,CHANGE BASE COLOR,CAMBIAR COLOR BASE
 ,,
 opt_Online,ONLINE,EN LÍNEA
 opt_Discord,DISCORD RICH PRESCENCE,PRESENCIA DE DISCORD
@@ -219,6 +225,7 @@ mus_FAya,Sharpshooter (Freeplay Ayana Mvt.),Sharpshooter (Freeplay Ayana Mvt.)
 mus_FRus,Hurry Up (Freeplay Rush Mvt.),Hurry Up (Freeplay Rush Mvt.)
 mus_FEdg,Black Arms (Freeplay Edge Mvt.),Black Arms (Freeplay Edge Mvt.)
 mus_FRox,Perra-Culo (Freeplay Roxxane Mvt.),Bitch-Ass (Freeplay Roxxane Mvt.)
+mus_FLuc,Waiting (Freeplay Lucifer Mvt.),Waiting (Freeplay Lucifer Mvt.)
 mus_FIvy,Holster (Freeplay Ivy Mvt.),Holster (Freeplay Ivy Mvt.)
 ,,
 mus_Funk,Funk 'n' Rush,Funk 'n' Rush
@@ -244,6 +251,18 @@ mus_Sonic,Honorary Sonic,Honorary Sonic
 mus_YourBest,You Did Your Best,Diste Lo Mejor
 mus_InYou,I Knew You Had it in You,Sabía Que Podías
 mus_Hearts,Hearts All Around,Corazones Por Doquier
+,,
+mus_Diminuendo,Diminuendo,Diminuendo
+mus_Allegro,Allegro,Allegro
+mus_Crescendo,Crescendo,Crescendo
+,,
+mus_Diminished,Diminished,Diminuto
+mus_Lighter,Lighter,Ligero
+mus_FeelinNice,Feelin' Nice,Bieeeen
+,,
+mus_BeenBetter,That Could've Been Better,Podría haber sido mejor
+mus_YouStrong,You Are Strong,Eres fuerte
+mus_Blaze,Honorary Blaze,Flama Honoraria
 ,,
 mus_Kiddin,You Gotta be Kiddin' Me,No Bromees
 mus_NotBad,"Ayy, Not Bad","Ey, Nada Mal"
@@ -276,9 +295,9 @@ cost_Clo1,BASIL,BASIL
 ,,
 cost_Aki1,UZI-STYLE,ESTILO-UZI
 ,,
-cost_Tay1,BOON-DOCK,BOON-DOCK
+cost_Tay1,UZI-STYLE,ESTILO-UZI
 ,,
-cost_Aya!,MEAREST,MEAREST
+cost_Aya!,UZI-STYLE,ESTILO-UZI
 ,,
 cost_Rus1,JET-SET,SET-JET
 ,,
@@ -296,7 +315,7 @@ desc_SFX,Change the game's sound effect volume. (Decreases by 10% per press.),Ca
 desc_Text,Change the game's textbox type-writer volume. (Decreases by 10% per press.),Cambia el volumen del efecto cuadro de texto. (Disminuye 10% al presionar)
 desc_Ambiance,Change the game's world ambiance volume. (Decreases by 10% per press.),Cambia el volumen del ambiente. (Disminuye 10% al presionar)
 desc_Pause,Have a BGM track play based on the character you're playing as while the game is paused.,Un tema de pausa se reproduce dependiendo del personaje que estes usando.
-desc_Footstep,Have footstep and landing sounds play based on certain situations during gameplay.,
+desc_Footstep,Have footstep and landing sounds play based on certain situations during gameplay.,Sonido de pasos y aterrizaje se reproducen durante el gameplay.
 ,,
 desc_SimpVFX,"Reduce, stop, or get rid of things that could be eye-straining. (I.E., flashing lights, textbox animations, 'n' some moving assets.)","Reduce, detiene o elimina los elementos que cansen la vista. (Ejemplo: luces, animaciones y algunos movimientos)."
 desc_Part,Have tiny sprites and effects appear or not.,Hace que pequeños sprites y efectos aparezcan o no.
@@ -305,10 +324,15 @@ desc_TextSpd,Change the how fast text appears during dialogue.,Cambie lo rápido
 desc_Lang,"Change the game's text language and assets to your liking. (English, Spanish)","Cambia el idioma del juego. (Inglés, Español)"
 desc_ConDis,Have your keyboard or controller inputs appear at the bottom-right of the screen.,Muestra tu teclado o control en la esquina inferior derecha de la pantalla.
 desc_Outline,Have black 'n' white outlines around the characters and certain objects during gameplay.,Activa un contorno blanco y negro en algunos personajes y objetos durante el gameplay.
-desc_Squash,Have the characters' body morph a lil' during certain situations.,
+desc_Squash,Have the characters' body morph a lil' during certain situations.,Los personajes se deforman ligeramente durante ciertas situaciones.
 ,,
-desc_Discord,Have the game pop up on your Discord profile.,
-desc_Ghost,Have your saved ghost appear during gameplay. (SPEED Stages only.),
+desc_ColorCode,"Have tons of colors from certain elements change based on the character you're playing. (If off, colors default to the Change Base Color option.)","Cambia colores de muchos elementos según el personaje que estés usando. (Si está desactivado, los colores se configuran por defecto en la opción de Cambiar Color de Base)."
+desc_VSync,Have the game match the refresh-rate of your monitor. (Usually fixes screen-tearing.),Configura el juego para que coincida con la frecuencia de actualización de tu monitor. (Normalmente soluciona el problema del desgarro de pantalla).
+desc_ChangeColor,Change the color to a bunch of game elements. (Character Color-Coding must be off.),Cambia el color de varios elementos del juego. (Coloreado de Personaje debe estar desactivado).
+desc_FocusLoss,Have the game automatically pause if it's no longer focused.,Hace que el juego se pause al perder foco.
+,,
+desc_Discord,Have the game pop up on your Discord profile.,Haz que el juego aparezca en tu perfil de Discord.
+desc_Ghost,Have your saved ghost appear during gameplay. (SPEED Stages only.),Haz que tua fantasma guardado aparezca durante el gameplay (Solo niveles de Velocidad)
 , ,
 desc_Fullscr,Have the game display at your machine's full resolution.,Pone el juego en la resolución completa de tu pantalla.
 desc_MusTag,"Have the current BGM track's name, composer, and length display at the top-right at certain points.","El nombre del tema de fondo, compositor y duración aparezca en ciertos puntos."
@@ -350,8 +374,8 @@ freeplay_Rank,RANK:,RANGO:
 ,,
 freeplay_Track,LEVEL TRACK,TEMA DEL NIVEL
 freeplay_StopTrack,STOP TRACK,DETENER TEMA
-freeplay_CustMus,NO CUSTOM MUSIC,
-freeplay_CustMusLoad,CUSTOM MUSIC LOADED,
+freeplay_CustMus,NO CUSTOM MUSIC,SIN MÚSICA PERSONALIZADA
+freeplay_CustMusLoad,CUSTOM MUSIC LOADED,MÚSICA PERSONALIZADA CARGADA
 ,,
 results_Cont,CONTINUE,CONTINUAR
 results_Retry,RETRY LEVEL,REINTENTAR
@@ -360,3 +384,22 @@ results_GhostSaved,GHOST SAVED,FANTASMA GUARDADO
 results_Replay,SAVE REPLAY,GUARDAR REPLAY
 results_ReplaySaved,REPLAY SAVED,REPLAY GUARDADO
 results_ReplayText,REPLAY,REPLAY
+,,
+col_White,WHITE,BLANCO
+col_LightGray,LIGHT-GRAY,GRIS CLARO
+col_Gray,GRAY,GRIS
+col_DarkGray,DARK-GRAY,GRIS OSCURO
+col_Black,BLACK,NEGRO
+col_Maroon,MAROON,GRANATE
+col_Red,RED,ROJO
+col_Orange,ORANGE,NARANJA
+col_Olive,OLIVE,OLIVA
+col_Yellow,YELLOW,AMARILLO
+col_Lime,LIME,LIMA
+col_Green,GREEN,VERDE
+col_Aqua,AQUA,AGUA
+col_Teal,TEAL,TEAL
+col_Blue,BLUE,AZUL
+col_Navy,NAVY-BLUE,AZUL MARINO
+col_Purple,PURPLE,PÚRPURA
+col_Magenta,MAGENTA,MAGENTA

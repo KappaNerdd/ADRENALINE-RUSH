@@ -2,8 +2,7 @@
 
 var ev_type = async_load[? "event_type"];
 
-if (ev_type == "DiscordReady")
-{
+if ev_type == "DiscordReady" && global.DiscordRich {
 	global.discord_initialized = true;
 	
 	ready = true;
@@ -22,5 +21,7 @@ if (ev_type == "DiscordReady")
 	} else {
 		np_setpresence(string(levelType) + string(levelName) + string(levelNumber), string(gameplayType) + string(charName), "astraicon", string(charIcon));
 	}
+} else {
+	
 }
 

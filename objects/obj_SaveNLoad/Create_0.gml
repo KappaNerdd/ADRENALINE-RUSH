@@ -30,6 +30,11 @@
 	//Online
 	global.DiscordRich = true;
 	global.ShowGhost = true;
+	
+	//Preferences
+	global.FocusLoss = false;
+	global.ColorCode = true;
+	global.ChangeColor = 0;
 
 	//Controls
 	global.ConDeadZone = 0.5;
@@ -891,7 +896,7 @@
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_RoxxaneSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_LuciferSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
 			[spr_LevelCard_LuciferSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
 			[spr_Freeplay_Lucifer_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameLucifer, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
@@ -918,8 +923,8 @@
 			mus_Waiting, //Pause Theme (Ditto for Freeplay)
 			"Waiting (Freeplay Lucifer Mvt.)",
 		
-			[mus_BeenBetter, mus_KnewYouHadIt, mus_HonoraryBlaze, mus_HonoraryBlaze, mus_ItsDone], //Results Theme Tracks [shit, good, sick, perfect]
-			["That Could've Been Better", "I Knew You Had it in You", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
+			[mus_BeenBetter, mus_YouStrong, mus_HonoraryBlaze, mus_HonoraryBlaze, mus_ItsDone], //Results Theme Tracks [shit, good, sick, perfect]
+			["That Could've Been Better", "You Are Strong", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_LuciferSet, 1], //Results Portrait
 			["stagecharlucifernormal",],
@@ -998,6 +1003,28 @@
 	changeColTimer = 0;
 	changeColFrames = 300;
 	changeColBlue = true;
+	
+	
+	global.ColorBase = [
+		[c_white, "col_White"],
+		[c_ltgray, "col_LightGray"],
+		[c_gray, "col_Gray"],
+		[c_dkgray, "col_DarkGray"],
+		[c_black, "col_Black"],
+		[c_maroon, "col_Maroon"],
+		[c_red, "col_Red"],
+		[c_orange, "col_Orange"],
+		[c_olive, "col_Olive"],
+		[c_yellow, "col_Yellow"],
+		[c_lime, "col_Lime"],
+		[c_green, "col_Green"],
+		[c_aqua, "col_Aqua"],
+		[c_teal, "col_Teal"],
+		[c_blue, "col_Blue"],
+		[c_navy, "col_Navy"],
+		[c_purple, "col_Purple"],
+		[c_fuchsia, "col_Magenta"],
+	]
 #endregion
 
 #region ///-----Dying BS-----///

@@ -16,5 +16,9 @@ function scr_ShiftRGB() {
 	global.realG = lerp(global.realG, global.g, 0.03);
 	global.realB = lerp(global.realB, global.b, 0.03);
 	
-	global.fullRGB = make_color_rgb(global.realR, global.realG, global.realB);
+	if global.ColorCode {
+		global.fullRGB = make_color_rgb(global.realR, global.realG, global.realB);
+	} else {
+		global.fullRGB = global.ColorBase[global.ChangeColor][0];
+	}
 }

@@ -17,6 +17,7 @@ function save_options() {
 	global.optionsData[1].squash = global.Squash;
 	global.optionsData[1].textSpd = global.TextSpd;
 	global.optionsData[1].lang = global.Language;
+	global.optionsData[1].vsync = global.VSync;
 	
 	global.optionsData[2].conRum = global.ConRumble;
 	global.optionsData[2].conType = global.ConType;
@@ -26,8 +27,12 @@ function save_options() {
 	global.optionsData[2].speedrun = global.Speedrun;
 	global.optionsData[2].FPS = global.FPSOn;
 	
-	global.optionsData[3].discord = global.DiscordRich;
-	global.optionsData[3].ghost = global.ShowGhost;
+	global.optionsData[3].colorCode = global.ColorCode;
+	global.optionsData[3].changeColor = global.ChangeColor;
+	global.optionsData[3].focusLoss = global.FocusLoss;
+	
+	global.optionsData[4].discord = global.DiscordRich;
+	global.optionsData[4].ghost = global.ShowGhost;
 
 	//Actual Saving
 	var _dir = working_directory + "/options/";
@@ -93,6 +98,8 @@ function load_options() {
 		global.Squash = global.optionsData[1].squash;
 		global.TextSpd = global.optionsData[1].textSpd;
 		global.Language = global.optionsData[1].lang;
+		global.VSync = global.optionsData[1].vsync;
+		display_reset(0, global.optionsData[1].vsync);
 		
 		global.ConRumble = global.optionsData[2].conRum;
 		global.ConType = global.optionsData[2].conType;
@@ -102,8 +109,12 @@ function load_options() {
 		global.Speedrun = global.optionsData[2].speedrun;
 		global.FPSOn = global.optionsData[2].FPS;
 		
-		global.DiscordRich = global.optionsData[3].discord;
-		global.ShowGhost = global.optionsData[3].ghost;
+		global.ColorCode = global.optionsData[3].colorCode;
+		global.ChangeColor = global.optionsData[3].changeColor;
+		global.FocusLoss = global.optionsData[3].focusLoss;
+		
+		global.DiscordRich = global.optionsData[4].discord;
+		global.ShowGhost = global.optionsData[4].ghost;
 }
 
 

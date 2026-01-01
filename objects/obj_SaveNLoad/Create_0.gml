@@ -17,6 +17,7 @@
 	global.Squash = true;
 	global.TextSpd = 1;
 	global.Language = 1;
+	global.VSync = false;
 
 	//Misc
 	global.FullScreen = false;
@@ -332,7 +333,7 @@
 			[spr_BoostEmblemSarah, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemSarahRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeSarahSet, spr_LifeSarahSetColor, spr_StageCharSarahSet, spr_LifeSarahHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_SarahStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplaySMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -385,7 +386,7 @@
 			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeLoneSet, spr_LifeLoneSetColor, spr_StageCharLoneSet, spr_LifeLoneSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_SarahBoost, spr_SarahBoostSimple, spr_SarahStompingVFX, spr_LuciferStompedVFX, 1],
+			[spr_SarahBoost, spr_SarahBoostSimple, spr_LoneStompingVFX, spr_LuciferStompedVFX, 1],
 			[spr_SarahTrickFinalVFX, 1],
 		
 			mus_FreeplayLMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -756,7 +757,7 @@
 			[spr_BoostEmblemRush, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemRushRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeRushSet, spr_LifeRushSetColor, spr_StageCharRushSet, spr_LifeRushHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_RushBoost, spr_RushBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, 1], //Boost
+			[spr_RushBoost, spr_RushBoostSimple, spr_RushStompingVFX, spr_RushStompedVFX, 1], //Boost
 			[spr_RushTrickFinalVFX, 1], //Final Trick VFX
 		
 			mus_FreeplayRMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -969,7 +970,7 @@
 			[spr_BoostEmblemIvy, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemIvyRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeIvySet, spr_LifeIvySetColor, spr_StageCharIvySet, spr_LifeIvyHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_IvyBoost, spr_IvyBoostSimple, spr_LuciferStompingVFX, spr_LuciferStompedVFX, 1], //Boost
+			[spr_IvyBoost, spr_IvyBoostSimple, spr_IvyStompingVFX, spr_LuciferStompedVFX, 1], //Boost
 			[spr_IvyFinalTrickVFX, 1], //Trick Icon that appears when you do a Rush Trick Finish (Optional (Animated): Sprite Strip)
 		
 			mus_FreeplayIMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
@@ -988,7 +989,10 @@
 	];
 
 	global.SelectedPlayer = 0;
+	global.SelectedPartner = 0;
+	
 	global.SelectedCostume = 0;
+	global.SelectedPartCost = 0;
 
 	global.ChooseCostume = false;
 
@@ -1014,9 +1018,9 @@
 		[c_maroon, "col_Maroon"],
 		[c_red, "col_Red"],
 		[c_orange, "col_Orange"],
-		[c_olive, "col_Olive"],
 		[c_yellow, "col_Yellow"],
 		[c_lime, "col_Lime"],
+		[c_olive, "col_Olive"],
 		[c_green, "col_Green"],
 		[c_aqua, "col_Aqua"],
 		[c_teal, "col_Teal"],
@@ -1075,6 +1079,7 @@
 			squash: true, //Squash 'n' Stretch
 			textSpd: 1, //Text Speed
 			lang: 0, //Language
+			vsync: false, //VSync
 		},
 	
 		{ //Misc Options
@@ -1085,6 +1090,12 @@
 			extCam: true, //Extended Camera
 			speedrun: false, //Speedrun Timer
 			FPS: true, //FPS
+		},
+		
+		{ //Preferences Options
+			colorCode: true, //Character Color-Coding
+			changeColor: 0, //Change Base Color
+			focusLoss: false, //Pause on Focus Loss
 		},
 		
 		{ //Online Options

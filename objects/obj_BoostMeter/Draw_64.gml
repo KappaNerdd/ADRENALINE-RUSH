@@ -824,7 +824,7 @@ if instance_exists(obj_Player) {
 		}
 		
 		draw_sprite_ext(spr_RainSplash, 0, 47 + newX, 303 + newY, 1, 110 / _maxRushMode * _rushMode, 180, c_black, image_alpha);
-		draw_sprite_ext(spr_RainSplash, 0, 50 + newX, 300 + newY, 1, 110 / _maxRushMode * _rushMode, 180, charColor, image_alpha);
+		draw_sprite_ext(spr_RainSplash, 0, 50 + newX, 300 + newY, 1, 110 / _maxRushMode * _rushMode, 180, global.fullRGB, image_alpha);
 	
 		draw_sprite_ext(boostSprite, _sprCol, 17 + newX, 95 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 		draw_sprite_ext(boostSprite, _sprCol, 17 + newX, 105 + newY, 1.5, 1.5, 0, c_white, image_alpha);

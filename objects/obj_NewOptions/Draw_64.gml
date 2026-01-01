@@ -115,6 +115,7 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 		var _choice6 = "opt_ConDis";
 		var _choice7 = "opt_TextSpd";
 		var _choice8 = "opt_Lang";
+		var _choice9 = "opt_VSync";
 		var _drawX = setX + _gapX - 3;
 	
 		if choice == a {
@@ -136,6 +137,8 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 		} else if choice == 6 && a == 6 {
 			_chosenCol2 = c_white;
 		} else if choice == 7 && a == 7 {
+			_chosenCol2 = c_white;
+		} else if choice == 8 && a == 8 {
 			_chosenCol2 = c_white;
 		}
 		
@@ -174,6 +177,10 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 				_choice = _choice8;
 				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice8)) + 14, setY + 67 + (_gapY * a), scr_LocalText("I might swerve-"), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
 				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice8)) + 17, setY + 64 + (_gapY * a), scr_LocalText("I might swerve-"), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
+			} else if a == 8 {
+				_choice = _choice9;
+				draw_sprite_ext(spr_OptionCheckbox, global.VSync, setX + _gapX + string_width(scr_LocalText(_choice9)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.VSync, setX + _gapX + string_width(scr_LocalText(_choice9)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			}
 	
 			draw_text_transformed_color(setX + _gapX - 3, setY + 67 + (_gapY * a), scr_LocalText(_choice), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
@@ -263,10 +270,56 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 #endregion
 
 #region //Online
-	for(var a = 0; a < array_length(online); a++) {
+	for(var a = 0; a < array_length(pref); a++) {
 		var _chosenCol = c_grey;
 		var _chosenCol2 = c_grey;
 		var _gapX = (96 + optX + (800 * 3));
+		var _gapY = 32;
+		var _choice = pref[a][0];
+		var _choice2 = "opt_ChangeColor";
+		var _choice3 = "opt_FocusLoss";
+		var _drawX = setX + _gapX - 3;
+	
+		if choice == a {
+			_chosenCol = global.fullRGB;
+		}
+		
+		if choice == 0 && a == 0 {
+			_chosenCol2 = c_white;
+		} else if choice == 1 && a == 1 {
+			_chosenCol2 = c_white;
+		}
+		
+		if _drawX > -400 && _drawX < 800 {
+			draw_sprite_ext(_pauseArrow, arrowFrames, setX + _gapX - 3, setY + 78 + (_gapY * a), 1, 0.5, 0, c_black, 1);
+			draw_sprite_ext(_pauseArrow, arrowFrames, setX + _gapX, setY + 75 + (_gapY * a), 1, 0.5, 0, _chosenCol, 1);
+	
+			if a == 0 {
+				draw_sprite_ext(spr_OptionCheckbox, global.ColorCode, setX + _gapX + string_width(scr_LocalText(_choice)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.ColorCode, setX + _gapX + string_width(scr_LocalText(_choice)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+			} else if a == 1 {
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 14, setY + 67 + (_gapY * a), "- " + scr_LocalText(global.ColorBase[global.ChangeColor][1]), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 17, setY + 64 + (_gapY * a), "- " + scr_LocalText(global.ColorBase[global.ChangeColor][1]), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
+			} else if a == 2 {
+				_choice = _choice3;
+				draw_sprite_ext(spr_OptionCheckbox, global.FocusLoss, setX + _gapX + string_width(scr_LocalText(_choice3)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.FocusLoss, setX + _gapX + string_width(scr_LocalText(_choice3)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+			}
+	
+			draw_text_transformed_color(setX + _gapX - 3, setY + 67 + (_gapY * a), scr_LocalText(_choice), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
+			draw_text_transformed_color(setX + _gapX, setY + 64 + (_gapY * a), scr_LocalText(_choice), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
+		
+			draw_sprite_ext(_charCheck3, iconFrames, setX + _gapX - 27, setY + 71 + iconY, 1, 1, 0, c_black, 1);
+			draw_sprite_ext(_charCheck3, iconFrames, setX + _gapX - 24, setY + 68 + iconY, 1, 1, 0, c_white, 1);
+		}
+	}
+#endregion
+
+#region //Online
+	for(var a = 0; a < array_length(online); a++) {
+		var _chosenCol = c_grey;
+		var _chosenCol2 = c_grey;
+		var _gapX = (96 + optX + (800 * 4));
 		var _gapY = 32;
 		var _choice = online[a][0];
 		var _choice2 = "opt_Ghost";
@@ -308,7 +361,7 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	for(var a = 0; a < array_length(conGeneral); a++) {
 		var _chosenCol = c_grey;
 		var _chosenCol2 = c_grey;
-		var _gapX = (96 + optX + (800 * 4));
+		var _gapX = (96 + optX + (800 * 5));
 		var _gapY = 32;
 		var _choice = "opt_ConStart";
 		var _choice2 = "opt_ConSelect";
@@ -365,7 +418,7 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	for(var a = 0; a < array_length(conSpeed1); a++) {
 		var _chosenCol = c_grey;
 		var _chosenCol2 = c_grey;
-		var _gapX = (96 + optX + (800 * 5));
+		var _gapX = (96 + optX + (800 * 6));
 		var _gapY = 32;
 		var _choice = "opt_ConLeft";
 		var _choice2 = "opt_ConRight";
@@ -436,7 +489,7 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	for(var a = 0; a < array_length(conSpeed2); a++) {
 		var _chosenCol = c_grey;
 		var _chosenCol2 = c_grey;
-		var _gapX = (96 + optX + (800 * 6));
+		var _gapX = (96 + optX + (800 * 7));
 		var _gapY = 32;
 		var _choice = "opt_ConBoost";
 		var _choice2 = "opt_ConSpec1";
@@ -493,7 +546,7 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	for(var a = 0; a < array_length(conAct1); a++) {
 		var _chosenCol = c_grey;
 		var _chosenCol2 = c_grey;
-		var _gapX = (96 + optX + (800 * 7));
+		var _gapX = (96 + optX + (800 * 8));
 		var _gapY = 32;
 		var _choice = "opt_ActLeft";
 		var _choice2 = "opt_ActRight";
@@ -564,7 +617,7 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	for(var a = 0; a < array_length(conAct2); a++) {
 		var _chosenCol = c_grey;
 		var _chosenCol2 = c_grey;
-		var _gapX = (96 + optX + (800 * 8));
+		var _gapX = (96 + optX + (800 * 9));
 		var _gapY = 32;
 		var _choice = "opt_ActHeavy";
 		var _choice2 = "opt_ActDash";
@@ -634,8 +687,10 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	} else if opt == 2 {
 		_optDesc = misc[choice][1];
 	} else if opt == 3 {
-		_optDesc = online[choice][1];
+		_optDesc = pref[choice][1];
 	} else if opt == 4 {
+		_optDesc = online[choice][1];
+	} else if opt == 5 {
 		_optDesc = conGeneral[choice][1];
 	} else {
 		_optDesc = "desc_Control";

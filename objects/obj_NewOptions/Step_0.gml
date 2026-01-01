@@ -99,16 +99,18 @@ if !done {
 				} else if opt == 2 {
 					_optArray = misc;
 				} else if opt == 3 {
-					_optArray = online;
+					_optArray = pref;
 				} else if opt == 4 {
-					_optArray = conGeneral;
+					_optArray = online;
 				} else if opt == 5 {
-					_optArray = conSpeed1;
+					_optArray = conGeneral;
 				} else if opt == 6 {
-					_optArray = conSpeed2;
+					_optArray = conSpeed1;
 				} else if opt == 7 {
-					_optArray = conAct1;
+					_optArray = conSpeed2;
 				} else if opt == 8 {
+					_optArray = conAct1;
+				} else if opt == 9 {
 					_optArray = conAct2;
 				}
 			
@@ -242,6 +244,16 @@ if !done {
 						global.Language = 1;
 					}
 				}
+				
+				if choice == 8 {
+					global.VSync = !global.VSync;
+					
+					if global.VSync {
+						display_reset(0, false);
+					} else {
+						display_reset(0, true);
+					}
+				}
 			}
 		#endregion
 		
@@ -281,18 +293,42 @@ if !done {
 			}
 		#endregion
 		
-		#region //Online
-			if choice == 0 {
-				global.DiscordRich = !global.DiscordRich;
+		#region //Preferences
+			if opt == 3 {
+				if choice == 0 {
+					global.ColorCode = !global.ColorCode;
+				}
+				
+				if choice == 1 {
+					var _colArray = array_length(global.ColorBase) - 1;
+					
+					if global.ChangeColor < _colArray {
+						global.ChangeColor++;
+					} else {
+						global.ChangeColor = 0;
+					}
+				}
+				
+				if choice == 2 {
+					global.FocusLoss = !global.FocusLoss;
+				}
 			}
+		#endregion
+		
+		#region //Online
+			if opt == 4 {
+				if choice == 0 {
+					global.DiscordRich = !global.DiscordRich;
+				}
 			
-			if choice == 1 {
-				global.ShowGhost = !global.ShowGhost;
+				if choice == 1 {
+					global.ShowGhost = !global.ShowGhost;
+				}
 			}
 		#endregion
 		
 		#region //Con General
-			if opt == 4 {
+			if opt == 5 {
 				if choice == 0 or choice == 1 {
 					changeBind = true;
 				}
@@ -316,13 +352,13 @@ if !done {
 		#endregion
 		
 		#region //Con Speed
-			if opt == 5 or opt == 6 {
+			if opt == 6 or opt == 7 { //Don't
 				changeBind = true;
 			}
 		#endregion
 		
 		#region //Con Action
-			if opt == 7 or opt == 8 {
+			if opt == 8 or opt == 9 {
 				changeBind = true;
 			}
 		#endregion
@@ -358,6 +394,11 @@ if !done {
 			global.ExtendCamera = true;
 			global.FPSOn = true;
 			global.Speedrun = false;
+			
+			//Preferences
+			global.ColorCode = true;
+			global.ChangeColor = 0;
+			global.FocusLoss = false;
 			
 			//Online
 			global.DiscordRich = true;

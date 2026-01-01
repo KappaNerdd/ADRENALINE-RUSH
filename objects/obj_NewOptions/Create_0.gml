@@ -58,6 +58,7 @@ allOpts = [
 	["opt_Audio"],
 	["opt_Visual"],
 	["opt_Misc"],
+	["opt_Pref"],
 	["opt_Online"],
 	["opt_ConGen"],
 	["opt_ConSpeed1"],
@@ -85,6 +86,7 @@ visual = [
 	["opt_ConDis", "desc_ConDis"],
 	["opt_TextSpd", "desc_TextSpd"],
 	["opt_Lang", "desc_Lang"],
+	["opt_VSync", "desc_VSync"],
 ]
 
 misc = [
@@ -95,6 +97,12 @@ misc = [
 	["opt_ExtCam", "desc_ExtCam"],
 	["opt_Speedrun", "desc_Speedrun"],
 	["opt_FPS", "desc_FPS"],
+]
+
+pref = [
+	["opt_ColorCode", "desc_ColorCode"],
+	["opt_ChangeColor", "desc_ChangeColor"],
+	["opt_FocusLoss", "desc_FocusLoss"],
 ]
 
 online = [

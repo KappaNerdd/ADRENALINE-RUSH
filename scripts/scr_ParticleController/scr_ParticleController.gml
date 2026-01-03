@@ -1,5 +1,5 @@
 function scr_PlayerTrail() {
-	if !global.SimplifyVFX {
+	/*if !global.SimplifyVFX {
 		with(instance_create_depth(x, y, depth + 1, obj_PlayerTrail)) {
 			x = other.x;
 			y = other.y;
@@ -10,7 +10,7 @@ function scr_PlayerTrail() {
 			image_xscale = other.image_xscale;
 			image_yscale = other.image_yscale;
 		}
-	}
+	}*/
 }
 
 function scr_DustParticles(_x = 0, _y = 15) {
@@ -25,11 +25,23 @@ function scr_SpeedBreakVFX(_sprite) {
 	}
 	
 	if global.Particles && speedBreakSprTimer <= 0 {
-		with(instance_create_depth(x, y, depth - 1, obj_RailGrindVFX)) {
-			sprite_index = other.speedBreakSprite;
+		var _xscale = 1;
+		
+		if leftFacer {
+			if face_Left {
+				_xscale = -1;
+			}
+		} else {
+			_xscale = image_xscale;
 		}
 		
-		speedBreakSprTimer = speedBreakSprFrames;
+		with(instance_create_depth(x, bbox_bottom, depth - 1, obj_RailGrindVFX)) {
+			sprite_index = other.speedBreakSprite;
+			image_xscale = _xscale;
+			image_angle = other.drawAngle;
+		}
+		
+		speedBreakSprTimer = 7;
 	}
 }
 

@@ -978,9 +978,62 @@ function scr_RushModeColorCreate() {
 	
 	rgAnim = 1 / 3;
 	railGrindSprFrames = 0;
+	
+	
+	pathSize = 101;
+	
+	for(var i = pathSize - 1; i >= 0; i--){
+		posX[i] = x;
+		posY[i] = y;
+		toRecordSprite[i] = sprite_index;
+		toRecordImage[i] = image_index;
+		toRecordXScale[i] = image_xscale;
+		toRecordYScale[i] = image_yscale;
+		toRecordAngle[i] = drawAngle;
+	}
+	
+	//After-Images
+	with(instance_create_depth(x, y, depth + 1, obj_PlayerAfterImages)) {
+		copyPlayer = other.id;
+		copyRecord = 1;
+		visible = false;
+	}
+	
+	with(instance_create_depth(x, y, depth + 1, obj_PlayerAfterImages)) {
+		copyPlayer = other.id;
+		copyRecord = 3;
+		visible = true;
+	}
+	
+	with(instance_create_depth(x, y, depth + 1, obj_PlayerAfterImages)) {
+		copyPlayer = other.id;
+		copyRecord = 5;
+		visible = false;
+	}
 }
 
 function scr_RushModeColorDraw() {
+	//After-Images Pathfinding
+	for(var i = pathSize - 1; i > 0; i--) {
+		posX[i] = posX[i - 1];
+		posY[i] = posY[i - 1];
+		
+		toRecordSprite[i] = toRecordSprite[i - 1];
+		toRecordImage[i] = toRecordImage[i - 1];
+		toRecordXScale[i] = toRecordXScale[i - 1];
+		toRecordYScale[i] = toRecordYScale[i - 1];
+		toRecordAngle[i] = toRecordAngle[i - 1];
+	}
+	
+	posX[0] = x;
+	posY[0] = y;
+	toRecordSprite[0] = sprite_index;
+	toRecordImage[0] = image_index;
+	toRecordXScale[0] = image_xscale;
+	toRecordYScale[0] = image_yscale;
+	toRecordAngle[0] = drawAngle;
+	
+	
 	var _change = 1;
 	var _change2 = 2;
 	var _col1 = c_white;

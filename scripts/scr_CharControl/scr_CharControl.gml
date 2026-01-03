@@ -433,24 +433,17 @@ function scr_BasicVisualEffectsSpeed1() {
 			scr_DustParticles();
 		}
 	#endregion
-
-	#region //Sliding After Images
-		if sliding && abs(vel) >= max_Speed && !speedBreak {
-			scr_PlayerTrail();
-		}
-	#endregion	
 			
 	#region //Speed Break
 		if speedBreak {
-			scr_PlayerTrail();
 			
 			if ground {
 				scr_SpeedBreakVFX(speedBreakSprite);
 			} else {
-				speedBreakSprTimer = 0;
+				speedBreakSprTimer = 1;
 			}
 		} else {
-			speedBreakSprTimer = 0;
+			speedBreakSprTimer = 1;
 		}
 	#endregion
 
@@ -462,12 +455,6 @@ function scr_BasicVisualEffectsSpeed1() {
 		if stomping {
 			scr_ScreenShake();
 			scr_ControllerRumble();
-		}
-	#endregion
-
-	#region //Stomping After Images
-		if stomping && !boost {
-			scr_PlayerTrail();
 		}
 	#endregion
 

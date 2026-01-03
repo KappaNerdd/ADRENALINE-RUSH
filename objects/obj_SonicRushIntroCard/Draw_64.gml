@@ -21,7 +21,7 @@ levelXMove2 += 0.25;
 var _xMove = levelXMove + levelXMove2;
 var _char = global.PlayerSelection[global.PlayerChar][28][4];
 
-draw_sprite_ext(sprite_index, 0, 0, 0, 24, 13.5, 0, c_white, 1);
+draw_sprite_ext(sprite_index, 0, 0, 0, 24, 13.5, 0, c_white, whiteAlpha);
 draw_sprite_ext(_charCheck, global.PlayerCostume, -_xMove + spikeX + 350, -100, 0.5, 0.5, 0, c_white, (otheralpha / 2) * mainAlpha);
 draw_sprite_ext(obj_Player.sprite_index, obj_Player.image_index, charX + _relX, _relY, obj_Player.image_xscale * charScale, obj_Player.image_yscale * charScale, obj_Player.drawAngle, c_black, mainAlpha);
 draw_sprite_ext(_char, 0, 300, 160, 1, 1, 0, c_white, otheralpha * mainAlpha);

@@ -17,7 +17,8 @@ if kysTimer > 0 {
 	} else {
 		if jump_Key && !global.Replay {
 			kysTimer = 0;
-			mainAlpha = 1;
+			mainAlpha = 0;
+			whiteAlpha = 0;
 		}
 		
 		obj_Player.can_MoveFULL = false;
@@ -39,7 +40,13 @@ if kysTimer > 0 {
 	spikeInX += 0.05;
 	spikeX -= spikeInX;
 	
-	if otheralpha <= -0.1 {
+	if otheralpha <= 0 {
+		mainAlpha -= 0.035;
+	}
+	
+	whiteAlpha = mainAlpha;
+	
+	if mainAlpha <= -0.1 {
 		if !global.CustomMus {
 			instance_create_depth(-100000, 0, 0, obj_MusicTag);
 		}

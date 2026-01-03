@@ -225,7 +225,7 @@
 			[spr_BoostEmblemKappaHead, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_BoostEmblemKappaHeadRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeKappaHead, spr_LifeKappaHead, spr_StageCharKappaHead, spr_LifeKappaHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_KappaHeadBoost, spr_KappaHeadBoostSimple, spr_HeadStompingVFX, spr_HeadStompedVFX, spr_HeadSpeedBreakVFX, 1],
+			[spr_KappaHeadBoost, spr_KappaHeadBoostSimple, spr_HeadStompingVFX, spr_HeadStompedVFX, spr_KappaSpeedBreakVFX, 1],
 			[spr_KappaHeadTrickFinishVFX, 1],
 		
 			mus_FreeplayKMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)

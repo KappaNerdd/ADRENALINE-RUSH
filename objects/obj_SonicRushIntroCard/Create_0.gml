@@ -49,6 +49,7 @@ ranks = [
 ]
 
 mainAlpha = 0;
+whiteAlpha = 1;
 otheralpha = 1;
 spikeInX = 0;
 spikeX = 0;

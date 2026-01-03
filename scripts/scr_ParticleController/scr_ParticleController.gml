@@ -19,14 +19,18 @@ function scr_DustParticles(_x = 0, _y = 15) {
 	}
 }
 
-function scr_SpeedBreakVFX() {
-	/*if !instance_exists(obj_SpeedBreakVFX) && !instance_exists(obj_NewPauseMenu) && global.Particles {
-		instance_create_depth(x, y, depth - 1, obj_SpeedBreakVFX);
+function scr_SpeedBreakVFX(_sprite) {
+	if speedBreakSprTimer > 0 {
+		speedBreakSprTimer--;
 	}
 	
-	if !speedBreak {
-		instance_destroy(obj_SpeedBreakVFX);
-	}*/
+	if global.Particles && speedBreakSprTimer <= 0 {
+		with(instance_create_depth(x, y, depth - 1, obj_RailGrindVFX)) {
+			sprite_index = other.speedBreakSprite;
+		}
+		
+		speedBreakSprTimer = speedBreakSprFrames;
+	}
 }
 
 function scr_StompVFX() {
@@ -56,9 +60,9 @@ function scr_RushBoostBreakVFX(_x = 0, _y = 0) {
 }
 
 function scr_RailGrindParticles(_x = 0, _y = 30) {
-	if !instance_exists(obj_RailGrindVFX) && global.Particles && ground && vel != 0 {
+	/*if !instance_exists(obj_RailGrindVFX) && global.Particles && ground && vel != 0 {
 		instance_create_depth(x, y + 30, depth + 1, obj_RailGrindVFX);
-	}
+	}*/
 }
 
 function scr_BodyGlowVFX() {
@@ -70,7 +74,7 @@ function scr_BodyGlowVFX() {
 }
 
 function scr_RushAdventureKickParticles(_speed = 1) {
-	if !instance_exists(obj_SideTrickVFXKappa) && !instance_exists(obj_NewPauseMenu) && global.Particles {
+	/*if !instance_exists(obj_SideTrickVFXKappa) && !instance_exists(obj_NewPauseMenu) && global.Particles {
 		with(instance_create_depth(x, y, depth, obj_SideTrickVFXKappa)) {
 			image_speed = _speed;
 		}
@@ -88,6 +92,6 @@ function scr_RushAdventureKickParticles(_speed = 1) {
 				}
 			}
 		}
-	}
+	}*/
 }
 

@@ -971,6 +971,13 @@ function scr_RushModeColorCreate() {
 	stompingSprFrames = 0;
 	
 	stompedSprite = global.PlayerSelection[global.PlayerChar][18][3];
+	
+	speedBreakSprite = global.PlayerSelection[global.PlayerChar][18][4];
+	speedBreakSprTimer = 0;
+	speedBreakSprFrames = 10;
+	
+	rgAnim = 1 / 3;
+	railGrindSprFrames = 0;
 }
 
 function scr_RushModeColorDraw() {

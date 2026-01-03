@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Head",
-    "path":"folders/Sprites/Characters/VFX/Head.yy",
+    "name":"VFX",
+    "path":"folders/Sprites/Characters/Players/Kappa/VFX.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -443,8 +443,14 @@ function scr_BasicVisualEffectsSpeed1() {
 	#region //Speed Break
 		if speedBreak {
 			scr_PlayerTrail();
-			scr_SpeedBreakVFX();
-			scr_RailGrindParticles(x);
+			
+			if ground {
+				scr_SpeedBreakVFX(speedBreakSprite);
+			} else {
+				speedBreakSprTimer = 0;
+			}
+		} else {
+			speedBreakSprTimer = 0;
 		}
 	#endregion
 
@@ -475,7 +481,19 @@ function scr_BasicVisualEffectsSpeed1() {
 			scr_ControllerRumble(0.5)
 		}
 	#endregion
-
+	
+	#region //Rail-Grind Sparks
+		if railGrind && ground {
+			railGrindSprFrames += rgAnim;
+			
+			if railGrindSprFrames >= 4 {
+				railGrindSprFrames = 0;
+			}
+		} else {
+			railGrindSprFrames = 0;
+		}
+	#endregion
+	
 	#region //Wall-Jump
 		if wallJump && place_meeting(x + 1, y, obj_Solid) {
 			scr_DustParticles();
@@ -489,12 +507,7 @@ function scr_BasicVisualEffectsSpeed1() {
 			scr_DustParticles();
 		}
 	#endregion
-				
-	#region //Grinding
-		if railGrind {
-			scr_RailGrindParticles();
-		}
-	#endregion
+	
 }
 
 

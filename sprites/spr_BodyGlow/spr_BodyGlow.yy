@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"General",
-    "path":"folders/Sprites/Characters/VFX/General.yy",
+    "name":"Old",
+    "path":"folders/Sprites/Characters/VFX/Old.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

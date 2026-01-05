@@ -39,8 +39,8 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 #region //Character Boxes
 	scr_GetCharTextboxes();
 	image_alpha = 0;
-	image_xscale = 21;
-	image_yscale = 12;
+	image_xscale = 25;
+	image_yscale = 15;
 #endregion
 
 
@@ -52,15 +52,15 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	}
 
 	moveRightStart = -120;
-	moveRightEnd = -20;
+	moveRightEnd = 0;
 	moveRight = moveRightStart;
 
 	moveUpStart = -120;
-	moveUpEnd = -20;
+	moveUpEnd = 0;
 	moveUp = moveUpStart;
 
 	moveDownStart = 480;
-	moveDownEnd = 380;
+	moveDownEnd = 360 + 72;
 	moveDown = moveDownStart;
 	
 	srSpikesImageIndex = 0;
@@ -96,7 +96,7 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	}
 	
 	leftBackStartX = -2000;
-	leftBackEndX = -520;
+	leftBackEndX = -520 + 72;
 	leftBackMoveX = leftBackStartX;
 	
 	if global.MIND or global.PlayerChar == 0 {
@@ -106,7 +106,7 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	}
 	
 	resultsStartX = -300;
-	resultsEndX = 40;
+	resultsEndX = 60;
 	resultsMoveX = resultsStartX;
 	
 	if global.MIND or global.PlayerChar == 0 {
@@ -122,7 +122,7 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	}
 	
 	timeStartX = -300;
-	timeEndX = 40;
+	timeEndX = 60;
 	timeMoveX = timeStartX;
 	
 	savedSeconds = 59.99;
@@ -141,7 +141,7 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	}
 	
 	rankStartX = -300;
-	rankEndX = 40;
+	rankEndX = 60;
 	rankMoveX = rankStartX;
 	
 	rankShakeX = 0;
@@ -160,14 +160,14 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	//Stage Name
 	stageNameSprite = global.speedStageData[global.SpeedSelected].stage_Sprite;
 	stageNameStartX = -200;
-	stageNameEndX = 40;
+	stageNameEndX = 60;
 	stageNameMoveX = stageNameStartX;
 	stageSound = false;
 
 	//Level Number
 	levelNumberSprite = global.speedStageData[global.SpeedSelected].level_Sprite;
 	levelNumberStartX = -200;
-	levelNumberEndX = 40;
+	levelNumberEndX = 60;
 	levelNumberMoveX = levelNumberStartX;
 	levelNumSound = false;
 #endregion
@@ -178,7 +178,7 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	playerCostume = global.PlayerCostume;
 	
 	playerStartX = 800;
-	playerEndX = 300;
+	playerEndX = 300 + 128;
 	playerMoveX = playerStartX;
 #endregion
 

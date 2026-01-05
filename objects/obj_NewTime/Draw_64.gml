@@ -1,3 +1,4 @@
+display_set_gui_size(768, 432);
 
 var _gap = 20;
 

@@ -6,7 +6,7 @@ image_alpha = 1;
 scr_GetCharLevelCardPort();
 
 charScale = 5;
-charX = -300;
+charX = -150;
 
 if global.LevelForced {
 	if instance_exists(obj_InputRecorder) {
@@ -53,6 +53,7 @@ whiteAlpha = 1;
 otheralpha = 1;
 spikeInX = 0;
 spikeX = 0;
+finishedCreate = false;
 
 spikeAnim = 1;
 spikeFrames = 0;

@@ -400,43 +400,22 @@ if can_MoveFULL {
 		#endregion
 	
 		#region //Gun Full Charge
-		if fullCharge {
-			if !global.SimplifyVFX {
-				if fullChargeAuraTimer > 0 {
-					fullChargeAuraTimer -= 1;
-				}
+			if fullCharge {
+				if !global.SimplifyVFX {
+					if fullChargeAuraTimer > 0 {
+						fullChargeAuraTimer -= 1;
+					}
 				
-				if fullChargeAuraTimer <= 0 {
-					instance_create_depth(x, y, depth, obj_IvyFullChargeAura);
-					fullChargeAuraTimer = fullChargeAuraFrames;
+					if fullChargeAuraTimer <= 0 {
+						instance_create_depth(x, y, depth, obj_IvyFullChargeAura);
+						fullChargeAuraTimer = fullChargeAuraFrames;
+					}
 				}
-			}
-		} else {
-			fullChargeAuraTimer = fullChargeAuraFrames;
-		}
-	#endregion
-		
-		#region //HShoot After-Images
-			if (shootAir && yspd < 0) or hShootWeak or hShoot {
-				scr_PlayerTrail();
-			}
-		#endregion
-		
-		#region //HShoot Boost Break
-			if !speedBreak {
-				scr_SpeedBreakVFX();
-			}
-		#endregion
-		
-		#region //Up Trick/Back Trick Thing
-			if upTrick or backTrick {
-				scr_RushAdventureKickParticles(-0.5);
 			} else {
-				if instance_exists(obj_SideTrickVFXKappa) {
-					instance_destroy(obj_SideTrickVFXKappa);
-				}
+				fullChargeAuraTimer = fullChargeAuraFrames;
 			}
 		#endregion
+		
 	#endregion
 	
 	#region //Basic Speed 3

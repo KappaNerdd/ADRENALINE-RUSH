@@ -18,6 +18,7 @@ if kysTimer > 0 {
 		if jump_Key && !global.Replay {
 			kysTimer = 0;
 			mainAlpha = 0;
+			otheralpha = 0;
 			whiteAlpha = 0;
 		}
 		
@@ -36,18 +37,23 @@ if kysTimer > 0 {
 		}
 	}
 } else {
-	otheralpha -= 0.035;
+	if otheralpha > 0 {
+		otheralpha -= 0.035;
+	}
+	
 	spikeInX += 0.05;
 	spikeX -= spikeInX;
 	
 	if otheralpha <= 0 {
-		mainAlpha -= 0.035;
+		if mainAlpha > 0 {
+			mainAlpha -= 0.035;
+		}
 	}
 	
 	whiteAlpha = mainAlpha;
 	
-	if mainAlpha <= -0.1 {
-		if !global.CustomMus {
+	if otheralpha <= 0 {
+		if !global.CustomMus && !finishedCreate {
 			instance_create_depth(-100000, 0, 0, obj_MusicTag);
 		}
 		
@@ -56,33 +62,41 @@ if kysTimer > 0 {
 		if global.LevelForced {
 			obj_Player.can_Move = true;
 		} else {
-			obj_Player.can_MoveFULL = true;
-			obj_Player.can_Move = true;
-			obj_Player.vel = obj_Player.full_Speed - 1;
-			obj_Player.noMoveTimer = 30;
-		}
-		
-		if instance_exists(obj_InputRecorder) {
-			if global.Replay {
-				obj_InputRecorder.isPlaying = true;
-			} else {
-				obj_InputRecorder.isRecording = true;
+			if !finishedCreate {
+				obj_Player.can_MoveFULL = true;
+				obj_Player.can_Move = true;
+				obj_Player.vel = obj_Player.full_Speed - 1;
+				obj_Player.noMoveTimer = 30;
 			}
 		}
 		
-		if instance_exists(obj_GhostRecorder) {
-			if !global.Replay {
-				obj_GhostRecorder.ghostRecord = true;
+		if !finishedCreate {
+			if instance_exists(obj_InputRecorder) {
+				if global.Replay {
+					obj_InputRecorder.isPlaying = true;
+				} else {
+					obj_InputRecorder.isRecording = true;
+				}
 			}
+		
+			if instance_exists(obj_GhostRecorder) {
+				if !global.Replay {
+					obj_GhostRecorder.ghostRecord = true;
+				}
+			}
+		
+			if !instance_exists(obj_ActualGhost) {
+				if global.ShowGhost {
+					instance_create_depth(x, y, depth, obj_ActualGhost);
+				}
+			}
+			
+			finishedCreate = true;
 		}
 		
-		if !instance_exists(obj_ActualGhost) {
-			if global.ShowGhost {
-				instance_create_depth(x, y, depth, obj_ActualGhost);
-			}
+		if mainAlpha <= 0 {
+			instance_destroy();
 		}
-		
-		instance_destroy();
 	}
 }
 

@@ -1,14 +1,14 @@
 var _camX = camera_get_view_x(view_camera[0]);
 var _camXAdd = 450;
-
 var _camY = camera_get_view_y(view_camera[0]);
-
 
 scr_RushModeColorDraw();
 
-
-draw_set_font(global.font_main);
-	draw_set_color(c_white);
+if leftTrick or rightTrick or backTrick {
+	var _xscale = image_xscale;
+	
+	draw_sprite_ext(spr_HeadHummingVFX, image_index, x, y, _xscale, 1, 0, c_white, 1);
+}
 
 if global.DEBUG == true && instance_exists(self) {
 	draw_text(_camX + _camXAdd, _camY + 20, "vel: " + string(vel));

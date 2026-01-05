@@ -371,32 +371,7 @@ if can_MoveFULL {
 	#region //Visual Effects
 		#region //Basic Visual Effects
 			scr_BasicVisualEffectsSpeed1();
-		#endregion
-		
-		#region //Homing-Attacking Visuals
-			if homing_Active {
-				scr_PlayerTrail();
-				scr_SpeedBreakVFX();
-			}
-			
-			if !homing_Active && !speedBreak {
-				if instance_exists(obj_SpeedBreakVFX) {
-					instance_destroy(obj_SpeedBreakVFX);
-				}
-			}
-		#endregion
-		
-		#region //Side-Tricks
-			if backTrick or leftTrick or rightTrick {
-				scr_RushAdventureKickParticles(-2);
-			} else {
-				if instance_exists(obj_SideTrickVFXKappa) {
-					instance_destroy(obj_SideTrickVFXKappa);
-				}
-			}
-		#endregion
-		
-		
+		#endregion		
 	#endregion
 	
 	#region //Basic Speed 3

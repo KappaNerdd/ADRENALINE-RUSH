@@ -237,7 +237,7 @@
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_KappaHead, 1], //Results Portrait
 			["stagecharkappahead",],
-			[spr_CheckpointHead, spr_RingHeadIcon, spr_RingKappaHandHead, spr_CharSelectKappaIcon, spr_IntroQuoteKappa, 1],
+			[spr_CheckpointHead, spr_RingHeadIcon, spr_RingKappaHandHead, spr_CharSelectKappaHeadIcon, spr_IntroQuoteKappa, 1],
 		],
 	
 		//Kappa

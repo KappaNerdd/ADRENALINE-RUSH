@@ -89,8 +89,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"ResultsScreen",
-    "path":"texturegroups/ResultsScreen",
+    "name":"HUD",
+    "path":"texturegroups/HUD",
   },
   "type":0,
   "VTile":false,

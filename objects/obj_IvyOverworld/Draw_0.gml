@@ -10,6 +10,10 @@ if upTrick or backTrick {
 	draw_sprite_ext(spr_IvyHummingVFX, image_index * 2, x, y, _xscale, 1, 0, c_white, 1);
 }
 
+if railGrind {
+	draw_sprite_ext(spr_RailGrindSparksVFX, railGrindSprFrames, x, bbox_bottom, 0.5, 0.5, 0, c_white, 1);
+}
+
 if global.DEBUG == true && instance_exists(self) {
 	draw_text(_camX + _camXAdd, _camY + 20, "vel: " + string(vel));
 	draw_text(_camX + _camXAdd, _camY + 40, "yspd: " + string(yspd));

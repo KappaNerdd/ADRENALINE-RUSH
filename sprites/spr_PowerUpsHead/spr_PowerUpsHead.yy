@@ -101,8 +101,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"MIND",
-    "path":"texturegroups/MIND",
+    "name":"HUD",
+    "path":"texturegroups/HUD",
   },
   "type":0,
   "VTile":false,

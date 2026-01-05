@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Breakable",
-    "path":"folders/Sprites/Environments/Head/Decoration/Breakable.yy",
+    "path":"folders/Sprites/Environments/Head/Gimmicks/Breakable.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

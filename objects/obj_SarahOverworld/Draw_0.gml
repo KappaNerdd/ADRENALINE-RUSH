@@ -14,6 +14,10 @@ if backTrick or hover {
 	draw_sprite_ext(spr_SarahTwirlVFX, image_index, x, y, _xscale, 1, 0, c_white, 1);
 }
 
+if railGrind {
+	draw_sprite_ext(spr_RailGrindSparksVFX, railGrindSprFrames, x, bbox_bottom, 0.5, 0.5, 0, c_white, 1);
+}
+
 if global.DEBUG == true && instance_exists(self) {
 	draw_text(_camX + _camXAdd, _camY + 20, "rightTrick: " + string(rightTrick));
 	draw_text(_camX + _camXAdd, _camY + 40, "leftTrick: " + string(leftTrick));

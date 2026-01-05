@@ -44,8 +44,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"Hazards",
-    "path":"folders/Sprites/Environments/Head/Hazards.yy",
+    "name":"Gimmicks",
+    "path":"folders/Sprites/Environments/Head/Gimmicks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

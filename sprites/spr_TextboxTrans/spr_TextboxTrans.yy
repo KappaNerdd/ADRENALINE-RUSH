@@ -100,8 +100,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"ResultsScreen",
-    "path":"texturegroups/ResultsScreen",
+    "name":"HUD",
+    "path":"texturegroups/HUD",
   },
   "type":0,
   "VTile":false,

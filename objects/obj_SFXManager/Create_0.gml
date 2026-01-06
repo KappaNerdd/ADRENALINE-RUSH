@@ -202,6 +202,8 @@ lowTierGod = false;
 
 //---Confirm---//
 funkinFav = false;
+funkinFavPitch = 1;
+funkinFavPitchTimer = 0;
 
 
 //Results

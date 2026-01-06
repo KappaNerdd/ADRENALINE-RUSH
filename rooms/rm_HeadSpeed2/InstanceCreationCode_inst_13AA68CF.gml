@@ -1,6 +1,4 @@
-sprite_index = spr_SpringHeadDiag;
-
 hori = true;
 
-launchVel = -15;
-launchYspd = -14;
+launchVel = 0;
+launchYspd = -21;

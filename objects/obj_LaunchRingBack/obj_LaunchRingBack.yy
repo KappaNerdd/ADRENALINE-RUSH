@@ -9,8 +9,8 @@
   "name":"obj_LaunchRingBack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Launch Ring",
-    "path":"folders/Objects/Environments/Head/Gimmicks/Launch Ring.yy",
+    "name":"Gimmicks",
+    "path":"folders/Objects/Environments/General/Gimmicks.yy",
   },
   "parentObjectId":null,
   "persistent":false,

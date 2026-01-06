@@ -1,4 +1,8 @@
-draw_sprite_ext(sprite_index, image_index, x - 5, y + 5, image_xscale, image_yscale, image_angle, colChar, image_alpha);
-scr_Outline();
+var _camX = camera_get_view_x(view_camera[0]);
+var _camY = camera_get_view_y(view_camera[0]);
 
-draw_self();
+if distance_to_point(_camX, _camY) < 850 {
+	scr_Outline();
+
+	draw_self();
+}

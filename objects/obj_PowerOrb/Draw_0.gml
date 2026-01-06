@@ -1,4 +1,7 @@
-if distance_to_object(obj_Player) < 800 {
+var _camX = camera_get_view_x(view_camera[0]);
+var _camY = camera_get_view_y(view_camera[0]);
+
+if distance_to_point(_camX, _camY) < 850 {
 	if powerUp < 3 {
 		var _power = spr_PowerUps;
 

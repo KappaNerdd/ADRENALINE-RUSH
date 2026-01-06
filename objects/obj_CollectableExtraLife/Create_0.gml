@@ -7,3 +7,7 @@ image_yscale = 1;
 if instance_exists(obj_Player) {
 	depth = obj_Player.depth + 1;
 }
+
+if global.Freeplay {
+	instance_destroy();
+}

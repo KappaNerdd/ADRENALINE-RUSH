@@ -71,6 +71,7 @@ function scr_YCollision() {
 		#region //Other Special BS
 			#region //Breakable Floor (Head)
 				var _floor = instance_place(x, y + yspd + 5, obj_HeadFloorBreakable);
+				var _ceiling = instance_place(x, y + yspd - 5, obj_HeadFloorBreakable);
 
 				if _floor {
 					if stomping {
@@ -94,6 +95,32 @@ function scr_YCollision() {
 						}
 		
 						instance_destroy(_floor);
+					}
+				}
+				
+				
+				if _ceiling {
+					if yspd <= -12 {
+						obj_SFXManager.breakableGround = true;
+						scr_ScreenShake();
+						scr_ControllerRumble();
+		
+						scr_GivePoints(500);
+		
+						if global.Particles {
+							instance_create_depth(_ceiling.x + 144, _ceiling.y + 80, depth, obj_HeadFloorPiece1);
+							instance_create_depth(_ceiling.x + 149, _ceiling.y + 9, depth, obj_HeadFloorPiece2);
+							instance_create_depth(_ceiling.x + 112, _ceiling.y + 14, depth, obj_HeadFloorPiece3);
+							instance_create_depth(_ceiling.x + 44, _ceiling.y + 63, depth, obj_HeadFloorPiece4);
+							instance_create_depth(_ceiling.x + 107, _ceiling.y + 23, depth, obj_HeadFloorPiece5);
+							instance_create_depth(_ceiling.x + 116, _ceiling.y + 66, depth, obj_HeadFloorPiece6);
+							instance_create_depth(_ceiling.x + 129, _ceiling.y + 54, depth, obj_HeadFloorPiece7);
+							instance_create_depth(_ceiling.x + 80, _ceiling.y + 42, depth, obj_HeadFloorPiece8);
+							instance_create_depth(_ceiling.x + 22, _ceiling.y + 22, depth, obj_HeadFloorPiece9);
+							instance_create_depth(_ceiling.x + 5, _ceiling.y + 36, depth, obj_HeadFloorPiece10);
+						}
+		
+						instance_destroy(_ceiling);
 					}
 				}
 			#endregion
@@ -694,11 +721,15 @@ function scr_YCollision() {
 				if _launchRing && !global.Death {
 					if !_launchRing.launchConfirmed {
 						_launchRing.launchConfirmed = true;
+						
+						if !_launchRing.rainbow {
+							obj_SFXManager.dashPanel = true;
+						} else {
+							obj_SFXManager.trickPanel = true;
+						}
 	
-						obj_SFXManager.dashPanel = true;
-	
-						x = _launchRing.x + lengthdir_x(0, _launchRing.image_angle) + (_launchRing.sprite_width / 2);
-						y = _launchRing.y + lengthdir_y(0, _launchRing.image_angle) + (_launchRing.sprite_height / 2);
+						x = _launchRing.x;
+						y = _launchRing.y;
 		
 						if _launchRing.giveScore {
 							getScore = true;

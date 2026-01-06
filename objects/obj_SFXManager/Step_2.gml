@@ -1043,8 +1043,18 @@ if funkinFav == true {
 	//Play Sound
 	var _snd = audio_play_sound(snd_FunkinFav, 8, false);
 	audio_sound_gain(_snd, _sfxVol, 0);
+	audio_sound_pitch(_snd, funkinFavPitch);
+	
+	funkinFavPitchTimer = 20;
+	funkinFavPitch += 0.05;
 	
 	funkinFav = false;
+}
+
+if funkinFavPitchTimer > 0 {
+	funkinFavPitchTimer--;
+} else {
+	funkinFavPitch = 1;
 }
 
 

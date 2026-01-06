@@ -315,7 +315,7 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	}
 #endregion
 
-#region //Online
+#region //Preferences
 	for(var a = 0; a < array_length(online); a++) {
 		var _chosenCol = c_grey;
 		var _chosenCol2 = c_grey;

@@ -726,6 +726,10 @@ function scr_YCollision() {
 							obj_SFXManager.dashPanel = true;
 						} else {
 							obj_SFXManager.trickPanel = true;
+							
+							if _launchRing.giveScore {
+								scr_BonusPoints(5000);
+							}
 						}
 	
 						x = _launchRing.x;

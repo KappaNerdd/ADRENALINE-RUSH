@@ -1046,7 +1046,7 @@ if funkinFav == true {
 	audio_sound_pitch(_snd, funkinFavPitch);
 	
 	funkinFavPitchTimer = 20;
-	funkinFavPitch += 0.05;
+	funkinFavPitch += 0.025;
 	
 	funkinFav = false;
 }
@@ -1200,6 +1200,7 @@ if UndertaleRainbowLoop == false && audio_is_playing(UndertaleRainbowInst) {
 	audio_stop_sound(UndertaleRainbowInst);
 	
 }
+
 UndertaleRainbowLoop = false;
 
 

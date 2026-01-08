@@ -1273,6 +1273,8 @@
 			
 			rings: 0, enemies: 0,
 			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
+			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
@@ -1296,6 +1298,8 @@
 			rankS_Score: 450000, rankA_Score: 350000, rankB_Score: 250000, rankC_Score: 150000, rankD_Score: 50000,
 			
 			rings: 0, enemies: 0,
+			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
@@ -1321,6 +1325,8 @@
 			
 			rings: 0, enemies: 0,
 			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
+			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
@@ -1344,6 +1350,8 @@
 			rankS_Score: 250000, rankA_Score: 200000, rankB_Score: 175000, rankC_Score: 150000, rankD_Score: 100000,
 			
 			rings: 0, enemies: 0,
+			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
@@ -1369,6 +1377,8 @@
 			
 			rings: 0, enemies: 0,
 			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
+			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
@@ -1392,6 +1402,8 @@
 			rankS_Score: 360000, rankA_Score: 300000, rankB_Score: 260000, rankC_Score: 200000, rankD_Score: 160000,
 			
 			rings: 0, enemies: 0,
+			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
@@ -1417,6 +1429,8 @@
 			
 			rings: 0, enemies: 0,
 			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
+			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
@@ -1440,6 +1454,8 @@
 			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
 			
 			rings: 0, enemies: 0,
+			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
@@ -1465,6 +1481,8 @@
 			
 			rings: 0, enemies: 0,
 			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
+			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
@@ -1488,6 +1506,8 @@
 			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
 			
 			rings: 0, enemies: 0,
+			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
 			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
 			

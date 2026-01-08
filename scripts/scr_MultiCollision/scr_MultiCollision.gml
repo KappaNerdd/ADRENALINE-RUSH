@@ -585,6 +585,9 @@ function scr_YCollision() {
 				
 				if _power {
 					if _power.active {
+						_power.hitLag = 240;
+						_power.active = false;
+						
 						if !global.SimplifyVFX {
 							instance_create_depth(-1000000, 0, -20, obj_ParryFlash);
 						}
@@ -632,9 +635,6 @@ function scr_YCollision() {
 						if yspd > 0 && !ground && !stomping {
 							yspd = -4;
 						}
-						
-						_power.hitLag = 240;
-						_power.active = false;
 					}
 				}
 			#endregion

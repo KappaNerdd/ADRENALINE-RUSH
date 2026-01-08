@@ -57,14 +57,14 @@ if !global.MIND && global.PlayerChar != 0 {
 	scr_GetCharTextboxes();
 	sideBar = spr_SideBarR;
 	
-	resume = spr_PauseResume;
-	restart = spr_PauseRestart;
-	hub = spr_PauseHUB;
-	fileSelect = spr_PauseFileSelect;
-	freeplayS = spr_PauseFreeplay;
-	options = spr_PauseOptions;
-	mainMenu = spr_PauseMainMenu;
-	quitGame = spr_PauseQuitGame;
+	resume = spr_PauseResumeNew;
+	restart = spr_PauseRestartNew;
+	hub = spr_PauseHUBNew;
+	fileSelect = spr_PauseFileNew;
+	freeplayS = spr_PauseFreeplayNew;
+	options = spr_PauseOptionsNew;
+	mainMenu = spr_PauseMainNew;
+	quitGame = spr_PauseQuitNew;
 } else {
 	sideBar = spr_SideBarHeadR;
 	

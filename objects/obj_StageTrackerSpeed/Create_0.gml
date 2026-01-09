@@ -7,6 +7,9 @@ rankF_Time = 300;
 
 totalSeconds = 0;
 
+global.Secrets = global.speedStageData[global.SpeedSelected].jsrSecrets;
+global.MusicSecret = global.speedStageData[global.SpeedSelected].musicSecret;
+
 global.PRank = true;
 global.StarterHealth = global.Health;
 

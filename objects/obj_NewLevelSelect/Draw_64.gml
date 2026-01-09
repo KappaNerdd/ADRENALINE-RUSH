@@ -151,6 +151,7 @@ display_set_gui_size(768, 432);
 	var _textCol2 = c_white;
 	var _levelDesc = global.speedStageData[chosenSpeed];
 	var _plusUltra = 0;
+	var _boxCol = c_white;
 	
 	if _levelDesc.mind {
 		_plusUltra = 7;
@@ -173,6 +174,10 @@ display_set_gui_size(768, 432);
 	
 	if actionStage {
 		_levelDesc = global.actionStageData[chosenAction];
+	} else {
+		if _levelDesc.rank == 6 && _levelDesc.rankTime == 5 && _levelDesc.rankScore == 5 && _levelDesc.musicSecret && _levelDesc.jsrSecrets[0] && _levelDesc.jsrSecrets[1] && _levelDesc.jsrSecrets[2] && _levelDesc.jsrSecrets[3] && _levelDesc.jsrSecrets[4] {
+			_boxCol = c_fuchsia;
+		}
 	}
 	
 	var _descText = _levelDesc.stage_Desc;
@@ -180,9 +185,9 @@ display_set_gui_size(768, 432);
 	if _levelDesc.locked {
 		_descText = _levelDesc.requirement;
 	}
-
+	
 	if chosenYScale > 0.1 {
-		draw_sprite_ext(spr_TextboxSonicRush, textboxFrames, 384, 216, 21, chosenYScale, 0, c_white, 1);
+		draw_sprite_ext(spr_TextboxSonicRush, textboxFrames, 384, 216, 21, chosenYScale, 0, _boxCol, 1);
 		
 		draw_sprite_ext(_levelDesc.stage_Sprite, mindFrames, 197, 43, 0.35, 0.35, 0, c_black, chosenTextAlpha);
 		draw_sprite_ext(_levelDesc.level_Sprite, mindFrames, 197, 103, 0.75, 0.75, 0, c_black, chosenTextAlpha);

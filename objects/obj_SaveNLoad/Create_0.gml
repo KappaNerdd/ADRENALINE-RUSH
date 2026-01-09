@@ -1244,7 +1244,9 @@
 	global.EnemyCount = 0;
 	global.CustomMus = false
 	global.CustomMusic = noone;
-
+	
+	global.Secrets = 0;
+	global.MusicSecret = false;
 	global.FRankTime = 0;
 	global.DRankTime = 0;
 	global.CRankTime = 0;

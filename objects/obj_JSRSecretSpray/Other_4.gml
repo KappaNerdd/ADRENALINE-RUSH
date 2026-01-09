@@ -6,6 +6,6 @@ if global.MIND or global.PlayerChar == 0 {
 
 sprite_index = sprays[count + _plusUltra];
 
-if global.speedStageData[global.SpeedSelected].jsrSecrets[count] {
+if global.Secrets[count] {
 	alive = false;
 }

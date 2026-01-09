@@ -529,54 +529,92 @@ function scr_YCollision() {
 		
 		#region //Special BS
 			#region //Trinkets
-				var _twinkLmao = instance_place(x, y, obj_Trinket);
-				var _twink2 = instance_place(x, y, obj_LostTrinkets);
+				var _twinkList = ds_list_create();
+				var _twinkLmao = instance_place_list(x, y, obj_Trinket, _twinkList, false);
 				
-				if (_twinkLmao) && (invincibleTimer < 90 or !invincible) { //Y'know the meme
-					global.Rings++;
-					instance_create_depth(_twinkLmao.x + 10, _twinkLmao.y + 8, depth, obj_GOALRingSparkles);
+				var _twink2List = ds_list_create();
+				var _twink2 = instance_place_list(x, y, obj_LostTrinkets, _twink2List, false);
+				
+				if _twinkLmao > 0 && (invincibleTimer < 90 or !invincible) { //Y'know the meme
+					for(var i = 0; i < _twinkLmao; i++) {
+						global.Rings++;
+						instance_create_depth(_twinkList[| i].x + 10, _twinkList[| i].y + 8, depth, obj_GOALRingSparkles);
 					
-					obj_SFXManager.funkinFav = true;
-					obj_Timer.trinket = true;
-					obj_Timer.trinketFrames = 0;
-					obj_Timer.trinketScale = 1.5;
+						obj_SFXManager.funkinFav = true;
+						obj_Timer.trinket = true;
+						obj_Timer.trinketFrames = 0;
+						obj_Timer.trinketScale = 1.5;
 					
-					with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
-						var _camX = camera_get_view_x(view_camera[0]);
-						var _camY = camera_get_view_y(view_camera[0]);
+						with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
+							var _camX = camera_get_view_x(view_camera[0]);
+							var _camY = camera_get_view_y(view_camera[0]);
 						
-						var _relX = _twinkLmao.x - _camX;
-						var _relY = _twinkLmao.y - _camY;
+							var _relX = _twinkList[| i].x - _camX;
+							var _relY = _twinkList[| i].y - _camY;
 
-						startX = _relX;
-						startY = _relY;
-					}
+							startX = _relX;
+							startY = _relY;
+						}
 					
-					instance_destroy(_twinkLmao);
+						instance_destroy(_twinkList[| i]);
+					}
 				}
 				
+				ds_list_destroy(_twinkList);
+				
 				//Lost ones
-				if (_twink2) && (invincibleTimer < 90 or !invincible) { //Y'know the meme
-					global.Rings++;
-					instance_create_depth(_twink2.x + 10, _twink2.y + 8, depth, obj_GOALRingSparkles);
+				if _twink2 > 0 && (invincibleTimer < 90 or !invincible) {
+					for(var i = 0; i < _twink2; i++) {
+						global.Rings++;
+						instance_create_depth(_twink2List[| i].x + 10, _twink2List[| i].y + 8, depth, obj_GOALRingSparkles);
 					
-					obj_SFXManager.funkinFav = true;
-					obj_Timer.trinket = true;
-					obj_Timer.trinketFrames = 0;
-					obj_Timer.trinketScale = 1.5;
+						obj_SFXManager.funkinFav = true;
+						obj_Timer.trinket = true;
+						obj_Timer.trinketFrames = 0;
+						obj_Timer.trinketScale = 1.5;
 					
-					with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
-						var _camX = camera_get_view_x(view_camera[0]);
-						var _camY = camera_get_view_y(view_camera[0]);
+						with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
+							var _camX = camera_get_view_x(view_camera[0]);
+							var _camY = camera_get_view_y(view_camera[0]);
 						
-						var _relX = _twink2.x - _camX;
-						var _relY = _twink2.y - _camY;
+							var _relX = _twink2List[| i].x - _camX;
+							var _relY = _twink2List[| i].y - _camY;
 
-						startX = _relX;
-						startY = _relY;
-					}
+							startX = _relX;
+							startY = _relY;
+						}
 					
-					instance_destroy(_twink2);
+						instance_destroy(_twink2List[| i]);
+					}
+				}
+				
+				ds_list_destroy(_twink2List);
+			#endregion
+			
+			#region //Sprays
+				var _sprays = instance_place(x, y, obj_JSRSecretSpray);
+				
+				if _sprays {
+					with(_sprays) {
+						if alive {
+							event_user(0);
+							obj_SFXManager.itemBreak = true;
+						}
+					}
+				}
+			#endregion
+			
+			#region //C90 Cassette
+				var _c90 = instance_place(x, y, obj_C90Cassette);
+				
+				if _c90 {
+					with(_c90) {
+						if alive {
+							event_user(0);
+							obj_SFXManager.itemBreak = true;
+							obj_SFXManager.pauseMenuSplash = true;
+						}
+					}
 				}
 			#endregion
 			
@@ -1554,10 +1592,10 @@ function scr_WallClingStep() {
 	} else if onWall == -1 {
 		_wall = instance_place(x - 1, y, _collisionGet);
 	} else {
-		_wall = instance_place(x, y, _collisionGet);
+		_wall = noone;
 	}
 		
-	if !global.Death && !playerHurt {
+	if !global.Death && !playerHurt && !rampRing && !afterRailJump && !stomping {
 		if onWall != 0 && !ground && yspd >= -3 {
 			if _wall {
 				canWallJump = _wall.wallJumpable;

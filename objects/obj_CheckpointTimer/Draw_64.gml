@@ -3,7 +3,7 @@ var _yscale = 1;
 var _ang = 0;
 
 var _x = 50;
-var _y = 60;
+var _y = 90;
 
 display_set_gui_size(640, 360);
 

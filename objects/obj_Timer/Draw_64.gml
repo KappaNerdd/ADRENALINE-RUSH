@@ -83,7 +83,6 @@ draw_set_halign(fa_left);
 	
 	draw_sprite_ext(_arrow, image_index, 106, moveY, 1, 0.5, 0, global.fullRGB, image_alpha);
 	draw_sprite_ext(sprite_index, image_index, 84, moveY + 8, 0.5, 0.5, 0, global.fullRGB, image_alpha);
-	draw_sprite_ext(sprite_index, image_index, 84, moveY + 8, 0.5, 0.5, 0, c_white, 0.35);
 	
 	draw_sprite_ext(_arrow, image_index, 96, moveY + 26, 1, 0.5, 0, global.fullRGB, image_alpha);
 	draw_sprite_ext(_scoreSprite, image_index, 63, moveY + 26, 1, 1, 0, global.fullRGB, image_alpha);
@@ -101,6 +100,40 @@ draw_set_halign(fa_left);
 	draw_text_transformed_color(90, moveY + 26, string(_score0) + string(_actualScore), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
 draw_set_halign(fa_left);
 draw_set_font(global.font_main);
+
+var _sprayGap = 22;
+
+for(var i = 0; i < array_length(global.Secrets); i++) {
+	var _col = c_black;
+	var _sprite = spr_HUDJSRSprays;
+	
+	if global.MIND or global.PlayerChar == 0 {
+		_sprite = spr_HUDJSRSpraysHead;
+	}
+	
+	if global.Secrets[i] {
+		_col = global.fullRGB;
+	}
+	
+	
+	draw_sprite_ext(_sprite, image_index, 66 + (_sprayGap * i), moveY + 63, 1, 1, 0, c_black, image_alpha);
+	draw_sprite_ext(_sprite, image_index, 69 + (_sprayGap * i), moveY + 60, 1, 1, 0, _col, image_alpha);
+}
+
+
+var _cassSprite = spr_HUDCassette;
+var _cassCol = c_black;
+
+if global.speedStageData[global.SpeedSelected].musicSecret {
+	_cassCol = global.fullRGB;
+}
+
+if global.MIND or global.PlayerChar == 0 {
+	_cassSprite = spr_HUDCassetteHead;
+}
+
+draw_sprite_ext(_cassSprite, image_index, 188, moveY + 63, 1, 1, 0, c_black, image_alpha);
+draw_sprite_ext(_cassSprite, image_index, 191, moveY + 60, 1, 1, 0, _cassCol, image_alpha);
 
 
 draw_set_halign(fa_center);

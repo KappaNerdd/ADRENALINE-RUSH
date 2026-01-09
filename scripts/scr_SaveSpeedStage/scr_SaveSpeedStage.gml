@@ -1,7 +1,7 @@
 ///-----Speed Stage Saving-----///
 
 function save_Speed_Stage(_fileNum = 0) {
-	if !instance_exists(obj_SavBox) {
+	if !instance_exists(obj_SavBox) {		
 		//Ensure that if the rank is worse than what was previously saved, it will not save
 		if global.Rank > global.speedStageData[global.SpeedSelected].rank {
 			global.speedStageData[global.SpeedSelected].rank = global.Rank; //Keep track of rank

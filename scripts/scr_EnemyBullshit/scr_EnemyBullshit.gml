@@ -121,7 +121,9 @@ function scr_EnemyStep() {
 }
 
 function scr_PlayerToEnemyShit() {
-	var _toji = instance_place(x, y, obj_EnemyParent);
+	var _tojiList = ds_list_create();
+	var _toji = instance_place_list(x, y, obj_EnemyParent, _tojiList, false);
+	
 	var _stompedVFX = instance_find(obj_StompVFX, 0);
 	var _boostBreakVFX = instance_find(obj_RushBoostBreak, 0);
 	
@@ -157,38 +159,42 @@ function scr_PlayerToEnemyShit() {
 		}
 	}
 	
-	if _toji {
-		//If not attacking
-		if !attacking && !megaAttacking {
-			if !_toji.launched {
-				scr_HurtPlayer(_toji.enemyDamage, _toji.enemyKnockback, false, _toji.enemyKnockbackY);
-			}
-		} else if attacking or megaAttacking { //If attacking
-			if !playerHurt && !global.Death && !_toji.launched {
-				_toji.charKiller = id;
+	if _toji > 0 {
+		for(var i = 0; i < _toji; i++) {
+			//If not attacking
+			if !attacking && !megaAttacking {
+				if !_tojiList[| i].launched {
+					scr_HurtPlayer(_tojiList[| i].enemyDamage, _tojiList[| i].enemyKnockback, false, _tojiList[| i].enemyKnockbackY);
+				}
+			} else if attacking or megaAttacking { //If attacking
+				if !playerHurt && !global.Death && !_tojiList[| i].launched {
+					_tojiList[| i].charKiller = id;
 				
-				scr_ScreenShake();
-				scr_ControllerRumble();
+					scr_ScreenShake();
+					scr_ControllerRumble();
 				
-				if attacking {
-					if jumping && yspd > 0 && !stomping {
-						if jump_Key_Held {
-							yspd = -yspd - 1;
-						} else {
-							yspd = -3;
+					if attacking {
+						if jumping && yspd > 0 && !stomping {
+							if jump_Key_Held {
+								yspd = -yspd - 1;
+							} else {
+								yspd = -3;
+							}
 						}
-					}
 					
-					_toji.enemyHealth -= _toji.enemyHealth;
-					obj_SFXManager.UndertaleDamage = true;
-				} else if megaAttacking {
-					_toji.launched = true;
-					_toji.enemyHealth -= _toji.enemyHealth;
-					obj_SFXManager.enemyExplode = true;
+						_tojiList[| i].enemyHealth -= _tojiList[| i].enemyHealth;
+						obj_SFXManager.UndertaleDamage = true;
+					} else if megaAttacking {
+						_tojiList[| i].launched = true;
+						_tojiList[| i].enemyHealth -= _tojiList[| i].enemyHealth;
+						obj_SFXManager.enemyExplode = true;
+					}
 				}
 			}
 		}
 	}
+	
+	ds_list_destroy(_tojiList);
 }
 
 function scr_EnemyDeathParticles(_particle, _amount) {

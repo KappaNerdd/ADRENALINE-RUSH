@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_LaunchRingBack",
-    "path":"sprites/spr_LaunchRingBack/spr_LaunchRingBack.yy",
+    "name":"spr_HeadLauncherRing",
+    "path":"sprites/spr_HeadLauncherRing/spr_HeadLauncherRing.yy",
   },
   "spriteMaskId":null,
   "visible":true,

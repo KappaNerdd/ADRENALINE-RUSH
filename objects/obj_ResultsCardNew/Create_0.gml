@@ -59,7 +59,7 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	moveUpEnd = 0;
 	moveUp = moveUpStart;
 
-	moveDownStart = 480;
+	moveDownStart = 500;
 	moveDownEnd = 360 + 72;
 	moveDown = moveDownStart;
 	

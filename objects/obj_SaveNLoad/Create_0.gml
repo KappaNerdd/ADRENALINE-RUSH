@@ -393,7 +393,7 @@
 			mus_Arpeggio, //Pause Theme (Ditto for Freeplay)
 			"Arpeggio (Freeplay Lone Mvt.)",
 		
-			[mus_GoingtobeOK, mus_Allegro, mus_AmazingPerformance, mus_AmazingPerformance, mus_AlFine], //Results Theme Tracks [shit, good, sick, perfect]
+			[mus_GoingtobeOK, mus_Allegro, mus_Crescendo, mus_Crescendo, mus_AlFine], //Results Theme Tracks [shit, good, sick, perfect]
 			["Diminuendo", "Allegro", "Crescendo", "Crescendo",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_LoneSet, 1], //Results Portrait

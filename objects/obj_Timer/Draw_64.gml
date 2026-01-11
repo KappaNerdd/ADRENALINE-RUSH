@@ -101,39 +101,51 @@ draw_set_halign(fa_left);
 draw_set_halign(fa_left);
 draw_set_font(global.font_main);
 
-var _sprayGap = 22;
+if global.speedStageData[global.SpeedSelected].complete {
+	var _sprayGap = 22;
 
-for(var i = 0; i < array_length(global.Secrets); i++) {
-	var _col = c_black;
-	var _sprite = spr_HUDJSRSprays;
+	for(var i = 0; i < array_length(global.Secrets); i++) {
+		var _col = c_white;
+		var _sprite = spr_HUDJSRSprays;
+		var _fog = true;
 	
+		if global.MIND or global.PlayerChar == 0 {
+			_sprite = spr_HUDJSRSpraysHead;
+		}
+	
+		if global.Secrets[i] {
+			_col = global.fullRGB;
+			_fog = false;
+		}
+	
+	
+		draw_sprite_ext(_sprite, image_index, 66 + (_sprayGap * i), moveY + 63, 1, 1, 0, c_black, image_alpha);
+	
+		gpu_set_fog(_fog, _col, 0, 1);
+			draw_sprite_ext(_sprite, image_index, 69 + (_sprayGap * i), moveY + 60, 1, 1, 0, _col, image_alpha);
+		gpu_set_fog(false, c_black, 0, 1);
+	}
+
+
+	var _cassSprite = spr_HUDCassette;
+	var _cassCol = c_white;
+	var _cassFog = true;
+
+	if global.speedStageData[global.SpeedSelected].musicSecret {
+		_cassCol = global.fullRGB;
+		_cassFog = false;
+	}
+
 	if global.MIND or global.PlayerChar == 0 {
-		_sprite = spr_HUDJSRSpraysHead;
+		_cassSprite = spr_HUDCassetteHead;
 	}
-	
-	if global.Secrets[i] {
-		_col = global.fullRGB;
-	}
-	
-	
-	draw_sprite_ext(_sprite, image_index, 66 + (_sprayGap * i), moveY + 63, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(_sprite, image_index, 69 + (_sprayGap * i), moveY + 60, 1, 1, 0, _col, image_alpha);
+
+	draw_sprite_ext(_cassSprite, image_index, 188, moveY + 63, 1, 1, 0, c_black, image_alpha);
+
+	gpu_set_fog(_cassFog, _cassCol, 0, 1);
+		draw_sprite_ext(_cassSprite, image_index, 191, moveY + 60, 1, 1, 0, _cassCol, image_alpha);
+	gpu_set_fog(false, c_black, 0, 1);
 }
-
-
-var _cassSprite = spr_HUDCassette;
-var _cassCol = c_black;
-
-if global.speedStageData[global.SpeedSelected].musicSecret {
-	_cassCol = global.fullRGB;
-}
-
-if global.MIND or global.PlayerChar == 0 {
-	_cassSprite = spr_HUDCassetteHead;
-}
-
-draw_sprite_ext(_cassSprite, image_index, 188, moveY + 63, 1, 1, 0, c_black, image_alpha);
-draw_sprite_ext(_cassSprite, image_index, 191, moveY + 60, 1, 1, 0, _cassCol, image_alpha);
 
 
 draw_set_halign(fa_center);

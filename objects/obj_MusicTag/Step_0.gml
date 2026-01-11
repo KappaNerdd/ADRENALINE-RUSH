@@ -340,7 +340,7 @@ if waitTimer > 0 {
 		}
 		
 		//Sick
-		if audio_is_playing(mus_AmazingPerformance) {
+		if audio_is_playing(mus_Crescendo) {
 			songName = "Crescendo";
 			songCredits = "Kappa Nerd";
 			songLength = "0:48";

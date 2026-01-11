@@ -1,5 +1,7 @@
 depth = -14;
 
+x = -1000000
+
 target_rm = noone;
 
 rushX = 320;

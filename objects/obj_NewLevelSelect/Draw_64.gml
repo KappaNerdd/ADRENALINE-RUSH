@@ -197,6 +197,62 @@ display_set_gui_size(768, 432);
 		draw_sprite_ext(_levelDesc.level_Sprite, mindFrames, 200, 100, 0.75, 0.75, 0, c_white, chosenTextAlpha);
 		draw_sprite_ext(_levelDesc.level_Icon, mindFrames, 200 + (sprite_get_width(_levelDesc.stage_Sprite) * 0.35) + 50, 65, 1, 1, 0, c_white, chosenTextAlpha);
 		
+		var _sprayGap = 22;
+		var _levelWidth = sprite_get_width(_levelDesc.level_Sprite);
+		
+		for(var i = 0; i < array_length(_levelDesc.jsrSecrets); i++) {
+			var _col = c_white;
+			var _sprite = spr_HUDJSRSprays;
+			var _fog = true;
+	
+			if _levelDesc.mind {
+				_sprite = spr_HUDJSRSpraysHead;
+			}
+	
+			if _levelDesc.jsrSecrets[i] {
+				if !_levelDesc.mind {
+					_col = global.fullRGB;
+				} else {
+					_col = c_white;
+				}
+				
+				_fog = false;
+			}
+	
+	
+			draw_sprite_ext(_sprite, mindFrames, 212 + _levelWidth + (_sprayGap * i), 108, 1, 1, 0, c_black, chosenTextAlpha);
+	
+			gpu_set_fog(_fog, _col, 0, 1);
+				draw_sprite_ext(_sprite, mindFrames, 215 + _levelWidth + (_sprayGap * i), 105, 1, 1, 0, _col, chosenTextAlpha);
+			gpu_set_fog(false, c_black, 0, 1);
+		}
+		
+		var _cassSprite = spr_HUDCassette;
+		var _cassCol = c_white;
+		var _cassFog = true;
+
+		if _levelDesc.musicSecret {
+			if !_levelDesc.mind {
+				_cassCol = global.fullRGB;
+			} else {
+				_cassCol = c_white;
+			}
+			
+			_cassFog = false;
+		}
+
+		if _levelDesc.mind {
+			_cassSprite = spr_HUDCassetteHead;
+		}
+
+		draw_sprite_ext(_cassSprite, mindFrames, 337 + _levelWidth, 108, 1, 1, 0, c_black, chosenTextAlpha);
+
+		gpu_set_fog(_cassFog, _cassCol, 0, 1);
+			draw_sprite_ext(_cassSprite, mindFrames, 337 + _levelWidth, 105, 1, 1, 0, _cassCol, chosenTextAlpha);
+		gpu_set_fog(false, c_black, 0, 1);
+		
+		
+		
 		#region //Overall Rank
 			var _rankOA = _levelDesc.rank;
 			var _rankChar = _levelDesc.player_Sprite;

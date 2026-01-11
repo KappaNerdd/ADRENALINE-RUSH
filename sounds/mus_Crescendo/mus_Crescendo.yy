@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_AmazingPerformance",
+  "%Name":"mus_Crescendo",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":48.0,
   "exportDir":"",
-  "name":"mus_AmazingPerformance",
+  "name":"mus_Crescendo",
   "parent":{
     "name":"Lone",
     "path":"folders/Sounds/Music/Results/Lone.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_AmazingPerformance.ogg",
+  "soundFile":"mus_Crescendo.ogg",
   "volume":1.0,
 }

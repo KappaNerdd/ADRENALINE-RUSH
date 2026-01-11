@@ -168,6 +168,62 @@ draw_sprite_ext(_timeRank, rankFrames, _camX + timeMoveX + 230, _camY + 195 + 30
 draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 290 + 5 + 30, 0.5, 0.4, 0, c_black, 0.5);
 draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 30, 0.5, 0.4, 0, _col, 1);
 
+
+var _sprayGap = 22;
+var _levelWidth = sprite_get_width(_mod2.level_Sprite);
+		
+for(var i = 0; i < array_length(_mod2.jsrSecrets); i++) {
+	var _colThing = c_white;
+	var _sprite = spr_HUDJSRSprays;
+	var _fog = true;
+	
+	if _mod2.mind {
+		_sprite = spr_HUDJSRSpraysHead;
+	}
+	
+	if _mod2.jsrSecrets[i] {
+		if !_mod2.mind {
+			_colThing = global.fullRGB;
+		} else {
+			_colThing = c_white;
+		}
+				
+		_fog = false;
+	}
+	
+	
+	draw_sprite_ext(_sprite, mindImageIndex, _camX + 339 + (_sprayGap * i), _camY + 85, 1, 1, 0, c_black, 0.5);
+	
+	gpu_set_fog(_fog, _colThing, 0, 1);
+		draw_sprite_ext(_sprite, mindImageIndex, _camX + 344 + (_sprayGap * i), _camY + 80, 1, 1, 0, _colThing, 1);
+	gpu_set_fog(false, c_black, 0, 1);
+}
+		
+var _cassSprite = spr_HUDCassette;
+var _cassCol = c_white;
+var _cassFog = true;
+
+if _mod2.musicSecret {
+	if !_mod2.mind {
+		_cassCol = global.fullRGB;
+	} else {
+		_cassCol = c_white;
+	}
+			
+	_cassFog = false;
+}
+
+if _mod2.mind {
+	_cassSprite = spr_HUDCassetteHead;
+}
+
+draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 85, 1, 1, 0, c_black, 0.5);
+
+gpu_set_fog(_cassFog, _cassCol, 0, 1);
+	draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 80, 1, 1, 0, _cassCol, 1);
+gpu_set_fog(false, c_black, 0, 1);
+
+
 //Player
 draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX - 15, _camY + 25 + 25 + 40, 0.25, 0.25, 0, c_black, 0.5);
 draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX, _camY + 35 + 40, 0.25, 0.25, 0, c_white, 1);

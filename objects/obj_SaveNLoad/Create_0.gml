@@ -1269,9 +1269,9 @@
 		{ //MIND Level 1
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind1", level_Num: 1, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed1, levelForced: false,
 		
-			rankS_Time: 115, rankA_Time: 125, rankB_Time: 140, rankC_Time: 200, rankD_Time: 225, rankF_Time: 255,
+			rankS_Time: 125, rankA_Time: 130, rankB_Time: 140, rankC_Time: 155, rankD_Time: 215, rankF_Time: 240,
 			
-			rankS_Score: 400000, rankA_Score: 300000, rankB_Score: 200000, rankC_Score: 150000, rankD_Score: 100000,
+			rankS_Score: 400000, rankA_Score: 350000, rankB_Score: 250000, rankC_Score: 150000, rankD_Score: 75000,
 			
 			rings: 0, enemies: 0,
 			
@@ -1295,9 +1295,9 @@
 		{ //MIND Level 2
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed2, levelForced: false,
 		
-			rankS_Time: 120, rankA_Time: 130, rankB_Time: 145, rankC_Time: 205, rankD_Time: 230, rankF_Time: 300,
+			rankS_Time: 130, rankA_Time: 135, rankB_Time: 145, rankC_Time: 200, rankD_Time: 220, rankF_Time: 245,
 			
-			rankS_Score: 450000, rankA_Score: 350000, rankB_Score: 250000, rankC_Score: 150000, rankD_Score: 50000,
+			rankS_Score: 450000, rankA_Score: 400000, rankB_Score: 300000, rankC_Score: 200000, rankD_Score: 100000,
 			
 			rings: 0, enemies: 0,
 			

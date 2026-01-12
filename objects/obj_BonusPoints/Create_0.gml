@@ -7,7 +7,7 @@ sprY = 320;
 
 sprYScale = 0;
 
-kysTimer = 180;
+kysTimer = 150;
 
 bonusPoints = 0;
 fullScore = 0;

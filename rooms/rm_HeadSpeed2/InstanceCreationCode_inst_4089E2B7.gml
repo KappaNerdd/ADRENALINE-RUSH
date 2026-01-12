@@ -2,5 +2,5 @@ sprite_index = spr_SpringHeadDiag;
 
 hori = true;
 
-launchVel = 15;
-launchYspd = -12;
+launchVel = -12;
+launchYspd = -13;

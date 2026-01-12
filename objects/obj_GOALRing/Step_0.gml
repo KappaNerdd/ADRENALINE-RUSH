@@ -26,19 +26,19 @@ if place_meeting(x, y, obj_Player) && !goal && !global.Death {
 	with(obj_Player) {
 		if abs(vel) <= 5 {
 			other.image_speed = 0.3;
-			other.spinBonus = 1000;
+			other.spinBonus = 10000;
 		} else if abs(vel) > 5 && abs(vel) < 10 {
 			other.image_speed = 0.96;
-			other.spinBonus = 2500;
+			other.spinBonus = 25000;
 		} else if abs(vel) >= 10 && abs(vel) < 15 {
 			other.image_speed = 3;
-			other.spinBonus = 5000;
+			other.spinBonus = 50000;
 		} else if abs(vel) >= 15 && abs(vel) < 20 {
 			other.image_speed = 4.025;
-			other.spinBonus = 10000;
+			other.spinBonus = 70000;
 		} else if abs(vel) >= 20 {
 			other.image_speed = 5.01;
-			other.spinBonus = 20000;
+			other.spinBonus = 85000;
 		}
 	}
 	
@@ -190,9 +190,11 @@ if goalTimer <= 0 {
 				resultsDoneTimer -= 1;
 			}
 			
-			if resultsDoneTimer <= 0 && !resultsDone {
+			if resultsDoneTimer <= 0 && !resultsDone && !instance_exists(obj_BonusPoints) {
 				resultsDone = true;
-				instance_create_depth(x, y - 1000000, depth, obj_GOAL);
+				with(instance_create_depth(x, y - 1000000, depth, obj_RushTransition)) {
+					target_rm = rm_ResultsScreen;
+				}
 			}
 		
 			if resultsSparklesTimer > 0 {

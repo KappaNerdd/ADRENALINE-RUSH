@@ -68,8 +68,8 @@ if instance_exists(obj_Player) {
 	
 	if !obj_Player.rushMode or _boost < _maxBoost - 1 {
 		if _boost <= 100 {
-			draw_sprite_ext(boostEmblem, 0, 5 + newX, 63 + newY, 1.5, 1.5, 0, c_black, image_alpha);
-			draw_sprite_ext(boostEmblem, 0, 8 + newX, 60 + newY, 1.5, 1.5, 0, c_white, image_alpha);
+			draw_sprite_ext(boostEmblem, 0, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
+			draw_sprite_ext(boostEmblem, 0, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 		} else if _boost > 100 && _boost < 200 {
 			if emblemSpeed < 2 {
 				emblemSpeed += 1 / 6;
@@ -79,8 +79,8 @@ if instance_exists(obj_Player) {
 				emblemSpeed = 0;
 			}
 			
-			draw_sprite_ext(boostEmblem, emblemSpeed, 5 + newX, 63 + newY, 1.5, 1.5, 0, c_black, image_alpha);
-			draw_sprite_ext(boostEmblem, emblemSpeed, 8 + newX, 60 + newY, 1.5, 1.5, 0, c_white, image_alpha);
+			draw_sprite_ext(boostEmblem, emblemSpeed, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
+			draw_sprite_ext(boostEmblem, emblemSpeed, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 		} else if _boost >= 200 && _boost < _maxBoost - 1 {
 			if emblemSpeed < 4 {
 				emblemSpeed += 1 / 8;
@@ -90,8 +90,8 @@ if instance_exists(obj_Player) {
 				emblemSpeed = 0;
 			}
 			
-			draw_sprite_ext(boostEmblem, emblemSpeed, 5 + newX, 63 + newY, 1.5, 1.5, 0, c_black, image_alpha);
-			draw_sprite_ext(boostEmblem, emblemSpeed, 8 + newX, 60 + newY, 1.5, 1.5, 0, c_white, image_alpha);
+			draw_sprite_ext(boostEmblem, emblemSpeed, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
+			draw_sprite_ext(boostEmblem, emblemSpeed, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 		}
 	} else if obj_Player.rushMode && _boost >= _maxBoost - 1 {
 		emblemSpeed += emblemSpeedRush;
@@ -111,8 +111,8 @@ if instance_exists(obj_Player) {
 			emblemSpeed = 0;
 		}
 		
-		draw_sprite_ext(rushEmblem, emblemSpeed, 5 + newX, 63 + newY, 1.5, 1.5, 0, c_black, image_alpha);
-		draw_sprite_ext(rushEmblem, emblemSpeed, 8 + newX, 60 + newY, 1.5, 1.5, 0, c_white, image_alpha);
+		draw_sprite_ext(rushEmblem, emblemSpeed, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
+		draw_sprite_ext(rushEmblem, emblemSpeed, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 	}
 
 	var _top = spr_BoostMeterBackBottom;

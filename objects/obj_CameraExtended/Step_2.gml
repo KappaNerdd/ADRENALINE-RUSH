@@ -46,8 +46,12 @@ if !global.ExtendCamera {
 	
 	_changeX = lerp(_changeX, obj_Player.vel * 12, 0.05);
 	
-	if obj_Player.yspd >= 0 && !obj_Player.ground {
-		_changeY = lerp(_changeY, obj_Player.yspd * 8, 0.05);
+	if obj_Player.yspd >= 0 {
+		if !obj_Player.ground {
+			_changeY = lerp(_changeY, obj_Player.yspd * 8, 0.05);
+		}
+	} else {
+		_changeY = lerp(_changeY, 0, 0.1);
 	}
 	
 	if obj_Player.ground {

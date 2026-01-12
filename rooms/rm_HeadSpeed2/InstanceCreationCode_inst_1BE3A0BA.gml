@@ -1,2 +1,2 @@
-launchVel = 15;
-launchYspd = -15;
+launchVel = 16;
+launchYspd = -13;

@@ -8,7 +8,7 @@ if kysTimer > 0 {
 	kysTimer--;
 	
 	if kysTimer < 180 {
-		charScale = lerp(charScale, 1, 0.025);
+		charScale = lerp(charScale, 0.85, 0.025);
 		charX = lerp(charX, 0, 0.025);
 	}
 	

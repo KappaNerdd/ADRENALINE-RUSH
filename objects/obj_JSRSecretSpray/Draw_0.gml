@@ -13,7 +13,7 @@ if sprayAlpha > 0 {
 	sprayAlpha -= 0.05;
 }
 
-if distance_to_point(_camX, _camY) < 950 {
+if distance_to_point(_camX, _camY) < global.CamSafeArea {
 	draw_sprite_ext(sprays[count + 5], 0, setX, setY + _extraY, 1.5, 1.5, 0, c_white, 0.5);
 	
 	if doneTimer > 0 {

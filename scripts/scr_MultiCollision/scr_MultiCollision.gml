@@ -623,12 +623,9 @@ function scr_YCollision() {
 				
 				if _power {
 					if _power.active {
-						_power.hitLag = 240;
 						_power.active = false;
-						
-						if !global.SimplifyVFX {
-							instance_create_depth(-1000000, 0, -20, obj_ParryFlash);
-						}
+
+						instance_create_depth(-1000000, 0, -20, obj_ParryFlash);
 						
 						scr_ControllerRumble();
 						
@@ -667,7 +664,6 @@ function scr_YCollision() {
 							instance_create_depth(_power.x, _power.y, depth, obj_PowerOrbPart);
 						}
 		
-						obj_SFXManager.parry = true;
 						obj_SFXManager.itemBreak = true;
 	
 						if yspd > 0 && !ground && !stomping {

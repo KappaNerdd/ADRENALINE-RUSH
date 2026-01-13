@@ -1562,8 +1562,10 @@
 #endregion
 
 #region //Camera Zoom
-	global.CamWidth = 768;
-	global.CamHeight = 432;
+	global.CamWidth = 854;
+	global.CamHeight = 480;
+	
+	global.CamSafeArea = 1050;
 #endregion
 
 

@@ -11,11 +11,10 @@ if !instance_exists(obj_ResultsCard) {
 		
 		obj_SFXManager.UNDERTALEBombSplosion = true;
 		
-		if global.ScreenShake {
-			obj_CameraExtended.shakeValue = 0.75;
-		}
+		scr_ScreenShake(0.25);
+		scr_ControllerRumble(0.25);
 		
-		if global.Particles {
+		/*if global.Particles {
 			instance_create_depth(_camX - 500, _camY - 50, obj_Player.depth - 1, obj_HeadFloorPiece1);
 			instance_create_depth(_camX - 500, _camY - 50, obj_Player.depth - 1, obj_HeadFloorPiece2);
 			instance_create_depth(_camX - 500, _camY - 50, obj_Player.depth - 1, obj_HeadFloorPiece3);
@@ -26,6 +25,6 @@ if !instance_exists(obj_ResultsCard) {
 			instance_create_depth(_camX - 500, _camY - 50, obj_Player.depth - 1, obj_HeadFloorPiece8);
 			instance_create_depth(_camX - 500, _camY - 50, obj_Player.depth - 1, obj_HeadFloorPiece9);
 			instance_create_depth(_camX - 500, _camY - 50, obj_Player.depth - 1, obj_HeadFloorPiece10);
-		}
+		}*/
 	}
 }

@@ -16,14 +16,3 @@ if active {
 	sprite_index = spr_PowerOrbInactive;
 }
 
-//HitLag
-var _time = current_time;  
-while current_time - _time < hitLag {  
-	
-}  
-
-if hitLag > 0 {
-	hitLag -= hitLag;
-}
-
-

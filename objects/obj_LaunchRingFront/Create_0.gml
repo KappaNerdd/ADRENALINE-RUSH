@@ -5,8 +5,8 @@ launchYspd = 0;
 
 launchConfirmed = false;
 
-launchTimer = 0;
 launchFrames = 0;
+launchTimer = launchFrames;
 
 launchSprite = 0;
 launchxScale = 0;

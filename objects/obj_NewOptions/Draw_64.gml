@@ -1,4 +1,4 @@
-display_set_gui_size(global.CamWidth, global.CamHeight);
+display_set_gui_size(768, 432);
 
 var _pauseArrow = spr_PauseArrow;
 var _arrowCol = global.fullRGB;

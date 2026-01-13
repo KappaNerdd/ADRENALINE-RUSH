@@ -1,4 +1,4 @@
-display_set_gui_size(global.CamWidth, global.CamHeight);
+display_set_gui_size(768, 432);
 
 #region //BG
 	draw_sprite_ext(sprite_index, image_index, -10, -10, 25, 15, 0, #444444, image_alpha);
@@ -201,77 +201,19 @@ display_set_gui_size(global.CamWidth, global.CamHeight);
 	draw_set_halign(fa_right);
 		var _col = c_white;
 		var _col2 = c_black;
-		var _charName = scr_LocalText("name_Kappa");
-	
-		#region //Character Name
-			if global.PlayerChar == 0 or global.PlayerChar == 1 {
-				_charName = scr_LocalText("name_Kappa");
-			}
-		
-			if global.PlayerChar == 2 {
-				_charName = scr_LocalText("name_Sarah");
-			}
-		
-			if global.PlayerChar == 3 {
-				_charName = scr_LocalText("name_Alone");
-			}
-		
-			if global.PlayerChar == 4 {
-				_charName = scr_LocalText("name_Brock");
-			}
-		
-			if global.PlayerChar == 5 {
-				_charName = scr_LocalText("name_Neegi");
-			}
-		
-			if global.PlayerChar == 6 {
-				_charName = scr_LocalText("name_Cloee");
-			}
-		
-			if global.PlayerChar == 7 {
-				_charName = scr_LocalText("name_Akira");
-			}
-		
-			if global.PlayerChar == 8 {
-				_charName = scr_LocalText("name_Taylor");
-			}
-		
-			if global.PlayerChar == 9 {
-				_charName = scr_LocalText("name_Ayana");
-			}
-		
-			if global.PlayerChar == 10 {
-				_charName = scr_LocalText("name_Rush");
-			}
-		
-			if global.PlayerChar == 11 {
-				_charName = scr_LocalText("name_Edge");
-			}
-		
-			if global.PlayerChar == 12 {
-				_charName = scr_LocalText("name_Roxxane");
-			}
-		
-			if global.PlayerChar == 13 {
-				_charName = scr_LocalText("name_Lucifer");
-			}
-		
-			if global.PlayerChar == 14 {
-				_charName = scr_LocalText("name_Ivy");
-			}
-		#endregion
+		var _charName = scr_LocalText(global.PlayerSelection[global.PlayerChar][0][0]);
 
-		draw_text_transformed_color(charNameX + global.CamWidth, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth / 2, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth * 1.5, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth * 2, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
+		draw_text_transformed_color(charNameX + 768, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
+		draw_text_transformed_color(charNameX + 768 / 2, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
+		draw_text_transformed_color(charNameX + 768, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
+		draw_text_transformed_color(charNameX + 768 * 1.5, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
+		draw_text_transformed_color(charNameX + 768 * 2, nameCharY + 7, string(_charName), 1, 1, 0, _col2, _col2, _col2, _col2, 1);
 	
-		draw_text_transformed_color(charNameX + global.CamWidth, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth / 2, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth * 1.5, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
-		draw_text_transformed_color(charNameX + global.CamWidth * 2, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
+		draw_text_transformed_color(charNameX + 768, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
+		draw_text_transformed_color(charNameX + 768 / 2, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
+		draw_text_transformed_color(charNameX + 768, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
+		draw_text_transformed_color(charNameX + 768 * 1.5, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
+		draw_text_transformed_color(charNameX + 768 * 2, nameCharY + 4, string(_charName), 1, 1, 0, _col, _col, _col, _col, 1);
 	draw_set_halign(fa_left);
 #endregion
 

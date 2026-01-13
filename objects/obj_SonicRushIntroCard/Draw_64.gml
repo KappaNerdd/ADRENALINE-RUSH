@@ -1,4 +1,4 @@
-display_set_gui_size(768, 432);
+display_set_gui_size(852, 480);
 
 var _camX = camera_get_view_x(view_camera[0]);
 var _camY = camera_get_view_y(view_camera[0]);
@@ -21,8 +21,8 @@ levelXMove2 += 0.25;
 var _xMove = levelXMove + levelXMove2;
 var _char = global.PlayerSelection[global.PlayerChar][28][4];
 
-draw_sprite_ext(sprite_index, 0, 0, 0, 24, 13.5, 0, c_white, whiteAlpha);
-draw_sprite_ext(_charCheck, global.PlayerCostume, -_xMove + spikeX + 350, -100, 0.5, 0.5, 0, c_white, (otheralpha / 2) * mainAlpha);
+draw_sprite_ext(sprite_index, 0, 0, 0, 27, 15.5, 0, c_white, whiteAlpha);
+draw_sprite_ext(_charCheck, global.PlayerCostume, -_xMove + spikeX + 434, -100, 0.5, 0.5, 0, c_white, (otheralpha / 2) * mainAlpha);
 draw_sprite_ext(obj_Player.sprite_index, obj_Player.image_index, charX + _relX, _relY, obj_Player.image_xscale * charScale, obj_Player.image_yscale * charScale, obj_Player.drawAngle, c_black, mainAlpha);
 draw_sprite_ext(_char, 0, 650, 50, 1, 1, 0, c_white, otheralpha * mainAlpha);
 
@@ -140,10 +140,7 @@ if global.PlayerChar == 0 or global.MIND {
 	_spikes = spr_SonicRush_Spikes_Head;
 }
 
-draw_sprite_ext(_spikes, spikeFrames, spikeX, -10, 2, 2, 0, global.fullRGB, otheralpha * mainAlpha);
-draw_sprite_ext(_spikes, spikeFrames, spikeX, -10, 2, 2, 0, c_black, (otheralpha / 2) * mainAlpha);
 draw_sprite_ext(_spikes, spikeFrames, spikeX, 0, 2, 2, 0, global.fullRGB, otheralpha * mainAlpha);
-
 
 var _charSel = global.PlayerSelection[global.SelectedPlayer];
 var _charName = _charSel[0][0];
@@ -157,12 +154,12 @@ if charBoxFrames < 2 && !global.SimplifyVFX {
 
 charNameX -= 3;
 		
-if charNameX <= -384 {
-	charNameX = 384;
+if charNameX <= -427 {
+	charNameX = 427;
 }
 
-draw_sprite_ext(spr_TextboxSonicRush, charBoxFrames, 384, charBoxY + 21, 25, 1, 0, c_black, otheralpha * mainAlpha);
-draw_sprite_ext(spr_TextboxSonicRush, charBoxFrames, 384, charBoxY + 16, 25, 1, 0, c_white, otheralpha * mainAlpha);
+draw_sprite_ext(spr_TextboxSonicRush, charBoxFrames, 427, charBoxY + 21, 27, 1, 0, c_black, otheralpha * mainAlpha);
+draw_sprite_ext(spr_TextboxSonicRush, charBoxFrames, 427, charBoxY + 16, 27, 1, 0, c_white, otheralpha * mainAlpha);
 		
 draw_set_halign(fa_right);
 	draw_text_transformed_color(charNameX, charBoxY + 4, scr_LocalText(_charName), 1, 1, 0, _col, _col, _col, _col, otheralpha * mainAlpha);

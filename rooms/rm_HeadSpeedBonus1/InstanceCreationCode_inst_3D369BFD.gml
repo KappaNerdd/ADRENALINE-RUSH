@@ -2,5 +2,5 @@ rainbow = true;
 
 launchFrames = 10;
 
-launchVel = -20;
-launchYspd = -11;
+launchVel = 12;
+launchYspd = -8;

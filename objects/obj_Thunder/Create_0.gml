@@ -1,13 +1,13 @@
 randomize();
 
-x = ceil(random(camera_get_view_width(view_camera[0])));
+extraX = random(global.CamWidth);
 
 image_alpha = 1;
 
-image_xscale = 0.5;
-image_yscale = 1.5;
+image_xscale = 1;
+image_yscale = 3;
 
-depth = 998;
+depth = random_range(400, -200);
 
 thunderComplete = false;
 

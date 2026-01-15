@@ -1,1 +1,1 @@
-launchYspd = -15;
+launchYspd = -17;

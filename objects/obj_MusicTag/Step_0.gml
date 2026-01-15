@@ -152,6 +152,13 @@ if waitTimer > 0 {
 		songCredits = "Kappa Nerd";
 		songLength = "0:36";
 	}
+	
+	///-----Waiting (Lucifer Mvt.)-----///
+	if audio_is_playing(mus_FreeplayLuMvt) or audio_is_playing(mus_Waiting) {
+		songName = scr_LocalText("mus_FLuc");
+		songCredits = "Kappa Nerd";
+		songLength = "0:48";
+	}
 
 	///-----Holster (Ivy Mvt.)-----///
 	if audio_is_playing(mus_FreeplayIMvt) or audio_is_playing(mus_Holster) {
@@ -469,7 +476,31 @@ if waitTimer > 0 {
 		}
 		
 	#endregion
+	
+	
+	#region ///-----Lucifer-----///
+		//Shit
+		if audio_is_playing(mus_BeenBetter) {
+			songName = scr_LocalText("mus_BeenBetter");
+			songCredits = "Kappa Nerd";
+			songLength = "1:04";
+		}
 
+		//Good
+		if audio_is_playing(mus_YouStrong) {
+			songName = scr_LocalText("mus_YouStrong");
+			songCredits = "Kappa Nerd";
+			songLength = "1:36";
+		}
+
+		//Sick
+		if audio_is_playing(mus_HonoraryBlaze) {
+			songName = scr_LocalText("mus_Blaze");
+			songCredits = "Kappa Nerd";
+			songLength = "0:55";
+		}
+	#endregion
+	
 
 	#region ///-----Ivy-----///
 		//Shit

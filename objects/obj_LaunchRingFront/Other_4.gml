@@ -14,3 +14,5 @@ if !rainbow {
 		sprite_index = spr_HeadLauncherRingRainbow
 	}
 }
+
+launchTimer = launchFrames;

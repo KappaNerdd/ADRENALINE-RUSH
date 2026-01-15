@@ -829,6 +829,25 @@ function scr_YCollision() {
 				}
 			#endregion
 			
+			#region //Rail-Stopper
+				if place_meeting(x, y, obj_RailStopper) && railGrind {
+					railGrind = false;
+					ground = false;
+					jumping = true;
+					obj_SFXManager.bump = true;
+					
+					yspd = -4;
+					
+					if vel > max_Speed {
+						vel -= 3;
+					}
+					
+					if vel < -max_Speed {
+						vel += 3;
+					}
+				}
+			#endregion
+			
 			#region //Boost Pad
 				var _boost = instance_place(x, y, obj_BoostPad);
 

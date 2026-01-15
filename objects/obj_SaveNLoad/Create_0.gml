@@ -1295,7 +1295,7 @@
 		{ //MIND Level 2
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed2, levelForced: false,
 		
-			rankS_Time: 130, rankA_Time: 135, rankB_Time: 145, rankC_Time: 200, rankD_Time: 220, rankF_Time: 245,
+			rankS_Time: 133, rankA_Time: 138, rankB_Time: 148, rankC_Time: 203, rankD_Time: 223, rankF_Time: 248,
 			
 			rankS_Score: 450000, rankA_Score: 400000, rankB_Score: 300000, rankC_Score: 200000, rankD_Score: 100000,
 			

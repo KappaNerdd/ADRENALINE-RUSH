@@ -13,9 +13,9 @@ var _p3 = 0.6;
 var _p4 = 0.4;
 
 if !global.SimplifyVFX {
-	draw_sprite_ext(spr_Static, image_index / 5, _camX2, _camY2, 2, 1.75, 0, #222222, 1);
+	draw_sprite_ext(spr_Static, image_index / 5, _camX2, _camY2, 2, 1.75, 0, #111111, 1);
 } else {
-	draw_sprite_ext(spr_Static, 0, _camX2, _camY2, 2, 1.75, 0, #222222, 1);
+	draw_sprite_ext(spr_Static, 0, _camX2, _camY2, 2, 1.75, 0, #111111, 1);
 }
 
 if !global.SimplifyVFX {

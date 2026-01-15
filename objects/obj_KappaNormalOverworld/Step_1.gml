@@ -132,15 +132,15 @@ if can_MoveFULL {
 			#endregion
 			
 			#region //Double Jumping
-				if dJumping && yspd < 0 {
+				if dJumping {
 					sprite_index = sprDJump;
-					image_speed = 1.2;
+					image_speed = 2;
 					mask_index = idle_Mask;
 				}
 			#endregion 
 
 			#region //Falling
-				if (jumping or dJumping) && !rampRing && !playerHurt && !wallJump && !afterRailJump && !railGrind && !trick && yspd > 0 && yspd < 3 {
+				if (jumping) && !dJumping && !rampRing && !playerHurt && !wallJump && !afterRailJump && !railGrind && !trick && yspd > 0 && yspd < 3 {
 					if !leftFacer {
 						sprite_index = sprFall;
 					} else {
@@ -155,7 +155,7 @@ if can_MoveFULL {
 					mask_index = idle_Mask;
 				}
 			
-				if !ground && yspd > 3 && !playerHurt && !rampRing && !wallJump && !afterRailJump && !trick {
+				if !ground && !dJumping && yspd > 3 && !playerHurt && !rampRing && !wallJump && !afterRailJump && !trick {
 					if !leftFacer {
 						sprite_index = sprFalling;
 					} else {
@@ -235,24 +235,6 @@ if can_MoveFULL {
 		#region //Basic Visual Effects
 			scr_BasicVisualEffectsSpeed1();
 		#endregion
-	
-		#region //Side Trick
-			if rightTrick or leftTrick or backTrick {
-				scr_RushAdventureKickParticles(-1);
-			}
-			
-			if !rightTrick && !leftTrick && !backTrick {
-				if instance_exists(obj_SideTrickVFXKappa) {
-					instance_destroy(obj_SideTrickVFXKappa);
-				}
-			}
-		#endregion
-		
-		#region //Air-Dash After-Images
-			if airDash && !stomping && !wallJump && !boost && !speedBreak {
-				scr_PlayerTrail();
-			}
-		#endregion
 	#endregion
 		
 	#region //Basic Speed 3
@@ -284,7 +266,7 @@ if can_MoveFULL {
 			airDash = false;
 	
 			//Sound Effect
-			obj_SFXManager.doubleJumpSound = true;
+			obj_SFXManager.sonicJump = true;
 		}
 	#endregion
 

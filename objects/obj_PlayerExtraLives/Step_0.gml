@@ -39,9 +39,9 @@ scr_GetCharLives();
 
 
 if instance_exists(obj_RoomTransParent) or instance_exists(obj_LevelCardNew) or instance_exists(obj_ResultsCardNew) or instance_exists(obj_LevelCardMinor) or instance_exists(obj_Textbox) or instance_exists(obj_CutsceneParent) or instance_exists(obj_LevelCard) or instance_exists(obj_ResultsCard) {
-	yMove = lerp(yMove, 100, 0.1);
+	yMove = lerp(yMove, 172, 0.1);
 } else {
-	yMove = lerp(yMove, 0, 0.1);
+	yMove = lerp(yMove, 72, 0.1);
 }
 
 lifeScale = lerp(lifeScale, 1, 0.1);

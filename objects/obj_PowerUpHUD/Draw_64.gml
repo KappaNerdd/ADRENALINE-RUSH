@@ -1,3 +1,5 @@
+display_set_gui_size(768, 432);
+
 if !ringPower {
 	var _power = spr_PowerUps;
 
@@ -6,5 +8,5 @@ if !ringPower {
 	}
 
 
-	draw_sprite_ext(_power, powerUp, 320, 345, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(_power, powerUp, 384, 417, 1, 1, 0, c_white, 1);
 } 

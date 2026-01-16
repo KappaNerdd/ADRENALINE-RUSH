@@ -1,5 +1,7 @@
-var _changeY = 320;
-var _changeX = 440;
+display_set_gui_size(768, 432);
+
+var _changeY = 392;
+var _changeX = 568;
 
 var _camX = camera_get_view_x(view_camera[0]);
 var _camY = camera_get_view_y(view_camera[0]);
@@ -16,7 +18,7 @@ var _relX = _playX - _camX;
 var _relY = _playY - _camY;
 
 
-if _relY >= 330 {
+if _relY >= 700 {
 	image_alpha = lerp(image_alpha, 0.5, 0.5);
 } else {
 	image_alpha = lerp(image_alpha, 1, 0.25);

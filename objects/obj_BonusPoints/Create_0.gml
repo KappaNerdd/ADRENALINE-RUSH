@@ -2,8 +2,8 @@ scr_GetCharRushBoostIcon();
 
 altAlpha = 1;
 
-sprX = 320;
-sprY = 320;
+sprX = 384;
+sprY = 392;
 
 sprYScale = 0;
 

@@ -1,4 +1,4 @@
-display_set_gui_size(640, 360);
+display_set_gui_size(768, 432);
 
 var _level = global.speedStageData[global.SpeedSelected];
 
@@ -35,9 +35,16 @@ if rankFrames >= _animCheck {
 }
 
 if _level.complete {	
-	draw_sprite_ext(sprite_index, rankFrames, 307, moveY + 3, image_xscale, image_yscale, 0, c_black, image_alpha);
-	draw_sprite_ext(rankGraphic2, rankFrames, 292, moveY + 33, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(sprite_index, rankFrames, 327, moveY + 3, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(rankGraphic2, rankFrames, 317, moveY + 33, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(rankGraphic4, rankFrames, 307, moveY + 63, image_xscale, image_yscale, 0, c_black, image_alpha);
 	
-	draw_sprite_ext(sprite_index, rankFrames, 310, moveY, image_xscale, image_yscale, 0, c_white, image_alpha);
-	draw_sprite_ext(rankGraphic2, rankFrames, 295, moveY + 30, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(rankGraphic3, rankFrames, 15, moveY + 73, image_xscale, image_yscale, 0, c_black, image_alpha);
+	
+	
+	draw_sprite_ext(sprite_index, rankFrames, 330, moveY, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(rankGraphic2, rankFrames, 320, moveY + 30, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(rankGraphic4, rankFrames, 310, moveY + 60, image_xscale, image_yscale, 0, c_white, image_alpha);
+	
+	draw_sprite_ext(rankGraphic3, rankFrames, 18, moveY + 70, image_xscale, image_yscale, 0, c_white, image_alpha);
 }

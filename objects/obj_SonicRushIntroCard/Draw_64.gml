@@ -66,14 +66,14 @@ draw_set_font(_font);
 	var _timeString = string(_timeMinutes) + ":" + string(_extra0Seconds) + string(_timeSeconds); 
 	var _timeStringWidth = string_width(_timeString);
 	
-	
-	draw_text_transformed_color(_xMove - 3, 253, _timeString, levelXscale * 2, 1, 0, c_black, c_black, c_black, c_black, otheralpha);
-	draw_sprite_ext(ranks[_level.rankTime + _plusUltra], _rankFrameAnim, _xMove - 3 + _timeStringWidth + 20, 238, levelXscale * 2, 1, 0, c_black, otheralpha);
-	draw_sprite_ext(_level.player_SpriteTime, _level.player_CostumeTime, _xMove - 3 + _timeStringWidth + sprite_get_width(ranks[_level.rankTime]) + 30, 238, levelXscale * 2, 1, 0, c_black, otheralpha);
+	draw_text_transformed_color(_xMove - 3, 233, _timeString, levelXscale * 2, 1, 0, c_black, c_black, c_black, c_black, otheralpha);
+	draw_sprite_ext(ranks[_level.rankTime + _plusUltra], _rankFrameAnim, _xMove - 3 + _timeStringWidth + 20, 228, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
+	draw_sprite_ext(_level.player_SpriteTime, _level.player_CostumeTime, _xMove - 3 + _timeStringWidth + sprite_get_width(ranks[_level.rankTime]) + 20, 228, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
 
-	draw_text_transformed_color(_xMove, 250, _timeString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
-	draw_sprite_ext(ranks[_level.rankTime + _plusUltra], _rankFrameAnim, _xMove + _timeStringWidth + 20, 235, levelXscale * 2, 1, 0, c_white, otheralpha);
-	draw_sprite_ext(_level.player_SpriteTime, _level.player_CostumeTime, _xMove + _timeStringWidth + sprite_get_width(ranks[_level.rankTime]) + 30, 235, levelXscale * 2, 1, 0, c_white, otheralpha);
+	draw_text_transformed_color(_xMove, 230, _timeString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
+	draw_sprite_ext(ranks[_level.rankTime + _plusUltra], _rankFrameAnim, _xMove + _timeStringWidth + 20, 225, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	draw_sprite_ext(_level.player_SpriteTime, _level.player_CostumeTime, _xMove + _timeStringWidth + sprite_get_width(ranks[_level.rankTime]) + 20, 225, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	
 	
 	var _extra0s = "000000";
 	
@@ -95,20 +95,53 @@ draw_set_font(_font);
 	var _scoreStringWidth = string_width(_scoreString);
 	
 	
-	draw_text_transformed_color(_xMove - 3, 313, _scoreString, levelXscale * 2, 1, 0, c_black, c_black, c_black, c_black, otheralpha);
-	draw_sprite_ext(ranks[_level.rankScore + _plusUltra], _rankFrameAnim, _xMove + _scoreStringWidth + 17, 298, levelXscale * 2, 1, 0, c_black, otheralpha);
-	draw_sprite_ext(_level.player_SpriteScore, _level.player_CostumeScore, _xMove + _scoreStringWidth + sprite_get_width(ranks[_level.rankScore]) + 27, 298, levelXscale * 2, 1, 0, c_black, otheralpha);
+	draw_text_transformed_color(_xMove - 3, 283, _scoreString, levelXscale * 2, 1, 0, c_black, c_black, c_black, c_black, otheralpha);
+	draw_sprite_ext(ranks[_level.rankScore + _plusUltra], _rankFrameAnim, _xMove + _scoreStringWidth + 17, 278, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
+	draw_sprite_ext(_level.player_SpriteScore, _level.player_CostumeScore, _xMove + _scoreStringWidth + sprite_get_width(ranks[_level.rankScore]) + 17, 278, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
 	
-	draw_text_transformed_color(_xMove, 310, _scoreString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
-	draw_sprite_ext(ranks[_level.rankScore + _plusUltra], _rankFrameAnim, _xMove + _scoreStringWidth + 20, 295, levelXscale * 2, 1, 0, c_white, otheralpha);
-	draw_sprite_ext(_level.player_SpriteScore, _level.player_CostumeScore, _xMove + _scoreStringWidth + sprite_get_width(ranks[_level.rankScore]) + 30, 295, levelXscale * 2, 1, 0, c_white, otheralpha);
+	draw_text_transformed_color(_xMove, 280, _scoreString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
+	draw_sprite_ext(ranks[_level.rankScore + _plusUltra], _rankFrameAnim, _xMove + _scoreStringWidth + 20, 275, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	draw_sprite_ext(_level.player_SpriteScore, _level.player_CostumeScore, _xMove + _scoreStringWidth + sprite_get_width(ranks[_level.rankScore]) + 20, 275, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
 	
 	
-	draw_sprite_ext(ranks[_level.rank + _plusUltra], _rankFrameAnim, _xMove - 3, 168, levelXscale * 2, 1, 0, c_black, otheralpha);
-	draw_sprite_ext(_level.player_Sprite, _level.player_Costume, _xMove - 3 + (sprite_get_width(ranks[_level.rank]) * 1), 168, levelXscale * 2, 1, 0, c_black, otheralpha);
+	var _extra0sRings = "";
 	
-	draw_sprite_ext(ranks[_level.rank + _plusUltra], _rankFrameAnim, _xMove, 165, levelXscale * 2, 1, 0, c_white, otheralpha);
-	draw_sprite_ext(_level.player_Sprite, _level.player_Costume, _xMove + (sprite_get_width(ranks[_level.rank]) * 1), 165, levelXscale * 2, 1, 0, c_white, otheralpha);
+	if _level.rings >= 10 && _level.rings < 100 {
+		_extra0sRings = "0";
+	} else if _level.rings < 10 {
+		_extra0sRings = "00";
+	}
+	
+	var _ringString = string(_extra0sRings) + string(_level.rings)
+	var _ringStringWidth = string_width(_ringString);
+	
+	draw_text_transformed_color(_xMove - 3, 333, _ringString, levelXscale * 2, 1, 0, c_black, c_black, c_black, c_black, otheralpha);
+	draw_sprite_ext(ranks[_level.rings_Rank + _plusUltra], _rankFrameAnim, _xMove + _ringStringWidth + 17, 328, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
+	draw_sprite_ext(_level.player_SpriteRings, _level.player_CostumeRings, _xMove + _ringStringWidth + sprite_get_width(ranks[_level.rings_Rank]) + 17, 328, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
+	
+	draw_text_transformed_color(_xMove, 330, _ringString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
+	draw_sprite_ext(ranks[_level.rings_Rank + _plusUltra], _rankFrameAnim, _xMove + _ringStringWidth + 20, 325, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	draw_sprite_ext(_level.player_SpriteRings, _level.player_CostumeRings, _xMove + _ringStringWidth + sprite_get_width(ranks[_level.rings_Rank]) + 20, 325, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	
+	
+	var _enemyString = string(_level.enemies);
+	var _enemyStringWidth = string_width(_enemyString);
+	
+	draw_text_transformed_color(_xMove - 3, 383, _enemyString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
+	draw_sprite_ext(ranks[_level.enemy_Rank + _plusUltra], _rankFrameAnim, _xMove + _enemyStringWidth + 17, 378, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	draw_sprite_ext(_level.player_SpriteEnemy, _level.player_CostumeEnemy, _xMove + _enemyStringWidth + sprite_get_width(ranks[_level.enemy_Rank]) + 17, 378, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	
+	
+	draw_text_transformed_color(_xMove, 380, _enemyString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
+	draw_sprite_ext(ranks[_level.enemy_Rank + _plusUltra], _rankFrameAnim, _xMove + _enemyStringWidth + 20, 375, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	draw_sprite_ext(_level.player_SpriteEnemy, _level.player_CostumeEnemy, _xMove + _enemyStringWidth + sprite_get_width(ranks[_level.enemy_Rank]) + 20, 375, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	
+	
+	draw_sprite_ext(ranks[_level.rank + _plusUltra], _rankFrameAnim, _xMove - 3, 148, levelXscale * 2, 1, 0, c_black, otheralpha);
+	draw_sprite_ext(_level.player_Sprite, _level.player_Costume, _xMove - 3 + (sprite_get_width(ranks[_level.rank]) * 1) + 20, 148, levelXscale * 2, 1, 0, c_black, otheralpha);
+	
+	draw_sprite_ext(ranks[_level.rank + _plusUltra], _rankFrameAnim, _xMove, 145, levelXscale * 2, 1, 0, c_white, otheralpha);
+	draw_sprite_ext(_level.player_Sprite, _level.player_Costume, _xMove + (sprite_get_width(ranks[_level.rank]) * 1) + 20, 145, levelXscale * 2, 1, 0, c_white, otheralpha);
 draw_set_font(global.font_main);
 
 

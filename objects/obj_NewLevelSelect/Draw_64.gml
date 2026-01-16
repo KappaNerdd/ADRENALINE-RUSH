@@ -331,6 +331,9 @@ display_set_gui_size(768, 432);
 		#endregion
 		
 		#region //Trinkets
+			var _actualRings = _levelDesc.rings_Rank;
+			var _rankRChar = _levelDesc.player_SpriteRings;
+			var _rankRCharCost = _levelDesc.player_CostumeRings;
 			var _extraRings = "x";
 			var _rings = _levelDesc.rings;
 			
@@ -341,18 +344,31 @@ display_set_gui_size(768, 432);
 			}
 			
 			var _allText = " " + _extraRings + string(_rings);
+			var _allTextWidth = string_width(scr_LocalText("freeplay_Trinkets") + _allText);
 			
 			draw_text_transformed_color(197, 183, scr_LocalText("freeplay_Trinkets") + _allText, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
+			
+			
 			draw_text_transformed_color(200, 180, scr_LocalText("freeplay_Trinkets") + _allText, 1, 1, 0, c_white, c_white, c_white, c_white, chosenTextAlpha);
+			draw_sprite_ext(ranks[_actualRings + _plusUltra], rankFrames, 200 + (_allTextWidth + 14), 180, 0.5, 0.5, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(_rankRChar, _rankRCharCost, 228 + (_allTextWidth + 14), 180, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 		#endregion
 		
 		#region //Enemies Killed
+			var _actualEnemy = _levelDesc.enemy_Rank;
+			var _rankEChar = _levelDesc.player_SpriteEnemy;
+			var _rankECharCost = _levelDesc.player_CostumeEnemy;
 			var _extraEnemies = "x";
 			var _enemies = _levelDesc.enemies;
 			var _allText2 = " " + _extraEnemies + string(_enemies);
+			var _allText2Width = string_width(scr_LocalText("freeplay_Enemies") + _allText2);
 			
 			draw_text_transformed_color(197, 213, scr_LocalText("freeplay_Enemies") + _allText2, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
+			
+			
 			draw_text_transformed_color(200, 210, scr_LocalText("freeplay_Enemies") + _allText2, 1, 1, 0, c_white, c_white, c_white, c_white, chosenTextAlpha);
+			draw_sprite_ext(ranks[_actualEnemy + _plusUltra], rankFrames, 200 + (_allText2Width + 14), 210, 0.5, 0.5, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(_rankEChar, _rankECharCost, 228 + (_allText2Width + 14), 210, 0.5, 0.5, 0, c_white, chosenTextAlpha);
 		#endregion
 		
 		#region //Level Description

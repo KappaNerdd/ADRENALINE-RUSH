@@ -10,8 +10,8 @@
   "name":"obj_PowerUpHUD",
   "overriddenProperties":[],
   "parent":{
-    "name":"Power-Ups",
-    "path":"folders/Objects/Environments/Collectables/Power-Ups.yy",
+    "name":"Power-Up",
+    "path":"folders/Objects/HUD/General/Power-Up.yy",
   },
   "parentObjectId":null,
   "persistent":false,

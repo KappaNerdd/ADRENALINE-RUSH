@@ -63,7 +63,7 @@ charBoxFrames = 0;
 charNameX = 427;
 charNameXRepeat = 854;
 
-charBoxY = 410;
+charBoxY = 440;
 
 levelXscale = 0;
 levelXMove = -300;

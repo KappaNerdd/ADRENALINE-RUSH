@@ -1,4 +1,4 @@
-display_set_gui_size(640, 360);
+display_set_gui_size(768, 432);
 
 
 var _camX = camera_get_view_x(view_camera[0]);
@@ -59,11 +59,11 @@ if instance_exists(obj_Player) {
 			var shake = power(4, 2) * 0.1;
 			
 			newX = xMove + random_range(-shake, shake);
-			newY = random_range(-shake, shake);
+			newY = 50 + random_range(-shake, shake);
 		}
 	} else {
 		newX = xMove + 0;
-		newY = 0;
+		newY = 50;
 	}
 	
 	if !obj_Player.rushMode or _boost < _maxBoost - 1 {

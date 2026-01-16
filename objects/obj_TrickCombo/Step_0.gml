@@ -98,8 +98,8 @@ if completed {
 					}
 				}
 		
-				if startI1Y > 60 {
-					startI1Y -= 1.5;
+				if startI1Y > 100 {
+					startI1Y -= 0.25;
 				}
 			}
 		#endregion
@@ -131,8 +131,8 @@ if completed {
 					}
 				}
 		
-				if startI2Y > 60 {
-					startI2Y -= 1.5;
+				if startI2Y > 100 {
+					startI2Y -= 0.25;
 				}
 			}
 		#endregion
@@ -165,8 +165,8 @@ if completed {
 						}
 					}
 		
-					if startI3Y > 60 {
-						startI3Y -= 1.5;
+					if startI3Y > 100 {
+						startI3Y -= 0.25;
 					}
 				}
 			}
@@ -200,8 +200,8 @@ if completed {
 						}
 					}
 		
-					if startI4Y > 60 {
-						startI4Y -= 1.5;
+					if startI4Y > 100 {
+						startI4Y -= 0.25;
 					}
 				}
 			}
@@ -235,8 +235,8 @@ if completed {
 						}
 					}
 		
-					if startI5Y > 60 {
-						startI5Y -= 1.5;
+					if startI5Y > 100 {
+						startI5Y -= 0.25;
 					}
 				}
 			}
@@ -270,8 +270,8 @@ if completed {
 						}
 					}
 		
-					if startI6Y > 60 {
-						startI6Y -= 1.5;
+					if startI6Y > 100 {
+						startI6Y -= 0.25;
 					}
 				}
 			}

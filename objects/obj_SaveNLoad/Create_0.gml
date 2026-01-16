@@ -1235,6 +1235,8 @@
 	global.Rank = 0;
 	global.RankTime = 0;
 	global.RankScore = 0;
+	global.RankRings = 0;
+	global.RankEnemies = 0;
 	global.LevelForced = false;
 	global.countUp = false;
 	global.seconds = 0;
@@ -1273,7 +1275,9 @@
 			
 			rankS_Score: 400000, rankA_Score: 350000, rankB_Score: 250000, rankC_Score: 150000, rankD_Score: 75000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1282,6 +1286,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 0000000,
 		
@@ -1299,7 +1307,9 @@
 			
 			rankS_Score: 450000, rankA_Score: 400000, rankB_Score: 300000, rankC_Score: 200000, rankD_Score: 100000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1308,6 +1318,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1325,7 +1339,9 @@
 			
 			rankS_Score: 250000, rankA_Score: 200000, rankB_Score: 175000, rankC_Score: 150000, rankD_Score: 100000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1334,6 +1350,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1351,7 +1371,9 @@
 		
 			rankS_Score: 250000, rankA_Score: 200000, rankB_Score: 175000, rankC_Score: 150000, rankD_Score: 100000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1360,6 +1382,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1377,7 +1403,9 @@
 			
 			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1386,6 +1414,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1403,7 +1435,9 @@
 			
 			rankS_Score: 360000, rankA_Score: 300000, rankB_Score: 260000, rankC_Score: 200000, rankD_Score: 160000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1412,6 +1446,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1429,7 +1467,9 @@
 			
 			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1438,6 +1478,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1455,7 +1499,9 @@
 			
 			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1464,6 +1510,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1481,7 +1531,9 @@
 			
 			rankS_Score: 250000, rankA_Score: 200000, rankB_Score: 175000, rankC_Score: 150000, rankD_Score: 100000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1490,6 +1542,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1507,7 +1563,9 @@
 			
 			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
 			
-			rings: 0, enemies: 0,
+			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1516,6 +1574,10 @@
 			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
 			
 			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
 		
 			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
 		
@@ -1526,6 +1588,14 @@
 			requirement: "condit_Available", record_File: "OTN2_Ghost", folder_Name: "/othertown_night2/",
 		},
 	
+	]
+#endregion
+
+#region //Rank Requirements (Speed)
+	global.SpeedRanks = [
+		{ //MIND Level 1
+			
+		}
 	]
 #endregion
 

@@ -8,6 +8,12 @@ rankChecker = 0;
 rankGraphic2 = spr_RankFHead;
 rankChecker2 = 0;
 
+rankGraphic3 = spr_RankFHead;
+rankChecker3 = 0;
+
+rankGraphic4 = spr_RankFHead;
+rankChecker4 = 0;
+
 if global.PlayerChar == 0 or global.MIND {
 	rankF = spr_RankFHead;
 	rankD = spr_RankDHead;

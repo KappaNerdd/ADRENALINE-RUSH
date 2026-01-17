@@ -186,8 +186,8 @@ display_set_gui_size(768, 432);
 	var _charX = 550 + charX;
 	var _charY = charY + charY2;
 	
-	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX + 10, _charY + 10, 0.25, 0.25, charAngle, c_black, 1);
-	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX, _charY, 0.25, 0.25, charAngle, c_white, 1);
+	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX + 10, _charY + 10, 0.5, 0.5, charAngle, c_black, 1);
+	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX, _charY, 0.5, 0.5, charAngle, c_white, 1);
 	
 	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][12][0], 0, 605, charY2 + 155, 0.75, 0.75, -charAngle, c_black, 1);
 	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][12][0], 0, 600, charY2 + 150, 0.75, 0.75, -charAngle, c_white, 1);

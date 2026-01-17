@@ -192,10 +192,10 @@ for(var i = 0; i < array_length(_mod2.jsrSecrets); i++) {
 	}
 	
 	
-	draw_sprite_ext(_sprite, mindImageIndex, _camX + 339 + (_sprayGap * i), _camY + 85, 1, 1, 0, c_black, 0.5);
+	draw_sprite_ext(_sprite, mindImageIndex, _camX + 339 + (_sprayGap * i), _camY + 85, 1, 1, 0, c_black, image_alpha);
 	
 	gpu_set_fog(_fog, _colThing, 0, 1);
-		draw_sprite_ext(_sprite, mindImageIndex, _camX + 344 + (_sprayGap * i), _camY + 80, 1, 1, 0, _colThing, 1);
+		draw_sprite_ext(_sprite, mindImageIndex, _camX + 344 + (_sprayGap * i), _camY + 80, 1, 1, 0, _colThing, image_alpha * 2);
 	gpu_set_fog(false, c_black, 0, 1);
 }
 		
@@ -217,16 +217,16 @@ if _mod2.mind {
 	_cassSprite = spr_HUDCassetteHead;
 }
 
-draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 85, 1, 1, 0, c_black, 0.5);
+draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 85, 1, 1, 0, c_black, image_alpha);
 
 gpu_set_fog(_cassFog, _cassCol, 0, 1);
-	draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 80, 1, 1, 0, _cassCol, 1);
+	draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 80, 1, 1, 0, _cassCol, image_alpha * 2);
 gpu_set_fog(false, c_black, 0, 1);
 
 
 //Player
-draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX - 15, _camY + 25 + 25 + 40, 0.25, 0.25, 0, c_black, 0.5);
-draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX, _camY + 35 + 40, 0.25, 0.25, 0, c_white, 1);
+draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX - 15, _camY + 25 + 25 + 40, 0.5, 0.5, 0, c_black, 0.5);
+draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX, _camY + 35 + 40, 0.5, 0.5, 0, c_white, 1);
 
 var _rank = spr_RankFHead;
 var _mod = global.Rank;

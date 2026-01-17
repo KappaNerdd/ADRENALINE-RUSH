@@ -22,7 +22,7 @@ var _xMove = levelXMove + levelXMove2;
 var _char = global.PlayerSelection[global.PlayerChar][28][4];
 
 draw_sprite_ext(sprite_index, 0, 0, 0, 27, 15.5, 0, c_white, whiteAlpha);
-draw_sprite_ext(_charCheck, global.PlayerCostume, -_xMove + spikeX + 434, -100, 0.5, 0.5, 0, c_white, (otheralpha / 2) * mainAlpha);
+draw_sprite_ext(_charCheck, global.PlayerCostume, -_xMove + spikeX + 434, -100, 1, 1, 0, c_white, (otheralpha / 2) * mainAlpha);
 draw_sprite_ext(obj_Player.sprite_index, obj_Player.image_index, charX + _relX, _relY, obj_Player.image_xscale * charScale, obj_Player.image_yscale * charScale, obj_Player.drawAngle, c_black, mainAlpha);
 draw_sprite_ext(_char, 0, 650, 50, 1, 1, 0, c_white, otheralpha * mainAlpha);
 
@@ -127,9 +127,9 @@ draw_set_font(_font);
 	var _enemyString = string(_level.enemies);
 	var _enemyStringWidth = string_width(_enemyString);
 	
-	draw_text_transformed_color(_xMove - 3, 383, _enemyString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);
-	draw_sprite_ext(ranks[_level.enemy_Rank + _plusUltra], _rankFrameAnim, _xMove + _enemyStringWidth + 17, 378, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
-	draw_sprite_ext(_level.player_SpriteEnemy, _level.player_CostumeEnemy, _xMove + _enemyStringWidth + sprite_get_width(ranks[_level.enemy_Rank]) + 17, 378, levelXscale * 1.5, 0.75, 0, c_white, otheralpha);
+	draw_text_transformed_color(_xMove - 3, 383, _enemyString, levelXscale * 2, 1, 0, c_black, c_black, c_black, c_black, otheralpha);
+	draw_sprite_ext(ranks[_level.enemy_Rank + _plusUltra], _rankFrameAnim, _xMove + _enemyStringWidth + 17, 378, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
+	draw_sprite_ext(_level.player_SpriteEnemy, _level.player_CostumeEnemy, _xMove + _enemyStringWidth + sprite_get_width(ranks[_level.enemy_Rank]) + 17, 378, levelXscale * 1.5, 0.75, 0, c_black, otheralpha);
 	
 	
 	draw_text_transformed_color(_xMove, 380, _enemyString, levelXscale * 2, 1, 0, c_white, c_white, c_white, c_white, otheralpha);

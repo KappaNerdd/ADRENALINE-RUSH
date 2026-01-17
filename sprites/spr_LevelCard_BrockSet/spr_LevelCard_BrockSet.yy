@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_LevelCard_BrockSet",
   "bboxMode":0,
-  "bbox_bottom":1299,
-  "bbox_left":240,
-  "bbox_right":1008,
+  "bbox_bottom":649,
+  "bbox_left":120,
+  "bbox_right":503,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":1300,
+  "height":650,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"ec8c059e-88f0-444d-8ec4-125bdbe9b0bc","blendMode":0,"displayName":"default","isLocked":false,"name":"ec8c059e-88f0-444d-8ec4-125bdbe9b0bc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -88,5 +88,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1400,
+  "width":700,
 }

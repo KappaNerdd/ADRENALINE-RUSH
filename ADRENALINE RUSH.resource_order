@@ -106,6 +106,7 @@
     {"name":"New","order":20,"path":"folders/Objects/Freeplay/Level Select/New.yy",},
     {"name":"Old","order":19,"path":"folders/Objects/Freeplay/Level Select/Old.yy",},
     {"name":"New Character","order":3,"path":"folders/Objects/Freeplay/New Character.yy",},
+    {"name":"File Select","order":31,"path":"folders/Objects/File Select.yy",},
     {"name":"Hints","order":25,"path":"folders/Objects/Hints.yy",},
     {"name":"Floating Hints","order":5,"path":"folders/Objects/Hints/Floating Hints.yy",},
     {"name":"Text Hints","order":4,"path":"folders/Objects/Hints/Text Hints.yy",},

@@ -8,8 +8,8 @@ display_set_gui_size(768, 432);
 	var _charX = charX + charX2;
 	var _charY = charY + charY2;
 	
-	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX + 5, _charY + 5, 0.25, 0.25, charAngle, c_black, 1);
-	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX, _charY, 0.25, 0.25, charAngle, c_white, 1);
+	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX + 5, _charY + 5, 0.5, 0.5, charAngle, c_black, 1);
+	draw_sprite_ext(_charSprite, global.PlayerCostume, _charX, _charY, 0.5, 0.5, charAngle, c_white, 1);
 #endregion
 
 #region //Top 'n' Bottom

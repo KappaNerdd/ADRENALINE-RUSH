@@ -71,10 +71,10 @@ var _camY = 0;
 			
 			if _char[1] {
 				gpu_set_fog(true, c_white, 0, 0);
-					draw_sprite_ext(_actChar, global.PlayerCostume, _camX + charX + (_gap * i) - 10, _camY + 70 + charY, 0.25, 0.25, 0, _col, 1);
+					draw_sprite_ext(_actChar, global.PlayerCostume, _camX + charX + (_gap * i) - 10, _camY + 70 + charY, 0.5, 0.5, 0, _col, 1);
 				gpu_set_fog(false, c_black, 0, 0);
 					
-				draw_sprite_ext(_actChar, global.PlayerCostume, _camX + charX + (_gap * i), _camY + 60 + charY, 0.25, 0.25, 0, _col, 1);
+				draw_sprite_ext(_actChar, global.PlayerCostume, _camX + charX + (_gap * i), _camY + 60 + charY, 0.5, 0.5, 0, _col, 1);
 			}
 		}
 	#endregion

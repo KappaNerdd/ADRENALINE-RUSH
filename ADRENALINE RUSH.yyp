@@ -139,6 +139,7 @@
     {"$GMFolder":"","%Name":"New","folderPath":"folders/Objects/Freeplay/Level Select/New.yy","name":"New","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Old","folderPath":"folders/Objects/Freeplay/Level Select/Old.yy","name":"Old","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"New Character","folderPath":"folders/Objects/Freeplay/New Character.yy","name":"New Character","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"File Select","folderPath":"folders/Objects/File Select.yy","name":"File Select","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Hints","folderPath":"folders/Objects/Hints.yy","name":"Hints","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Floating Hints","folderPath":"folders/Objects/Hints/Floating Hints.yy","name":"Floating Hints","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Text Hints","folderPath":"folders/Objects/Hints/Text Hints.yy","name":"Text Hints","resourceType":"GMFolder","resourceVersion":"2.0",},

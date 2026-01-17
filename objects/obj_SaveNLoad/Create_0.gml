@@ -718,113 +718,7 @@
 			["stagecharayananormal",],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectAyanaIcon, spr_IntroQuoteAyana, 1],
 		],
-	
-		//Rush
-		[
-			["name_Rush", true, "name_Ru"], //Char Name (Name of your Character)
 		
-			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
-			false, //Char Locked (If true, your character will appear blacked out and won't be selectable)
-			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
-		
-			[ //Char Costumes (Must Have at least 1)
-				[true, spr_RushIdle, 9, "cost_Rus1"], //Normal
-			],
-		
-			[000, 200, 248], //RGB (Must be filled out)
-		
-			[spr_RushTextbox, 24], //Character Textbox (Optional: Sprite Strip)
-		
-			obj_RushOverworld, //SPEED STAGE Player Object
-			obj_ActionPlayer, //ACTION STAGE Player Object
-		
-			[spr_LevelCard_RushSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_RushSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
-			[spr_CharNameRush, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
-		
-			[ //Character Select Stats (SPEED STAGE)
-				20, //Char Age (Optional)
-				20,
-				16,
-				15,
-				12,
-				17,
-				19,
-			],
-		
-			[spr_BoostMeterRush, 1], //Boost Meter (Sprite Strip)
-			[spr_BoostEmblemRush, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
-			[spr_BoostEmblemRushRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
-			[spr_LifeRushSet, spr_LifeRushSetColor, spr_StageCharRushSet, spr_LifeRushHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_RushBoost, spr_RushBoostSimple, spr_RushStompingVFX, spr_RushStompedVFX, spr_RushSpeedBreakVFX, 1], //Boost
-			[spr_RushTrickFinalVFX, 1], //Final Trick VFX
-		
-			mus_FreeplayRMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
-			mus_HurryUp, //Pause Theme (Ditto for Freeplay)
-			"Hurry Up (Freeplay Rush Mvt.)", //Freeplay/Pause Theme Name (Must be a string, EX: "")
-		
-			[mus_KiddinMe, mus_NotBad, mus_TalkinAbout, mus_TalkinAbout, mus_Groovy], //Results Theme Tracks [shit, good, sick, perfect]
-			["You Gotta be Kiddin' Me", "Ayy, Not Bad", "That's What I'm TALKIN' About!!", "That's What I'm TALKIN' About!!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
-			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_RushSet, 1], //Results Portrait
-			["stagecharrushnormal",],
-			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, spr_IntroQuoteRush, 1],
-		],
-	
-		//Edge
-		[
-			["name_Edge", true, "name_Ed"], //Char Name (Name of your Character)
-		
-			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
-			true, //Char Locked (If true, your character will appear blacked out and won't be selectable)
-			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
-		
-			[ //Char Costumes (Must Have at least 1)
-				[true, spr_KappaIdle, 9, "cost_Edg1"], //Normal
-			],
-		
-			[046, 036, 052], //RGB (Must be filled out)
-		
-			[spr_EdgeTextbox, 12], //Character Textbox (Optional: Sprite Strip)
-		
-			obj_RushOverworld, //SPEED STAGE Player Object
-			obj_ActionPlayer, //ACTION STAGE Player Object
-		
-			[spr_LevelCard_EdgeSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_EdgeSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
-			[spr_CharNameEdge, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
-		
-			[ //Character Select Stats (SPEED STAGE)
-				20, //Char Age (Optional)
-				20,
-				15,
-				11,
-				12,
-				17,
-				19,
-			],
-		
-			[spr_BoostMeterLone, 1], //Boost Meter (Sprite Strip)
-			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
-			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
-			[spr_LifeEdgeSet, spr_LifeEdgeSetColor, spr_StageCharEdgeSet, spr_LifeEdgeSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_RushBoost, spr_RushBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, spr_IvySpeedBreakVFX, 1], //Boost
-			[spr_RushTrickFinalVFX, 1], //Final Trick VFX
-		
-			mus_FreeplayEMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
-			mus_BlackArms, //Pause Theme (Ditto for Freeplay)
-			"Black-Arms (Freeplay Edge Mvt.)",
-		
-			[mus_BrokenChaos, mus_KnewYouHadIt, mus_HeartsAround, mus_HeartsAround, mus_Skrrrt], //Results Theme Tracks [shit, good, sick, perfect]
-			["Broken Chaos", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
-			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_EdgeSet, 1], //Results Portrait
-			["stageCharEdgeNormal",],
-			[spr_CheckpointRush, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectEdgeIcon, spr_IntroQuoteEdge, 1],
-		],
-	
 		//Roxxane
 		[
 			["name_Roxxane", true, "name_Rocks"], //Char Name (Name of your Character)
@@ -930,6 +824,112 @@
 			[spr_LevelCard_LuciferSet, 1], //Results Portrait
 			["stagecharlucifernormal",],
 			[spr_CheckpointSarah, spr_RingLuciferIcon, spr_RingLuciferHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
+		],
+	
+		//Rush
+		[
+			["name_Rush", true, "name_Ru"], //Char Name (Name of your Character)
+		
+			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
+			false, //Char Locked (If true, your character will appear blacked out and won't be selectable)
+			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
+		
+			[ //Char Costumes (Must Have at least 1)
+				[true, spr_RushIdle, 9, "cost_Rus1"], //Normal
+			],
+		
+			[000, 200, 248], //RGB (Must be filled out)
+		
+			[spr_RushTextbox, 24], //Character Textbox (Optional: Sprite Strip)
+		
+			obj_RushOverworld, //SPEED STAGE Player Object
+			obj_ActionPlayer, //ACTION STAGE Player Object
+		
+			[spr_LevelCard_RushSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_RushSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_CharNameRush, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
+		
+			[ //Character Select Stats (SPEED STAGE)
+				20, //Char Age (Optional)
+				20,
+				16,
+				15,
+				12,
+				17,
+				19,
+			],
+		
+			[spr_BoostMeterRush, 1], //Boost Meter (Sprite Strip)
+			[spr_BoostEmblemRush, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
+			[spr_BoostEmblemRushRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
+			[spr_LifeRushSet, spr_LifeRushSetColor, spr_StageCharRushSet, spr_LifeRushHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
+			[spr_RushBoost, spr_RushBoostSimple, spr_RushStompingVFX, spr_RushStompedVFX, spr_RushSpeedBreakVFX, 1], //Boost
+			[spr_RushTrickFinalVFX, 1], //Final Trick VFX
+		
+			mus_FreeplayRMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
+			mus_HurryUp, //Pause Theme (Ditto for Freeplay)
+			"Hurry Up (Freeplay Rush Mvt.)", //Freeplay/Pause Theme Name (Must be a string, EX: "")
+		
+			[mus_KiddinMe, mus_NotBad, mus_TalkinAbout, mus_TalkinAbout, mus_Groovy], //Results Theme Tracks [shit, good, sick, perfect]
+			["You Gotta be Kiddin' Me", "Ayy, Not Bad", "That's What I'm TALKIN' About!!", "That's What I'm TALKIN' About!!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
+			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
+			[spr_LevelCard_RushSet, 1], //Results Portrait
+			["stagecharrushnormal",],
+			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, spr_IntroQuoteRush, 1],
+		],
+	
+		//Edge
+		[
+			["name_Edge", true, "name_Ed"], //Char Name (Name of your Character)
+		
+			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
+			true, //Char Locked (If true, your character will appear blacked out and won't be selectable)
+			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
+		
+			[ //Char Costumes (Must Have at least 1)
+				[true, spr_KappaIdle, 9, "cost_Edg1"], //Normal
+			],
+		
+			[046, 036, 052], //RGB (Must be filled out)
+		
+			[spr_EdgeTextbox, 12], //Character Textbox (Optional: Sprite Strip)
+		
+			obj_RushOverworld, //SPEED STAGE Player Object
+			obj_ActionPlayer, //ACTION STAGE Player Object
+		
+			[spr_LevelCard_EdgeSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_EdgeSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_CharNameEdge, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
+		
+			[ //Character Select Stats (SPEED STAGE)
+				20, //Char Age (Optional)
+				20,
+				15,
+				11,
+				12,
+				17,
+				19,
+			],
+		
+			[spr_BoostMeterLone, 1], //Boost Meter (Sprite Strip)
+			[spr_BoostEmblemLone, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
+			[spr_BoostEmblemLoneRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
+			[spr_LifeEdgeSet, spr_LifeEdgeSetColor, spr_StageCharEdgeSet, spr_LifeEdgeSet, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
+			[spr_RushBoost, spr_RushBoostSimple, spr_KappaStompingVFX, spr_KappaStompedVFX, spr_IvySpeedBreakVFX, 1], //Boost
+			[spr_RushTrickFinalVFX, 1], //Final Trick VFX
+		
+			mus_FreeplayEMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
+			mus_BlackArms, //Pause Theme (Ditto for Freeplay)
+			"Black-Arms (Freeplay Edge Mvt.)",
+		
+			[mus_BrokenChaos, mus_KnewYouHadIt, mus_HeartsAround, mus_HeartsAround, mus_Skrrrt], //Results Theme Tracks [shit, good, sick, perfect]
+			["Broken Chaos", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
+			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
+			[spr_LevelCard_EdgeSet, 1], //Results Portrait
+			["stageCharEdgeNormal",],
+			[spr_CheckpointRush, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectEdgeIcon, spr_IntroQuoteEdge, 1],
 		],
 	
 		//Ivy
@@ -1051,6 +1051,7 @@
 #region //Bruh
 	global.ForceLine = 0;
 	langCheck = 0;
+	show_debug_overlay(true)
 #endregion
 
 #region //Extra shit for the sake of initialization

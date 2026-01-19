@@ -1,8 +1,10 @@
 display_set_gui_size(768, 432);
 
-var _gap = 25;
+var _gap = 21;
 
 for (var i = 0; i < 10; i++) {
+	var _minusX = 0;
+	var _extraY = 0;
 	var _sprite = spr_NewRecordN;
 	var _mainCol = colArray[i + colNum];
 	
@@ -26,6 +28,11 @@ for (var i = 0; i < 10; i++) {
 		_sprite = spr_NewRecordEXC;
 	}
 	
-	draw_sprite_ext(_sprite, image_index, _camX + 5 + (_gap * i), _camY + 5, 1, 1, 0, c_black, 0.5);
-	draw_sprite_ext(_sprite, image_index, _camX + (_gap * i), _camY, 1, 1, 0, _mainCol, 1);
+	if i >= 3 {
+		_minusX = -21 * 3;
+		_extraY = 25;
+	}
+	
+	draw_sprite_ext(_sprite, image_index, _camX + _minusX + 5 + (_gap * i), _camY + _extraY + 5, 1, 1, 0, c_black, 0.5);
+	draw_sprite_ext(_sprite, image_index, _camX + _minusX + (_gap * i), _camY + _extraY, 1, 1, 0, _mainCol, 1);
 }

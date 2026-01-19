@@ -32,14 +32,14 @@ draw_sprite_ext(srBall, 0, _camX + 598 + srBallBGMoveX + srBallMoveX, _camY + 23
 
 
 //Text UI
-draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX + 5, _camY + 55 + 5 + 30, 0.25, 0.25, 0, c_black, 0.5);
-draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX, _camY + 55 + 30, 0.25, 0.25, 0, _col, 1);
+draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX + 5, _camY + 55 + 5 + 30, 0.25, 0.15, 0, c_black, 0.5);
+draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX, _camY + 55 + 30, 0.25, 0.15, 0, _col, 1);
 
-draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX + 5, _camY + 100 + 5 + 30, 0.25, 0.25, 0, c_black, 0.5);
-draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX, _camY + 100 + 30, 0.25, 0.25, 0, c_white, 1);
+draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX + 5, _camY + 100 + 5 + 15, 0.25, 0.25, 0, c_black, 0.5);
+draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX, _camY + 100 + 15, 0.25, 0.25, 0, c_white, 1);
 
-draw_sprite_ext(levelNumberSprite, mindImageIndex, _camX + levelNumberMoveX + 5, _camY + 140 + 5 + 30, 1, 1, 0, c_black, 0.5);
-draw_sprite_ext(levelNumberSprite, mindImageIndex, _camX + levelNumberMoveX, _camY + 140 + 30, 1, 1, 0, c_white, 1);
+draw_sprite_ext(levelNumberSprite, mindImageIndex, _camX + levelNumberMoveX + 5, _camY + 140 + 5 + 15, 0.75, 0.75, 0, c_black, 0.5);
+draw_sprite_ext(levelNumberSprite, mindImageIndex, _camX + levelNumberMoveX, _camY + 140 + 15, 0.75, 0.75, 0, c_white, 1);
 
 
 var _font = global.EnemyComboFont;
@@ -50,27 +50,33 @@ if global.MIND or global.PlayerChar == 0 {
 
 draw_set_font(_font);
 if savedSeconds < 10 && savedMinutes < 10 {
-	draw_text_transformed_color(_camX + 105 + timeMoveX + 5, _camY + 195 + 5, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
+	draw_text_transformed_color(_camX + timeMoveX + 5, _camY + 180 + 5, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
 } else if savedSeconds >= 10 && savedMinutes >= 10 {
-	draw_text_transformed_color(_camX + 105 + timeMoveX + 5, _camY + 195 + 5, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
+	draw_text_transformed_color(_camX + timeMoveX + 5, _camY + 180 + 5, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
 } else if savedSeconds < 10 && savedMinutes >= 10 {
-	draw_text_transformed_color(_camX + 105 + timeMoveX + 5, _camY + 195 + 5, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
+	draw_text_transformed_color(_camX + timeMoveX + 5, _camY + 180 + 5, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
 } else if savedSeconds >= 10 && savedMinutes < 10 {
-	draw_text_transformed_color(_camX + 105 + timeMoveX + 5, _camY + 195 + 5, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
+	draw_text_transformed_color(_camX + timeMoveX + 5, _camY + 180 + 5, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
 }
 	
 if savedSeconds < 10 && savedMinutes < 10 {
-	draw_text_transformed(_camX + 105 + timeMoveX, _camY + 195, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang);
+	draw_text_transformed(_camX + timeMoveX, _camY + 180, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang);
 } else if savedSeconds >= 10 && savedMinutes >= 10 {
-	draw_text_transformed(_camX + 105 + timeMoveX, _camY + 195, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang);
+	draw_text_transformed(_camX + timeMoveX, _camY + 180, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang);
 } else if savedSeconds < 10 && savedMinutes >= 10 {
-	draw_text_transformed(_camX + 105 + timeMoveX, _camY + 195, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang);
+	draw_text_transformed(_camX + timeMoveX, _camY + 180, string(round(savedMinutes)) + ":0" + string(savedSeconds), _xscale, _yscale, _ang);
 } else if savedSeconds >= 10 && savedMinutes < 10 {
-	draw_text_transformed(_camX + 105 + timeMoveX, _camY + 195, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang);
+	draw_text_transformed(_camX + timeMoveX, _camY + 180, string(round(savedMinutes)) + ":" + string(savedSeconds), _xscale, _yscale, _ang);
 }
 
-draw_text_transformed_color(_camX + 125 + timeMoveX + 5, _camY + 225 + 5, string(ceil(savedScore)), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
-draw_text_transformed(_camX + 125 + timeMoveX, _camY + 225, string(ceil(savedScore)), _xscale, _yscale, _ang);
+draw_text_transformed_color(_camX + timeMoveX + 5, _camY + 210 + 5, string(ceil(savedScore)), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
+draw_text_transformed(_camX + timeMoveX, _camY + 210, string(ceil(savedScore)), _xscale, _yscale, _ang);
+
+draw_text_transformed_color(_camX + timeMoveX + 5, _camY + 240 + 5, string(ceil(ringScore)), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
+draw_text_transformed(_camX + timeMoveX, _camY + 240, string(ceil(ringScore)), _xscale, _yscale, _ang);
+
+draw_text_transformed_color(_camX + timeMoveX + 5, _camY + 270 + 5, string(ceil(enemyScore)), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, 0.5);
+draw_text_transformed(_camX + timeMoveX, _camY + 270, string(ceil(enemyScore)), _xscale, _yscale, _ang);
 draw_set_font(global.font_main);
 
 rankFrames += rankAnim;
@@ -120,10 +126,10 @@ if !global.MIND && global.PlayerChar != 0 {
 }
 
 
-draw_sprite_ext(timeSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 195 + 2 + 5, 1, 1, 0, c_black, 0.5);
-draw_sprite_ext(_scoreRank, rankFrames, _camX + timeMoveX + 220, _camY + 195 + 5, 0.5, 0.5, 0, c_black, 0.5);
-draw_sprite_ext(timeSprite, mindImageIndex, _camX + timeMoveX, _camY + 195 + 2, 1, 1, 0, _col, 1);
-draw_sprite_ext(_scoreRank, rankFrames, _camX + timeMoveX + 220, _camY + 195, 0.5, 0.5, 0, c_white, 1);
+//draw_sprite_ext(timeSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 195 + 2 + 5, 1, 1, 0, c_black, 0.5);
+draw_sprite_ext(_scoreRank, rankFrames, _camX + timeMoveX + 120, _camY + 180 - 3 + 5, 0.5, 0.5, 0, c_black, 0.5);
+//draw_sprite_ext(timeSprite, mindImageIndex, _camX + timeMoveX, _camY + 195 + 2, 1, 1, 0, _col, 1);
+draw_sprite_ext(_scoreRank, rankFrames, _camX + timeMoveX + 120, _camY + 180 - 3, 0.5, 0.5, 0, c_white, 1);
 
 
 var _timeRank = spr_RankFNew;
@@ -160,13 +166,94 @@ if !global.MIND && global.PlayerChar != 0 {
 }
 
 
-draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 195 + 2 + 5 + 30, 1, 1, 0, c_black, 0.5);
-draw_sprite_ext(_timeRank, rankFrames, _camX + timeMoveX + 230, _camY + 195 + 5 + 30, 0.5, 0.5, 0, c_black, 0.5);
-draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX, _camY + 195 + 2 + 30, 1, 1, 0, _col, 1);
-draw_sprite_ext(_timeRank, rankFrames, _camX + timeMoveX + 230, _camY + 195 + 30, 0.5, 0.5, 0, c_white, 1);
+//draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 195 + 2 + 5 + 30, 1, 1, 0, c_black, 0.5);
+draw_sprite_ext(_timeRank, rankFrames, _camX + timeMoveX + 120, _camY + 210 - 3 + 5, 0.5, 0.5, 0, c_black, 0.5);
+//draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX, _camY + 195 + 2 + 30, 1, 1, 0, _col, 1);
+draw_sprite_ext(_timeRank, rankFrames, _camX + timeMoveX + 120, _camY + 210 - 3, 0.5, 0.5, 0, c_white, 1);
 
-draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 290 + 5 + 30, 0.5, 0.4, 0, c_black, 0.5);
-draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 30, 0.5, 0.4, 0, _col, 1);
+
+var _ringRank = spr_RankFNew;
+var _mod4 = global.speedStageData[global.SpeedSelected];
+
+if !global.MIND && global.PlayerChar != 0 {
+	if ringScore >= _mod3.rankS_Ring * 0.2 && ringScore < _mod3.rankS_Ring * 0.4 {
+		_ringRank = spr_RankDNew;
+	} else if ringScore >= _mod3.rankS_Ring * 0.4 && ringScore < _mod3.rankS_Ring * 0.6 {
+		_ringRank = spr_RankCNew;
+	} else if ringScore >= _mod3.rankS_Ring * 0.6 && ringScore < _mod3.rankS_Ring * 0.8 {
+		_ringRank = spr_RankBNew;
+	} else if ringScore >= _mod3.rankS_Ring * 0.8 && ringScore < _mod3.rankS_Ring {
+		_ringRank = spr_RankANew;
+	} else if ringScore >= _mod3.rankS_Ring {
+		_ringRank = spr_RankSNew;
+	} else {
+		_ringRank = spr_RankFNew;
+	}
+} else {
+	if ringScore >= _mod3.rankS_Ring * 0.2 && ringScore < _mod3.rankS_Ring * 0.4 {
+		_ringRank = spr_RankDHead;
+	} else if ringScore >= _mod3.rankS_Ring * 0.4 && ringScore < _mod3.rankS_Ring * 0.6 {
+		_ringRank = spr_RankCHead;
+	} else if ringScore >= _mod3.rankS_Ring * 0.6 && ringScore < _mod3.rankS_Ring * 0.8 {
+		_ringRank = spr_RankBHead;
+	} else if ringScore >= _mod3.rankS_Ring * 0.8 && ringScore < _mod3.rankS_Ring {
+		_ringRank = spr_RankAHead;
+	} else if ringScore >= _mod3.rankS_Ring {
+		_ringRank = spr_RankSHead;
+	} else {
+		_ringRank = spr_RankFHead;
+	}
+}
+
+
+//draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 195 + 2 + 5 + 30, 1, 1, 0, c_black, 0.5);
+draw_sprite_ext(_ringRank, rankFrames, _camX + timeMoveX + 120, _camY + 240 - 3 + 5, 0.5, 0.5, 0, c_black, 0.5);
+//draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX, _camY + 195 + 2 + 30, 1, 1, 0, _col, 1);
+draw_sprite_ext(_ringRank, rankFrames, _camX + timeMoveX + 120, _camY + 240 - 3, 0.5, 0.5, 0, c_white, 1);
+
+
+var _enemyRank = spr_RankFNew;
+var _mod5 = global.speedStageData[global.SpeedSelected];
+
+if !global.MIND && global.PlayerChar != 0 {
+	if enemyScore >= _mod3.rankS_Enemy * 0.2 && enemyScore < _mod3.rankS_Enemy * 0.4 {
+		_enemyRank = spr_RankDNew;
+	} else if enemyScore >= _mod3.rankS_Enemy * 0.4 && enemyScore < _mod3.rankS_Enemy * 0.6 {
+		_enemyRank = spr_RankCNew;
+	} else if enemyScore >= _mod3.rankS_Enemy * 0.6 && enemyScore < _mod3.rankS_Enemy * 0.8 {
+		_enemyRank = spr_RankBNew;
+	} else if enemyScore >= _mod3.rankS_Enemy * 0.8 && enemyScore < _mod3.rankS_Enemy {
+		_enemyRank = spr_RankANew;
+	} else if enemyScore >= _mod3.rankS_Enemy {
+		_enemyRank = spr_RankSNew;
+	} else {
+		_enemyRank = spr_RankFNew;
+	}
+} else {
+	if enemyScore >= _mod3.rankS_Enemy * 0.2 && enemyScore < _mod3.rankS_Enemy * 0.4 {
+		_enemyRank = spr_RankDHead;
+	} else if enemyScore >= _mod3.rankS_Enemy * 0.4 && enemyScore < _mod3.rankS_Enemy * 0.6 {
+		_enemyRank = spr_RankCHead;
+	} else if enemyScore >= _mod3.rankS_Enemy * 0.6 && enemyScore < _mod3.rankS_Enemy * 0.8 {
+		_enemyRank = spr_RankBHead;
+	} else if enemyScore >= _mod3.rankS_Enemy * 0.8 && enemyScore < _mod3.rankS_Enemy {
+		_enemyRank = spr_RankAHead;
+	} else if enemyScore >= _mod3.rankS_Enemy {
+		_enemyRank = spr_RankSHead;
+	} else {
+		_enemyRank = spr_RankFHead;
+	}
+}
+
+
+//draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX + 5, _camY + 195 + 2 + 5 + 30, 1, 1, 0, c_black, 0.5);
+draw_sprite_ext(_enemyRank, rankFrames, _camX + timeMoveX + 120, _camY + 270 - 3 + 5, 0.5, 0.5, 0, c_black, 0.5);
+//draw_sprite_ext(scoreSprite, mindImageIndex, _camX + timeMoveX, _camY + 195 + 2 + 30, 1, 1, 0, _col, 1);
+draw_sprite_ext(_enemyRank, rankFrames, _camX + timeMoveX + 120, _camY + 270 - 3, 0.5, 0.5, 0, c_white, 1);
+
+
+draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 290 + 5 + 40, 0.5, 0.4, 0, c_black, 0.5);
+draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 40, 0.5, 0.4, 0, _col, 1);
 
 
 var _sprayGap = 22;
@@ -266,8 +353,8 @@ if !global.MIND && global.PlayerChar != 0 {
 }
 
 if createRank {
-	draw_sprite_ext(_rank, rankFrames, _camX + rankShakeX + rankAltX + 250 + 5, _camY + rankShakeY + 260 + 5 + 30, 1 + rankSize, 1 + rankSize, 0, c_black, 0.5);
-	draw_sprite_ext(_rank, rankFrames, _camX + rankShakeX + rankAltX + 250, _camY + rankShakeY + 260 + 30, 1 + rankSize, 1 + rankSize, 0, c_white, 1);
+	draw_sprite_ext(_rank, rankFrames, _camX + rankShakeX + rankAltX + 235 + 5, _camY + rankShakeY + 260 + 5 + 40, 1 + rankSize, 1 + rankSize, 0, c_black, 0.5);
+	draw_sprite_ext(_rank, rankFrames, _camX + rankShakeX + rankAltX + 235, _camY + rankShakeY + 260 + 40, 1 + rankSize, 1 + rankSize, 0, c_white, 1);
 }
 
 //Draw Sonic Rush Spikes

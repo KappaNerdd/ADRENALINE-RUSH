@@ -1051,7 +1051,7 @@
 #region //Bruh
 	global.ForceLine = 0;
 	langCheck = 0;
-	show_debug_overlay(true)
+	//show_debug_overlay(true);
 #endregion
 
 #region //Extra shit for the sake of initialization

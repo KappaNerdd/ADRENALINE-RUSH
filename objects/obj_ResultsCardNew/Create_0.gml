@@ -131,8 +131,13 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	soundSeconds = 59.99;
 	
 	savedScore = 0;
+	
 	soundScore = 0;
 	waitScore = 2;
+	
+	ringScore = 0;
+	
+	enemyScore = 0;
 	
 	if global.MIND or global.PlayerChar == 0 {
 		rankSprite = spr_ResultsRankCheckHead;

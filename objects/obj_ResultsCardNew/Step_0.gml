@@ -79,8 +79,19 @@ if !completed {
 					}
 				}
 				
+				ringScore = lerp(ringScore, global.Rings, 0.05);
+				enemyScore = lerp(enemyScore, global.EnemyCount, 0.05);
+				
 				if savedScore > global.speedStageData[global.SpeedSelected].gameScore {
 					obj_NewScore.visible = true;
+				}
+				
+				if ringScore > global.speedStageData[global.SpeedSelected].rings {
+					obj_NewRings.visible = true;
+				}
+				
+				if enemyScore > global.speedStageData[global.SpeedSelected].enemies {
+					obj_NewEnemy.visible = true;
 				}
 			}
 			
@@ -98,7 +109,8 @@ if !completed {
 		savedSeconds = global.seconds;
 		savedMinutes = global.minutes;
 		savedScore = global.GameScore;
-		
+		ringScore = global.Rings;
+		enemyScore = global.EnemyCount;
 		
 		var _hund2 = (savedMinutes * 100) + savedSeconds;
 				
@@ -108,6 +120,14 @@ if !completed {
 		
 		if savedScore > global.speedStageData[global.SpeedSelected].gameScore {
 			obj_NewScore.visible = true;
+		}
+		
+		if ringScore > global.speedStageData[global.SpeedSelected].rings {
+			obj_NewRings.visible = true;
+		}
+				
+		if enemyScore > global.speedStageData[global.SpeedSelected].enemies {
+			obj_NewEnemy.visible = true;
 		}
 		
 		if rankSize > 0 {

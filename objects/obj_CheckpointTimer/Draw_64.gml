@@ -2,10 +2,14 @@ var _xscale = 1;
 var _yscale = 1;
 var _ang = 0;
 
-var _x = 50;
+var _x = 60;
 var _y = 90;
 
-display_set_gui_size(640, 360);
+if global.speedStageData[global.SpeedSelected].complete {
+	_y = 120;
+}
+
+display_set_gui_size(768, 432);
 
 var _checkFont = global.CheckpointTimerFont;
 

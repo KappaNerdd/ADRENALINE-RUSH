@@ -136,10 +136,10 @@ if global.speedStageData[global.SpeedSelected].complete {
 		}
 	
 	
-		draw_sprite_ext(_sprite, image_index, 86 + (_sprayGap * i), moveY + 103, 1, 1, 0, c_black, image_alpha);
+		draw_sprite_ext(_sprite, image_index, 76 + (_sprayGap * i), moveY + 93, 1, 1, 0, c_black, image_alpha);
 	
 		gpu_set_fog(_fog, _col, 0, 1);
-			draw_sprite_ext(_sprite, image_index, 89 + (_sprayGap * i), moveY + 100, 1, 1, 0, _col, image_alpha);
+			draw_sprite_ext(_sprite, image_index, 79 + (_sprayGap * i), moveY + 90, 1, 1, 0, _col, image_alpha);
 		gpu_set_fog(false, c_black, 0, 1);
 	}
 
@@ -157,10 +157,10 @@ if global.speedStageData[global.SpeedSelected].complete {
 		_cassSprite = spr_HUDCassetteHead;
 	}
 
-	draw_sprite_ext(_cassSprite, image_index, 208, moveY + 103, 1, 1, 0, c_black, image_alpha);
+	draw_sprite_ext(_cassSprite, image_index, 198, moveY + 93, 1, 1, 0, c_black, image_alpha);
 
 	gpu_set_fog(_cassFog, _cassCol, 0, 1);
-		draw_sprite_ext(_cassSprite, image_index, 211, moveY + 100, 1, 1, 0, _cassCol, image_alpha);
+		draw_sprite_ext(_cassSprite, image_index, 201, moveY + 90, 1, 1, 0, _cassCol, image_alpha);
 	gpu_set_fog(false, c_black, 0, 1);
 }
 

@@ -77,8 +77,8 @@ colorFrames = 10;
 
 jspd = 0;
 
-_camX = 315;
-_camY = 198;
+_camX = 230;
+_camY = 180;
 
 x = -1000000;
 

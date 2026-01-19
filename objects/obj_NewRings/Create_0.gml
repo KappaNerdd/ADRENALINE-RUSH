@@ -1,8 +1,3 @@
-instance_create_depth(-100000, 0, 0, obj_NewTime);
-instance_create_depth(-100000, 0, 0, obj_NewScore);
-instance_create_depth(-100000, 0, 0, obj_NewEnemy);
-instance_create_depth(-100000, 0, 0, obj_NewRings);
-
 
 sprColor = global.colRed;
 
@@ -82,8 +77,8 @@ colorFrames = 10;
 
 jspd = 0;
 
-_camX = 290;
-_camY = 300;
+_camX = 230;
+_camY = 240;
 
 x = -1000000;
 

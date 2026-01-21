@@ -28,7 +28,7 @@
   "origin":0,
   "parent":{
     "name":"Socials",
-    "path":"folders/Sprites/Title/Head/Choices/Socials.yy",
+    "path":"folders/Sprites/Title/Old/Head/Choices/Socials.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

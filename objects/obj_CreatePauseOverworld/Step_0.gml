@@ -2,7 +2,7 @@ getCharacterControls();
 
 ///-----Pause Menu-----///
 if (pause_Key) {
-	if instance_exists(obj_Textbox) or instance_exists(obj_SonicRushIntroCard) or instance_exists(obj_LevelCardNew) or instance_exists(obj_ResultsCardNew) or instance_exists(obj_LevelCard) or instance_exists(obj_ResultsCard) or instance_exists(obj_RoomTransParent) {
+	if instance_exists(obj_Textbox) or global.Death or instance_exists(obj_SonicRushIntroCard) or instance_exists(obj_LevelCardNew) or instance_exists(obj_ResultsCardNew) or instance_exists(obj_LevelCard) or instance_exists(obj_ResultsCard) or instance_exists(obj_RoomTransParent) {
 		exit;
 	} else { 
 		if !instance_exists(obj_NewerPauseMenu) {

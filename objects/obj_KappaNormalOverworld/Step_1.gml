@@ -369,6 +369,7 @@ if can_MoveFULL {
 	#region //Air-Dash
 		if !ground && !airDash && !playerHurt && !rampRing && !afterRailJump && !trick && !stomping && !global.Death && action2_Key {
 			airDash = true;
+			wallJump = false;
 			yspd = 0;
 			gravTimer = 10;
 			scr_ControllerRumble();

@@ -283,7 +283,7 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 }
 
 function scr_LoseTrinkets(_loseRings = 50) {
-	if instance_exists(obj_StageTrackerSpeed) && id == global.PlayerID {
+	if instance_exists(obj_StageTrackerSpeed)  {
 		//Lose Trinkets
 		var _rings = 0;
 		var _ringStartAngle = 101.25;

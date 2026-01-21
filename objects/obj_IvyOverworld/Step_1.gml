@@ -470,6 +470,7 @@ if can_MoveFULL {
 		if preStomp {
 			stomped = false;
 			yspd = 0;
+			vel = 0;
 			
 			if preStompTimer > 0 {
 				preStompTimer -= 1;
@@ -577,7 +578,7 @@ if can_MoveFULL {
 							} else { //Air
 								image_index = 0;
 								
-								if jump_Key_Held or up_Key { //Jump
+								if jump_Key_Held or down_Key { //Jump
 									shootAir = true;
 									hShootWeak = false;
 									realJumping = false;
@@ -587,15 +588,15 @@ if can_MoveFULL {
 									if revolverAmmo == 6 {
 										yspd = -normalJspd * 1.1;
 									} else if revolverAmmo == 6 {
-										yspd = -normalJspd * 1.1;
+										yspd = -normalJspd * 1.15;
 									} else if revolverAmmo == 5 {
-										yspd = -normalJspd * 1.1;
-									} else if revolverAmmo == 4 {
 										yspd = -normalJspd * 1.2;
-									} else if revolverAmmo == 3 {
+									} else if revolverAmmo == 4 {
 										yspd = -normalJspd * 1.25;
-									} else if revolverAmmo == 2 {
+									} else if revolverAmmo == 3 {
 										yspd = -normalJspd * 1.3;
+									} else if revolverAmmo == 2 {
+										yspd = -normalJspd * 1.35;
 									} else if revolverAmmo == 1 {
 										yspd = -normalJspd * 1.4;
 									}
@@ -610,13 +611,15 @@ if can_MoveFULL {
 									obj_SFXManager.ivyShoot = true;
 									scr_ControllerRumble();
 									
+									var _shot = 5;
+									
 									if left_Key && !right_Key { //Left Movement
 										if vel < 0 {
 											if !speedBreak {
-												vel -= 3;
+												vel -= _shot;
 											} else {
 												if vel > -full_Speed {
-													vel -= 3;
+													vel -= _shot;
 												}
 											}
 										} else if vel > 0 {
@@ -625,10 +628,10 @@ if can_MoveFULL {
 									} else if right_Key && !left_Key { //Right Movement
 										if vel > 0 {
 											if !speedBreak {
-												vel += 3;
+												vel += _shot;
 											} else {
 												if vel < full_Speed {
-													vel += 3;
+													vel += _shot;
 												}
 											}
 										} else if vel < 0 {
@@ -636,18 +639,18 @@ if can_MoveFULL {
 										}
 									} else if left_Key && right_Key { //Boofum
 										if !speedBreak {
-											vel = 3 * image_xscale;
+											vel = _shot * image_xscale;
 										} else {
 											if abs(vel) < full_Speed {
-												vel = 3 * image_xscale;
+												vel = _shot * image_xscale;
 											}
 										}
 									} else if !left_Key && !right_Key { //Also Boofum
 										if !speedBreak {
-											vel = 3 * image_xscale;
+											vel = _shot * image_xscale;
 										} else {
 											if abs(vel) < full_Speed {
-												vel = 3 * image_xscale;
+												vel = _shot * image_xscale;
 											}
 										}
 									}
@@ -671,9 +674,9 @@ if can_MoveFULL {
 									
 									instance_create_depth(x, y, depth, obj_IvyBigBullet);
 								} else {
-									if jump_Key_Held or up_Key {
+									if jump_Key_Held or jump_Key {
 										shootAir = true;
-										yspd = -normalJspd * 2;
+										yspd = -normalJspd * 2.5;
 										revolverAmmo -= 2;
 										realJumping = false;
 										image_index = 0;
@@ -689,7 +692,7 @@ if can_MoveFULL {
 										
 										scr_StopCamMove();
 										
-										vel += 3 * image_xscale;
+										vel += 5 * image_xscale;
 									}
 								}
 							}
@@ -730,7 +733,8 @@ if can_MoveFULL {
 						if place_meeting(x + 1, y, obj_Solid) {
 							vel = -4;
 							yspd = -7;
-				
+							
+							realJumping = false;
 							hShoot = false;
 							hShootFinish = true;
 				
@@ -738,7 +742,7 @@ if can_MoveFULL {
 							scr_ControllerRumble(0.5);
 							scr_ScreenShake(1);
 							
-							instance_create_depth(x, y, depth, obj_RushBoostBreak);
+							scr_RushBoostBreakVFX();
 						} else if place_meeting(x - 1, y, obj_Solid) {
 							vel = 4;
 							yspd = -7;
@@ -750,7 +754,7 @@ if can_MoveFULL {
 							scr_ControllerRumble(0.5);
 							scr_ScreenShake(1);
 							
-							instance_create_depth(x, y, depth, obj_RushBoostBreak);
+							scr_RushBoostBreakVFX();
 						}
 					}
 			
@@ -799,6 +803,7 @@ if can_MoveFULL {
 		#region //Reload
 			if action4_Key && !reload && !hShoot && revolverAmmo < 6 {
 				reload = true;
+				obj_SFXManager.airDashSound = true;
 				scr_ControllerRumble();
 			
 				if !ground {
@@ -823,7 +828,7 @@ if can_MoveFULL {
 					reloadTimer -= 1;
 				}
 			
-				if reloadTimer <= 0 {
+				if reloadTimer <= 0 && ground {
 					revolverAmmo = 6;
 					reload = false;
 				}

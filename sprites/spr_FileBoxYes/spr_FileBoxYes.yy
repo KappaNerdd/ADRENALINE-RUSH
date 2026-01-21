@@ -28,7 +28,7 @@
   "origin":0,
   "parent":{
     "name":"File Box Choices",
-    "path":"folders/Sprites/Title/Head/File Box Choices.yy",
+    "path":"folders/Sprites/Title/Old/Head/File Box Choices.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

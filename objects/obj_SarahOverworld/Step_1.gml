@@ -327,7 +327,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Stomping
-		if !ground && !stomping && (down_Key && action_Key) && can_Move {
+		if !ground && !stomping && (down_Key && action_Key) {
 			stomping = true
 			hover = false;
 			wallJump = false;

@@ -29,7 +29,7 @@
   "origin":0,
   "parent":{
     "name":"Socials",
-    "path":"folders/Sprites/Title/Normal/Socials.yy",
+    "path":"folders/Sprites/Title/Old/Normal/Socials.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

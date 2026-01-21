@@ -615,8 +615,8 @@ if can_MoveFULL {
 		}
 	#endregion
 		
-	#region //Dropdash
-		if jumping && !ground && !rampRing && !afterRailJump && !dropdash && !homing_Active && !spindash && !superPeelout && !preStomp && !stomping && !wallJump && action_Key && !down_Key {
+	#region //Dropdash (Unused)
+		/*if jumping && !ground && !rampRing && !afterRailJump && !dropdash && !homing_Active && !spindash && !superPeelout && !preStomp && !stomping && !wallJump && action_Key && !down_Key {
 			dropdash = true;
 			image_index = 0;
 		}
@@ -683,7 +683,7 @@ if can_MoveFULL {
 		
 		if !dropdash {
 			dropdashTimer = dropdashFrames;
-		}
+		}*/
 	#endregion
 
 	#region //Wall-Jump

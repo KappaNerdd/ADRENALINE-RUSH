@@ -121,7 +121,7 @@
   "origin":4,
   "parent":{
     "name":"English",
-    "path":"folders/Sprites/Title/Normal/Splash/English.yy",
+    "path":"folders/Sprites/Title/Old/Normal/Splash/English.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

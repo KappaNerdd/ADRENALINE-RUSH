@@ -28,7 +28,7 @@
   "origin":0,
   "parent":{
     "name":"English",
-    "path":"folders/Sprites/Title/Head/Choices/English.yy",
+    "path":"folders/Sprites/Title/Old/Head/Choices/English.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

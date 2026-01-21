@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"General",
-    "path":"folders/Sprites/Title/Normal/Splash/General.yy",
+    "path":"folders/Sprites/Title/Old/Normal/Splash/General.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

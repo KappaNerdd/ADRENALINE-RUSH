@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"EN_SP",
-    "path":"folders/Sprites/Title/Normal/Menu/EN_SP.yy",
+    "path":"folders/Sprites/Title/Old/Normal/Menu/EN_SP.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -20,7 +20,7 @@ if global.DEBUG == true {
 	}
 	
 	if keyboard_check_pressed(ord("9")) {
-		global.PlayerExtraLives = 99;
+		room_goto(rm_FileSelectNew);
 	}
 	
 	if keyboard_check_pressed(ord("Q")) {

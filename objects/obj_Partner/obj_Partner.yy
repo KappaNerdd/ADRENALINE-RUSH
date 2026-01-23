@@ -8,8 +8,8 @@
   "name":"obj_Partner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Partner Parent",
-    "path":"folders/Objects/Characters/Partners/Partner Parent.yy",
+    "name":"Player Parent",
+    "path":"folders/Objects/Characters/Players/Player Parent.yy",
   },
   "parentObjectId":null,
   "persistent":false,

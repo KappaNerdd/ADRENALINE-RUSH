@@ -137,6 +137,8 @@
 
 	global.Replay = false;
 
+	global.FileLimit = 7;
+
 	//File Names
 	global.MainDataFile = "ARMAINDATA";
 	global.SpeedDataFile = "ARSPEEDDATA";
@@ -200,7 +202,7 @@
 		
 			[255, 255, 255], //RGB (Must be filled out)
 		 
-			[spr_PauseMenuBGBasic, 15], //Character Textbox (Optional: Sprite Strip)
+			[spr_PauseMenuBGBasic, 15, spr_MCursorHead], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_KappaHeadOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -255,7 +257,7 @@
 		
 			[010, 036, 203], //RGB (Must be filled out)
 		
-			[spr_KappaTextbox, 15], //Character Textbox (Optional: Sprite Strip)
+			[spr_KappaTextbox, 15, spr_MCursorKappa], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_KappaNormalOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -309,7 +311,7 @@
 		
 			[064, 245, 255], //RGB (Must be filled out)
 		
-			[spr_SarahTextbox, 11],
+			[spr_SarahTextbox, 11, spr_MCursorSarah],
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -362,7 +364,7 @@
 		
 			[114, 070, 217], //RGB (Must be filled out)
 		
-			[spr_LoneTextbox, 42], //Character Textbox (Optional: Sprite Strip)
+			[spr_LoneTextbox, 42, spr_MCursorLone], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -415,7 +417,7 @@
 		
 			[220, 067, 030], //RGB (Must be filled out)
 		
-			[spr_BrockTextbox, 13], //Character Textbox (Optional: Sprite Strip)
+			[spr_BrockTextbox, 13, spr_MCursorBrock], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -468,7 +470,7 @@
 		
 			[114, 0, 255], //RGB (Must be filled out)
 		
-			[spr_NeegiTextbox, 13], //Character Textbox (Optional: Sprite Strip)
+			[spr_NeegiTextbox, 13, spr_MCursorNeegi], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -521,7 +523,7 @@
 		
 			[255, 132, 025], //RGB (Must be filled out)
 		
-			[spr_CloeTextbox, 10],
+			[spr_CloeTextbox, 10, spr_MCursorCloee],
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -574,7 +576,7 @@
 		
 			[143, 000, 000], //RGB (Must be filled out)
 		
-			[spr_AkiraTextbox, 5],
+			[spr_AkiraTextbox, 5, spr_MCursorAkira],
 		
 			obj_KappaNormalOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -627,7 +629,7 @@
 		
 			[198, 025, 064], //RGB (Must be filled out)
 		
-			[spr_TaylorTextbox, 4],
+			[spr_TaylorTextbox, 4, spr_MCursorTaylor],
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -680,7 +682,7 @@
 		
 			[207, 46, 87], //RGB (Must be filled out)
 		
-			[spr_AyanaTextbox, 2],
+			[spr_AyanaTextbox, 2, spr_MCursorAyana],
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -733,7 +735,7 @@
 		
 			[241, 139, 176], //RGB (Must be filled out)
 		
-			[spr_RoxxaneTextbox, 12], //Character Textbox (Optional: Sprite Strip)
+			[spr_RoxxaneTextbox, 12, spr_MCursorRoxxane], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -786,7 +788,7 @@
 		
 			[207, 041, 229], //RGB (Must be filled out)
 		
-			[spr_LuciferTextbox, 12], //Character Textbox (Optional: Sprite Strip)
+			[spr_LuciferTextbox, 12, spr_MCursorLucifer], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_SarahOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -840,7 +842,7 @@
 		
 			[000, 200, 248], //RGB (Must be filled out)
 		
-			[spr_RushTextbox, 24], //Character Textbox (Optional: Sprite Strip)
+			[spr_RushTextbox, 24, spr_MCursorRush], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_RushOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -893,7 +895,7 @@
 		
 			[046, 036, 052], //RGB (Must be filled out)
 		
-			[spr_EdgeTextbox, 12], //Character Textbox (Optional: Sprite Strip)
+			[spr_EdgeTextbox, 12, spr_MCursorEdge], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_RushOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
@@ -946,7 +948,7 @@
 		
 			[255, 189, 000], //RGB (Must be filled out)
 		
-			[spr_IvyTextbox, 8], //Character Textbox (Optional: Sprite Strip)
+			[spr_IvyTextbox, 8, spr_MCursorEdge], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_IvyOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object

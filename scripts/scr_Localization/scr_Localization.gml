@@ -6,6 +6,11 @@ localeDialog = [
 	"AR_DialogLocale",
 ]
 
+langFlags = [
+	[spr_OptionEnglish, spr_OptionEnglishHead],
+	[spr_OptionSpanish, spr_OptionSpanishHead],
+]
+
 scr_InitLocalization(locale[0]);
 
 function scr_InitLocalization(_lang) {

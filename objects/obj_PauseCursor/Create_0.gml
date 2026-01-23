@@ -15,5 +15,5 @@ image_xscale = 1;
 image_yscale = 1;
 
 if global.PlayerChar != 0 {
-	sprite_index = spr_MCursorNormal;
+	sprite_index = spr_MCursorKappa;
 }

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":6,
   "parent":{
-    "name":"Cursors",
-    "path":"folders/Sprites/Menus/General/Cursors.yy",
+    "name":"Normal",
+    "path":"folders/Sprites/Menus/General/Cursors/Normal.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

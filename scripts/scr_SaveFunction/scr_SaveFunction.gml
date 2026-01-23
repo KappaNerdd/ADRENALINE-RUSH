@@ -80,8 +80,6 @@ function load_game(_fileNum = 0) {
 	if instance_exists(obj_Player) {
 		obj_Player.x = global.statData[0].save_x;
 		obj_Player.y = global.statData[0].save_y;
-			
-		global.Health = global.statData[0].player_Health;
 	}
 		
 	global.PlayerChar = global.statData[0].player_Char;

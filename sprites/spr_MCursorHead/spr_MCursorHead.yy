@@ -38,8 +38,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Cursors",
-    "path":"folders/Sprites/Menus/General/Cursors.yy",
+    "name":"Head",
+    "path":"folders/Sprites/Menus/General/Cursors/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -93,7 +93,7 @@ display_set_gui_size(768, 432);
 		}
 	}
 	
-	draw_sprite_ext(spr_MCursorNormal, global.PlayerChar - 1, -30 + srSpikesX + _bigX + _extraX, 130 + (cursorY), 1, 1, 0, c_white, 1);
+	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][6][2], 0, -30 + srSpikesX + _bigX + _extraX, 130 + (cursorY), 1, 1, 0, c_white, 1);
 #endregion
 
 #region //Levels (Speed)

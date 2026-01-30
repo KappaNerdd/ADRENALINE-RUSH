@@ -32,8 +32,8 @@ draw_sprite_ext(srBall, 0, _camX + 598 + srBallBGMoveX + srBallMoveX, _camY + 23
 
 
 //Text UI
-draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX + 5, _camY + 55 + 5 + 30, 0.25, 0.15, 0, c_black, 0.5);
-draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX, _camY + 55 + 30, 0.25, 0.15, 0, _col, 1);
+draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX + 5, _camY + 55 + 5 + 20, 0.5, 0.5, 0, c_black, 0.5);
+draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX, _camY + 55 + 20, 0.5, 0.5, 0, _col, 1);
 
 draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX + 5, _camY + 100 + 5 + 15, 0.25, 0.25, 0, c_black, 0.5);
 draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX, _camY + 100 + 15, 0.25, 0.25, 0, c_white, 1);
@@ -252,8 +252,8 @@ draw_sprite_ext(_enemyRank, rankFrames, _camX + timeMoveX + 120, _camY + 270 - 3
 draw_sprite_ext(_enemyRank, rankFrames, _camX + timeMoveX + 120, _camY + 270 - 3, 0.5, 0.5, 0, c_white, 1);
 
 
-draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 290 + 5 + 40, 0.5, 0.4, 0, c_black, 0.5);
-draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 40, 0.5, 0.4, 0, _col, 1);
+draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 290 + 5 + 40, 1, 0.8, 0, c_black, 0.5);
+draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 40, 1, 0.8, 0, _col, 1);
 
 
 var _sprayGap = 22;

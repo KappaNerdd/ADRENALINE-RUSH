@@ -1,6 +1,12 @@
 display_set_gui_size(768, 432);
 
 #region //BG
+	if !global.SimplifyVFX {
+		image_speed = 1;
+	} else {
+		image_speed = 0;
+	}
+
 	draw_sprite_ext(sprite_index, image_index, 0, 0, 14, 14, 0, global.fullRGB, image_alpha);
 #endregion
 
@@ -257,14 +263,14 @@ display_set_gui_size(768, 432);
 			var _rankOA = _levelDesc.rank;
 			var _rankChar = _levelDesc.player_Sprite;
 			var _rankCharCost = _levelDesc.player_Costume;
-			var _rankSprite = spr_ResultsRank;
+			var _rankSprite = spr_ResultsRankNew;
 			
 			if _levelDesc.mind {
 				_rankSprite = spr_ResultsRankCheckHead;
 			}
 			
-			draw_sprite_ext(_rankSprite, mindFrames, 69, 153, 0.3, 0.3, 0, c_black, chosenTextAlpha);
-			draw_sprite_ext(_rankSprite, mindFrames, 72, 150, 0.3, 0.3, 0, c_white, chosenTextAlpha);
+			draw_sprite_ext(_rankSprite, mindFrames, 69, 153, 0.6, 0.6, 0, c_black, chosenTextAlpha);
+			draw_sprite_ext(_rankSprite, mindFrames, 72, 150, 0.6, 0.6, 0, c_white, chosenTextAlpha);
 			
 			draw_sprite_ext(ranks[_rankOA + _plusUltra], rankFrames, 69, 183, 1, 1, 0, c_black, chosenTextAlpha);
 			draw_sprite_ext(ranks[_rankOA + _plusUltra], rankFrames, 72, 180, 1, 1, 0, c_white, chosenTextAlpha);
@@ -483,7 +489,9 @@ display_set_gui_size(768, 432);
 #endregion
 
 #region //Sonic Rush Spikes
-	srSpikesFrames += srSpikesAnim;
+	if !global.SimplifyVFX {
+		srSpikesFrames += srSpikesAnim;
+	}
 
 	if srSpikesFrames >= 20 {
 		srSpikesFrames = 0;

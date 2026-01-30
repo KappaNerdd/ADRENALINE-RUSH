@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_ResultsHead",
   "bboxMode":0,
-  "bbox_bottom":149,
-  "bbox_left":1,
-  "bbox_right":432,
+  "bbox_bottom":74,
+  "bbox_left":0,
+  "bbox_right":215,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -18,7 +18,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":150,
+  "height":75,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"c15cdc09-aea9-41bd-9265-848ea11e610c","blendMode":0,"displayName":"default","isLocked":false,"name":"c15cdc09-aea9-41bd-9265-848ea11e610c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -94,5 +94,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":450,
+  "width":225,
 }

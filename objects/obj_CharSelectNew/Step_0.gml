@@ -377,12 +377,14 @@ if !finished {
 	}
 	
 	if global.RealBPM <= 0 {
-		nameScale = 1;
-		arrowScale = 1.75;
-		circleScale = 1.5;
-		whiteCircleScale = 2;
-		whiteBarScale = 1.25;
-		iconScale = 0.25;
+		if !global.SimplifyVFX {
+			nameScale = 1;
+			arrowScale = 1.75;
+			circleScale = 1.5;
+			whiteCircleScale = 2;
+			whiteBarScale = 1.25;
+			iconScale = 0.25;
+		}
 		
 		global.RealBPM = global.ConvertedBPM;
 	}

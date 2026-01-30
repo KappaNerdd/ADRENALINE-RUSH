@@ -1,11 +1,24 @@
+scr_RoomCheckerCreate();
+instance_create_depth(-100000, 0, depth, obj_MusicTag);
+
 fileChoice = 0;
+copyFile = 0
+eraseFile = 0;
 fileMove = 0;
 
+subChoice = 0;
+confirmTextOpacity = 0;
+
 fileChosen = false;
+fileChosenTimer = 60;
 confirm = false;
 
 copy = false;
 copying = false;
+copiedFile = noone;
+overwrite = false;
+copyShitAlpha = 0;
+copyShitTimer = 0;
 
 erase = false;
 erasing = false;
@@ -15,14 +28,42 @@ chooseFrames = 12;
 
 ballXScale = 1;
 ballAngle = 1200;
+charAngle = 360;
+charOpacity = 0;
+
+boxExtraScale = 0;
+
+boxAnim = 0;
+boxFrames = 1 / 12;
+
+arrowed = false;
+arrowDown = false;
+arrowUp = false;
+arrowAnim = 0;
+
+red = 255;
+green = 255;
+blue = 255;
+
+newRed = 0;
+newGreen = 0;
+newBlue = 0;
+
+fullCol = 0;
 
 var _dir = working_directory + "/saves/";
 
 if file_exists(_dir + string(global.PastMindDataFile) + ".sav") {
-	srSpikes = spr_SonicRushSpikesNorm
+	srSpikes = spr_SonicRushSpikesNorm;
+	srBlock = spr_CharSelectTop;
+	srBall = spr_CharSelectRushBall2;
+	set_song_ingame(mus_CestLaVie);
 } else {
 	srSpikes = spr_SonicRush_Spikes_Head;
+	srBlock = spr_CharSelectTopHead;
+	srBall = spr_CharSelectRushBossBallHead;
 	sprite_index = spr_SonicRushBGHead;
+	set_song_ingame(mus_SOUL);
 }
 
 srSpikeFrames = 0;

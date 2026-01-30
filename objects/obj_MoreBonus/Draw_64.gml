@@ -4,7 +4,7 @@ if createBonusTimer > 0 {
 	createBonusTimer -= 1;
 }
 
-if createBonusTimer <= 0 {
+if createBonusTimer <= -5 {
 	if !createBonus {
 		createBonus = true;
 		scr_BonusPoints(bonus1 + bonus2 + bonus3 + bonus4 + bonus5);
@@ -24,6 +24,6 @@ if kysTimer > 0 {
 	}
 }
 
-draw_text_color(moveX + 3, 33, scr_LocalText("bon_Time") + ": " + string(bonus1) + "\n" + scr_LocalText("bon_Trink") + ": " + string(bonus5) + "\n" + scr_LocalText("bon_Enemy") + ": " + string(bonus2) + "\n" + scr_LocalText("bon_Ring") + ": " + string(bonus3) + "\n" + scr_LocalText("bon_Perf") + ": " + string(bonus4), c_black, c_black, c_black, c_black, 1);
+//draw_text_color(moveX + 3, 33, scr_LocalText("bon_Time") + ": " + string(bonus1) + "\n" + scr_LocalText("bon_Trink") + ": " + string(bonus5) + "\n" + scr_LocalText("bon_Enemy") + ": " + string(bonus2) + "\n" + scr_LocalText("bon_Ring") + ": " + string(bonus3) + "\n" + scr_LocalText("bon_Perf") + ": " + string(bonus4), c_black, c_black, c_black, c_black, 1);
 
-draw_text(moveX, 30, scr_LocalText("bon_Time") + ": " + string(bonus1) + "\n" + scr_LocalText("bon_Trink") + ": " + string(bonus5) + "\n" + scr_LocalText("bon_Enemy") + ": " + string(bonus2) + "\n" + scr_LocalText("bon_Ring") + ": " + string(bonus3) + "\n" + scr_LocalText("bon_Perf") + ": " + string(bonus4));
+//draw_text(moveX, 30, scr_LocalText("bon_Time") + ": " + string(bonus1) + "\n" + scr_LocalText("bon_Trink") + ": " + string(bonus5) + "\n" + scr_LocalText("bon_Enemy") + ": " + string(bonus2) + "\n" + scr_LocalText("bon_Ring") + ": " + string(bonus3) + "\n" + scr_LocalText("bon_Perf") + ": " + string(bonus4));

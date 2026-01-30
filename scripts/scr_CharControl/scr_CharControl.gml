@@ -111,6 +111,8 @@ function scr_BasicVariablesSpeedCreate() {
 		face_Left = false;
 		
 		mask_index = idle_Mask;
+		
+		localPlayerID = 0;
 	#endregion
 	
 	#region //Some Extra Bullshits

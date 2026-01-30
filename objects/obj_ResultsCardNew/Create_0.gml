@@ -142,7 +142,7 @@ audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
 	if global.MIND or global.PlayerChar == 0 {
 		rankSprite = spr_ResultsRankCheckHead;
 	} else {
-		rankSprite = spr_ResultsRank;
+		rankSprite = spr_ResultsRankNew;
 	}
 	
 	rankStartX = -300;

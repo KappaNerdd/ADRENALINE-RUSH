@@ -415,8 +415,12 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Wall-Jump
-		if !ground && can_Move && yspd > -4 && !stomping && !instance_exists(obj_GOAL) {
+		if !ground && !rampRing && !playerHurt && yspd > -4 && !stomping && !instance_exists(obj_GOAL) {
 			scr_WallClingStep();
+		} else {
+			wallJump = false;
+			wallJumping = false;
+			afterWallJump = false;
 		}
 			
 		if wallJump {

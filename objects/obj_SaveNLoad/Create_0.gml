@@ -162,7 +162,7 @@
 #endregion
 
 #region ///-----Player Char BS-----///
-	//Characters you were playing as (Partner characters will come in later) (Ok, I MAY have lied to myself) (Ok, I MAY have not lied to myself) (Ok, I MAY have lied again for now)
+	//Characters you were playing as (Partner characters will come in later) (Ok, I MAY have lied to myself) (Ok, I MAY have not lied to myself) (Ok, I MAY have lied again for now) (There's a good chance I WASN'T lying to myself)
 	global.PlayerChar = 0;
 	global.PlayerCostume = 0;
 
@@ -174,6 +174,8 @@
 
 	global.Girly = false;
 	global.MIND = false;
+	
+	global.PlayerID = noone;
 #endregion
 
 #region ///-----Title BS-----///

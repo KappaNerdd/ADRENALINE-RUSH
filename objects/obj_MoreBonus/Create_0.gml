@@ -16,3 +16,5 @@ createBonusTimer = 2;
 createBonus = false;
 
 moveX = 700;
+
+instance_destroy();

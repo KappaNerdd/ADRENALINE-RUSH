@@ -9,22 +9,22 @@ function scr_RoomCheckerDraw() {
 
 		//rm_HeadOverworld2
 		if savedRoom == "rm_HeadOverworld2" {
-			_rmName = "MIND - Big Tree (Beginning)";
+			_rmName = "MIND - GREAT TREE (Early)";
 		} else
 
 		//rm_HeadOverworld4
 		if savedRoom == "rm_HeadOverworld4" {
-			_rmName = "MIND - Big Tree (Midpoint 1)";
+			_rmName = "MIND - GREAT TREE (Mid 1)";
 		} else
 
 		//rm_HeadOverworld6
 		if savedRoom == "rm_HeadOverworld6" {
-			_rmName = "MIND - Big Tree (Midpoint 2)";
+			_rmName = "MIND - GREAT TREE (Mid 2)";
 		} else
 
 		//rm_HeadOverworld9
 		if savedRoom == "rm_HeadOverworld9" {
-			_rmName = "MIND - Big Tree (End)";
+			_rmName = "MIND - GREAT TREE (End)";
 		} else
 	
 	#endregion

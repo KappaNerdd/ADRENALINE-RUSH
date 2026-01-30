@@ -30,8 +30,6 @@ extraLife = [
 	false,
 ]
 
-global.PlayerID = noone;
-
 if !global.LevelForced {
 	with(instance_create_depth(-10000000, 0, 0, obj_SonicRushIntroCard)) {
 		kysTimer = 240;

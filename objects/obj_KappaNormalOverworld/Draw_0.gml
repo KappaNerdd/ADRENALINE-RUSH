@@ -34,7 +34,7 @@ if global.DEBUG {
 	draw_text(_camX + _camXAdd, _camY + 100, "trick: " + string(trick));
 	draw_text(_camX + _camXAdd, _camY + 120, "altTrick: " + string(altTrick));
 	draw_text(_camX + _camXAdd, _camY + 140, "jumpVelBS: " + string((cos(degtorad(drawAngle)) * vel) + (sin(degtorad(drawAngle)) * -normalJspd)));
-	draw_text(_camX + _camXAdd, _camY + 160, "jumpHeightBS: " + string(-(sin(degtorad(drawAngle)) * vel) + (cos(degtorad(drawAngle)) * -normalJspd)));
+	draw_text(_camX + _camXAdd, _camY + 160, "globalPlayerID: " + string(global.PlayerID));
 
 	draw_sprite_ext(mask_index, 0, x, y, 1, 1, image_angle, c_red, 0.5);
 	draw_sprite_ext(mask_index, 0, x, y + 4, 1, 1, image_angle, c_green, 0.5);

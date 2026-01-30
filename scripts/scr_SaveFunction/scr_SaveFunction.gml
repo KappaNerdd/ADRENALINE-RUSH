@@ -94,7 +94,7 @@ function load_game(_fileNum = 0) {
 
 
 
-//Saving Files
+//Saving Files (TRASH)
 function scr_SaveFiles() {
 	var _saveArray = array_create(0);
 	

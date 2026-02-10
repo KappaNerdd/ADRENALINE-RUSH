@@ -27,14 +27,14 @@ if railGrind {
 }
 
 if global.DEBUG {
-	draw_text(_camX + _camXAdd, _camY + 20, "rightTrick: " + string(rightTrick));
-	draw_text(_camX + _camXAdd, _camY + 40, "leftTrick: " + string(leftTrick));
-	draw_text(_camX + _camXAdd, _camY + 60, "upTrick: " + string(upTrick));
-	draw_text(_camX + _camXAdd, _camY + 80, "rushTrick: " + string(rushTrick));
-	draw_text(_camX + _camXAdd, _camY + 100, "trick: " + string(trick));
-	draw_text(_camX + _camXAdd, _camY + 120, "altTrick: " + string(altTrick));
-	draw_text(_camX + _camXAdd, _camY + 140, "jumpVelBS: " + string((cos(degtorad(drawAngle)) * vel) + (sin(degtorad(drawAngle)) * -normalJspd)));
-	draw_text(_camX + _camXAdd, _camY + 160, "globalPlayerID: " + string(global.PlayerID));
+	draw_text(_camX + _camXAdd, _camY + 20, "ground: " + string(ground));
+	draw_text(_camX + _camXAdd, _camY + 40, "vel: " + string(vel));
+	draw_text(_camX + _camXAdd, _camY + 60, "groundSpeed: " + string(groundSpeed));
+	draw_text(_camX + _camXAdd, _camY + 80, "yspd: " + string(yspd));
+	draw_text(_camX + _camXAdd, _camY + 100, "groundAngle: " + string(groundAngle));
+	//draw_text(_camX + _camXAdd, _camY + 120, "altTrick: " + string(altTrick));
+	//draw_text(_camX + _camXAdd, _camY + 140, "jumpVelBS: " + string((cos(degtorad(drawAngle)) * vel) + (sin(degtorad(drawAngle)) * -normalJspd)));
+	//draw_text(_camX + _camXAdd, _camY + 160, "globalPlayerID: " + string(global.PlayerID));
 
 	draw_sprite_ext(mask_index, 0, x, y, 1, 1, image_angle, c_red, 0.5);
 	draw_sprite_ext(mask_index, 0, x, y + 4, 1, 1, image_angle, c_green, 0.5);

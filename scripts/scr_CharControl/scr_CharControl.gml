@@ -4,8 +4,6 @@ function scr_BasicVariablesSpeedCreate() {
 	#endregion
 	
 	#region //Ground Checks
-		global.PlayerID = id;
-	
 		ground = false;
 		stompedCheck = false;
 		isSlope = false;
@@ -163,6 +161,66 @@ function scr_BasicVariablesSpeedCreate() {
 	#region //Rush Mode Colors
 		scr_RushModeColorCreate();
 	#endregion
+	
+	#region //Furry Checks
+		//State
+		state = noone;
+		
+		spd_wgrav = dcc; //Maximal speed loss when wallrunning or ceilrunning
+		spd_wfall = 4; //Speed where you fall off a wall/ceiling
+		wall_accf = true; //Whether walls factor into your lateral acceleration
+		ang_flat = 30; //How steep inclines can be without triggering wall slowdown/fall
+
+		normal_direction = 90; //Direction away from current surface, depends on groundangle but is a separate variable for convenience.
+
+		//Collision checking
+		collision_width = 14; //How wide the player is when checking for terrain collisions (this is the distance to each side, so the player is actually twice as wide overall)
+		collision_height = 24; //How tall the player is when checking for terrain collisions
+		collision_angle_step = 2; //Precision of how much the player can follow the ground
+		collision_angle_deltamax = 30; //How sharp turns the player is allowed to follow in one step
+
+		//Drawing variables
+		target_angle = 0; //Angle player SHOULD be at, used for gradual rotation
+		angle_step_g = 16; //Speed the angle changes at (ground)
+		angle_step_a = 8; //Speed the angle changes at (midair)
+	#endregion
+	
+	#region //Astral Checks
+		xDirection = 1;
+		xMinSpeedToFall = 3;
+
+		//Terrain
+		terrainLayer = 0;
+		onPlatform = false;
+		pushingWall = false;
+
+		angle = 0;
+		angleHolder = 0;
+		angleCos = 0;
+		angleSin = 0;
+		angleMode = 0;
+
+		//Sensors
+		sensorX = x;
+		sensorY = y;
+		sensorCos = dcos(angle);
+		sensorSin = dsin(angle);
+		drawSensors = false;
+
+		//Sensor position
+		sensorMainYDist = 0;
+
+		sensorLeftDistance = 8;
+		sensorRightDistance = 8;
+
+		sensorBottomDistance = 12;
+		sensorTopDistance = 10;
+
+		sensorMidDistance = 0;
+
+		bottomCollision = false;
+		edgeCollision = false;
+	#endregion
 }
 
 function scr_BasicControlsSpeedStep1() {
@@ -295,11 +353,10 @@ function scr_BasicControlsSpeedStep1() {
 	#endregion
 	
 	#region //Run Fast Particles
-		if abs(vel) >= 15 && ground && global.Particles {
+		if abs(vel) >= full_Speed && ground && global.Particles {
 			instance_create_depth(x, y + 21, depth + 1, obj_BoostParticles);
 		}
 	#endregion
-	
 }
 
 function scr_BasicControlsSpeedStep2() {
@@ -312,13 +369,13 @@ function scr_BasicControlsSpeedStep2() {
 	#endregion
 
 	#region //Crouching
-		if down_Key && ground && !look_up && !stomping && !prepare && !railGrind && abs(vel) == 0 && !sliding && !stomped {
+		if down_Key && ground && !look_up && !stomping && !prepare && !railGrind && abs(vel) < acc && !sliding && !stomped {
 		    if !ducking {
 				image_index = 0;
 				obj_SFXManager.block = true;
 			}
 			
-			vel = 0;
+			groundSpeed = 0;
 			ducking = true;
 			mask_index = crouch_Mask;
 		} else {
@@ -327,7 +384,7 @@ function scr_BasicControlsSpeedStep2() {
 	#endregion
 	
 	#region //Looking up
-		if ground && !prepare && !railGrind && abs(vel) <= 0.5 && !stomped && !ducking && up_Key {
+		if ground && !prepare && !railGrind && abs(vel) < acc && !stomped && !ducking && up_Key {
 			look_up = true;
 			vel = 0;
 		} else {
@@ -340,11 +397,11 @@ function scr_BasicControlsSpeedStep2() {
 	#endregion
 		
 	#region //Change Draw Angle
-		scr_ChangeDrawAngle();
+		//scr_ChangeDrawAngle();
 	#endregion
 		
 	#region //Fuck with momentum
-		scr_SlopeMomentum();
+		//scr_SlopeMomentum();
 	#endregion
 }
 
@@ -354,7 +411,7 @@ function scr_BasicControlsSpeedStep3() {
 	#endregion
 		
 	#region //Special Idle
-		if ground && abs(vel) == 0 && !stomped && !look_up && !ducking && !prepare && can_Move && can_MoveFULL {
+		if ground && abs(vel) < acc && !stomped && !look_up && !ducking && !prepare && can_Move && can_MoveFULL {
 			if specialIdleTimer > 0 {
 				specialIdleTimer -= 1;
 			}
@@ -438,7 +495,6 @@ function scr_BasicVisualEffectsSpeed1() {
 			
 	#region //Speed Break
 		if speedBreak {
-			
 			if ground {
 				scr_SpeedBreakVFX(speedBreakSprite);
 			} else {
@@ -504,7 +560,7 @@ function scr_BasicVisualEffectsSpeed1() {
 
 //Sliding
 function scr_SlidingSpeed() {
-	if abs(vel) > 1 && ground && !ducking && !sliding && !railGrind && !railGrindCrouch && down_Key {
+	if abs(vel) > 2 && ground && !ducking && !sliding && !railGrind && !railGrindCrouch && down_Key {
 	    sliding = true;
 		slowSkid = false;
 		mask_index = slide_Mask;
@@ -525,14 +581,14 @@ function scr_SlidingSpeed() {
 		slow_Down = false;
 	}
 
-	if sliding && (!ground or abs(vel) <= 0.5) {
+	if sliding && (!ground or abs(vel) <= acc) {
 	    sliding = false;
 	}
 }
 
 function scr_StartSlideSpeed() {
 	//Slide while Ducking
-	if jump_Key && ducking && !sliding && abs(vel) < 0.5 {
+	if jump_Key && ducking && !sliding && abs(vel) < acc {
 		sliding = true;
 		ducking = false;
 		down_Key = false;
@@ -561,13 +617,27 @@ function scr_FootSteps(_type = "hard") {
 		if ground && vel != 0 && !sliding && !railGrind {
 			if ceil(image_index) == 3 or ceil(image_index) == 7 {
 				if footStepTimer <= 0 {
-					if _type == "grass" {
-						obj_SFXManager.footStepGrass = true;
-					} else {
-						obj_SFXManager.footStepHard = true;
-					}
+					if leftFacer {
+						if sprite_index != sprIdleRight && sprite_index != sprIdleLeft {
+							if _type == "grass" {
+								obj_SFXManager.footStepGrass = true;
+							} else {
+								obj_SFXManager.footStepHard = true;
+							}
 				
-					footStepTimer = 3;
+							footStepTimer = 3;
+						}
+					} else {
+						if sprite_index != sprIdle {
+							if _type == "grass" {
+								obj_SFXManager.footStepGrass = true;
+							} else {
+								obj_SFXManager.footStepHard = true;
+							}
+				
+							footStepTimer = 3;
+						}
+					}
 				}
 			} else {
 				footStepTimer = 0;
@@ -579,6 +649,8 @@ function scr_FootSteps(_type = "hard") {
 //Animations
 function scr_GeneralAnimationsSpeed() {		
 	#region //Sliding
+		var _speed = vel;
+	
 		if sliding {
 			if !leftFacer {
 				sprite_index = sprSlide;
@@ -590,17 +662,17 @@ function scr_GeneralAnimationsSpeed() {
 				}
 			}
 				
-			if abs(vel) < max_Speed / 6 {
+			if abs(_speed) < max_Speed / 6 {
 				image_speed = 1;
-			} else if abs(vel) >= max_Speed / 6 && abs(vel) < max_Speed / 3 {
+			} else if abs(_speed) >= max_Speed / 6 && abs(_speed) < max_Speed / 3 {
 				image_speed = 1.5;
-			} else if abs(vel) >= max_Speed / 3 && abs(vel) < max_Speed / 1.5 {
+			} else if abs(_speed) >= max_Speed / 3 && abs(_speed) < max_Speed / 1.5 {
 				image_speed = 2;
-			} else if abs(vel) >= max_Speed / 1.5 && abs(vel) < max_Speed / 1.3 {
+			} else if abs(_speed) >= max_Speed / 1.5 && abs(_speed) < max_Speed / 1.3 {
 				image_speed = 2.5;
-			} else if abs(vel) >= max_Speed / 1.3 && abs(vel) < max_Speed {
+			} else if abs(_speed) >= max_Speed / 1.3 && abs(_speed) < max_Speed {
 				image_speed = 3;
-			} else if abs(vel) >= max_Speed {
+			} else if abs(_speed) >= max_Speed {
 				image_speed = 4;
 			}
 							
@@ -690,9 +762,11 @@ function scr_GeneralAnimationsSpeed() {
 }
 	
 function scr_GroundAnimationSpeed() {
+	var _speed = vel;
+	
 	#region //Ground
 		if ground && !ducking && !sliding && !airDash && !stomping && !stomped && !jumping && !railGrind && !railGrindCrouch && !dJumping && !skid && !prepare {
-			if abs(vel) < 0.5 {
+			if abs(_speed) < acc {
 				if !leftFacer {
 					sprite_index = sprIdle;
 				} else {
@@ -705,7 +779,7 @@ function scr_GroundAnimationSpeed() {
 					
 				image_speed = 1;
 			} else {
-				if abs(vel) < max_Speed {
+				if abs(_speed) < max_Speed {
 					if !leftFacer {
 						sprite_index = sprWalk;
 					} else {
@@ -716,18 +790,18 @@ function scr_GroundAnimationSpeed() {
 						}
 					}
 						
-					if abs(vel) < max_Speed / 6 {
+					if abs(_speed) < max_Speed / 6 {
 						image_speed = 0.25;
-					} else if abs(vel) >= max_Speed / 6 && abs(vel) < max_Speed / 3 {
+					} else if abs(_speed) >= max_Speed / 6 && abs(_speed) < max_Speed / 3 {
 						image_speed = 0.5;
-					} else if abs(vel) >= max_Speed / 3 && abs(vel) < max_Speed / 1.5 {
+					} else if abs(_speed) >= max_Speed / 3 && abs(_speed) < max_Speed / 1.5 {
 						image_speed = 1;
-					} else if abs(vel) >= max_Speed / 1.5 && abs(vel) < max_Speed / 1.3 {
+					} else if abs(_speed) >= max_Speed / 1.5 && abs(_speed) < max_Speed / 1.3 {
 						image_speed = 1.25;
-					} else if abs(vel) >= max_Speed / 1.3 && abs(vel) < max_Speed {
+					} else if abs(_speed) >= max_Speed / 1.3 && abs(_speed) < max_Speed {
 						image_speed = 1.75;
 					}
-				} else if abs(vel) >= max_Speed && abs(vel) < full_Speed {
+				} else if abs(_speed) >= max_Speed && abs(groundSpeed) < full_Speed {
 					if !leftFacer {
 						sprite_index = sprRun;
 					} else {
@@ -738,12 +812,12 @@ function scr_GroundAnimationSpeed() {
 						}
 					}
 						
-					if abs(vel) < max_Speed * 1.5 {
+					if abs(_speed) < max_Speed * 1.5 {
 						image_speed = 2;
 					} else {
 						image_speed = 2.25;
 					}
-				} else if abs(vel) >= full_Speed {
+				} else if abs(_speed) >= full_Speed {
 					if !leftFacer {
 						sprite_index = sprFullSpeedRun;
 					} else {
@@ -901,19 +975,19 @@ function scr_HealthSystemCreate() {
 	collideTimer = 0;
 	collideFrames = 30;
 	
-	if !instance_exists(obj_PlayerHurtJump) {
-		instance_create_depth(x, y, depth, obj_PlayerHurtJump);
+	with(instance_create_depth(x, y, depth, obj_PlayerHurtJump)) {
+		affectChar = other.id;
 	}
 }
 
 function scr_HealthSystemStep() {
 	if playerHurt {
-		can_Move = false;
+		//can_Move = false;
 	}
 	
 	if ground && playerHurt && yspd > 0 {
 		playerHurt = false;
-		can_Move = true;
+		//can_Move = true;
 	}
 	
 	if !invincible {
@@ -1020,11 +1094,9 @@ function scr_Deceleration() {
 	
 	if !playerHurt && !prepare && noMoveTimer == 0 {
 		if !railGrind && !sliding && !stomped {
-			if vel > 0 && !right_Key {
-				if ground {
-					vel -= dcc / 2;
-				}
-			} else if vel < -2 && right_Key && !skid {
+			if (groundSpeed > 0 or vel > 0) && !right_Key {
+				vel -= dcc / 2;
+			} else if (groundSpeed < -2 or vel < -2) && right_Key && !skid {
 				if ground {
 					vel += dcc * 7;
 					slowSkid = true;
@@ -1035,11 +1107,9 @@ function scr_Deceleration() {
 				slowSkid = false;
 			}
 			
-			if vel < 0 && !left_Key {
-				if ground {
-					vel += dcc / 2;
-				}
-			} else if vel > 2 && left_Key && !skid {
+			if (groundSpeed < 0 or vel < 0) && !left_Key {
+				vel += dcc / 2;
+			} else if (groundSpeed > 2 or vel > 2) && left_Key && !skid {
 				if ground {
 					vel -= dcc * 7;
 					slowSkid = true;
@@ -1099,13 +1169,13 @@ function scr_Deceleration() {
 
 function scr_SpeedLimit() {
 	if vel > -acc && vel < acc {
-	    vel = 0;
+		vel = 0;
 	}
  
-	if vel >= 29 {
-		vel = 29;
-	} else if vel <= -29 {
-		vel = -29;
+	if vel >= 40 {
+		vel = 40;
+	} else if vel <= -40 {
+		vel = -40;
 	}
 }
 
@@ -1136,9 +1206,9 @@ function scr_AngleShitCreate() {
 
 function scr_AngleShitBeginStep() {
 	if !sliding {
-		vel -= (slopeFactor + (fric / 2)) * sin(groundAngle);
+		//groundSpeed -= (slopeFactor + (fric / 2)) * sin(groundAngle);
 	} else {
-		vel -= (slopeFactorSlide + (fric / 2)) * sin(groundAngle);
+		//groundSpeed -= (slopeFactorSlide + (fric / 2)) * sin(groundAngle);
 	}
 }
 
@@ -1153,7 +1223,7 @@ function scr_AngleShitStep() {
 		jumpinTimer = 2;
 	}
 	
-	var _angleChecker = instance_place(x, y + 5, obj_Solid);
+	/*var _angleChecker = instance_place(x, y + 5, obj_Solid);
 
 	if ground && instance_exists(_angleChecker) && (_angleChecker.sprite_index != spr_SolidGround or _angleChecker.sprite_index != spr_SolidRail) {
 		groundAngle = _angleChecker.floorAngle;
@@ -1182,11 +1252,9 @@ function scr_AngleShitStep() {
 		realJumping = false;
 	}
 	
-	groundSpeed = vel;
-	
 	if !place_meeting(x + vel, y + 25, obj_Solid) {
 		yspd += vel * -sin(groundAngle);
-	}
+	}*/
 }
 
 
@@ -1201,7 +1269,7 @@ function scr_JumpManipulate() {
 		extraXscale = 0.5;
 	}
 	
-	if !playerHurt {
+	if !playerHurt && !collide {
 		if ground {
 			if global.Particles {
 				instance_create_depth(x, y + 21, depth, obj_SlideDustVFX);
@@ -1209,12 +1277,19 @@ function scr_JumpManipulate() {
 				instance_create_depth(x - 17, y + 21, depth, obj_SlideDustVFX);
 				instance_create_depth(x - 24, y + 21, depth, obj_SlideDustVFX);
 			}
-		
-			if isSlope or railGrindCheck {
+			
+			PlayerJumpAct();
+			
+			//vel -= normalJspd * sin(degtorad(angle));
+			//yspd += -(sin(degtorad(angle)) * vel) + (cos(degtorad(angle)) * -normalJspd);
+			
+			PlayerSetAngle(0);
+			
+			/*if isSlope or railGrindCheck {
 				vel -= normalJspd * sin(degtorad(drawAngle));
 				//vel += (cos(degtorad(drawAngle)) * vel) + (sin(degtorad(drawAngle)) * -normalJspd);  
 				//yspd -= normalJspd * (cos(degtorad(drawAngle)) * vel);
-				yspd += -(sin(degtorad(drawAngle)) * vel) + (cos(degtorad(drawAngle)) * -normalJspd);
+				yspd += -(sin(degtorad(groundAngle)) * groundSpeed) + (cos(degtorad(groundAngle)) * -normalJspd);
 			} else {
 				if instance_exists(myFloorPlat) {
 					vel += myFloorPlat.vel;
@@ -1225,15 +1300,9 @@ function scr_JumpManipulate() {
 						yspd = -normalJspd;
 					}
 				}
-			}
+			}*/
 		} else {
 			yspd = -normalJspd;
-		}
-	} else {
-		if yspd > 2 {
-			playerHurt = false;
-			can_Move = true;
-			obj_SFXManager.jumpSound = true;
 		}
 	}
 	
@@ -1241,6 +1310,7 @@ function scr_JumpManipulate() {
 	
 	ground = false;
 	jumping = true;
+	realJumping = true;
 }
 
 
@@ -1272,6 +1342,10 @@ function scr_PlayerMoveLeft() {
 			}
 		}
 	}
+	
+	
+	//scr_PlayerInputGrounds();
+	//scr_PlayerInputAerial();
 }
 
 function scr_PlayerMoveRight() {
@@ -1292,4 +1366,8 @@ function scr_PlayerMoveRight() {
 			}
 		}
 	}
+	
+	
+	//scr_PlayerInputGrounds();
+	//scr_PlayerInputAerial();
 }

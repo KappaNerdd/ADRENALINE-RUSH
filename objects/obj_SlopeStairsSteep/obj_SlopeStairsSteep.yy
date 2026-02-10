@@ -8,12 +8,12 @@
   "name":"obj_SlopeStairsSteep",
   "overriddenProperties":[],
   "parent":{
-    "name":"Full Solid",
-    "path":"folders/Objects/Debug/Collision/Solids/Full Solid.yy",
+    "name":"Layer A",
+    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Layer A.yy",
   },
   "parentObjectId":{
-    "name":"obj_Solid",
-    "path":"objects/obj_Solid/obj_Solid.yy",
+    "name":"obj_SlopeStairs",
+    "path":"objects/obj_SlopeStairs/obj_SlopeStairs.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -6,7 +6,7 @@
   "bbox_left":0,
   "bbox_right":31,
   "bbox_top":0,
-  "collisionKind":4,
+  "collisionKind":0,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Floor",
-    "path":"folders/Sprites/Debug/Collision/Debug/Solid Collision/Floor.yy",
+    "path":"folders/Sprites/Debug/Collision/Solid Collision/Floor.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

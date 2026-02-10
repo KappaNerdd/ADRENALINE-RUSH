@@ -255,61 +255,61 @@ draw_sprite_ext(_enemyRank, rankFrames, _camX + timeMoveX + 120, _camY + 270 - 3
 draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 290 + 5 + 40, 1, 0.8, 0, c_black, 0.5);
 draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 40, 1, 0.8, 0, _col, 1);
 
-
-var _sprayGap = 22;
-var _levelWidth = sprite_get_width(_mod2.level_Sprite);
+if !completed {
+	var _sprayGap = 22;
+	var _levelWidth = sprite_get_width(_mod2.level_Sprite);
 		
-for(var i = 0; i < array_length(_mod2.jsrSecrets); i++) {
-	var _colThing = c_white;
-	var _sprite = spr_HUDJSRSprays;
-	var _fog = true;
+	for(var i = 0; i < array_length(_mod2.jsrSecrets); i++) {
+		var _colThing = c_white;
+		var _sprite = spr_HUDJSRSprays;
+		var _fog = true;
 	
-	if _mod2.mind {
-		_sprite = spr_HUDJSRSpraysHead;
-	}
-	
-	if _mod2.jsrSecrets[i] {
-		if !_mod2.mind {
-			_colThing = global.fullRGB;
-		} else {
-			_colThing = c_white;
+		if _mod2.mind {
+			_sprite = spr_HUDJSRSpraysHead;
 		}
+	
+		if _mod2.jsrSecrets[i] {
+			if !_mod2.mind {
+				_colThing = global.fullRGB;
+			} else {
+				_colThing = c_white;
+			}
 				
-		_fog = false;
+			_fog = false;
+		}
+	
+	
+		draw_sprite_ext(_sprite, mindImageIndex, _camX + 339 + (_sprayGap * i), _camY + 85, 1, 1, 0, c_black, image_alpha);
+	
+		gpu_set_fog(_fog, _colThing, 0, 1);
+			draw_sprite_ext(_sprite, mindImageIndex, _camX + 344 + (_sprayGap * i), _camY + 80, 1, 1, 0, _colThing, image_alpha * 2);
+		gpu_set_fog(false, c_black, 0, 1);
 	}
-	
-	
-	draw_sprite_ext(_sprite, mindImageIndex, _camX + 339 + (_sprayGap * i), _camY + 85, 1, 1, 0, c_black, image_alpha);
-	
-	gpu_set_fog(_fog, _colThing, 0, 1);
-		draw_sprite_ext(_sprite, mindImageIndex, _camX + 344 + (_sprayGap * i), _camY + 80, 1, 1, 0, _colThing, image_alpha * 2);
+		
+	var _cassSprite = spr_HUDCassette;
+	var _cassCol = c_white;
+	var _cassFog = true;
+
+	if _mod2.musicSecret {
+		if !_mod2.mind {
+			_cassCol = global.fullRGB;
+		} else {
+			_cassCol = c_white;
+		}
+			
+		_cassFog = false;
+	}
+
+	if _mod2.mind {
+		_cassSprite = spr_HUDCassetteHead;
+	}
+
+	draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 85, 1, 1, 0, c_black, image_alpha);
+
+	gpu_set_fog(_cassFog, _cassCol, 0, 1);
+		draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 80, 1, 1, 0, _cassCol, image_alpha * 2);
 	gpu_set_fog(false, c_black, 0, 1);
 }
-		
-var _cassSprite = spr_HUDCassette;
-var _cassCol = c_white;
-var _cassFog = true;
-
-if _mod2.musicSecret {
-	if !_mod2.mind {
-		_cassCol = global.fullRGB;
-	} else {
-		_cassCol = c_white;
-	}
-			
-	_cassFog = false;
-}
-
-if _mod2.mind {
-	_cassSprite = spr_HUDCassetteHead;
-}
-
-draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 85, 1, 1, 0, c_black, image_alpha);
-
-gpu_set_fog(_cassFog, _cassCol, 0, 1);
-	draw_sprite_ext(_cassSprite, mindImageIndex, _camX + 466, _camY + 80, 1, 1, 0, _cassCol, image_alpha * 2);
-gpu_set_fog(false, c_black, 0, 1);
-
 
 //Player
 draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX - 15, _camY + 25 + 25 + 40, 0.5, 0.5, 0, c_black, 0.5);
@@ -393,34 +393,35 @@ if rankSize == 0 {
 	
 	var _replayWidth = string_width(scr_LocalText(_replayText));
 	
-	
-	draw_set_halign(fa_right);
-		#region //Retry
-			draw_sprite_ext(_button, obj_CustomAct1KeySpeed.image_index, _camX + 698 - _retryWidth, _camY + 345 + 72, 1, 1, 0, c_white, image_alpha * 2);
-			draw_text_transformed_color(_camX + 763, _camY + 335 + 72, scr_LocalText(_retryText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
-		#endregion
+	if !completed {
+		draw_set_halign(fa_right);
+			#region //Retry
+				draw_sprite_ext(_button, obj_CustomAct1KeySpeed.image_index, _camX + 698 - _retryWidth, _camY + 345 + 72, 1, 1, 0, c_white, image_alpha * 2);
+				draw_text_transformed_color(_camX + 763, _camY + 335 + 72, scr_LocalText(_retryText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
+			#endregion
 		
-		#region //Continue
-			draw_sprite_ext(_button, obj_CustomJumpKeySpeed.image_index, _camX + 570 + 128 - _continueWidth, _camY + 310 + 72, 1, 1, 0, c_white, image_alpha * 2);
-			draw_text_transformed_color(_camX + 635 + 128, _camY + 300 + 72, scr_LocalText(_continueText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
-		#endregion
+			#region //Continue
+				draw_sprite_ext(_button, obj_CustomJumpKeySpeed.image_index, _camX + 570 + 128 - _continueWidth, _camY + 310 + 72, 1, 1, 0, c_white, image_alpha * 2);
+				draw_text_transformed_color(_camX + 635 + 128, _camY + 300 + 72, scr_LocalText(_continueText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
+			#endregion
 		
-		#region //Replay
-			if !replayGotSaved {
-				draw_sprite_ext(_button, obj_CustomAct2KeySpeed.image_index, _camX + 570 + 128 - _replayWidth, _camY + 20, 1, 1, 0, c_grey, image_alpha * 2);
-			}
+			#region //Replay
+				if !replayGotSaved {
+					draw_sprite_ext(_button, obj_CustomAct2KeySpeed.image_index, _camX + 570 + 128 - _replayWidth, _camY + 20, 1, 1, 0, c_grey, image_alpha * 2);
+				}
 			
-			draw_text_transformed_color(_camX + 635 + 128, _camY + 10, scr_LocalText(_replayText), 1, 1, 0, c_white, c_white, c_grey, c_grey, image_alpha * 2);
-		#endregion
+				draw_text_transformed_color(_camX + 635 + 128, _camY + 10, scr_LocalText(_replayText), 1, 1, 0, c_white, c_white, c_grey, c_grey, image_alpha * 2);
+			#endregion
 		
-		#region //Ghost
-			if !ghostGotSaved {
-				draw_sprite_ext(_button, obj_CustomAct4KeySpeed.image_index, _camX + 570 + 128 - _ghostWidth, _camY + 55, 1, 1, 0, c_white, image_alpha * 2);
-			}
+			#region //Ghost
+				if !ghostGotSaved {
+					draw_sprite_ext(_button, obj_CustomAct4KeySpeed.image_index, _camX + 570 + 128 - _ghostWidth, _camY + 55, 1, 1, 0, c_white, image_alpha * 2);
+				}
 			
-			draw_text_transformed_color(_camX + 635 + 128, _camY + 45, scr_LocalText(_ghostText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
-		#endregion
-	draw_set_halign(fa_left);
+				draw_text_transformed_color(_camX + 635 + 128, _camY + 45, scr_LocalText(_ghostText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
+			#endregion
+		draw_set_halign(fa_left);
+	}
 }
 
 

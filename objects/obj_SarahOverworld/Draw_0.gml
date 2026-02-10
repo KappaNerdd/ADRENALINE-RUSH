@@ -19,11 +19,11 @@ if railGrind {
 }
 
 if global.DEBUG == true && instance_exists(self) {
-	draw_text(_camX + _camXAdd, _camY + 20, "rightTrick: " + string(rightTrick));
-	draw_text(_camX + _camXAdd, _camY + 40, "leftTrick: " + string(leftTrick));
-	draw_text(_camX + _camXAdd, _camY + 60, "upTrick: " + string(upTrick));
-	draw_text(_camX + _camXAdd, _camY + 80, "rushTrick: " + string(altTrickTimer));
-	draw_text(_camX + _camXAdd, _camY + 100, "trick: " + string(trick));
+	draw_text(_camX + _camXAdd, _camY + 20, "ground: " + string(ground));
+	draw_text(_camX + _camXAdd, _camY + 40, "angle: " + string(angle));
+	draw_text(_camX + _camXAdd, _camY + 60, "bottomColl: " + string(bottomCollision));
+	draw_text(_camX + _camXAdd, _camY + 80, "vel: " + string(vel));
+	draw_text(_camX + _camXAdd, _camY + 100, "yspd: " + string(yspd));
 	draw_text(_camX + _camXAdd, _camY + 120, "altTrick: " + string(altTrick));
 	draw_text(_camX + _camXAdd, _camY + 140, "angleJumpCos: " + string(beforeTrick));
 	draw_text(_camX + _camXAdd, _camY + 160, "wallJumpVel: " + string(trickWait));

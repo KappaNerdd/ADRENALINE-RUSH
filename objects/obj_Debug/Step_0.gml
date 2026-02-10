@@ -20,7 +20,7 @@ if global.DEBUG == true {
 	}
 	
 	if keyboard_check_pressed(ord("9")) {
-		room_goto(rm_FileSelectNew);
+		room_goto(rm_360Test);
 	}
 	
 	if keyboard_check_pressed(ord("Q")) {

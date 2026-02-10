@@ -423,7 +423,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Jumping
-		if can_Move && jump_Key && !playerHurt && ground && !ducking && !jumping && !stomping && !prepare && !afterRailJump && !collide {
+		if jump_Key && !playerHurt && ground && !ducking && !jumping && !stomping && !prepare && !afterRailJump && !collide {
 			scr_JumpManipulate();
 			
 			jumping = true;

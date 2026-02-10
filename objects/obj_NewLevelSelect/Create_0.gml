@@ -71,6 +71,9 @@ changeCharTimer = 60;
 changeCharAlpha = 0.25;
 changeAlpha = true;
 
+jukebox = false;
+jukeChoice = false;
+
 speedStage = false;
 actionStage = false;
 

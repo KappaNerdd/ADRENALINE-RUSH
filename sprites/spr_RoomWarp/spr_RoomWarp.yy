@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Special Collision",
-    "path":"folders/Sprites/Debug/Collision/Debug/Special Collision.yy",
+    "path":"folders/Sprites/Debug/Collision/Special Collision.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

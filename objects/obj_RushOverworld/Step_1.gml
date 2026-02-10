@@ -692,7 +692,6 @@ if can_MoveFULL {
 		} else {
 			wallJump = false;
 			wallJumping = false;
-			afterWallJump = false;
 		}
 			
 		if wallJump {

@@ -6,8 +6,8 @@
   "name":"obj_SlopeInnerHill",
   "overriddenProperties":[],
   "parent":{
-    "name":"Full Solid",
-    "path":"folders/Objects/Debug/Collision/Solids/Full Solid.yy",
+    "name":"Layer A",
+    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Layer A.yy",
   },
   "parentObjectId":{
     "name":"obj_Solid",

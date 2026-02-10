@@ -23,46 +23,47 @@ function scr_SemiSolidCheck(_x, _y) {
 
 function scr_XCollision() {
 	if !global.Death {
-		//X Collision
-	    var _subPixel = 0.5;
+		#region //X Collision (Old)
+			/*var _subPixel = 0.5;
 
-	    if place_meeting(x + vel, y, obj_Solid) {
-			//First check if there is a slope to go up
-			var _blockCheck = collision_rectangle(vel + bbox_left, y - 50, vel + bbox_right, y - 40, obj_Solid, true, true);
+			if place_meeting(x + vel, y, obj_Solid) {
+				//First check if there is a slope to go up
+				var _blockCheck = collision_rectangle(vel + bbox_left, y - 50, vel + bbox_right, y - 40, obj_Solid, true, true);
 			
-			if !_blockCheck {
-				if (isSlope or railGrindCheck) {
-					while(place_meeting(x + vel, y, obj_Solid)) {
-						y -= _subPixel;
+				if !_blockCheck {
+					if (isSlope or railGrindCheck) {
+						while(place_meeting(x + vel, y, obj_Solid)) {
+							y -= _subPixel;
+						}
 					}
-				}
-			} else { //If no slope, regular collision
-				//Scoot up to wall precisely
-				if !place_meeting(x + vel, y, obj_RailParent) {
-					var _pixelCheck = _subPixel * sign(vel);
+				} else { //If no slope, regular collision
+					//Scoot up to wall precisely
+					if !place_meeting(x + vel, y, obj_RailParent) {
+						var _pixelCheck = _subPixel * sign(vel);
 				
-					while !place_meeting(x + _pixelCheck, y, obj_Solid) {
-					   x += _pixelCheck;
-					}
+						while !place_meeting(x + _pixelCheck, y, obj_Solid) {
+						   x += _pixelCheck;
+						}
 					
-					vel = 0;
-					groundSpeed = 0;
-				}
-			}   
-		}
-		
-		//Slope collision
-		downSlopeSemiSolid = noone;
-		
-		var _lineCheck = collision_rectangle(vel + bbox_left, y, vel + bbox_right, y + 85, obj_Solid, false, true);
-		
-		if yspd >= 0 && (isSlope or railGrindCheck) && ground && (!place_meeting(x + vel, y + 1, obj_Solid) && _lineCheck) {
-			while(!place_meeting(x + vel, y + _subPixel, obj_Solid)) {
-				y += _subPixel;
+						vel = 0;
+						groundSpeed = 0;
+					}
+				}   
 			}
-		}
 		
-		x += vel;
+			//Slope collision
+			downSlopeSemiSolid = noone;
+		
+			var _lineCheck = collision_rectangle(vel + bbox_left, y, vel + bbox_right, y + 85, obj_Solid, false, true);
+		
+			if yspd >= 0 && (isSlope or railGrindCheck) && ground && (!place_meeting(x + vel, y + 1, obj_Solid) && _lineCheck) {
+				while(!place_meeting(x + vel, y + _subPixel, obj_Solid)) {
+					y += _subPixel;
+				}
+			}
+		
+			x += vel;*/
+		#endregion
 	}
 }
 
@@ -207,8 +208,8 @@ function scr_YCollision() {
 			#endregion
 		#endregion
 		
-		#region //Floor Y Collision
-			var _subPixel = 0.5;
+		#region //Y Collision (Old)
+			/*var _subPixel = 0.5;
 			var _clampYspd = max(0, yspd);
 			var _list = ds_list_create();
 			var _array = array_create(0);
@@ -458,7 +459,7 @@ function scr_YCollision() {
 				//If no ground, turn state to jumping without jumping
 				if ground == false {
 					jumping = true;
-				}*/
+				}
 			#endregion
 		
 			//Y position influenced by yspd variable
@@ -520,7 +521,7 @@ function scr_YCollision() {
 				}
 			#endregion
 		
-			/*if instance_exists(myFloorPlat) && myFloorPlat.yspd != 0 {
+			if instance_exists(myFloorPlat) && myFloorPlat.yspd != 0 {
 				if !place_meeting(x, myFloorPlat.bbox_top, obj_Solid) && myFloorPlat.bbox_top >= bbox_bottom - 1 {
 					y = myFloorPlat.bbox_top;
 				}
@@ -704,6 +705,9 @@ function scr_YCollision() {
 				if _ramp && !global.Death {
 					if !_ramp.launchConfirmed {
 						if ground && yspd >= 0 {
+							jumping = true;
+							ground = false;
+							
 							obj_SFXManager.jumpDash = true;
 							_ramp.launchConfirmed = true;
 	
@@ -738,8 +742,6 @@ function scr_YCollision() {
 							}
 		
 							yspd = _ramp.launchYspd;
-							jumping = true;
-							ground = false;
 						}
 	
 						if audio_is_playing(snd_Stomping) {
@@ -755,6 +757,9 @@ function scr_YCollision() {
 				if _launchRing && !global.Death {
 					if !_launchRing.launchConfirmed {
 						_launchRing.launchConfirmed = true;
+						
+						ground = false;
+						jumping = true;
 						
 						if !_launchRing.rainbow {
 							obj_SFXManager.dashPanel = true;
@@ -796,9 +801,6 @@ function scr_YCollision() {
 						yspd = _launchRing.launchYspd;
 						gravTimer = _launchRing.launchFrames;
 						noMoveTimer = _launchRing.launchFrames;
-						
-						ground = false;
-						jumping = true;
 					}
 				}
 			#endregion
@@ -876,12 +878,12 @@ function scr_YCollision() {
 						speedBreak = true;
 			
 						if _boost.image_xscale == 1 {
-							if vel < full_Speed {
-								vel = full_Speed;
+							if groundSpeed < full_Speed {
+								groundSpeed = full_Speed;
 							}
 						} else if _boost.image_xscale == -1 {
-							if vel > -full_Speed {
-								vel = -full_Speed;
+							if groundSpeed > -full_Speed {
+								groundSpeed = -full_Speed;
 							}
 						}
 					} else {
@@ -891,12 +893,12 @@ function scr_YCollision() {
 						}
 					
 						if _boost.image_xscale == 1 {
-							if vel < max_Speed * 1.25 {
-								vel = max_Speed * 1.25;
+							if groundSpeed < max_Speed * 1.25 {
+								groundSpeed = max_Speed * 1.25;
 							}
 						} else if _boost.image_xscale == -1 {
-							if vel > -max_Speed * 1.25 {
-								vel = -max_Speed * 1.25;
+							if groundSpeed > -max_Speed * 1.25 {
+								groundSpeed = -max_Speed * 1.25;
 							}
 						}
 					}
@@ -939,7 +941,11 @@ function scr_YCollision() {
 							ground = false;
 							jumping = true;
 						} else if _spring.hori && !_spring.verti {
-							vel = _spring.launchVel;
+							if !ground {
+								vel = _spring.launchVel;
+							} else {
+								ground = _spring.launchVel;
+							}
 						} else if _spring.verti && _spring.hori {
 							yspd = _spring.launchYspd;
 							vel = _spring.launchVel;
@@ -1033,7 +1039,7 @@ function scr_YCollision() {
 							can_MoveFULL = true;
 							preTrickTimer = preTrickFrames;
 							
-							yspd = -9;
+							yspd = -10;
 						} else {
 							if _balloon.giveScore {
 								_balloon.giveScore = false;
@@ -1043,7 +1049,7 @@ function scr_YCollision() {
 								getScore = false;
 							}
 							
-							yspd = -7;
+							yspd = -8;
 						}
 					}
 				}
@@ -1068,6 +1074,7 @@ function scr_YCollision() {
 					obj_SFXManager.waterSpout = true;
 					
 					vel = 0;
+					groundSpeed = 0;
 					yspd = -15;
 						
 					ground = false;
@@ -1099,6 +1106,9 @@ function scr_YCollision() {
 						event_user(1);
 						event_user(2);
 						jumping = true;
+						yspd = 0;
+						vel = 0;
+						groundSpeed = 0;
 						
 						obj_SFXManager.clench = true;
 						scr_StopCharControls();
@@ -1340,17 +1350,32 @@ function scr_YCollision() {
 						with (instance_create_depth(-100000, 0, 0, obj_MoreBonus)) {
 							_goal.bonus3 = 20000;
 						}
+						
+						var _xMove = vel;
+						
+						if ground {
+							_xMove = groundSpeed;
+						}
 	
-						if vel > 0 && vel > boost_Speed {
-							vel = boost_Speed;
+						if _xMove > 0 && _xMove > boost_Speed {
+							
+							if !ground {
+								vel = boost_Speed;
+							} else {
+								groundSpeed = boost_Speed;
+							}
 		
 							if !leftFacer {
 								image_xscale = 1;
 							} else {
 								face_Left = false;
 							}
-						} else if vel < 0 && vel < -boost_Speed {
-							vel = -boost_Speed;
+						} else if _xMove < 0 && _xMove < -boost_Speed {
+							if !ground {
+								vel = -boost_Speed;
+							} else {
+								groundSpeed = -boost_Speed;
+							}
 		
 							if !leftFacer {
 								image_xscale = -1;
@@ -1405,6 +1430,251 @@ function scr_YCollision() {
 			
 			#region //Kill & Get Hurt By Enemies
 				scr_PlayerToEnemyShit();
+			#endregion
+		#endregion
+		
+		#region //Furry Collision
+			//Gradual angle rotation
+			/*if ground {
+				angle_step = angle_step_g;
+				state = scr_PstGround();
+			} else {
+				angle_step = angle_step_a
+				state = scr_PstAerial();
+			}
+
+			if abs(angle_difference(drawAngle, target_angle)) < angle_step {
+			    drawAngle = target_angle;
+			} else {
+			    drawAngle -= angle_step * sign(angle_difference(drawAngle, target_angle));
+			}
+			
+			//image_angle = drawAngle;
+			
+			if !ground {
+				yspd += grav;
+				
+				if yspd >= termVel {
+					yspd = termVel;
+				}
+			}*/
+		#endregion
+		
+		#region //Astral Collision
+			PlayerAngleLocals();
+			PlayerHandleLayers();
+			
+			if stomping {
+				angle = 0;
+			}
+
+			#region //Movin'
+				x += angleCos * vel;
+				y -= angleSin * vel;
+	
+				var repFactor = 1;
+
+				if abs(vel) > 11 {
+				    repFactor = round(abs(vel) / 9);
+				}
+				
+				groundAngle = angle;
+			#endregion
+
+			#region //Right & Left Collision
+				if vel > 0 {
+				    while (PlayerCollisionRight(x, y, angle, maskMid)) {
+				        x -= angleCos;
+				        y += angleSin;
+				    }
+				}
+
+				if vel < 0 {
+				    while (PlayerCollisionLeft(x, y, angle, maskMid)) {
+				        x += angleCos;
+				        y -= angleSin;
+				    }
+				}
+
+				// Cache collision
+				PlayerCollisionCache();
+			#endregion
+
+			#region //On Ground
+				if ground {
+					PlayerSetGround(true);
+					
+				    repeat (repFactor) {
+				        if edgeCollision {
+				            while (PlayerCollisionMain(x, y + sensorMainYDist)) {
+				                x -= angleSin;
+				                y -= angleCos;
+				            }
+				        }
+
+				        if PlayerCollisionSlope(x, y + sensorMainYDist, angle, maskMid) && !PlayerCollisionMain(x, y + sensorMainYDist) {
+				            while !PlayerCollisionMain(x, y + sensorMainYDist) {
+				                x += angleSin;
+				                y += angleCos;
+				            }
+				        }
+				    }
+
+				    PlayerCollisionCache();
+		
+					//Fall if there is not enough speed.
+			        if angle >= 75 && angle <= 285 && abs(vel) < xMinSpeedToFall {
+			            PlayerFlight();
+			        }
+
+			        PlayerCollisionCache();
+			
+
+			        //Fall off the ground if the edges aren't colliding
+			        if angle != 0 && !edgeCollision {
+			            PlayerFlight();               
+			        } 
+        
+			        //Get new angle
+			        if edgeCollision && ground {
+			            //Store the new angle
+			            angleHolder = PlayerGetAngle(x, y, angle);
+    
+			            //Smooth angle
+			            if abs(angle - angleHolder) < 45 {
+			                PlayerSetAngle(angle + (angleHolder - angle) * 0.5);
+			            } else {
+			                PlayerSetAngle(angleHolder);
+			            }
+					} else {
+			            PlayerSetAngle(0);
+			        }
+    
+			        //Leave the ground
+			        if !bottomCollision {
+			            PlayerSetGround(false);
+			            PlayerSetAngle(0);
+						jumping = true;
+						realJumping = false;
+			        }
+				}     
+			#endregion
+
+			#region //Vertical movement        
+				if !ground {  
+					y += yspd;
+					
+			        //Cache collision
+			        PlayerCollisionCache();
+        
+			        //Ceiling
+			        if yspd < 0 && PlayerCollisionTop(x, y, 0, maskBig) {
+			            if PlayerCollisionLeftEdge(x, y, 180) && PlayerCollisionRightEdge(x, y, 180) {
+			                PlayerSetAngle(PlayerGetAngle(x, y, 180));
+                                        
+			                if angle < 130 || angle > 230 {
+			                    vel = -angleSin * (yspd * 1.5);
+			                    yspd = 0;     
+			                    PlayerSetGround(true);
+			                    PlayerCollisionCache();             
+			                } else {
+			                    PlayerSetAngle(0);
+			                }
+			            }
+			        }
+                
+			        //Move the player outside in case he has got stuck into the floor or the ceiling           
+			        while (yspd < 0 && PlayerCollisionTop(x, y, 0, maskMid)) {
+			            y += 1;
+			        }            
+		
+			        while (yspd > 0 && PlayerCollisionBottom(x, y, 0, maskMid)) {
+			            y -= 1;
+			        }      
+		
+    
+			        //Wall Collision (needs to be performed because y axis has recently changed)
+			        while (PlayerCollisionRight(x, y, angle, maskMid)) {
+			            x -= angleCos;
+			            y += angleSin;
+			        }
+        
+			        while (PlayerCollisionLeft(x, y, angle, maskMid)) {
+			            x += angleCos;
+			            y -= angleSin;
+			        }
+        
+				    //Add gravity
+				    if gravTimer == 0 {
+				        yspd += grav;
+						
+						if yspd >= termVel {
+							yspd = termVel;
+						}
+				    }
+
+				    PlayerCollisionCache();
+		
+				    //Land
+			        if yspd > 0 && bottomCollision {
+			            if edgeCollision {
+			                PlayerSetAngle(PlayerGetAngle(x, y, angle));
+			                PlayerCollisionCache();
+			            }
+						
+						winningAngle = angle;
+			            vel -= angleSin * yspd;
+			            yspd = 0;
+			            PlayerSetGround(true);
+						scr_Landing();
+			        }
+    
+			        //Check if we're on the air but we collided with the ceiling
+			        if yspd < 0 && PlayerCollisionTop(x, y, 0, maskBig) {
+			            yspd = 0;
+			        }
+				}
+			#endregion
+
+			#region //Misc
+				//Acceleration and deceleration on slopes
+				if ground && angle > 35 && angle < 325 {
+					if angle > 40 && angle < 320 {
+						var _slopeFact = slopeFactor;
+						
+						if sliding {
+							_slopeFact = slopeFactorSlide;
+						}
+						
+						vel -= angleSin * _slopeFact;
+					}
+				}
+
+				//Stop when meet a wall/slide pass and isnt sliding
+				if vel > 0 && PlayerCollisionRight(x + 2, y, angle, maskMid) {
+				    vel = 0;
+				    pushingWall = true;
+				} else if vel < 0 && PlayerCollisionLeft(x - 2, y, angle, maskMid) {
+				    vel = 0;
+				    pushingWall = true;
+				} else {
+				    pushingWall = false;
+				}
+
+			    //Decrease gravity freeze timer
+			    if gravTimer > 0 {
+					gravTimer--;
+				}
+	
+				if ground {
+				    //Rotate while moving on the ground
+				    image_angle = ApproachAngle(image_angle, angle, 3 + abs(vel));
+					drawAngle = image_angle;
+				} else {
+					//Rotate until reaches to the normal angle
+				    image_angle = ApproachAngle(image_angle, 0, 4);
+					drawAngle = image_angle;
+				}
 			#endregion
 		#endregion
 	}
@@ -1611,7 +1881,7 @@ function scr_WallClingStep() {
 	}
 		
 	if !global.Death && !playerHurt && !rampRing && !afterRailJump && !stomping {
-		if onWall != 0 && !ground && yspd >= -3 {
+		if onWall != 0 && !ground && yspd >= 0 {
 			if _wall {
 				canWallJump = _wall.wallJumpable;
 			}
@@ -1654,9 +1924,13 @@ function scr_WallClingStep() {
 
 
 function scr_CeilingDetect() {
-	var _ceilingDetect = collision_point(x, y - 10, obj_Solid, true, true);
+	var _ceilingDetect = collision_point(x, y - 20, obj_Solid, true, true);
 	
-	if _ceilingDetect && ground && !jumping {
+	if terrainLayer == 1 {
+		_ceilingDetect = collision_point(x, y - 20, obj_SolidB, true, true);
+	}
+	
+	if _ceilingDetect && ground && !jumping && groundAngle == 0 {
 		collide = true;
 	} else {
 		collide = false;

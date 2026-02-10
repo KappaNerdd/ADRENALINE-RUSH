@@ -2,3 +2,4 @@
 load_options();
 scr_LoadControls();
 scr_LoadFiles();
+scr_LoadJuke();

@@ -53,8 +53,8 @@ if kysTimer > 0 {
 	whiteAlpha = mainAlpha;
 	
 	if otheralpha <= 0 {
-		if !global.CustomMus && !finishedCreate {
-			instance_create_depth(-100000, 0, 0, obj_MusicTag);
+		if !global.Jukebox && !finishedCreate {
+			scr_MusicTag();
 		}
 		
 		global.countUp = true;

@@ -1,5 +1,5 @@
 scr_RoomCheckerCreate();
-instance_create_depth(-100000, 0, depth, obj_MusicTag);
+scr_MusicTag();
 
 fileChoice = 0;
 copyFile = 0

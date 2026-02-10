@@ -22,6 +22,18 @@ if !transd {
 			} else {
 				room_goto(target_rm);
 				instance_destroy();
+				
+				if global.Jukebox {
+					var _custArray = global.CustomJukeboxPlaylist;
+				
+					if global.JukeboxShuffle {
+						_custArray = global.CustomJukeShuffled;
+					}
+				
+					var _custTrack = audio_create_stream(_custArray[global.CustomJukeChoice]);
+				
+					set_song_ingame(_custTrack, 0, 60);
+				}
 			}
 		}
 	} else {

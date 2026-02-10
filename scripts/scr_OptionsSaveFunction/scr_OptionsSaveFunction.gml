@@ -304,3 +304,56 @@ function scr_LoadControls() {
 		global.ParryButtonAction = global.optionsControls[3].parry;
 		global.ChargeButtonAction = global.optionsControls[3].charge;
 }
+	
+	
+	
+//Save Custom Jukebox Playlist
+function scr_SaveJuke() {
+	var _saveArray = array_create(0);
+	
+	global.JukeOptions[0].loop = global.JukeboxLoop;
+	global.JukeOptions[0].shuffle = global.JukeboxShuffle;
+	
+	//Save Arrays
+	array_push(_saveArray, global.CustomJukeboxPlaylist);
+	array_push(_saveArray, global.CustomJukeShuffled);
+	array_push(_saveArray, global.JukeOptions);
+	
+	//Actual Saving
+	var _dir = working_directory + "/saves/";
+	var _filename = _dir + string(global.JukeboxDataFile) + ".sav";
+	var _json = json_stringify(_saveArray);
+	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed, 1);
+	
+	buffer_write(_buffer, buffer_string, _json);
+	buffer_save(_buffer, _filename);
+	buffer_delete(_buffer);
+}
+
+function scr_LoadJuke() {
+	//Loading our save data
+	var _dir = working_directory + "/saves/"
+	var _filename = _dir + string(global.JukeboxDataFile) + ".sav";
+	
+	if !file_exists(_filename) {
+		exit;
+	}
+		
+	//Load the buffer, get the JSON, delete the buffer from memory
+	var _buffer = buffer_load(_filename);
+	var _json = buffer_read(_buffer, buffer_string);
+	
+	buffer_delete(_buffer);
+		
+	//Unstringify and get the data array
+	var _loadArray = json_parse(_json);
+		
+	//Set the data in our game to match our loaded data
+	global.CustomJukeboxPlaylist = array_get(_loadArray, 0);
+	global.CustomJukeShuffled = array_get(_loadArray, 1);
+	global.JukeOptions = array_get(_loadArray, 2);
+	
+	global.JukeboxLoop = global.JukeOptions[0].loop;
+	global.JukeboxShuffle = global.JukeOptions[0].shuffle;
+}
+

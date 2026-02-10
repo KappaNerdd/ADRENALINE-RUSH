@@ -1,5 +1,8 @@
 display_set_gui_size(768, 432);
 
+var _camWidth = 768;
+var _camHeight = 432;
+
 #region //BG
 	draw_sprite_ext(sprite_index, image_index, -10, -10, 25, 15, 0, #444444, image_alpha);
 	draw_sprite_ext(sideBar, mindFrames, backSideX + 5, 0, 1, 1, 0, c_black, 1);
@@ -156,17 +159,17 @@ display_set_gui_size(768, 432);
 	
 	var _array = array_length(_choiceLength);
 
-	draw_sprite_ext(spr_CharSelectRushBallWhite, 0, rushBallX - 3, global.CamHeight - 87, 1, 1, rushBallAngle, c_black, 1);
-	draw_sprite_ext(spr_CharSelectRushBall2, 0, rushBallX - 3, global.CamHeight - 87, 1, 1, 0, c_black, 1);
-	draw_sprite_ext(spr_CharSelectRushBallWhite, 0, rushBallX, global.CamHeight - 90, 1, 1, rushBallAngle, c_white, 1);
-	draw_sprite_ext(spr_CharSelectRushBall2, 0, rushBallX, global.CamHeight - 90, 1, 1, rushBallAngle, global.fullRGB, 1);
-	draw_sprite_ext(spr_CharSelectRushBall2, 1, rushBallX, global.CamHeight - 90, 1, 1, 0, global.fullRGB, 1);
-	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][28][3], mindFrames, rushBallX, global.CamHeight - 90, 1, 1, rushBallAngle, c_white, 1);
+	draw_sprite_ext(spr_CharSelectRushBallWhite, 0, rushBallX - 3, _camHeight - 87, 1, 1, rushBallAngle, c_black, 1);
+	draw_sprite_ext(spr_CharSelectRushBall2, 0, rushBallX - 3, _camHeight - 87, 1, 1, 0, c_black, 1);
+	draw_sprite_ext(spr_CharSelectRushBallWhite, 0, rushBallX, _camHeight - 90, 1, 1, rushBallAngle, c_white, 1);
+	draw_sprite_ext(spr_CharSelectRushBall2, 0, rushBallX, _camHeight - 90, 1, 1, rushBallAngle, global.fullRGB, 1);
+	draw_sprite_ext(spr_CharSelectRushBall2, 1, rushBallX, _camHeight - 90, 1, 1, 0, global.fullRGB, 1);
+	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][28][3], mindFrames, rushBallX, _camHeight - 90, 1, 1, rushBallAngle, c_white, 1);
 	
-	draw_sprite_ext(_pauseArrow, mindFrames, rushBallX * 2.55 - 3, global.CamHeight - 40 + 15, 1, 0.5, 0, c_black, 1);
-	draw_text_transformed_color(rushBallX * 2.55 - 3, global.CamHeight - 40 + 3, _choicesNames, 1, 1, 0, c_black, c_black, c_black, c_black, 1);
-	draw_sprite_ext(_pauseArrow, mindFrames, rushBallX * 2.55, global.CamHeight - 40 + 12, 1, 0.5, 0, global.fullRGB, 1);
-	draw_text_transformed_color(rushBallX * 2.55, global.CamHeight - 40, _choicesNames, 1, 1, 0, c_white, c_white, c_white, c_white, 1);
+	draw_sprite_ext(_pauseArrow, mindFrames, rushBallX * 2.55 - 3, _camHeight - 40 + 15, 1, 0.5, 0, c_black, 1);
+	draw_text_transformed_color(rushBallX * 2.55 - 3,  - 40 + 3, _choicesNames, 1, 1, 0, c_black, c_black, c_black, c_black, 1);
+	draw_sprite_ext(_pauseArrow, mindFrames, rushBallX * 2.55, _camHeight - 40 + 12, 1, 0.5, 0, global.fullRGB, 1);
+	draw_text_transformed_color(rushBallX * 2.55, _camHeight - 40, _choicesNames, 1, 1, 0, c_white, c_white, c_white, c_white, 1);
 	
 	for(var i = 0; i < _array; i++) {
 		var _extraX = lengthdir_x(120, (rushBallAngle + (_rushBS * i)));
@@ -177,8 +180,8 @@ display_set_gui_size(768, 432);
 			_alpha = 0.5;
 		}
 		
-		draw_sprite_ext(_choiceLength[i][1], mindFrames, rushBallX + _extraX - 3, global.CamHeight - 90 + _extraY + 3, 1.5, 1.5, rushBallAngle + (_rushBS * i), c_black, _alpha);
-		draw_sprite_ext(_choiceLength[i][1], mindFrames, rushBallX + _extraX, global.CamHeight - 90 + _extraY, 1.5, 1.5, rushBallAngle + (_rushBS * i), c_white, _alpha);
+		draw_sprite_ext(_choiceLength[i][1], mindFrames, rushBallX + _extraX - 3, _camHeight - 90 + _extraY + 3, 1.5, 1.5, rushBallAngle + (_rushBS * i), c_black, _alpha);
+		draw_sprite_ext(_choiceLength[i][1], mindFrames, rushBallX + _extraX, _camHeight - 90 + _extraY, 1.5, 1.5, rushBallAngle + (_rushBS * i), c_white, _alpha);
 	}
 #endregion
 

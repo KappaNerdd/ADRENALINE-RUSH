@@ -163,9 +163,7 @@ if !completed {
 					instance_create_depth(-100000, 0, 0, obj_ResultsWhiteTrans);
 				}
 				
-				if !instance_exists(obj_MusicTag) {
-					instance_create_depth(x, y, depth, obj_MusicTag);
-				}
+				scr_MusicTag();
 			} else {
 				if jump_Key {
 					set_song_ingame(noone, 60, 0);
@@ -239,6 +237,8 @@ if !completed {
 		obj_NewRecordN.visible = false;
 		obj_NewTime.visible = false;
 		obj_NewScore.visible = false;
+		obj_NewRings.visible = false;
+		obj_NewEnemy.visible = false;
 		
 		#region //Sonic Rush Spikes
 			moveRight = lerp(moveRight, moveRightStart, 0.1);

@@ -1,12 +1,12 @@
 /// @description Set Ambiance
 
-var _finalVol = global.MASTER_VOL * global.AMBIENCE_VOL;
+var _finalVol = global.AMBIENCE_VOL * global.MASTER_VOL;
 
 /*#region //MIND
 	//MIND Rain Loop
 	if mindRainLoop == true && !audio_is_playing(mindRainInst) {
 		//Play Sound
-		mindRainInst = audio_play_sound(amb_NormalRain, 8, true);
+		mindRainInst = audio_play_sound(amb_NormalRain, 10, true);
 		audio_sound_gain(mindRainInst, _finalVol, 0);
 	}
 

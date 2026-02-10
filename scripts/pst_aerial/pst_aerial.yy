@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"pst_aerial",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pst_aerial",
+  "parent":{
+    "name":"State",
+    "path":"folders/Scripts/Player/State.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

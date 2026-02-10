@@ -21,8 +21,6 @@ if place_meeting(x, y, obj_Player) && !goal && !global.Death {
 	
 	obj_CameraExtended.following = self;
 	
-	set_song_ingame(noone, 300, 0);
-	
 	with(obj_Player) {
 		if abs(vel) <= 5 {
 			other.image_speed = 0.3;

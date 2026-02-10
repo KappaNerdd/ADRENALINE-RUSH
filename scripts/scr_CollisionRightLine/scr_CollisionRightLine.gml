@@ -1,4 +1,4 @@
-function scr_CollisionRightLine() {	
+function scr_CollisionRightLine() {
 	mask = argument0;
 	line = floor(mask * 2.5);
 

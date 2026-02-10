@@ -1,4 +1,4 @@
-function scr_FindAngle() { //Obsolete
+function scr_FindAngle() {
 	angle = round(argument0 / 8) * 8;
 	hspace = argument1;
 	check = argument2;
@@ -13,11 +13,9 @@ function scr_FindAngle() { //Obsolete
 	
 	done1 = 0;
 	done2 = 0;
-	
-	
+
 	i = check;
-	while(i > 0) {
-		
+	while(i > 0) {	
 		if !done1 {
 			if collision_point(x1, y1, obj_Solid, true, true) done1 = true;
 			x1 += asin;
@@ -38,7 +36,7 @@ function scr_FindAngle() { //Obsolete
 }
 
 
-function scr_ChangeDrawAngle() {
+/*function scr_ChangeDrawAngle() {
 	var _slopeCollWide = place_meeting(x, y + yspd, obj_SlopeStairsWide) or place_meeting(x, y + yspd, obj_RailCollSlopeWide);
 	var _slopeCollWideR = place_meeting(x, y + yspd, obj_SlopeStairsWideR) or place_meeting(x, y + yspd, obj_RailCollSlopeWideR);
 	var _slopeColl = place_meeting(x, y + yspd, obj_SlopeStairs) or place_meeting(x, y + yspd, obj_RailCollSlope);
@@ -106,5 +104,5 @@ function scr_SlopeMomentum() {
 	
 	if !_slopeCollWide && !_slopeCollWideR && !_slopeColl && !_slopeCollR && !_slopeCollSteep && !_slopeCollSteepR {
 		jspd = normalJspd;
-	}*/
+	}
 }

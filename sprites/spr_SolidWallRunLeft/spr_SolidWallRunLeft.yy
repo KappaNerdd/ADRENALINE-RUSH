@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Wall Run",
-    "path":"folders/Sprites/Debug/Collision/Debug/Solid Collision/Wall Run.yy",
+    "path":"folders/Sprites/Debug/Collision/Solid Collision/Wall Run.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_inertia_aerial",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_inertia_aerial",
+  "parent":{
+    "name":"Substate",
+    "path":"folders/Scripts/Player/Substate.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

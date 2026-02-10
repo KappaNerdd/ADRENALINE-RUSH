@@ -19,7 +19,7 @@
 if can_MoveFULL {
 	#region //Movement
 		//Left Movement
-		if left_Key && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
+		if left_Key && !stomping && !playerHurt && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveLeft();				
         
 		    if !sliding && !wallJump {
@@ -32,7 +32,7 @@ if can_MoveFULL {
 		}
 
 		//Right Movement
-		if right_Key && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
+		if right_Key && !stomping && !playerHurt && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveRight();
 				
 		    if !sliding && !wallJump {
@@ -242,7 +242,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Jumping
-		if jump_Key && ground && !ducking && !jumping && !stomping && !airDash && !prepare && !afterRailJump && !collide {
+		if jump_Key && ground && !playerHurt && !ducking && !jumping && !stomping && !airDash && !prepare && !afterRailJump && !collide {
 			scr_JumpManipulate();
 			
 			realJumping = true;
@@ -258,7 +258,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Double Jump
-		if jump_Key && !ground && jumpinTimer <= 0 && !wallJump && jumping && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -4 {
+		if jump_Key && !ground && jumpinTimer <= 0 && !wallJump && jumping && !playerHurt && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -4 {
 			scr_JumpManipulate();
 			
 			realJumping = true;
@@ -287,8 +287,9 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Stomping
-		if !ground && !stomping && (down_Key && action_Key) {
-			stomping = true
+		if !ground && !stomping && !playerHurt && (down_Key && action_Key) {
+			vel = 0;
+			stomping = true;
 			airDash = false;
 			wallJump = false;
 			afterWallJump = false;
@@ -306,7 +307,6 @@ if can_MoveFULL {
 			
 		if stomping {
 			yspd = termVel;
-			vel = 0;
 			dJumping = false;
 		} else {
 			if audio_is_playing(snd_Stomping) {
@@ -316,22 +316,21 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Stomped
-		if !place_meeting(x, y + yspd + 1, obj_BreakableFloor) && stomping && ground {
-			stomped = true;
+		if !place_meeting(x, y + yspd, obj_BreakableFloor) && stomping && ground {
+			if winningAngle == 0 {
+				stomped = true;
+				stompedTimer = stompedFrames;
+			}
+			
 			stomping = false;
-			stompedTimer = stompedFrames;
 			obj_SFXManager.stompSound = true;
 		}
 		
 		#region //Slam-Dash
 			if stomped {
-				vel = 0;
-				
 				if stompedTimer > 0 {
 					stompedTimer--;
-				}
-
-				if stompedTimer <= 0 {
+				} else {
 					stomped = false;
 				}
 			
@@ -420,7 +419,6 @@ if can_MoveFULL {
 		} else {
 			wallJump = false;
 			wallJumping = false;
-			afterWallJump = false;
 		}
 			
 		if wallJump {

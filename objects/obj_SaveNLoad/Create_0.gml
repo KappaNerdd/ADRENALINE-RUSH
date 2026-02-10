@@ -148,6 +148,7 @@
 	
 	global.OptionsDataFile = "AROPTIONSDATA";
 	global.ControlsDataFile = "ARCONTROLSDATA";
+	global.JukeboxDataFile = "ARJUKEBOXDATA";
 	global.LanguageCreationFile = "LANGCHOSEN";
 	
 	scr_RenameFiles();
@@ -1063,6 +1064,33 @@
 	global.ThunderCountdown = 300;
 #endregion
 
+#region ///-----Jukebox-----///
+	global.Jukebox = false;
+	global.JukeboxLoop = false;
+	global.JukeboxShuffle = false;
+	global.JukeBoxChoice = 0;
+	global.CustomJukeChoice = 0;
+	
+	global.JukeOptions = [
+		{
+			loop: false,
+			shuffle: false,
+		}
+	]
+	
+	global.JukeboxPlaylist = [
+		
+	]
+	
+	global.CustomJukeboxPlaylist = [
+		
+	]
+	
+	global.CustomJukeShuffled = [
+		
+	]
+#endregion
+
 #region ///-----Options BS-----///
 	global.optionsData = [
 		{ //Audio Options
@@ -1276,7 +1304,7 @@
 		{ //MIND Level 1
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind1", level_Num: 1, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed1, levelForced: false,
 		
-			rankS_Time: 125, rankA_Time: 130, rankB_Time: 140, rankC_Time: 155, rankD_Time: 215, rankF_Time: 240,
+			rankS_Time: 130, rankA_Time: 135, rankB_Time: 145, rankC_Time: 200, rankD_Time: 220, rankF_Time: 245,
 			
 			rankS_Score: 400000, rankA_Score: 350000, rankB_Score: 250000, rankC_Score: 150000, rankD_Score: 75000,
 			
@@ -1596,14 +1624,6 @@
 	]
 #endregion
 
-#region //Rank Requirements (Speed)
-	global.SpeedRanks = [
-		{ //MIND Level 1
-			
-		}
-	]
-#endregion
-
 #region //Rank System (Action)
 	global.ActionPlayer = obj_ActionPlayer;
 	global.ActionEnemy = obj_ActionPlayer;
@@ -1637,8 +1657,8 @@
 #endregion
 
 #region //Camera Zoom
-	global.CamWidth = 854;
-	global.CamHeight = 480;
+	global.CamWidth = 896;
+	global.CamHeight = 504;
 	
 	global.CamSafeArea = 1050;
 #endregion

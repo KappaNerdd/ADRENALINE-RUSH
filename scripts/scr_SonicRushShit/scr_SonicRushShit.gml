@@ -18,6 +18,12 @@ function scr_SpeedBreakStep() {
 			scr_ControllerRumble();
 			speedBreak = true;
 			
+			if vel > 0 {
+				vel += 4;
+			} else if vel < 0 {
+				vel -= 4;
+			}
+			
 			if sonicRush {
 				obj_SFXManager.breakSonic = true;
 			} else if blazeRush {
@@ -40,6 +46,7 @@ function scr_SpeedBreakStep() {
 function scr_BoostCreate() {
 	boost = false;
 	airBoost = false;
+	airBoosting = false;
 	boostEnergy = 100;
 	maxBoostEnergy = 300;
 	
@@ -104,7 +111,7 @@ function scr_BoostingStep() {
 	}
 	
 	//Activate Boost
-	if (action1_Key) && !playerHurt && !instance_exists(obj_CutsceneParent) && can_MoveFULL && can_Move && !stomping && !airBoost && !global.Death && boostEnergy > 0 && !prepare {
+	if (action1_Key) && !playerHurt && !instance_exists(obj_CutsceneParent) && can_MoveFULL && !airBoost && !global.Death && boostEnergy > 0 && !prepare {
 		boost = true;
 		initiateBoost = true;
 		speedBreak = true;
@@ -117,6 +124,7 @@ function scr_BoostingStep() {
 		if !ground && !airBoost {
 			yspd = 0;
 			airBoost = true;
+			event_user(4);
 			gravTimer = 7;
 			
 			if !rushMode {
@@ -152,7 +160,7 @@ function scr_BoostingStep() {
 					if vel > -boost_Speed {
 						vel = -boost_Speed;
 					}
-				
+
 					scr_RushBoostBreakVFX(-40);
 				} else {
 					if vel < boost_Speed {
@@ -180,7 +188,7 @@ function scr_BoostingStep() {
 			if vel > -boost_Speed {
 				vel = -boost_Speed;
 			}
-				
+
 			scr_RushBoostBreakVFX(-40);
 		} else if right_Key {
 			if vel < boost_Speed {
@@ -228,7 +236,7 @@ function scr_BoostingStep() {
 	}
 	
 	//Keep Boost
-	if boost && (action1_Key_Held) && boostEnergy > 0 && can_Move && can_MoveFULL && !global.Death {
+	if boost && (action1_Key_Held) && boostEnergy > 0 && can_MoveFULL && !global.Death {
 		if !speedBreak {
 			speedBreak = true;
 		}
@@ -251,10 +259,6 @@ function scr_BoostingStep() {
 		
 		if abs(vel) < max_Speed / 2 && ground && !stomping && !stomped {
 			boost = false;
-			
-			if instance_exists(obj_Boost) {
-				instance_destroy(obj_Boost);
-			}
 		}
 	} else if !(action1_Key_Held) or boostEnergy == 0 {
 		boost = false;
@@ -267,10 +271,6 @@ function scr_BoostingStep() {
 			if vel == -boost_Speed {
 				vel = -full_Speed;
 			}
-		}
-		
-		if instance_exists(obj_Boost) {
-			instance_destroy(obj_Boost);
 		}
 	}
 	
@@ -291,7 +291,7 @@ function scr_AirTricksCreate() {
 	beforeTrick = false;
 	
 	preTrickTimer = 0;
-	preTrickFrames = 8;
+	preTrickFrames = 5;
 
 	trick = false;
 	altTrick = false;
@@ -1163,4 +1163,20 @@ function scr_RushModeColorDraw() {
 		draw_sprite_ext(_stompingSprite, stompingSprFrames, x, y + 20, 1, 1, 0, c_white, 1);
 	}
 	
+	if drawSensors {
+        // Draw main masks
+        draw_sprite_ext(idle_Mask, 0, floor(x), floor(y), image_xscale, image_yscale, 0, c_white, 0.8);
+
+        // Draw sensor masks
+        draw_sprite_ext(maskBig, 0, floor(x + angleSin * sensorBottomDistance), floor(y + angleCos * sensorBottomDistance), image_xscale, image_yscale, 0, c_white, 0.8);
+        draw_sprite_ext(maskMid, 0, floor(x + angleSin * 22), floor(y + angleCos * 22 + sensorMidDistance), image_xscale, image_yscale, 0, c_white, 0.8);
+        draw_sprite_ext(maskBig, 0, floor(x - angleSin * sensorTopDistance), floor(y - angleCos * sensorTopDistance), image_xscale, image_yscale, 0, c_white, 0.8);
+        draw_sprite_ext(maskBig, 0, floor(x - angleCos * sensorLeftDistance), floor(y + angleSin * sensorLeftDistance), image_xscale, image_yscale, 0, c_white, 0.8);
+        draw_sprite_ext(maskBig, 0, floor(x + angleCos * sensorRightDistance), floor(y - angleSin * sensorRightDistance), image_xscale, image_yscale, 0, c_white, 0.8);
+
+        draw_line(floor(x - sensorCos * 8 + sensorSin * 8), floor(y + sensorSin * 8 + sensorCos * 8), floor(x - sensorCos * 8 + sensorSin * 36), floor(y + sensorSin * 8 + sensorCos * 36))
+        draw_line(floor(x + sensorCos * 8 + sensorSin * 8), floor(y - sensorSin * 8 + sensorCos * 8), floor(x + sensorCos * 8 + sensorSin * 36), floor(y - sensorSin * 8 + sensorCos * 36))
+		
+		draw_sprite_ext(maskMain, 0, floor(x), floor(y) + sensorMainYDist, image_xscale, image_yscale, 0, c_white, 0.5);
+    }
 }

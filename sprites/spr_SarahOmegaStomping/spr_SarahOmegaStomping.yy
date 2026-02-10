@@ -31,7 +31,7 @@
   ],
   "name":"spr_SarahOmegaStomping",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Right",
     "path":"folders/Sprites/Characters/Players/Sarah/Sarah (Normal)/Right.yy",
@@ -108,7 +108,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

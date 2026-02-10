@@ -25,7 +25,7 @@
   ],
   "name":"spr_SarahTrickLeftPre",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Left",
     "path":"folders/Sprites/Characters/Players/Sarah/Sarah (Normal)/Left.yy",
@@ -84,7 +84,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

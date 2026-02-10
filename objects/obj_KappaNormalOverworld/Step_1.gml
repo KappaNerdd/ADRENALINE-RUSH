@@ -19,7 +19,7 @@
 if can_MoveFULL {
 	#region //Movement
 		//Left Movement
-		if left_Key && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
+		if left_Key && !stomping && !playerHurt && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveLeft();				
         
 		    if !sliding && !wallJump {
@@ -32,7 +32,7 @@ if can_MoveFULL {
 		}
 
 		//Right Movement
-		if right_Key && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
+		if right_Key && !stomping && !playerHurt && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveRight();
 				
 		    if !sliding && !wallJump {
@@ -53,7 +53,7 @@ if can_MoveFULL {
 		if !instance_exists(obj_CutsceneParent) {
 			#region //Ground
 				if ground && !ducking && !sliding && !airDash && !stomping && !stomped && !railGrind && !railGrindCrouch && !jumping && !dJumping && !skid && !prepare && !specialIdle {
-					if abs(vel) == 0 {
+					if abs(groundSpeed) == 0 {
 						if !leftFacer {
 							sprite_index = sprIdle;
 						} else {
@@ -66,7 +66,7 @@ if can_MoveFULL {
 					
 						image_speed = 1;
 					} else {
-						if abs(vel) < max_Speed {
+						if abs(groundSpeed) < max_Speed {
 							if !leftFacer {
 								sprite_index = sprWalk;
 							} else {
@@ -77,18 +77,18 @@ if can_MoveFULL {
 								}
 							}
 						
-							if abs(vel) < max_Speed / 6 {
+							if abs(groundSpeed) < max_Speed / 6 {
 								image_speed = 0.25;
-							} else if abs(vel) >= max_Speed / 6 && abs(vel) < max_Speed / 3 {
+							} else if abs(groundSpeed) >= max_Speed / 6 && abs(groundSpeed) < max_Speed / 3 {
 								image_speed = 0.5;
-							} else if abs(vel) >= max_Speed / 3 && abs(vel) < max_Speed / 1.5 {
+							} else if abs(groundSpeed) >= max_Speed / 3 && abs(groundSpeed) < max_Speed / 1.5 {
 								image_speed = 1;
-							} else if abs(vel) >= max_Speed / 1.5 && abs(vel) < max_Speed / 1.3 {
+							} else if abs(groundSpeed) >= max_Speed / 1.5 && abs(groundSpeed) < max_Speed / 1.3 {
 								image_speed = 1.25;
-							} else if abs(vel) >= max_Speed / 1.3 && abs(vel) < max_Speed {
+							} else if abs(groundSpeed) >= max_Speed / 1.3 && abs(groundSpeed) < max_Speed {
 								image_speed = 1.75;
 							}
-						} else if abs(vel) >= max_Speed && abs(vel) < full_Speed {
+						} else if abs(groundSpeed) >= max_Speed && abs(groundSpeed) < full_Speed {
 							if !leftFacer {
 								sprite_index = sprRun;
 							} else {
@@ -99,12 +99,12 @@ if can_MoveFULL {
 								}
 							}
 						
-							if abs(vel) < max_Speed * 1.5 {
+							if abs(groundSpeed) < max_Speed * 1.5 {
 								image_speed = 2;
 							} else {
 								image_speed = 2.25;
 							}
-						} else if abs(vel) >= full_Speed {
+						} else if abs(groundSpeed) >= full_Speed {
 							if !leftFacer {
 								sprite_index = sprFullSpeedRun;
 							} else {
@@ -242,7 +242,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Jumping
-		if jump_Key && ground && !ducking && !jumping && !stomping && !airDash && !prepare && !afterRailJump && !collide {
+		if jump_Key && ground && !playerHurt && !ducking && !jumping && !stomping && !airDash && !prepare && !afterRailJump && !collide {
 			scr_JumpManipulate();
 			
 			realJumping = true;
@@ -258,7 +258,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Double Jump
-		if jump_Key && !ground && jumpinTimer <= 0 && !wallJump && jumping && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -4 {
+		if jump_Key && !ground && jumpinTimer <= 0 && !wallJump && jumping && !playerHurt && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -4 {
 			scr_JumpManipulate();
 			
 			realJumping = true;
@@ -287,8 +287,10 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Stomping
-		if !ground && !stomping && (down_Key && action_Key) {
-			stomping = true
+		if !ground && !stomping && !playerHurt && (down_Key && action_Key) {
+			vel = 0;
+			groundSpeed = 0;
+			stomping = true;
 			airDash = false;
 			wallJump = false;
 			afterWallJump = false;
@@ -306,7 +308,6 @@ if can_MoveFULL {
 			
 		if stomping {
 			yspd = termVel;
-			vel = 0;
 			dJumping = false;
 		} else {
 			if audio_is_playing(snd_Stomping) {
@@ -316,31 +317,30 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Stomped
-		if !place_meeting(x, y + yspd + 1, obj_BreakableFloor) && stomping && ground {
-			stomped = true;
+		if !place_meeting(x, y + yspd, obj_BreakableFloor) && stomping && ground {
+			if winningAngle == 0 {
+				stomped = true;
+				stompedTimer = stompedFrames;
+			}
+			
 			stomping = false;
-			stompedTimer = stompedFrames;
 			obj_SFXManager.stompSound = true;
 		}
 		
 		#region //Slam-Dash
 			if stomped {
-				vel = 0;
-				
 				if stompedTimer > 0 {
 					stompedTimer--;
-				}
-
-				if stompedTimer <= 0 {
+				} else {
 					stomped = false;
 				}
 			
 				if action2_Key {
 					if right_Key {
 						if !speedBreak {
-							vel = max_Speed;
+							groundSpeed = max_Speed;
 						} else {
-							vel = full_Speed;
+							groundSpeed = full_Speed;
 						}
 					
 						stompedTimer = 0;
@@ -350,9 +350,9 @@ if can_MoveFULL {
 						obj_SFXManager.airDashSound = true;
 					} else if left_Key {
 						if !speedBreak {
-							vel = -max_Speed;
+							groundSpeed = -max_Speed;
 						} else {
-							vel = -full_Speed;
+							groundSpeed = -full_Speed;
 						}
 						
 						stompedTimer = 0;
@@ -386,7 +386,7 @@ if can_MoveFULL {
 					}
 				} else {
 					if vel < full_Speed {
-						vel += 4;
+						vel += 6;
 					}
 				}
 			} else if image_xscale == -1 {
@@ -396,7 +396,7 @@ if can_MoveFULL {
 					}
 				} else {
 					if vel > -full_Speed {
-						vel -= 4;
+						vel -= 6;
 					}
 				}
 			}
@@ -420,7 +420,6 @@ if can_MoveFULL {
 		} else {
 			wallJump = false;
 			wallJumping = false;
-			afterWallJump = false;
 		}
 			
 		if wallJump {

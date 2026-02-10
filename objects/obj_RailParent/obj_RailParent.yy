@@ -10,8 +10,8 @@
   "name":"obj_RailParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Rails",
-    "path":"folders/Objects/Debug/Collision/Solids/Rails.yy",
+    "name":"Layer A",
+    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Layer A.yy",
   },
   "parentObjectId":{
     "name":"obj_Solid",

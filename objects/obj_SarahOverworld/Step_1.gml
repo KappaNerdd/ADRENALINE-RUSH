@@ -282,7 +282,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Jumping
-		if can_Move && jump_Key && ground && !ducking && !jumping && !dJumping && !stomping && !hover && !prepare && !afterRailJump && !collide {
+		if jump_Key && ground && !ducking && !jumping && !dJumping && !stomping && !hover && !prepare && !afterRailJump && !collide {
 			scr_JumpManipulate();
 			
 			realJumping = true;
@@ -298,7 +298,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Double Jump
-		if can_Move && jump_Key && jumpinTimer <= 0 && !ground && !wallJump && !hover && jumping && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -3 {
+		if jump_Key && jumpinTimer <= 0 && !playerHurt && !ground && !wallJump && !hover && jumping && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -3 {
 			yspd = -jspd;
 			
 			realJumping = true;
@@ -327,7 +327,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Stomping
-		if !ground && !stomping && (down_Key && action_Key) {
+		if !ground && !stomping && !playerHurt && (down_Key && action_Key) {
 			stomping = true
 			hover = false;
 			wallJump = false;
@@ -370,7 +370,6 @@ if can_MoveFULL {
 			if omegaStomp {	
 				if omegaStompingTimer > 0 {
 					omegaStompingTimer -= 1;
-					vel = 0;
 					yspd = 0;
 				}
 				
@@ -397,7 +396,11 @@ if can_MoveFULL {
 
 	#region //Stomped
 		if !place_meeting(x, y + yspd + 1, obj_BreakableFloor) && stomping && ground {
-			stomped = true;
+			if winningAngle == 0 {	
+				stomped = true;
+				vel = 0;
+			}
+			
 			stomping = false;
 			normalStomp = false;
 			omegaStomp = false;
@@ -408,8 +411,6 @@ if can_MoveFULL {
 		
 		#region //Slam-Dash
 			if stomped {
-				vel = 0;
-				
 				if stompedTimer > 0 {
 					stompedTimer--;
 				}
@@ -452,7 +453,7 @@ if can_MoveFULL {
 	
 	#region //Hover
 		if action2_Key_Held {
-			if yspd > 0 && can_Move && !ground && !rampRing && !afterRailJump && !wallJump && !stomping && !playerHurt && !global.Death {
+			if yspd > 0 && !ground && !rampRing && !afterRailJump && !wallJump && !stomping && !playerHurt && !global.Death {
 				hover = true;
 				sideWallJump = false;
 				
@@ -505,8 +506,6 @@ if can_MoveFULL {
 		} else {
 			wallJump = false;
 			wallJumping = false;
-			afterWallJump = false;
-			sideWallJump = false;
 		}
 		
 		if sideWallJump {
@@ -515,6 +514,10 @@ if can_MoveFULL {
 			} else {
 				drawAngle = point_direction(0, 0, -vel, -yspd);
 			}
+		}
+		
+		if ground {
+			sideWallJump = false;
 		}
 			
 		if wallJump {

@@ -51,17 +51,15 @@ if instance_exists(obj_GhostRecorder) {
 	obj_GhostRecorder.ghostRecordFrames = 0;
 }
 
-if !global.CustomMus {
+if !global.Jukebox {
 	if !global.Girly {
 		playTrack = global.speedStageData[global.SpeedSelected].musicTrack;
 	} else {
 		playTrack = global.speedStageData[global.SpeedSelected].musicTrackGirly;
 	}
-} else {
-	playTrack = global.CustomMusic;
+	
+	set_song_ingame(playTrack, 60, 0);
 }
-
-set_song_ingame(playTrack, 60, 0);
 
 instance_create_depth(-10000, y, -9, obj_PlayerExtraLives);
 instance_create_depth(-10000, y, -9, obj_Timer);

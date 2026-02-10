@@ -455,10 +455,10 @@ display_set_gui_size(768, 432);
 			
 			#region //Custom Music (I'm Shadow Freddy. I'm so awesome and black.)
 				var _custCol = c_grey;
-				var _custText = "freeplay_CustMus";
+				var _custText = "freeplay_JukeOff";
 				
-				if global.CustomMusic != noone {
-					_custText = "freeplay_CustMusLoad";
+				if global.Jukebox {
+					_custText = "freeplay_JukeOn";
 				}
 				
 				if _levelDesc.complete {
@@ -480,10 +480,15 @@ display_set_gui_size(768, 432);
 #region //Change Characters
 	if !speedStage && !actionStage {
 		var _press = scr_LocalText("freeplay_ChooseChar1") + " " + string(obj_CustomAct4KeySpeed.keyText) + " " + scr_LocalText("freeplay_ChooseChar2");
+		var _press2 = scr_LocalText("freeplay_ChooseChar1") + " " + string(obj_CustomAct2KeySpeed.keyText) + " " + scr_LocalText("freeplay_ChooseJuke");
+		
 		
 		draw_set_halign(fa_center);
 			draw_text_transformed_color(384, 53, _press, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
 			draw_text_transformed_color(384, 50, _press, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
+			
+			draw_text_transformed_color(384, 78, _press2, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
+			draw_text_transformed_color(384, 75, _press2, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
 		draw_set_halign(fa_left);
 	}
 #endregion

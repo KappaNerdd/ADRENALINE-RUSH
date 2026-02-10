@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_terrain_overlap",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_terrain_overlap",
+  "parent":{
+    "name":"Support",
+    "path":"folders/Scripts/Player/Support.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

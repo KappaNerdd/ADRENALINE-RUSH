@@ -51,7 +51,7 @@ if room == rm_FileSelect {
 
 	if room == rm_Splash1 {
 		set_song_ingame(mus_Solemn, 60, 3 * 60);
-		instance_create_depth(x, y, depth, obj_MusicTag);
+		scr_MusicTag();
 	}
 
 	if room == rm_Splash2 {
@@ -69,7 +69,7 @@ if room == rm_FileSelect {
 #region ///-----Title Screen Head-----///
 	if room == rm_TitleHead {
 		set_song_ingame(mus_Solemn, 0, 3 * 60);
-		instance_create_depth(x, y, depth, obj_MusicTag);
+		scr_MusicTag();
 	}
 
 	if room == rm_MainMenuHead {
@@ -86,7 +86,7 @@ if room == rm_FileSelect {
 		set_song_ingame(mus_WakeyWakey, 60, 3 * 60);
 		
 		if !audio_is_playing(mus_WakeyWakey) {
-			instance_create_depth(x, y, depth, obj_MusicTag);
+			scr_MusicTag();
 		}
 	}
 #endregion
@@ -94,18 +94,16 @@ if room == rm_FileSelect {
 
 ///-----Freeplay-----///
 if room == rm_Freeplay or room == rm_FreeplayNew {
-	instance_create_depth(x, y, depth, obj_MusicTag);
-	
 	set_song_ingame(global.PlayerSelection[global.PlayerChar][20], 60, 60);
+	scr_MusicTag();
 }
 
 if room == rm_CharSelect or room == rm_CharSelectNew {
 	set_song_ingame(mus_FunknRushNew, 0, 0);
-	instance_create_depth(x, y, depth, obj_MusicTag);
+	scr_MusicTag();
 }
 
 #region ///-----Head-----///
-
 	if room == rm_HeadOverworld2 {
 		set_song_ingame(mus_DISCONNECTED, 60, 60);
 	

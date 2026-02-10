@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_get_jumpability",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_get_jumpability",
+  "parent":{
+    "name":"Support",
+    "path":"folders/Scripts/Player/Support.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

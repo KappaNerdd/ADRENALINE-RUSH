@@ -5,8 +5,8 @@ image_alpha = 1;
 
 scr_GetCharLevelCardPort();
 
-charScale = 5;
-charX = -50;
+charScale = 6;
+charX = 250;
 
 if global.LevelForced {
 	if instance_exists(obj_InputRecorder) {
@@ -60,8 +60,8 @@ spikeFrames = 0;
 
 charBoxFrames = 0;
 
-charNameX = 427;
-charNameXRepeat = 854;
+charNameX = 448;
+charNameXRepeat = 896;
 
 charBoxY = 440;
 

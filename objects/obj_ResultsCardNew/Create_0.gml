@@ -5,6 +5,7 @@ x = -1000000;
 resultsMus = global.PlayerSelection[global.PlayerChar][23][4];
 
 audio_play_sound(resultsMus, 1, false, global.MASTER_VOL * global.MUSIC_VOL);
+set_song_ingame(noone);
 
 #region //Depth
 	depth = 2;

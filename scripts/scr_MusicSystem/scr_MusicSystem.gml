@@ -12,3 +12,12 @@ function set_song_ingame(_song = noone, _fadeOutCurrentSong = 0, _fadeIn = 0, _p
 	}
 	
 }
+
+function scr_MusicTag() {
+	if !instance_exists(obj_MusicTagNew) {
+		instance_create_depth(x, y, depth, obj_MusicTagNew)
+	} else {
+		obj_MusicTagNew.moved = false;
+		obj_MusicTagNew.movedTimer = 240;
+	}
+}

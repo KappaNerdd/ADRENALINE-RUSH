@@ -32,7 +32,7 @@
   ],
   "name":"spr_KappaIdleHead",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Head",
     "path":"folders/Sprites/Characters/Players/Kappa/Head.yy",
@@ -114,7 +114,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

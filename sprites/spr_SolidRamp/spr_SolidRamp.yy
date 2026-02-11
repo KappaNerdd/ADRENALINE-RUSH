@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Floor",
-    "path":"folders/Sprites/Debug/Collision/Solid Collision/Floor.yy",
+    "name":"Regardless",
+    "path":"folders/Sprites/Debug/Collision/Solid Collision/Floor/Regardless.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

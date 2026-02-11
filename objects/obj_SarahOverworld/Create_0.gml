@@ -127,6 +127,9 @@
 #endregion
 
 #region //Rail Jspd
+	baseCeilY = 0;
+	perfectCeilY = 14;
+	ceilY = 0;
 	railJspd = -20;
 	sideWallJump = false;
 #endregion

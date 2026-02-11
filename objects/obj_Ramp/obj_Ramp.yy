@@ -10,8 +10,8 @@
   "name":"obj_Ramp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Full Solid",
-    "path":"folders/Objects/Debug/Collision/Solids/Full Solid.yy",
+    "name":"Regardless",
+    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Regardless.yy",
   },
   "parentObjectId":{
     "name":"obj_SlopeStairs",

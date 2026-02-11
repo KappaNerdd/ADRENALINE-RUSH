@@ -707,6 +707,7 @@ function scr_YCollision() {
 						if ground && yspd >= 0 {
 							jumping = true;
 							ground = false;
+							PlayerSetGround(false);
 							
 							obj_SFXManager.jumpDash = true;
 							_ramp.launchConfirmed = true;
@@ -760,6 +761,7 @@ function scr_YCollision() {
 						
 						ground = false;
 						jumping = true;
+						PlayerSetGround(false);
 						
 						if !_launchRing.rainbow {
 							obj_SFXManager.dashPanel = true;
@@ -811,6 +813,7 @@ function scr_YCollision() {
 				if _block && (action2_Key) && railGrind && !global.Death {
 					yspd = -10;
 					ground = false;
+					PlayerSetGround(false);
 					jumping = true;
 					rampRing = true;
 					trickWait = 2;
@@ -835,6 +838,7 @@ function scr_YCollision() {
 				if place_meeting(x, y, obj_RailStopper) && railGrind {
 					railGrind = false;
 					ground = false;
+					PlayerSetGround(false);
 					jumping = true;
 					obj_SFXManager.bump = true;
 					
@@ -878,12 +882,12 @@ function scr_YCollision() {
 						speedBreak = true;
 			
 						if _boost.image_xscale == 1 {
-							if groundSpeed < full_Speed {
-								groundSpeed = full_Speed;
+							if vel < full_Speed {
+								vel = full_Speed;
 							}
 						} else if _boost.image_xscale == -1 {
-							if groundSpeed > -full_Speed {
-								groundSpeed = -full_Speed;
+							if vel > -full_Speed {
+								vel = -full_Speed;
 							}
 						}
 					} else {
@@ -893,12 +897,12 @@ function scr_YCollision() {
 						}
 					
 						if _boost.image_xscale == 1 {
-							if groundSpeed < max_Speed * 1.25 {
-								groundSpeed = max_Speed * 1.25;
+							if vel < max_Speed * 1.25 {
+								vel = max_Speed * 1.25;
 							}
 						} else if _boost.image_xscale == -1 {
-							if groundSpeed > -max_Speed * 1.25 {
-								groundSpeed = -max_Speed * 1.25;
+							if vel > -max_Speed * 1.25 {
+								vel = -max_Speed * 1.25;
 							}
 						}
 					}
@@ -940,18 +944,16 @@ function scr_YCollision() {
 							rampRing = true;
 							ground = false;
 							jumping = true;
+							PlayerSetGround(false);
 						} else if _spring.hori && !_spring.verti {
-							if !ground {
-								vel = _spring.launchVel;
-							} else {
-								ground = _spring.launchVel;
-							}
+							vel = _spring.launchVel;
 						} else if _spring.verti && _spring.hori {
 							yspd = _spring.launchYspd;
 							vel = _spring.launchVel;
 							rampRing = true;
 							ground = false;
 							jumping = true;
+							PlayerSetGround(false);
 						}
 					}
 				}
@@ -991,6 +993,7 @@ function scr_YCollision() {
 						preTrickTimer = preTrickFrames;
 						
 						ground = false;
+						PlayerSetGround(false);
 						jumping = true;
 						
 						yspd = -(yspd + 1);
@@ -1014,6 +1017,7 @@ function scr_YCollision() {
 						realJumping = false;
 						dJumping = false;
 						airBoost = false;
+						PlayerSetGround(false);
 					
 						if _balloon.cluster {
 							event_user(0);
@@ -1078,6 +1082,7 @@ function scr_YCollision() {
 					yspd = -15;
 						
 					ground = false;
+					PlayerSetGround(false);
 					jumping = true;
 					rampRing = true;
 					
@@ -1105,6 +1110,7 @@ function scr_YCollision() {
 						event_user(0);
 						event_user(1);
 						event_user(2);
+						PlayerSetGround(false);
 						jumping = true;
 						yspd = 0;
 						vel = 0;
@@ -1132,10 +1138,10 @@ function scr_YCollision() {
 			#endregion
 			
 			#region //Spikes
-				var _spikeLeft = instance_place(x - 1, y, obj_Spikes);
-				var _spikeRight = instance_place(x + 1, y, obj_Spikes);
-				var _spikeUp = instance_place(x, y - 1, obj_Spikes);
-				var _spikeDown = instance_place(x, y + 1, obj_Spikes);
+				var _spikeLeft = instance_place(x - 4, y, obj_Spikes);
+				var _spikeRight = instance_place(x + 4, y, obj_Spikes);
+				var _spikeUp = instance_place(x, y - 4, obj_Spikes);
+				var _spikeDown = instance_place(x, y + 4, obj_Spikes);
 				
 				#region //Down
 					if _spikeDown {
@@ -1143,6 +1149,8 @@ function scr_YCollision() {
 							scr_HurtPlayer(200000, 5, 1, -7);
 							obj_SFXManager.playerHurt = true;
 							obj_SFXManager.spikeHurt = true;
+							
+							PlayerSetGround(false);
 
 							scr_StopCharControls();
 	
@@ -1167,6 +1175,8 @@ function scr_YCollision() {
 							scr_HurtPlayer(200000, 5, 1, -7);
 							obj_SFXManager.playerHurt = true;
 							obj_SFXManager.spikeHurt = true;
+							
+							PlayerSetGround(false);
 
 							scr_StopCharControls();
 	
@@ -1191,6 +1201,8 @@ function scr_YCollision() {
 							scr_HurtPlayer(200000, 5, 1, -7);
 							obj_SFXManager.playerHurt = true;
 							obj_SFXManager.spikeHurt = true;
+							
+							PlayerSetGround(false);
 
 							scr_StopCharControls();
 	
@@ -1215,6 +1227,8 @@ function scr_YCollision() {
 							scr_HurtPlayer(200000, 5, 1, -7);
 							obj_SFXManager.playerHurt = true;
 							obj_SFXManager.spikeHurt = true;
+							
+							PlayerSetGround(false);
 
 							scr_StopCharControls();
 	
@@ -1410,6 +1424,8 @@ function scr_YCollision() {
 					event_user(0);
 					event_user(1);
 					event_user(3);
+					
+					PlayerSetGround(false);
 			
 					scr_HurtPlayer(200000, _dir * 3, false, -6);
 				}
@@ -1423,6 +1439,8 @@ function scr_YCollision() {
 					event_user(0);
 					event_user(1);
 					event_user(3);
+					
+					PlayerSetGround(false);
 			
 					scr_HurtPlayer(200000, -8, false, -6);
 				}
@@ -1464,6 +1482,10 @@ function scr_YCollision() {
 			PlayerAngleLocals();
 			PlayerHandleLayers();
 			
+			if wallJumpTimer > 0 {
+				wallJumpTimer--;
+			}
+			
 			if stomping {
 				angle = 0;
 			}
@@ -1483,14 +1505,14 @@ function scr_YCollision() {
 
 			#region //Right & Left Collision
 				if vel > 0 {
-				    while (PlayerCollisionRight(x, y, angle, maskMid)) {
+				    while (PlayerCollisionRight(x, y - ceilY, angle, maskMid)) {
 				        x -= angleCos;
 				        y += angleSin;
 				    }
 				}
 
 				if vel < 0 {
-				    while (PlayerCollisionLeft(x, y, angle, maskMid)) {
+				    while (PlayerCollisionLeft(x, y - ceilY, angle, maskMid)) {
 				        x += angleCos;
 				        y -= angleSin;
 				    }
@@ -1524,15 +1546,17 @@ function scr_YCollision() {
 		
 					//Fall if there is not enough speed.
 			        if angle >= 75 && angle <= 285 && abs(vel) < xMinSpeedToFall {
-			            PlayerFlight();
+						if !rampRing && !afterRailJump {
+							PlayerFlight();
+						}
 			        }
 
 			        PlayerCollisionCache();
 			
 
 			        //Fall off the ground if the edges aren't colliding
-			        if angle != 0 && !edgeCollision {
-			            PlayerFlight();               
+			        if angle != 0 && !edgeCollision && !rampRing && !afterRailJump {
+						PlayerFlight();
 			        } 
         
 			        //Get new angle
@@ -1556,6 +1580,7 @@ function scr_YCollision() {
 			            PlayerSetAngle(0);
 						jumping = true;
 						realJumping = false;
+						railGrind = false;
 			        }
 				}     
 			#endregion
@@ -1568,8 +1593,8 @@ function scr_YCollision() {
 			        PlayerCollisionCache();
         
 			        //Ceiling
-			        if yspd < 0 && PlayerCollisionTop(x, y, 0, maskBig) {
-			            if PlayerCollisionLeftEdge(x, y, 180) && PlayerCollisionRightEdge(x, y, 180) {
+			        if yspd < 0 && PlayerCollisionTop(x, y - ceilY, 0, maskBig) {
+			            if PlayerCollisionLeftEdge(x, y - ceilY, 180) && PlayerCollisionRightEdge(x, y - ceilY, 180) {
 			                PlayerSetAngle(PlayerGetAngle(x, y, 180));
                                         
 			                if angle < 130 || angle > 230 {
@@ -1584,7 +1609,7 @@ function scr_YCollision() {
 			        }
                 
 			        //Move the player outside in case he has got stuck into the floor or the ceiling           
-			        while (yspd < 0 && PlayerCollisionTop(x, y, 0, maskMid)) {
+			        while (yspd < 0 && PlayerCollisionTop(x, y - ceilY, 0, maskMid)) {
 			            y += 1;
 			        }            
 		
@@ -1594,12 +1619,12 @@ function scr_YCollision() {
 		
     
 			        //Wall Collision (needs to be performed because y axis has recently changed)
-			        while (PlayerCollisionRight(x, y, angle, maskMid)) {
+			        while (PlayerCollisionRight(x, y - ceilY, angle, maskMid)) {
 			            x -= angleCos;
 			            y += angleSin;
 			        }
         
-			        while (PlayerCollisionLeft(x, y, angle, maskMid)) {
+			        while (PlayerCollisionLeft(x, y - ceilY, angle, maskMid)) {
 			            x += angleCos;
 			            y -= angleSin;
 			        }
@@ -1630,13 +1655,19 @@ function scr_YCollision() {
 			        }
     
 			        //Check if we're on the air but we collided with the ceiling
-			        if yspd < 0 && PlayerCollisionTop(x, y, 0, maskBig) {
+			        if yspd < 0 && PlayerCollisionTop(x, y - ceilY, 0, maskBig) {
 			            yspd = 0;
 			        }
 				}
 			#endregion
 
 			#region //Misc
+				if angle == 0 {
+					ceilY = perfectCeilY;
+				} else {
+					ceilY = baseCeilY;
+				}
+			
 				//Acceleration and deceleration on slopes
 				if ground && angle > 35 && angle < 325 {
 					if angle > 40 && angle < 320 {
@@ -1651,10 +1682,10 @@ function scr_YCollision() {
 				}
 
 				//Stop when meet a wall/slide pass and isnt sliding
-				if vel > 0 && PlayerCollisionRight(x + 2, y, angle, maskMid) {
+				if vel > 0 && PlayerCollisionRight(x, y - ceilY, angle, maskMid) {
 				    vel = 0;
 				    pushingWall = true;
-				} else if vel < 0 && PlayerCollisionLeft(x - 2, y, angle, maskMid) {
+				} else if vel < 0 && PlayerCollisionLeft(x, y - ceilY, angle, maskMid) {
 				    vel = 0;
 				    pushingWall = true;
 				} else {
@@ -1668,12 +1699,13 @@ function scr_YCollision() {
 	
 				if ground {
 				    //Rotate while moving on the ground
-				    image_angle = ApproachAngle(image_angle, angle, 3 + abs(vel));
+				    image_angle = ApproachAngle(image_angle, angle, 4 + abs(vel));
 					drawAngle = image_angle;
 				} else {
 					//Rotate until reaches to the normal angle
-				    image_angle = ApproachAngle(image_angle, 0, 4);
+				    image_angle = ApproachAngle(image_angle, 0, 8);
 					drawAngle = image_angle;
+					angle = image_angle;
 				}
 			#endregion
 		#endregion
@@ -1691,15 +1723,19 @@ function scr_Landing(_type = "hard") {
 		}
 	}
 	
+	if playerHurt {
+		playerHurt = false;
+	}
+	
 	if global.Particles {
 		if stomping {
 			scr_StompedVFX();
 		}
 		
-		instance_create_depth(x, y + 21, depth, obj_SlideDustVFX);
-		instance_create_depth(x + 7, y + 21, depth, obj_SlideDustVFX);
-		instance_create_depth(x - 17, y + 21, depth, obj_SlideDustVFX);
-		instance_create_depth(x - 24, y + 21, depth, obj_SlideDustVFX);
+		instance_create_depth(x, y + 5, depth, obj_SlideDustVFX);
+		instance_create_depth(x + 7, y + 5, depth, obj_SlideDustVFX);
+		instance_create_depth(x - 17, y + 5, depth, obj_SlideDustVFX);
+		instance_create_depth(x - 24, y + 5, depth, obj_SlideDustVFX);
 	}
 }
 
@@ -1725,7 +1761,7 @@ function scr_RailGrindingStep() {
 	}
 	
 	if !global.Death {
-		if instance_exists(obj_RailParent) {
+		/*if instance_exists(obj_RailParent) {
 			var _list = ds_list_create();
 			var _array = array_create(0);
 			
@@ -1772,7 +1808,7 @@ function scr_RailGrindingStep() {
 			if instance_exists(railGrindFloor) && !place_meeting(x, y + 1, railGrindFloor) {
 				railGrindFloor = noone;
 			}
-		}
+		}*/
 		
 		if railGrind {
 			obj_SFXManager.railGrinding = true;
@@ -1784,6 +1820,18 @@ function scr_RailGrindingStep() {
 			afterRailJump = false;
 			
 			var _accAlt = (slopeFactor + acc) * sin(groundAngle);
+			
+			if !leftFacer {
+				if vel == 0 {
+					vel = (max_Speed / 3) * image_xscale;
+				}
+			} else {
+				if !face_Left && vel == 0 {
+					vel = max_Speed / 3;
+				} else if face_Left && vel == 0 {
+					vel = -max_Speed / 3;
+				}
+			}
 			
 			if !speedBreak {
 				if vel > 0 && vel < max_Speed && right_Key {
@@ -1836,7 +1884,6 @@ function scr_RailGrindingStep() {
 			afterRailJump = false;
 		}
 		
-		
 		if railGrind {
 			if down_Key {
 				railGrindCrouch = true;
@@ -1880,7 +1927,7 @@ function scr_WallClingStep() {
 		_wall = noone;
 	}
 		
-	if !global.Death && !playerHurt && !rampRing && !afterRailJump && !stomping {
+	/*if !global.Death && !playerHurt && !rampRing && !afterRailJump && !stomping && wallJumpTimer == 0 {
 		if onWall != 0 && !ground && yspd >= 0 {
 			if _wall {
 				canWallJump = _wall.wallJumpable;
@@ -1917,17 +1964,18 @@ function scr_WallClingStep() {
 			}
 		} else if onWall == 0 {
 			wallJump = false;
-			afterWallJump = false;
 		}
-	}
+	} else {
+		wallJump = false;
+	}*/
 }
 
 
 function scr_CeilingDetect() {
-	var _ceilingDetect = collision_point(x, y - 20, obj_Solid, true, true);
+	var _ceilingDetect = collision_point(x, y - 25, obj_Solid, true, true);
 	
 	if terrainLayer == 1 {
-		_ceilingDetect = collision_point(x, y - 20, obj_SolidB, true, true);
+		_ceilingDetect = collision_point(x, y - 25, obj_SolidB, true, true);
 	}
 	
 	if _ceilingDetect && ground && !jumping && groundAngle == 0 {

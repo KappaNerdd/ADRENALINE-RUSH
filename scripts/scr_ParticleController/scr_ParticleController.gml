@@ -13,7 +13,7 @@ function scr_PlayerTrail() {
 	}*/
 }
 
-function scr_DustParticles(_x = 0, _y = 15) {
+function scr_DustParticles(_x = 0, _y = -1) {
 	if global.Particles {
 		instance_create_depth(x + _x, y + _y, depth + 1, obj_SlideDustVFX);
 	}
@@ -35,7 +35,7 @@ function scr_SpeedBreakVFX(_sprite) {
 			_xscale = image_xscale;
 		}
 		
-		with(instance_create_depth(x, bbox_bottom, depth - 1, obj_RailGrindVFX)) {
+		with(instance_create_depth(x + angleSin, floor(bbox_bottom + angleCos), depth - 1, obj_RailGrindVFX)) {
 			sprite_index = other.speedBreakSprite;
 			image_xscale = _xscale;
 			image_angle = other.drawAngle;
@@ -52,12 +52,12 @@ function scr_StompVFX() {
 }
 
 function scr_StompedVFX() {
-	with(instance_create_depth(x, y, depth, obj_StompVFX)) {
+	with(instance_create_depth(x, y - 16, depth, obj_StompVFX)) {
 		sprite_index = other.stompedSprite;
 	}
 }
 
-function scr_RushBoostBreakVFX(_x = 0, _y = 0) {
+function scr_RushBoostBreakVFX(_x = 0, _y = -16) {
 	with(instance_create_depth(x + _x, y + _y, depth, obj_RushBoostBreak)) {
 		sprite_index = other.stompedSprite;
 		

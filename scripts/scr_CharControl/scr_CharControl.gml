@@ -187,10 +187,12 @@ function scr_BasicVariablesSpeedCreate() {
 	
 	#region //Astral Checks
 		xDirection = 1;
-		xMinSpeedToFall = 3;
+		xMinSpeedToFall = 2;
+		wallJumpTimer = 0;
 
 		//Terrain
 		terrainLayer = 0;
+		terrainVel = 0;
 		onPlatform = false;
 		pushingWall = false;
 
@@ -213,7 +215,7 @@ function scr_BasicVariablesSpeedCreate() {
 		sensorLeftDistance = 8;
 		sensorRightDistance = 8;
 
-		sensorBottomDistance = 12;
+		sensorBottomDistance = 14;
 		sensorTopDistance = 10;
 
 		sensorMidDistance = 0;
@@ -1260,25 +1262,26 @@ function scr_AngleShitStep() {
 
 //Manipulate jump with slopes
 function scr_JumpManipulate() {
-	realJumping = true;
-	railGrind = false;
-	railGrindCrouch = false;
-	angleChecked = false;
-	
-	if global.Squash {
-		extraXscale = 0.5;
-	}
-	
 	if !playerHurt && !collide {
+		realJumping = true;
+		railGrind = false;
+		railGrindCrouch = false;
+		angleChecked = false;
+	
+		if global.Squash {
+			extraXscale = 0.5;
+		}
+		
 		if ground {
 			if global.Particles {
-				instance_create_depth(x, y + 21, depth, obj_SlideDustVFX);
-				instance_create_depth(x + 7, y + 21, depth, obj_SlideDustVFX);
-				instance_create_depth(x - 17, y + 21, depth, obj_SlideDustVFX);
-				instance_create_depth(x - 24, y + 21, depth, obj_SlideDustVFX);
+				instance_create_depth(x, y + 5, depth, obj_SlideDustVFX);
+				instance_create_depth(x + 7, y + 5, depth, obj_SlideDustVFX);
+				instance_create_depth(x - 17, y + 5, depth, obj_SlideDustVFX);
+				instance_create_depth(x - 24, y + 5, depth, obj_SlideDustVFX);
 			}
 			
 			PlayerJumpAct();
+			wallJumpTimer = 5;
 			
 			//vel -= normalJspd * sin(degtorad(angle));
 			//yspd += -(sin(degtorad(angle)) * vel) + (cos(degtorad(angle)) * -normalJspd);

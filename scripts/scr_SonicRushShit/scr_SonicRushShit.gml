@@ -1115,7 +1115,7 @@ function scr_RushModeColorDraw() {
 			boostingFrames = 0;
 		}
 		
-		draw_sprite_ext(_boosting, boostingFrames, x, y, _boostXscale, 1, _boostAngle, c_white, 0.5);
+		draw_sprite_ext(_boosting, boostingFrames, x + angleSin, floor(y + angleCos), _boostXscale, 1, _boostAngle, c_white, 0.5);
 	} else {
 		boostingFrames = 0;
 	}
@@ -1146,7 +1146,7 @@ function scr_RushModeColorDraw() {
 			stompingSprFrames = 0;
 		}
 		
-		draw_sprite_ext(_stompingSprite, stompingSprFrames, x + _extraX, y + _extraY, 1, 1, _stompingAngle + 90, c_white, 1);
+		draw_sprite_ext(_stompingSprite, stompingSprFrames, x + _extraX, y + _extraY - 16, 1, 1, _stompingAngle + 90, c_white, 1);
 	}
 	
 	
@@ -1160,10 +1160,10 @@ function scr_RushModeColorDraw() {
 			stompingSprFrames = 0;
 		}
 		
-		draw_sprite_ext(_stompingSprite, stompingSprFrames, x, y + 20, 1, 1, 0, c_white, 1);
+		draw_sprite_ext(_stompingSprite, stompingSprFrames, x, y + 4, 1, 1, 0, c_white, 1);
 	}
 	
-	if drawSensors {
+	if global.DEBUG {
         // Draw main masks
         draw_sprite_ext(idle_Mask, 0, floor(x), floor(y), image_xscale, image_yscale, 0, c_white, 0.8);
 

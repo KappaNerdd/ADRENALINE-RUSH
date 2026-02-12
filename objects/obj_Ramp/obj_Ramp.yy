@@ -14,8 +14,8 @@
     "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Regardless.yy",
   },
   "parentObjectId":{
-    "name":"obj_SlopeStairs",
-    "path":"objects/obj_SlopeStairs/obj_SlopeStairs.yy",
+    "name":"obj_Solid",
+    "path":"objects/obj_Solid/obj_Solid.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

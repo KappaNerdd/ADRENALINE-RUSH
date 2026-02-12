@@ -9,8 +9,8 @@
   "name":"obj_Solid",
   "overriddenProperties":[],
   "parent":{
-    "name":"Layer A",
-    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Layer A.yy",
+    "name":"Regardless",
+    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Regardless.yy",
   },
   "parentObjectId":null,
   "persistent":false,

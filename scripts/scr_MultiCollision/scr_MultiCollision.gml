@@ -1496,8 +1496,8 @@ function scr_YCollision() {
 	
 				var repFactor = 1;
 
-				if abs(vel) > 11 {
-				    repFactor = round(abs(vel) / 9);
+				if abs(vel) > max_Speed {
+				    repFactor = round(abs(vel) / 5);
 				}
 				
 				groundAngle = angle;
@@ -1580,7 +1580,6 @@ function scr_YCollision() {
 			            PlayerSetAngle(0);
 						jumping = true;
 						realJumping = false;
-						railGrind = false;
 			        }
 				}     
 			#endregion
@@ -1619,12 +1618,12 @@ function scr_YCollision() {
 		
     
 			        //Wall Collision (needs to be performed because y axis has recently changed)
-			        while (PlayerCollisionRight(x, y - ceilY, angle, maskMid)) {
+			        while (PlayerCollisionRight(x, y, angle, maskMid)) {
 			            x -= angleCos;
 			            y += angleSin;
 			        }
         
-			        while (PlayerCollisionLeft(x, y - ceilY, angle, maskMid)) {
+			        while (PlayerCollisionLeft(x, y, angle, maskMid)) {
 			            x += angleCos;
 			            y -= angleSin;
 			        }
@@ -1655,14 +1654,14 @@ function scr_YCollision() {
 			        }
     
 			        //Check if we're on the air but we collided with the ceiling
-			        if yspd < 0 && PlayerCollisionTop(x, y - ceilY, 0, maskBig) {
+			        if yspd < 0 && PlayerCollisionTop(x, y - ceilY, 0, maskMid) {
 			            yspd = 0;
 			        }
 				}
 			#endregion
 
 			#region //Misc
-				if angle == 0 {
+				if angle == 0 && ground {
 					ceilY = perfectCeilY;
 				} else {
 					ceilY = baseCeilY;
@@ -1682,10 +1681,10 @@ function scr_YCollision() {
 				}
 
 				//Stop when meet a wall/slide pass and isnt sliding
-				if vel > 0 && PlayerCollisionRight(x, y - ceilY, angle, maskMid) {
+				if vel > 0 && PlayerCollisionRight(x + 2, y - ceilY, angle, maskMid) {
 				    vel = 0;
 				    pushingWall = true;
-				} else if vel < 0 && PlayerCollisionLeft(x, y - ceilY, angle, maskMid) {
+				} else if vel < 0 && PlayerCollisionLeft(x - 2, y - ceilY, angle, maskMid) {
 				    vel = 0;
 				    pushingWall = true;
 				} else {
@@ -1699,7 +1698,7 @@ function scr_YCollision() {
 	
 				if ground {
 				    //Rotate while moving on the ground
-				    image_angle = ApproachAngle(image_angle, angle, 4 + abs(vel));
+				    image_angle = ApproachAngle(image_angle, angle, 3 + abs(vel));
 					drawAngle = image_angle;
 				} else {
 					//Rotate until reaches to the normal angle
@@ -1810,6 +1809,15 @@ function scr_RailGrindingStep() {
 			}
 		}*/
 		
+		if ground && (PlayerCollisionObjectBottom(x, y, angle, maskMid, obj_RailParent)
+		or (PlayerCollisionObjectBottom(x, y, angle, maskMid, obj_RailParentA) && terrainLayer == 0)
+		or (PlayerCollisionObjectBottom(x, y, angle, maskMid, obj_RailParentB) && terrainLayer == 1)) {
+			railGrind = true;
+		} else {
+			railGrind = false;
+		}
+		
+		
 		if railGrind {
 			obj_SFXManager.railGrinding = true;
 			
@@ -1882,16 +1890,6 @@ function scr_RailGrindingStep() {
 		if rampRing {
 			beforeTrick = true;
 			afterRailJump = false;
-		}
-		
-		if railGrind {
-			if down_Key {
-				railGrindCrouch = true;
-			} else {
-				railGrindCrouch = false;
-			}
-		} else {
-			railGrindCrouch = false;
 		}
 	}
 }

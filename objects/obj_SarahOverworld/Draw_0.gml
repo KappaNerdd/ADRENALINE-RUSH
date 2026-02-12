@@ -22,7 +22,7 @@ if global.DEBUG == true && instance_exists(self) {
 	draw_text(_camX + _camXAdd, _camY + 20, "ground: " + string(ground));
 	draw_text(_camX + _camXAdd, _camY + 40, "angle: " + string(angle));
 	draw_text(_camX + _camXAdd, _camY + 60, "bottomColl: " + string(bottomCollision));
-	draw_text(_camX + _camXAdd, _camY + 80, "vel: " + string());
+	draw_text(_camX + _camXAdd, _camY + 80, "railGrind: " + string(railGrind));
 	draw_text(_camX + _camXAdd, _camY + 100, "yspd: " + string(yspd));
 	draw_text(_camX + _camXAdd, _camY + 120, "angleSin: " + string(angleSin));
 	draw_text(_camX + _camXAdd, _camY + 140, "angleCos: " + string(angleCos));

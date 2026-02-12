@@ -10,7 +10,6 @@ function set_song_ingame(_song = noone, _fadeOutCurrentSong = 0, _fadeIn = 0, _p
 		startFadeInTime = _fadeIn;
 		targetPitch = _pitch;
 	}
-	
 }
 
 function scr_MusicTag() {

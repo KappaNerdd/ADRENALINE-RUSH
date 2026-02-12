@@ -8,8 +8,8 @@
   "name":"obj_RailCollSlope",
   "overriddenProperties":[],
   "parent":{
-    "name":"Layer A",
-    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Layer A.yy",
+    "name":"Regardless",
+    "path":"folders/Objects/Debug/Collision/Solids/Full Solid/Regardless.yy",
   },
   "parentObjectId":{
     "name":"obj_RailParent",

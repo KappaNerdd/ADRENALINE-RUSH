@@ -215,7 +215,7 @@ function scr_BasicVariablesSpeedCreate() {
 		sensorLeftDistance = 8;
 		sensorRightDistance = 8;
 
-		sensorBottomDistance = 14;
+		sensorBottomDistance = 10;
 		sensorTopDistance = 10;
 
 		sensorMidDistance = 0;

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Layer A",
-    "path":"folders/Sprites/Debug/Collision/Solid Collision/Floor/Layer A.yy",
+    "name":"Regardless",
+    "path":"folders/Sprites/Debug/Collision/Solid Collision/Floor/Regardless.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

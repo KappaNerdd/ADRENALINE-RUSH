@@ -21,19 +21,11 @@ if can_MoveFULL {
 		//Left Movement
 		if left_Key && !hShoot && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 		    scr_PlayerMoveLeft();
-			
-		    if !sliding && !wallJump {
-		        image_xscale = -1;
-			}
 		}
 
 		//Right Movement
 		if right_Key && !hShoot && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveRight();
-			
-		    if !sliding && !wallJump {
-		        image_xscale = 1;
-			}
 		}
 	#endregion
 		

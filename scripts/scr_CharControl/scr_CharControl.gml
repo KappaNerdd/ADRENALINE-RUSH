@@ -187,7 +187,7 @@ function scr_BasicVariablesSpeedCreate() {
 	
 	#region //Astral Checks
 		xDirection = 1;
-		xMinSpeedToFall = 2;
+		xMinSpeedToFall = 4;
 		wallJumpTimer = 0;
 
 		//Terrain
@@ -213,10 +213,12 @@ function scr_BasicVariablesSpeedCreate() {
 		sensorMainYDist = 0;
 
 		sensorLeftDistance = 8;
-		sensorRightDistance = 8;
+		sensorRightDistance = 6;
+		
+		sensorSideYDist = 8;
 
 		sensorBottomDistance = 10;
-		sensorTopDistance = 10;
+		sensorTopDistance = 28;
 
 		sensorMidDistance = 0;
 
@@ -1174,10 +1176,10 @@ function scr_SpeedLimit() {
 		vel = 0;
 	}
  
-	if vel >= 40 {
-		vel = 40;
-	} else if vel <= -40 {
-		vel = -40;
+	if vel >= 35 {
+		vel = 35;
+	} else if vel <= -35 {
+		vel = -35;
 	}
 }
 
@@ -1329,6 +1331,14 @@ function scr_VariableJumping() {
 //Player Movement
 function scr_PlayerMoveLeft() {
 	if !playerHurt && !prepare && noMoveTimer == 0 {
+		if !sliding && !wallJump {
+			if leftFacer {
+				face_Left = true;
+			} else {
+				image_xscale = -1;
+			}
+		}
+		
 		if !speedBreak {
 			if vel > -max_Speed {
 				vel -= acc;
@@ -1353,6 +1363,14 @@ function scr_PlayerMoveLeft() {
 
 function scr_PlayerMoveRight() {
 	if !playerHurt && !prepare && noMoveTimer == 0 {
+		if !sliding && !wallJump {
+			if leftFacer {
+				face_Left = false;
+			} else {
+				image_xscale = 1;
+			}
+		}
+		
 		if !speedBreak {
 			if vel < max_Speed {
 				vel += acc;

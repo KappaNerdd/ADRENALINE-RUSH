@@ -1479,6 +1479,7 @@
     {"name":"maskBig","order":4,"path":"sprites/maskBig/maskBig.yy",},
     {"name":"maskMain","order":1,"path":"sprites/maskMain/maskMain.yy",},
     {"name":"maskMid","order":2,"path":"sprites/maskMid/maskMid.yy",},
+    {"name":"maskSemiBig","order":5,"path":"sprites/maskSemiBig/maskSemiBig.yy",},
     {"name":"maskSmall","order":3,"path":"sprites/maskSmall/maskSmall.yy",},
     {"name":"spr_ActionNorm","order":4,"path":"sprites/spr_ActionNorm/spr_ActionNorm.yy",},
     {"name":"spr_ActionStageHead","order":8,"path":"sprites/spr_ActionStageHead/spr_ActionStageHead.yy",},

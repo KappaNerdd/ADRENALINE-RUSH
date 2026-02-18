@@ -127,9 +127,10 @@
 #endregion
 
 #region //Rail Jspd
-	baseCeilY = 0;
-	perfectCeilY = 14;
+	baseCeilY = 5;
+	perfectCeilY = 0;
 	ceilY = 0;
+	//sensorTopDistance = 28;
 	railJspd = -20;
 	sideWallJump = false;
 #endregion

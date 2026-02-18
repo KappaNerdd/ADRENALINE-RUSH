@@ -21,27 +21,11 @@ if can_MoveFULL {
 		//Left Movement
 		if left_Key && !stomping && !playerHurt && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveLeft();				
-        
-		    if !sliding && !wallJump {
-				if !leftFacer {
-					image_xscale = -1;
-				} else {
-					face_Left = true;
-				}
-			}
 		}
 
 		//Right Movement
 		if right_Key && !stomping && !playerHurt && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveRight();
-				
-		    if !sliding && !wallJump {
-				if !leftFacer {
-					image_xscale = 1;
-				} else {
-					face_Left = false;
-				}
-			}
 		}
 	#endregion
 

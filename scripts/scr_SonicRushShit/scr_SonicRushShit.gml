@@ -1166,13 +1166,13 @@ function scr_RushModeColorDraw() {
 	if global.DEBUG {
         // Draw main masks
         draw_sprite_ext(idle_Mask, 0, floor(x), floor(y), image_xscale, image_yscale, 0, c_white, 0.8);
-
+		
         // Draw sensor masks
         draw_sprite_ext(maskBig, 0, floor(x + angleSin * sensorBottomDistance), floor(y + angleCos * sensorBottomDistance), image_xscale, image_yscale, 0, c_white, 0.8);
-        draw_sprite_ext(maskMid, 0, floor(x + angleSin * 22), floor(y + angleCos * 22 + sensorMidDistance), image_xscale, image_yscale, 0, c_white, 0.8);
+        draw_sprite_ext(maskMid, 0, floor(x + sensorSin * 22), floor(y + sensorCos * 22), image_xscale, image_yscale, 0, c_white, 0.8);
         draw_sprite_ext(maskBig, 0, floor(x - angleSin * sensorTopDistance), floor(y - angleCos * sensorTopDistance), image_xscale, image_yscale, 0, c_white, 0.8);
-        draw_sprite_ext(maskBig, 0, floor(x - angleCos * sensorLeftDistance), floor(y + angleSin * sensorLeftDistance), image_xscale, image_yscale, 0, c_white, 0.8);
-        draw_sprite_ext(maskBig, 0, floor(x + angleCos * sensorRightDistance), floor(y - angleSin * sensorRightDistance), image_xscale, image_yscale, 0, c_white, 0.8);
+        draw_sprite_ext(maskBig, 0, floor(x - angleCos * sensorLeftDistance), floor((y - 2) + angleSin * (sensorLeftDistance)), image_xscale, image_yscale, 0, c_white, 0.8);
+        draw_sprite_ext(maskBig, 0, floor(x + angleCos * sensorRightDistance), floor((y - 2) - angleSin * (sensorRightDistance)), image_xscale, image_yscale, 0, c_white, 0.8);
 
         draw_line(floor(x - sensorCos * 8 + sensorSin * 8), floor(y + sensorSin * 8 + sensorCos * 8), floor(x - sensorCos * 8 + sensorSin * 36), floor(y + sensorSin * 8 + sensorCos * 36))
         draw_line(floor(x + sensorCos * 8 + sensorSin * 8), floor(y - sensorSin * 8 + sensorCos * 8), floor(x + sensorCos * 8 + sensorSin * 36), floor(y - sensorSin * 8 + sensorCos * 36))

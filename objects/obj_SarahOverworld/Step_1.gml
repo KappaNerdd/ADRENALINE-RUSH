@@ -22,19 +22,11 @@ if can_MoveFULL {
 		//Left Movement
 		if left_Key && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveLeft();
-				
-			if !sliding && !wallJump {
-				face_Left = true;
-			}
 		}
 
 		//Right Movement
 		if right_Key && !stomping && !railGrind && !ducking && !stomped && !prepare && !slow_Down && !sliding {
 			scr_PlayerMoveRight();
-			
-		    if !sliding && !wallJump {
-		        face_Left = false;
-			}
 		}
 	#endregion
 
@@ -261,20 +253,6 @@ if can_MoveFULL {
 		#region //Basic Visual Effects
 			scr_BasicVisualEffectsSpeed1();
 		#endregion
-	
-		#region //Hover/Back Trick
-			if hover {
-				scr_RushAdventureKickParticles(5);
-			}
-			
-			if backTrick {
-				scr_RushAdventureKickParticles(0.5);
-			}
-			
-			if !hover && !backTrick {
-				instance_destroy(obj_SideTrickVFXKappa);
-			}
-		#endregion
 	#endregion
 
 	#region //Basic Speed 3
@@ -400,6 +378,8 @@ if can_MoveFULL {
 				stomped = true;
 				vel = 0;
 			}
+			
+			yspd = 0;
 			
 			stomping = false;
 			normalStomp = false;

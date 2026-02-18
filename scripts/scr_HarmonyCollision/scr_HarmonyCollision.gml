@@ -144,7 +144,7 @@ function PlayerCollisionBottom(argument0, argument1, argument2, argument3) {
 
 	// Test platform collision
 	if (!collisionTest && yspd >= 0 && !ground) {
-	    collisionTest = (place_meeting(sensorX, sensorY, obj_SemiSolid) && !place_meeting(floor(argument0), floor(argument1), obj_SemiSolid)) or (place_meeting(sensorX, sensorY, obj_RailParent) && !place_meeting(floor(argument0), floor(argument1), obj_RailParent)) or (place_meeting(sensorX, sensorY, obj_RailParentB) && !place_meeting(floor(argument0), floor(argument1), obj_RailParentB)) or (place_meeting(sensorX, sensorY, obj_RailParentA) && !place_meeting(floor(argument0), floor(argument1), obj_RailParentA));
+	    collisionTest = (place_meeting(sensorX, sensorY, obj_SemiSolid) && !place_meeting(floor(argument0), floor(argument1), obj_SemiSolid)) or (place_meeting(sensorX, sensorY, obj_RailParent) && !place_meeting(floor(argument0), floor(argument1), obj_RailParent)) or (place_meeting(sensorX, sensorY, obj_RailParentB) && !place_meeting(floor(argument0), floor(argument1), obj_RailParentB) && terrainLayer == 1) or (place_meeting(sensorX, sensorY, obj_RailParentA) && !place_meeting(floor(argument0), floor(argument1), obj_RailParentA) && terrainLayer == 0);
 	}
 
 	// Set to the old mask
@@ -471,7 +471,7 @@ function PlayerCollisionCache() {
 	_x = floor(x);
 	_y = floor(y);
 	// Cache collisions
-	edgeCollision = PlayerCollisionLeftEdge(_x, _y + sensorMainYDist, angle) && PlayerCollisionRightEdge(_x, _y + sensorMainYDist, angle);
+	edgeCollision = PlayerCollisionLeftEdge(_x, _y, angle) && PlayerCollisionRightEdge(_x, _y, angle);
 	bottomCollision = PlayerCollisionBottom(_x, _y, angle, maskBig);
 }
 
@@ -485,7 +485,7 @@ function PlayerGetAngle(_x, _y, _angle) {
 
 	// Store temporary values
 	maskTemp = mask_index;
-	mask_index = maskDot;
+	mask_index = maskMid;
 
 	var _angleCOS, _angleSIN;
 	_angleCOS = dcos(_angle);
@@ -493,11 +493,11 @@ function PlayerGetAngle(_x, _y, _angle) {
 
 	// Set the starting position of the sensors based on the angle
 	var _pointLeftX, _pointLeftY, _pointRightX, _pointRightY;
-	_pointLeftX = floor(_x - _angleCOS * 8);
-	_pointLeftY = floor(_y + _angleSIN * 8);
+	_pointLeftX = floor(_x - _angleCOS * 6);
+	_pointLeftY = floor(_y + _angleSIN * 7);
 
-	_pointRightX = floor(_x + _angleCOS * 8);
-	_pointRightY = floor(_y - _angleSIN * 8);
+	_pointRightX = floor(_x + _angleCOS * 6);
+	_pointRightY = floor(_y - _angleSIN * 7);
 
 	var _collisionLeft, _collisionRight;
 	_collisionLeft = false;
@@ -507,16 +507,14 @@ function PlayerGetAngle(_x, _y, _angle) {
 	repeat (20) {
 	    if (!_collisionLeft && PlayerCollision(_pointLeftX, _pointLeftY)) {
 	        _collisionLeft = true;
-	    }
-	    else if (!_collisionLeft) {
+	    } else if (!_collisionLeft) {
 	        _pointLeftX += _angleSIN;
 	        _pointLeftY += _angleCOS;
 	    }
 
 	    if (!_collisionRight && PlayerCollision(_pointRightX, _pointRightY)) {
 	        _collisionRight = true;
-	    }
-	    else if (!_collisionRight) {
+	    } else if (!_collisionRight) {
 	        _pointRightX += _angleSIN;
 	        _pointRightY += _angleCOS;
 	    }
@@ -547,9 +545,6 @@ function PlayerAngleLocals() {
 
 function PlayerSetGround(value) {
 	ground = value;
-	onPlatform = value;
-	edgeCollision = value;
-	bottomCollision = value;
 	
 	if ground {
 		jumping = false;
@@ -557,6 +552,8 @@ function PlayerSetGround(value) {
 		dJumping = false;
 	} else {
 		sliding = false;
+		jumping = true;
+		onPlatform = false
 	}
 }
 
@@ -571,12 +568,8 @@ function PlayerFlight() {
 }
 
 function PlayerJumpAct() {
-	yspd = (-angleSin * vel) + (angleCos * -normalJspd);
-	
-	if angle != 0 {
-		//vel -= angleCos * (vel + (normalJspd / 3) * angleCos);
-		vel -= (normalJspd) * angleCos;
-	}
+	yspd = angleCos * -normalJspd - angleSin * vel;
+	vel = angleCos * vel + angleSin * -normalJspd;
 	
 	xDirection = sign(vel);
 	

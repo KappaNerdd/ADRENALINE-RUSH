@@ -23,20 +23,12 @@ if can_MoveFULL {
 			if !superPeelout && !afterWallJump {
 				scr_PlayerMoveLeft();
 			}
-			
-		    if !sliding && !wallJump {
-		        image_xscale = -1;
-			}
 		}
 
 		//Right Movement
 		if right_Key && !spindash && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !prepare && !sliding {
 		    if !superPeelout && !afterWallJump {
 				scr_PlayerMoveRight();
-			}
-				
-		    if !sliding && !wallJump {
-		        image_xscale = 1;
 			}
 		}
 	#endregion
@@ -76,14 +68,6 @@ if can_MoveFULL {
 	
 		#region //Speed limit
 			scr_SpeedLimit();
-		#endregion
-		
-		#region //Change Draw Angle
-			scr_ChangeDrawAngle();
-		#endregion
-		
-		#region //Fuck with momentum
-			scr_SlopeMomentum();
 		#endregion
 	#endregion
 
@@ -430,6 +414,7 @@ if can_MoveFULL {
 		if sliding {
 			slow_Down = true;
 			ducking = false;
+			drawAngle = 0;
 		} else {
 			slow_Down = false;
 		}

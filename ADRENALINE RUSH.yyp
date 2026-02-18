@@ -1883,6 +1883,7 @@
     {"id":{"name":"maskDot","path":"sprites/maskDot/maskDot.yy",},},
     {"id":{"name":"maskMain","path":"sprites/maskMain/maskMain.yy",},},
     {"id":{"name":"maskMid","path":"sprites/maskMid/maskMid.yy",},},
+    {"id":{"name":"maskSemiBig","path":"sprites/maskSemiBig/maskSemiBig.yy",},},
     {"id":{"name":"maskSmall","path":"sprites/maskSmall/maskSmall.yy",},},
     {"id":{"name":"spr_ActionNorm","path":"sprites/spr_ActionNorm/spr_ActionNorm.yy",},},
     {"id":{"name":"spr_ActionStageHead","path":"sprites/spr_ActionStageHead/spr_ActionStageHead.yy",},},

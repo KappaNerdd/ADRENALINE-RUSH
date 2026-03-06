@@ -1,10 +1,5 @@
 image_blend = global.fullRGB;
 
-with (instance_create_depth(x, y, depth + 10, obj_PowerOrbTrail)) {
-	image_xscale = other.image_xscale;
-	image_yscale = other.image_yscale;
-}
-
 x += xspd;
 y += yspd;
 

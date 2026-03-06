@@ -14,4 +14,9 @@ if instance_exists(obj_StageTrackerSpeed) {
 	}
 }
 
-visible = !visible;
+if !global.SimplifyVFX {
+	visible = !visible;
+} else {
+	visible = true;
+	image_blend = global.fullRGB;
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_Acceptance",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":112.0,
+  "exportDir":"",
+  "name":"mus_Acceptance",
+  "parent":{
+    "name":"Game Over",
+    "path":"folders/Sounds/Music/Game Over.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_Acceptance.ogg",
+  "volume":1.0,
+}

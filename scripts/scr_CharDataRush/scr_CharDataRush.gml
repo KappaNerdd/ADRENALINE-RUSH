@@ -6,11 +6,11 @@ function scr_CharDataRush() {
 	drawAngle = 0;
 
 	//Speed
-	acc = 0.08;
-	normalAcc = 0.08;
+	acc = 0.1;
+	normalAcc = 0.1;
 	
-	dcc = 0.16;
-	fric = 0.08;
+	dcc = 0.15;
+	fric = 0.1;
 	vel = 0;
 	max_Speed = 12;
 	full_Speed = 17;
@@ -22,8 +22,8 @@ function scr_CharDataRush() {
 	jspd = 7.25;
 	normalJspd = 7.25;
 	
-	termVel = 25;
-	normalTermVel = 25;
+	termVel = 30;
+	normalTermVel = 30;
 	
 	backTrickBoost = 10;
 	backTrickUpBoost = -6;

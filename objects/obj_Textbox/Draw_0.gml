@@ -11,8 +11,6 @@ txtb_spr_w = sprite_get_width(txtb_spr[page]);
 txtb_spr_h = sprite_get_height(txtb_spr[page]);
 txtb_XFull = textbox_width/txtb_spr_w + 0.15;
 
-
-
 var _finalVol = global.TEXT_VOL * global.MASTER_VOL;
 
 scr_Defaults_for_Text();
@@ -245,27 +243,42 @@ if setup && !setupComplete {
 	}
 
 	//Deltarune Wrist Protector Mechanic
-	if wrist_key && draw_char != text_length[page] && global.ForceLine == false {
-		//Skip Text for Page
-		draw_char = text_length[page];
+	if wrist_key {
+		if draw_char != text_length[page] {
+			//Skip Text for Page
+			draw_char = text_length[page];
 		
-		if !speaker2Char[page] {
-			speakerChecker = speaker_Name[page];
-			xChange = xChangeFinish;
+			if !speaker2Char[page] {
+				speakerChecker = speaker_Name[page];
+				xChange = xChangeFinish;
+			} else {
+				speakerChecker2 = speaker_Name[page];
+				xChange2 = -xChangeFinish;
+			}
 		} else {
-			speakerChecker2 = speaker_Name[page];
-			xChange2 = -xChangeFinish;
-		}
+			//If typing is done
+			if draw_char == text_length[page] {
+				textboxYChange = 10;
 		
-		//If typing is done
-		if draw_char == text_length[page] {
-			//Next Page
-			if page < page_number - 1 && option_number != 0 {
-				page++;
-				draw_char = 0;
-			} 
+				//Next Page
+				if page < page_number - 1 {
+					page++;
+					draw_char = 0;
+				} else {
+					//Link text for option
+					if option_number == 0 {
+						setupComplete = true;
+						
+						/*create_textbox(option_link_id[option_pos]);
+				
+						if global.PlayerChar == 0 {
+							draw_sprite_ext(spr_CursorHead, image_index / 6, x, y, 1, 1, 0, c_white, 1);
+						}*/
+					}
+				}
+			}
 		}
-	} else if wrist_key && option_number == 0 && global.ForceLine == false {
+	} /*else if wrist_key && option_number == 0 && global.ForceLine == false {
 		//Skip Text for Page
 		draw_char = text_length[page];
 		
@@ -301,7 +314,7 @@ if setup && !setupComplete {
 			page++;
 			draw_char = 0;
 		}
-	}
+	}*/
 }
 
 

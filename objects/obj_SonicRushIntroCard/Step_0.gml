@@ -1,6 +1,6 @@
 getCharacterControls();
 
-if kysTimer > 0 {	
+if kysTimer > 0 {
 	if mainAlpha < 1 {
 		mainAlpha += 0.025;
 	}
@@ -10,18 +10,14 @@ if kysTimer > 0 {
 	if kysTimer < 180 {
 		charScale = lerp(charScale, 0.85, 0.025);
 		charX = lerp(charX, 0, 0.025);
+		
+		getReadyX = lerp(getReadyX, global.CamWidth / 2, 0.1);
+		getReadyX2 -= 0.25;
 	}
 	
 	if global.LevelForced {
 		obj_Player.can_Move = false;
 	} else {
-		if jump_Key && !global.Replay {
-			kysTimer = 0;
-			mainAlpha = 0;
-			otheralpha = 0;
-			whiteAlpha = 0;
-		}
-		
 		obj_Player.can_MoveFULL = false;
 		
 		if obj_Player.leftFacer {
@@ -39,6 +35,7 @@ if kysTimer > 0 {
 } else {
 	if otheralpha > 0 {
 		otheralpha -= 0.035;
+		getReadyX = lerp(getReadyX, -300, 0.1);
 	}
 	
 	spikeInX += 0.05;
@@ -92,6 +89,7 @@ if kysTimer > 0 {
 			}
 			
 			finishedCreate = true;
+			instance_create_depth(x, y, depth, obj_SonicRushGO);
 		}
 		
 		if mainAlpha <= 0 {

@@ -5,11 +5,11 @@ function scr_CharDataSarah() {
 	drawAngle = 0;
 
 	//Speed
-	acc = 0.05;
-	normalAcc = 0.05;
+	acc = 0.07;
+	normalAcc = 0.07;
 	
-	dcc = 0.1;
-	fric = 0.05;
+	dcc = 0.14;
+	fric = 0.07;
 	vel = 0;
 	max_Speed = 10;
 	full_Speed = 15;
@@ -22,9 +22,9 @@ function scr_CharDataSarah() {
 	jspd = 7.25;
 	normalJspd = 7.25;
 	
-	termVel = 20;
-	normalTermVel = 20;
-	full_TermVel = 35;
+	termVel = 25;
+	normalTermVel = 25;
+	full_TermVel = 40;
 	
 	backTrickBoost = 8;
 	backTrickUpBoost = -5;

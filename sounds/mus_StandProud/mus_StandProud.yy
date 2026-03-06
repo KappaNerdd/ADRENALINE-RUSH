@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":17.15229,
+  "duration":96.0,
   "exportDir":"",
   "name":"mus_StandProud",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_StandProud.ogg",
-  "volume":0.65,
+  "volume":0.7,
 }

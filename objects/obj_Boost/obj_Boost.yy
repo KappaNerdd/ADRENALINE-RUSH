@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Player",
-    "path":"folders/Objects/Characters/VFX/General/Boost/Player.yy",
+    "path":"folders/Objects/Characters/VFX/General/Obsolete/Boost/Player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

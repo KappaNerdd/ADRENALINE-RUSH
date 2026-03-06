@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":33.252426,
+  "duration":48.0,
   "exportDir":"",
   "name":"mus_FreeplayKMvt",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_FreeplayKMvt.ogg",
-  "volume":0.4,
+  "volume":0.7,
 }

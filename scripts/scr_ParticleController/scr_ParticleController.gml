@@ -1,4 +1,4 @@
-function scr_PlayerTrail() {
+function scr_PlayerTrail() { //Unused
 	/*if !global.SimplifyVFX {
 		with(instance_create_depth(x, y, depth + 1, obj_PlayerTrail)) {
 			x = other.x;
@@ -15,7 +15,9 @@ function scr_PlayerTrail() {
 
 function scr_DustParticles(_x = 0, _y = -1) {
 	if global.Particles {
-		instance_create_depth(x + _x, y + _y, depth + 1, obj_SlideDustVFX);
+		with (instance_create_depth(x + angleSin * 10, y + angleCos * 10, depth - 1, obj_SlideDustVFX)) {
+			image_angle = other.drawAngle;
+		}
 	}
 }
 
@@ -24,7 +26,7 @@ function scr_SpeedBreakVFX(_sprite) {
 		speedBreakSprTimer--;
 	}
 	
-	if global.Particles && speedBreakSprTimer <= 0 {
+	if global.Particles && speedBreakSprTimer <= 0 && vel != 0 {
 		var _xscale = 1;
 		
 		if leftFacer {
@@ -32,33 +34,34 @@ function scr_SpeedBreakVFX(_sprite) {
 				_xscale = -1;
 			}
 		} else {
-			_xscale = image_xscale;
+			_xscale = visXScale;
 		}
 		
-		with(instance_create_depth(x + angleSin, floor(bbox_bottom + angleCos), depth - 1, obj_RailGrindVFX)) {
+		with(instance_create_depth(x + angleSin * 10, floor(y + angleCos * 10), depth - 1, obj_RailGrindVFX)) {
 			sprite_index = other.speedBreakSprite;
 			image_xscale = _xscale;
 			image_angle = other.drawAngle;
 		}
 		
-		speedBreakSprTimer = 7;
+		speedBreakSprTimer = 10;
 	}
 }
 
-function scr_StompVFX() {
+function scr_StompVFX() { //Unused
 	/*if stomping && !instance_exists(obj_StompingVFX) && !instance_exists(obj_NewPauseMenu) && global.Particles {
 		instance_create_depth(x, y, depth - 1, obj_StompingVFX);
 	}*/
 }
 
 function scr_StompedVFX() {
-	with(instance_create_depth(x, y - 16, depth, obj_StompVFX)) {
+	with(instance_create_depth(x + angleSin, y + angleCos, depth, obj_StompVFX)) {
 		sprite_index = other.stompedSprite;
+		image_angle = other.angle;
 	}
 }
 
 function scr_RushBoostBreakVFX(_x = 0, _y = -16) {
-	with(instance_create_depth(x + _x, y + _y, depth, obj_RushBoostBreak)) {
+	with(instance_create_depth(x + _x + angleSin, y + _y + angleCos, depth, obj_RushBoostBreak)) {
 		sprite_index = other.stompedSprite;
 		
 		if other.vel > 0 {
@@ -77,7 +80,7 @@ function scr_RailGrindParticles(_x = 0, _y = 30) {
 	}*/
 }
 
-function scr_BodyGlowVFX() {
+function scr_BodyGlowVFX() { //Unused
 	if (afterRailJump or rampRing) && !trick && !global.SimplifyVFX {
 		if !instance_exists(obj_BodyGlow) {
 			instance_create_depth(x, y, depth + 1, obj_BodyGlow);
@@ -85,7 +88,7 @@ function scr_BodyGlowVFX() {
 	}
 }
 
-function scr_RushAdventureKickParticles(_speed = 1) {
+function scr_RushAdventureKickParticles(_speed = 1) { //Unused
 	/*if !instance_exists(obj_SideTrickVFXKappa) && !instance_exists(obj_NewPauseMenu) && global.Particles {
 		with(instance_create_depth(x, y, depth, obj_SideTrickVFXKappa)) {
 			image_speed = _speed;

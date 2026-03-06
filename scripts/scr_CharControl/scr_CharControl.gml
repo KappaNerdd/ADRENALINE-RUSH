@@ -22,6 +22,8 @@ function scr_BasicVariablesSpeedCreate() {
 		
 		coyoteJumpTimer = 0;
 		coyoteJumpFrames = 5;
+		
+		fallVel = false;
 	#endregion
 	
 	#region //Movement Checks
@@ -107,6 +109,7 @@ function scr_BasicVariablesSpeedCreate() {
 		skid = false;
 		sliding = false;
 		face_Left = false;
+		visXScale = 1;
 		
 		mask_index = idle_Mask;
 		
@@ -230,9 +233,9 @@ function scr_BasicVariablesSpeedCreate() {
 function scr_BasicControlsSpeedStep1() {
 	#region //General Controls
 		if can_Move {
-			getCharacterControls();
+			//getCharacterControls();
 			
-			/*if instance_exists(obj_StageTrackerSpeed) {
+			if instance_exists(obj_StageTrackerSpeed) {
 				var _recorder = instance_find(obj_InputRecorder, 0);
 
 				if _recorder != noone && !_recorder.isPlaying {
@@ -269,15 +272,29 @@ function scr_BasicControlsSpeedStep1() {
 				}
 			} else {
 				getCharacterControls();
-			}*/
+			}
 		} else {
-			if instance_exists(obj_Countdown) or instance_exists(obj_CountdownHead) {
+			if instance_exists(obj_SonicRushIntroCard) {
 				var _recorder = instance_find(obj_InputRecorder, 0);
 
-				if _recorder != noone && !_recorder.isPlaying {
-					jump_Key = keyboard_check_pressed(global.JumpKeySpeed) or gamepad_button_check_pressed(global.Player1Con, global.JumpButtonSpeed);
+				if _recorder != noone {
+					if !_recorder.isPlaying {
+						jump_Key = keyboard_check_pressed(global.JumpKeySpeed) or gamepad_button_check_pressed(global.Player1Con, global.JumpButtonSpeed);
+					}
+					
 					jump_Key = clamp(jump_Key, 0, 1);
 					_recorder.input[eKey.JumpPressed] = jump_Key;
+					
+					with(obj_SonicRushIntroCard) {
+						if other.jump_Key && kysTimer > 0 {
+							kysTimer = 0;
+							mainAlpha = 0;
+							otheralpha = 0;
+							whiteAlpha = 0;
+							other.can_MoveFULL = true;
+							other.can_Move = true;
+						}
+					}
 				}
 			}
 			
@@ -338,6 +355,30 @@ function scr_BasicControlsSpeedStep1() {
 		if !stomped {
 			stompedCheck = false;
 		}
+		
+		if abs(vel) < acc {
+			noMoveTimer = 0;
+		}
+		
+		if stomped && drawAngle != 0 {
+			stomped = false;
+		}
+		
+		if ground {
+			gravTimer = 0;
+		}
+		
+		if yspd >= termVel {
+			fallVel = true;
+		}
+		
+		if ground && fallVel && !place_meeting(x, y + yspd, obj_BreakableFloor) {
+			fallVel = true;
+		}
+		
+		if yspd < termVel or playerHurt {
+			fallVel = false;
+		}
 	#endregion
 	
 	#region //Angles
@@ -358,7 +399,7 @@ function scr_BasicControlsSpeedStep1() {
 	
 	#region //Run Fast Particles
 		if abs(vel) >= full_Speed && ground && global.Particles {
-			instance_create_depth(x, y + 21, depth + 1, obj_BoostParticles);
+			instance_create_depth(x + angleSin * 10, y + angleCos * 10, depth + 1, obj_BoostParticles);
 		}
 	#endregion
 }
@@ -415,7 +456,7 @@ function scr_BasicControlsSpeedStep3() {
 	#endregion
 		
 	#region //Special Idle
-		if ground && abs(vel) < acc && !stomped && !look_up && !ducking && !prepare && can_Move && can_MoveFULL {
+		if ground && abs(vel) < acc && !railGrind && !stomped && !look_up && !ducking && !prepare && can_Move && can_MoveFULL {
 			if specialIdleTimer > 0 {
 				specialIdleTimer -= 1;
 			}
@@ -604,7 +645,7 @@ function scr_StartSlideSpeed() {
 		obj_SFXManager.slideSound = true;
 	
 		if !leftFacer {
-			vel = (max_Speed / 1.5) * image_xscale;
+			vel = (max_Speed / 1.5) * visXScale;
 		} else {
 			if face_Left {
 				vel = -max_Speed / 1.5;
@@ -1046,7 +1087,7 @@ function scr_HealthSystemStep() {
 	
 	if global.Death {
 		if !leftFacer {
-			x += 6 * image_xscale;
+			x += 6 * visXScale;
 		} else {
 			if !face_Left {
 				x += 6;
@@ -1176,10 +1217,10 @@ function scr_SpeedLimit() {
 		vel = 0;
 	}
  
-	if vel >= 35 {
-		vel = 35;
-	} else if vel <= -35 {
-		vel = -35;
+	if vel >= 40 {
+		vel = 40;
+	} else if vel <= -40 {
+		vel = -40;
 	}
 }
 
@@ -1335,7 +1376,7 @@ function scr_PlayerMoveLeft() {
 			if leftFacer {
 				face_Left = true;
 			} else {
-				image_xscale = -1;
+				visXScale = -1;
 			}
 		}
 		
@@ -1367,7 +1408,7 @@ function scr_PlayerMoveRight() {
 			if leftFacer {
 				face_Left = false;
 			} else {
-				image_xscale = 1;
+				visXScale = 1;
 			}
 		}
 		

@@ -6,7 +6,7 @@ if image_alpha <= 0 {
 	instance_destroy();
 }
 
-image_xscale = scaleChanger * obj_Player.image_xscale;
+image_xscale = scaleChanger * obj_Player.visXScale;
 image_yscale = scaleChanger;
 
 scaleChanger += 0.01;

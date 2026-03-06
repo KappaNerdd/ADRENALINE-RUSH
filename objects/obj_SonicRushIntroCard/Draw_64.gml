@@ -1,4 +1,4 @@
-display_set_gui_size(global.CamWidth, global.CamHeight);
+display_set_gui_size(896, 504);
 
 var _camX = camera_get_view_x(view_camera[0]);
 var _camY = camera_get_view_y(view_camera[0]);
@@ -21,10 +21,15 @@ levelXMove2 += 0.25;
 var _xMove = levelXMove + levelXMove2;
 var _char = global.PlayerSelection[global.PlayerChar][28][4];
 
-draw_sprite_ext(sprite_index, 0, 0, 0, 28, 16.5, 0, c_white, whiteAlpha);
+var _mainCol1 = c_white;
+var _mainCol2 = c_black;
+
+draw_sprite_ext(sprite_index, 0, 0, 0, 28, 16.5, 0, _mainCol1, whiteAlpha);
+draw_sprite_ext(sprite_index, 0, 0, 0, 28, 2, 0, _mainCol2, mainAlpha);
+draw_sprite_ext(sprite_index, 0, 0, 504, 28, -2, 0, _mainCol2, mainAlpha);
+
 draw_sprite_ext(_charCheck, global.PlayerCostume, -_xMove + spikeX + 434, -100, 1, 1, 0, c_white, (otheralpha / 2) * mainAlpha);
-draw_sprite_ext(obj_Player.sprite_index, obj_Player.image_index, charX + _relX, _relY, obj_Player.image_xscale * charScale, obj_Player.image_yscale * charScale, obj_Player.drawAngle, c_black, mainAlpha);
-draw_sprite_ext(_char, 0, 650, 50, 1, 1, 0, c_white, otheralpha * mainAlpha);
+draw_sprite_ext(_char, 0, 130, 35, 0.75, 0.75, 0, c_white, otheralpha * mainAlpha);
 
 mindFrames += mindAnim;
 
@@ -145,26 +150,32 @@ draw_set_font(_font);
 draw_set_font(global.font_main);
 
 
-draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove - 5, 15, levelXscale, 0.5, 0, c_black, otheralpha);
+draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove - 5, 73, (levelXscale / 1.5), 0.25, 0, c_black, otheralpha);
 
-draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove + 1, 10, levelXscale, 0.5, 0, c_black, otheralpha);
-draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove - 1, 10, levelXscale, 0.5, 0, c_black, otheralpha);
-draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove, 10 + 1, levelXscale, 0.5, 0, c_black, otheralpha);
-draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove, 10 - 1, levelXscale, 0.5, 0, c_black, otheralpha);
+draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove + 1, 70, (levelXscale / 1.5), 0.25, 0, c_black, otheralpha);
+draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove - 1, 70, (levelXscale / 1.5), 0.25, 0, c_black, otheralpha);
+draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove, 70 + 1, (levelXscale / 1.5), 0.25, 0, c_black, otheralpha);
+draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove, 70 - 1, (levelXscale / 1.5), 0.25, 0, c_black, otheralpha);
 
-draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove, 10, levelXscale, 0.5, 0, c_white, otheralpha);
-
-
-draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove - 3, 103, levelXscale * 2, 1, 0, c_black, otheralpha);
-
-draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove + 1, 100, levelXscale * 2, 1, 0, c_black, otheralpha);
-draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove - 1, 100, levelXscale * 2, 1, 0, c_black, otheralpha);
-draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove, 100 + 1, levelXscale * 2, 1, 0, c_black, otheralpha);
-draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove, 100 - 1, levelXscale * 2, 1, 0, c_black, otheralpha);
-
-draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove, 100, levelXscale * 2, 1, 0, c_white, otheralpha);
+draw_sprite_ext(_level.stage_Sprite, mindFrames, _xMove, 70, (levelXscale / 1.5), 0.25, 0, c_white, otheralpha);
 
 
+draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove - 3, 113, levelXscale * 2, 1, 0, c_black, otheralpha);
+
+draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove + 1, 110, levelXscale * 2, 1, 0, c_black, otheralpha);
+draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove - 1, 110, levelXscale * 2, 1, 0, c_black, otheralpha);
+draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove, 110 + 1, levelXscale * 2, 1, 0, c_black, otheralpha);
+draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove, 110 - 1, levelXscale * 2, 1, 0, c_black, otheralpha);
+
+draw_sprite_ext(_level.level_Sprite, mindFrames, _xMove, 110, levelXscale * 2, 1, 0, c_white, otheralpha);
+
+
+draw_set_halign(fa_middle);
+	gpu_set_fog(true, _mainCol1, 0, 1);
+		draw_text_transformed_color((-getReadyX + 900) - getReadyX2, 10, scr_LocalText("level_Markiplier"), 3, 2, 0, c_white, c_white, c_white, c_white, whiteAlpha);
+		draw_text_transformed_color(getReadyX + getReadyX2, 450, scr_LocalText("level_Ready"), 3, 2, 0, c_white, c_white, c_white, c_white, whiteAlpha);
+	gpu_set_fog(false, c_black, 0, 1);
+draw_set_halign(fa_left);
 
 
 var _spikes = spr_SonicRushSpikesNorm;

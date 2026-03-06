@@ -12,6 +12,9 @@ chosenCustMus = 0;
 
 normalJuke = false;
 
+extraPlay = false;
+extraChoice = 0;
+
 customJuke = false;
 customY = 0;
 

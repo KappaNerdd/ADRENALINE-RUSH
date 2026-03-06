@@ -307,7 +307,7 @@ if !global.SongTag {
 
 	#region ///-----Lone-----///
 		//Shit
-		if audio_is_playing(mus_GoingtobeOK) {
+		if audio_is_playing(mus_Diminuendo) {
 			songName = scr_LocalText("mus_Diminuendo");
 			songCredits = "Kappa Nerd";
 			songLength = "0:43";

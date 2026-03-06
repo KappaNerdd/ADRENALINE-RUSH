@@ -63,7 +63,7 @@ if pulled {
 					_chars.sprite_index = _chars.sprPullyLeft;
 				}
 			} else {
-				_chars.image_xscale = pullyBase.image_xscale;
+				_chars.visXScale = pullyBase.image_xscale;
 				_chars.sprite_index = _chars.sprPully
 			}
 		}

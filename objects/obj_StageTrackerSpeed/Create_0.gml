@@ -58,14 +58,14 @@ if !global.Jukebox {
 		playTrack = global.speedStageData[global.SpeedSelected].musicTrackGirly;
 	}
 	
-	set_song_ingame(playTrack, 60, 0);
+	set_song_ingame(playTrack, 0, 0);
 }
 
 instance_create_depth(-10000, y, -9, obj_PlayerExtraLives);
 instance_create_depth(-10000, y, -9, obj_Timer);
+instance_create_depth(-10000, y, -9, obj_CameraExtended);
 instance_create_depth(-10000, y, -9, obj_HUDRankDisplayer);
 instance_create_depth(-10000, y, -9, obj_LevelCoords);
-instance_create_depth(-10000, y, -9, obj_CameraExtended);
 instance_create_depth(-10000, y, -9, obj_CreatePauseSpeed);
 instance_create_depth(-10000, y, -9, obj_GhostRecorder);
-//instance_create_depth(-10000, y, -9, obj_InputRecorder);
+instance_create_depth(-10000, y, -9, obj_InputRecorder);

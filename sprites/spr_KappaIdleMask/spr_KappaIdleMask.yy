@@ -23,7 +23,7 @@
   ],
   "name":"spr_KappaIdleMask",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Collision Mask",
     "path":"folders/Sprites/Characters/Players/Kappa/Collision Mask.yy",
@@ -78,7 +78,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

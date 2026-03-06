@@ -14,7 +14,7 @@ image_yscale = _size + 2;
 
 image_alpha = random_range(0.5, 1);
 
-alarm_set(0, 240);
+alarm_set(0, 180);
 
 var _random = ceil(random(8));
 selRandom = _random;

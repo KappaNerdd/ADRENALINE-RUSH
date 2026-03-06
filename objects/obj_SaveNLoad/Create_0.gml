@@ -1,3 +1,15 @@
+#region //Change Language Sprites
+	global.ResultsText = [
+		[spr_ResultsNew, spr_ResultsHead],
+		[spr_ResultsNewESP, spr_ResultsHead],
+	]
+
+	global.RankText = [
+		[spr_ResultsRankNew, spr_ResultsRankCheckHead],
+		[spr_ResultsRankNewESP, spr_ResultsRankCheckHead],
+	]
+#endregion
+
 #region ///-----Default Options-----///
 	//Audio
 	global.MASTER_VOL = 1;
@@ -133,6 +145,10 @@
 	
 	if !directory_exists("replay") {
 		directory_create("replay");
+	}
+	
+	if !directory_exists("custom_boombox") {
+		directory_create("custom_boombox");
 	}
 
 	global.Replay = false;
@@ -398,7 +414,7 @@
 			mus_Arpeggio, //Pause Theme (Ditto for Freeplay)
 			"Arpeggio (Freeplay Lone Mvt.)",
 		
-			[mus_GoingtobeOK, mus_Allegro, mus_Crescendo, mus_Crescendo, mus_AlFine], //Results Theme Tracks [shit, good, sick, perfect]
+			[mus_Diminuendo, mus_Allegro, mus_Crescendo, mus_Crescendo, mus_AlFine], //Results Theme Tracks [shit, good, sick, perfect]
 			["Diminuendo", "Allegro", "Crescendo", "Crescendo",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCard_LoneSet, 1], //Results Portrait
@@ -1071,11 +1087,17 @@
 	global.JukeBoxChoice = 0;
 	global.CustomJukeChoice = 0;
 	
+	global.CustomID = 0;
+	
 	global.JukeOptions = [
 		{
 			loop: false,
 			shuffle: false,
 		}
+	]
+	
+	global.NewJukes = [
+		
 	]
 	
 	global.JukeboxPlaylist = [
@@ -1275,6 +1297,7 @@
 	global.seconds = 0;
 	global.minutes = 0;
 	global.GameScore = 0;
+	global.ScoreMult = 1;
 	global.Rings = 0;
 	global.EnemyCount = 0;
 	global.CustomMus = false
@@ -1304,13 +1327,13 @@
 		{ //MIND Level 1
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind1", level_Num: 1, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed1, levelForced: false,
 		
-			rankS_Time: 130, rankA_Time: 135, rankB_Time: 145, rankC_Time: 200, rankD_Time: 220, rankF_Time: 245,
+			rankS_Time: 140, rankA_Time: 150, rankB_Time: 205, rankC_Time: 225, rankD_Time: 250, rankF_Time: 320,
 			
-			rankS_Score: 400000, rankA_Score: 350000, rankB_Score: 250000, rankC_Score: 150000, rankD_Score: 75000,
+			rankS_Score: 130000, rankA_Score: 100000, rankB_Score: 70000, rankC_Score: 40000, rankD_Score: 10000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			rings: 0, rings_Rank: 0, rankS_Ring: 250,
 			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 32,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1336,13 +1359,13 @@
 		{ //MIND Level 2
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed2, levelForced: false,
 		
-			rankS_Time: 133, rankA_Time: 138, rankB_Time: 148, rankC_Time: 203, rankD_Time: 223, rankF_Time: 248,
+			rankS_Time: 155, rankA_Time: 205, rankB_Time: 220, rankC_Time: 240, rankD_Time: 305, rankF_Time: 330,
 			
-			rankS_Score: 450000, rankA_Score: 400000, rankB_Score: 300000, rankC_Score: 200000, rankD_Score: 100000,
+			rankS_Score: 175000, rankA_Score: 125000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			rings: 0, rings_Rank: 0, rankS_Ring: 275,
 			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 50,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1657,8 +1680,8 @@
 #endregion
 
 #region //Camera Zoom
-	global.CamWidth = 896;
-	global.CamHeight = 504;
+	global.CamWidth = 768;
+	global.CamHeight = 432;
 	
 	global.CamSafeArea = 1050;
 #endregion

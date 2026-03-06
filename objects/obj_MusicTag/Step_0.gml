@@ -333,7 +333,7 @@ if waitTimer > 0 {
 
 	#region ///-----Lone-----///
 		//Shit
-		if audio_is_playing(mus_GoingtobeOK) {
+		if audio_is_playing(mus_Diminuendo) {
 			songName = "Diminuendo";
 			songCredits = "Kappa Nerd";
 			songLength = "0:43";

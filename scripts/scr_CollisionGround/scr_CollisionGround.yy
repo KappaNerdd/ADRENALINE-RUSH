@@ -6,7 +6,7 @@
   "name":"scr_CollisionGround",
   "parent":{
     "name":"Bruh",
-    "path":"folders/Scripts/Collisions/Bruh.yy",
+    "path":"folders/Scripts/Collisions/Speed/Bruh.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -32,7 +32,7 @@ if !transd {
 				
 					var _custTrack = audio_create_stream(_custArray[global.CustomJukeChoice]);
 				
-					set_song_ingame(_custTrack, 0, 60);
+					set_song_ingame(_custTrack, 0, 0);
 				}
 			}
 		}

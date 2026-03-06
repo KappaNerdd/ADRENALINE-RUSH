@@ -280,6 +280,11 @@ if can_MoveFULL {
 			afterRailJump = false;
 			rampRing = false;
 			
+			angle = 0;
+			drawAngle = 0;
+			angleHolder = 0;
+			winningAngle = 0;
+			
 			leftTrick = false;
 			rightTrick = false;
 			upTrick = false;
@@ -305,6 +310,8 @@ if can_MoveFULL {
 				stomped = true;
 				stompedTimer = stompedFrames;
 			}
+			
+			yspd = 0;
 			
 			stomping = false;
 			obj_SFXManager.stompSound = true;
@@ -362,7 +369,7 @@ if can_MoveFULL {
 				afterWallJump = false;
 			}
 	
-			if image_xscale == 1 {
+			if visXScale == 1 {
 				if !speedBreak {
 					if vel < max_Speed {
 						vel += 4;
@@ -372,7 +379,7 @@ if can_MoveFULL {
 						vel += 4;
 					}
 				}
-			} else if image_xscale == -1 {
+			} else {
 				if !speedBreak {
 					if vel > -max_Speed {
 						vel -= 4;

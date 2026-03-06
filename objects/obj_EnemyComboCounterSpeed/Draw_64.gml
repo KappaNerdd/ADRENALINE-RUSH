@@ -75,6 +75,6 @@ if obj_Player.enemyCombo > 0 {
 	draw_set_halign(fa_left);	
 	draw_set_font(global.font_main);
 	
-	draw_sprite_ext(spr_RainSplash, 0, _changeX + 10, _changeY + 25, 90 / obj_Player.enemyComboFrames * obj_Player.enemyComboTimer, 2, 0, global.fullRGB, image_alpha);
+	draw_sprite_ext(spr_WhiteTrans, 0, _changeX + 10, _changeY + 25, 90 / obj_Player.enemyComboFrames * (obj_Player.enemyComboTimer * 0.0625), 0.0625 * 1.5, 0, global.fullRGB, image_alpha);
 	
 }

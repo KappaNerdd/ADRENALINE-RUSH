@@ -6,11 +6,11 @@ function scr_CharDataKappa() {
 	drawAngle = 0;
 
 	//Speed
-	acc = 0.07;
-	normalAcc = 0.07;
+	acc = 0.09;
+	normalAcc = 0.09;
 	
 	dcc = 0.12;
-	fric = 0.07;
+	fric = 0.09;
 	vel = 0;
 	max_Speed = 11;
 	full_Speed = 16;
@@ -24,8 +24,8 @@ function scr_CharDataKappa() {
 	normalJspd = 7.1;
 	railJspd = -14.2;
 	
-	termVel = 25;
-	normalTermVel = 25;
+	termVel = 30;
+	normalTermVel = 30;
 	
 	backTrickBoost = 9;
 	backTrickUpBoost = -5.5;

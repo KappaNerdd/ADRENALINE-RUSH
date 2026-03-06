@@ -18,7 +18,7 @@ function scr_HomingAttackStep() {
 		
 		var _homingID = instance_nearest(x, y, obj_HomingDotDebug);
 
-		if ((_homingID.x < x && image_xscale == -1) or (_homingID.x > x && image_xscale == 1)) && !collision_line(x, y, _homingID.x, _homingID.y, obj_Solid, false, false) && _homingID.homingAttackable {
+		if ((_homingID.x < x && visXScale == -1) or (_homingID.x > x && visXScale == 1)) && !collision_line(x, y, _homingID.x, _homingID.y, obj_Solid, false, false) && _homingID.homingAttackable {
 		    with (_homingID) {
 				var _dist = point_distance(x, y, obj_Player.x, obj_Player.y);
 			
@@ -52,13 +52,13 @@ function scr_HomingAttackStep() {
 			
 			if x < homing_Target.x {
 				if !leftFacer {
-					image_xscale = 1;
+					visXScale = 1;
 				} else {
 					face_Left = false;
 				}
 			} else if x > homing_Target.x {
 				if !leftFacer {
-					image_xscale = -1;
+					visXScale = -1;
 				} else {
 					face_Left = true;
 				}
@@ -84,29 +84,7 @@ function scr_HomingAttackStep() {
 		    homing_Active = false;
 		    homing_Target = undefined;
 			
-			var _xspd = 12;
-			var _fullXspd = _xspd;
-			
-			if !leftFacer {
-				_fullXspd = _xspd * image_xscale;
-			} else {
-				if !face_Left {
-					_fullXspd = _xspd;
-				} else {
-					_fullXspd = -_xspd;
-				}
-			}
-			
-			vel = _fullXspd;
 			yspd = -normalJspd;
-		
-			var _enemyTouched = instance_place(x, y, obj_EnemyParent);
-		
-			if _enemyTouched {
-				_enemyTouched.vel = _xspd;
-				_enemyTouched.yspd = -3;
-			}
-		
 		}
 	}
 }

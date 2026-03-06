@@ -313,7 +313,10 @@ if can_MoveFULL {
 			afterRailJump = false;
 			sideWallJump = false;
 			
+			angle = 0;
 			drawAngle = 0;
+			angleHolder = 0;
+			winningAngle = 0;
 			
 			event_user(1);
 			event_user(3);

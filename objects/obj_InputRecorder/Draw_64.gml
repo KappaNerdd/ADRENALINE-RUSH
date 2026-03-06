@@ -1,4 +1,4 @@
-display_set_gui_size(global.CamWidth, global.CamHeight);
+display_set_gui_size(768, 432);
 
 if global.Replay {
 	draw_sprite_ext(sprite_index, image_index, 603, 13, 1, 1, 0, c_black, 1);

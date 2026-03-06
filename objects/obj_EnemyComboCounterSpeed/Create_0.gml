@@ -15,7 +15,7 @@ newY3 = 0;
 
 visibleTimer = 2;
 
-createBonus = false;
+createBonus = true;
 
 if !global.MIND && global.PlayerChar != 0 {
 	image_speed = 0;

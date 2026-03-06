@@ -1,1 +1,1 @@
-draw_sprite_ext(sprite_index, image_index, obj_Player.x, obj_Player.y + 9, 0.5, 0.5, 0, c_white, image_alpha);
+draw_sprite_ext(sprite_index, image_index, obj_Player.x - obj_Player.angleSin * 5, obj_Player.y - obj_Player.angleCos * 5, 0.5, 0.5, 0, c_white, image_alpha);

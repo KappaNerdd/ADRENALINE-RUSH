@@ -1,6 +1,10 @@
 if copyPlayer != noone {
-	if copyPlayer.speedBreak or copyPlayer.stomping {
-		image_alpha = 1;
+	if copyPlayer.speedBreak or copyPlayer.stomping or copyPlayer.fallVel {
+		if !global.SimplifyVFX {
+			visible = !visible;
+		} else {
+			visible = true;
+		}
 		
 		x = copyPlayer.posX[copyRecord];
 		y = copyPlayer.posY[copyRecord];
@@ -11,8 +15,6 @@ if copyPlayer != noone {
 		image_yscale = copyPlayer.toRecordYScale[copyRecord];
 		image_angle = copyPlayer.toRecordAngle[copyRecord];
 	} else {
-		image_alpha = 0;
+		visible = false;
 	}
 }
-
-visible = !visible;

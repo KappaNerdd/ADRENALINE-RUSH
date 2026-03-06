@@ -23,7 +23,7 @@
   ],
   "name":"spr_IvyStomped",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Ivy (Normal)",
     "path":"folders/Sprites/Characters/Players/Ivy/Ivy (Normal).yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

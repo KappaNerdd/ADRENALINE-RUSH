@@ -33,7 +33,7 @@ draw_sprite_ext(srBall, 0, _camX + 598 + srBallBGMoveX + srBallMoveX, _camY + 23
 
 //Text UI
 draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX + 5, _camY + 55 + 5 + 20, 0.5, 0.5, 0, c_black, 0.5);
-draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX, _camY + 55 + 20, 0.5, 0.5, 0, _col, 1);
+draw_sprite_ext(resultsSprite, mindImageIndex, _camX + resultsMoveX, _camY + 55 + 20, 0.5, 0.5, 0, c_white, 1);
 
 draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX + 5, _camY + 100 + 5 + 15, 0.25, 0.25, 0, c_black, 0.5);
 draw_sprite_ext(stageNameSprite, mindImageIndex, _camX + stageNameMoveX, _camY + 100 + 15, 0.25, 0.25, 0, c_white, 1);
@@ -253,7 +253,7 @@ draw_sprite_ext(_enemyRank, rankFrames, _camX + timeMoveX + 120, _camY + 270 - 3
 
 
 draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX + 5, _camY + 290 + 5 + 40, 1, 0.8, 0, c_black, 0.5);
-draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 40, 1, 0.8, 0, _col, 1);
+draw_sprite_ext(rankSprite, mindImageIndex, _camX + rankMoveX, _camY + 290 + 40, 1, 0.8, 0, c_white, 1);
 
 if !completed {
 	var _sprayGap = 22;
@@ -396,21 +396,27 @@ if rankSize == 0 {
 	if !completed {
 		draw_set_halign(fa_right);
 			#region //Retry
-				draw_sprite_ext(_button, obj_CustomAct1KeySpeed.image_index, _camX + 698 - _retryWidth, _camY + 345 + 72, 1, 1, 0, c_white, image_alpha * 2);
-				draw_text_transformed_color(_camX + 763, _camY + 335 + 72, scr_LocalText(_retryText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
+				draw_sprite_ext(_button, obj_CustomAct1KeySpeed.image_index, _camX + 698 - _retryWidth, _camY + 345 + 68, 1, 1, 0, c_white, image_alpha * 2);
+				draw_text_transformed_color(_camX + 763, _camY + 335 + 68, scr_LocalText(_retryText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
 			#endregion
 		
 			#region //Continue
-				draw_sprite_ext(_button, obj_CustomJumpKeySpeed.image_index, _camX + 570 + 128 - _continueWidth, _camY + 310 + 72, 1, 1, 0, c_white, image_alpha * 2);
-				draw_text_transformed_color(_camX + 635 + 128, _camY + 300 + 72, scr_LocalText(_continueText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
+				draw_sprite_ext(_button, obj_CustomJumpKeySpeed.image_index, _camX + 570 + 128 - _continueWidth, _camY + 310 + 68, 1, 1, 0, c_white, image_alpha * 2);
+				draw_text_transformed_color(_camX + 635 + 128, _camY + 300 + 68, scr_LocalText(_continueText), 1, 1, 0, c_white, c_white, c_white, c_white, image_alpha * 2);
 			#endregion
 		
 			#region //Replay
-				if !replayGotSaved {
-					draw_sprite_ext(_button, obj_CustomAct2KeySpeed.image_index, _camX + 570 + 128 - _replayWidth, _camY + 20, 1, 1, 0, c_grey, image_alpha * 2);
+				var _replayCol = c_white;
+				
+				if !instance_exists(obj_InputRecorder) {
+					_replayCol = c_grey;
 				}
 			
-				draw_text_transformed_color(_camX + 635 + 128, _camY + 10, scr_LocalText(_replayText), 1, 1, 0, c_white, c_white, c_grey, c_grey, image_alpha * 2);
+				if !replayGotSaved {
+					draw_sprite_ext(_button, obj_CustomAct2KeySpeed.image_index, _camX + 570 + 128 - _replayWidth, _camY + 20, 1, 1, 0, _replayCol, image_alpha * 2);
+				}
+			
+				draw_text_transformed_color(_camX + 635 + 128, _camY + 10, scr_LocalText(_replayText), 1, 1, 0, c_white, c_white, _replayCol, _replayCol, image_alpha * 2);
 			#endregion
 		
 			#region //Ghost

@@ -12,11 +12,7 @@ if instance_exists(obj_RoomTransParent) or instance_exists(obj_Textbox) or insta
 			if visibleTimer <= 0 && obj_Player.enemyComboTimer < 100 {
 				visibleTimer = 2;
 			
-				if visible {
-					visible = false;
-				} else {
-					visible = true;
-				}
+				visible = !visible;
 			} else if obj_Player.enemyComboTimer > 100 {
 				visible = true;
 			}
@@ -94,12 +90,5 @@ with (obj_Player) {
 			
 			mult = 5;
 		}
-	}
-}
-
-if obj_Player.enemyComboTimer == 1 {
-	if !createBonus {
-		createBonus = true;
-		scr_BonusPoints((500 * obj_Player.enemyCombo) * mult);
 	}
 }

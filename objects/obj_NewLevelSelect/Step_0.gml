@@ -203,7 +203,7 @@ if !confirm {
 							global.Replay = true;
 							obj_SFXManager.funkinCheckpoint = true;
 							set_song_ingame(noone, 90, 0);
-							confirm = true;
+							yes = true;
 							levelChosen = true;
 							chosen = false;
 							changingY = -3;

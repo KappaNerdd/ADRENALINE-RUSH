@@ -72,3 +72,19 @@ function scr_CharacterModData(_modChar) {
 	
 	array_push(global.PlayerSelection, _loadArray);*/
 }
+	
+function scr_LoadCustomMusic() {
+	//array_delete(global.CustomJukeboxPlaylist, 0, array_length(global.CustomJukeboxPlaylist));
+	//array_delete(global.CustomJukeShuffled, 0, array_length(global.CustomJukeShuffled));
+	array_delete(global.NewJukes, 0, array_length(global.NewJukes));
+	
+	var _musPath = working_directory + "custom_boombox";
+	var _musDir = file_find_first(_musPath + "/*", fa_directory);
+
+	while (_musDir != "") {
+		array_push(global.NewJukes, _musPath + "/" + _musDir);
+	    _musDir = file_find_next();
+	}
+	
+	file_find_close();
+}

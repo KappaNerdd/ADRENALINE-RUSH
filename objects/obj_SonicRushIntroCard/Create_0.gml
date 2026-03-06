@@ -3,6 +3,8 @@ x = -1000000;
 
 image_alpha = 1;
 
+instance_create_depth(x, y, depth, obj_SonicRushCharSil);
+
 scr_GetCharLevelCardPort();
 
 charScale = 6;
@@ -16,13 +18,13 @@ if global.LevelForced {
 			obj_InputRecorder.isRecording = true;
 		}
 	}
-		
+
 	if instance_exists(obj_GhostRecorder) {
 		if !global.Replay {
 			obj_GhostRecorder.ghostRecord = true;
 		}
 	}
-		
+	
 	if !instance_exists(obj_ActualGhost) {
 		if global.ShowGhost {
 			instance_create_depth(x, y, depth, obj_ActualGhost);
@@ -63,7 +65,7 @@ charBoxFrames = 0;
 charNameX = 448;
 charNameXRepeat = 896;
 
-charBoxY = 440;
+charBoxY = 415;
 
 levelXscale = 0;
 levelXMove = -300;
@@ -76,3 +78,6 @@ rankAnim = 1 / 4;
 rankFrames = 0;
 
 kysTimer = 180;
+
+getReadyX = 1200;
+getReadyX2 = 0;

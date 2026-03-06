@@ -137,4 +137,8 @@
 	stomped = false;
 	stompPow = false;
 #endregion
+
+#region //Extras
+	sensorTopDistance = 14;
+#endregion
 	

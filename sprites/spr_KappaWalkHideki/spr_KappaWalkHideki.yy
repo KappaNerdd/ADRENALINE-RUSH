@@ -30,7 +30,7 @@
   ],
   "name":"spr_KappaWalkHideki",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Hideki",
     "path":"folders/Sprites/Characters/Players/Kappa/Hideki.yy",
@@ -106,7 +106,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

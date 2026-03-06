@@ -362,7 +362,7 @@ if can_MoveFULL {
 				afterWallJump = false;
 			}
 	
-			if image_xscale == 1 {
+			if visXScale == 1 {
 				if !speedBreak {
 					if vel < max_Speed {
 						vel += 4;
@@ -372,7 +372,7 @@ if can_MoveFULL {
 						vel += 4;
 					}
 				}
-			} else if image_xscale == -1 {
+			} else {
 				if !speedBreak {
 					if vel > -max_Speed {
 						vel -= 4;

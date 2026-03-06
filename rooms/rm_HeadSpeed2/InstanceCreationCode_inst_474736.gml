@@ -1,2 +1,2 @@
 launchVel = 15;
-launchYspd = -6;
+launchYspd = -7;

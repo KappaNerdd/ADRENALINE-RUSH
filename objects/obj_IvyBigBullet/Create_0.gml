@@ -5,24 +5,24 @@ yspd = 0;
 
 if obj_Player.ground && obj_Player.shootGround {
 	image_angle = 0;
-	image_xscale = 1 * obj_Player.image_xscale;
+	image_xscale = 1 * obj_Player.visXScale;
 	
-	x = obj_Player.x + (10 * obj_Player.image_xscale);
-	y = obj_Player.y + 5;
+	x = obj_Player.x + (10 * obj_Player.visXScale);
+	y = obj_Player.y - 11;
 	
-	xspd = 4 * obj_Player.image_xscale;
+	xspd = 4 * obj_Player.visXScale;
 } else if !obj_Player.ground && !obj_Player.hShoot {
 	image_angle = -90;
 	image_xscale = 1;
 	
 	x = obj_Player.x;
-	y = obj_Player.y + 10;
+	y = obj_Player.y;
 	
 	yspd = 4;
 }
 
 
-xAdd = 0.4 * obj_Player.image_xscale;
+xAdd = 0.4 * obj_Player.visXScale;
 yAdd = 0.4;
 
 depth = obj_Player.depth - 1;

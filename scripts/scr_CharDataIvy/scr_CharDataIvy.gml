@@ -6,11 +6,11 @@ function scr_CharDataIvy() {
 	drawAngle = 0;
 
 	//Speed
-	acc = 0.045;
-	normalAcc = 0.045;
+	acc = 0.06;
+	normalAcc = 0.06;
 	
-	dcc = 0.08;
-	fric = 0.045;
+	dcc = 0.12;
+	fric = 0.06;
 	vel = 0;
 	max_Speed = 9;
 	full_Speed = 14;
@@ -22,8 +22,8 @@ function scr_CharDataIvy() {
 	jspd = 6.75;
 	normalJspd = 6.75;
 	
-	termVel = 19;
-	normalTermVel = 19;
+	termVel = 25;
+	normalTermVel = 25;
 	
 	backTrickBoost = 7;
 	backTrickUpBoost = -7;

@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":16.13932,
+  "duration":72.0,
   "exportDir":"",
   "name":"mus_HeartsAround",
   "parent":{

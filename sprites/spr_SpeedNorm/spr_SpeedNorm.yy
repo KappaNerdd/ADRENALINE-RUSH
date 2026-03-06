@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Normal",
-    "path":"folders/Sprites/Results Screen Cards/Misc/Normal.yy",
+    "name":"English",
+    "path":"folders/Sprites/Results Screen Cards/Misc/Normal/English.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

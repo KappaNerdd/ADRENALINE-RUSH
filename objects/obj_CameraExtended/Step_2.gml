@@ -30,7 +30,7 @@ if !global.ExtendCamera {
 			_bot = 1;
 		}
 		
-		_changeY = lerp(_changeY, 300 * _bot, _effect);
+		_changeY = lerp(_changeY, 250 * _bot, _effect / 2);
 	}
 } else if global.ExtendCamera && following == obj_Player {
 	var _dir = 1;
@@ -44,7 +44,11 @@ if !global.ExtendCamera {
 	_camX = floor(((following.x + _changeX) - _camWidth / 2));
 	_camY = floor(((following.y + _changeY) - _camHeight / 2));
 	
-	_changeX = lerp(_changeX, obj_Player.vel * 12, 0.05);
+	if !blackBars {
+		_changeX = lerp(_changeX, (obj_Player.vel * obj_Player.angleCos) * 10, 0.05);
+	} else {
+		_changeX = lerp(_changeX, 0, 0.05);
+	}
 	
 	if obj_Player.yspd >= 0 {
 		if !obj_Player.ground {
@@ -55,58 +59,11 @@ if !global.ExtendCamera {
 	}
 	
 	if obj_Player.ground {
-		if obj_Player.drawAngle == 22.5 {
-			if obj_Player.vel >= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, -25, _effect);
-			} else if obj_Player.vel <= -obj_Player.max_Speed {
-				_changeY = lerp(_changeY, 25, _effect);
-			} else {
-				_changeY = lerp(_changeY, 0, _effect);
-			}
-		} else if obj_Player.drawAngle == 337.5 {
-			if obj_Player.vel <= -obj_Player.max_Speed {
-				_changeY = lerp(_changeY, -25, _effect);
-			} else if obj_Player.vel >= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, 25, _effect);
-			} else {
-				_changeY = lerp(_changeY, 0, _effect);
-			}
-		} else if obj_Player.drawAngle == 45 {
-			if obj_Player.vel >= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, -50, _effect);
-			} else if obj_Player.vel <= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, 50, _effect);
-			} else {
-				_changeY = lerp(_changeY, 0, _effect);
-			}
-		} else if obj_Player.drawAngle == 315 {
-			if obj_Player.vel <= -obj_Player.max_Speed {
-				_changeY = lerp(_changeY, -50, _effect);
-			} else if obj_Player.vel >= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, 50, _effect);
-			} else {
-				_changeY = lerp(_changeY, 0, _effect);
-			}
-		} else if obj_Player.drawAngle == 77.5 {
-			if obj_Player.vel >= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, -100, _effect);
-			} else if obj_Player.vel <= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, 100, _effect);
-			} else {
-				_changeY = lerp(_changeY, 0, _effect);
-			}
-		} else if obj_Player.drawAngle == 282.5 {
-			if obj_Player.vel <= -obj_Player.max_Speed {
-				_changeY = lerp(_changeY, -100, _effect);
-			} else if obj_Player.vel >= obj_Player.max_Speed {
-				_changeY = lerp(_changeY, 100, _effect);
-			} else {
-				_changeY = lerp(_changeY, 0, _effect);
-			}
+		if !blackBars {
+			_changeY = lerp(_changeY, (obj_Player.vel * -obj_Player.angleSin) * 8, 0.05);
 		} else {
-			_changeY = lerp(_changeY, 0, _effect);
+			_changeY = lerp(_changeY, 0, 0.05);
 		}
-		
 		
 		if lookTimer == 0 {
 			var _bot = 0;
@@ -121,7 +78,7 @@ if !global.ExtendCamera {
 				_bot = 1;
 			}
 		
-			_changeY = lerp(_changeY, 300 * _bot, _effect);
+			_changeY = lerp(_changeY, 250 * _bot, _effect / 2);
 		}
 	}
 }
@@ -166,11 +123,16 @@ var shake = shakePower * shakeValue;
 //_camX += random_range(-shake, shake);
 _camY += shake;
 
-camX2 = lerp(camX2, ingameCamX, 0.2);
-camY2 = lerp(camY2, ingameCamY, 0.2);
+camX2 = lerp(camX2, ingameCamX, camSpd);
+camY2 = lerp(camY2, ingameCamY, camSpd);
 
-camera_set_view_size(view_camera[0], global.CamWidth + camX2, global.CamHeight + camY2);
+if blackBars {
+	blackBarsPos = lerp(blackBarsPos, 1, camSpd)
+} else {
+	blackBarsPos = lerp(blackBarsPos, 0, 0.1);
+}
 
+camera_set_view_size(view_camera[0], global.CamWidth * camX2, global.CamHeight * camY2);
 
 if !global.Death {
 	//Looking Timer
@@ -211,7 +173,6 @@ camera_set_view_pos(view_camera[0], finalCamX, finalCamY);
 
 x = finalCamX;
 y = finalCamY;
-
 
 if instance_exists(obj_CutsceneParent) {
 	instance_change(obj_CameraCutscene, true);

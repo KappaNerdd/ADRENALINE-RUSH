@@ -17,6 +17,8 @@ randomPower = false;
 randomTimer = 0;
 randomFrames = 5;
 
+giveCharPower = noone;
+
 active = true;
 powerUp = 0;
 homingAttackable = true;

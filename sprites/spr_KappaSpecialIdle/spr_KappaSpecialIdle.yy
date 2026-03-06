@@ -31,7 +31,7 @@
   ],
   "name":"spr_KappaSpecialIdle",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Normal",
     "path":"folders/Sprites/Characters/Players/Kappa/Normal.yy",
@@ -110,7 +110,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

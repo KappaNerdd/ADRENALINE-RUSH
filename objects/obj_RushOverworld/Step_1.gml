@@ -377,8 +377,8 @@ if can_MoveFULL {
 	#endregion
 		
 	#region //Double Jump
-		if jump_Key && !preStomp && jumpinTimer <= 0 && !homing_Active && !superPeelout && !spindash && !ground && !dropdash && !wallJump && jumping && !dJumping && !preStomp && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -3 {
-			yspd = -jspd;
+		if jump_Key && !preStomp && !playerHurt && jumpinTimer <= 0 && !homing_Active && !superPeelout && !spindash && !ground && !dropdash && !wallJump && jumping && !dJumping && !preStomp && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -3 {
+			scr_JumpManipulate();
 			realJumping = true;
 			image_index = 0;
 			
@@ -414,7 +414,6 @@ if can_MoveFULL {
 		if sliding {
 			slow_Down = true;
 			ducking = false;
-			drawAngle = 0;
 		} else {
 			slow_Down = false;
 		}
@@ -429,10 +428,6 @@ if can_MoveFULL {
 			spindashTimer = spindashMax / 2;
 			ducking = false;
 			scr_ControllerRumble();
-			
-			if global.Particles && !instance_exists(obj_SpindashDust) {
-				instance_create_depth(x, y, depth, obj_SpindashDust);
-			}
 			
 			spindash = true;
 			
@@ -466,7 +461,7 @@ if can_MoveFULL {
 		if spindash && !down_Key {
 			ducking = false;
 		    sliding = true;
-		    vel = image_xscale * spindashTimer / 9;
+		    vel = visXScale * spindashTimer / 9;
 			yspd = 0;
 		    spindash = false;
 			spindashRev = false;
@@ -483,10 +478,6 @@ if can_MoveFULL {
 			superPeeloutTimer = superPeeloutMax / 4;
 			look_up = false;
 			scr_ControllerRumble();
-			
-			if global.Particles && !instance_exists(obj_SpindashDust) {
-				instance_create_depth(x, y, depth, obj_SpindashDust);
-			}
 			
 			superPeelout = true;
 			
@@ -515,7 +506,7 @@ if can_MoveFULL {
 		}
 		
 		if superPeelout && !up_Key {
-		    vel = image_xscale * superPeeloutTimer / 11.5;
+		    vel = visXScale * superPeeloutTimer / 11.5;
 			yspd = 0;
 			look_up = false;
 		    superPeelout = false;
@@ -532,7 +523,7 @@ if can_MoveFULL {
 	#endregion
 
 	#region //Stomping
-		if !ground && !preStomp && !alreadyStomped && !homing_Active && !dropdash && (down_Key && action_Key) {
+		if !ground && !preStomp && !alreadyStomped && !homing_Active && !spindash && !superPeelout && !dropdash && (down_Key && action_Key) {
 			preStomp = true;
 			alreadyStomped = true;
 			wallJump = false;
@@ -548,6 +539,11 @@ if can_MoveFULL {
 			rushTrick = false;
 			rushTrickFinish = false;
 			image_index = 0;
+			
+			angle = 0;
+			drawAngle = 0;
+			angleHolder = 0;
+			winningAngle = 0;
 			
 			obj_SFXManager.block = true;
 		}
@@ -584,6 +580,8 @@ if can_MoveFULL {
 			preStomp = false;
 			stomped = true;
 			obj_SFXManager.stompSound = true;
+			
+			yspd = 0;
 			
 			if vel != 0 {
 				sliding = true;

@@ -11,11 +11,11 @@ if backTrick or hover {
 		_xscale = -1;
 	}
 	
-	draw_sprite_ext(spr_SarahTwirlVFX, image_index, x, y - 16, _xscale, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_SarahTwirlVFX, image_index, x, y - 16, _xscale, 1, drawAngle, c_white, 1);
 }
 
 if railGrind {
-	draw_sprite_ext(spr_RailGrindSparksVFX, railGrindSprFrames, x, bbox_bottom, 0.5, 0.5, 0, c_white, 1);
+	draw_sprite_ext(spr_RailGrindSparksVFX, railGrindSprFrames, x + angleSin * 10, y + angleCos * 10, 0.5, 0.5, drawAngle, c_white, 1);
 }
 
 if global.DEBUG == true && instance_exists(self) {

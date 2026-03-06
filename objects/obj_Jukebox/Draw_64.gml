@@ -6,7 +6,7 @@ sprite_index = _charBox;
 
 draw_sprite_ext(spr_TextboxHead, 0, 0, createY, 10, image_yscale, 0, c_white, 1);
 
-if !normalJuke && !customJuke {
+if !normalJuke && !customJuke && !extraPlay {
 	for(var i = 0; i < 2; i++) {
 		var _col = c_grey;
 		var _words = "freeplay_NormJuke";
@@ -17,15 +17,15 @@ if !normalJuke && !customJuke {
 		}
 	
 		if i == 1 {
-			_words = "freeplay_CustJuke";
-		}
-		
-		if chosenCustMus == i {
-			draw_sprite_ext(obj_CustomJumpKeySpeed.sprite_index, obj_CustomJumpKeySpeed.image_index, -8, 64 + (_yGap * i) + customY, 1, 1, 0, c_white, textAlpha);
+			_words = "freeplay_CustJuke"
 		}
 	
 		draw_sprite_ext(spr_TextboxHead, 0, 0, 32 + (_yGap * i), 10, 2, 0, _col, textAlpha);
 	
+		if jukeboxChoice == i {
+			draw_sprite_ext(obj_CustomJumpKeySpeed.sprite_index, obj_CustomJumpKeySpeed.image_index, -8, 64 + (_yGap * i) + customY, 1, 1, 0, c_white, textAlpha);
+		}
+		
 		draw_set_halign(fa_middle);
 		draw_set_valign(fa_center);
 			draw_text_transformed_color(160, 64 + (_yGap * i), scr_LocalText(_words), 0.75, 0.75, 0, c_white, c_white, _col, _col, textAlpha);
@@ -34,6 +34,29 @@ if !normalJuke && !customJuke {
 	}
 }
 
+if extraPlay && !customJuke {
+	for(var i = 0; i < array_length(global.NewJukes); i++) {
+		var _col = c_grey;
+		var _words = filename_name(string(global.NewJukes[i]));
+		var _yGap = 64;
+	
+		if extraChoice == i {
+			_col = c_white;
+		}
+	
+		draw_sprite_ext(spr_TextboxHead, 0, 0, 32 + (_yGap * i), 10, 2, 0, _col, textAlpha);
+	
+		if extraChoice == i {
+			draw_sprite_ext(obj_CustomJumpKeySpeed.sprite_index, obj_CustomJumpKeySpeed.image_index, -8, 64 + (_yGap * i) + customY, 1, 1, 0, c_white, textAlpha);
+		}
+		
+		draw_set_halign(fa_middle);
+		draw_set_valign(fa_center);
+			draw_text_transformed_color(160, 64 + (_yGap * i), scr_LocalText(_words), 0.75, 0.75, 0, c_white, c_white, _col, _col, textAlpha);
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
+	}
+}
 
 if customJuke {
 	var _custArray = global.CustomJukeboxPlaylist;
@@ -83,9 +106,8 @@ draw_sprite_ext(spr_JukeButtons, 2 + global.JukeboxLoop, 288, createY + 360, 1, 
 
 if customJuke {
 	draw_sprite_ext(spr_JukeButtons, 4, 96, createY + 360, 1, 1, 0, c_white, textAlpha);
+	draw_sprite_ext(spr_JukeButtons, 5, 224, createY + 360, 1, 1, 0, c_white, textAlpha);
 }
-	
-draw_sprite_ext(spr_JukeButtons, 5, 224, createY + 360, 1, 1, 0, c_white, textAlpha);
 
 
 var _buttonAsset = obj_CustomAct1KeySpeed.sprite_index;
@@ -95,10 +117,8 @@ draw_sprite_ext(_buttonAsset, obj_CustomAct4KeySpeed.image_index, 288 - 32, crea
 
 if customJuke {
 	draw_sprite_ext(_buttonAsset, obj_CustomPauseKeySpeed.image_index, 96 - 32, createY + 408, 1, 1, 0, c_white, textAlpha);
+	draw_sprite_ext(_buttonAsset, obj_CustomAct3KeySpeed.image_index, 224 - 32, createY + 408, 1, 1, 0, c_white, textAlpha);
 }
-
-draw_sprite_ext(_buttonAsset, obj_CustomAct3KeySpeed.image_index, 224 - 32, createY + 408, 1, 1, 0, c_white, textAlpha);
-
 
 draw_sprite_ext(spr_TextboxTrans, 0, 0, createY, 10, 13.5, 0, global.fullRGB, textAlpha);
 
@@ -108,3 +128,4 @@ draw_set_valign(fa_center);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
+draw_text_ext(50, 100, string(global.NewJukes), 22, 400);

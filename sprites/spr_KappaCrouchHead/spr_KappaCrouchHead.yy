@@ -5,14 +5,13 @@
   "bbox_bottom":65,
   "bbox_left":37,
   "bbox_right":60,
-  "bbox_top":16,
+  "bbox_top":24,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"b63ad69d-c07b-485d-8868-693c0ddc0f90","name":"b63ad69d-c07b-485d-8868-693c0ddc0f90","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"2b2f1700-da08-492c-9b69-67cc5db0c503","name":"2b2f1700-da08-492c-9b69-67cc5db0c503","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"18bf9410-eb8e-4bb8-922b-4045893e9671","name":"18bf9410-eb8e-4bb8-922b-4045893e9671","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"5784131e-bb36-4ebe-b69d-ed672e9a75f5","name":"5784131e-bb36-4ebe-b69d-ed672e9a75f5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
@@ -26,7 +25,7 @@
   ],
   "name":"spr_KappaCrouchHead",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Head",
     "path":"folders/Sprites/Characters/Players/Kappa/Head.yy",
@@ -52,7 +51,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":4.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -72,23 +71,20 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b63ad69d-c07b-485d-8868-693c0ddc0f90","path":"sprites/spr_KappaCrouchHead/spr_KappaCrouchHead.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ba7c6794-cba1-4e16-9f78-4809d9d34787","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2b2f1700-da08-492c-9b69-67cc5db0c503","path":"sprites/spr_KappaCrouchHead/spr_KappaCrouchHead.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"83b6a0ca-f273-487e-8c00-d81ca9da7575","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"83b6a0ca-f273-487e-8c00-d81ca9da7575","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"18bf9410-eb8e-4bb8-922b-4045893e9671","path":"sprites/spr_KappaCrouchHead/spr_KappaCrouchHead.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"2d77f823-f1a7-44e8-8c73-40f8888d9f68","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"2d77f823-f1a7-44e8-8c73-40f8888d9f68","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5784131e-bb36-4ebe-b69d-ed672e9a75f5","path":"sprites/spr_KappaCrouchHead/spr_KappaCrouchHead.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bc9ff926-229f-415a-b3ce-168769a12722","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"bc9ff926-229f-415a-b3ce-168769a12722","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":40,
+    "yorigin":56,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

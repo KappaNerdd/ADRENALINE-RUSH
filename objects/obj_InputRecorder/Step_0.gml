@@ -25,8 +25,6 @@ if isPlaying {
 	if !confirmPlay {
 		scr_ReadInputRecording(fileName);
 		confirmPlay = true;
-	} else {
-		
 	}
 	
 	scr_PlayInputRecording();	
@@ -39,6 +37,10 @@ if global.Replay {
 if visibleTimer <= 0 {
 	visibleTimer = 30;
 	
-	visible = !visible;
+	if !global.SimplifyVFX {
+		visible = !visible;
+	} else {
+		visible = true;
+	}
 }
 

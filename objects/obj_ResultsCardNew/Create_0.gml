@@ -60,7 +60,7 @@ set_song_ingame(noone);
 	moveUpEnd = 0;
 	moveUp = moveUpStart;
 
-	moveDownStart = 500;
+	moveDownStart = 550;
 	moveDownEnd = 360 + 72;
 	moveDown = moveDownStart;
 	
@@ -103,7 +103,7 @@ set_song_ingame(noone);
 	if global.MIND or global.PlayerChar == 0 {
 		resultsSprite = spr_ResultsHead;
 	} else {
-		resultsSprite = spr_Results;
+		resultsSprite = spr_ResultsNew;
 	}
 	
 	resultsStartX = -300;

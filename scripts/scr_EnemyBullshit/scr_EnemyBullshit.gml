@@ -132,13 +132,15 @@ function scr_PlayerToEnemyShit() {
 			var _toji2 = instance_place(x, y, obj_EnemyParent);
 		
 			if _toji2 {
-				_toji2.charKiller = other.id;
+				if !_toji2.launched {
+					_toji2.charKiller = other.id;
 				
-				scr_ScreenShake();
-				scr_ControllerRumble();
+					scr_ScreenShake();
+					scr_ControllerRumble();
 		
-				_toji2.enemyHealth -= _toji2.enemyHealth;
-				obj_SFXManager.UndertaleDamage = true;
+					_toji2.enemyHealth -= _toji2.enemyHealth;
+					obj_SFXManager.UndertaleDamage = true;
+				}
 			}
 		}
 	}
@@ -148,13 +150,15 @@ function scr_PlayerToEnemyShit() {
 			var _toji2 = instance_place(x, y, obj_EnemyParent);
 		
 			if _toji2 {
-				_toji2.charKiller = other.id;
+				if !_toji2.launched {
+					_toji2.charKiller = other.id;
 				
-				scr_ScreenShake();
-				scr_ControllerRumble();
+					scr_ScreenShake();
+					scr_ControllerRumble();
 		
-				_toji2.enemyHealth -= _toji2.enemyHealth;
-				obj_SFXManager.UndertaleDamage = true;
+					_toji2.enemyHealth -= _toji2.enemyHealth;
+					obj_SFXManager.UndertaleDamage = true;
+				}
 			}
 		}
 	}
@@ -164,7 +168,7 @@ function scr_PlayerToEnemyShit() {
 			//If not attacking
 			if !attacking && !megaAttacking {
 				if !_tojiList[| i].launched {
-					scr_HurtPlayer(_tojiList[| i].enemyDamage, _tojiList[| i].enemyKnockback, false, _tojiList[| i].enemyKnockbackY);
+					scr_HurtPlayer(_tojiList[| i].enemyDamage, _tojiList[| i].enemyKnockback, false, _tojiList[| i].enemyKnockbackY - 2);
 				}
 			} else if attacking or megaAttacking { //If attacking
 				if !playerHurt && !global.Death && !_tojiList[| i].launched {
@@ -174,11 +178,15 @@ function scr_PlayerToEnemyShit() {
 					scr_ControllerRumble();
 				
 					if attacking {
-						if jumping && yspd > 0 && !stomping {
-							if jump_Key_Held {
-								yspd = -yspd - 1;
+						if jumping && yspd > 0 && !stomping && !fallVel {
+							if realJumping {
+								if jump_Key_Held {
+									yspd = -yspd - 1;
+								} else {
+									yspd = -3;
+								}
 							} else {
-								yspd = -3;
+								yspd = -yspd - 1;
 							}
 						}
 					
@@ -202,16 +210,9 @@ function scr_EnemyDeathParticles(_particle, _amount) {
 	
 	if _partAmount > 0 {
 		if global.Particles {
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
-			instance_create_depth(x, y, depth, _particle);
+			repeat(10) {
+				instance_create_depth(x, y, depth, _particle);
+			}
 		}
 			
 		_partAmount -= 1;
@@ -237,7 +238,7 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 		scr_LoseTrinkets();
 		scr_StopCharControls();
 		
-		scr_BonusPoints(-1000 * (_damage / 100000));
+		scr_BonusPoints(-5000 * (_damage / 100000));
 	
 		var _basedX = _imageXscale;
 
@@ -248,7 +249,7 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 				vel = _knockback;
 			}
 		} else {
-			vel = -_knockback * image_xscale;
+			vel = -_knockback * visXScale;
 		}
 		
 		ground = false;
@@ -257,6 +258,7 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 		speedBreak = false;
 		playerHurt = true;
 		invincible = true;
+		slowSkid = false;
 		
 		event_user(0);
 		event_user(3);
@@ -299,7 +301,7 @@ function scr_LoseTrinkets(_loseRings = 50) {
 		//Perform loop while the ring counter is less than number of lost rings
 		while _rings < _ringCheck {
 		    //Create the ring
-			var _ringID = instance_create_depth(global.PlayerID.x - 10, global.PlayerID.y - 10, global.PlayerID.depth - 1, obj_LostTrinkets);
+			var _ringID = instance_create_depth(global.PlayerID.x - 10, global.PlayerID.y - 26, global.PlayerID.depth - 1, obj_LostTrinkets);
 		
 		    _ringID.ringXSpeed = cos(_ringAngle) * _ringSpeed;
 		    _ringID.ringYSpeed = -sin(_ringAngle) * _ringSpeed;

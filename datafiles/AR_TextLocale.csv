@@ -1,7 +1,7 @@
 I might swerve-,ENGLISH,ESPAÑOL
 wind_Title,ADRENALINE RUSH,ADRENALINE RUSH
 ,,
-fs_FileSelect,FILE SELECT,ELIJE UN ARCHIVO
+fs_FileSelect,FILE SELECT,ELIGE UN ARCHIVO
 fs_Select,SELECT,SELECCIONAR
 fs_Copy,COPY,COPIAR
 fs_Delete,DELETE,BORRAR
@@ -238,11 +238,11 @@ mus_FIvy,Holster (Freeplay Ivy Mvt.),Holster (Freeplay Ivy Mvt.)
 mus_Funk,Funk 'n' Rush,Funk 'n' Rush
 ,,
 mus_Dis,DISCONNECTED,DESCONECTADO
-mus_Lost,Lost Reason,Sin Razón
-mus_Mind,My Mind,Mi Mente
-mus_MindG,My Mind (Girly Mix),Mi Mente (Girly Mix)
-mus_Dist,Disturbing the Mind,Desastre Mental
-mus_DistG,Disturbing the Mind (Girly Mix),Desastre Mental (Girly Mix)
+mus_Lost,LOST REASON,SIN RAZÓN
+mus_Mind,MY MIND,MI MENTE
+mus_MindG,MY MIND (Girly Mix),MI MENTE (Girly Mix)
+mus_Dist,DISTURBING THE MIND,DESASTRE MENTAL
+mus_DistG,DISTURBING THE MIND (Girly Mix),DESASTRE MENTAL (Girly Mix)
 ,,
 mus_NewDay,"New Night, New Day","Nueva Noche, Nuevo Día"
 mus_Sunlight,Clair De Soleil,Clair De Soleil
@@ -382,7 +382,12 @@ freeplay_Rank,RANK:,RANGO:
 freeplay_Track,LEVEL TRACK,TEMA DEL NIVEL
 freeplay_StopTrack,STOP TRACK,DETENER TEMA
 freeplay_CustMus,NO CUSTOM MUSIC,SIN MÚSICA PERSONALIZADA
-freeplay_CustMusLoad,CUSTOM MUSIC LOADED,MÚSICA PERSONALIZADA CARGADA
+freeplay_Juke,BOOMBOX,BOOMBOX
+freeplay_ChooseJuke,TO OPEN THE BOOMBOX,ABRIR LA BOOMBOX
+freeplay_NormJuke,NORMAL PLAYLIST,PLAYLIST NORMAL
+freeplay_CustJuke,CUSTOM PLAYLIST,PLAYLIST PERSONALIZADA
+freeplay_JukeOn,BOOMBOX ON,BOOMBOX ENCENDIDA
+freeplay_JukeOff,BOOMBOX OFF,BOOMBOX APAGADA
 ,,
 results_Cont,CONTINUE,CONTINUAR
 results_Retry,RETRY LEVEL,REINTENTAR
@@ -410,3 +415,9 @@ col_Blue,BLUE,AZUL
 col_Navy,NAVY-BLUE,AZUL MARINO
 col_Purple,PURPLE,PÚRPURA
 col_Magenta,MAGENTA,MAGENTA
+,,
+level_Markiplier,ON YOUR MARK,EN SUS MARCAS
+level_Ready,READY?,¿PREPARADOS?
+level_Set,SET!,¡LISTOS!
+level_Go,GO!,¡YA!
+level_Rush,RUSH!,¡RUSH!

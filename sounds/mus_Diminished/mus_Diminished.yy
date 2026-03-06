@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":17.1639,
+  "duration":51.2,
   "exportDir":"",
   "name":"mus_Diminished",
   "parent":{

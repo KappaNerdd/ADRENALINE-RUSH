@@ -6,6 +6,7 @@ if image_speed <= 0 {
 
 if place_meeting(x, y, obj_Player) && !goal && !global.Death {
 	goal = true;
+	scr_ChangeCamZoom(0.65, 0.075);
 	
 	if instance_exists(obj_InputRecorder) {
 		obj_InputRecorder.isRecording = false;
@@ -189,10 +190,30 @@ if goalTimer <= 0 {
 			}
 			
 			if resultsDoneTimer <= 0 && !resultsDone && !instance_exists(obj_BonusPoints) {
-				resultsDone = true;
-				with(instance_create_depth(x, y - 1000000, depth, obj_RushTransition)) {
-					target_rm = rm_ResultsScreen;
+				var _reRoom = rm_ResultsScreen;
+	
+				if global.Replay {
+					_reRoom = rm_FreeplayNew;
+		
+					if instance_exists(obj_GhostRecorder) {
+						instance_destroy(obj_GhostRecorder);
+					}
+		
+					if instance_exists(obj_InputRecorder) {
+						instance_destroy(obj_InputRecorder);
+					}
+		
+					global.Replay = false;
+					global.PlayerChar = global.SelectedPlayer;
+					global.PlayerCostume = global.SelectedCostume;
+					global.Girly = global.PlayerSelection[global.SelectedPlayer][0][1];
 				}
+				
+				with(instance_create_depth(x, y - 1000000, depth, obj_RushTransition)) {
+					target_rm = _reRoom;
+				}
+				
+				resultsDone = true;
 			}
 		
 			if resultsSparklesTimer > 0 {

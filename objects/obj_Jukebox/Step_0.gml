@@ -52,11 +52,19 @@ if !jukeboxOut {
 			moveTimer = moveFrames;
 			
 			if up_Key {
-				if !normalJuke && !customJuke {
+				if !normalJuke && !customJuke && !extraPlay {
 					if jukeboxChoice > 0 {
 						jukeboxChoice--;
 					} else {
 						jukeboxChoice = 1;
+					}
+				}
+				
+				if extraPlay && !customJuke {
+					if extraChoice > 0 {
+						extraChoice--;
+					} else {
+						extraChoice = array_length(global.NewJukes) - 1;
 					}
 				}
 				
@@ -78,11 +86,19 @@ if !jukeboxOut {
 			}
 			
 			if down_Key {
-				if !normalJuke && !customJuke {
+				if !normalJuke && !customJuke && !extraPlay {
 					if jukeboxChoice < 1 {
 						jukeboxChoice++;
 					} else {
 						jukeboxChoice = 0;
+					}
+				}
+				
+				if extraPlay && !customJuke {
+					if extraChoice < array_length(global.NewJukes) - 1 {
+						extraChoice++;
+					} else {
+						extraChoice = 0;
 					}
 				}
 				
@@ -113,6 +129,8 @@ if !jukeboxOut {
 				normalJuke = false;
 			} else if customJuke {
 				customJuke = false;
+			} else if extraPlay && !customJuke {
+				extraPlay = false;
 			} else {
 				jukeboxOut = true;
 			}
@@ -121,18 +139,41 @@ if !jukeboxOut {
 	
 	#region //Select
 		if jump_Key {
-			if !normalJuke && !customJuke {
+			if !normalJuke && !customJuke && !extraPlay {
 				if jukeboxChoice == 0 {
 					obj_SFXManager.menuCancel = true;
 				} else {
+					obj_SFXManager.menuPop = true;
+					extraPlay = true;
+				}
+			} else if extraPlay && !customJuke {
+				if array_length(global.NewJukes) > 0 {
+					var _musPath = working_directory + "custom_boombox";
+					var _musDir = file_find_first(string(global.NewJukes[extraChoice]) + "/*", fa_directory);
+					
+					array_delete(global.CustomJukeboxPlaylist, 0, array_length(global.CustomJukeboxPlaylist));
+					array_delete(global.CustomJukeShuffled, 0, array_length(global.CustomJukeShuffled));
 					customJuke = true;
 					obj_SFXManager.menuPop = true;
+					
+					while (_musDir != "") {
+						array_push(global.CustomJukeboxPlaylist, _musPath + "/" + _musDir);
+					    _musDir = file_find_next();
+					}
+					
+					file_find_close();
 				}
 			} else if customJuke {
-				if array_length(_custArray) > 0 {
+				var _bullArray = global.CustomJukeboxPlaylist;
+				
+				if global.JukeboxShuffle {
+					_bullArray = global.CustomJukeShuffled;
+				}
+				
+				if array_length(_bullArray) > 0 {
 					obj_SFXManager.boostPad = true;
 					global.CustomJukeChoice = chosenCustMus;
-					var _track = audio_create_stream(_custArray[chosenCustMus]);
+					var _track = audio_create_stream(_bullArray[chosenCustMus]);
 				
 					set_song_ingame(_track, 0, 0, pitch);
 				}
@@ -158,23 +199,36 @@ if !jukeboxOut {
 	
 	#region //Add Track
 		if pause_Key && customJuke {
-			obj_SFXManager.menuPop = true;
-			var _customMus = get_open_filename(".OGG Files|*.ogg", "");
+			/*obj_SFXManager.menuPop = true;
+			var _customMus = get_open_filename(".ogg Files|*.ogg", "");
 				
 			if _customMus != "" {
 				custMusFile = _customMus;
 				array_push(global.CustomJukeboxPlaylist, _customMus);
 				obj_SFXManager.parry = true;
+			}*/
+			
+			var _musDir = file_find_first(string(global.NewJukes[extraPlay]) + "/*", fa_directory);
+					
+			array_delete(global.CustomJukeboxPlaylist, 0, array_length(global.CustomJukeboxPlaylist));
+			array_delete(global.CustomJukeShuffled, 0, array_length(global.CustomJukeShuffled));
+					
+			while (_musDir != "") {
+				array_push(global.CustomJukeboxPlaylist, _musDir);
+				_musDir = file_find_next();
 			}
+					
+			file_find_close();
+			obj_SFXManager.menuPop = true;
 		}
 	#endregion
 	
 	#region //Delete
 		if action2_Key {
-			if customJuke {
+			/*if customJuke {
 				obj_SFXManager.UndertaleDamage = true;
 				array_delete(global.CustomJukeboxPlaylist, chosenCustMus, 1);
-			}
+			}*/
 		}
 	#endregion
 	
@@ -200,6 +254,10 @@ if !jukeboxOut {
 	
 		if chosenCustMus > array_length(_custArray) - 1 {
 			chosenCustMus = array_length(_custArray) - 1;
+		}
+		
+		if extraChoice > array_length(global.NewJukes) - 1 {
+			extraChoice = array_length(global.NewJukes) - 1;
 		}
 		
 		if chosenMusic < 0 {

@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":12.170341,
+  "duration":11.784195,
   "exportDir":"",
   "name":"mus_ItsDone",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_ItsDone.ogg",
-  "volume":1.0,
+  "volume":0.7,
 }

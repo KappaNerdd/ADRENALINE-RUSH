@@ -1,11 +1,19 @@
+depth = -25;
+
 finalCamX = floor(obj_Player.x);
 finalCamY = floor(obj_Player.y);
 
-ingameCamX = 0;
-ingameCamY = 0;
+ingameCamX = 1;
+ingameCamY = 1;
+camSpd = 0.1;
+blackBars = false;
+blackBarsPos = 0;
 
-camX2 = 0;
-camY2 = 0;
+bar1 = 0;
+bar2 = 180;
+
+camX2 = 1;
+camY2 = 1;
 
 _changeX = 0;
 _changeY = 0;

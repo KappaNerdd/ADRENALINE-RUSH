@@ -65,14 +65,6 @@ if can_MoveFULL {
 		#region //Speed limit
 			scr_SpeedLimit();
 		#endregion
-		
-		#region //Change Draw Angle
-			scr_ChangeDrawAngle();
-		#endregion
-		
-		#region //Fuck with momentum
-			scr_SlopeMomentum();
-		#endregion
 	#endregion
 
 	#region //Sprite & Animation Handler
@@ -454,6 +446,11 @@ if can_MoveFULL {
 			playerHurt = false;
 			rampRing = false;
 			
+			angle = 0;
+			drawAngle = 0;
+			angleHolder = 0;
+			winningAngle = 0;
+			
 			obj_SFXManager.ivyPreStomp = true;
 			
 			image_index = 0;
@@ -487,9 +484,12 @@ if can_MoveFULL {
 
 		//Stomped
 		if !place_meeting(x, y + yspd + 1, obj_BreakableFloor) && stomping && ground {
-			stomped = true;
-			stomping = false;
+			if winningAngle == 0 {	
+				stomped = true;
+			}
 			
+			stomping = false;
+			yspd = 0;
 			termVel = normalTermVel;
 			
 			stompedTimer = stompedFrames;
@@ -631,18 +631,18 @@ if can_MoveFULL {
 										}
 									} else if left_Key && right_Key { //Boofum
 										if !speedBreak {
-											vel = _shot * image_xscale;
+											vel = _shot * visXScale;
 										} else {
 											if abs(vel) < full_Speed {
-												vel = _shot * image_xscale;
+												vel = _shot * visXScale;
 											}
 										}
 									} else if !left_Key && !right_Key { //Also Boofum
 										if !speedBreak {
-											vel = _shot * image_xscale;
+											vel = _shot * visXScale;
 										} else {
 											if abs(vel) < full_Speed {
-												vel = _shot * image_xscale;
+												vel = _shot * visXScale;
 											}
 										}
 									}
@@ -684,7 +684,7 @@ if can_MoveFULL {
 										
 										scr_StopCamMove();
 										
-										vel += 5 * image_xscale;
+										vel += 5 * visXScale;
 									}
 								}
 							}
@@ -710,9 +710,9 @@ if can_MoveFULL {
 					scr_ScreenShake(0.75);
 					yspd = 0;
 			
-					if image_xscale == 1 {
+					if visXScale == 1 {
 						vel += acc * 2;
-					} else if image_xscale == -1 {
+					} else if visXScale == -1 {
 						vel -= acc * 2;
 					}
 					
@@ -838,6 +838,7 @@ if can_MoveFULL {
 		if _normalBull != noone {
 			with(_normalBull) {			
 				var _toji2 = instance_place(x, y, obj_EnemyParent);
+				var _monitor = instance_place(x, y, obj_PowerOrb);
 		
 				if _toji2 {
 					_toji2.charKiller = other.id;
@@ -849,12 +850,22 @@ if can_MoveFULL {
 					obj_SFXManager.UndertaleDamage = true;
 					instance_destroy();
 				}
+				
+				if _monitor {
+					with(_monitor) {
+						if active {
+							event_user(0);
+							instance_destroy(other);
+						}
+					}
+				}
 			}
 		}
 		
 		if _bigBull != noone {
 			with(_bigBull) {			
 				var _toji2 = instance_place(x, y, obj_EnemyParent);
+				var _monitor = instance_place(x, y, obj_PowerOrb);
 		
 				if _toji2 {
 					_toji2.charKiller = other.id;
@@ -864,6 +875,14 @@ if can_MoveFULL {
 		
 					_toji2.enemyHealth -= _toji2.enemyHealth;
 					obj_SFXManager.UndertaleDamage = true;
+				}
+				
+				if _monitor {
+					with(_monitor) {
+						if active {
+							event_user(0);
+						}
+					}
 				}
 			}
 		}

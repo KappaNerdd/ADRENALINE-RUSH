@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":17.169071,
+  "duration":63.98984,
   "exportDir":"",
   "name":"mus_DidYourBest",
   "parent":{

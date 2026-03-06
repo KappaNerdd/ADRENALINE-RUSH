@@ -67,29 +67,29 @@ draw_set_halign(fa_left);
 		_eggmanFrames = image_index;
 	}
 	
-	draw_sprite_ext(_arrow, image_index, 123, moveY + 3, 1, 0.5, 0, c_black, image_alpha);
-	draw_sprite_ext(sprite_index, image_index, 101, moveY + 11, 0.5, 0.5, 0, c_black, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 103, moveY + 3, 1, 0.5, 0, c_black, image_alpha);
+	draw_sprite_ext(sprite_index, image_index, 81, moveY + 11, 0.5, 0.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_arrow, image_index, 113, moveY + 29, 1, 0.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_scoreSprite, image_index, 80, moveY + 29, 1, 1, 0, c_black, image_alpha);
 	draw_sprite_ext(_arrow, image_index, 103, moveY + 55, 1, 0.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_eggman, _eggmanFrames, 59, moveY + 47, 0.5, 0.5, 0, c_black, image_alpha);
 	
 	if global.seconds < 10 && global.minutes < 10 {
-		draw_text_transformed_color(117, moveY + 3, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
+		draw_text_transformed_color(97, moveY + 3, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
 	} else if global.seconds >= 10 && global.minutes >= 10 {
-		draw_text_transformed_color(117, moveY + 3, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
+		draw_text_transformed_color(97, moveY + 3, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
 	} else if global.seconds < 10 && global.minutes >= 10 {
-		draw_text_transformed_color(117, moveY + 3, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
+		draw_text_transformed_color(97, moveY + 3, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
 	} else if global.seconds >= 10 && global.minutes < 10 {
-		draw_text_transformed_color(117, moveY + 3, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
+		draw_text_transformed_color(97, moveY + 3, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
 	}
 	
 	draw_text_transformed_color(107, moveY + 29, string(_score0) + string(_actualScore), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
 	
 	draw_text_transformed_color(97, moveY + 55, string(global.EnemyCount), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
 	
-	draw_sprite_ext(_arrow, image_index, 126, moveY, 1, 0.5, 0, global.fullRGB, image_alpha);
-	draw_sprite_ext(sprite_index, image_index, 104, moveY + 8, 0.5, 0.5, 0, global.fullRGB, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 106, moveY, 1, 0.5, 0, global.fullRGB, image_alpha);
+	draw_sprite_ext(sprite_index, image_index, 84, moveY + 8, 0.5, 0.5, 0, global.fullRGB, image_alpha);
 	
 	draw_sprite_ext(_arrow, image_index, 116, moveY + 26, 1, 0.5, 0, global.fullRGB, image_alpha);
 	draw_sprite_ext(_scoreSprite, image_index, 83, moveY + 26, 1, 1, 0, global.fullRGB, image_alpha);
@@ -103,13 +103,13 @@ draw_set_halign(fa_left);
 	draw_sprite_ext(_eggman, _eggmanFrames, 62, moveY + 44, 0.5, 0.5, 0, global.fullRGB, image_alpha);
 	
 	if global.seconds < 10 && global.minutes < 10 {
-		draw_text_transformed_color(120, moveY, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
+		draw_text_transformed_color(100, moveY, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
 	} else if global.seconds >= 10 && global.minutes >= 10 {
-		draw_text_transformed_color(120, moveY, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
+		draw_text_transformed_color(100, moveY, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
 	} else if global.seconds < 10 && global.minutes >= 10 {
-		draw_text_transformed_color(120, moveY, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
+		draw_text_transformed_color(100, moveY, string(global.minutes) + ":0" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
 	} else if global.seconds >= 10 && global.minutes < 10 {
-		draw_text_transformed_color(120, moveY, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
+		draw_text_transformed_color(100, moveY, string(global.minutes) + ":" + string(global.seconds), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);
 	}
 	
 	draw_text_transformed_color(110, moveY + 26, string(_score0) + string(_actualScore), _xscale, _yscale, _ang, c_white, c_white, c_white, c_white, image_alpha);

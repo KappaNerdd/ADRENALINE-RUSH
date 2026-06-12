@@ -204,6 +204,7 @@ function scr_FreeFallControl() {
 	}
 	
 	//Take Damage
+	
 }
 	
 function scr_FreeFallAnimation() {
@@ -219,6 +220,8 @@ function scr_FreeFallAnimation() {
 		}
 	} else {
 		if !fallDash {
+			
+		} else {
 			
 		}
 	}

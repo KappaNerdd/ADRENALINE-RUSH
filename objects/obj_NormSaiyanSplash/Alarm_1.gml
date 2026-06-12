@@ -1,0 +1,1 @@
+scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_FileSelectNew);

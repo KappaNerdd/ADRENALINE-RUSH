@@ -1,4 +1,32 @@
 function scr_SpriteDataRushNormal() {
+	//Palettes
+	basePal = spr_RushPalette;
+	
+	if !global.MIND && global.PlayerChar != 0 {
+		headPal = spr_RushPalette;
+	} else {
+		headPal = spr_RushPaletteHead;
+	}
+	
+	//Particles
+	if !global.MIND && global.PlayerChar != 0 {
+		boostingSprite = spr_RushBoost;
+		boostingSpriteSimple = spr_RushBoostSimple;
+	
+		stompingSprite = spr_RushStompingVFX;
+		stompedSprite = spr_RushStompedVFX;
+	
+		speedBreakSprite = spr_RushSpeedBreakVFX;
+	} else {
+		boostingSprite = spr_KappaHeadBoost;
+		boostingSpriteSimple = spr_KappaHeadBoostSimple;
+	
+		stompingSprite = spr_HeadStompingVFX;
+		stompedSprite = spr_HeadStompedVFX;
+	
+		speedBreakSprite = spr_HeadSpeedBreakVFX;
+	}
+	
 	///-----Mask Collisions-----///
 
 	//Idle + Look Up + Walk + Run + Jump + Double Jump + Fall + Guard + Stomp + Air Dash + Wall Jump
@@ -40,8 +68,8 @@ function scr_SpriteDataRushNormal() {
 
 
 	//Look Up & Crouching
-	rush_Ducking = spr_RushCrouch;
-	rush_Look_Up = spr_RushLookUp;
+	sprCrouch = spr_RushCrouch;
+	sprLook_up = spr_RushLookUp;
 
 
 	//Actions
@@ -80,13 +108,4 @@ function scr_SpriteDataRushNormal() {
 	
 	//Special
 	sprPully = spr_RushPully;
-	
-	//Particles
-	boostingSprite = spr_RushBoost;
-	boostingSpriteSimple = spr_RushBoostSimple;
-	
-	stompingSprite = spr_RushStompingVFX;
-	stompedSprite = spr_RushStompedVFX;
-	
-	speedBreakSprite = spr_RushSpeedBreakVFX;
 }

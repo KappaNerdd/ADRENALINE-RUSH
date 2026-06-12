@@ -1,9 +1,5 @@
 #region //Sprites
-	if global.PlayerCostume == 0 {
-		scr_SpriteDataKappaNormal();
-	} else if global.PlayerCostume == 1 {
-		scr_SpriteDataKappaHideki();
-	}
+	scr_SpriteDataKappaNormal();
 #endregion
 
 #region //Character Data Variables

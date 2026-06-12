@@ -74,3 +74,25 @@ function scr_ScreenShake(_shakePower = 0.5, _shakeDuration = 10, _shakeHori = fa
 		}
 	}
 }
+	
+function scr_MoveCam(_type = "", _num = 1) {
+	switch(_type) {
+		case "h":
+		case "H":
+		case "hori":
+		case "horizontal":
+			with(obj_CameraExtended) {
+				noCamX = _num;
+			}
+		break;
+		
+		case "v":
+		case "V":
+		case "verti":
+		case "vertical":
+			with(obj_CameraExtended) {
+				noCamY = _num;
+			}
+		break;
+	}
+}

@@ -1,1 +1,1 @@
-powerUp = 5;
+powerUp = 1;

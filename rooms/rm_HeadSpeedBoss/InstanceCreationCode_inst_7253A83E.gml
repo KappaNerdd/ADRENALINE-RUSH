@@ -1,0 +1,1 @@
+createdCut = obj_HeadBossCut1;

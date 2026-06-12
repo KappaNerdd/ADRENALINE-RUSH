@@ -66,8 +66,10 @@ getCharacterControls();
 		if !storyChosen && !goContinue {
 			if nerd == 0 {
 				global.PlayerChar = 1;
+				global.Girly = false;
 			} else {
 				global.PlayerChar = 11;
+				global.Girly = true;
 			}
 		}
 	#endregion
@@ -223,6 +225,11 @@ if !confirm {
 				#endregion
 				
 				#region //Extras
+					case "title_Achievements":
+						obj_SFXManager.menuPop = true;
+						//instance_create_depth(-1000, 0, depth - 3, obj_Boombox);
+					break;
+				
 					case "title_Boombox":
 						obj_SFXManager.menuPop = true;
 						instance_create_depth(-1000, 0, depth - 3, obj_Boombox);

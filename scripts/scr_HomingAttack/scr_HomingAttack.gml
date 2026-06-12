@@ -107,7 +107,7 @@ function scr_HomingAttackStep() {
 			x += lengthdir_x(homing_Speed, _dir);
 			y += lengthdir_y(homing_Speed, _dir);
 	
-			yspd = 0;
+			yspd = -0.005;
 			vel = 0;
 		}
 	
@@ -120,6 +120,10 @@ function scr_HomingAttackStep() {
 			
 				yspd = -(normalJspd + 1);
 			}
+		}
+		
+		if ground {
+			homingAttacked = false;
 		}
 	
 		if homingAttacked && yspd >= 0 {

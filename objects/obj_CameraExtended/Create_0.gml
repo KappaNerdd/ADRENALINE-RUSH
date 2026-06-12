@@ -22,6 +22,9 @@ targetCutY = 0;
 targetEffect = 0.25;
 easeType = Easings.QUAD_IO;
 
+noCamX = 0;
+noCamY = 0;
+
 
 //Cam Modifiers
 camX2 = 1;

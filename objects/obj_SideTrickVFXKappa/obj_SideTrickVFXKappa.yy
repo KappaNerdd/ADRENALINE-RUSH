@@ -9,8 +9,8 @@
   "name":"obj_SideTrickVFXKappa",
   "overriddenProperties":[],
   "parent":{
-    "name":"Kappa",
-    "path":"folders/Objects/Characters/VFX/Kappa.yy",
+    "name":"Obsolete",
+    "path":"folders/Objects/Characters/VFX/General/Obsolete.yy",
   },
   "parentObjectId":null,
   "persistent":false,

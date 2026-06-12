@@ -1,7 +1,16 @@
 function scr_SpriteDataKappaNormal() {
 	//Palettes
 	basePal = spr_KappaPalette;
-	headPal = spr_KappaPaletteHead;
+	
+	if !global.MIND && global.PlayerChar != 0 {
+		if global.PlayerCostume == 1 {
+			headPal = spr_KappaPaletteHideki;
+		} else {
+			headPal = spr_KappaPalette;
+		}
+	} else {
+		headPal = spr_KappaPaletteHead;
+	}
 	
 	//Particles
 	if !global.MIND && global.PlayerChar != 0 {

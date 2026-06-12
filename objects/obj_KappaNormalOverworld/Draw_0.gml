@@ -22,13 +22,13 @@ if railGrind {
 		_rail = spr_RailGrindCentHeadVFX;
 	}
 	
-	draw_sprite_ext(_rail, railGrindSprFrames, x + angleSin * 15, y + angleCos * 15, 1.25 * _xscale, 0.25, drawAngle, c_white, 1);
+	draw_sprite_ext(_rail, railGrindSprFrames, x + angleSin * 13, y + angleCos * 13, 1.25 * _xscale, 0.25, drawAngle, c_white, 1);
 }
 
 if global.DEBUG {
 	draw_text(_camX + _camXAdd, _camY + 20, "ground: " + string(ground));
 	draw_text(_camX + _camXAdd, _camY + 40, "vel: " + string(vel));
-	draw_text(_camX + _camXAdd, _camY + 60, "groundSpeed: " + string(groundSpeed));
+	draw_text(_camX + _camXAdd, _camY + 60, "canMove: " + string(can_Move));
 	draw_text(_camX + _camXAdd, _camY + 80, "yspd: " + string(yspd));
 	draw_text(_camX + _camXAdd, _camY + 100, "groundAngle: " + string(angle));
 	draw_text(_camX + _camXAdd, _camY + 120, "edgeColl: " + string(edgeCollision));

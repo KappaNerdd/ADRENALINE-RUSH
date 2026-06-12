@@ -10,8 +10,8 @@
   "name":"obj_CutsceneHead9",
   "overriddenProperties":[],
   "parent":{
-    "name":"Head Cutscenes",
-    "path":"folders/Objects/Cutscenes/Head Cutscenes.yy",
+    "name":"Old",
+    "path":"folders/Objects/Cutscenes/Head Cutscenes/Old.yy",
   },
   "parentObjectId":{
     "name":"obj_CutsceneParent",

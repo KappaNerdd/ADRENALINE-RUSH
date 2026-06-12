@@ -1,7 +1,9 @@
 x = -100000;
 
 if file_exists("ARLANGCHECK.sav") {
-	if !file_exists(string(global.PastMindDataFile) + ".sav") {
+	var _dir = working_directory + "/saves/" + string(global.PastMindDataFile) + ".sav";
+
+	if !file_exists(_dir) {
 		room_goto(rm_Splash1);
 	} else {
 		room_goto(rm_Splash1Normal);

@@ -387,7 +387,7 @@
 			["name_Alone", true, "name_Lone"], //Char Name (Name of your Character)
 		
 			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
-			false, //Char Locked (If true, your character will appear blacked out and won't be selectable)
+			true, //Char Locked (If true, your character will appear blacked out and won't be selectable)
 			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
 		
 			[ //Char Costumes (Must Have at least 1)
@@ -599,7 +599,7 @@
 			["name_Akira", false, "name_AK"], //Char Name (Name of your Character)
 		
 			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
-			false, //Char Locked (If true, your character will appear blacked out and won't be selectable)
+			true, //Char Locked (If true, your character will appear blacked out and won't be selectable)
 			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
 		
 			[ //Char Costumes (Must Have at least 1)
@@ -879,9 +879,9 @@
 			obj_RushOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_RushSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_RushSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_RushSet, spr_LevelCard_RushSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_RushSet, spr_LevelCard_RushSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_Freeplay_Rush_Set, spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameRush, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -908,7 +908,7 @@
 			[mus_KiddinMe, mus_NotBad, mus_TalkinAbout, mus_TalkinAbout, mus_Groovy], //Results Theme Tracks [shit, good, sick, perfect]
 			["You Gotta be Kiddin' Me", "Ayy, Not Bad", "That's What I'm TALKIN' About!!", "That's What I'm TALKIN' About!!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_RushSet, 1], //Results Portrait
+			[spr_LevelCard_RushSet, spr_LevelCard_RushSet, 1], //Results Portrait
 			["stagecharrushnormal",],
 			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, spr_IntroQuoteRush, 1],
 		],
@@ -980,14 +980,14 @@
 		
 			[255, 189, 000], //RGB (Must be filled out)
 		
-			[spr_IvyTextbox, 8, spr_MCursorEdge], //Character Textbox (Optional: Sprite Strip)
+			[spr_IvyTextbox, 8, spr_MCursorIvy], //Character Textbox (Optional: Sprite Strip)
 		
 			obj_IvyOverworld, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_IvySet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_IvySet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Ivy_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_IvySet, spr_LevelCard_IvySet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCard_IvySet, spr_LevelCard_IvySet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_Freeplay_Ivy_Set, spr_Freeplay_Ivy_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameIvy, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -1014,7 +1014,7 @@
 			[mus_ShotDown, mus_ArrightPardner, mus_JUSTICE, mus_JUSTICE, mus_GunSlinger], //Results Theme Tracks [shit, good, sick, perfect]
 			["Shot Down", "It's Arright, Pardner", "JUSTICE", "JUSTICE",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_IvySet, 1], //Results Portrait
+			[spr_LevelCard_IvySet, spr_LevelCard_IvySet, 1], //Results Portrait
 			["stagecharivynormal",],
 			[spr_CheckpointIvy, spr_RingIvyIcon, spr_RingIvyHand, spr_CharSelectIvyIcon, spr_IntroQuoteIvy, 1],
 		],
@@ -1134,6 +1134,7 @@
 		[mus_CestLaVie, "mus_Cest", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_WrapItUpK, "mus_WrapK", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_WrapItUpL, "mus_WrapL", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_FunknRushNew, "mus_Funk", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_UnwindaBit, "mus_Unwind", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_Backstreet, "mus_Backstreet", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		
@@ -1152,7 +1153,13 @@
 		[mus_FreeplayEMvt, "mus_FEdg", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayIMvt, "mus_FIvy", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		
+		[mus_NextTime, "mus_NextTime", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_StandProud, "mus_Stand", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_HonorarySonic, "mus_Sonic", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		
+		[mus_BeenBetter, "mus_BeenBetter", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_YouStrong, "mus_YouStrong", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_HonoraryBlaze, "mus_Blaze", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 	]
 	
 	global.CustomJukeboxPlaylist = [
@@ -1389,9 +1396,9 @@
 			
 			rankS_Score: 130000, rankA_Score: 100000, rankB_Score: 70000, rankC_Score: 40000, rankD_Score: 10000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 250,
+			rings: 0, rings_Rank: 0, rankS_Ring: 275,
 			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 32,
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 30,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1417,9 +1424,9 @@
 		{ //MIND Level 2
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed2, levelForced: false,
 		
-			rankS_Time: 155, rankA_Time: 205, rankB_Time: 220, rankC_Time: 240, rankD_Time: 305, rankF_Time: 330,
+			rankS_Time: 205, rankA_Time: 215, rankB_Time: 230, rankC_Time: 250, rankD_Time: 315, rankF_Time: 340,
 			
-			rankS_Score: 175000, rankA_Score: 125000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
+			rankS_Score: 180000, rankA_Score: 130000, rankB_Score: 80000, rankC_Score: 55000, rankD_Score: 30000,
 			
 			rings: 0, rings_Rank: 0, rankS_Ring: 275,
 			

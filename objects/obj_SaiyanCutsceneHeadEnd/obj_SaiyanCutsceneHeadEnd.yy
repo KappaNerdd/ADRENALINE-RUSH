@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"InGame Head Cutscene End",
-    "path":"folders/Objects/Cutscenes/Head Cutscenes/InGame Head Cutscene End.yy",
+    "path":"folders/Objects/Cutscenes/Head Cutscenes/Old/InGame Head Cutscene End.yy",
   },
   "parentObjectId":null,
   "persistent":false,

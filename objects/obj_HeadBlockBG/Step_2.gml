@@ -1,6 +1,12 @@
-changeY -= extraY;
+if !global.SimplifyVFX {
+	if room == rm_HeadSpeedBossP2 {
+		extraY = 20;
+	}
+		
+	changeY -= extraY;
+}
 
-if room == rm_HeadSpeedBoss {
+if room == rm_HeadSpeedBoss or room == rm_HeadSpeedBossP2 {
 	if !global.SimplifyVFX {
 		if changeWhite {
 			targetCol1 = 255;
@@ -19,6 +25,10 @@ if room == rm_HeadSpeedBoss {
 				changeWhite = true;
 			}
 		}
+	} else {
+		targetCol1 = 255;
+		targetCol2 = 255;
+		targetCol3 = 255;
 	}
 }
 

@@ -3,7 +3,6 @@ depth = -2;
 randomize();
 
 global.Freeplay = false;
-global.Girly = false;
 
 scr_MusicTag();
 
@@ -65,6 +64,7 @@ story = [
 ]
 
 extra = [
+	["title_Achievements", spr_GameplayRender],
 	["title_Boombox", spr_GameplayRender],
 	["title_Gallery", spr_GameplayRender],
 	["title_Bios", spr_GameplayRender],

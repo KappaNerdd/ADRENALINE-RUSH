@@ -47,7 +47,7 @@
   "origin":9,
   "parent":{
     "name":"Head",
-    "path":"folders/Sprites/Characters/Players/Kappa/Head.yy",
+    "path":"folders/Sprites/Characters/Players/Kappa/Old/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,7 +1,12 @@
 function scr_SpriteDataSarahNormal() {
 	//Palettes
 	basePal = spr_SarahPalette;
-	headPal = spr_SarahPaletteHead;
+	
+	if !global.MIND && global.PlayerChar != 0 {
+		headPal = spr_SarahPalette;
+	} else {
+		headPal = spr_SarahPaletteHead;
+	}
 	
 	//Particles
 	if !global.MIND && global.PlayerChar != 0 {

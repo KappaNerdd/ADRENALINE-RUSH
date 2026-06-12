@@ -202,6 +202,7 @@ function scr_BasicVariablesSpeedCreate() {
 		terrainVel = 0;
 		onPlatform = false;
 		pushingWall = false;
+		checkSpringB = noone;
 
 		angle = 0;
 		angleHolder = 0;
@@ -1403,11 +1404,11 @@ function scr_SpeedLimit() {
 		vel = 0;
 	}
  
-	/*if vel >= 40 {
+	if vel >= 40 {
 		vel = 40;
 	} else if vel <= -40 {
 		vel = -40;
-	}*/
+	}
 }
 
 

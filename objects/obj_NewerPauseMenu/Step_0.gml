@@ -340,8 +340,6 @@ if !done {
 						}
 						
 						if _choiceLength[choice][1] == mainMenu {
-							var _transit = instance_create_depth(-100000, 0, depth, _trans);
-							
 							if instance_exists(obj_GhostRecorder) {
 								instance_destroy(obj_GhostRecorder);
 							}

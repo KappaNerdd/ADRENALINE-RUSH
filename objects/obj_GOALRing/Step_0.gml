@@ -7,7 +7,7 @@ if image_speed <= 0 {
 if place_meeting(x, y, obj_Player) && !goal && !global.Death {
 	goal = true;
 	scr_SetCamFollow(self);
-	scr_ChangeCamZoom(0.65, 0.075);
+	scr_ChangeCamZoom(0.5, 0.075);
 	
 	if instance_exists(obj_InputRecorder) {
 		obj_InputRecorder.isRecording = false;

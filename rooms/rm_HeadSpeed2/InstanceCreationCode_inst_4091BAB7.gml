@@ -1,1 +1,4 @@
-launchYspd = -13;
+hori = true;
+
+launchVel = 0;
+launchYspd = -15;

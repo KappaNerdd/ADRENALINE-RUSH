@@ -10,8 +10,8 @@
   "name":"obj_SaiyanNKappaSilSplash",
   "overriddenProperties":[],
   "parent":{
-    "name":"Splash",
-    "path":"folders/Objects/Title/Other/Splash.yy",
+    "name":"Old",
+    "path":"folders/Objects/Title/Other/Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -27,7 +27,7 @@
   "origin":9,
   "parent":{
     "name":"Hideki",
-    "path":"folders/Sprites/Characters/Players/Kappa/Hideki.yy",
+    "path":"folders/Sprites/Characters/Players/Kappa/Old/Hideki.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

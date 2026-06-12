@@ -34,22 +34,15 @@ if !transComplete {
 			
 			if type == "bio" {
 				with(obj_MainMenu) {
-					menuChoice = 2;
+					menuChoice = 3;
 					moveExtra = true;
 				}
 			}
 			
 			if type == "gallery" {
 				with(obj_MainMenu) {
-					menuChoice = 1;
+					menuChoice = 2;
 					moveExtra = true;
-				}
-			}
-			
-			if type == "freeplay" {
-				with(obj_MainMenu) {
-					menuChoice = 1;
-					moveGameplay = true;
 				}
 			}
 		}

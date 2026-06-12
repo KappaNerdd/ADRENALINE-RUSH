@@ -242,8 +242,8 @@
 			if following == obj_Player {
 				var _char = following;
 				var _dir = sign(_char.vel);
-				var _extraX = (_char.vel * _char.angleCos) * 10;
-				var _extraY = (_char.vel * -_char.angleSin) * 8;
+				var _extraX = (_char.vel * _char.angleCos) * 11;
+				var _extraY = (_char.vel * -_char.angleSin) * 9;
 				var _airY = _char.yspd * 7;
 				var _fxMod = 3;
 				
@@ -352,12 +352,15 @@
 				camTrailSpd = 1;
 			}
 			
+			noCamX = lerp(noCamX, 0, 0.1);
+			noCamY = lerp(noCamY, 0, 0.1);
+			
 			if !camHori {
-				_moveX = 0;
+				_moveX = noCamX;
 			}
 			
 			if !camVerti {
-				_moveY = 0;
+				_moveY = noCamY;
 			}
 			
 			finalCamX += _moveX;

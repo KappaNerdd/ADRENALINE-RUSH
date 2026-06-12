@@ -27,7 +27,7 @@ if railGrind {
 		_rail = spr_RailGrindHeadVFX;
 	}
 	
-	draw_sprite_ext(_rail, railGrindSprFrames, x + angleSin * 11, y + angleCos * 11, _xscale, 0.5, drawAngle, c_white, 1);
+	draw_sprite_ext(_rail, railGrindSprFrames, x + angleSin * 13, y + angleCos * 13, _xscale, 0.5, drawAngle, c_white, 1);
 }
 
 if global.DEBUG == true && instance_exists(self) {

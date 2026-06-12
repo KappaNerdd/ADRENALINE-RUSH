@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Ivy Bullets",
-    "path":"folders/Sprites/Characters/Players/Ivy/Ivy Bullets.yy",
+    "name":"Normal",
+    "path":"folders/Sprites/Characters/Players/Ivy/Ivy Bullets/Normal.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

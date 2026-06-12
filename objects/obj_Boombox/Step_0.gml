@@ -190,7 +190,7 @@ if !ultrakilled {
 					} until !global.JukeboxPlaylist[global.JukeBoxChoice][3];
 				}
 			} else if boomChoice == 1 {
-				if !chosenBoom {
+				if !chosenBoom && chosenPlay {
 					if right_Key {
 						obj_SFXManager.homingLockOn = true;
 						rightArrow = true;
@@ -220,7 +220,7 @@ if !ultrakilled {
 							playChoice = array_length(global.NewJukes) - 1;
 						}
 					}
-				} else {
+				} else if chosenBoom {
 					if array_length(global.NewJukes) > 0 && array_length(global.CustomJukeboxPlaylist) > 0 {
 						if right_Key {
 							obj_SFXManager.funkinFav = true;

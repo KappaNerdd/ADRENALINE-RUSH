@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Head Cutscene 7",
-    "path":"folders/Objects/Cutscenes/Head Cutscenes/Head Cutscene 7.yy",
+    "path":"folders/Objects/Cutscenes/Head Cutscenes/Old/Head Cutscene 7.yy",
   },
   "parentObjectId":{
     "name":"obj_CutsceneParent",

@@ -1321,10 +1321,6 @@ function scr_RushModeColorDraw() {
 			var _target = shader_get_sampler_index(shd_PaletteSwap, "samp_target");
 			var _replace = shader_get_sampler_index(shd_PaletteSwap, "samp_replace");
 			
-			if !global.MIND && global.PlayerChar != 0 {
-				headPal = basePal;
-			}
-			
 			texture_set_stage(_target, sprite_get_texture(basePal, 0));
 			texture_set_stage(_replace, sprite_get_texture(headPal, 0))
 			

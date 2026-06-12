@@ -10,8 +10,8 @@
   "name":"obj_SpindashDust",
   "overriddenProperties":[],
   "parent":{
-    "name":"Rush n Edge",
-    "path":"folders/Objects/Characters/VFX/Rush n Edge.yy",
+    "name":"Obsolete",
+    "path":"folders/Objects/Characters/VFX/General/Obsolete.yy",
   },
   "parentObjectId":null,
   "persistent":false,

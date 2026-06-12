@@ -220,7 +220,7 @@ function scr_EnemyDeathParticles(_particle, _amount) {
 }
 
 
-function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
+function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback, _ringsFly = true) {
 	if !invincible {
 		var _ringMult = 1;
 		
@@ -235,7 +235,11 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback) {
 		scr_StopCharShit();
 		scr_ScreenShake();
 		scr_ControllerRumble();
-		scr_LoseTrinkets();
+		
+		if _ringsFly {
+			scr_LoseTrinkets();
+		}
+		
 		scr_StopCharControls();
 		
 		scr_BonusPoints(-10000 * (_damage / 100000));

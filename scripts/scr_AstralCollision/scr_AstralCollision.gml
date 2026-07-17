@@ -219,8 +219,8 @@ function PlayerCollisionSlope(argument0, argument1, argument2, argument3) {
 	sensorCos = dcos(argument2);
 	sensorSin = dsin(argument2);
 
-	sensorX = floor(argument0 + sensorSin * 22);
-	sensorY = floor(argument1 + sensorCos * 22);
+	sensorX = floor(argument0 + sensorSin * 23);
+	sensorY = floor(argument1 + sensorCos * 23);
 
 	// Test collision
 	collisionTest = PlayerCollision(sensorX, sensorY);
@@ -530,8 +530,8 @@ function PlayerGetAngle(_x, _y, _angle) {
 	_pointLeftX = floor(_x - _angleCOS * 8);
 	_pointLeftY = floor(_y + _angleSIN * 8);
 
-	_pointRightX = floor(_x + _angleCOS * 6);
-	_pointRightY = floor(_y - _angleSIN * 6);
+	_pointRightX = floor(_x + _angleCOS * 8);
+	_pointRightY = floor(_y - _angleSIN * 8);
 
 	var _collisionLeft, _collisionRight;
 	
@@ -539,7 +539,7 @@ function PlayerGetAngle(_x, _y, _angle) {
 	_collisionRight = false;
 	// Check if it is colliding with the ground
 	// Now, perform the checking. Push down the two points in order to touch the floor
-	repeat (20) {
+	repeat (max(20, abs(vel) + 4)) {
 	    if (!_collisionLeft && PlayerCollision(_pointLeftX, _pointLeftY)) {
 	        _collisionLeft = true;
 	    } else if (!_collisionLeft) {

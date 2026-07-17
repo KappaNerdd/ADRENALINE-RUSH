@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_TBAHSFontEnglishLatam",
-    "path":"sprites/spr_TBAHSFontEnglishLatam/spr_TBAHSFontEnglishLatam.yy",
+    "name":"spr_ARFont",
+    "path":"sprites/spr_ARFont/spr_ARFont.yy",
   },
   "spriteMaskId":null,
   "visible":true,

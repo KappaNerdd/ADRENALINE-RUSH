@@ -10,8 +10,8 @@
   "name":"obj_CameraNormal",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overworld & Speed",
-    "path":"folders/Objects/Cameras/Overworld & Speed.yy",
+    "name":"Old",
+    "path":"folders/Objects/Cameras/Overworld & Speed/Old.yy",
   },
   "parentObjectId":{
     "name":"obj_CameraParent",

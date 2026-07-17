@@ -6,7 +6,7 @@ confirm_Key = jump_Key;
 if confirmedWait > 0 {
 	obj_Player.can_Move = false;
 	
-	with(obj_KappaHeadOverworld) {
+	with(obj_KappaHeadSpeed) {
 		image_speed = 0;
 		sprite_index = spr_KappaDamageDownHead;
 		mask_index = crouch_Mask;
@@ -14,19 +14,19 @@ if confirmedWait > 0 {
 }
 
 if confirmedWait <= 0 && getupConfirmed == false && lookUp == false {
-	with(obj_KappaHeadOverworld) {
+	with(obj_KappaHeadSpeed) {
 		image_speed = 0.05;
 		sprite_index = spr_KappaDamageDownHead;
 		mask_index = crouch_Mask;
 	}
 } else if confirmedWait <= 0 && getupConfirmed == true && lookUp == false {
-	with(obj_KappaHeadOverworld) {
+	with(obj_KappaHeadSpeed) {
 		image_speed = 1;
 		sprite_index = sprIdle;
 		mask_index = idle_Mask;
 	}
 } else if confirmedWait <= 0 && getupConfirmed == true && lookUp == true {
-	with(obj_KappaHeadOverworld) {
+	with(obj_KappaHeadSpeed) {
 		image_speed = 1;
 		sprite_index = sprLook_up;
 		mask_index = idle_Mask;

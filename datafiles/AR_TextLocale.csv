@@ -41,6 +41,7 @@ opt_Invincible,INVINCIBILITY THEME,
 ,,
 opt_Visual,VISUAL,VISUALES
 opt_SimpVFX,SIMPLIFY VFX,SIMPLIFICAR EFECTOS
+opt_SimpBack,SIMPLE BACKGROUND,
 opt_ScrShk,SCREEN SHAKE,TEMBLOR DE PANTALLA
 opt_Part,PARTICLES,PARTÍCULAS
 opt_TextSpd,TEXT SPEED,VEL. DE TEXTO
@@ -125,6 +126,7 @@ title_Continue,CONTINUE,CONTINUAR
 title_Bios,CHARACTER BIOS,
 title_Gallery,GALLERY,
 title_Boombox,BOOMBOX,
+title_Achievements,ACHIEVEMENTS,
 title_Credits,CREDITS,
 title_Socials,SOCIALS,
 title_Bluesky,BLUESKY,
@@ -198,7 +200,7 @@ story_UOBJ,UPDATED OBJECTIVE,OBJETIVO ACTUALIZADO
 story_OBJ,OBJECTIVE,OBJETIVO
 story_Chal,CHALLENGE,DESAFÍO
 ,,
-enviro_Secret,JSR SPRAY,SPRAY JSR
+enviro_Secret,J.S.R. SPRAY,SPRAY J.S.R.
 enviro_MusSecret,CASSETTE,CASETE
 ,,
 name_Kappa,KAPPA SUKI,KAPPA SUKI
@@ -207,7 +209,7 @@ name_Sarah,SARAH SUKI,SARAH SUKI
 name_Sar,SARAH,SARAH
 name_Alone,LONE SUKI,LONE SUKI
 name_Lone,LONE,LONE
-name_Brock,"BROCK ""MASHIBA"" SANCHEZ","BROCK ""MASHIBA"" SANCHEZ"
+name_Brock,"MOON ""SON BROCK"" MASH","MOON ""SON BROCK"" MASH"
 name_Bro,BROCK,BROCK
 name_Neegi,NEEGI BUTCHER,NEEGI BUTCHER
 name_Nee,NEEGI,NEEGI
@@ -252,7 +254,7 @@ mus_Backstreet,Backstreet Newgrounds,
 mus_FKap,Waitin',Waitin'
 mus_FSar,No Rush,No Rush
 mus_FLon,Arpeggio,Arpeggio
-mus_FBro,Fighting Glove,Fighting Glove
+mus_FBro,Fightin' Glove,
 mus_FNee,Euro-Step,Euro-Step
 mus_FClo,Star-Bright,Star-Bright
 mus_FAki,Flamerunner,Flamerunner
@@ -260,7 +262,7 @@ mus_FTay,Knuckleblaster,Knuckleblaster
 mus_FAya,Sharpshooter,Sharpshooter
 mus_FRus,Hurry Up,Hurry Up
 mus_FEdg,Black Arms,Black Arms
-mus_FRox,Perra-Culo,Bitch-Ass
+mus_FRox,Guadaña,Scythe
 mus_FLuc,Waiting,Waiting
 mus_FIvy,Holster,Holster
 ,,
@@ -269,14 +271,16 @@ mus_Lost,LOST REASON,SIN RAZÓN
 mus_Mind,MY MIND,MI MENTE
 mus_MindG,MY MIND (Girly Mix),MI MENTE (Girly Mix)
 mus_Dist,DISTURBING THE MIND,DESASTRE MENTAL
+mus_DistAllegro,DISTURBING THE MIND (Allegro),DESASTRE MENTAL (Allegro)
 mus_DistG,DISTURBING THE MIND (Girly Mix),DESASTRE MENTAL (Girly Mix)
+mus_DistGAllegro,DISTURBING THE MIND (Allegro) (Girly Mix),DESASTRE MENTAL (Allegro) (Girly Mix)
 ,,
 mus_NewDay,"New Night, New Day","Nueva Noche, Nuevo Día"
-mus_Sunlight,Soleil,Soleil
-mus_SunlightG,Soleil (Girly Mix),Soleil (Girly Mix)
+mus_Sunlight,Clair De Soleil,Clair De Soleil
+mus_SunlightG,Clair De Soleil (Girly Mix),Clair De Soleil (Girly Mix)
 mus_NewNight,"New Day, New Night","Nuevo Día, Nueva Noche"
-mus_Moonlight,Lune,Lune
-mus_MoonlightG,Lune (Girly Mix),Lune (Girly Mix)
+mus_Moonlight,Clair De Lune,Clair De Lune
+mus_MoonlightG,Clair De Lune (Girly Mix),Clair De Lune (Girly Mix)
 ,,
 mus_NextTime,You'll Get 'em Next Time,Quizás A La Próxima
 mus_Stand,Stand Proud,Que Orgullo
@@ -353,6 +357,7 @@ desc_Footstep,Have footstep and landing sounds play based on certain situations 
 desc_Invincible,Change the invincibility BGM track.,
 ,,
 desc_SimpVFX,"Reduce, stop, or get rid of things that could be eye-straining. (I.E., flashing lights, textbox animations, 'n' some moving assets.)","Reduce, detiene o elimina los elementos que cansen la vista. (Ejemplo: luces, animaciones y algunos movimientos)."
+desc_SimpBack,Remove elements from Environment backgrounds to reduce clutter and/or lag.,
 desc_Part,Have tiny sprites and effects appear or not.,Hace que pequeños sprites y efectos aparezcan o no.
 desc_ScrShk,Have the screen shake during certain events and actions.,La pantalla se agita durante ciertos eventos y acciones.
 desc_TextSpd,Change the how fast text appears during dialogue.,Cambie lo rápido que el texto aparece en diálogos.

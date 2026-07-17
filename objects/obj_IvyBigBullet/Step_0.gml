@@ -13,18 +13,28 @@ if image_angle == 0 {
 	xspd += xAdd;
 	x += xspd;
 	
-	if place_meeting(x + (1 * image_xscale) , y, obj_Solid) && !place_meeting(x, y, obj_BreakableFloor) {
+	if place_meeting(x + (1 * image_xscale), y, obj_Solid) && !place_meeting(x, y, obj_BreakableFloor) {
 		instance_destroy();
 		
 		if xspd > 0 {
 			with(instance_create_depth(x + 4, y, depth, obj_IvyBulletSplash)) {
-				sprite_index = spr_IvyBigBulletSplash;
+				if global.MIND {
+					sprite_index = spr_IvyBigBulletSplashHead;
+				} else {
+					sprite_index = spr_IvyBigBulletSplash;
+				}
+				
 				depth = other.depth;
 				image_xscale = 1;
 			}
 		} else if xspd < 0 {
 			with(instance_create_depth(x - 4, y, depth, obj_IvyBulletSplash)) {
-				sprite_index = spr_IvyBigBulletSplash;
+				if global.MIND {
+					sprite_index = spr_IvyBigBulletSplashHead;
+				} else {
+					sprite_index = spr_IvyBigBulletSplash;
+				}
+				
 				depth = other.depth;
 				image_xscale = -1;
 			}
@@ -45,7 +55,12 @@ if image_angle == -90 {
 		instance_destroy();
 		
 		with(instance_create_depth(x, y + 4, depth, obj_IvyBulletSplash)) {
-			sprite_index = spr_IvyBigBulletSplash;
+			if global.MIND {
+				sprite_index = spr_IvyBigBulletSplashHead;
+			} else {
+				sprite_index = spr_IvyBigBulletSplash;
+			}
+				
 			depth = other.depth;
 			image_angle = other.image_angle;
 			image_xscale = 1;

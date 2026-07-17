@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.0,
+  "duration":0.2448526,
   "exportDir":"",
   "name":"snd_FemaleText",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_FemaleText.ogg",
-  "volume":0.6,
+  "soundFile":"snd_FemaleText.wav",
+  "volume":0.4,
 }

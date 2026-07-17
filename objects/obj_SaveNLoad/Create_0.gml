@@ -22,6 +22,7 @@
 	global.Invincible = 0;
 
 	//Visual
+	global.SimpleBackground = false;
 	global.ScreenShake = true;
 	global.ExtendCamera = true;
 	global.SimplifyVFX = false;
@@ -163,6 +164,10 @@
 	if !directory_exists("screenshots") {
 		directory_create("screenshots");
 	}
+	
+	if !directory_exists("crash_logs") {
+		directory_create("crash_logs");
+	}
 
 	global.Replay = false;
 
@@ -236,12 +241,12 @@
 		 
 			[spr_PauseMenuBGBasic, 15, spr_MCursorHead], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_KappaHeadOverworld, //SPEED STAGE Player Object
+			[obj_KappaHeadSpeed, obj_KappaFreeFall], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_KappaHead, spr_LevelCard_KappaHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_KappaHead, spr_LevelCard_KappaHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Kappa_Head, spr_Freeplay_Kappa_Head, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardKappaHead, spr_LevelCardKappaHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardKappaHead, spr_LevelCardKappaHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayKappaHead, spr_FreeplayKappaHead, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameKappaHead, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -269,7 +274,7 @@
 			[mus_NextTime, mus_StandProud, mus_HonorarySonic, mus_HonorarySonic, mus_ImDoneHere], //Results Theme Tracks [shit, good, sick, perfect]
 			["You'll Get 'em Next Time", "Stand Proud", "Honorary Sonic", "Honorary Sonic",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_KappaHead, spr_LevelCard_KappaHead, 1], //Results Portrait
+			[spr_LevelCardKappaHead, spr_LevelCardKappaHead, 1], //Results Portrait
 			["stagecharkappahead",],
 			[spr_CheckpointHead, spr_RingHeadIcon, spr_RingKappaHandHead, spr_CharSelectKappaHeadIcon, spr_IntroQuoteKappa, 1],
 		],
@@ -291,12 +296,12 @@
 		
 			[spr_KappaTextbox, 15, spr_MCursorKappa], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_KappaNormalOverworld, //SPEED STAGE Player Object
+			[obj_KappaSpeed, obj_KappaFreeFall], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_KappaSet, spr_LevelCard_KappaHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_KappaSet, spr_LevelCard_KappaHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Kappa_Set, spr_Freeplay_Kappa_Head, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardKappaSet, spr_LevelCardKappaHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardKappaSet, spr_LevelCardKappaHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayKappaSet, spr_FreeplayKappaHead, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameKappa, spr_CharNameKappaHead, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -324,9 +329,63 @@
 			[mus_NextTime, mus_StandProud, mus_HonorarySonic, mus_HonorarySonic, mus_ImDoneHere], //Results Theme Tracks [shit, good, sick, perfect]
 			["You'll Get 'em Next Time", "Stand Proud", "Honorary Sonic", "Honorary Sonic",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_KappaSet, spr_LevelCard_KappaHead, 1], //Results Portrait
+			[spr_LevelCardKappaSet, spr_LevelCardKappaHead, 1], //Results Portrait
 			["stagecharkappanormal",],
 			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectKappaIcon, spr_IntroQuoteKappa, 1],
+		],
+		
+		//Lucifer
+		[
+			["name_Lucifer", true, "name_Luci"], //Char Name (Name of your Character)
+		
+			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
+			false, //Char Locked (If true, your character will appear blacked out and won't be selectable)
+			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
+		
+			[ //Char Costumes (Must Have at least 1)
+				[true, spr_LuciferIdle, 4, "cost_Luc1"], //Normal
+			],
+		
+			[207, 041, 229], //RGB (Must be filled out)
+		
+			[spr_LuciferTextbox, 12, spr_MCursorLucifer], //Character Textbox (Optional: Sprite Strip)
+		
+			[obj_LuciferSpeed, obj_LuciferFreeFall], //SPEED STAGE Player Object
+			obj_ActionPlayer, //ACTION STAGE Player Object
+		
+			[spr_LevelCardLuciferSet, spr_LevelCardLuciferSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardLuciferSet, spr_LevelCardLuciferSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayLuciferSet, spr_FreeplayLuciferSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_CharNameLucifer, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
+		
+			[ //Character Select Stats (SPEED STAGE)
+				//Because of how I coded this in source, you'll have to interpret your character's stats
+				17, //Char Age (Optional)
+				17, //Acceleration (Max: 20)
+				15, //Jump Height (Max: 20)
+				13, //Weight (Max: 20)
+				10, //Max Speed (Grab from your max_Speed variable)
+				15, //Break Speed (Grab from your full_Speed variable)
+				17,
+			],
+		
+			[spr_BoostMeterLucifer, 1], //Boost Meter (Sprite Strip)
+			[spr_BoostEmblemLucifer, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
+			[spr_BoostEmblemLuciferRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
+			[spr_LifeLuciferSet, spr_LifeLuciferSetColor, spr_StageCharKappaSet, spr_LifeLuciferHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
+			[spr_LuciferBoost, spr_LuciferBoostSimple, spr_LuciferStompingVFX, spr_LuciferStompedVFX, spr_LuciferSpeedBreakVFX, 1], //Boost [Normal, Simple, Frames]
+			[spr_LuciferTrickFinalVFX, 1], //Final Trick VFX
+		
+			mus_FreeplayLuMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
+			mus_Waiting, //Pause Theme (Ditto for Freeplay)
+			"Waiting (Freeplay Lucifer Mvt.)",
+		
+			[mus_BeenBetter, mus_YouStrong, mus_HonoraryBlaze, mus_HonoraryBlaze, mus_ItsDone], //Results Theme Tracks [shit, good, sick, perfect]
+			["That Could've Been Better", "You Are Strong", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
+			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
+			[spr_LevelCardLuciferSet, spr_LevelCardLuciferSet, 1], //Results Portrait
+			["stagecharlucifernormal",],
+			[spr_CheckpointLucifer, spr_RingLuciferIcon, spr_RingLuciferHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
 		],
 	
 		//Sarah
@@ -345,12 +404,12 @@
 		
 			[spr_SarahTextbox, 11, spr_MCursorSarah],
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			[obj_SarahSpeed, obj_SarahFreeFall], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_SarahSet, spr_LevelCard_SarahSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_SarahSet, spr_LevelCard_SarahSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Sarah_Set, spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardSarahSet, spr_LevelCardSarahSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardSarahSet, spr_LevelCardSarahSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplaySarahSet, spr_FreeplaySarahSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -377,7 +436,7 @@
 			[mus_DidYourBest, mus_KnewYouHadIt, mus_HeartsAround, mus_HeartsAround, mus_YouDidIt], //Results Theme Tracks [shit, good, sick, perfect]
 			["You Did Your Best", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_SarahSet, spr_LevelCard_SarahSet, 1], //Results Portrait
+			[spr_LevelCardSarahSet, spr_LevelCardSarahSet, 1], //Results Portrait
 			["stagecharsarahnormal",],
 			[spr_CheckpointSarah, spr_RingSarahIcon, spr_RingSarahHand, spr_CharSelectSarahIcon, spr_IntroQuoteSarah, 1],
 		],
@@ -398,12 +457,12 @@
 		
 			[spr_LoneTextbox, 42, spr_MCursorLone], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			obj_SarahSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_LoneSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_LoneSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardLoneSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardLoneSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplaySarahSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameLone, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -430,7 +489,7 @@
 			[mus_Diminuendo, mus_Allegro, mus_Crescendo, mus_Crescendo, mus_AlFine], //Results Theme Tracks [shit, good, sick, perfect]
 			["Diminuendo", "Allegro", "Crescendo", "Crescendo",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_LoneSet, 1], //Results Portrait
+			[spr_LevelCardLoneSet, 1], //Results Portrait
 			["stagecharlonenormal",],
 			[spr_CheckpointSarah, spr_RingLoneIcon, spr_RingLoneHand, spr_CharSelectLoneIcon, spr_IntroQuoteLone, 1],
 		],
@@ -451,12 +510,12 @@
 		
 			[spr_BrockTextbox, 13, spr_MCursorBrock], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			obj_SarahSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_BrockSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_BrockSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardBrockSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardBrockSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplaySarahSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -480,10 +539,10 @@
 			mus_Hajime, //Pause Theme (Ditto for Freeplay)
 			"Hajime (Freeplay Brock Mvt.)",
 		
-			[mus_PulledPunches, mus_KnewYouHadIt, mus_Fisticuffs, mus_Fisticuffs, mus_ImDoneHere], //Results Theme Tracks [shit, good, sick, perfect]
+			[mus_Knuckles, mus_KnewYouHadIt, mus_Fisticuffs, mus_Fisticuffs, mus_ImDoneHere], //Results Theme Tracks [shit, good, sick, perfect]
 			["Held-Back", "I Knew You Had it in You", "Fisticuffs", "Fistcuffs",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_BrockSet, 1], //Results Portrait
+			[spr_LevelCardBrockSet, 1], //Results Portrait
 			["stagecharbrocknormal",],
 			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectBrockIcon, spr_IntroQuoteBrock, 1],
 		],
@@ -504,12 +563,12 @@
 		
 			[spr_NeegiTextbox, 13, spr_MCursorNeegi], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			obj_SarahSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_NeegiSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_NeegiSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardNeegiSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardNeegiSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplaySarahSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -536,7 +595,7 @@
 			[mus_HijoDePuta, mus_KnewYouHadIt, mus_HonorWithin, mus_HonorWithin, mus_ImDoneHere], //Results Theme Tracks [shit, good, sick, perfect]
 			["¡HIJO DE PUTA!", "I Knew You Had it in You", "Honor Within", "Honor Within",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_NeegiSet, 1], //Results Portrait
+			[spr_LevelCardNeegiSet, 1], //Results Portrait
 			["stagecharneeginormal",],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectNeegiIcon, spr_IntroQuoteNeegi, 1],
 		],
@@ -557,12 +616,12 @@
 		
 			[spr_CloeeTextbox, 10, spr_MCursorCloee],
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			obj_SarahSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_CloeeSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_CloeeSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardCloeeSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardCloeeSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplaySarahSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -589,7 +648,7 @@
 			[mus_NotAllBad, mus_KnewYouHadIt, mus_HeartsAround, mus_HeartsAround, mus_YouDidIt], //Results Theme Tracks [shit, good, sick, perfect]
 			["Not All Bad", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_CloeeSet, 1], //Results Portrait
+			[spr_LevelCardCloeeSet, 1], //Results Portrait
 			["stagecharcloeenormal",],
 			[spr_CheckpointSarah, spr_RingCloeeIcon, spr_RingCloeeHand, spr_CharSelectCloeeIcon, spr_IntroQuoteCloee, 1],
 		],
@@ -610,12 +669,12 @@
 		
 			[spr_AkiraTextbox, 5, spr_MCursorAkira],
 		
-			obj_KappaNormalOverworld, //SPEED STAGE Player Object
+			obj_KappaSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_AkiraSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_AkiraSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Akira_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardAkiraSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardAkiraSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayAkiraSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameAkira, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -642,7 +701,7 @@
 			[mus_Diminished, mus_Lighter, mus_LitUp2HOT, mus_LitUp2HOT, mus_Lit], //Results Theme Tracks [shit, good, sick, perfect]
 			["Diminished", "Lighter", "Feelin' Nice", "Feelin' Nice",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_AkiraSet, 1], //Results Portrait
+			[spr_LevelCardAkiraSet, 1], //Results Portrait
 			["stagecharakiranormal",],
 			[spr_CheckpointKappa, spr_RingAkiraIcon, spr_RingAkiraHand, spr_CharSelectAkiraIcon, spr_IntroQuoteAkira, 1],
 		],
@@ -663,12 +722,12 @@
 		
 			[spr_TaylorTextbox, 4, spr_MCursorTaylor],
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			obj_SarahSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_TaylorSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_TaylorSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Taylor_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardTaylorSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardTaylorSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayTaylorSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -695,7 +754,7 @@
 			[mus_HijoDePuta, mus_KnewYouHadIt, mus_FeelDaWind, mus_FeelDaWind, mus_YouDidIt], //Results Theme Tracks [shit, good, sick, perfect]
 			["¡HIJO DE PUTA!", "I Knew You Had it in You", "Feel Da Wind", "Feel Da Wind",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_TaylorSet, 1], //Results Portrait
+			[spr_LevelCardTaylorSet, 1], //Results Portrait
 			["stagechartaylornormal",],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectTaylorIcon, spr_IntroQuoteTaylor, 1],
 		],
@@ -716,12 +775,12 @@
 		
 			[spr_AyanaTextbox, 2, spr_MCursorAyana],
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			obj_SarahSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_AyanaSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_AyanaSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Ayana_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardAyanaSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardAyanaSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayAyanaSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -748,7 +807,7 @@
 			[mus_HijoDePuta, mus_Playmate, mus_D4NG3R, mus_D4NG3R, mus_YouDidIt], //Results Theme Tracks [shit, good, sick, perfect]
 			["¡HIJO DE PUTA!", "Playmate", "D 4 N G 3 R", "D 4 N G 3 R",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_AyanaSet, 1], //Results Portrait
+			[spr_LevelCardAyanaSet, 1], //Results Portrait
 			["stagecharayananormal",],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectAyanaIcon, spr_IntroQuoteAyana, 1],
 		],
@@ -769,12 +828,12 @@
 		
 			[spr_RoxxaneTextbox, 12, spr_MCursorRoxxane], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_SarahOverworld, //SPEED STAGE Player Object
+			obj_SarahSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_RoxxaneSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_RoxxaneSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Sarah_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardRoxxaneSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardRoxxaneSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplaySarahSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameRoxxane, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -801,63 +860,9 @@
 			[mus_HijoDePuta, mus_KnewYouHadIt, mus_JoderSi, mus_JoderSi, mus_PorFin], //Results Theme Tracks [shit, good, sick, perfect]
 			["¡HIJO DE PUTA!", "I Knew You Had it in You", "¡JODER SÍ!", "¡JODER SÍ!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_RoxxaneSet, 1], //Results Portrait
+			[spr_LevelCardRoxxaneSet, 1], //Results Portrait
 			["stagecharroxxanenormal",],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectRoxxaneIcon, spr_IntroQuoteRoxxane, 1],
-		],
-	
-		//Lucifer
-		[
-			["name_Lucifer", true, "name_Luci"], //Char Name (Name of your Character)
-		
-			true, //Char Playable (If false, your character will not appear in Character Select screen at all)
-			false, //Char Locked (If true, your character will appear blacked out and won't be selectable)
-			false, //Char Ask Girly (If true, Character Select will let the player you to have "Girly" remixes for certain tracks while playing this character)
-		
-			[ //Char Costumes (Must Have at least 1)
-				[true, spr_KappaIdle, 9, "cost_Luc1"], //Normal
-			],
-		
-			[207, 041, 229], //RGB (Must be filled out)
-		
-			[spr_LuciferTextbox, 12, spr_MCursorLucifer], //Character Textbox (Optional: Sprite Strip)
-		
-			obj_SarahOverworld, //SPEED STAGE Player Object
-			obj_ActionPlayer, //ACTION STAGE Player Object
-		
-			[spr_LevelCard_LuciferSet, spr_LevelCard_LuciferSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_LuciferSet, spr_LevelCard_LuciferSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Lucifer_Set, spr_Freeplay_Lucifer_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
-			[spr_CharNameLucifer, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
-		
-			[ //Character Select Stats (SPEED STAGE)
-				//Because of how I coded this in source, you'll have to interpret your character's stats
-				17, //Char Age (Optional)
-				19, //Acceleration (Max: 20)
-				14, //Jump Height (Max: 20)
-				13, //Weight (Max: 20)
-				11, //Max Speed (Grab from your max_Speed variable)
-				16, //Break Speed (Grab from your full_Speed variable)
-				18,
-			],
-		
-			[spr_BoostMeterLucifer, 1], //Boost Meter (Sprite Strip)
-			[spr_BoostEmblemLucifer, 1], //Trick Particles/Boost Emblem (Optional (Animated): Sprite Strip)
-			[spr_BoostEmblemLuciferRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
-			[spr_LifeLuciferSet, spr_LifeLuciferSetColor, spr_StageCharKappaSet, spr_LifeLuciferHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
-			[spr_LuciferBoost, spr_LuciferBoostSimple, spr_LuciferStompingVFX, spr_LuciferStompedVFX, spr_LuciferSpeedBreakVFX, 1], //Boost [Normal, Simple, Frames]
-			[spr_LuciferTrickFinalVFX, 1], //Final Trick VFX
-		
-			mus_FreeplayLuMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
-			mus_Waiting, //Pause Theme (Ditto for Freeplay)
-			"Waiting (Freeplay Lucifer Mvt.)",
-		
-			[mus_BeenBetter, mus_YouStrong, mus_HonoraryBlaze, mus_HonoraryBlaze, mus_ItsDone], //Results Theme Tracks [shit, good, sick, perfect]
-			["That Could've Been Better", "You Are Strong", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
-			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_LuciferSet, spr_LevelCard_LuciferSet, 1], //Results Portrait
-			["stagecharlucifernormal",],
-			[spr_CheckpointSarah, spr_RingLuciferIcon, spr_RingLuciferHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
 		],
 	
 		//Rush
@@ -876,12 +881,12 @@
 		
 			[spr_RushTextbox, 24, spr_MCursorRush], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_RushOverworld, //SPEED STAGE Player Object
+			[obj_RushSpeed, obj_RushFreeFall], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_RushSet, spr_LevelCard_RushSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_RushSet, spr_LevelCard_RushSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Rush_Set, spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardRushSet, spr_LevelCardRushSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardRushSet, spr_LevelCardRushSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayRushSet, spr_FreeplayRushSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameRush, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -908,7 +913,7 @@
 			[mus_KiddinMe, mus_NotBad, mus_TalkinAbout, mus_TalkinAbout, mus_Groovy], //Results Theme Tracks [shit, good, sick, perfect]
 			["You Gotta be Kiddin' Me", "Ayy, Not Bad", "That's What I'm TALKIN' About!!", "That's What I'm TALKIN' About!!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_RushSet, spr_LevelCard_RushSet, 1], //Results Portrait
+			[spr_LevelCardRushSet, spr_LevelCardRushSet, 1], //Results Portrait
 			["stagecharrushnormal",],
 			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, spr_IntroQuoteRush, 1],
 		],
@@ -929,12 +934,12 @@
 		
 			[spr_EdgeTextbox, 12, spr_MCursorEdge], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_RushOverworld, //SPEED STAGE Player Object
+			obj_RushSpeed, //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_EdgeSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_EdgeSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Rush_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardEdgeSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardEdgeSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayRushSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameEdge, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -961,7 +966,7 @@
 			[mus_BrokenChaos, mus_KnewYouHadIt, mus_HeartsAround, mus_HeartsAround, mus_Skrrrt], //Results Theme Tracks [shit, good, sick, perfect]
 			["Broken Chaos", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_EdgeSet, 1], //Results Portrait
+			[spr_LevelCardEdgeSet, 1], //Results Portrait
 			["stageCharEdgeNormal",],
 			[spr_CheckpointRush, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectEdgeIcon, spr_IntroQuoteEdge, 1],
 		],
@@ -982,12 +987,12 @@
 		
 			[spr_IvyTextbox, 8, spr_MCursorIvy], //Character Textbox (Optional: Sprite Strip)
 		
-			obj_IvyOverworld, //SPEED STAGE Player Object
+			[obj_IvySpeed, obj_IvyFreeFall], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCard_IvySet, spr_LevelCard_IvySet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCard_IvySet, spr_LevelCard_IvySet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_Freeplay_Ivy_Set, spr_Freeplay_Ivy_Set, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardIvySet, spr_LevelCardIvySet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardIvySet, spr_LevelCardIvySet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayIvySet, spr_FreeplayIvySet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameIvy, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -1014,7 +1019,7 @@
 			[mus_ShotDown, mus_ArrightPardner, mus_JUSTICE, mus_JUSTICE, mus_GunSlinger], //Results Theme Tracks [shit, good, sick, perfect]
 			["Shot Down", "It's Arright, Pardner", "JUSTICE", "JUSTICE",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCard_IvySet, spr_LevelCard_IvySet, 1], //Results Portrait
+			[spr_LevelCardIvySet, spr_LevelCardIvySet, 1], //Results Portrait
 			["stagecharivynormal",],
 			[spr_CheckpointIvy, spr_RingIvyIcon, spr_RingIvyHand, spr_CharSelectIvyIcon, spr_IntroQuoteIvy, 1],
 		],
@@ -1128,7 +1133,9 @@
 		[mus_MyMind, "mus_Mind", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_MyMindGirly, "mus_MindG", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_DisturbingMind, "mus_Dist", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_DisturbingMindAllegro, "mus_DistAllegro", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_DisturbingMindGirly, "mus_DistG", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_DisturbingMindGirlyAllegro, "mus_DistGAllegro", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_LostReason, "mus_Lost", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		
 		[mus_CestLaVie, "mus_Cest", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
@@ -1139,6 +1146,7 @@
 		[mus_Backstreet, "mus_Backstreet", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		
 		[mus_FreeplayKMvt, "mus_FKap", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_FreeplayLuMvt, "mus_FLuc", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplaySMvt, "mus_FSar", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayLMvt, "mus_FLon", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayBMvt, "mus_FBro", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
@@ -1148,7 +1156,6 @@
 		[mus_FreeplayTMvt, "mus_FTay", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayAYMvt, "mus_FAya", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayRXMvt, "mus_FRox", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayLuMvt, "mus_FLuc", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayRMvt, "mus_FRus", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayEMvt, "mus_FEdg", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FreeplayIMvt, "mus_FIvy", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
@@ -1160,6 +1167,43 @@
 		[mus_BeenBetter, "mus_BeenBetter", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_YouStrong, "mus_YouStrong", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_HonoraryBlaze, "mus_Blaze", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		
+		[mus_DidYourBest, "mus_YourBest", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_KnewYouHadIt, "mus_InYou", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_HeartsAround, "mus_Hearts", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		
+		[mus_Diminuendo, "mus_Diminuendo", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		[mus_Allegro, "mus_Allegro", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		[mus_Crescendo, "mus_Crescendo", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		
+		[mus_Knuckles, "mus_Knuckles", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		[mus_Fisticuffs, "mus_Fisticuffs", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		
+		[mus_HonorWithin, "mus_Honor", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+
+		[mus_NotAllBad, "mus_NotAllBad", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		
+		[mus_Diminished, "mus_Diminished", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_Lighter, "mus_Lighter", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_LitUp2HOT, "mus_FeelinNice", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		
+		[mus_FeelDaWind, "mus_Hurricane", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		
+		[mus_Playmate, "mus_Playmate", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		[mus_D4NG3R, "mus_D4NG3R", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		
+		[mus_HijoDePuta, "mus_HijoDePuta", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		[mus_JoderSi, "mus_JoderSi", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		
+		[mus_KiddinMe, "mus_Kiddin", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_NotBad, "mus_NotBad", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_TalkinAbout, "mus_Talkin", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		
+		[mus_BrokenChaos, "mus_BrokenChaos", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		
+		[mus_ShotDown, "mus_Shot", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_ArrightPardner, "mus_Pardner", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_JUSTICE, "mus_JUSTICE", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 	]
 	
 	global.CustomJukeboxPlaylist = [
@@ -1185,6 +1229,7 @@
 		},
 	
 		{ //Visual Options
+			simpBack: false, //Simple Background
 			extCam: true, //Extended Camera
 			screenShake: true, //Screen Shake
 			simpVFX: false, //Simplify VFX
@@ -1347,17 +1392,25 @@
 	]
 #endregion
 
+#region //Achievements
+	global.Achievements = [
+		
+	]
+#endregion
+
 #region //Rank System (Speed)
 	global.StageName = 0;
 	global.StageType = 0;
 	global.StageNum = 0;
 	global.MIND = false;
+	global.PRank = true;
 	global.Rank = 0;
 	global.RankTime = 0;
 	global.RankScore = 0;
 	global.RankRings = 0;
 	global.RankEnemies = 0;
 	global.LevelForced = false;
+	global.FreeFall = false;
 	global.countUp = false;
 	global.seconds = 0;
 	global.minutes = 0;
@@ -1419,6 +1472,8 @@
 			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly,
 		
 			requirement: "condit_StoryMode", record_File: "mind1_Ghost", folder_Name: "/mind1/",
+			
+			levelID: "id_Mind1",
 		},
 	
 		{ //MIND Level 2
@@ -1451,18 +1506,20 @@
 			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly,
 		
 			requirement: "condit_StoryMode", record_File: "mind2_Ghost", folder_Name: "/mind2/",
+			
+			levelID: "id_Mind2",
 		},
 		
 		{ //MIND Level Boss
-			stage_Name: "level_MIND", stage_Type: "freeplay_Level" + "freeplay_Boss", stage_Desc: "freeplay_DescMindBoss", level_Num: "", level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBoss, levelForced: true,
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level" + "freeplay_Boss", stage_Desc: "freeplay_DescMindBoss", level_Num: "", level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBoss, levelForced: false,
 		
-			rankS_Time: 140, rankA_Time: 150, rankB_Time: 205, rankC_Time: 225, rankD_Time: 250, rankF_Time: 320,
+			rankS_Time: 330, rankA_Time: 340, rankB_Time: 355, rankC_Time: 415, rankD_Time: 440, rankF_Time: 510,
 			
-			rankS_Score: 250000, rankA_Score: 200000, rankB_Score: 175000, rankC_Score: 150000, rankD_Score: 100000,
+			rankS_Score: 210000, rankA_Score: 135000, rankB_Score: 85000, rankC_Score: 60000, rankD_Score: 35000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			rings: 0, rings_Rank: 0, rankS_Ring: 425, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
 			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 80, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1483,230 +1540,8 @@
 			musicTrack: mus_DisturbingMind, musicTrackGirly: mus_DisturbingMindGirly, 
 		
 			requirement: "condit_StoryMode", record_File: "mindBoss_Ghost", folder_Name: "/mind_boss/",
-		},
-		
-		{ //MIND Bonus 1
-			stage_Name: "level_MIND", stage_Type: "freeplay_Bonus", stage_Desc: "freeplay_DescMindBon1", level_Num: 1, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBonus1, levelForced: false,
-		
-			rankS_Time: 115, rankA_Time: 125, rankB_Time: 140, rankC_Time: 200, rankD_Time: 225, rankF_Time: 255,
-		
-			rankS_Score: 250000, rankA_Score: 200000, rankB_Score: 175000, rankC_Score: 150000, rankD_Score: 100000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
-			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
-			
-			jsrSecrets: [false, false, false, false, false], musicSecret: false,
-			
-			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
-			
-			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
-			
-			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
-			
-			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
-			
-			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
-		
-			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
-		
-			locked: false, complete: false, mind: true, stage_Sprite: spr_LevelMindHead, level_Sprite: spr_LevelBonus1Head,
-			
-			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly,
-		
-			requirement: "condit_CRankMind", record_File: "mindBonus1_Ghost", folder_Name: "/mind_b1/",
-		},
-		
-		{ //MIND Bonus 2
-			stage_Name: "level_MIND", stage_Type: "freeplay_Bonus", stage_Desc: "freeplay_DescMindBon2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBonus2, levelForced: false,
-		
-			rankS_Time: 114, rankA_Time: 119, rankB_Time: 124, rankC_Time: 129, rankD_Time: 134, rankF_Time: 139,
-			
-			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
-			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
-			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
-			
-			jsrSecrets: [false, false, false, false, false], musicSecret: false,
-			
-			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
-			
-			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
-			
-			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
-			
-			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
-			
-			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
-		
-			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
-		
-			locked: true, complete: false, mind: true, stage_Sprite: spr_LevelMindHead, level_Sprite: spr_LevelBonus2Head,
-			
-			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly, 
-		
-			requirement: "condit_CRankMind", record_File: "mindBonus2_Ghost", folder_Name: "/mind_b2/",
-		},
-		
-		{ //HOMETOWN (DAY) Level 1
-			stage_Name: "level_OTD", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescOTD1", level_Num: 1, level_Icon: spr_LevelIconOTD, stage_RM: rm_HometownDSpeed1, levelForced: false,
-		
-			rankS_Time: 215, rankA_Time: 225, rankB_Time: 240, rankC_Time: 300, rankD_Time: 325, rankF_Time: 350,
-			
-			rankS_Score: 360000, rankA_Score: 300000, rankB_Score: 260000, rankC_Score: 200000, rankD_Score: 160000,
-			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
-			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
-			
-			jsrSecrets: [false, false, false, false, false], musicSecret: false,
-			
-			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
-			
-			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
-			
-			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
-			
-			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
-			
-			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
-		
-			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
-		
-			locked: false, complete: false, mind: false, stage_Sprite: spr_LevelOthertownDay, level_Sprite: spr_Level1Norm,
-			
-			musicTrack: mus_Sunlight, musicTrackGirly: mus_SunlightGirly, 
-		
-			requirement: "condit_StoryMode", record_File: "OTD1_Ghost", folder_Name: "/othertown_day1/",
-		},
-		
-		{ //HOMETOWN (DAY) Level 2
-			stage_Name: "level_OTD", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescOTD2", level_Num: 2, level_Icon: spr_LevelIconOTD, stage_RM: rm_HometownDSpeed2, levelForced: false,
-		
-			rankS_Time: 114, rankA_Time: 119, rankB_Time: 124, rankC_Time: 129, rankD_Time: 134, rankF_Time: 139,
-			
-			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
-			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
-			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
-			
-			jsrSecrets: [false, false, false, false, false], musicSecret: false,
-			
-			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
-			
-			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
-			
-			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
-			
-			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
-			
-			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
-		
-			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
-		
-			locked: true, complete: false, mind: false, stage_Sprite: spr_LevelOthertownDay, level_Sprite: spr_Level2Norm,
-			
-			musicTrack: mus_Sunlight, musicTrackGirly: mus_SunlightGirly, 
-		
-			requirement: "condit_Available", record_File: "OTD2_Ghost", folder_Name: "/othertown_day2/",
-		},
-		
-		{ //HOMETOWN (DAY) Level 3
-			stage_Name: "level_OTD", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescOTD3", level_Num: 3, level_Icon: spr_LevelIconOTD, stage_RM: rm_HeadSpeedBonus1, levelForced: false,
-		
-			rankS_Time: 114, rankA_Time: 119, rankB_Time: 124, rankC_Time: 129, rankD_Time: 134, rankF_Time: 139,
-			
-			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
-			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
-			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
-			
-			jsrSecrets: [false, false, false, false, false], musicSecret: false,
-			
-			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
-			
-			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
-			
-			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
-			
-			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
-			
-			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
-		
-			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
-		
-			locked: true, complete: false, mind: false, stage_Sprite: spr_LevelMindHead, level_Sprite: spr_Level3Norm,
-			
-			musicTrack: mus_Sunlight, musicTrackGirly: mus_SunlightGirly, 
-		
-			requirement: "condit_Available", record_File: "OTD3_Ghost", folder_Name: "/othertown_day3/",
-		},
-		
-		{ //HOMETOWN (NIGHT) Level 1
-			stage_Name: "level_OTN", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescOTN1", level_Num: 1, level_Icon: spr_LevelIconOTN, stage_RM: rm_HometownNSpeed1, levelForced: false,
-		
-			rankS_Time: 145, rankA_Time: 155, rankB_Time: 210, rankC_Time: 230, rankD_Time: 255, rankF_Time: 325,
-			
-			rankS_Score: 250000, rankA_Score: 200000, rankB_Score: 175000, rankC_Score: 150000, rankD_Score: 100000,
-			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
-			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
-			
-			jsrSecrets: [false, false, false, false, false], musicSecret: false,
-			
-			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
-			
-			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
-			
-			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
-			
-			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
-			
-			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
-		
-			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
-		
-			locked: false, complete: false, mind: false, stage_Sprite: spr_LevelOthertownNight, level_Sprite: spr_Level1Norm,
-			
-			musicTrack: mus_Moonlight, musicTrackGirly: mus_MoonlightGirly, 
-		
-			requirement: "condit_StoryMode", record_File: "OTN1_Ghost", folder_Name: "/othertown_night1/",
-		},
-		
-		{ //HOMETOWN (NIGHT) Level 2
-			stage_Name: "level_OTN", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescOTN2", level_Num: 2, level_Icon: spr_LevelIconOTN, stage_RM: rm_HometownNSpeed1, levelForced: false,
-		
-			rankS_Time: 114, rankA_Time: 119, rankB_Time: 124, rankC_Time: 129, rankD_Time: 134, rankF_Time: 139,
-			
-			rankS_Score: 150000, rankA_Score: 100000, rankB_Score: 75000, rankC_Score: 50000, rankD_Score: 25000,
-			
-			rings: 0, rings_Rank: 0, rankS_Ring: 55, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
-			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 55, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
-			
-			jsrSecrets: [false, false, false, false, false], musicSecret: false,
-			
-			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
-			
-			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
-			
-			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
-			
-			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
-			
-			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
-		
-			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
-		
-			locked: true, complete: false, mind: false, stage_Sprite: spr_LevelOthertownNight, level_Sprite: spr_Level2Norm,
-			
-			musicTrack: mus_Moonlight, musicTrackGirly: mus_MoonlightGirly, 
-		
-			requirement: "condit_Available", record_File: "OTN2_Ghost", folder_Name: "/othertown_night2/",
+			levelID: "id_MindBoss",
 		},
 	
 	]
@@ -1754,9 +1589,7 @@
 
 //Rank System (Test)
 global.stageData = {
-	
 	//Test Levels
     test_Level : { stage_Name: 0, stage_Type: 0, level_Num: 1, player_Char : -1, rank: 0, minutes: 99, seconds: 59 },
 	test_Level2 : { stage_Name: 0, stage_Type: 0, level_Num: 2, player_Char : -1, rank: 0, minutes: 99, seconds: 59 },
-	
 }

@@ -1,5 +1,7 @@
 instance_create_depth(x, y, depth, obj_NewRecordN);
 global.Jukebox = false;
+global.FreeFall = false;
+global.DisableHUD = false;
 
 x = -1000000;
 

@@ -24,7 +24,7 @@
   "name":"spr_CutsceneColl",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":1,
+    "bottom":2,
     "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,
@@ -40,7 +40,7 @@
       1,
       1,
     ],
-    "top":1,
+    "top":2,
   },
   "origin":0,
   "parent":{

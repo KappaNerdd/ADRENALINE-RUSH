@@ -2,6 +2,9 @@ x = -1000000;
 depth = -2;
 image_alpha = 0;
 
+moveTimer = 1;
+moveFrames = 10;
+
 mindAnim = 1 / 12;
 mindFrames = 0;
 
@@ -81,7 +84,7 @@ if !global.MIND && global.PlayerChar != 0 {
 //Overworld
 overworld = [
 	["resume", resume],
-	["fileSelect", fileSelect],
+	//["fileSelect", fileSelect],
 	["options", options],
 	["mainMenu", mainMenu],
 	["quitGame", quitGame],
@@ -89,7 +92,7 @@ overworld = [
 
 overworldMind = [
 	["resume", resume],
-	["fileSelect", fileSelect],
+	//["fileSelect", fileSelect],
 	["options", options],
 	["quitGame", quitGame],
 ]
@@ -98,7 +101,7 @@ overworldMind = [
 speedStg = [
 	["resume", resume],
 	["restart", restart],
-	["fileSelect", fileSelect],
+	//["fileSelect", fileSelect],
 	["options", options],
 	["mainMenu", mainMenu],
 	["quitGame", quitGame],
@@ -107,7 +110,7 @@ speedStg = [
 speedMind = [
 	["resume", resume],
 	["restart", restart],
-	["fileSelect", fileSelect],
+	//["fileSelect", fileSelect],
 	["options", options],
 	["quitGame", quitGame],
 ]
@@ -116,7 +119,7 @@ speedMind = [
 actionStg = [
 	["resume", resume],
 	["restart", restart],
-	["fileSelect", fileSelect],
+	//["fileSelect", fileSelect],
 	["options", options],
 	["mainMenu", mainMenu],
 	["quitGame", quitGame],
@@ -127,7 +130,7 @@ freeplay = [
 	["resume", resume],
 	["restart", restart],
 	["freeplay", freeplayS],
-	["fileSelect", fileSelect],
+	//["fileSelect", fileSelect],
 	["options", options],
 	["mainMenu", mainMenu],
 	["quitGame", quitGame],

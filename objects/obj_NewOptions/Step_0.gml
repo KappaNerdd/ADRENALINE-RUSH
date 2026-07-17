@@ -62,30 +62,38 @@ if !done {
 	#region //Choices
 		if !changeBind {
 			#region //Options
-				if left_Key_Once {
-					if opt > 0 {
-						opt--;
-					} else {
-						opt = array_length(allOpts) - 1;
-					}
-					
-					animatedArrow = true;
-					arrowLeft = true;
-					arrowFrames2 = 0;
-					obj_SFXManager.homingLockOn = true;
+				if left_Key or right_Key or up_Key or down_Key {
+					moveTimer--;
+				} else {
+					moveTimer = 1;
 				}
 			
-				if right_Key_Once {
-					if opt < array_length(allOpts) - 1 {
-						opt++;
-					} else {
-						opt = 0;
+				if moveTimer <= 0 {
+					if left_Key {
+						if opt > 0 {
+							opt--;
+						} else {
+							opt = array_length(allOpts) - 1;
+						}
+					
+						animatedArrow = true;
+						arrowLeft = true;
+						arrowFrames2 = 0;
+						obj_SFXManager.homingLockOn = true;
 					}
+			
+					if right_Key {
+						if opt < array_length(allOpts) - 1 {
+							opt++;
+						} else {
+							opt = 0;
+						}
 				
-					animatedArrow = true;
-					arrowRight = true;
-					arrowFrames3 = 0;
-					obj_SFXManager.homingLockOn = true;
+						animatedArrow = true;
+						arrowRight = true;
+						arrowFrames3 = 0;
+						obj_SFXManager.homingLockOn = true;
+					}
 				}
 			#endregion
 		
@@ -122,25 +130,29 @@ if !done {
 					choice = _array - 1;
 					obj_SFXManager.menuTap = true;
 				}
-		
-				if up_Key_Once {
-					if choice > 0 {
-						choice--;
-					} else {
-						choice = _array - 1;
-					}
 				
-					obj_SFXManager.menuTap = true;
-				}
+				if moveTimer <= 0 {
+					moveTimer = moveFrames;
+					
+					if up_Key {
+						if choice > 0 {
+							choice--;
+						} else {
+							choice = _array - 1;
+						}
+				
+						obj_SFXManager.menuTap = true;
+					}
 			
-				if down_Key_Once {
-					if choice < _array - 1 {
-						choice++;
-					} else {
-						choice = 0;
-					}
+					if down_Key {
+						if choice < _array - 1 {
+							choice++;
+						} else {
+							choice = 0;
+						}
 				
-					obj_SFXManager.menuTap = true;
+						obj_SFXManager.menuTap = true;
+					}
 				}
 			#endregion
 		}
@@ -212,30 +224,34 @@ if !done {
 		#region //Visual
 			if opt == 1 {
 				if choice == 0 {
-					global.ExtendCamera = !global.ExtendCamera;
+					global.SimpleBackground = !global.SimpleBackground;
 				}
 				
 				if choice == 1 {
-					global.ScreenShake = !global.ScreenShake;
+					global.ExtendCamera = !global.ExtendCamera;
 				}
 				
 				if choice == 2 {
-					global.SimplifyVFX = !global.SimplifyVFX;
+					global.ScreenShake = !global.ScreenShake;
 				}
 				
 				if choice == 3 {
-					global.Particles = !global.Particles;
+					global.SimplifyVFX = !global.SimplifyVFX;
 				}
 				
 				if choice == 4 {
-					global.Outline = !global.Outline;
+					global.Particles = !global.Particles;
 				}
 				
 				if choice == 5 {
-					global.Squash = !global.Squash;
+					global.Outline = !global.Outline;
 				}
 				
 				if choice == 6 {
+					global.Squash = !global.Squash;
+				}
+				
+				if choice == 7 {
 					global.ConDisplay = !global.ConDisplay;
 				}
 			}

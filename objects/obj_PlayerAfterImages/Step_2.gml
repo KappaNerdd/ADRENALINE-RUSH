@@ -1,6 +1,6 @@
 if instance_exists(copyPlayer) {
 	if copyPlayer != noone {
-		if copyPlayer.speedBreak or copyPlayer.stomping or copyPlayer.fallVel {
+		if copyPlayer.speedBreak or copyPlayer.stomping or copyPlayer.fallVel or copyPlayer.showAfterImage {
 			if !global.SimplifyVFX {
 				visible = !visible;
 			} else {

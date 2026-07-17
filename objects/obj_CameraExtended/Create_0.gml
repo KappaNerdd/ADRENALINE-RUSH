@@ -41,7 +41,7 @@ vertiBorders = false;
 
 
 //Cam Following
-following = obj_Player;
+following = noone;
 
 resetTimer = 0;
 inactiveTimer = 0;

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Old",
-    "path":"folders/Objects/Freeplay/Level Select/Old.yy",
+    "path":"folders/Objects/Menu System/Freeplay/Level Select/Old.yy",
   },
   "parentObjectId":{
     "name":"obj_TitleMenuParent",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Freeplay_Kappa_Head",
-    "path":"sprites/spr_Freeplay_Kappa_Head/spr_Freeplay_Kappa_Head.yy",
+    "name":"spr_FreeplayKappaHead",
+    "path":"sprites/spr_FreeplayKappaHead/spr_FreeplayKappaHead.yy",
   },
   "spriteMaskId":null,
   "visible":true,

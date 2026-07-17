@@ -217,10 +217,22 @@ if !global.SongTag {
 		songName = scr_LocalText("mus_Dist");
 		songCredits = scr_LocalText("comp_Nerd");
 	}
+	
+	///-----Disturbing the Mind (Allegro)-----///
+	if audio_is_playing(mus_DisturbingMindAllegro) {
+		songName = scr_LocalText("mus_DistAllegro");
+		songCredits = scr_LocalText("comp_Nerd");
+	}
 
 	///-----Disturbing the Mind (Girly Mix)-----///
 	if audio_is_playing(mus_DisturbingMindGirly) {
-		songName = scr_LocalText("mus_Dist");
+		songName = scr_LocalText("mus_DistG");
+		songCredits = scr_LocalText("comp_Nerd");
+	}
+	
+	///-----Disturbing the Mind (Girly Mix)-----///
+	if audio_is_playing(mus_DisturbingMindGirlyAllegro) {
+		songName = scr_LocalText("mus_DistGAllegro");
 		songCredits = scr_LocalText("comp_Nerd");
 	}
 #endregion
@@ -336,7 +348,7 @@ if !global.SongTag {
 	
 	#region ///-----Brock-----///
 		//Shit
-		if audio_is_playing(mus_PulledPunches) {
+		if audio_is_playing(mus_Knuckles) {
 			songName = scr_LocalText("mus_PulledPunches");
 			songCredits = scr_LocalText("comp_Nerd");
 		}

@@ -17,7 +17,7 @@ if !createOpt {
 			instance_destroy();
 			
 			if !instance_exists(obj_RoomTransParent) {
-				scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_Splash1);
+				scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_Splash1Normal);
 			}
 		}
 	}

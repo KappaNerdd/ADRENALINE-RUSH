@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Gimmicks",
-    "path":"folders/Sprites/Environments/General/Gimmicks.yy",
+    "name":"Springs",
+    "path":"folders/Sprites/Environments/General/Gimmicks/Springs.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -405,11 +405,11 @@ display_set_gui_size(768, 432);
 				}
 				
 				draw_set_halign(fa_right);
-					draw_text_transformed_color(703, 93, _replayText, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
-					draw_sprite_ext(_button, _replayBut, 623, 73, 1, 1, 0, c_black, chosenTextAlpha);
+					//draw_text_transformed_color(703, 93, _replayText, 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
+					//draw_sprite_ext(_button, _replayBut, 623, 73, 1, 1, 0, c_black, chosenTextAlpha);
 				
-					draw_text_transformed_color(700, 90, _replayText, 1, 1, 0, c_white, c_white, _replayCol, _replayCol, chosenTextAlpha);
-					draw_sprite_ext(_button, _replayBut, 620, 70, 1, 1, 0, _replayCol, chosenTextAlpha);
+					//draw_text_transformed_color(700, 90, _replayText, 1, 1, 0, c_white, c_white, _replayCol, _replayCol, chosenTextAlpha);
+					//draw_sprite_ext(_button, _replayBut, 620, 70, 1, 1, 0, _replayCol, chosenTextAlpha);
 				draw_set_halign(fa_left);
 				
 			#endregion
@@ -474,11 +474,11 @@ display_set_gui_size(768, 432);
 				}
 			
 				draw_set_halign(fa_right);
-					draw_text_transformed_color(703, 173, scr_LocalText(_custText), 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
-					draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 623, 148, 1, 1, 0, c_black, chosenTextAlpha);
+					//draw_text_transformed_color(703, 173, scr_LocalText(_custText), 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
+					//draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 623, 148, 1, 1, 0, c_black, chosenTextAlpha);
 				
-					draw_text_transformed_color(700, 170, scr_LocalText(_custText), 1, 1, 0, c_white, c_white, _custCol, _custCol, chosenTextAlpha);
-					draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 620, 145, 1, 1, 0, _custCol, chosenTextAlpha);
+					//draw_text_transformed_color(700, 170, scr_LocalText(_custText), 1, 1, 0, c_white, c_white, _custCol, _custCol, chosenTextAlpha);
+					//draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 620, 145, 1, 1, 0, _custCol, chosenTextAlpha);
 				draw_set_halign(fa_left);
 			#endregion
 		#endregion
@@ -495,8 +495,8 @@ display_set_gui_size(768, 432);
 			draw_text_transformed_color(384, 353, _press, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
 			draw_text_transformed_color(384, 350, _press, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
 			
-			draw_text_transformed_color(384, 378, _press2, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
-			draw_text_transformed_color(384, 375, _press2, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
+			//draw_text_transformed_color(384, 378, _press2, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
+			//draw_text_transformed_color(384, 375, _press2, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
 			
 			draw_text_transformed_color(384, 403, _press3, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
 			draw_text_transformed_color(384, 400, _press3, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);

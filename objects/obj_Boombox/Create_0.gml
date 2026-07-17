@@ -18,7 +18,7 @@ moveTimer = 1;
 moveFrames = 10;
 
 boomChoice = 0;
-chosenBoom = false;
+chosenBoom = true;
 
 playChoice = 0;
 chosenPlay = false;

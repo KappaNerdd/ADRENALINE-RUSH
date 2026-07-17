@@ -61,16 +61,33 @@ if !transComplete {
 	}
 	
 	if colorRed == 0 {
+		if checkChar {
+			if image_alpha >= 0.99 {
+				with(obj_Player) {
+					x = other.target_x + (100 * other.target_xscale);
+					y = other.target_y;
+					vel = other.target_vel;
+					yspd = other.target_yspd;
+					
+					if leftFacer {
+						if other.target_xscale == 1 {
+							face_Left = false;
+						} else {
+							face_Left = true;
+						}
+					} else {
+						visXScale = other.target_xscale;
+					}
+				}
+			}
+		}
+		
 		if image_alpha > 0 {
 			image_alpha -= 0.20 / division;
 		}
 	}
 	
 	if image_alpha <= 0 {
-		if instance_exists(obj_Player) {
-			obj_Player.can_Move = true;
-		}
-		
 		instance_destroy();
 	}
 }

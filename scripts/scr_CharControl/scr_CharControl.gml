@@ -1,6 +1,10 @@
 function scr_BasicVariablesSpeedCreate() {
 	#region //Health Checks
 		scr_HealthSystemCreate();
+		
+		if !instance_exists(obj_CreatePauseSpeed) {
+			instance_create_depth(-100000, 0, -9, obj_CreatePauseSpeed);
+		}
 	#endregion
 	
 	#region //Ground Checks
@@ -30,47 +34,9 @@ function scr_BasicVariablesSpeedCreate() {
 		can_Move = true;
 		can_MoveFULL = true;
 		noMoveTimer = 0;
+		showAfterImage = false;
 		
-		left_Key = false;
-		left_Key_Once = false;
-	
-		right_Key = false;
-		right_Key_Once = false;
-	
-		up_Key = false;
-		up_Key_Once = false;
-		
-		down_Key = false;
-		down_Key_Once = false;
-		
-		jump_Key = false;
-		jump_Key_Held = false;
-		jump_Key_Released = false;
-		
-		action_Key = false;
-		action_Key_Held = false;
-		action_Key_Released = false;
-		
-		action1_Key = false;
-		action1_Key_Held = false;
-		action1_Key_Released = false;
-		
-		action2_Key = false;
-		action2_Key_Held = false;
-		action2_Key_Released = false;
-		
-		action3_Key = false;
-		action3_Key_Held = false;
-		action3_Key_Released = false;
-	
-		action4_Key = false;
-		action4_Key_Held = false;
-		action4_Key_Released = false;
-	
-		pause_Key = false;
-	
-		select_Key = false;
-		select_Key_Held = false;
+		scr_ControlSpeedCreate();
 	#endregion
 	
 	#region //Prepares
@@ -221,7 +187,7 @@ function scr_BasicVariablesSpeedCreate() {
 		sensorMainYDist = 0;
 
 		sensorLeftDistance = 8;
-		sensorRightDistance = 6;
+		sensorRightDistance = 8;
 		
 		sensorSideYDist = 8;
 
@@ -414,6 +380,18 @@ function scr_BasicControlsSpeedStep1() {
 		}
 	#endregion
 	
+	#region //Hitstop
+		if hitStopped {
+			if hitStopTimer > 0 {
+				hitStopTimer--;
+				can_MoveFULL = false;
+				image_speed = 0;
+			} else {
+				hitStopped = false;
+				can_MoveFULL = true;
+			}
+		}
+	#endregion
 }
 
 function scr_BasicControlsSpeedStep2() {
@@ -633,7 +611,7 @@ function scr_SlidingSpeed() {
 		ducking = false;
 	
 		//Sound Effect
-		if self != obj_RushOverworld {
+		if self != obj_RushSpeed {
 			obj_SFXManager.slideSound = true;
 		} else {
 			obj_SFXManager.spindashRev = true;
@@ -666,12 +644,12 @@ function scr_StartSlideSpeed() {
 		obj_SFXManager.slideSound = true;
 	
 		if !leftFacer {
-			vel = (max_Speed / 1.5) * visXScale;
+			vel = (max_Speed) * visXScale;
 		} else {
 			if face_Left {
-				vel = -max_Speed / 1.5;
+				vel = -max_Speed;
 			} else {
-				vel = max_Speed / 1.5;
+				vel = max_Speed;
 			}
 		}
 	}
@@ -915,16 +893,38 @@ function scr_GeneralAnimationsSpeed() {
 				image_speed = 1;
 				mask_index = idle_Mask;
 			} else {
-				sprite_index = sprDeath;
-				image_speed = 1;
+				if !leftFacer {
+					sprite_index = sprSpiral;
+				} else {
+					if face_Left {
+						sprite_index = sprSpiralLeft;
+					} else {
+						sprite_index = sprSpiralRight;
+					}
+				}
+					
+				image_speed = 0.5;
 				mask_index = idle_Mask;
 			}
 		}
 		
 		if global.Death {
-			sprite_index = sprDeath;
-			image_speed = 1;
+			if !leftFacer {
+				sprite_index = sprSpiral;
+			} else {
+				if face_Left {
+					sprite_index = sprSpiralLeft;
+				} else {
+					sprite_index = sprSpiralRight;
+				}
+			}
+					
+			image_speed = 0.5;
 			mask_index = idle_Mask;
+			angle = 0;
+			drawAngle = 0;
+			vel = 0;
+			yspd = 0;
 		}
 	#endregion
 	
@@ -1122,7 +1122,7 @@ function scr_OtherAnimationsSpeed() {
 				image_index = image_number - 1;
 			}
 			
-			image_speed = 2;
+			image_speed = 1.5;
 					
 			mask_index = idle_Mask;
 		}
@@ -1144,7 +1144,7 @@ function scr_OtherAnimationsSpeed() {
 				image_index = image_number - 1;
 			}
 					
-			image_speed = 2;
+			image_speed = 1.5;
 			mask_index = crouch_Mask;
 		}
 	#endregion
@@ -1205,15 +1205,16 @@ function scr_HealthSystemCreate() {
 	collideTimer = 0;
 	collideFrames = 30;
 	
+	hitStopped = false;
+	hitStoppedTimer = 0;
+	
 	with(instance_create_depth(x, y, depth, obj_PlayerHurtJump)) {
 		affectChar = other.id;
 	}
 }
 
-function scr_HealthSystemStep() {
+function scr_HealthSystemStep() {	
 	if playerHurt {
-		//can_Move = false;
-		
 		speedBreakTimer = speedBreakFrames;
 	}
 	
@@ -1248,11 +1249,7 @@ function scr_HealthSystemStep() {
 				if invincibleVisibleTimer <= 0 {
 					invincibleVisibleTimer = 5;
 					
-					if visible {
-						visible = false;
-					} else {
-						visible = true;
-					}
+					visible = !visible;
 				}
 			} else {
 				image_alpha = 0.5;
@@ -1264,11 +1261,8 @@ function scr_HealthSystemStep() {
 	
 	
 	//Death
-	if global.Health < 0 {
-		global.Health = 0;
-	}
-	
 	if global.Health <= 0 {
+		global.Health = 0;
 		global.Death = true;
 	}
 	
@@ -1492,16 +1486,18 @@ function scr_AngleShitStep() {
 //Manipulate jump with slopes
 function scr_JumpManipulate() {
 	if !playerHurt && !collide {
-		realJumping = true;
-		railGrind = false;
-		railGrindCrouch = false;
-		angleChecked = false;
-	
 		if global.Squash {
 			extraXscale = 0.5;
 		}
 		
 		if ground {
+			ground = false;
+			jumping = true;
+			realJumping = true;
+			railGrind = false;
+			railGrindCrouch = false;
+			angleChecked = false;
+		
 			PlayerJumpAct();
 			wallJumpTimer = 5;
 			
@@ -1532,10 +1528,6 @@ function scr_JumpManipulate() {
 	}
 	
 	image_index = 0;
-	
-	ground = false;
-	jumping = true;
-	realJumping = true;
 }
 
 

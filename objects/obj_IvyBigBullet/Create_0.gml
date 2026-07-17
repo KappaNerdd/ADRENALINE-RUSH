@@ -1,5 +1,9 @@
 image_yscale = 0.3;
 
+if global.MIND {
+	sprite_index = spr_IvyBigBulletHead;
+}
+
 xspd = 0;
 yspd = 0;
 

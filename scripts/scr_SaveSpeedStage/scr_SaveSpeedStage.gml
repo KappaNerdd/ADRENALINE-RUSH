@@ -1,3 +1,30 @@
+///Find Speed Stage ID
+function scr_SpeedStageID(_id) {
+	for(var i = 0; i < array_length(global.speedStageData); i++) {
+		if global.speedStageData[i].levelID == _id {
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+//Check Speed Stage Complete
+function scr_SpeedComplete(_id) {
+	var _level = scr_SpeedStageID(_id);
+
+	return is_struct(_level) && _level.complete;
+}
+
+//Check Speed Stage Rank
+function scr_SpeedRank(_id) {
+	var _level = scr_SpeedStageID(_id);
+	
+	if is_struct(_level) {
+		return _level.rank;
+	}
+}
+
 ///Speed Stage Saving
 function save_Speed_Stage(_fileNum = 0) {
 	if !instance_exists(obj_SavBox) {		
@@ -107,11 +134,17 @@ function save_Speed_Stage(_fileNum = 0) {
 	//Saving Level Data
 	if instance_exists(obj_SavBox) or global.Freeplay {
 		var _filterArray = [];
+		
+		if global.Freeplay {
+			instance_create_depth(-100, 0, 0, obj_SaveIcon);
+		}
 	
 		for(var i = 0; i < array_length(global.speedStageData); i++) {
 			var _og = global.speedStageData[i];
 		
 			var _newArray = {
+				levelID: _og.levelID,
+				
 				locked: _og.locked,
 				complete: _og.complete,
 				
@@ -183,19 +216,39 @@ function load_Speed_Stage(_fileNum = 0) {
 	//Unstringify and get the data array
 	var _loadArray = json_parse(_json);
 	
-	for (var i = 0; i < array_length(_loadArray); i++) {
-		if (i < array_length(global.speedStageData)) {
+	/*for (var i = 0; i < array_length(_loadArray); i++) {
+		if i < array_length(global.speedStageData) {
 			var _saved = _loadArray[i];
 			var _current = global.speedStageData[i];
 			var _keys = variable_struct_get_names(_saved);
 				
-			for (var k = 0; k < array_length(_keys); k++) {
+			for(var k = 0; k < array_length(_keys); k++) {
 				var _key = _keys[k];
 				
 				variable_struct_set(_current, _key, variable_struct_get(_saved, _key));
 			}
 		} else {
 			array_push(global.speedStageData, _loadArray[i]);
+		}
+	}*/
+	
+	for(var i = 0; i < array_length(_loadArray); i++) {
+		var _saved = _loadArray[i];
+		var _index = scr_SpeedStageID(_saved.levelID);
+
+		if _index == -1 {
+			continue;
+		}
+
+		var _current = global.speedStageData[_index];
+		var _keys = variable_struct_get_names(_saved);
+
+		for(var k = 0; k < array_length(_keys); k++) {
+			var _keyCheck = _keys[k];
+
+			if _keyCheck != "levelID" {
+				variable_struct_set(_current, _keyCheck, variable_struct_get(_saved, _keyCheck));
+			}
 		}
 	}
 }

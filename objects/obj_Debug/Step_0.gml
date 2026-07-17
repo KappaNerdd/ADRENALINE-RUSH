@@ -34,9 +34,7 @@ if global.DEBUG {
 	}
 	
 	if keyboard_check_pressed(vk_lalt) {
-		if instance_exists(obj_GOALColl) {
-			obj_GOALColl.goal = true;
-		}
+		room_goto(rm_HeadSpeedBossP2);
 	}
 	
 	if keyboard_check_pressed(vk_ralt) {
@@ -63,4 +61,12 @@ if global.DEBUG {
 
 if keyboard_check_pressed(ord("7")) {
 	global.DEBUG = !global.DEBUG;
+}
+
+if keyboard_check_pressed(ord("6")) {
+	global.DisableHUD = !global.DisableHUD;
+}
+
+if keyboard_check_pressed(ord("5")) {
+	global.PlayerID.extraAlpha = !global.PlayerID.extraAlpha;
 }

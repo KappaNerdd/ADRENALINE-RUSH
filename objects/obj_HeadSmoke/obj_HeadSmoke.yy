@@ -9,8 +9,8 @@
   "name":"obj_HeadSmoke",
   "overriddenProperties":[],
   "parent":{
-    "name":"Head",
-    "path":"folders/Objects/Particles/Smoke/Head.yy",
+    "name":"Old",
+    "path":"folders/Objects/Particles/Smoke/Head/Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

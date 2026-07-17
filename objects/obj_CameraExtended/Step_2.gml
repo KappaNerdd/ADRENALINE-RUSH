@@ -230,7 +230,6 @@
 				shakePower = -shakePower;
 			}
 		#endregion
-		
 	#endregion
 
 	#region //Variables
@@ -239,11 +238,11 @@
 		var _camHeight = camera_get_view_height(view_camera[0]);
 		
 		#region //Check if it's Following the Player
-			if following == obj_Player {
+			if following == global.PlayerID {
 				var _char = following;
 				var _dir = sign(_char.vel);
-				var _extraX = (_char.vel * _char.angleCos) * 11;
-				var _extraY = (_char.vel * -_char.angleSin) * 9;
+				var _extraX = (_char.vel * _char.angleCos) * 10;
+				var _extraY = (_char.vel * -_char.angleSin) * 8;
 				var _airY = _char.yspd * 7;
 				var _fxMod = 3;
 				

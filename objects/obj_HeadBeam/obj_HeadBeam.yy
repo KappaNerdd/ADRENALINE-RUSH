@@ -10,8 +10,8 @@
   "name":"obj_HeadBeam",
   "overriddenProperties":[],
   "parent":{
-    "name":"Other Bullshit",
-    "path":"folders/Objects/Environments/Head/Other Bullshit.yy",
+    "name":"MIND Boss Ex",
+    "path":"folders/Objects/Environments/Head/Gimmicks/MIND Boss Ex.yy",
   },
   "parentObjectId":{
     "name":"obj_ForcedDeath",

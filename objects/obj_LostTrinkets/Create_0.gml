@@ -16,3 +16,5 @@ kysTimer = 120;
 dyingTimer = 120;
 
 visibleTimer = 2;
+
+terrainLayer = 0;

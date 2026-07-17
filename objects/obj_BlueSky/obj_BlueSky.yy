@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Socials",
-    "path":"folders/Objects/Title/Head/Socials.yy",
+    "path":"folders/Objects/Title/Head/Old/Socials.yy",
   },
   "parentObjectId":{
     "name":"obj_TitleMenuParent",

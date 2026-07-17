@@ -132,8 +132,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"General",
-    "path":"folders/Sprites/Title/Old/Normal/Splash/General.yy",
+    "name":"SAGE 2025",
+    "path":"folders/Sprites/SAGE 2025.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

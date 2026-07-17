@@ -10,8 +10,8 @@
   "name":"obj_LaunchRingColl",
   "overriddenProperties":[],
   "parent":{
-    "name":"Special",
-    "path":"folders/Objects/Debug/Collision/Special.yy",
+    "name":"Old",
+    "path":"folders/Objects/Debug/Collision/Special/Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

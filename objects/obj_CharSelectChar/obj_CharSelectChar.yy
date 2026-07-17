@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"UI",
-    "path":"folders/Objects/Freeplay/Character Select/Old/UI.yy",
+    "path":"folders/Objects/Menu System/Freeplay/Character Select/Old/UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_LevelCard_KappaHead",
-    "path":"sprites/spr_LevelCard_KappaHead/spr_LevelCard_KappaHead.yy",
+    "name":"spr_LevelCardKappaHead",
+    "path":"sprites/spr_LevelCardKappaHead/spr_LevelCardKappaHead.yy",
   },
   "spriteMaskId":null,
   "visible":true,

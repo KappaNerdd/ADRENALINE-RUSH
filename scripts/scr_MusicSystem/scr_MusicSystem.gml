@@ -21,3 +21,7 @@ function scr_MusicTag() {
 		obj_MusicTagNew.movedTimer = 240;
 	}
 }
+
+function scr_SetMusPos(_seconds) {
+	audio_sound_set_track_position(obj_MusicManager.songInstance, _seconds);
+}

@@ -20,14 +20,5 @@ if langCheck != global.Language {
 }
 
 #region //Speed Stage Unlocks
-	#region //MIND BONUS 1 & 2
-		if global.speedStageData[0].rank >= 2 && global.speedStageData[1].rank >= 2 && global.speedStageData[2].rank >= 2 && global.speedStageData[3].locked {
-			global.speedStageData[3].locked = false;
-		}
-	#endregion
 	
-	#region //OTHERTOWN (DAY & NIGHT) Level 2
-		global.speedStageData[6].locked = true;
-		global.speedStageData[9].locked = true;
-	#endregion
 #endregion

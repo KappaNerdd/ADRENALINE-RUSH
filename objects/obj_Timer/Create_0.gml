@@ -1,28 +1,26 @@
 moveY = -100;
 
-global.ResetCount = true;
+resetCount = true;
 global.countUp = false;
 
-if global.ResetCount {
-	global.seconds = 00.00;
-	global.minutes = 0;
-	global.Rings = 0;
-	global.GameScore = 0;
-	global.ScoreMult = 1;
-	global.EnemyCount = 0;
-	
-	if !global.MIND && global.PlayerChar != 0 {
-		image_speed = 0;
-	}
-}
+alarm_set(0, 1);
+
+extraLife = [
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+]
 
 inGameScore = 0;
 
 image_alpha = 1;
-
-if !instance_exists(obj_HUDRankDisplayer) {
-	instance_create_depth(x, y, depth, obj_HUDRankDisplayer);
-}
 
 x = -100000;
 

@@ -330,7 +330,7 @@ if !ultrakilled {
 		if action_Key {
 			if chosenBoom {
 				obj_SFXManager.UNDERTALEBombFly = true;
-				chosenBoom = false;
+				ultrakilled = true;
 				
 				if global.CustomJukeChoice < 0 {
 					global.CustomJukeChoice = 0;

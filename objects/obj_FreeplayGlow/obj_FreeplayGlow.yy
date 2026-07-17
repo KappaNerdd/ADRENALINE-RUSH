@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Old",
-    "path":"folders/Objects/Freeplay/Level Select/Old.yy",
+    "path":"folders/Objects/Menu System/Freeplay/Level Select/Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -5,7 +5,7 @@ message2 = spr_MessKappaComeHead;
 message3 = spr_MessKappaBruhHead;
 message4 = spr_MessKappaTryinHead;
 
-obj_SFXManager.menuCancel = true;
+obj_SFXManager.playerDeath = true;
 
 
 ///-----Character Messages-----///
@@ -58,7 +58,4 @@ image_yscale = 0.5;
 
 visible = false;
 
-
-if !global.Freeplay && global.PlayerExtraLives > 0 {
-	global.PlayerExtraLives = global.PlayerExtraLives - 1;
-}
+depth = -10;

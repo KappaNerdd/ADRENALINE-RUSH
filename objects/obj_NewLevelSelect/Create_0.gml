@@ -1,6 +1,8 @@
 image_alpha = 0;
 x = -1000000;
 
+global.DisableHUD = false;
+global.FreeFall = false;
 global.Freeplay = true;
 global.MIND = false;
 global.Health = global.MaxHealth;

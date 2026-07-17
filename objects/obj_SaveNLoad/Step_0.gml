@@ -36,7 +36,6 @@ if keyboard_check_pressed(vk_f3) {
 //Global Timer
 global.PlayerTimeSeconds += 1 / 60;
 
-
 if global.PlayerTimeSeconds < 60 && global.PlayerTimeSeconds > 59.9 {
 	global.PlayerTimeSeconds = 0;
 	global.PlayerTimeMinutes += 1;
@@ -53,18 +52,26 @@ if global.PlayerTimeMinutes == 60 {
 //Puttin' this here instead of makin' a separate object.
 if global.Death {
 	if !global.Freeplay {
-		if global.PlayerExtraLives != 0 {
-			if global.DeathCountdown > 0 && !instance_exists(obj_NewPauseMenu) {
-				global.DeathCountdown -= 1;
+		if global.PlayerExtraLives > 0 {
+			if global.DeathCountdown > 0 {
+				global.DeathCountdown--;
+			} else {
+				if !instance_exists(obj_DeathCharMessages) {
+					instance_create_depth(x, y, depth, obj_DeathCharMessages);
+				}
 			}
-		} else if global.PlayerExtraLives == 0 {
-			if global.GameOverCountdown > 0 && !instance_exists(obj_NewPauseMenu) {
-				global.GameOverCountdown -= 1;
+		} else {
+			if global.GameOverCountdown > 0 {
+				global.GameOverCountdown--;
 			}
 		}
 	} else {
-		if global.DeathCountdown > 0 && !instance_exists(obj_NewPauseMenu) {
-			global.DeathCountdown -= 1;
+		if global.DeathCountdown > 0 {
+			global.DeathCountdown--;
+		} else {
+			if !instance_exists(obj_DeathCharMessages) {
+				instance_create_depth(x, y, depth, obj_DeathCharMessages);
+			}
 		}
 	}
 } else {
@@ -72,13 +79,11 @@ if global.Death {
 	global.GameOverCountdown = 180;
 }
 
-//If you have extra lives
-if global.DeathCountdown <= 0 && !instance_exists(obj_DeathCharMessages) && !instance_exists(obj_NewPauseMenu) {
-	instance_create_depth(x, y, depth, obj_DeathCharMessages);
-}
-
-
 //If you DON'T have extra lives
 if global.GameOverCountdown <= 0 && !instance_exists(obj_GameOverTrans) && !instance_exists(obj_NewPauseMenu) {
 	instance_create_depth(x, y, depth, obj_GameOverTrans);
+}
+
+if global.Health >= global.MaxHealth {
+	global.Health = global.MaxHealth;
 }

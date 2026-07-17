@@ -1,3 +1,46 @@
+function scr_ControlSpeedCreate() {
+	left_Key = false;
+	left_Key_Once = false;
+	
+	right_Key = false;
+	right_Key_Once = false;
+	
+	up_Key = false;
+	up_Key_Once = false;
+		
+	down_Key = false;
+	down_Key_Once = false;
+		
+	jump_Key = false;
+	jump_Key_Held = false;
+	jump_Key_Released = false;
+		
+	action_Key = false;
+	action_Key_Held = false;
+	action_Key_Released = false;
+		
+	action1_Key = false;
+	action1_Key_Held = false;
+	action1_Key_Released = false;
+		
+	action2_Key = false;
+	action2_Key_Held = false;
+	action2_Key_Released = false;
+		
+	action3_Key = false;
+	action3_Key_Held = false;
+	action3_Key_Released = false;
+	
+	action4_Key = false;
+	action4_Key_Held = false;
+	action4_Key_Released = false;
+	
+	pause_Key = false;
+	
+	select_Key = false;
+	select_Key_Held = false;
+}
+
 function scr_jumpKeyBuffering() {
 	bufferTime = 5;
 	

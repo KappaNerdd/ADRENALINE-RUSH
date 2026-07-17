@@ -3,10 +3,10 @@ var _yscale = 1;
 var _ang = 0;
 
 var _x = 60;
-var _y = 90;
+var _y = moveY + 90;
 
 if global.speedStageData[global.SpeedSelected].complete {
-	_y = 120;
+	_y = moveY + 120;
 }
 
 display_set_gui_size(768, 432);

@@ -127,12 +127,13 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 		var _gapX = (96 + optX + 800);
 		var _gapY = 32;
 		var _choice = visual[a][0];
-		var _choice2 = "opt_ScrShk";
-		var _choice3 = "opt_SimpVFX";
-		var _choice4 = "opt_Part";
-		var _choice5 = "opt_Outline";
-		var _choice6 = "opt_Squash";
-		var _choice7 = "opt_ConDis";
+		var _choice2 = "opt_ExtCam";
+		var _choice3 = "opt_ScrShk";
+		var _choice4 = "opt_SimpVFX";
+		var _choice5 = "opt_Part";
+		var _choice6 = "opt_Outline";
+		var _choice7 = "opt_Squash";
+		var _choice8 = "opt_ConDis";
 		var _drawX = setX + _gapX - 3;
 	
 		if choice == a {
@@ -157,6 +158,8 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 			_chosenCol2 = c_white;
 		} else if choice == 8 && a == 8 {
 			_chosenCol2 = c_white;
+		} else if choice == 9 && a == 9 {
+			_chosenCol2 = c_white;
 		}
 		
 		if _drawX > -400 && _drawX < 800 {
@@ -164,31 +167,35 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 			draw_sprite_ext(_pauseArrow, arrowFrames, setX + _gapX, setY + 75 + (_gapY * a), 1, 0.5, 0, _chosenCol, 1);
 		
 			if a == 0 {
-				draw_sprite_ext(spr_OptionCheckbox, global.ExtendCamera, setX + _gapX + string_width(scr_LocalText(_choice)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
-				draw_sprite_ext(spr_OptionCheckbox, global.ExtendCamera, setX + _gapX + string_width(scr_LocalText(_choice)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.SimpleBackground, setX + _gapX + string_width(scr_LocalText(_choice)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.SimpleBackground, setX + _gapX + string_width(scr_LocalText(_choice)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 1 {
 				_choice = _choice2;
-				draw_sprite_ext(spr_OptionCheckbox, global.ScreenShake, setX + _gapX + string_width(scr_LocalText(_choice2)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
-				draw_sprite_ext(spr_OptionCheckbox, global.ScreenShake, setX + _gapX + string_width(scr_LocalText(_choice2)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.ExtendCamera, setX + _gapX + string_width(scr_LocalText(_choice2)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.ExtendCamera, setX + _gapX + string_width(scr_LocalText(_choice2)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 2 {
 				_choice = _choice3;
-				draw_sprite_ext(spr_OptionCheckbox, global.SimplifyVFX, setX + _gapX + string_width(scr_LocalText(_choice3)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
-				draw_sprite_ext(spr_OptionCheckbox, global.SimplifyVFX, setX + _gapX + string_width(scr_LocalText(_choice3)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.ScreenShake, setX + _gapX + string_width(scr_LocalText(_choice3)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.ScreenShake, setX + _gapX + string_width(scr_LocalText(_choice3)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 3 {
 				_choice = _choice4;
-				draw_sprite_ext(spr_OptionCheckbox, global.Particles, setX + _gapX + string_width(scr_LocalText(_choice4)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
-				draw_sprite_ext(spr_OptionCheckbox, global.Particles, setX + _gapX + string_width(scr_LocalText(_choice4)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.SimplifyVFX, setX + _gapX + string_width(scr_LocalText(_choice4)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.SimplifyVFX, setX + _gapX + string_width(scr_LocalText(_choice4)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 4 {
 				_choice = _choice5;
-				draw_sprite_ext(spr_OptionCheckbox, global.Outline, setX + _gapX + string_width(scr_LocalText(_choice5)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
-				draw_sprite_ext(spr_OptionCheckbox, global.Outline, setX + _gapX + string_width(scr_LocalText(_choice5)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.Particles, setX + _gapX + string_width(scr_LocalText(_choice5)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.Particles, setX + _gapX + string_width(scr_LocalText(_choice5)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 5 {
 				_choice = _choice6;
-				draw_sprite_ext(spr_OptionCheckbox, global.Squash, setX + _gapX + string_width(scr_LocalText(_choice6)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
-				draw_sprite_ext(spr_OptionCheckbox, global.Squash, setX + _gapX + string_width(scr_LocalText(_choice6)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.Outline, setX + _gapX + string_width(scr_LocalText(_choice6)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.Outline, setX + _gapX + string_width(scr_LocalText(_choice6)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 6 {
-					draw_sprite_ext(spr_OptionCheckbox, global.ConDisplay, setX + _gapX + string_width(scr_LocalText(_choice7)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
-				draw_sprite_ext(spr_OptionCheckbox, global.ConDisplay, setX + _gapX + string_width(scr_LocalText(_choice7)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+				_choice = _choice7;
+				draw_sprite_ext(spr_OptionCheckbox, global.Squash, setX + _gapX + string_width(scr_LocalText(_choice7)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.Squash, setX + _gapX + string_width(scr_LocalText(_choice7)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
+			} else if a == 7 {
+				draw_sprite_ext(spr_OptionCheckbox, global.ConDisplay, setX + _gapX + string_width(scr_LocalText(_choice8)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(spr_OptionCheckbox, global.ConDisplay, setX + _gapX + string_width(scr_LocalText(_choice8)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			}
 	
 			draw_text_transformed_color(setX + _gapX - 3, setY + 67 + (_gapY * a), scr_LocalText(_choice), 1, 1, 0, c_black, c_black, c_black, c_black, 1);

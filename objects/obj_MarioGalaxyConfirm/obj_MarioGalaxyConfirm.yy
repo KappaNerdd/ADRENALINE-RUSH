@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"New Character",
-    "path":"folders/Objects/Freeplay/New Character.yy",
+    "path":"folders/Objects/Menu System/Freeplay/New Character.yy",
   },
   "parentObjectId":null,
   "persistent":false,

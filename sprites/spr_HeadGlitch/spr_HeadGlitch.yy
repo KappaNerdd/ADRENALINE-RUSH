@@ -47,8 +47,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"Head",
-    "path":"folders/Sprites/Characters/Enemies/Head.yy",
+    "name":"Old",
+    "path":"folders/Sprites/Characters/Enemies/Head/Old.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1425,10 +1425,10 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 			#endregion
 			
 			#region //Spikes
-				var _spikeDown = instance_place(x, y + 2, obj_Spikes);
+				var _spikeDown = instance_place(x, y + 4, obj_Spikes);
 				var _spikeUp = instance_place(x, y - 2, obj_Spikes);
 				var _spikeLeft = instance_place(x - 4, y, obj_Spikes);
-				var _spikeRight = instance_place(x + 2, y, obj_Spikes);
+				var _spikeRight = instance_place(x + 4, y, obj_Spikes);
 				
 				if _spikeDown {
 					if _spikeDown.image_angle == 0 && PlayerCollisionObjectBottom(x, y + 1, angle, maskMid, obj_Spikes) {
@@ -1455,14 +1455,86 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 				}
 			#endregion
 			
+			#region //Parent Projectile Hurt
+				var _project = instance_place(x, y, obj_HurtParent);
+				var _dir = 1;
+			
+				if vel >= 0 {
+					_dir = -1;
+				} else {
+					_dir = 1;
+				}
+			
+				if _project && !invincible && !playerHurt {
+					if _project.canHurt {
+						if _project.canBoost {
+							if !boost {
+								event_user(0);
+								event_user(1);
+								event_user(3);
+							
+								obj_SFXManager.playerHurt = true;
+							
+								if rushTrickFinish {
+									rushTrickFinish = false;
+									rushTrickCombo = 0;
+								}
+			
+								can_MoveFULL = true;
+								preTrickTimer = preTrickFrames;
+							
+								PlayerSetGround(false);
+			
+								scr_HurtPlayer(200000, 3, false, -6, true, 15);
+								scr_DRDamageNumbers(-200000, x, y, 120, c_red);
+							}
+						} else {
+							boost = false;
+							airBoost = false;
+						
+							event_user(0);
+							event_user(1);
+							event_user(3);
+						
+							obj_SFXManager.playerHurt = true;
+						
+							if rushTrickFinish {
+								rushTrickFinish = false;
+								rushTrickCombo = 0;
+							}
+			
+							can_MoveFULL = true;
+							preTrickTimer = preTrickFrames;
+					
+							PlayerSetGround(false);
+			
+							scr_HurtPlayer(200000, 3, false, -6, true, 15);
+							scr_DRDamageNumbers(-200000, x, y, 120, c_red);
+						}
+					
+						if _project.killProj {
+							instance_destroy(_project);
+						}
+					}
+				}
+			#endregion
+			
 			#region //Checkpoint
 				var _checkpoint = instance_nearest(x, y, obj_Checkpoint);
 				
 				if distance_to_object(_checkpoint) <= 75 && !_checkpoint.active {
 					global.RespawnX = _checkpoint.x;
 					global.RespawnY = _checkpoint.y;
+					
+					if room == rm_HeadSpeedBoss {
+						obj_HeadBeam.savedX = obj_HeadBeam.x;
+						obj_HeadBeam.savedY = obj_HeadBeam.y;
+					}
 	
 					scr_BonusPoints(2000);
+					scr_HealthPlayer(100000);
+					scr_HealingEffect(self);
+					scr_DRDamageNumbers(100000, x, y, 120, c_lime);
 	
 					if instance_exists(obj_Timer) {
 						with (instance_create_depth(-100000000, y, depth, obj_CheckpointTimer)) {
@@ -1502,32 +1574,57 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 				}*/
 			#endregion
 			
-			#region //Dying (Bottomless)
+			#region //Bottomless Pits
 				var _death = instance_place(x, y, obj_KillColl);
 
-				if _death && !global.Death {
-					global.Death = true;
-					global.Health = 0;
-					scr_ScreenShake();
-					scr_ControllerRumble();
-					scr_LoseTrinkets(100);
+				if _death && !global.Death && !instance_exists(obj_RoomTransParent) {
+					if global.Health > 100000 {
+						if object_index == global.PlayerID {
+							if global.Health > 500000 {
+								global.Health -= 500000;
+							} else {
+								global.Health = 100000;
+							}
+							
+							obj_SFXManager.deltaFall = true;
+							playerHurt = true;
+							can_Move = false;
+							
+							instance_create_depth(x, y, depth, obj_RoomTransitionSEGACheckpoint);
+							scr_SetCamFollow(noone);
+						} else {
+							x = global.PlayerID.x;
+							y = global.PlayerID.y;
+						}
+					} else {
+						global.Death = true;
+						global.Health = 0;
+						railGrind = false;
+						railTrickUno = false;
+						railTrickDos = false;
+						railTrickTres = false;
+						
+						scr_ScreenShake();
+						scr_ControllerRumble();
+						scr_LoseTrinkets(100);
+						scr_SetCamFollow(noone);
+						playerHurt = true;
+						can_Move = false;
 	
-					if instance_exists(obj_StageTrackerSpeed) {
-						global.PRank = false;
+						if instance_exists(obj_StageTrackerSpeed) {
+							global.PRank = false;
+						}
+	
+						if rushMode {
+							rushMode = false;
+							boostEnergy = 100;
+							obj_SFXManager.rushModeLose = true;
+						}
 					}
-	
-					if rushMode {
-						rushMode = false;
-						boostEnergy = 100;
-						obj_SFXManager.rushModeLose = true;
-					}
-	
+					
 					event_user(0);
 					event_user(1);
-					event_user(2);
 					event_user(3);
-	
-					sprite_index = sprDeath;
 	
 					if audio_is_playing(snd_Stomping) {
 						audio_stop_sound(snd_Stomping);
@@ -1618,6 +1715,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 					PlayerSetGround(false);
 			
 					scr_HurtPlayer(200000, _dir * 3, false, -6);
+					scr_DRDamageNumbers(-200000, x, y, 120, c_red);
 				}
 			#endregion
 			
@@ -1629,10 +1727,6 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 					event_user(0);
 					event_user(1);
 					event_user(3);
-					
-					PlayerSetGround(false);
-			
-					scr_HurtPlayer(200000, -8, false, -6);
 				}
 			#endregion
 			
@@ -1671,6 +1765,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 		#region //Astral Collision
 			PlayerAngleLocals();
 			PlayerHandleLayers();
+			var _extraSensorY = 5;
 			
 			if wallJumpTimer > 0 {
 				wallJumpTimer--;
@@ -1704,16 +1799,16 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 						}
 					}
 					
-					if drawAngle == 0 && !sliding && !railGrind && !smallChar {
+					if (drawAngle <= 15 or drawAngle >= 345) && !sliding && !railGrind && !smallChar {
 						if vel > 0 {
-							while (PlayerCollisionRight(x, y - sensorTopDistance + 5, angle, maskMid)) {
+							while (PlayerCollisionRight(x, y - sensorTopDistance + _extraSensorY, angle, maskMid)) {
 								x -= angleCos;
 								y += angleSin;
 							}
 						}
 
 						if vel < 0 {
-							while (PlayerCollisionLeft(x, y - sensorTopDistance + 5, angle, maskMid)) {
+							while (PlayerCollisionLeft(x, y - sensorTopDistance + _extraSensorY, angle, maskMid)) {
 								x += angleCos;
 								y -= angleSin;
 							}
@@ -1752,8 +1847,20 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 						}*/
 
 						//Fall if there is not enough speed.
-						if angle >= 75 && angle <= 285 && abs(vel) < xMinSpeedToFall {
+						if angle >= 45 && angle <= 315 && abs(vel) < xMinSpeedToFall {
 							PlayerFlight();
+							noMoveTimer = 30;
+							yspd = -1;
+							
+							if leftFacer {
+								if face_Left {
+									vel = 2;
+								} else {
+									vel = -2;
+								}
+							} else {
+								vel = -2 * visXScale;
+							}
 						}
 
 						PlayerCollisionCache();
@@ -1837,13 +1944,13 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 							y -= angleSin;
 						}
 						
-						if drawAngle == 0 && !sliding && !railGrind && !smallChar {
-							while (PlayerCollisionRight(x, y - sensorTopDistance + 5, angle, maskMid)) {
+						if (drawAngle <= 15 or drawAngle >= 345) && !sliding && !railGrind && !smallChar {
+							while (PlayerCollisionRight(x, y - sensorTopDistance + _extraSensorY, angle, maskMid)) {
 								x -= angleCos;
 								y += angleSin;
 							}
 
-							while (PlayerCollisionLeft(x, y - sensorTopDistance + 5, angle, maskMid)) {
+							while (PlayerCollisionLeft(x, y - sensorTopDistance + _extraSensorY, angle, maskMid)) {
 								x += angleCos;
 								y -= angleSin;
 							}
@@ -1884,7 +1991,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 					}*/
 
 					//Acceleration and deceleration on slopes
-					if ground && angle > 20 && angle < 340 {
+					if ground && angle > 25 && angle < 335 {
 						var _slopeFactor = slopeFactor;
 						
 						if sliding {
@@ -1897,36 +2004,54 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 					}
 
 					//Stop on wall
-					if smallChar {
-						if vel > 0 && PlayerCollisionRight(x, y - 1, angle, maskBig) {
-							vel = 0;
-							pushingWall = true;
-						} else if vel < 0 && PlayerCollisionLeft(x, y - 1, angle, maskBig) {
-							vel = 0;
-							pushingWall = true;
-						} else {
-							pushingWall = false;
-						}
-					} else {
-						if vel > 0 && PlayerCollisionRight(x, y - 1, angle, maskBig) {
-							vel = 0;
-							pushingWall = true;
-						} else if vel < 0 && PlayerCollisionLeft(x, y - 1, angle, maskBig) {
-							vel = 0;
-							pushingWall = true;
-						} else if drawAngle == 0 && !sliding && !railGrind {
-							if vel > 0 && PlayerCollisionRight(x, y - sensorTopDistance + 5, angle, maskBig) {
+					if angle <= 15 or angle >= 345 {
+						if smallChar {
+							if vel > 0 && PlayerCollisionRight(x, y - 1, angle, maskBig) {
 								vel = 0;
 								pushingWall = true;
-							} else if vel < 0 && PlayerCollisionLeft(x, y - sensorTopDistance + 5, angle, maskBig) {
+							} else if vel < 0 && PlayerCollisionLeft(x, y - 1, angle, maskBig) {
 								vel = 0;
 								pushingWall = true;
 							} else {
 								pushingWall = false;
 							}
 						} else {
-							pushingWall = false;
+							if vel > 0 && PlayerCollisionRight(x, y - 1, angle, maskBig) {
+								vel = 0;
+								pushingWall = true;
+								//show_debug_message("Got Fucked Up by Collision");
+							} else if vel < 0 && PlayerCollisionLeft(x, y - 1, angle, maskBig) {
+								vel = 0;
+								pushingWall = true;
+								//show_debug_message("Got Fucked Up by Collision");
+							} else if !sliding && !railGrind {
+								if ground && !realJumping {
+									if vel > 0 && PlayerCollisionRight(x, y - sensorTopDistance + _extraSensorY, angle, maskBig) {
+										vel = 0;
+										pushingWall = true;
+										//show_debug_message("Got Fucked Up by Collision");
+									} else if vel < 0 && PlayerCollisionLeft(x, y - sensorTopDistance + _extraSensorY, angle, maskBig) {
+										vel = 0;
+										pushingWall = true;
+										//show_debug_message("Got Fucked Up by Collision");
+									} else {
+										pushingWall = false;
+									}
+								} else {
+									if drawAngle > 270 or drawAngle < 90 {
+										if vel > 0 && PlayerCollisionRight(x, y - sensorTopDistance + 16, angle, maskBig) {
+											vel = 0;
+										} else if vel < 0 && PlayerCollisionLeft(x, y - sensorTopDistance + 16, angle, maskBig) {
+											vel = 0;
+										}
+									}
+								}
+							} else {
+								pushingWall = false;
+							}
 						}
+					} else {
+						pushingWall = false;
 					}
 					
 					//Decrease gravity freeze timer
@@ -2255,6 +2380,8 @@ function scr_CeilingDetect() {
 function scr_SpikeHurt() {
 	if !boost && !invincible && !playerHurt {
 		scr_HurtPlayer(200000, 5, 1, -7);
+		scr_DRDamageNumbers(-200000, x, y, 120, c_red);
+		
 		obj_SFXManager.playerHurt = true;
 		obj_SFXManager.spikeHurt = true;
 							

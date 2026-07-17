@@ -9,6 +9,9 @@ if global.Particles {
 	visible = false;
 }
 
+if global.MIND {
+	sprite_index = spr_IvyChargeVFXHead;
+}
 
 if obj_Player.chargeTimer < obj_Player.chargeFrames - 15 {
 	if image_angle <= 360 {

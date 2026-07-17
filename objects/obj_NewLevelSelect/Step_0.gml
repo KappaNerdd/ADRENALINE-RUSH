@@ -172,7 +172,7 @@ if !confirm {
 							chosen = false;
 							changingY = -3;
 							global.Replay = false;
-							global.MIND = _chooseSpeed.mind;
+							//global.MIND = _chooseSpeed.mind;
 						}
 					}
 				}
@@ -180,7 +180,7 @@ if !confirm {
 	
 			#region //Custom Music
 				if right_Key_Once && chosen && !jukebox {
-					var _chooseSpeed = global.speedStageData[chosenSpeed];
+					/*var _chooseSpeed = global.speedStageData[chosenSpeed];
 					
 					if _chooseSpeed.complete {
 						if jukeCheck == 0 {
@@ -199,15 +199,15 @@ if !confirm {
 						}
 					} else {
 						obj_SFXManager.menuCancel = true;
-					}
+					}*/
 				}
 			#endregion
 	
 			#region //Replay Button
 				if !speedStage && !actionStage {
 					if action1_Key {
-						instance_create_depth(x, y, depth, obj_Boombox);
-						obj_SFXManager.clench = true;
+						//instance_create_depth(x, y, depth, obj_Boombox);
+						//obj_SFXManager.clench = true;
 					}
 				} else if speedStage && chosen {
 					var _dir = working_directory + "/replay" + string(global.speedStageData[global.SpeedSelected].folder_Name);

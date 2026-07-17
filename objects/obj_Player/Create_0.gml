@@ -9,5 +9,6 @@ jumping = false;
 visXScale = 1;
 face_Left = false;
 
-instance_change(global.PlayerSelection[global.PlayerChar][7], true);
-global.PlayerID = global.PlayerSelection[global.PlayerChar][7];
+instance_change(global.PlayerSelection[global.PlayerChar][7][0], true);
+global.PlayerID = global.PlayerSelection[global.PlayerChar][7][0];
+scr_SetCamFollow(global.PlayerID);

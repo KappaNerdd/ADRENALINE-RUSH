@@ -32,7 +32,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_KappaTextbox;
-					snd[page_number] = snd_MaleText;
+					snd[page_number] = snd_MaleTextOld;
 				break;
 			#endregion
 			
@@ -106,21 +106,21 @@ function scr_TextSpeakers(_check) {
 						speaker_sprite[page_number] = spr_Kappa_Neutral_Normal;
 						speaker_Name[page_number] = "Kappa";
 						txtb_spr[page_number] = spr_KappaTextbox;
-						snd[page_number] = snd_MaleText;
+						snd[page_number] = snd_MaleTextOld;
 					break;
 					
 					case "Kappa_Thinking_Normal":
 						speaker_sprite[page_number] = spr_Kappa_Think_Normal;
 						speaker_Name[page_number] = "Kappa";
 						txtb_spr[page_number] = spr_KappaTextbox;
-						snd[page_number] = snd_MaleText;
+						snd[page_number] = snd_MaleTextOld;
 					break;
 					
 					case "Kappa_HeadHurt_Normal":
 						speaker_sprite[page_number] = spr_Kappa_Confused_Normal;
 						speaker_Name[page_number] = "Kappa";
 						txtb_spr[page_number] = spr_KappaTextbox;
-						snd[page_number] = snd_MaleText;
+						snd[page_number] = snd_MaleTextOld;
 					break;
 					
 					case "Kappa_ThumbsUp_Normal":
@@ -139,7 +139,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_SarahTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion
 			
@@ -148,21 +148,21 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_Sarah_Neutral_Normal;
 					speaker_Name[page_number] = "Sarah";
 					txtb_spr[page_number] = spr_SarahTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 					
 				case "Sarah_Confused_Normal":
 					speaker_sprite[page_number] = spr_Sarah_Confused_Normal;
 					speaker_Name[page_number] = "Sarah";
 					txtb_spr[page_number] = spr_SarahTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 					
 				case "Sarah_Giddy_Normal":
 					speaker_sprite[page_number] = spr_Sarah_Giddy_Normal;
 					speaker_Name[page_number] = "Sarah";
 					txtb_spr[page_number] = spr_SarahTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion			
 		#endregion
@@ -173,7 +173,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_LoneTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion		
 			
@@ -182,14 +182,14 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_Lone_Neutral_Normal;
 					speaker_Name[page_number] = "Lone";
 					txtb_spr[page_number] = spr_LoneTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 					
 				case "Lone_Saiyan_Normal":
 					speaker_sprite[page_number] = spr_Lone_Saiyan_Normal;
 					speaker_Name[page_number] = "Lone";
 					txtb_spr[page_number] = spr_LoneTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion
 		#endregion
@@ -200,7 +200,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_SophiaTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion
 				
@@ -209,7 +209,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_Sophi_Neutral_Normal;
 					speaker_Name[page_number] = "Sophi";
 					txtb_spr[page_number] = spr_SophiaTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion	
 		#endregion
@@ -220,7 +220,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_ScottTextbox
-					snd[page_number] = snd_MaleText;
+					snd[page_number] = snd_MaleTextOld;
 				break;
 			#endregion
 				
@@ -229,7 +229,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_Scott_Neutral_Normal;
 					speaker_Name[page_number] = "Scott";
 					txtb_spr[page_number] = spr_ScottTextbox
-					snd[page_number] = snd_MaleText;
+					snd[page_number] = snd_MaleTextOld;
 				break;
 			#endregion		
 		#endregion
@@ -241,7 +241,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_BrockTextbox;
-					snd[page_number] = snd_MaleText;
+					snd[page_number] = snd_MaleTextOld;
 				break;
 			#endregion		
 		#endregion
@@ -253,7 +253,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_NeegiTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion			
 		#endregion
@@ -265,7 +265,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_CloeeTextbox;
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion				
 		#endregion
@@ -277,7 +277,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_AkiraTextbox;
-					snd[page_number] = snd_MaleText;
+					snd[page_number] = snd_MaleTextOld;
 				break;
 			#endregion
 		#endregion
@@ -289,7 +289,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_NoOneTextPort;
 					speaker_Name[page_number] = "No One";
 					txtb_spr[page_number] = spr_LuciferTextbox
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion
 				
@@ -299,7 +299,7 @@ function scr_TextSpeakers(_check) {
 					speaker_sprite[page_number] = spr_LuciThinkOld;
 					speaker_Name[page_number] = "Lucifer";
 					txtb_spr[page_number] = spr_LuciferTextbox
-					snd[page_number] = snd_FemaleText;
+					snd[page_number] = snd_FemaleTextOld;
 				break;
 			#endregion		
 		#endregion

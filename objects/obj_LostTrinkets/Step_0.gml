@@ -37,10 +37,14 @@ x += ringXSpeed;
 y += ringYSpeed;
 ringYSpeed += grav;
 
-if place_meeting(x + ringXSpeed, y, obj_Solid) or place_meeting(x + ringXSpeed, y, obj_SolidA) or place_meeting(x + ringXSpeed, y, obj_SolidB) {
+if place_meeting(x + ringXSpeed, y, obj_Solid) or 
+(terrainLayer == 0 && place_meeting(x + ringXSpeed, y, obj_SolidA)) or 
+(terrainLayer == 1 && place_meeting(x + ringXSpeed, y, obj_SolidB)) {
 	ringXSpeed = -ringXSpeed;
 }
 
-if place_meeting(x, y + ringYSpeed, obj_Solid) or place_meeting(x, y + ringYSpeed, obj_SolidA) or place_meeting(x, y + ringYSpeed, obj_SolidB) {
+if place_meeting(x, y + ringYSpeed, obj_Solid) or 
+(terrainLayer == 0 && place_meeting(x, y + ringYSpeed, obj_SolidA)) or 
+(terrainLayer == 1 && place_meeting(x, y + ringYSpeed, obj_SolidB)) {
 	ringYSpeed = -(ringYSpeed - 0.25);
 }

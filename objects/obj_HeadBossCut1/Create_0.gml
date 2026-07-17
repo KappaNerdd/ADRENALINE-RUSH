@@ -11,7 +11,13 @@ global.DisableHUD = true;
 fullVelTimer = 180;
 boostingTimer = 420;
 
-createdChar = instance_create_depth(obj_Player.x + 100, obj_Player.y - 1000, obj_Player.depth, obj_SarahOverworld);
+var _obj = obj_LuciferSpeed;
+
+if global.PlayerID.object_index == obj_LuciferSpeed {
+	_obj = obj_KappaSpeed;
+}
+
+createdChar = instance_create_depth(obj_Player.x + 100, obj_Player.y - 1000, obj_Player.depth, _obj);
 
 with(createdChar) {
 	can_Move = false;

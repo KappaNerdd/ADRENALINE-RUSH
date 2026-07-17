@@ -143,7 +143,7 @@ var _camHeight = 432;
 		}
 	} else {
 		_choiceLength = freeplay;
-		_rushBS = 51;
+		_rushBS = 360 / array_length(_choiceLength);
 		
 		#region //Choice Names
 			if choice == 0 {
@@ -159,18 +159,18 @@ var _camHeight = 432;
 			}
 				
 			if choice == 3 {
-				_choicesNames = scr_LocalText("fs_FileSelect");
+				//_choicesNames = scr_LocalText("fs_FileSelect");
 			}
 				
-			if choice == 4 {
+			if choice == 3 {
 				_choicesNames = scr_LocalText("title_Options");
 			}
 				
-			if choice == 5 {
+			if choice == 4 {
 				_choicesNames = scr_LocalText("menu_MainMenu");
 			}
 				
-			if choice == 6 {
+			if choice == 5 {
 				_choicesNames = scr_LocalText("title_QuitGame");
 			}
 		#endregion

@@ -26,3 +26,9 @@ if kysTimer <= 0 {
 }
 
 visible = !global.DisableHUD;
+
+if instance_exists(obj_RoomTransParent) {
+	moveY = lerp(moveY, -200, 0.1);
+} else {
+	moveY = lerp(moveY, 0, 0.1);
+}

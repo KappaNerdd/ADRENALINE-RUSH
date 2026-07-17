@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":115.2,
   "exportDir":"",
   "name":"mus_AcceptReality",
   "parent":{

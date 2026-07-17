@@ -17,7 +17,7 @@ if !float {
 		yspd -= 0.1;
 		
 		if yspd <= 5 {
-			obj_HeadBlockBG.extraY += 0.1;
+			obj_HeadParallaxBack.extraY += 0.1;
 		}
 		
 		if yspd <= -11.2 {
@@ -75,8 +75,8 @@ if !high {
 charY += yspd;
 
 if high {
-	if obj_HeadBlockBG.extraY > 10 {
-		obj_HeadBlockBG.extraY -= 0.025;
+	if obj_HeadParallaxBack.extraY > 10 {
+		obj_HeadParallaxBack.extraY -= 0.025;
 	}
 	
 	charAngle += extraAngle;
@@ -105,5 +105,5 @@ if leave && !instance_exists(obj_FadeIntroText) && !instance_exists(obj_NameMake
 		
 	obj_FallinChar.yspd += 0.02;
 	obj_FallinChar.extraAngle += 0.02;
-	obj_HeadBlockBG.extraY += 0.08;
+	obj_HeadParallaxBack.extraY += 0.08;
 }

@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":51.535236,
+  "duration":238.34483,
   "exportDir":"",
   "name":"mus_Bid",
   "parent":{

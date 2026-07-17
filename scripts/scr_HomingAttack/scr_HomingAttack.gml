@@ -7,6 +7,9 @@ function scr_HomingAttackCreate() {
 	homing_Active = false;
 	homingAttacked = false;
 	
+	homingTimer = 120;
+	homingFrames = 120;
+	
 	homingAttackable = false;
 	homingTimer = 0;
 	homingFrames = 180;
@@ -44,11 +47,11 @@ function scr_HomingAttackStep() {
 			}
 		}*/
 	
-		if !homing_Active && instance_exists(_homingID) && !playerHurt && !global.Death {
+		if !homing_Active && instance_exists(_homingID) {
 			var _closestDist = homing_Range;
 		    var _closestEnemy = undefined;
 
-			if ((_homingID.x < x && visXScale == -1) or (_homingID.x > x && visXScale == 1)) && !collision_line(x, y, _homingID.x, _homingID.y, obj_Solid, false, false) && _homingID.homingAttackable {
+			if ((_homingID.x < x && visXScale == -1) or (_homingID.x > x && visXScale == 1)) && !collision_line(x, y, _homingID.x, _homingID.y, obj_Solid, false, false) && _homingID.homingAttackable && !ground && !playerHurt && !global.Death {
 			    with (_homingID) {
 					var _dist = point_distance(x, y, obj_Player.x, obj_Player.y);
 			
@@ -64,7 +67,6 @@ function scr_HomingAttackStep() {
 						}
 			        } else {
 						instance_destroy(obj_HomingReticle);
-						
 					}
 			    }
 			} else {
@@ -80,7 +82,11 @@ function scr_HomingAttackStep() {
 				airBoost = false;
 				dJumping = false;
 				realJumping = true;
+				homingTimer = homingFrames;
 				scr_StopCamMove();
+				
+				vel = 0;
+				yspd = 0;
 			
 				if x < homing_Target.x {
 					if !leftFacer {
@@ -101,33 +107,45 @@ function scr_HomingAttackStep() {
 	
 		if homing_Active && homing_Target != undefined {
 		    var _targetX = homing_Target.x;
-		    var _targetY = homing_Target.y + 16;
+		    var _targetY = homing_Target.y;
 		    var _dir = point_direction(x, y, _targetX, _targetY);
 		
 			x += lengthdir_x(homing_Speed, _dir);
 			y += lengthdir_y(homing_Speed, _dir);
-	
-			yspd = -0.005;
-			vel = 0;
-		}
-	
-		if homing_Target != undefined {
-			if place_meeting(x, y, homing_Target) && homing_Active {
+			
+			if place_meeting(x, y, homing_Target) {
 			    homing_Active = false;
 			    homing_Target = undefined;
 				homingAttacked = true;
 				airDash = false;
+				homingTimer = homingFrames;
 			
 				yspd = -(normalJspd + 1);
+			} else {
+				yspd = -grav;
+				vel = 0;
+			}
+			
+			if homingTimer > 0 {
+				homingTimer--;
+			} else {
+				homing_Active = false;
+			    homing_Target = undefined;
+				homingAttacked = true;
+				airDash = false;
+				homingTimer = homingFrames;
 			}
 		}
 		
-		if ground {
-			homingAttacked = false;
-		}
-	
-		if homingAttacked && yspd >= 0 {
-			homingAttacked = false;
+		showAfterImage = homing_Active;
+		
+		if homingAttacked {
+			if ground {
+				homingAttacked = false;
+				yspd = 0;
+			} else if yspd >= 0 {
+				homingAttacked = false;
+			}
 		}
 	#endregion
 }

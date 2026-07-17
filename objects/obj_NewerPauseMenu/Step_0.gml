@@ -117,73 +117,83 @@ if !done {
 	if !instance_exists(obj_NewOptions) && !confirm {
 		#region //Choices
 			var _array = array_length(_choiceLength);
-		
-			if right_Key_Once or down_Key_Once {
-				if choice < _array - 1 {
-					choice++;
-				} else {
-					choice = 0;
-					rushBallAngle = 0 + _rushBS;
-				}
 			
-				changeRight = true;
-				obj_SFXManager.homingLockOn = true;
-			}
-		
-			if (right_Key or down_Key) {
-				if changeRight {
-					if changeRightTimer > 0 {
-						changeRightTimer--;
-					} else {
-						changeRightTimer = changeFrames;
-					
-						if choice < _array - 1 {
-							choice++;
-						} else {
-							choice = 0;
-							rushBallAngle = 0 + _rushBS;
-						}
-			
-						obj_SFXManager.homingLockOn = true;
-					}
-				}
+			if right_Key or left_Key or down_Key or up_Key {
+				moveTimer--;
 			} else {
-				changeRight = false;
-				changeRightTimer = changeFrames;
+				moveTimer = 1;
 			}
-		
-			if left_Key_Once or up_Key_Once {
-				if choice > 0 {
-					choice--;
-				} else {
-					choice = _array - 1;
-					rushBallAngle = -360;
-				}
 			
-				changeLeft = true;
-				obj_SFXManager.homingLockOn = true;
-			}
-		
-			if (left_Key or up_Key) {
-				if changeLeft {
-					if changeLeftTimer > 0 {
-						changeLeftTimer--;
+			if moveTimer <= 0 {
+				moveTimer = moveFrames;
+				
+				if right_Key or down_Key {
+					if choice < _array - 1 {
+						choice++;
 					} else {
-						changeLeftTimer = changeFrames;
-					
-						if choice > 0 {
-							choice--;
-						} else {
-							choice = _array - 1;
-							rushBallAngle = -360;
-						}
-			
-						obj_SFXManager.homingLockOn = true;
+						choice = 0;
+						rushBallAngle = 0 + _rushBS;
 					}
+			
+					changeRight = true;
+					obj_SFXManager.homingLockOn = true;
 				}
-			} else {
-				changeLeft = false;
-				changeLeftTimer = changeFrames;
+			
+				if left_Key or up_Key {
+					if choice > 0 {
+						choice--;
+					} else {
+						choice = _array - 1;
+						rushBallAngle = -360;
+					}
+			
+					changeLeft = true;
+					obj_SFXManager.homingLockOn = true;
+				}
+				
+				if right_Key or down_Key {
+					if changeRight {
+						if changeRightTimer > 0 {
+							changeRightTimer--;
+						} else {
+							changeRightTimer = changeFrames;
+					
+							if choice < _array - 1 {
+								choice++;
+							} else {
+								choice = 0;
+								rushBallAngle = 0 + _rushBS;
+							}
+			
+							obj_SFXManager.homingLockOn = true;
+						}
+					}
+				} else {
+					changeRight = false;
+					changeRightTimer = changeFrames;
+				}
+		
+				if left_Key or up_Key {
+					if changeLeft {
+						if changeLeftTimer > 0 {
+							changeLeftTimer--;
+						} else {
+							changeLeftTimer = changeFrames;
+					
+							if choice > 0 {
+								choice--;
+							} else {
+								choice = _array - 1;
+								rushBallAngle = -360;
+							}
+			
+							obj_SFXManager.homingLockOn = true;
+						}
+					}
+				} else {
+					changeLeft = false;
+					changeLeftTimer = changeFrames;
+				}
 			}
 		#endregion
 		
@@ -260,24 +270,34 @@ if !done {
 			}
 		#endregion
 	} else if confirm {
-		if down_Key_Once {
-			if confirmChoice < 1 {
-				confirmChoice = 1;
-			} else {
-				confirmChoice = 0;
-			}
-			
-			obj_SFXManager.menuTap = true;
+		if right_Key or left_Key or down_Key or up_Key {
+			moveTimer--;
+		} else {
+			moveTimer = 1;
 		}
 		
-		if up_Key_Once {
-			if confirmChoice > 0 {
-				confirmChoice = 0;
-			} else {
-				confirmChoice = 1;
-			}
+		if moveTimer <= 0 {
+			moveTimer = moveFrames;
 			
-			obj_SFXManager.menuTap = true;
+			if down_Key {
+				if confirmChoice < 1 {
+					confirmChoice = 1;
+				} else {
+					confirmChoice = 0;
+				}
+			
+				obj_SFXManager.menuTap = true;
+			}
+		
+			if up_Key {
+				if confirmChoice > 0 {
+					confirmChoice = 0;
+				} else {
+					confirmChoice = 1;
+				}
+			
+				obj_SFXManager.menuTap = true;
+			}
 		}
 		
 		if action_Key {

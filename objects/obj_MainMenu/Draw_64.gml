@@ -124,7 +124,11 @@ display_set_gui_size(768, 432);
 			}
 		}
 		
-		draw_sprite_ext(charShit[nerd][0], _index, menuX + _angleX + 665, menuY + _angleY + 330, 6, _yScale, menuAngle - 45 + ((360 / array_length(_menu)) * i), c_white, 1);
+		if !_menu[i][2] {
+			_col = c_dkgrey;
+		}
+		
+		draw_sprite_ext(charShit[nerd][0], _index, menuX + _angleX + 665, menuY + _angleY + 330, 6, _yScale, menuAngle - 45 + ((360 / array_length(_menu)) * i), _col, 1);
 		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);

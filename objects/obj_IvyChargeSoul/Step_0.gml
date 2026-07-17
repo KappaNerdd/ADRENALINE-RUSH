@@ -12,3 +12,7 @@ if obj_Player.chargeTimer < obj_Player.chargeFrames - 15 {
 		image_alpha -= 0.05;
 	}
 }
+
+if global.MIND {
+	sprite_index = spr_IvyChargeVFXHead;
+}

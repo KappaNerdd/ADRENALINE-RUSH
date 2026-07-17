@@ -33,7 +33,7 @@
   "origin":9,
   "parent":{
     "name":"Head",
-    "path":"folders/Sprites/Characters/Players/Lucifer/Head.yy",
+    "path":"folders/Sprites/Characters/Players/Lucifer/Old/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

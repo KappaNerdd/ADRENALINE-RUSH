@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Gimmicks",
-    "path":"folders/Sprites/Environments/General/Gimmicks.yy",
+    "name":"Balloons",
+    "path":"folders/Sprites/Environments/General/Gimmicks/Balloons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

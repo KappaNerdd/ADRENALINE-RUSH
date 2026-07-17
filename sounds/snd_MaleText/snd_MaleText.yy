@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.0,
+  "duration":0.25528345,
   "exportDir":"",
   "name":"snd_MaleText",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_MaleText.ogg",
-  "volume":0.6,
+  "soundFile":"snd_MaleText.wav",
+  "volume":0.4,
 }

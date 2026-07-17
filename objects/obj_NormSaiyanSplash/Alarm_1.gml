@@ -1,1 +1,1 @@
-scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_FileSelectNew);
+scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_SAGE26);

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"New",
-    "path":"folders/Objects/Freeplay/Level Select/New.yy",
+    "path":"folders/Objects/Menu System/Freeplay/Level Select/New.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -3,6 +3,9 @@ depth = -2;
 randomize();
 
 global.Freeplay = false;
+global.MIND = false;
+global.FreeFall = false;
+global.DisableHUD = false;
 
 scr_MusicTag();
 
@@ -36,14 +39,14 @@ charShit = [
 ]
 
 menu = [
-	["title_Gameplay", spr_GameplayRender],
-	["fs_FileSelect", spr_GameplayRender],
-	["title_Extras", spr_GameplayRender],
-	["title_Options", spr_GameplayRender],
-	["title_Credits", spr_GameplayRender],
-	["title_Discord", spr_GameplayRender],
-	["title_Socials", spr_GameplayRender],
-	["title_QuitGame", spr_GameplayRender],
+	["title_Gameplay", spr_GameplayRender, true],
+	["fs_FileSelect", spr_GameplayRender, false],
+	["title_Extras", spr_GameplayRender, true],
+	["title_Options", spr_GameplayRender, true],
+	["title_Credits", spr_GameplayRender, true],
+	["title_Discord", spr_GameplayRender, true],
+	["title_Socials", spr_GameplayRender, true],
+	["title_QuitGame", spr_GameplayRender, true],
 ]
 
 menuX = 250;
@@ -54,20 +57,20 @@ iconScale = 0;
 renderX = -800;
 
 gameplay = [
-	["title_StoryMode", spr_GameplayRender],
-	["title_Freeplay", spr_GameplayRender],
+	["title_StoryMode", spr_GameplayRender, false],
+	["title_Freeplay", spr_GameplayRender, true],
 ]
 
 story = [
-	["title_NewGame", spr_GameplayRender],
-	["title_Continue", spr_GameplayRender],
+	["title_NewGame", spr_GameplayRender, true],
+	["title_Continue", spr_GameplayRender, true],
 ]
 
 extra = [
-	["title_Achievements", spr_GameplayRender],
-	["title_Boombox", spr_GameplayRender],
-	["title_Gallery", spr_GameplayRender],
-	["title_Bios", spr_GameplayRender],
+	["title_Achievements", spr_GameplayRender, false],
+	["title_Boombox", spr_GameplayRender, true],
+	["title_Gallery", spr_GameplayRender, false],
+	["title_Bios", spr_GameplayRender, true],
 ]
 
 gameplayChosen = false;

@@ -68,7 +68,7 @@ getCharacterControls();
 				global.PlayerChar = 1;
 				global.Girly = false;
 			} else {
-				global.PlayerChar = 11;
+				global.PlayerChar = 2;
 				global.Girly = true;
 			}
 		}
@@ -136,119 +136,122 @@ if !confirm {
 	
 	#region //Confirm
 		if (jump_Key or pause_Key) && !instance_exists(obj_NewOptions) && !instance_exists(obj_RoomTransParent) && !cancelMenu && !menuChosen && !newGameWarning {
-			switch(_menu[menuChoice][0]) {
-				#region //Main Menu
-					case "title_Gameplay":
-						gameplayChosen = true;
-						menuChosen = true;
-						obj_SFXManager.funkinCheckpoint = true;
-					break;
+			if _menu[menuChoice][2] {
+				switch(_menu[menuChoice][0]) {
+					#region //Main Menu
+						case "title_Gameplay":
+							gameplayChosen = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+						break;
 					
-					case "fs_FileSelect":
-						goFileSelect = true;
-						menuChosen = true;
-						obj_SFXManager.funkinCheckpoint = true;
-						set_song_ingame(noone, 60);
-					break;
+						case "fs_FileSelect":
+							goFileSelect = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+							set_song_ingame(noone, 60);
+						break;
 			
-					case "title_Extras":
-						extraChosen = true;
-						menuChosen = true;
-						obj_SFXManager.funkinCheckpoint = true;
-					break;
+						case "title_Extras":
+							extraChosen = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+						break;
 			
-					case "title_Options":
-						obj_SFXManager.menuPop = true;
-						instance_create_depth(0, 0, 0, obj_NewOptions);
-					break;
-					
-					case "title_Credits":
-						obj_SFXManager.funkinCheckpoint = true;
-						set_song_ingame(noone, 60);
-					break;
-					
-					case "title_Discord":
-						obj_SFXManager.menuPop = true;
-						url_open("https://discord.gg/pmtGwgdVrp");
-					break;
-					
-					case "title_Socials":
-						obj_SFXManager.menuPop = true;
-						instance_create_depth(-1000, 0, depth - 3, obj_MainMenuSocials);
-					break;
-				
-					case "title_QuitGame":
-						obj_SFXManager.menuPop = true;
-						set_song_ingame(noone, 60);
-						scr_LeaveTrans();
-					break;
-				#endregion
-					
-				#region //Gameplay
-					case "title_StoryMode":
-						storyChosen = true;
-						menuChosen = true;
-						obj_SFXManager.funkinCheckpoint = true;
-					break;
-						
-					case "title_Freeplay":
-						goFreeplay = true;
-						menuChosen = true;
-						obj_SFXManager.funkinCheckpoint = true;
-						set_song_ingame(noone, 60);
-					break;
-				#endregion
-				
-				#region //Story Mode
-					case "title_NewGame":
-						if file_exists(_filename) {
-							newGameWarning = true;
+						case "title_Options":
 							obj_SFXManager.menuPop = true;
-						} else {
-							menuChosen = true;
-							goNewGame = true;
-							obj_SFXManager.funkinCheckpoint = true;
-							set_song_ingame(noone, 60);
-						}
-					break;
+							instance_create_depth(0, 0, 0, obj_NewOptions);
+						break;
 					
-					case "title_Continue":
-						if file_exists(_filename) {
-							goContinue = true;
-							menuChosen = true;
-							set_song_ingame(noone, 60);
+						case "title_Credits":
 							obj_SFXManager.funkinCheckpoint = true;
-						} else {
-							obj_SFXManager.menuCancel = true;
-						}
-					break;
-				#endregion
+							set_song_ingame(noone, 60);
+						break;
+					
+						case "title_Discord":
+							obj_SFXManager.menuPop = true;
+							url_open("https://discord.gg/pmtGwgdVrp");
+						break;
+					
+						case "title_Socials":
+							obj_SFXManager.menuPop = true;
+							instance_create_depth(-1000, 0, depth - 3, obj_MainMenuSocials);
+						break;
 				
-				#region //Extras
-					case "title_Achievements":
-						obj_SFXManager.menuPop = true;
-						//instance_create_depth(-1000, 0, depth - 3, obj_Boombox);
-					break;
+						case "title_QuitGame":
+							obj_SFXManager.menuPop = true;
+							set_song_ingame(noone, 60);
+							scr_LeaveTrans();
+						break;
+					#endregion
+					
+					#region //Gameplay
+						case "title_StoryMode":
+							storyChosen = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+						break;
+						
+						case "title_Freeplay":
+							goFreeplay = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+							set_song_ingame(noone, 60);
+						break;
+					#endregion
 				
-					case "title_Boombox":
-						obj_SFXManager.menuPop = true;
-						instance_create_depth(-1000, 0, depth - 3, obj_Boombox);
-					break;
+					#region //Story Mode
+						case "title_NewGame":
+							if file_exists(_filename) {
+								newGameWarning = true;
+								obj_SFXManager.menuPop = true;
+							} else {
+								menuChosen = true;
+								goNewGame = true;
+								obj_SFXManager.funkinCheckpoint = true;
+								set_song_ingame(noone, 60);
+							}
+						break;
+					
+						case "title_Continue":
+							if file_exists(_filename) {
+								goContinue = true;
+								menuChosen = true;
+								set_song_ingame(noone, 60);
+								obj_SFXManager.funkinCheckpoint = true;
+							} else {
+								obj_SFXManager.menuCancel = true;
+							}
+						break;
+					#endregion
+				
+					#region //Extras
+						case "title_Achievements":
+							obj_SFXManager.menuPop = true;
+						break;
+				
+						case "title_Boombox":
+							obj_SFXManager.menuPop = true;
+							instance_create_depth(-1000, 0, depth - 3, obj_Boombox);
+						break;
 						
-					case "title_Gallery":
-						goGallery = true;
-						menuChosen = true;
-						obj_SFXManager.funkinCheckpoint = true;
-						set_song_ingame(noone, 60);
-					break;
+						case "title_Gallery":
+							goGallery = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+							set_song_ingame(noone, 60);
+						break;
 						
-					case "title_Bios":
-						goBio = true;
-						menuChosen = true;
-						obj_SFXManager.funkinCheckpoint = true;
-						set_song_ingame(noone, 60);
-					break;
-				#endregion
+						case "title_Bios":
+							goBio = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+							set_song_ingame(noone, 60);
+						break;
+					#endregion
+				}
+			} else {
+				obj_SFXManager.menuCancel = true;
 			}
 		}
 	#endregion

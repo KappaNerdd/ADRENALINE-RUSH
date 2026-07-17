@@ -85,16 +85,16 @@ function scr_BoostCreate() {
 	
 	normalAcc = acc;
 	
-	instance_create_depth(0, -100000000, depth, obj_BoostMeter);
-	instance_create_depth(0, -100000000, depth, obj_EnemyComboCounterSpeed);
+	if !instance_exists(obj_BoostMeter) {
+		instance_create_depth(0, -100000000, depth, obj_BoostMeter);
+		instance_create_depth(0, -100000000, depth, obj_EnemyComboCounterSpeed);
+	}
 }
 
 function scr_BoostingStep() {
-	if enemyComboTimer > 0 && enemyCombo > 0 {
-		enemyComboTimer -= 1;
-	}
-	
-	if enemyComboTimer <= 0 {
+	if enemyComboTimer > 0 {
+		enemyComboTimer--;
+	} else {
 		with(obj_EnemyComboCounterSpeed) {
 			if !createBonus {
 				createBonus = true;
@@ -103,7 +103,6 @@ function scr_BoostingStep() {
 			}
 		}
 	}
-	
 	
 	if boostEnergy <= 0 {
 		boostEnergy = 0;
@@ -741,7 +740,12 @@ function scr_AirTricksStep() {
 			if sonicRush {
 				obj_SFXManager.sonicRushDirTrick = true;
 			} else if blazeRush {
-				obj_SFXManager.blazeRushTrick = true;
+				if object_index != obj_LuciferSpeed {
+					obj_SFXManager.blazeRushTrick = true;
+				} else {
+					obj_SFXManager.blazeRushDirTrick = true;
+					scr_LuciBurstGlide(x, y + 5, 0, false, false);
+				}
 			}
 			
 			if rushTrickCombo <= 0 {
@@ -813,7 +817,12 @@ function scr_AirTricksStep() {
 			if sonicRush {
 				obj_SFXManager.sonicRushDirTrick = true;
 			} else if blazeRush {
-				obj_SFXManager.blazeRushTrick = true;
+				if object_index != obj_LuciferSpeed {
+					obj_SFXManager.blazeRushTrick = true;
+				} else {
+					obj_SFXManager.blazeRushDirTrick2 = true;
+					scr_LuciBurstGlide(x, y + 5, 90, false, false);
+				}
 			}
 			
 			if rushTrickCombo <= 0 {
@@ -838,7 +847,6 @@ function scr_AirTricksStep() {
 			}
 			
 			yspd = 0;
-			
 			
 			if vel > -full_Speed {
 				vel = -fullTrickBoost;
@@ -871,7 +879,12 @@ function scr_AirTricksStep() {
 			if sonicRush {
 				obj_SFXManager.sonicRushDirTrick = true;
 			} else if blazeRush {
-				obj_SFXManager.blazeRushTrick = true;
+				if object_index != obj_LuciferSpeed {
+					obj_SFXManager.blazeRushTrick = true;
+				} else {
+					obj_SFXManager.blazeRushDirTrick2 = true;
+					scr_LuciBurstGlide(x, y + 5, -90, false, false);
+				}
 			}
 			
 			if rushTrickCombo <= 0 {
@@ -1214,6 +1227,7 @@ function scr_RushMode() {
 }
 
 function scr_RushModeColorCreate() {
+	extraAlpha = 1;
 	rushModeColor = false;
 	rushModeAlpha = 0;
 	rushColor = global.fullRGB;
@@ -1248,21 +1262,21 @@ function scr_RushModeColorCreate() {
 		copyPlayer = other.id;
 		copyRecord = 1;
 		visible = false;
-		image_alpha = 0.75;
+		image_alpha = 1;
 	}
 	
 	with(instance_create_depth(x, y, depth + 1, obj_PlayerAfterImages)) {
 		copyPlayer = other.id;
 		copyRecord = 3;
 		visible = true;
-		image_alpha = 0.5;
+		image_alpha = 0.66;
 	}
 	
 	with(instance_create_depth(x, y, depth + 1, obj_PlayerAfterImages)) {
 		copyPlayer = other.id;
 		copyRecord = 5;
 		visible = false;
-		image_alpha = 0.25;
+		image_alpha = 0.34;
 	}
 }
 
@@ -1292,6 +1306,7 @@ function scr_RushModeColorDraw() {
 	var _change2 = 2;
 	var _col1 = c_white;
 	var _col2 = c_black;
+	var _jacobAlpharad = image_alpha * extraAlpha;
 	
 	if global.MIND or global.PlayerChar == 0 {
 		_col1 = c_black;
@@ -1302,17 +1317,17 @@ function scr_RushModeColorDraw() {
 	
 	if global.Outline {
 		gpu_set_fog(true, _col2, 0, 1);
-			draw_sprite_ext(sprite_index, image_index, round(x) + _change2, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x) - _change2, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change2, visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change2, visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x) + _change2, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
+			draw_sprite_ext(sprite_index, image_index, round(x) - _change2, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change2, visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change2, visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
 		gpu_set_fog(false, c_black, 0, 1);
 	
 		gpu_set_fog(true, _col1, 0, 1);
-			draw_sprite_ext(sprite_index, image_index, round(x) + _change, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x) - _change, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change, visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change, visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x) + _change, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
+			draw_sprite_ext(sprite_index, image_index, round(x) - _change, round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) + _change, visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y) - _change, visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
 		gpu_set_fog(false, c_black, 0, 1);
 	}
 	
@@ -1324,13 +1339,13 @@ function scr_RushModeColorDraw() {
 			texture_set_stage(_target, sprite_get_texture(basePal, 0));
 			texture_set_stage(_replace, sprite_get_texture(headPal, 0))
 			
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y), visXScale * extraXscale, image_yscale, drawAngle, image_blend, _jacobAlpharad);
 		shader_reset();
 	#endregion
 	
 	if rushMode && !global.SimplifyVFX {
 		gpu_set_fog(true, rushColor, 0, 1);
-			draw_sprite_ext(sprite_index, image_index, round(x), round(y), visXScale * extraXscale, image_yscale, drawAngle, rushColor, rushModeAlpha * image_alpha);
+			draw_sprite_ext(sprite_index, image_index, round(x), round(y), visXScale * extraXscale, image_yscale, drawAngle, rushColor, rushModeAlpha * _jacobAlpharad);
 		gpu_set_fog(false, c_black, 0, 1);
 	}
 	
@@ -1387,7 +1402,7 @@ function scr_RushModeColorDraw() {
 	}
 	
 	
-	if speedBreak && !stomping && !boost && abs(vel) >= max_Speed / 2 {
+	if speedBreak && !stomping && !boost && abs(vel) >= max_Speed {
 		var _stompingSprite = stompingSprite;
 		var _stompingFrames = sprite_get_number(_stompingSprite);	
 		var _stompingAngle = point_direction(0, 0, vel, yspd);
@@ -1413,7 +1428,7 @@ function scr_RushModeColorDraw() {
 		}
 		
 		if global.Particles {
-			draw_sprite_ext(_stompingSprite, stompingSprFrames, x + _extraX, floor(y - 5 + _extraY), 1, 1, _stompingAngle + 90, c_white, 1);
+			draw_sprite_ext(_stompingSprite, stompingSprFrames, x + _extraX, floor(y - 7 + _extraY), 1, 1, _stompingAngle + 90, c_white, 1);
 		}
 	}
 	
@@ -1429,7 +1444,7 @@ function scr_RushModeColorDraw() {
 		}
 		
 		if global.Particles {
-			draw_sprite_ext(_stompingSprite, stompingSprFrames, x, y + 20, 1, 1, 0, c_white, 1);
+			draw_sprite_ext(_stompingSprite, stompingSprFrames, x, y + 30, 1, 1, 0, c_white, 1);
 		}
 	}
 	

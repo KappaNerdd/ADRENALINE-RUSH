@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Gimmicks",
-    "path":"folders/Sprites/Environments/General/Gimmicks.yy",
+    "name":"Launcher Rings",
+    "path":"folders/Sprites/Environments/General/Gimmicks/Launcher Rings.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

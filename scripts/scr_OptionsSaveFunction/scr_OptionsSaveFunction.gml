@@ -10,6 +10,7 @@ function save_options() {
 	global.optionsData[0].footStep = global.Footstep;
 	global.optionsData[0].invincible = global.Invincible;
 	
+	global.optionsData[1].simpBack = global.SimpleBackground;
 	global.optionsData[1].extCam = global.ExtendCamera;
 	global.optionsData[1].simpVFX = global.SimplifyVFX;
 	global.optionsData[1].screenShake = global.ScreenShake;
@@ -95,6 +96,7 @@ function load_options() {
 	global.Footstep = global.optionsData[0].footStep;
 	global.Invincible = global.optionsData[0].invincible;
 		
+	global.SimpleBackground = global.optionsData[1].simpBack;
 	global.ExtendCamera = global.optionsData[1].extCam;
 	global.SimplifyVFX = global.optionsData[1].simpVFX;
 	global.ScreenShake = global.optionsData[1].screenShake;

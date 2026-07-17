@@ -1,6 +1,10 @@
 scr_RoomCheckerCreate();
 scr_MusicTag();
 
+global.MIND = false;
+global.FreeFall = false;
+global.DisableHUD = false;
+
 fileChoice = 0;
 copyFile = 0
 eraseFile = 0;

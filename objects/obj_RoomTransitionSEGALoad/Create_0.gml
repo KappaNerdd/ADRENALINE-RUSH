@@ -9,7 +9,7 @@ colorRed = 0;
 colorGreen = 0;
 colorBlue = 0;
 
-division = 3;
+division = 1.5;
 
 target_rm = 0;
 spawnPlayer = false;

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"UI",
-    "path":"folders/Objects/Freeplay/Character Select/Old/UI.yy",
+    "path":"folders/Objects/Menu System/Freeplay/Character Select/Old/UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -145,7 +145,7 @@ for (var i = 1; i <= global.FileLimit; i++) {
 					_extraMinute = "";
 				}
 			
-				if _localArray.player_TimeSeconds >= 10 {
+				if ceil(_localArray.player_TimeSeconds) >= 10 {
 					_extraSecond = "";
 				}
 			

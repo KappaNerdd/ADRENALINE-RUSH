@@ -1,24 +1,26 @@
 var _camX = camera_get_view_x(view_camera[0]);
 var _camY = camera_get_view_y(view_camera[0]);
 
-if instance_exists(obj_Player) && !stopped {
-	if x > obj_Player.x {
-		x -= vel;
-	} else if x < obj_Player.x {
-		x += vel * 3;
+if instance_exists(obj_Player) {
+	if x < obj_Player.x {
+		vel = -16;
 	}
 }
 
-vel = scr_Approach(vel, 8, 0.05);
+if !stopped {
+	x -= vel;
+}
+
+vel = scr_Approach(vel, 8, 0.1);
 
 if place_meeting(x, y, obj_Player) {
 	if !obj_Player.playerHurt && !obj_Player.invincible {
 		obj_Player.vel = -15;
 		obj_SFXManager.playerHurt = true;
-		vel = -12;
+		vel = -16;
 		
 		with(obj_Player) {
-			scr_HurtPlayer(250000, 0, false, -6);
+			scr_HurtPlayer(250000, 0, false, -6, true, 20, true);
 		}
 	}
 }

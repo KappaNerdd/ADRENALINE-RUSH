@@ -23,7 +23,7 @@ if !transd {
 				room_goto(target_rm);
 				instance_destroy();
 				
-				if global.Jukebox {
+				if global.Jukebox == 2 {
 					var _custArray = global.CustomJukeboxPlaylist;
 				
 					if global.JukeboxShuffle {
@@ -40,7 +40,15 @@ if !transd {
 		if speedAlpha < 1.5 {
 			speedAlpha += 0.025;
 		} else {
-			room_restart();
+			global.DisableHUD = false;
+			global.FreeFall = false;
+			
+			if room == global.speedStageData[global.SpeedSelected].stage_RM {
+				room_restart();
+			} else {
+				room_goto(global.speedStageData[global.SpeedSelected].stage_RM);
+			}
+			
 			instance_destroy();
 		}
 	}

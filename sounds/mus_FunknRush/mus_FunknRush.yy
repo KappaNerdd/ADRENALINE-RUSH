@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":17.158094,
+  "duration":41.142857,
   "exportDir":"",
   "name":"mus_FunknRush",
   "parent":{

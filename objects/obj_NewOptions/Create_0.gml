@@ -17,6 +17,9 @@ done = false;
 opt = 0;
 choice = 0;
 
+moveTimer = 1;
+moveFrames = 10;
+
 animatedArrow = false;
 arrowAnim2 = 1 / 4;
 arrowFrames2 = 0;
@@ -80,6 +83,7 @@ audio = [
 ]
 
 visual = [
+	["opt_SimpBack", "desc_SimpBack"],
 	["opt_ExtCam", "desc_ExtCam"],
 	["opt_ScrShk", "desc_ScrShk"],
 	["opt_SimpVFX", "desc_SimpVFX"],

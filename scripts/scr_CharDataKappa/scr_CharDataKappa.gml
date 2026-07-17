@@ -9,7 +9,7 @@ function scr_CharDataKappa() {
 	acc = 0.09;
 	normalAcc = 0.09;
 	
-	dcc = 0.12;
+	dcc = 0.18;
 	fric = 0.09;
 	vel = 0;
 	max_Speed = 11;

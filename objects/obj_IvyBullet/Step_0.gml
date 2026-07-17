@@ -18,13 +18,23 @@ if image_angle == 0 {
 		
 		if xspd > 0 {
 			with(instance_create_depth(x + 4, y, depth, obj_IvyBulletSplash)) {
-				sprite_index = spr_IvyBulletSplash;
+				if global.MIND {
+					sprite_index = spr_IvyBulletSplashHead;
+				} else {
+					sprite_index = spr_IvyBulletSplash;
+				}
+				
 				depth = other.depth;
 				image_xscale = 1;
 			}
 		} else if xspd < 0 {
 			with(instance_create_depth(x - 4, y, depth, obj_IvyBulletSplash)) {
-				sprite_index = spr_IvyBulletSplash;
+				if global.MIND {
+					sprite_index = spr_IvyBulletSplashHead;
+				} else {
+					sprite_index = spr_IvyBulletSplash;
+				}
+				
 				depth = other.depth;
 				image_xscale = -1;
 			}
@@ -45,7 +55,12 @@ if image_angle == -90 {
 		instance_destroy();
 		
 		with(instance_create_depth(x, y + 4, depth, obj_IvyBulletSplash)) {
-			sprite_index = spr_IvyBulletSplash;
+			if global.MIND {
+				sprite_index = spr_IvyBulletSplashHead;
+			} else {
+				sprite_index = spr_IvyBulletSplash;
+			}
+				
 			depth = other.depth;
 			image_angle = other.image_angle;
 			image_xscale = 1;

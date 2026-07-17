@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_LevelCard_AkiraSet",
-    "path":"sprites/spr_LevelCard_AkiraSet/spr_LevelCard_AkiraSet.yy",
+    "name":"spr_LevelCardAkiraSet",
+    "path":"sprites/spr_LevelCardAkiraSet/spr_LevelCardAkiraSet.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -11,8 +11,8 @@
   "name":"obj_SAGE25Splash",
   "overriddenProperties":[],
   "parent":{
-    "name":"Splash",
-    "path":"folders/Objects/Title/Other/Splash.yy",
+    "name":"SAGE 2025",
+    "path":"folders/Objects/Title/Other/SAGE 2025.yy",
   },
   "parentObjectId":null,
   "persistent":false,

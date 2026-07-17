@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.9388663,
+  "duration":0.0,
   "exportDir":"",
   "name":"snd_RushBlazeTrick",
   "parent":{

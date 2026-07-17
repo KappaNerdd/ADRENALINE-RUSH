@@ -1,0 +1,9 @@
+scale = random_range(1, 2);
+angleChange = random_range(1, 6);
+xspd = random_range(-5, 5);
+yspd = random_range(-2, 2);
+kysTimer = random_range(30, 60);
+image_xscale = scale;
+image_yscale = scale;
+image_angle = random(360);
+image_alpha = 0;

@@ -44,8 +44,8 @@
   },
   "origin":6,
   "parent":{
-    "name":"Gimmicks",
-    "path":"folders/Sprites/Environments/General/Gimmicks.yy",
+    "name":"Springboards",
+    "path":"folders/Sprites/Environments/General/Gimmicks/Springboards.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

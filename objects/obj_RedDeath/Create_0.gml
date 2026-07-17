@@ -24,4 +24,4 @@ hitLag = 500;
 createDeath = false;
 
 obj_SFXManager.UndertaleDamage = true;
-
+scr_SetCamFollow(noone);

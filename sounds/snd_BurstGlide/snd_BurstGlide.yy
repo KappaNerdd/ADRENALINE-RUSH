@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_BurstGlide",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":10.028503,
+  "exportDir":"",
+  "name":"snd_BurstGlide",
+  "parent":{
+    "name":"Sonic Rush Shit",
+    "path":"folders/Sounds/Sound Effects/Sonic Rush Shit.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_BurstGlide.wav",
+  "volume":0.65,
+}

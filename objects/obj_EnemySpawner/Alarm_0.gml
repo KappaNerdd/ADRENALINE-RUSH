@@ -1,0 +1,1 @@
+scr_EnemySpawn(enemHealth, enemType, enemDamage, enemObject, enemSonicDeath);

@@ -79,11 +79,14 @@ function scr_SpriteDataIvyNormal() {
 	sprStomp = spr_IvyStomped;
 
 	sprRailGrind = spr_IvyRailGrind;
-	sprRailJump = spr_IvyRailJump;
 	
 	sprShootGround = spr_IvyShootGround;
 	sprShootAir = spr_IvyShootAir;
 	
+	//Launchers
+	sprRailJump = spr_IvyRailJump;
+	sprUpLaunch = spr_IvyRailJump;
+	sprSideLaunch = spr_IvyRailJump;
 	
 	//Tricking
 	sprTrickUpPre = spr_IvyTrickUpPre;
@@ -97,10 +100,30 @@ function scr_SpriteDataIvyNormal() {
 	sprTrick3 = spr_IvyTrick3Fin;
 	sprTrick3Fin = spr_IvyTrick3Fin;
 	
-	//Hurt
-	sprOmegaFall = spr_IvyHurt;
-	sprDeath = spr_IvyDeath;
+	sprRailTrick1 = spr_IvyRailGrindCrouch;
+	sprRailTrick2 = spr_IvyRailGrind;
+	sprRailTrick3 = spr_IvyRailGrindCrouch;
 	
 	//Special
 	sprPully = spr_IvyPully;
+	
+	//Hurting
+	sprDeath = spr_IvyDeath;
+	sprOmegaFall = spr_IvyHurt;
+	sprSpiral = spr_IvyHurt;
+	
+	
+	//Victory
+	sprVictory = spr_IvyIdle;
+	
+	//Balance
+	sprBalanceFor = spr_IvyIdle;
+	sprBalanceBack = spr_IvyIdle;
+	
+	//Pushing
+	sprPush = spr_IvyWalk;
+	
+	//Free-Fall
+	sprFreeFall = spr_IvyRailJump;
+	sprFallDash = spr_IvySlide;
 }

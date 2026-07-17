@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"76b7f827-4c8a-4a44-bbd5-cb5d07d1151e","name":"76b7f827-4c8a-4a44-bbd5-cb5d07d1151e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"d5b6a11c-66c7-47e6-8f1c-30f369b77dca","name":"d5b6a11c-66c7-47e6-8f1c-30f369b77dca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"1961ea35-d91a-476f-ba21-b78a4032a370","name":"1961ea35-d91a-476f-ba21-b78a4032a370","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"02a05c69-7fad-4572-bb46-34b07caba559","name":"02a05c69-7fad-4572-bb46-34b07caba559","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ffafa4c7-764f-467a-a380-a559d70a8d57","name":"ffafa4c7-764f-467a-a380-a559d70a8d57","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a7c6c9e9-49d9-4817-ab60-f505d5e4cfd7","name":"a7c6c9e9-49d9-4817-ab60-f505d5e4cfd7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":80,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"cd26ca29-0ff2-4d24-891f-242445c89ad1","blendMode":0,"displayName":"default","isLocked":false,"name":"cd26ca29-0ff2-4d24-891f-242445c89ad1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"4d6010e6-3706-4f87-a7e4-b81023b268f9","blendMode":0,"displayName":"default","isLocked":false,"name":"4d6010e6-3706-4f87-a7e4-b81023b268f9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_KappaCrouch",
   "nineSlice":null,
@@ -73,14 +73,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"76b7f827-4c8a-4a44-bbd5-cb5d07d1151e","path":"sprites/spr_KappaCrouch/spr_KappaCrouch.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b7a39129-6616-48e8-aa60-a1565bdbda4a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"02a05c69-7fad-4572-bb46-34b07caba559","path":"sprites/spr_KappaCrouch/spr_KappaCrouch.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8c43e289-55a7-4058-9456-fd19b243aad7","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d5b6a11c-66c7-47e6-8f1c-30f369b77dca","path":"sprites/spr_KappaCrouch/spr_KappaCrouch.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f16e87d5-4ba3-40cc-8247-4a4dc54a7ff7","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ffafa4c7-764f-467a-a380-a559d70a8d57","path":"sprites/spr_KappaCrouch/spr_KappaCrouch.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a2b4e008-d895-453f-a749-576abeaff277","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1961ea35-d91a-476f-ba21-b78a4032a370","path":"sprites/spr_KappaCrouch/spr_KappaCrouch.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5438e497-2e00-4133-94b3-e714af352dfa","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a7c6c9e9-49d9-4817-ab60-f505d5e4cfd7","path":"sprites/spr_KappaCrouch/spr_KappaCrouch.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"c8486ce5-ab5e-44fd-ad55-6f6c201f632c","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

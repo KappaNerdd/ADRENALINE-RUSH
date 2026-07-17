@@ -5,7 +5,7 @@ if global.PlayerChar == 0 or global.MIND {
 image_alpha = 0;
 image_index = 0;
 image_speed = 0;
-depth = 0;
+depth = -30;
 x = -1000000;
 
 playAnimationTimer = 30;

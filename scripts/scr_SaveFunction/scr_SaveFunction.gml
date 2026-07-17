@@ -73,7 +73,11 @@ function load_game(_fileNum = 0) {
 	//Go to the correct room
 	var _loadRoom = asset_get_index(global.statData[0].save_rm);
 		
-	scr_RoomTrans(obj_RoomTransitionSEGALoad, _loadRoom);
+	if _loadRoom != -1 {	
+		scr_RoomTrans(obj_RoomTransitionSEGALoad, _loadRoom);
+	} else {
+		
+	}
 		
 	//Change player info if the player exists
 	if instance_exists(obj_Player) {

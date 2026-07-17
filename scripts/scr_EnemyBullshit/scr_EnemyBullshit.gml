@@ -1,5 +1,5 @@
 function scr_EnemyCreate() {
-	charKiller = noone;
+	charKiller = global.PlayerID;
 	
 	enemyHealth = 100;
 	enemyType = 1;
@@ -73,21 +73,23 @@ function scr_EnemyStep() {
 						charKiller.rushModeTimer = charKiller.rushModeFrames;
 					}
 				} else {
-					if obj_Player.enemyCombo == 0 {
-						 charKiller.boostEnergy += 10;
-					} else {
-						charKiller.boostEnergy += 10 * charKiller.enemyCombo / 4;
-					}
+					if !global.FreeFall {
+						if obj_Player.enemyCombo == 0 {
+							 charKiller.boostEnergy += 10;
+						} else {
+							charKiller.boostEnergy += 10 * charKiller.enemyCombo / 4;
+						}
 				
-				if charKiller.rushMode {
-						obj_SFXManager.rushModeTrick = true;
-						charKiller.rushModeTimer = charKiller.rushModeFrames;
+						if charKiller.rushMode {
+							obj_SFXManager.rushModeTrick = true;
+							charKiller.rushModeTimer = charKiller.rushModeFrames;
+						}
 					}
 				}
 				
 				scr_GivePoints(100 * obj_Player.enemyCombo);
 				
-				if instance_exists(obj_StageTrackerSpeed) {
+				if instance_exists(obj_Timer) {
 					global.EnemyCount += 1;
 				}
 				
@@ -134,12 +136,19 @@ function scr_PlayerToEnemyShit() {
 			if _toji2 && image_index >= 2 {
 				if !_toji2.launched {
 					_toji2.charKiller = other.id;
-				
-					scr_ScreenShake();
+					
+					scr_ScreenShake(0.5, 10, true, true);
 					scr_ControllerRumble();
-		
+					scr_HitStop(true, 1);
+					
+					scr_DRDamageNumbers(-_toji2.enemyHealth, _toji2.x, _toji2.y);
 					_toji2.enemyHealth -= _toji2.enemyHealth;
 					obj_SFXManager.UndertaleDamage = true;
+					
+					if instance_exists(obj_EnemyCounter) {
+						obj_EnemyCounter.enemyCount--;
+						obj_EnemyCounter.textScale += 0.5;
+					}
 				}
 			}
 		}
@@ -152,12 +161,19 @@ function scr_PlayerToEnemyShit() {
 			if _toji2 {
 				if !_toji2.launched {
 					_toji2.charKiller = other.id;
-				
-					scr_ScreenShake();
+					
+					scr_ScreenShake(0.5, 10, true, true);
 					scr_ControllerRumble();
+					scr_HitStop(true, 1);
 		
+					scr_DRDamageNumbers(-_toji2.enemyHealth, _toji2.x, _toji2.y);
 					_toji2.enemyHealth -= _toji2.enemyHealth;
 					obj_SFXManager.UndertaleDamage = true;
+					
+					if instance_exists(obj_EnemyCounter) {
+						obj_EnemyCounter.enemyCount--;
+						obj_EnemyCounter.textScale += 0.5;
+					}
 				}
 			}
 		}
@@ -168,16 +184,28 @@ function scr_PlayerToEnemyShit() {
 			//If not attacking
 			if !attacking && !megaAttacking {
 				if !_tojiList[| i].launched {
-					scr_HurtPlayer(_tojiList[| i].enemyDamage, _tojiList[| i].enemyKnockback, false, _tojiList[| i].enemyKnockbackY - 2);
+					if !global.FreeFall {
+						if !playerHurt {
+							scr_DRDamageNumbers(-_tojiList[| i].enemyDamage, x, y);
+							scr_HurtPlayer(_tojiList[| i].enemyDamage, _tojiList[| i].enemyKnockback, false, _tojiList[| i].enemyKnockbackY - 2);
+						}
+					} else {
+						if !fakeHurt {
+							scr_DRDamageNumbers(-_tojiList[| i].enemyDamage, x, y, 120);
+						}
+						
+						scr_FreeFallHurt(_tojiList[| i].enemyDamage, true);
+					}
 				}
 			} else if attacking or megaAttacking { //If attacking
 				if !playerHurt && !global.Death && !_tojiList[| i].launched {
 					_tojiList[| i].charKiller = id;
 				
-					scr_ScreenShake();
-					scr_ControllerRumble();
-				
 					if attacking {
+						scr_ScreenShake(0.5, 10, true, true);
+						scr_ControllerRumble();
+						scr_HitStop(true, 1);
+						
 						if jumping && yspd > 0 && !stomping && !fallVel {
 							if realJumping {
 								if jump_Key_Held {
@@ -189,13 +217,29 @@ function scr_PlayerToEnemyShit() {
 								yspd = -yspd - 1;
 							}
 						}
-					
+						
+						scr_DRDamageNumbers(-_tojiList[| i].enemyHealth, _tojiList[| i].x, _tojiList[| i].y);
 						_tojiList[| i].enemyHealth -= _tojiList[| i].enemyHealth;
 						obj_SFXManager.UndertaleDamage = true;
+						
+						if instance_exists(obj_EnemyCounter) {
+							obj_EnemyCounter.enemyCount--;
+							obj_EnemyCounter.textScale += 0.5;
+						}
 					} else if megaAttacking {
+						scr_ScreenShake(1, 20, true, false);
+						scr_ControllerRumble(0.25, 20);
+						scr_HitStop(true, 3);
+						
+						scr_DRDamageNumbers(-_tojiList[| i].enemyHealth, _tojiList[| i].x, _tojiList[| i].y);
 						_tojiList[| i].launched = true;
 						_tojiList[| i].enemyHealth -= _tojiList[| i].enemyHealth;
 						obj_SFXManager.enemyExplode = true;
+						
+						if instance_exists(obj_EnemyCounter) {
+							obj_EnemyCounter.enemyCount--;
+							obj_EnemyCounter.textScale += 0.5;
+						}
 					}
 				}
 			}
@@ -210,145 +254,14 @@ function scr_EnemyDeathParticles(_particle, _amount) {
 	
 	if _partAmount > 0 {
 		if global.Particles {
-			repeat(10) {
-				instance_create_depth(x, y, depth, _particle);
+			repeat(3) {
+				scr_DRFountainSmoke(x, y, depth - 5, random_range(-3, 3), random_range(0.05, 0.25), c_black, c_white, 15, 0.05, 30);
 			}
 		}
 			
 		_partAmount -= 1;
 	}
 }
-
-
-function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback, _ringsFly = true) {
-	if !invincible {
-		var _ringMult = 1;
-		
-		if instance_exists(obj_StageTrackerSpeed) {
-			if global.Rings > 0 {
-				_ringMult = 2;
-			}
-		}
-		
-		global.Health -= _damage / _ringMult;
-		
-		scr_StopCharShit();
-		scr_ScreenShake();
-		scr_ControllerRumble();
-		
-		if _ringsFly {
-			scr_LoseTrinkets();
-		}
-		
-		scr_StopCharControls();
-		
-		scr_BonusPoints(-10000 * (_damage / 100000));
-	
-		var _basedX = _imageXscale;
-		
-		if abs(vel) < max_Speed {
-			if leftFacer {
-				if !face_Left {
-					vel = -_knockback;
-				} else {
-					vel = _knockback;
-				}
-			} else {
-				vel = -_knockback * visXScale;
-			}
-		} else {
-			if !leftFacer {
-				visXScale = -sign(vel);
-			} else {
-				if vel > 0 {
-					face_Left = true;
-				} else {
-					face_Left = false;
-				}
-			}
-		}
-		
-		ground = false;
-		jumping = true;
-		yspd = _yKnockback;
-		speedBreak = false;
-		playerHurt = true;
-		invincible = true;
-		slowSkid = false;
-		
-		event_user(0);
-		event_user(3);
-		
-		if enemyCombo > 0 {
-			enemyCombo = 0;
-		}
-		
-		if rushTrickCombo > 0 {
-			obj_SFXManager.crowdAww = true;
-			event_user(1);
-			rushTrickCombo = 0;
-		}
-		
-		if !rushMode {
-			boostEnergy -= 50;
-		} else {
-			rushModeTimer = 0;
-			boostEnergy -= 150;
-		}
-		
-		obj_SFXManager.playerHurt = true;
-	}
-}
-
-function scr_LoseTrinkets(_loseRings = 50) {
-	if instance_exists(obj_StageTrackerSpeed) {
-		//Lose Trinkets
-		var _rings = 0;
-		var _ringStartAngle = 101.25;
-		var _ringAngle = _ringStartAngle;
-		var _ringFlip = false;
-		var _ringSpeed = 6;
-		var _ringCheck = _loseRings;
-	
-		if global.Rings < _loseRings {
-			_ringCheck = global.Rings;
-		}
-  
-		//Perform loop while the ring counter is less than number of lost rings
-		while _rings < _ringCheck {
-		    //Create the ring
-			var _ringID = instance_create_depth(global.PlayerID.x - 10, global.PlayerID.y - 26, global.PlayerID.depth - 1, obj_LostTrinkets);
-		
-		    _ringID.ringXSpeed = cos(_ringAngle) * _ringSpeed;
-		    _ringID.ringYSpeed = -sin(_ringAngle) * _ringSpeed;
-     
-		    //Every ring created will moving be at the same angle as the other in the current pair, but flipped the other side of the circle
-		    if _ringFlip {
-		        _ringID.ringXSpeed = _ringID.ringXSpeed * -1;
-		        _ringAngle += 22.5;
-		    }
-    
-		    //Toggle flip
-		    _ringFlip = !_ringFlip;
-    
-		    //Increment counter
-		    _rings += 1;
-    
-		    //If we are halfway, start second "circle" of rings with lower speed
-		    if _rings == _ringCheck / 2 {
-		        _ringSpeed = 3;
-		        _ringAngle = _ringStartAngle;
-		    }
-		}
-	
-		if global.Rings > _ringCheck {
-			global.Rings -= _ringCheck;
-		} else {
-			global.Rings -= global.Rings;
-		}
-	}
-}
-
 
 function scr_EnemySpawn(_health, _type, _damage, _enemy, _sonicDeath) {
 	with (instance_create_depth(x, y, depth, _enemy)) {
@@ -362,9 +275,7 @@ function scr_EnemySpawn(_health, _type, _damage, _enemy, _sonicDeath) {
 }
 
 
-function scr_HitLag(_lagTime) { //Unused
-	
-}
+
 
 
 //Stop Char Shit
@@ -384,13 +295,13 @@ function scr_StopCharShit() {
 	obj_TrickScore.comboTimer = 0;
 	
 	//Kappa
-	if instance_exists(obj_KappaHeadOverworld) or instance_exists(obj_KappaNormalOverworld) {
+	if instance_exists(obj_KappaHeadSpeed) or instance_exists(obj_KappaSpeed) {
 		obj_Player.airDash = false;
 	}
 	
 	
 	//Sarah
-	if instance_exists(obj_SarahOverworld) {
+	if instance_exists(obj_SarahSpeed) {
 		obj_Player.hover = false;
 		obj_Player.sideWallJump = false;
 		obj_Player.stompingTimer = obj_Player.stompingFrames;
@@ -401,7 +312,7 @@ function scr_StopCharShit() {
 	
 	
 	//Rush
-	if instance_exists(obj_RushOverworld) {
+	if instance_exists(obj_RushSpeed) {
 		obj_Player.homing_Active = false;
 		obj_Player.homingAttacked = false;
 		obj_Player.preStomp = false;
@@ -417,7 +328,7 @@ function scr_StopCharShit() {
 	
 	
 	//Ivy
-	if instance_exists(obj_IvyOverworld) {
+	if instance_exists(obj_IvySpeed) {
 		obj_Player.shootAir = false;
 		obj_Player.shootGround = false;
 		obj_Player.hShootWeak = false;

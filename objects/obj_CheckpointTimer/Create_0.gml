@@ -7,3 +7,5 @@ image_alpha = 1;
 
 selfMinutes = 0;
 selfSeconds = 0;
+
+moveY = 0;

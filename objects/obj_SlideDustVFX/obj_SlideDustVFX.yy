@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_SlideDustVFX",
-    "path":"sprites/spr_SlideDustVFX/spr_SlideDustVFX.yy",
+    "name":"spr_NewDust",
+    "path":"sprites/spr_NewDust/spr_NewDust.yy",
   },
   "spriteMaskId":null,
   "visible":true,

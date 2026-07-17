@@ -183,10 +183,11 @@ if !completed {
 				if instance_exists(obj_InputRecorder) {
 					with(obj_InputRecorder) {
 						if other.action1_Key && !other.replayGotSaved {
-							other.replayGotSaved = true;
-							obj_SFXManager.homingLockOn = true;
-							scr_WriteInputRecording(fileName);
-							scr_SaveReplayChar(fileName);
+							//other.replayGotSaved = true;
+							//obj_SFXManager.homingLockOn = true;
+							//scr_WriteInputRecording(fileName);
+							//scr_SaveReplayChar(fileName);
+							obj_SFXManager.menuCancel = true;
 						}
 					}
 				} else {

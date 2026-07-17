@@ -68,6 +68,7 @@ sonicRushDirTrick = false;
 
 blazeRushTrick = false;
 blazeRushDirTrick = false;
+blazeRushDirTrick2 = false;
 
 crowdFail = false;
 crowd = false;
@@ -85,6 +86,8 @@ catMeow = false;
 //---Hurt---//
 playerHurt = false;
 enemyExplode = false;
+playerDeath = false;
+enemyCounter = false;
 
 //---Jump & Double Jump---//
 jumpSound = false;
@@ -125,6 +128,8 @@ railJump = false;
 trick = false;
 
 
+//Lucifer
+burstGlide = false;
 
 
 //Rush & Edge

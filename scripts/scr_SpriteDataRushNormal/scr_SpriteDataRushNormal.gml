@@ -88,7 +88,6 @@ function scr_SpriteDataRushNormal() {
 	sprStomping = spr_RushStomping;
 
 	sprRailGrind = spr_RushRailGrind;
-	sprRailJump = spr_RushRailJump;
 	
 	sprTrickUpPre = spr_RushTrickUpPre;
 	sprTrickUp = spr_RushTrickUp;
@@ -101,11 +100,37 @@ function scr_SpriteDataRushNormal() {
 	sprTrick3 = spr_RushTrick3Fin;
 	sprTrick3Fin = spr_RushTrick3Fin;
 	
+	sprRailTrick1 = spr_RushRailGrindCrouch;
+	sprRailTrick2 = spr_RushRailGrind;
+	sprRailTrick3 = spr_RushRailGrindCrouch;
 	
-	//Hurt
-	sprOmegaFall = spr_RushHurt;
-	sprDeath = spr_RushDeath;
+	//Launches
+	sprRailJump = spr_RushRailJump;
+	sprUpLaunch = spr_RushRailJump;
+	sprSideLaunch = spr_RushRailJump;
 	
 	//Special
 	sprPully = spr_RushPully;
+	sprHoming = spr_RushRolling;
+	
+	
+	//Hurting
+	sprDeath = spr_RushDeath;
+	sprOmegaFall = spr_RushHurt;
+	sprSpiral = spr_RushHurt;
+	
+	
+	//Victory
+	sprVictory = spr_RushIdle;
+	
+	//Balance
+	sprBalanceFor = spr_RushIdle;
+	sprBalanceBack = spr_RushIdle;
+	
+	//Pushing
+	sprPush = spr_RushWalk;
+	
+	//Free-Fall
+	sprFreeFall = spr_RushRailJump;
+	sprFallDash = spr_RushRolling;
 }

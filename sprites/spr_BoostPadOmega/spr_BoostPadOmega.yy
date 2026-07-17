@@ -38,7 +38,7 @@
   "origin":7,
   "parent":{
     "name":"Boost Pads",
-    "path":"folders/Sprites/Environments/General/Boost Pads.yy",
+    "path":"folders/Sprites/Environments/General/Gimmicks/Boost Pads.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

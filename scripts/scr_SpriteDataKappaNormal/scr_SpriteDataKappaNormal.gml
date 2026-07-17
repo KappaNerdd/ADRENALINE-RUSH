@@ -129,4 +129,8 @@ function scr_SpriteDataKappaNormal() {
 	
 	//Pushing
 	sprPush = spr_KappaPush;
+	
+	//Free-Fall
+	sprFreeFall = spr_KappaCDTwirl;
+	sprFallDash = spr_KappaDJump;
 }

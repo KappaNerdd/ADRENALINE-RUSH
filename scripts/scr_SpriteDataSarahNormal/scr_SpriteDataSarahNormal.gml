@@ -111,7 +111,7 @@ function scr_SpriteDataSarahNormal() {
 	
 	//Other Actions
 	sprStomping = spr_SarahStomping;
-	sprOmegaStomping = spr_SarahOmegaStomping;
+	sprOmegaStomping = spr_SarahOmegaStompingRight;
 	sprStomp = spr_SarahStomped;
 
 	
@@ -184,4 +184,10 @@ function scr_SpriteDataSarahNormal() {
 	
 	//Victory
 	sprVictory = spr_SarahVictory;
+	
+	//Free-Fall
+	sprFreeFallRight = spr_SarahLauncherUpRight;
+	sprFreeFallLeft = spr_SarahLauncherUpLeft;
+	sprFallDashRight = spr_SarahFallDashRight;
+	sprFallDashLeft = spr_SarahFallDashLeft;
 }

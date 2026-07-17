@@ -130,6 +130,16 @@ if rankSlam {
 }
 
 //Rush Death
+if playerDeath {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_KYS, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	playerDeath = false;
+}
+
+//Rush Death
 if rushDeath {
 	
 	//Play Sound
@@ -358,6 +368,16 @@ if blazeRushDirTrick {
 	blazeRushDirTrick = false;
 }
 
+//Blaze Rush Dir Trick
+if blazeRushDirTrick2 {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_RushBlazeDirTrick2, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	blazeRushDirTrick2 = false;
+}
+
 //Crowd Fail
 if crowdFail {
 	
@@ -430,14 +450,35 @@ if enemyExplode == true {
 	//Play Sound
 	var _snd = audio_play_sound(snd_EnemyExplode, 8, false);
 	audio_sound_gain(_snd, _sfxVol, 0);
-	audio_sound_pitch(_snd, random_range(0.8, 1.2));
+	audio_sound_pitch(_snd, random_range(0.75, 1.25));
 	
 	enemyExplode = false;
+}
+
+//Enemy Counter
+if enemyCounter {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_EnemyCounter, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	enemyCounter = false;
 }
 
 
 ///-----Player Actions-----///
 
+//---Lucifer---//
+
+//Burst Glide
+if burstGlide {
+	
+	//Play Sound
+	var _snd = audio_play_sound(snd_BurstGlide, 8, false);
+	audio_sound_gain(_snd, _sfxVol, 0);
+	
+	burstGlide = false;
+}
 
 //---Rush & Edge---//
 

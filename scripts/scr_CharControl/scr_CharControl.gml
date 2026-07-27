@@ -212,6 +212,12 @@ function scr_BasicVariablesSpeedCreate() {
 		dustCreateTimer = 0;
 		dustCreateFrames = 4;
 	#endregion
+	
+	#region //Character Colors
+		charR = 255;
+		charG = 255;
+		charB = 255;
+	#endregion
 }
 
 function scr_BasicControlsSpeedStep1() {
@@ -361,7 +367,9 @@ function scr_BasicControlsSpeedStep1() {
 	
 	#region //Run Fast Particles
 		if abs(vel) >= full_Speed && ground && global.Particles {
-			instance_create_depth(x + angleSin * 10, y + angleCos * 10, depth + 1, obj_BoostParticles);
+			with(instance_create_depth(x + angleSin * 10, y + angleCos * 10, depth + 1, obj_BoostParticles)) {
+				sprite_index = other.trinkPart;
+			}
 		}
 	#endregion
 	

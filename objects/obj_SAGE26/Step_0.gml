@@ -5,7 +5,7 @@ if jump_Key or pause_Key {
 		audio_stop_sound(snd_SAGE26Jingle);
 	}
 	
-	scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_MainMenuNew);
+	scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_NewTitleIntro);
 }
 
 if leaveTimer > 0 {
@@ -18,7 +18,7 @@ if leaveTimer > 0 {
 	}
 } else {
 	audio_stop_sound(snd_SAGE26Jingle);
-	scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_MainMenuNew);
+	scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_NewTitleIntro);
 }
 
 moveX += changeSpd;

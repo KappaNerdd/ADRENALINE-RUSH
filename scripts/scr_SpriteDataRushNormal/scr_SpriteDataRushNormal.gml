@@ -1,4 +1,8 @@
 function scr_SpriteDataRushNormal() {
+	//Particles & VFX
+	trinkPart = spr_BoostEmblemRush;
+	trickFinalePart = spr_RushTrickFinalVFX;
+	
 	//Palettes
 	basePal = spr_RushPalette;
 	

@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Kappa (Head)",
-    "path":"folders/Sprites/HUD/Boost Meter/Kappa (Head).yy",
+    "name":"Head",
+    "path":"folders/Sprites/HUD/Boost Meter/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

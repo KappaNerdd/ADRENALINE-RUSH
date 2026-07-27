@@ -35,3 +35,12 @@ function scr_OverRoomTrans(_x = 0, _y = 0, _rm = noone, _xscale = 1, _div = 1, _
 		}
 	}
 }
+
+function scr_WhiteTrans(_rm = noone, _div = 1) {
+	if !instance_exists(obj_RoomTransParent) {
+		with(instance_create_depth(-100, 0, -10, obj_BaseWhiteTrans)) {
+			target_rm = _rm;
+			division = _div;
+		}
+	}
+}

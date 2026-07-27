@@ -1,4 +1,10 @@
 function scr_CharDataKappa() {
+	///-----RGB Colors-----///
+	if !global.MIND && global.PlayerChar != 0 {
+		charR = 010; 
+		charG = 036; 
+		charB = 203;
+	}
 	
 	///-----Number Variables-----///
 	

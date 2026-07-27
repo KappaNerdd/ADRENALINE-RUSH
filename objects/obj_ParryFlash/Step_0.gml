@@ -1,12 +1,13 @@
 if kysTimer == 1 {
-	hitLag = 180;
+	hitLag = hitLagCheck;
 }
 
 //HitLag
-var _time = current_time;  
-while current_time - _time < hitLag {  
+var _time = current_time;
+
+while current_time - _time < hitLag {
 	
-}  
+}
 
 if hitLag > 0 {
 	hitLag -= hitLag;

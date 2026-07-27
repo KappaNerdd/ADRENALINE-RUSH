@@ -327,7 +327,11 @@ if can_MoveFULL {
 
 	#region //Stomping
 		if !ground && !stomping && !playerHurt && (down_Key && action_Key) {
-			stomping = true
+			if drawAngle != 0 {
+				y += 20;
+			}
+			
+			stomping = true;
 			hover = false;
 			wallJump = false;
 			afterWallJump = false;

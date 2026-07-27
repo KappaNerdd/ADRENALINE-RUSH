@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"VFX",
-    "path":"folders/Sprites/Characters/Players/Kappa/VFX.yy",
+    "path":"folders/Sprites/Characters/Players/Head/VFX.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

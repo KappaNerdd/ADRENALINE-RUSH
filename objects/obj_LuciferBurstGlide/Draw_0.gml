@@ -19,15 +19,27 @@ if charID != noone {
 		}
 		
 		if abs(charID.vel) < charID.max_Speed {
-			if charID.vel > 0 {
-				_angle = (-45) * (charID.vel / charID.max_Speed);
-			} else if charID.vel < 0 {
-				_angle = (45) * (charID.vel / -charID.max_Speed);
-			}
+			_angle = -60 * (charID.vel / charID.max_Speed);
 		} else {
-			_angle = -45 * _boostXscale;
+			var _faceCheck = 1;
+			
+			if charID.vel > 0 {
+				if _boostXscale == 1 {
+					_faceCheck = 1;
+				} else {
+					_faceCheck = -1;
+				}
+			} else if charID.vel < 0 {
+				if _boostXscale == 1 {
+					_faceCheck = -1;
+				} else {
+					_faceCheck = 1;
+				}
+			}
+			
+			_angle = -60 * (_boostXscale * _faceCheck);
 		}
 	}
 }
 
-draw_sprite_ext(sprite_index, image_index, _x - (10 * _boostXscale), _y, 0.75, 0.75, _angle, c_white, 1);
+draw_sprite_ext(sprite_index, image_index, _x - (5 * _boostXscale), _y, 1, 1, _angle, c_white, 1);

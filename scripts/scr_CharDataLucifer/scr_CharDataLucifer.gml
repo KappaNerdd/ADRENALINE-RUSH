@@ -1,4 +1,11 @@
 function scr_CharDataLucifer() {
+	///-----RGB Colors-----///
+	if !global.MIND && global.PlayerChar != 0 {
+		charR = 207; 
+		charG = 041; 
+		charB = 229;
+	}
+	
 	///-----Number Variables-----///
 	
 	//Angle

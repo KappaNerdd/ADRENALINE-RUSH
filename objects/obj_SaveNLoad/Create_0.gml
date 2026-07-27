@@ -1010,7 +1010,7 @@
 			[spr_BoostEmblemIvyRush, 1], //RUSH MODE Version of Boost Emblem (Optional (Animated): Sprite Strip)
 			[spr_LifeIvySet, spr_LifeIvySetColor, spr_StageCharIvySet, spr_LifeIvyHead, 1], //Extra Life Icon/STAGE Char Icon (Optional (Costumes): Sprite Strip)
 			[spr_IvyBoost, spr_IvyBoostSimple, spr_IvyStompingVFX, spr_IvyStompedVFX, spr_IvySpeedBreakVFX, 1], //Boost
-			[spr_IvyFinalTrickVFX, 1], //Trick Icon that appears when you do a Rush Trick Finish (Optional (Animated): Sprite Strip)
+			[spr_IvyTrickFinalVFX, 1], //Trick Icon that appears when you do a Rush Trick Finish (Optional (Animated): Sprite Strip)
 		
 			mus_FreeplayIMvt, //Freeplay Theme (Recommend 160 BPM, for consistancy with base tracks)
 			mus_Holster, //Pause Theme (Ditto for Freeplay)
@@ -1139,6 +1139,7 @@
 		[mus_LostReason, "mus_Lost", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		
 		[mus_CestLaVie, "mus_Cest", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_RoundNRound_Full, "mus_RoundN", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_WrapItUpK, "mus_WrapK", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_WrapItUpL, "mus_WrapL", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
 		[mus_FunknRushNew, "mus_Funk", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
@@ -1183,9 +1184,9 @@
 
 		[mus_NotAllBad, "mus_NotAllBad", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
 		
-		[mus_Diminished, "mus_Diminished", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_Lighter, "mus_Lighter", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_LitUp2HOT, "mus_FeelinNice", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_Diminished, "mus_Diminished", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		[mus_Lighter, "mus_Lighter", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
+		[mus_LitUp2HOT, "mus_FeelinNice", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
 		
 		[mus_FeelDaWind, "mus_Hurricane", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
 		
@@ -1225,7 +1226,7 @@
 			ambience: 1, //Ambience Volume
 			uniquePause: false, //Unique Pause Theme
 			footStep: true, //Character Foot Steps
-			invincible: 0,
+			invincible: 0, //Invincibility Theme
 		},
 	
 		{ //Visual Options
@@ -1263,8 +1264,8 @@
 		},
 		
 		{ //Online Options
-			discord: true,
-			ghost: true,
+			discord: true, //Discord Rich Prescence
+			ghost: true, //SPEED Stage Ghost Replay
 		},
 
 	]
@@ -1447,7 +1448,7 @@
 		
 			rankS_Time: 140, rankA_Time: 150, rankB_Time: 205, rankC_Time: 225, rankD_Time: 250, rankF_Time: 320,
 			
-			rankS_Score: 130000, rankA_Score: 100000, rankB_Score: 70000, rankC_Score: 40000, rankD_Score: 10000,
+			rankS_Score: 125000, rankA_Score: 100000, rankB_Score: 65000, rankC_Score: 30000, rankD_Score: 10000,
 			
 			rings: 0, rings_Rank: 0, rankS_Ring: 275,
 			
@@ -1473,7 +1474,7 @@
 		
 			requirement: "condit_StoryMode", record_File: "mind1_Ghost", folder_Name: "/mind1/",
 			
-			levelID: "id_Mind1",
+			levelID: "Mind1",
 		},
 	
 		{ //MIND Level 2
@@ -1507,7 +1508,41 @@
 		
 			requirement: "condit_StoryMode", record_File: "mind2_Ghost", folder_Name: "/mind2/",
 			
-			levelID: "id_Mind2",
+			levelID: "Mind2",
+		},
+		
+		{ //MIND Level 3
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed3, levelForced: false,
+		
+			rankS_Time: 135, rankA_Time: 145, rankB_Time: 200, rankC_Time: 220, rankD_Time: 245, rankF_Time: 315,
+			
+			rankS_Score: 75000, rankA_Score: 55000, rankB_Score: 35000, rankC_Score: 15000, rankD_Score: 5000,
+			
+			rings: 0, rings_Rank: 0, rankS_Ring: 350,
+			
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 25,
+			
+			jsrSecrets: [false, false, false, false, false], musicSecret: false,
+			
+			player_Char: -1, player_Sprite: spr_StageCharNone, player_Costume: 0,
+			
+			player_CharTime: -1, player_SpriteTime: spr_StageCharNone, player_CostumeTime: 0,
+			
+			player_CharScore: -1, player_SpriteScore: spr_StageCharNone, player_CostumeScore: 0,
+			
+			player_CharRings: -1, player_SpriteRings: spr_StageCharNone, player_CostumeRings: 0,
+			
+			player_CharEnemy: -1, player_SpriteEnemy: spr_StageCharNone, player_CostumeEnemy: 0,
+		
+			rank: 0, rankTime: 0, totalTime: 99999, rankScore: 0, minutes: 99, seconds: 59.99, gameScore: 00000,
+		
+			locked: false, complete: false, mind: true, stage_Sprite: spr_LevelMindHead, level_Sprite: spr_Level3Head,
+			
+			musicTrack: mus_MyMind, musicTrackGirly: mus_MyMindGirly,
+		
+			requirement: "condit_StoryMode", record_File: "mind3_Ghost", folder_Name: "/mind3/",
+			
+			levelID: "Mind3",
 		},
 		
 		{ //MIND Level Boss
@@ -1541,7 +1576,7 @@
 		
 			requirement: "condit_StoryMode", record_File: "mindBoss_Ghost", folder_Name: "/mind_boss/",
 			
-			levelID: "id_MindBoss",
+			levelID: "MindBoss",
 		},
 	
 	]

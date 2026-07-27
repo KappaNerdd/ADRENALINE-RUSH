@@ -524,6 +524,8 @@ if can_MoveFULL {
 	#region //Extra Trick Shit
 		if rightTrick or leftTrick {
 			bursting = true;
+		} else if upTrick {
+			bursting = false;
 		}
 		
 		if bursting {

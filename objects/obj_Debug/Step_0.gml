@@ -50,12 +50,8 @@ if global.DEBUG {
 		room_goto(rm_CharSelectNew);
 	}
 	
-	if keyboard_check_pressed(ord("]")) {
-		global.BPM++;
-	}
-	
-	if keyboard_check_pressed(ord("[")) {
-		global.BPM--;
+	if keyboard_check_pressed(ord("3")) {
+		game_restart();
 	}
 }
 

@@ -1,7 +1,7 @@
 if !killed {
 	if !shake {
 		if textScale > 1 {
-			lowerScale += 0.05;
+			lowerScale += 0.1;
 			textScale -= lowerScale;
 			graphScale -= lowerScale;
 		} else {
@@ -14,7 +14,7 @@ if !killed {
 	} else {
 		if createTimer <= 0 {
 			fakeX = lerp(fakeX, 700, 0.1);
-			fakeY = lerp(fakeY, 30, 0.1);
+			fakeY = lerp(fakeY, 60, 0.1);
 		}
 	}
 	

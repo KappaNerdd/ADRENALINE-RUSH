@@ -10,8 +10,8 @@
   "name":"obj_MusicTag",
   "overriddenProperties":[],
   "parent":{
-    "name":"Music System",
-    "path":"folders/Objects/Initialization/Music System.yy",
+    "name":"Unused",
+    "path":"folders/Objects/Initialization/Music System/Unused.yy",
   },
   "parentObjectId":null,
   "persistent":true,

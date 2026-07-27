@@ -1,4 +1,8 @@
 function scr_SpriteDataSarahNormal() {
+	//Particles & VFX
+	trinkPart = spr_BoostEmblemSarah;
+	trickFinalePart = spr_SarahTrickFinalVFX;
+	
 	//Palettes
 	basePal = spr_SarahPalette;
 	

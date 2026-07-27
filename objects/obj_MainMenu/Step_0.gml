@@ -64,13 +64,13 @@ getCharacterControls();
 		}
 		
 		if !storyChosen && !goContinue {
-			if nerd == 0 {
+			/*if nerd == 0 {
 				global.PlayerChar = 1;
 				global.Girly = false;
 			} else {
 				global.PlayerChar = 2;
 				global.Girly = true;
-			}
+			}*/
 		}
 	#endregion
 
@@ -259,7 +259,9 @@ if !confirm {
 	#region //Cancel
 		if action_Key && !instance_exists(obj_NewOptions) && !instance_exists(obj_RoomTransParent) && !cancelMenu && !newGameWarning {
 			if !moveGameplay && !moveStory && !moveExtra {
-				scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_FreeplayNew);
+				scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_NewTitleIntro);
+				obj_SFXManager.UNDERTALEBombFly = true;
+				set_song_ingame(noone, 30);
 			} else {
 				if !menuChosen {
 					waitTimer = 30;

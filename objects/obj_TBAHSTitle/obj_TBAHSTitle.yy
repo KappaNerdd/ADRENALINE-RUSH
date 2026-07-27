@@ -10,8 +10,8 @@
   "name":"obj_TBAHSTitle",
   "overriddenProperties":[],
   "parent":{
-    "name":"Other",
-    "path":"folders/Objects/Title/Other.yy",
+    "name":"Old",
+    "path":"folders/Objects/Title/Other/Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,4 +1,11 @@
 function scr_CharDataSarah() {
+	///-----RGB Colors-----///
+	if !global.MIND && global.PlayerChar != 0 {
+		charR = 255; 
+		charG = 054; 
+		charB = 144;
+	}
+	
 	///-----Number Variables-----///
 	
 	//Angle

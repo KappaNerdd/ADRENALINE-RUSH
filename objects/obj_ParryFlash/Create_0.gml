@@ -3,4 +3,5 @@ obj_SFXManager.parry = true;
 
 kysTimer = 2;
 
-hitLag = 10;
+hitLagCheck = 0;
+hitLag = 0;

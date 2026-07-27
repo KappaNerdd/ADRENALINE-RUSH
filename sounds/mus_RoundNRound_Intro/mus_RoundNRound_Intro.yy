@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_RoundNRound_Intro",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.818186,
+  "exportDir":"",
+  "name":"mus_RoundNRound_Intro",
+  "parent":{
+    "name":"Title",
+    "path":"folders/Sounds/Music/Title.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_RoundNRound_Intro.ogg",
+  "volume":1.0,
+}

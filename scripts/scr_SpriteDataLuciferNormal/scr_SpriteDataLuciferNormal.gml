@@ -1,4 +1,8 @@
 function scr_SpriteDataLuciferNormal() {
+	//Particles & VFX
+	trinkPart = spr_BoostEmblemLucifer;
+	trickFinalePart = spr_LuciferTrickFinalVFX;
+	
 	//Palettes
 	basePal = spr_LuciferPalette;
 	

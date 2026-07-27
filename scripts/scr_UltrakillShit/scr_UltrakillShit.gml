@@ -15,3 +15,9 @@ function scr_ULTRATEXT(_text = "game_Whoops", _time = 300) {
 		}
 	}
 }
+
+function scr_ULTRAPARRY(_lag = 180) {
+	with(instance_create_depth(-100, 0, 0, obj_ParryFlash)) {
+		hitLagCheck = _lag;
+	}
+}

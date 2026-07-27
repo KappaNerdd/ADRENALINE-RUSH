@@ -1,4 +1,8 @@
 function scr_SpriteDataIvyNormal() {
+	//Particles & VFX
+	trinkPart = spr_BoostEmblemIvy;
+	trickFinalePart = spr_IvyTrickFinalVFX;
+	
 	//Palettes
 	basePal = spr_IvyPalette;
 	

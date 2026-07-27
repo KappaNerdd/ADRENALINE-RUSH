@@ -627,13 +627,8 @@ function scr_AirTricksStep() {
 			if global.Particles {
 				var _particles = ceil(random(5));
 				
-				repeat(5 + _particles) {
-					instance_create_depth(x, y, depth, obj_TrickParticles);
-				}
-				
-				repeat(10 + _particles) {
-					instance_create_depth(-100000, 0, 0, obj_TrickConfetti);
-				}
+				scr_RushTrickVFX(3 + _particles)
+				scr_RushTrickConfetti(10 + _particles);
 			}
 
 		}
@@ -689,15 +684,9 @@ function scr_AirTricksStep() {
 				if global.Particles {
 					var _particles = ceil(random(5));
 					
-					instance_create_depth(x, y, depth, obj_FinalTrickParticles);
-				
-					repeat(10 + _particles) {
-						instance_create_depth(x, y, depth, obj_TrickParticles);
-					}
-				
-					repeat(15 + _particles) {
-						instance_create_depth(-100000, 0, 0, obj_TrickConfetti);
-					}
+					scr_RushTrickFinaleVFX();
+					scr_RushTrickVFX(7 + _particles)
+					scr_RushTrickConfetti(15 + _particles);
 				}
 			}
 		}
@@ -1111,13 +1100,8 @@ function scr_RailTricksStep() {
 			if global.Particles {
 				var _particles = ceil(random(5));
 				
-				repeat(5 + _particles) {
-					instance_create_depth(x, y, depth, obj_TrickParticles);
-				}
-				
-				repeat(10 + _particles) {
-					instance_create_depth(-100000, 0, 0, obj_TrickConfetti);
-				}
+				scr_RushTrickVFX(3 + _particles);
+				scr_RushTrickConfetti(5 + _particles);
 			}
 			
 			if !railTrickUno && !railTrickDos {
@@ -1126,7 +1110,7 @@ function scr_RailTricksStep() {
 				
 				boostEnergy += 10;
 				
-				vel += 1 * sign(vel);
+				vel += 0.5 * sign(vel);
 				
 				rushTrickScore += 100;
 				scr_GivePoints(100);
@@ -1143,7 +1127,7 @@ function scr_RailTricksStep() {
 				
 				boostEnergy += 20;
 				
-				vel += 2 * sign(vel);
+				vel += 1 * sign(vel);
 				
 				rushTrickScore += 200;
 				scr_GivePoints(200);
@@ -1160,7 +1144,7 @@ function scr_RailTricksStep() {
 				
 				boostEnergy += 30;
 				
-				vel += 3 * sign(vel);
+				vel += 2 * sign(vel);
 				
 				rushTrickScore += 800;
 				scr_GivePoints(800);
@@ -1230,7 +1214,7 @@ function scr_RushModeColorCreate() {
 	extraAlpha = 1;
 	rushModeColor = false;
 	rushModeAlpha = 0;
-	rushColor = global.fullRGB;
+	rushColor = make_colour_rgb(charR, charG, charB);
 	
 	anims = 1 / 2;
 	
@@ -1263,6 +1247,7 @@ function scr_RushModeColorCreate() {
 		copyRecord = 1;
 		visible = false;
 		image_alpha = 1;
+		image_blend = other.rushColor;
 	}
 	
 	with(instance_create_depth(x, y, depth + 1, obj_PlayerAfterImages)) {
@@ -1270,6 +1255,7 @@ function scr_RushModeColorCreate() {
 		copyRecord = 3;
 		visible = true;
 		image_alpha = 0.66;
+		image_blend = other.rushColor;
 	}
 	
 	with(instance_create_depth(x, y, depth + 1, obj_PlayerAfterImages)) {
@@ -1277,6 +1263,7 @@ function scr_RushModeColorCreate() {
 		copyRecord = 5;
 		visible = false;
 		image_alpha = 0.34;
+		image_blend = other.rushColor;
 	}
 }
 

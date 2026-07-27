@@ -1,4 +1,10 @@
 function scr_CharDataIvy() {
+	///-----RGB Colors-----///
+	if !global.MIND && global.PlayerChar != 0 {
+		charR = 255; 
+		charG = 189; 
+		charB = 000;
+	}
 	
 	///-----Number Variables-----///
 	

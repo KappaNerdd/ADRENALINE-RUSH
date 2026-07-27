@@ -143,3 +143,25 @@ function scr_LuciBurstGlide(_x, _y, _angle, _follow, _check) {
 		}
 	}
 }
+	
+function scr_RushTrickConfetti(_amount = 1) {
+	repeat(_amount) {
+		instance_create_depth(-100000, 0, 0, obj_TrickConfetti);
+	}
+}
+
+function scr_RushTrickVFX(_amount = 1) {
+	repeat(_amount) {
+		with(instance_create_depth(x, y, depth, obj_TrickParticles)) {
+			charCheck = other.id;
+			sprite_index = other.trinkPart;
+		}
+	}
+}
+
+function scr_RushTrickFinaleVFX() {
+	with(instance_create_depth(x, y, depth, obj_FinalTrickParticles)) {
+		charCheck = other.id;
+		sprite_index = other.trickFinalePart;
+	}
+}

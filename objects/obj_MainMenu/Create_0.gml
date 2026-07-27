@@ -71,6 +71,7 @@ extra = [
 	["title_Boombox", spr_GameplayRender, true],
 	["title_Gallery", spr_GameplayRender, false],
 	["title_Bios", spr_GameplayRender, true],
+	["title_Enemy", spr_GameplayRender, false],
 ]
 
 gameplayChosen = false;
@@ -97,17 +98,17 @@ retTimer = 5;
 
 confirm = false;
 
-extraScale = 0;
+extraScale = global.BaseScale;
 
-backTextX = 384;
-otherBackTextX = -384;
+backTextX = global.BaseX;
+otherBackTextX = -global.BaseX;
 
 baseTextX = 384;
 otherBaseTextX = -384;
 
 menuRet = false;
 
-srSpikesIndex = 0;
+srSpikesIndex = global.BaseSpikes;
 
 charX = 0;
 

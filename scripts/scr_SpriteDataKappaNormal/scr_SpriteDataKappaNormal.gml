@@ -1,4 +1,8 @@
 function scr_SpriteDataKappaNormal() {
+	//Particles & VFX
+	trinkPart = spr_BoostEmblemKappa;
+	trickFinalePart = spr_KappaTrickFinalVFX;
+	
 	//Palettes
 	basePal = spr_KappaPalette;
 	

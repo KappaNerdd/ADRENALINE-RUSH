@@ -1,4 +1,10 @@
 function scr_CharDataRush() {
+	///-----RGB Colors-----///
+	if !global.MIND && global.PlayerChar != 0 {
+		charR = 000; 
+		charG = 200; 
+		charB = 248;
+	}
 	
 	///-----Number Variables-----///
 	

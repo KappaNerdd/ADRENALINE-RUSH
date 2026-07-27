@@ -40,7 +40,13 @@ if !global.SongTag {
 		songName = scr_LocalText("mus_Solemn");
 		songCredits = scr_LocalText("comp_Nerd");
 	}
-
+	
+	///-----Oooo, Round 'n' Round-----///
+	if audio_is_playing(mus_RoundNRound_Intro) or audio_is_playing(mus_RoundNRound_Loop) or audio_is_playing(mus_RoundNRound_Full) {
+		songName = scr_LocalText("mus_RoundN");
+		songCredits = scr_LocalText("comp_Nerd");
+	}
+	
 	///-----Wakey-Wakey-----///
 	if audio_is_playing(mus_WakeyWakey) {
 		songName = scr_LocalText("mus_Wakey");

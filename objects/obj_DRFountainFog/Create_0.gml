@@ -1,6 +1,6 @@
 revGrav = 0;
 
-size = 35;
+size = 40;
 col = c_black;
 
 createPart = true;
@@ -10,7 +10,7 @@ angleChange = 0;
 randomAngle = 0;
 
 savedX = 0;
-savedY = room_height + 15;
+savedY = room_height + 20;
 
 moveX = 0;
 moveY = 0;

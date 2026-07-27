@@ -27,7 +27,7 @@
 	glided = false;
 	
 	glideBurstTimer = 0;
-	glideBurstFrames = 12;
+	glideBurstFrames = 7;
 #endregion
 
 #region //Stomping

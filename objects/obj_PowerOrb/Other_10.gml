@@ -1,6 +1,6 @@
 active = false;
 
-instance_create_depth(-1000000, 0, -20, obj_ParryFlash);
+scr_ULTRAPARRY(180);
 						
 scr_ControllerRumble();
 						

@@ -42,18 +42,18 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 - Saiyan - My first cat that kept me in this world and gave me motivation
 
 ## THE CREW
-- [Huisti](https://bsky.app/profile/kappanerd.bsky.social) - Spanish (Español) Translation
+- [Huisti](https://x.com/Huisti785) - Spanish (Español) Translation
 
 ## SPECIAL GUESTS
-- [CrystalsDreaming](https://bsky.app/profile/crystalsdreaming.bsky.social) - Creator of Ivy
-- [kira_nk](https://x.com/notokaay19) - Creator of Akira, Taylor, & Ayana
+- Ness - Creator of Ivy
+- Brandon - Creator of Akira, Taylor, & Ayana
 
 ## PERSONAL PLAYTESTERS
-- [kira_nk](https://x.com/notokaay19)
-- [Huisti](https://bsky.app/profile/kappanerd.bsky.social)
+- [Brandon](https://x.com/notokaay19)
+- [Huisti](https://x.com/Huisti785)
 - CrossxOverOG
 - [EkuriMoon](https://x.com/EkuriMoonn)
-- [CrystalsDreaming](https://bsky.app/profile/crystalsdreaming.bsky.social)
+- Ness
 - miracle_captors714
 
 ## PLAYTESTERS
@@ -63,7 +63,7 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 - [ThatUnnamedPersonXP](https://bsky.app/profile/thatunnamedperson.bsky.social) - Being an asshole and a long-time supporter of the game
 - [sleeplesscake](https://bsky.app/profile/sleeplesscake.bsky.social) - Created the game's first fan-art and being a long-time supporter of the game
 - [Casserole Comix](https://bsky.app/profile/casserolecomix.bsky.social) - Gave me motivation to pursue art back in 5th grade
-- [Vtuber Hikiyami Moriko](https://www.youtube.com/channel/UCEqEk-Ti4p0vI3s8ufInJgA) - The first to make a video during the game's first protoype
+- [Hikiyami Moriko Ch](https://www.youtube.com/channel/UCEqEk-Ti4p0vI3s8ufInJgA) - The first to make a video during the game's first prototype
 - [Sonic Retro](https://info.sonicretro.org/Sonic_Physics_Guide) - Sonic Physics Guide
 - [DFelipeh](https://sonicfangameshq.com/forums/members/dfelipeh.5901/) - Sonic Astral Engine Physics
 - [Peyton Burnham](https://www.youtube.com/@peytonburnham4316) - Many GameMaker YouTube Tutorials

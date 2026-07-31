@@ -37,8 +37,8 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 
 # CREDITS 'N' SPECIAL THANKS
 
-## THE NERDS
-- [Nerd.](https://bsky.app/profile/kappanerd.bsky.social) - Yo. I do everything lol. Call me an amalgamation the way I have everything. (Except hand-drawn animation and 3d modeling.)
+## THE NERD
+- [Nerd.](https://bsky.app/profile/kappanerd.bsky.social) - Yo. I do everything lol. Call me an amalgamation.
 - Saiyan - My first cat that kept me in this world and gave me motivation
 
 ## THE CREW

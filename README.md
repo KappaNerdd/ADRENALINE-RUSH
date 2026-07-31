@@ -40,6 +40,8 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 ## THE NERD
 - [Nerd.](https://bsky.app/profile/kappanerd.bsky.social) - Yo. I do everything lol. Call me an amalgamation.
 - Saiyan - My first cat that kept me in this world and gave me motivation
+- Luna - One of my girly cats
+- Solar - One of my girly cats
 
 ## THE CREW
 - [Huisti](https://x.com/Huisti785) - Spanish (Español) Translation
@@ -47,6 +49,9 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 ## SPECIAL GUESTS
 - Ness - Creator of Ivy
 - Brandon - Creator of Akira, Taylor, & Ayana
+
+## NERD CONTRIBUTORS
+- [ThatUnnamedPersonXP](https://bsky.app/profile/thatunnamedperson.bsky.social) - Made the new Saiyan-Nerd splash screen logo
 
 ## PERSONAL PLAYTESTERS
 - [Brandon](https://x.com/notokaay19)

@@ -5,10 +5,11 @@
 
 This game is both a challenge for myself and a memorial to my cat, Saiyan, who passed away during development.
 
-This game is programmed in [GameMaker](https://gamemaker.io/en).
-All original pixel art assets were made in [Piskel](https://www.piskelapp.com).
-All hand-drawn artwork 'n' renders were made in ibisPaint X. (Sketched out first in a sketchbook.)
-All music and original sound effects were made in FL Studio Mobile.
+## PROGRAMS USED DURING DEVELOPMENT
+- This game is programmed in [GameMaker](https://gamemaker.io/en).
+- All original pixel art assets were made in [Piskel](https://www.piskelapp.com).
+- All hand-drawn artwork 'n' renders were made in ibisPaint X. (Sketched out first in a sketchbook.)
+- All music and original sound effects were made in FL Studio Mobile.
 
 # THE GAME'S PROTOTYPE (They all currently use the game's old name)
 - [Play the game on itch.io (plus browser & the older protoypes)](https://kappa-nerd.itch.io/the-boy-and-his-story-prototype)

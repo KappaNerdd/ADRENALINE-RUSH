@@ -12,7 +12,7 @@ This game is both a challenge for myself and a memorial to my cat, Saiyan, who p
 - All music and original sound effects were made in FL Studio Mobile.
 
 # THE GAME'S PROTOTYPE (They all currently use the game's old name)
-- [Play the game on itch.io (plus browser & the older protoypes)](https://kappa-nerd.itch.io/the-boy-and-his-story-prototype)
+- [Play the game on itch.io (plus browser & the older prototypes)](https://kappa-nerd.itch.io/the-boy-and-his-story-prototype)
 - [Play the game on Sonic Fan Games HQ](https://sonicfangameshq.com/forums/showcase/the-boy-and-his-story-sage-25-v0-3-0d-demo.2503/)
 - [Play the game on Newgrounds](https://www.newgrounds.com/portal/view/969060)
 - [Play the game on Gamejolt](https://gamejolt.com/games/the-boy-and-his-story/934841)

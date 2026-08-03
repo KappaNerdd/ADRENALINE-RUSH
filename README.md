@@ -51,8 +51,8 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 - [Huisti](https://x.com/Huisti785) - Spanish (Español) Translation
 
 ## SPECIAL GUESTS
+- [Brandon](https://x.com/notokaay19) - Creator of Akira, Taylor, & Ayana
 - Ness - Creator of Ivy
-- Brandon - Creator of Akira, Taylor, & Ayana
 
 ## NERD CONTRIBUTORS
 - [ThatUnnamedPersonXP](https://bsky.app/profile/thatunnamedperson.bsky.social) - Made the new Saiyan-Nerd splash screen logo
@@ -74,7 +74,7 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 - [Casserole Comix](https://bsky.app/profile/casserolecomix.bsky.social) - Gave me motivation to pursue art back in 5th grade
 - [Hikiyami Moriko Ch](https://www.youtube.com/channel/UCEqEk-Ti4p0vI3s8ufInJgA) - The first to make a video during the game's first prototype
 - [Sonic Retro](https://info.sonicretro.org/Sonic_Physics_Guide) - Sonic Physics Guide
-- [DFelipeh](https://sonicfangameshq.com/forums/members/dfelipeh.5901/) - Sonic Astral Engine Physics
+- [DFelipeh](https://sonicfangameshq.com/forums/members/dfelipeh.5901/) - Sonic Astral Engine 360 Degree Collision Physics
 - [Peyton Burnham](https://www.youtube.com/@peytonburnham4316) - Many GameMaker YouTube Tutorials
 - [WreckingPrograms](https://www.youtube.com/@WreckingPrograms) - General Sonic-like Movement YouTube Tutorials
 - [Blobfish](https://www.youtube.com/@blobfishdev) - Localization Tutorial

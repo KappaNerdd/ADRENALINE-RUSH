@@ -13,6 +13,16 @@ function set_song_ingame(_song = noone, _fadeOutCurrentSong = 0, _fadeIn = 0, _p
 	}
 }
 
+function scr_SetMusPos(_seconds) {
+	audio_sound_set_track_position(obj_MusicManager.songInstance, _seconds);
+}
+
+function scr_SetMusPitch(_pitch) {
+	with(obj_MusicManager) {
+		audio_sound_pitch(songInstance, _pitch);
+	}
+}
+
 function scr_MusicTag() {
 	if !instance_exists(obj_MusicTagNew) {
 		instance_create_depth(x, y, depth, obj_MusicTagNew)
@@ -22,6 +32,3 @@ function scr_MusicTag() {
 	}
 }
 
-function scr_SetMusPos(_seconds) {
-	audio_sound_set_track_position(obj_MusicManager.songInstance, _seconds);
-}

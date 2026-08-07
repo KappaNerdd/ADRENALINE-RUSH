@@ -4,7 +4,7 @@ if !trans {
 	if _char {
 		scr_SetCamFollow(_char);
 		trans = true;
-		scr_OverRoomTrans(target_x, target_y, target_rm, target_div, target_xscale, charVel, charYspd, trackChar);
+		scr_OverRoomTrans(target_x, target_y, target_rm, target_xscale, target_div, charVel, charYspd, trackChar);
 	}
 }
 

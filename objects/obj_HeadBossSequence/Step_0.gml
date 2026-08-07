@@ -3,7 +3,7 @@ if !enemyWave {
 		enemyWaveTimer--;
 	} else {
 		enemyWaveTimer = 180;
-		scr_GasterBlaster(384, obj_Player.y, depth - 1, 35, 4, 0, 90, 60);
+		scr_GasterBlaster(384, obj_Player.y, depth - 1, 35, 2, 0, 90, 60);
 	}
 	
 	if !spawnWave1 {
@@ -49,22 +49,22 @@ if enemyWave {
 			blastTimer--;
 		} else {
 			if !blast1 {
-				scr_GasterBlaster(384, obj_Player.y, depth - 1, 35, 3, 0, 45, 60);
+				scr_GasterBlaster(384, obj_Player.y, depth - 1, 35, 3, 0, 45, 45);
 				blastTimer = 15;
 				blast1 = true;
 			} else {
 				if !blast2 {
-					scr_GasterBlaster(obj_Player.x, 216, depth - 1, 3, 30, 0, 45, 60);
+					scr_GasterBlaster(obj_Player.x, 216, depth - 1, 3, 30, 0, 45, 45);
 					blastTimer = 15;
 					blast2 = true;
 				} else {
 					if !blast3 {
-						scr_GasterBlaster(obj_Player.x, obj_Player.y, depth - 1, 45, 3, 45, 45, 60);
+						scr_GasterBlaster(obj_Player.x, obj_Player.y, depth - 1, 45, 3, 45, 45, 45);
 						blastTimer = 15;
 						blast3 = true;
 					} else {
-						scr_GasterBlaster(obj_Player.x, obj_Player.y, depth - 1, 45, 3, -45, 45, 60);
-						blastTimer = 120;
+						scr_GasterBlaster(obj_Player.x, obj_Player.y, depth - 1, 45, 3, -45, 45, 45);
+						blastTimer = 90;
 						blast1 = false;
 						blast2 = false;
 						blast3 = false;
@@ -253,10 +253,10 @@ if doneWave2 && !doneWave3 {
 		if !instance_exists(obj_EnemyCounter) {
 			doneWave3 = true;
 			
-			scr_GasterBlaster(384 - 370, 216, depth - 1, 3, 30, 0, 60, 510);
-			scr_GasterBlaster(384 + 370, 216, depth - 1, 3, 30, 0, 60, 510);
-			scr_GasterBlaster(384, 216 - 220, depth - 1, 40, 3, 0, 60, 510);
-			scr_GasterBlaster(384, 216 + 220, depth - 1, 40, 3, 0, 60, 510);
+			scr_GasterBlaster(384 - 380, 216, depth - 1, 3, 30, 0, 60, 510);
+			scr_GasterBlaster(384 + 380, 216, depth - 1, 3, 30, 0, 60, 510);
+			scr_GasterBlaster(384, 216 - 230, depth - 1, 40, 3, 0, 60, 510);
+			scr_GasterBlaster(384, 216 + 230, depth - 1, 40, 3, 0, 60, 510);
 		}
 	}
 }
@@ -274,26 +274,52 @@ if doneWave3 && !doneWave4 {
 			blastTimer5--;
 		} else {
 			if blastingTimer > 120 {
-				if !blast13 {
-					scr_GasterBlaster(384, 216, depth - 1, 3, 30, 0, 15, 25);
-					blastTimer5 = 15;
-					blast13 = true;
-				} else {
-					if !blast14 {
-						scr_GasterBlaster(384, 216, depth - 1, 3, 30, 45, 15, 25);
+				if blastingTimer > 292 {
+					if !blast13 {
+						scr_GasterBlaster(384, 216, depth - 1, 2, 30, 0, 15, 25);
 						blastTimer5 = 15;
-						blast14 = true;
+						blast13 = true;
 					} else {
-						if !blast15 {
-							scr_GasterBlaster(384, 216, depth - 1, 40, 3, 0, 15, 25);
+						if !blast14 {
+							scr_GasterBlaster(384, 216, depth - 1, 2, 30, 45, 15, 25);
 							blastTimer5 = 15;
-							blast15 = true;
+							blast14 = true;
 						} else {
-							scr_GasterBlaster(384, 216, depth - 1, 40, 3, 45, 15, 25);
-							blastTimer5 = 15;
-							blast13 = false;
-							blast14 = false;
-							blast15 = false;
+							if !blast15 {
+								scr_GasterBlaster(384, 216, depth - 1, 40, 2, 0, 15, 25);
+								blastTimer5 = 15;
+								blast15 = true;
+							} else {
+								scr_GasterBlaster(384, 216, depth - 1, 40, 2, 45, 15, 25);
+								blastTimer5 = 15;
+								blast13 = false;
+								blast14 = false;
+								blast15 = false;
+							}
+						}
+					}
+				} else {
+					if !blast13 {
+						scr_GasterBlaster(384, 216, depth - 1, 2, 30, 0, 10, 20);
+						blastTimer5 = 10;
+						blast13 = true;
+					} else {
+						if !blast14 {
+							scr_GasterBlaster(384, 216, depth - 1, 2, 30, 45, 10, 20);
+							blastTimer5 = 10;
+							blast14 = true;
+						} else {
+							if !blast15 {
+								scr_GasterBlaster(384, 216, depth - 1, 40, 2, 0, 10, 20);
+								blastTimer5 = 10;
+								blast15 = true;
+							} else {
+								scr_GasterBlaster(384, 216, depth - 1, 40, 2, 45, 10, 20);
+								blastTimer5 = 10;
+								blast13 = false;
+								blast14 = false;
+								blast15 = false;
+							}
 						}
 					}
 				}
@@ -306,12 +332,14 @@ if doneWave3 && !doneWave4 {
 		
 		with(obj_Player) {
 			can_MoveFULL = false;
+			vel = 0;
 			yspd = 0;
 			drawAngle = 0;
 			fakeHurt = false;
 			playerHurt = false;
 			hurtTimer = 0;
 			dontCollide = true;
+			fallDash = false;
 			image_speed = 2;
 			scr_ControlSpeedCreate();
 		}
@@ -325,11 +353,11 @@ if doneWave4 {
 		global.PlayerID.x = ease(global.PlayerID.x, 384 + 30, 0.075, Easings.QUAD_IO);
 		global.PlayerID.y = ease(global.PlayerID.y, 216 - 30, 0.075, Easings.QUAD_IO);
 		
-		if obj_GOALRingVerti.y > 260 {
+		if obj_GOALRingVerti.y > 265 {
 			obj_GOALRingVerti.yspd = -1.5;
 		} else {
 			obj_GOALRingVerti.yspd = 0;
-			obj_GOALRingVerti.y = 260;
+			obj_GOALRingVerti.y = 265;
 			moveDownPlayer = true;
 		}
 	} else {

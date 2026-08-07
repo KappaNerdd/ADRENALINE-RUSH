@@ -548,12 +548,18 @@ if can_MoveFULL {
 			} else {
 				if !bursted {
 					bursted = true;
-					vel = 0;
+					
+					if abs(burstVel) > max_Speed {
+						vel = burstVel * visXScale;
+					} else {
+						vel = max_Speed * visXScale;
+					}
 				}
 			}
 		} else {
 			burstTrickTimer = burstTrickFrames;
 			bursted = false;
+			burstVel = abs(vel);
 		}
 		
 		if ground or playerHurt or stomping {

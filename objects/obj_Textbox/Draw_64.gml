@@ -500,20 +500,21 @@ scr_Defaults_for_Text();
 
 #region //Flip Through Pages
 	if setup && !setupComplete {
-		if confirm_key && !forceLine[page] {
+		if (confirm_key or pause_Key) && !forceLine[page] {
 			//If typing is done
 			if draw_char == text_length[page] {
 				obj_SFXManager.funkinFav = true;
-				textboxYChange = 10;
 		
 				//Next Page
 				if page < page_number - 1 {
 					page++;
 					draw_char = 0;
+					textboxYChange = 10;
 				} else {
 					//Link text for option
 					if option_number > 0 {
-						create_textbox(option_link_id[option_pos]);
+						create_textbox(option_link_id[option_pos], 728);
+						instance_destroy();
 				
 						if global.PlayerChar == 0 {
 							draw_sprite_ext(spr_CursorHead, image_index / 6, x, y, 1, 1, 0, c_white, 1);
@@ -552,7 +553,6 @@ scr_Defaults_for_Text();
 			} else {
 				//If typing is done
 				if draw_char == text_length[page] {
-		
 					//Next Page
 					if page < page_number - 1 {
 						page++;
@@ -618,7 +618,7 @@ scr_Defaults_for_Text();
 				
 				if i >= 0 && i < text_length[page] {
 					if i < array_length(speakerSpriteAt) {
-						show_debug_message("Sprite at i: " + string(speakerSpriteAt[i, page]));
+						//show_debug_message("Sprite at i: " + string(speakerSpriteAt[i, page]));
 						
 						if sprite_index != speakerSpriteAt[i, page] {
 							sprite_index = speakerSpriteAt[i, page];
@@ -655,7 +655,7 @@ scr_Defaults_for_Text();
 				
 				if i >= 0 && i < text_length[page] {
 					if i < array_length(speakerSpriteAt) {
-						show_debug_message("Sprite at i: " + string(speakerSpriteAt[i, page]));
+						//show_debug_message("Sprite at i: " + string(speakerSpriteAt[i, page]));
 						
 						if _speakerChar != speakerSpriteAt[i, page] {
 							_speakerChar = speakerSpriteAt[i, page];
@@ -790,14 +790,14 @@ scr_Defaults_for_Text();
 	
 	
 		//Drawing options
-		var _op_space = 30;
+		var _op_space = 32;
 		var _op_bord = 8;
 	
 		for(var op = 0; op < option_number; op++;) {
 			//Option box
 			var _o_w = string_width(option[op]) + _op_bord * 2;
 		
-			draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x + 370, _txtb_y - _op_space * option_number + _op_space * op - 3, _o_w/txtb_spr_w, (_op_space - 2)/txtb_spr_h + 0.05, 0, c_white, 1);
+			draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x + 370, _txtb_y - _op_space * option_number + _op_space * op - 3, _o_w / txtb_spr_w, (_op_space - 2) / txtb_spr_h + 0.1, 0, c_white, 1);
 		
 			//Draw Cursor
 			if option_pos == op {
@@ -805,7 +805,7 @@ scr_Defaults_for_Text();
 			}
 		
 			//Option text
-			draw_text(_txtb_x + 370 + _op_bord, _txtb_y - 4 - _op_space * option_number + _op_space * op + 2, option[op]);
+			draw_text(_txtb_x + 370 + _op_bord, _txtb_y - 2 - _op_space * option_number + _op_space * op + 2, option[op]);
 		}
 	}
 #endregion

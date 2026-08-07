@@ -42,8 +42,7 @@ if global.DEBUG {
 	}
 	
 	if keyboard_check_pressed(vk_rshift) {
-		obj_Player.x = 16510;
-		obj_Player.y = 672;
+		room_goto(rm_HeadSpeedBossP2);
 	}
 	
 	if keyboard_check_pressed(ord("8")) {

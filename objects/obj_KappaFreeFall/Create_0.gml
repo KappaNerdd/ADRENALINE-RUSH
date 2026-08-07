@@ -1,4 +1,5 @@
 scr_SpriteDataKappaNormal();
+scr_CharDataKappa();
 
 scr_FreeFallCreate();
 

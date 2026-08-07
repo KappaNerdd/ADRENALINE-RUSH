@@ -374,7 +374,7 @@ function scr_BasicControlsSpeedStep1() {
 	#endregion
 	
 	#region //Whoops, sorry about that.
-		if (x < 0 or x > room_width or y > room_height) && !global.Death && can_Move && can_MoveFULL {
+		if (x < 0 or x > room_width or y > room_height) && !global.Death && can_Move && can_MoveFULL && !instance_exists(obj_RoomTransParent) {
 			if whoopsTimer > 0 {
 				whoopsTimer--;
 			} else {

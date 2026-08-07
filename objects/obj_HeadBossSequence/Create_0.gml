@@ -3,7 +3,7 @@ spawnWave1 = false;
 enemyWaveTimer = 60;
 
 gasterWave = false;
-gasterWaveTimer = 660;
+gasterWaveTimer = 420;
 blastTimer = 30;
 blast1 = false;
 blast2 = false;

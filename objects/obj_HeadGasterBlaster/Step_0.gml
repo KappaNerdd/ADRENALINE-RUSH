@@ -18,7 +18,7 @@ if image_xscale > image_yscale {
 	verti = true;
 }
 
-if image_alpha < 0.8 {
+if image_alpha < 0.85 {
 	canHurt = false;
 } else {
 	canHurt = true;

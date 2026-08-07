@@ -1,4 +1,5 @@
 scr_SpriteDataRushNormal();
+scr_CharDataRush();
 
 scr_FreeFallCreate();
 

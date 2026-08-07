@@ -109,7 +109,16 @@ function scr_FreeFallControl() {
 			} else {
 				hitStopped = false;
 				can_MoveFULL = true;
-				image_speed = 2;
+				
+				if !leftFacer {
+					image_speed = 2;
+				} else {
+					if face_Left {
+						image_speed = -2;
+					} else {
+						image_speed = 2;
+					}
+				}
 			}
 		}
 	}
@@ -132,7 +141,7 @@ function scr_FreeFallControl() {
 		if !fallDash && !global.SimplifyVFX && !playerHurt && !global.Death {
 			with(instance_create_depth(x, y, depth - 1 - other.increDepth, obj_SRExceptionAura)) {
 				savedChar = other.id;
-				image_blend = global.fullRGB;
+				image_blend = make_colour_rgb(other.charR, other.charG, other.charB);
 				image_angle = -90;
 				image_index = other.savedIndex;
 				moveY = true;
@@ -158,6 +167,7 @@ function scr_FreeFallControl() {
 		if right_Key {
 			if leftFacer {
 				face_Left = true;
+				image_speed = 2;
 			} else {
 				visXScale = 1;
 			}
@@ -166,6 +176,7 @@ function scr_FreeFallControl() {
 		if left_Key {
 			if leftFacer {
 				face_Left = false;
+				image_speed = -2;
 			} else {
 				visXScale = -1;
 			}
@@ -509,15 +520,7 @@ function scr_FreeFallAnimation() {
 		}
 	} else {
 		if !fallDash {
-			if !leftFacer {
-				sprite_index = sprFreeFall;
-			} else {
-				if face_Left {
-					sprite_index = sprFreeFallLeft;
-				} else {
-					sprite_index = sprFreeFallRight;
-				}
-			}
+			sprite_index = sprFreeFall;
 		} else {
 			if !leftFacer {
 				sprite_index = sprFallDash;

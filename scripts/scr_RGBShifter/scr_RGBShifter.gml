@@ -29,4 +29,6 @@ function scr_ShiftRGB() {
 		
 		global.fullRGB = make_color_rgb(global.realR, global.realG, global.realB);
 	}
+	
+	//gamepad_set_colour(global.Player1Con, global.fullRGB);
 }

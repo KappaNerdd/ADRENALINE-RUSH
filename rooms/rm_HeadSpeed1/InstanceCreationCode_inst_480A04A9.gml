@@ -1,0 +1,1 @@
+fadeOutFrames = 120;

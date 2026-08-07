@@ -14,7 +14,7 @@ lowerScale = 0.025;
 shake = false;
 
 killed = false;
-killedTimer = 90;
+killedTimer = 60;
 
 obj_SFXManager.enemyCounter = true;
 

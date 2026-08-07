@@ -190,8 +190,7 @@ function scr_SpriteDataSarahNormal() {
 	sprVictory = spr_SarahVictory;
 	
 	//Free-Fall
-	sprFreeFallRight = spr_SarahLauncherUpRight;
-	sprFreeFallLeft = spr_SarahLauncherUpLeft;
+	sprFreeFall = spr_SarahCDTwirl;
 	sprFallDashRight = spr_SarahFallDashRight;
 	sprFallDashLeft = spr_SarahFallDashLeft;
 }

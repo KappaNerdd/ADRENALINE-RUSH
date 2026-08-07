@@ -58,6 +58,7 @@ stopText = false;
 
 //Speaker Name
 speakerName = "";
+_check2 = "";
 
 
 //Options

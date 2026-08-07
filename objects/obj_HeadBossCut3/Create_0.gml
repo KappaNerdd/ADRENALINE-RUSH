@@ -8,15 +8,15 @@ gaster1 = false;
 gaster2 = false;
 gaster3 = false;
 
-enemyWait = 150;
+enemyWait = 120;
 
 spawnEnemies = false;
 playerMove2 = false;
 
 itsEvenFunnierTheSecondTime = false;
-funnyTimer = 90;
+funnyTimer = 60;
 
-doneTimer = 90;
+doneTimer = 60;
 
 depth = obj_Player.depth + 1;
 

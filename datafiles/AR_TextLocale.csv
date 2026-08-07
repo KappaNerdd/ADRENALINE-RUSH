@@ -1,9 +1,12 @@
 I might swerve-,ENGLISH,ESPAÑOL
+///-----Game Title-----///,,
 wind_Title,ADRENALINE RUSH,ADRENALINE RUSH
 ,,
+///-----Language Choice-----///,,
 opt_ChooseLang,CHOOSE A LANGUAGE,
 opt_AskOnce,(This'll only appear once and never again. You can change the language again any time in the Options menu.),
 ,,
+///-----File Select-----///,,
 fs_FileSelect,FILE SELECT,ELIGE UN ARCHIVO
 fs_Select,SELECT,SELECCIONAR
 fs_Copy,COPY,COPIAR
@@ -17,10 +20,12 @@ fs_Erase,ERASE THIS FILE?,¿BORRAR ESTE ARCHIVO?
 fs_Erasing,ARE YOU SURE??,¿¿SEGURO??
 fs_Overwrite,OVERWRITE THIS FILE?,¿SOBREESCRIBIR ESTE ARCHIVO?
 ,,
+///-----Controller Shit-----///,,
 conDet_Player,PLAYER,JUGADOR
 conDet_Conn,CONNECTED,CONECTADO
 conDet_ConUnd,CONTROLLER UNDETECTED,CONTROL DESCONECTADO
 ,,
+///-----General Game Shit-----///,,
 game_Quitting,QUITTING,SALIR
 game_Prototype,PROTOTYPE,PROTOTIPO
 game_Demo,DEMO,DEMO
@@ -28,7 +33,9 @@ game_NP,NOW PLAYING,REPRODUCIENDO
 game_Track,TRACK,PISTA
 game_By,BY,POR
 game_Length,LENGTH,DURACIÓN
+game_Acquire,You got the,
 ,,
+///-----Audio Options-----///,,
 opt_Audio,AUDIO,SONIDO
 opt_Master,MASTER,GENERAL
 opt_Music,MUSIC,MÚSICA
@@ -39,6 +46,7 @@ opt_Pause,UNIQUE PAUSE THEME,TEMA DE PAUSA ÚNICO
 opt_Footstep,FOOTSTEPS,PASOS
 opt_Invincible,INVINCIBILITY THEME,
 ,,
+///-----Visual Options-----///,,
 opt_Visual,VISUAL,VISUALES
 opt_SimpVFX,SIMPLIFY VFX,SIMPLIFICAR EFECTOS
 opt_SimpBack,SIMPLE BACKGROUND,
@@ -51,6 +59,7 @@ opt_Outline,OUTLINE,CONTORNO
 opt_Squash,SQUASH 'N' STRETCH,ESTIRAMIENTO
 opt_VSync,VSYNC,SINCRONIZACIÓN VERTICAL
 ,,
+///-----Misc Options-----///,,
 opt_Misc,MISC,MISCELÁNEO
 opt_Fullscr,FULLSCREEN,PANTALLA COMPLETA
 opt_MusTag,MUSIC TAG,INFORMACIÓN DE MÚSICA
@@ -127,6 +136,7 @@ title_Bios,CHARACTER BIOS,
 title_Gallery,GALLERY,
 title_Boombox,BOOMBOX,
 title_Achievements,ACHIEVEMENTS,
+title_Enemy,ENEMY BIOS,
 title_Credits,CREDITS,
 title_Socials,SOCIALS,
 title_Bluesky,BLUESKY,
@@ -146,20 +156,6 @@ freeplay_Mix,CHOOSE YER MIX!!,¡¡SELECCIONÁ TU MIX!!
 freeplay_Stage,STAGE,ETAPA
 freeplay_CharTut,TO ENTER THE CHARACTER TUTORIAL,
 ,,
-charSel_Acc,ACCELERATION,ACELERACIÓN
-charSel_Jump,JUMP POWER,SALTO
-charSel_Grav,GRAVITY FORCE,GRAVEDAD
-charSel_Max,MAX SPEED,VELOCIDAD
-charSel_Break,BREAK SPEED,VEL. DE BREAK
-charSel_Boost,BOOST SPEED,VEL. DE TURBO
-charSel_Ground,GROUND,EN SUELO
-charSel_Midair,MID-AIR,EN EL AIRE
-charSel_Wall,ON WALL,EN MUROS
-charSel_Slide,SLIDING,DESLIZAMIENTO
-charSel_Twirl,TWIRLING,GIRO
-charSel_Charge,CHARGEABLE,RECARGABLE
-charSel_Ret,RETICLE,RETÍCULA
-,,
 level_MIND,MIND,MENTE
 level_OTHERTOWN,OTHERTOWN,OTHERTOWN
 level_OTD,OTHERTOWN (DAY),OTHERTOWN (DÍA)
@@ -178,22 +174,6 @@ menu_NameAsk,What is YOUR name?,¿Cuál es TU nombre?
 menu_ConLetter,CONFIRM,COLOCAR
 menu_ReLetter,REMOVE,QUITAR
 menu_AddSpace,ADD SPACE,AÑADIR ESPACIO
-,,
-move_Acc,ACCELERATE,ACELERAR
-move_Jump,JUMP,SALTO
-move_DJump,DOUBLE-JUMP,DOBLE-SALTO
-move_Stomp,STOMP,PISOTÓN
-move_SDash,STOMP-DASH,PISOTÓN-IMPULSO
-move_SSlide,START SLIDE,DESLIZAR
-move_Sliding,SLIDING,DESLIZANDO
-move_SCancel,SLIDE-CANCEL,CANCELAR DESLIZAR
-move_AirDash,AIR-DASH,IMPULSO-AÉREO
-move_WJump,WALL-KICK,SALTO DE MURO
-move_Boost,BOOST,TURBO
-move_RTricks,RUSH-TRICKS,TRUCOS
-move_DTricks,DIRECTIONAL-TRICKS,TRUCOS-DIRECCIONALES
-move_Enemy,ENEMIES,ENEMIGOS
-move_Rails,RAIL-GRINDING,DESLICE-EN-RIEL
 ,,
 story_NOBJ,NEW OBJECTIVE,NUEVO OBJETIVO
 story_UOBJ,UPDATED OBJECTIVE,OBJETIVO ACTUALIZADO
@@ -244,6 +224,7 @@ mus_Cest,C'est La Vie,C'est La Vie
 mus_MindBody,MIND 'N' BODY,
 mus_MINDWAVE,MINDWAVE,
 mus_MINDWAVE2,MINDWAVE (Allegro),
+mus_RoundN,"Oooo, Round 'n' Round",
 mus_Wrap,Wrap It Up,
 mus_WrapK,Wrap It Up (Kappa Mvt.),
 mus_WrapL,Wrap It Up (Lucifer Mvt.),
@@ -327,9 +308,9 @@ cost_Lon1,BUN-BUN,BUN-BUN
 ,,
 cost_Bro1,BRAVERY,VALENTÍA
 ,,
-cost_Nee1,FOUR-STAR,CUATRO-ESTRELLAS
+cost_Nee1,HEARTACHE,HEARTACHE
 ,,
-cost_Clo1,BASIL,BASIL
+cost_Clo1,DAISY,DAISY
 ,,
 cost_Aki1,UZI-STYLE,ESTILO-UZI
 ,,
@@ -360,11 +341,12 @@ desc_SimpVFX,"Reduce, stop, or get rid of things that could be eye-straining. (I
 desc_SimpBack,Remove elements from Environment backgrounds to reduce clutter and/or lag.,
 desc_Part,Have tiny sprites and effects appear or not.,Hace que pequeños sprites y efectos aparezcan o no.
 desc_ScrShk,Have the screen shake during certain events and actions.,La pantalla se agita durante ciertos eventos y acciones.
-desc_TextSpd,Change the how fast text appears during dialogue.,Cambie lo rápido que el texto aparece en diálogos.
+desc_TextSpd,Change how fast text appears during dialogue.,Cambie lo rápido que el texto aparece en diálogos.
 desc_Lang,"Change the game's text language and assets to your liking. (English, Spanish)","Cambia el idioma del juego. (Inglés, Español)"
 desc_ConDis,Have your keyboard or controller inputs appear at the bottom-right of the screen.,Muestra tu teclado o control en la esquina inferior derecha de la pantalla.
 desc_Outline,Have black 'n' white outlines around the characters and certain objects during gameplay.,Activa un contorno blanco y negro en algunos personajes y objetos durante el gameplay.
 desc_Squash,Have the characters' body morph a lil' during certain situations.,Los personajes se deforman ligeramente durante ciertas situaciones.
+desc_LifeIcon,Change what life icon to use during gameplay.,
 ,,
 desc_ColorCode,"Have tons of colors from certain elements change based on the character you're playing. (If off, colors default to the Change Base Color option.)","Cambia colores de muchos elementos según el personaje que estés usando. (Si está desactivado, los colores se configuran por defecto en la opción de Cambiar Color de Base)."
 desc_VSync,Have the game match the refresh-rate of your monitor. (Usually fixes screen-tearing.),Configura el juego para que coincida con la frecuencia de actualización de tu monitor. (Normalmente soluciona el problema del desgarro de pantalla).
@@ -379,7 +361,7 @@ desc_MusTag,Have the current BGM track's name & composer display at certain poin
 desc_ConType,Change the controls' input display based on a console. (Controller only.),Cambia el tipo de botón que se muestra. (Solo Control)
 desc_ConRum,Have your controller shake during certain events and actions. (Controller only.),Vibración durante ciertos eventos y acciones. (Solo Control)
 desc_ExtCam,Have the camera move ahead of you based on your speed and how fast you're falling. (OVERWORLD & SPEED Stages only.),La cámara se adelanta basado en tu velocidad al correr y caer. (Solo Overworld y Etapas de Velocidad)
-desc_FPS,"Have the game's framerate, real framerate, 'n' version display at the top-right and bottom-right of the screen.","Muestra los FPS, FPS Reales y versión del juego arriba a la izquierda y abajo a la derecha."
+desc_FPS,"Have the game's framerate, real framerate, and version display at the top-right of the screen.","Muestra los FPS, FPS Reales y versión del juego arriba a la izquierda y abajo a la derecha."
 desc_Speedrun,"Display a speedrun timer that stops during cutscenes, transitions, and the game being paused.","Muestra un temporizador de speedrun que se detiene en cinemáticas, transiciones y pausa."
 ,,
 desc_WindowSize,Change the scale of the game window while not in Fullscreen.,
@@ -474,10 +456,12 @@ level_Run,RUN!,
 game_Whoops,"Whoops, sorry about that.",
 game_ToSkip,TO SKIP,
 game_Disc,DISCLAIMER,
-game_MainDisc,"This game contains violence, cursin', & potentially sensitive themes. This is not intended for people under age 13 or those who are easily disturbed. \nThe game also contains flashing lights, screen shaking, & others of the sort that can be turned off in the Options menu. (Controller is EXTREMELY recommended!) \nWould you like to open the Options menu first? ",
+game_MainDisc,"This game contains violence, cursin', & potentially sensitive themes. This is not intended for people under age 13 or those who are easily disturbed. \nThe game also contains flashing lights, screen shaking, & others of the sort that can be turned off in the Options menu. (Controller is EXTREMELY recommended!) \nThis is a completely separate demo to the old ""The Boy and his Story"" prototypes and files cannot be transferred over to this version. \nWould you like to open the Options menu first? ",
+game_CharDisc,"NOTE: While this character is fully playable, they have not received the animation upgrade that other playable characters have, so you'll see either unfinished or replacement animations for stuff the other characters have.",
 ,,
 check_Name,Is this name correct?,
 check_Kappa,Not happenin'.,
+check_Lucifer,"Sorry, but no.",
 check_Sarah,Hiiii!! :D We can share!,
 check_Lone,I don't mind.,
 check_Brock,More than happy to share!,
@@ -487,13 +471,11 @@ check_Akira,Nope. Choose a different name.,
 check_Taylor,Sorry. Gotta pick another name.,
 check_Ayana,Nah! Get your own damn name!,
 check_Roxxane,HAH! You misspelled your name. Pendejo.,
-check_Lucifer,"Sorry, but no.",
 check_Rush,Count me out.,
 check_Edge,Choose a different name before I beat your ass.,
 check_Ivy,A child of JUSTICE.,
 ,,
 check_Nerd,Still not happenin'.,
-check_Kira,,
 check_Frisk,WARNING: This name will not make your life hell.,
 check_Chara,The untrue name.,
 check_Sonic,The legend who started it.,
@@ -504,105 +486,111 @@ check_AAAAAA,"Not very creative, huh?",
 new_Warning,WARNING!,
 new_WarnDisc,This will delete your current save file and it will be unrecoverable. Do you wish to continue?,
 ,,
+///-----Music Credits-----///,,
 comp_Nerd,Nerd.,
 ,,
-gall_Art,MAIN ART,
-gall_FanArt,FAN-ART,
-gall_Concept,CONCEPTS/SKETCHES,
-gall_Unused,UNUSED,
-gall_Cats,CATS,
+///-----Credits-----///,,
+cred_BaseName,Name:,
+cred_BasePos,Position: ,
+cred_BaseType,Role:,
+cred_BaseDesc,Quote:,
 ,,
-art_RenTJ,TAYLOR RENDER,
-art_RenTJDesc,Initial render of Taylor's design.,
-art_RenTJB,TAYLOR RENDER (BLACK),
-art_RenTJBDesc,"Ditto, but dark elements are fully black.",
-art_RenAA,AYANA RENDER,
-art_RenAADesc,Initial render of Ayana's design.,
-art_RenAAB,AYANA RENDER (BLACK),
-art_RenAABDesc,"Ditto, but dark elements are fully black.",
-art_RenRG,ROXXANE RENDER,
-art_RenRGDesc,Initial render of Roxxane's redesign.,
-art_RenRG2,ROXXANE RENDER 2,
-art_RenRG2Desc,A random piece of Roxxane with a more updated design.,
-art_RenLC,LUCIFER RENDER,
-art_RenLCDesc,Initial render of Lucifer's design before her final version.,
-art_GradKap,GRADIENT KAPPA,
-art_GradKapDesc,A random render of Kappa in a gradient style.,
-art_RidersK,RIDERS KAPPA,
-art_RidersKDesc,"A quick, flat piece of Kappa for SAGE 2025's theme.",
-art_RidersS,RIDERS SARAH,
-art_RidersSDesc,"A quick, flat piece of Sarah for SAGE 2025's theme.",
-art_RidersR,RIDERS RUSH,
-art_RidersRDesc,"A quick, flat piece of Rush for SAGE 2025's theme.",
-art_RidersI,RIDERS IVY,
-art_RidersIDesc,"A quick, flat piece of Ivy for SAGE 2025's theme.",
-art_Splash010,V0.1.0 PROTOTYPE SPLASH,
-art_Splash010Desc,The 1st splash screen for the game when it initially released as a prototype.,
-art_Splash020,V0.2.0 PROTOTYPE SPLASH,
-art_Splash020Desc,The 2nd splash screen for the game when the Sarah & Ivy update released.,
-art_Splash025,V0.2.5 PROTOTYPE SPLASH,
-art_Splash025Desc,The 3rd splash screen for the game when the Rush update released.,
-art_SplashSAGE25030,V0.3.0 SAGE DEMO SPLASH,
-art_SplashSAGE25030Desc,The 4th splash screen for the game when the SAGE '25 update released.,
-art_AlbumV1P1,OLD OST VOL. 1 PT. 1,
-art_AlbumV1P1Desc,"The old album cover art for the game's Volume 1, Part 1 soundtrack. (With the game's old name.)",
-art_AlbumV1P2,OLD OST VOL. 1 PT. 2,
-art_AlbumV1P2Desc,"The old album cover art for the game's Volume 1, Part 2 soundtrack. (With the game's old name.)",
-art_AlbumV1P2Old,OLDER OST VOL. 1 PT. 2,
-art_AlbumV1P2OldDesc,An even older version of the previous album cover art.,
-art_AlbumV2P1,OLD OST VOL. 2 PT. 1,
-art_AlbumV2P1Desc,"The old album cover art for the game's Volume 2, Part 1 soundtrack. (With the game's old name.)",
-art_AlbumV2P2,OLD OST VOL. 2 PT. 2,
-art_AlbumV2P2Desc,"The old album cover art for the game's Volume 2, Part 2 soundtrack. (With the game's old name.)",
+///-----Credit Nerd.-----///,,
+cred_NerdName,Nerd.,
+cred_NerdPos,The Nerd,
+cred_NerdType,Damn-near Everything,
+cred_NerdDesc,"""Un-kept hair, baggy pants, pizza, and terrible coding practices is not a good life to live, but at least it works.""",
 ,,
-fan_Sarah,SARAH FAN-ART,
-fan_SarahDesc,One of the first ever fan-arts for the game of Sarah around when the Sarah & Ivy update released.,
-fan_PeaSar,PEANUT SARAH,
-fan_PeaSarDesc,"Another Sarah fan-art that I dubbed ""Peanut Sarah.""",
-fan_SkelKap,SKELETON KAPPA,
-fan_SkelKapDesc,Another one of the first ever fan-arts for the game of a skeleton of Kappa in the MIND color scheme.,
-fan_SkelSar,SKELETON SARAH,
-fan_SkelSarDesc,"Ditto for Kappa, but in Sarah's color scheme. (And using the game's old name.)",
-fan_Rush,RUSH FAN-ART,
-fan_RushDesc,The first fan-art of Rush.,
-fan_SonicRush,RUSH HEDGEHOG,
-fan_SonicRushDesc,Rush in a hedgehog suit.,
-fan_Hedge,HEDGEHOGS,
-fan_HedgeDesc,2 characters based off hedgehogs.,
-fan_Cats,CATS,
-fan_CatsDesc,Cats.,
-fan_MINDExit,MIND EXIT,
-fan_MINDExitDesc,"Piece of Kappa in MIND that I dubbed ""MIND Exit.""",
-fan_MIND,MIND EXPLORATION,
-fan_MINDDesc,"Piece where Kappa, Sarah, Ivy, & Lucifer (with her old design) in MIND.",
-fan_KapReels,KAPPA DOOMSCROLL,
-fan_KapReelsDesc,Caught this mf doomscrollin'.,
-fan_Title,CAT TITLE,
-fan_TitleDesc,A drawn version of the ADRENALINE RUSH title.,
-fan_SarFish,FISH SARAH,
-fan_SarFishDesc,"Shrimply, Fish Sarah based on one of Sarah's smear frames making her look like a fish.",
-fan_KapPussy,KAT-PA,
-fan_KapPussyDesc,Kappa as a cat.,
-fan_DSCase,ADRENALINE RUSH HANDHELD,
-fan_DSCaseDesc,A case-like render to look like art for a handheld's game case.,
+///-----Credit Huisti-----///,,
+cred_HuisName,Huisti,
+cred_HuisPos,The Crew,
+cred_HuisType,Spanish Localization || Playtesting,
+cred_HuisDesc,The 'furro' translating the game to Spanish.,
 ,,
-con_Results,RESULTS SCREEN MOCK-UP,
-con_ResultsDesc,The only mock-up of the results screen.,
+///-----Credit Brandon-----///,,
+cred_BranName,Brandon,
+cred_BranPos,Special Guest,
+cred_BranType,"Created Akira, Taylor, & Ayana || Playtesting",
+cred_BranDesc,"""a.""",
 ,,
-un_KapPre,KAPPA (MIND) PRE-RANK,
-un_KapPreDesc,Old results screen animation before a rank appeared.,
-un_KapShit,KAPPA (MIND) SHIT RANK,
-un_KapShitDesc,Old results screen animation if you got a SHIT rank. (F or D.),
-un_KapGood,KAPPA (MIND) GOOD RANK,
-un_KapGoodDesc,"Old results screen animation if you got a GOOD rank. (C, B, or A.)",
-un_KapSICK,KAPPA (MIND) SICK RANK,
-un_KapSICKDesc,Old results screen animation if you got a SICK rank. (S.) (There weren't P-Ranks yet.),
-un_V1AK,INITIAL AKIRA DESIGN,
-un_V1AKDesc,The Level Card render of Akira with his previous design.,
-un_V1AK2,INITIAL AKIRA DESIGN 2,
-un_V1AK2Desc,The Freeplay render of Akira with his first design.,
+///-----Credit Ness-----///,,
+cred_NessName,Ness,
+cred_NessPos,Special Guest,
+cred_NessType,Created Ivy || Ivy Concept Art || Playtesting,
+cred_NessDesc,"""Saw this nerd go from Deltarune AUs to epic platformers. The moment you can, give him money.""",
 ,,
-cat_Saiyan,SAIYAN (SAY-IN),
-cat_SaiyanDesc,"A picture of my cat, Saiyan. (Real name ""Kobe"".)",
-cat_Solar,SOLAR,
-cat_SolarDesc,"A picture of my cat, Solar. (Real name ""Mikasa"".)",
+///-----Char Select Stats-----///,,
+charSel_Acc,ACCELERATION,ACELERACIÓN
+charSel_Jump,JUMP POWER,SALTO
+charSel_Grav,GRAVITY FORCE,GRAVEDAD
+charSel_Max,MAX SPEED,VELOCIDAD
+charSel_Break,BREAK SPEED,VEL. DE BREAK
+charSel_Boost,BOOST SPEED,VEL. DE TURBO
+charSel_Ground,GROUND,EN SUELO
+charSel_Midair,MID-AIR,EN EL AIRE
+charSel_Wall,ON WALL,EN MUROS
+charSel_Slide,SLIDING,DESLIZAMIENTO
+charSel_Twirl,TWIRLING,GIRO
+charSel_Charge,CHARGEABLE,RECARGABLE
+charSel_Ret,RETICLE,RETÍCULA
+charSel_Hold,HOLD,
+charSel_Spam,SPAM,
+,,
+///-----General Moves-----///,,
+move_Move,MOVE,
+move_Jump,JUMP,
+desc_Jump,"While at the peak of your jump, you will automatically lose speed unless you're Boosting.",
+,,
+move_DJump,DOUBLE-JUMP,
+move_SSlide,START SLIDE,
+move_Slide,SLIDING,
+desc_Slide,"While Sliding, you slow down automatically, the effects of slopes is increased, and you damage enemies.",
+,,
+move_CSlide,SLIDE-CANCEL,
+move_Roll,ROLLING,
+desc_Roll,"While Rolling, you slow down automatically, the effects of slopes is increased, and you damage enemies. (You cannot cancel out of Rolling.)",
+,,
+move_Slam,SLAM,
+move_DSlam,SLAM-DASH,
+move_Boost,BOOST,
+desc_Boost,"While Boosting, your acceleration is tripled, you're invulnerable to spikes, and you damage enemies. Damage enemies to increase your TENSION meter. Initiating a Boost will always cost 2 bars of TENSION.",
+,,
+move_ABoost,AIR-BOOST,
+desc_ABoost,Suspends you in the air for a little. Initiating an Air-Boost will always cost 10 bars of TENSION.,
+,,
+move_Trick,FREESTYLE-TRICK,
+desc_Trick,"Anything that launches you that isn't the Environment, Hazards, or Enemies will allow you to perform all kinds of tricks.",
+,,
+move_DTrick,DIRECTIONAL-TRICK,
+move_BTrick,BACKWARDS-TRICK,
+,,
+move_RTrick,RAIL-TRICK,
+,,
+///-----Kappa Moves-----///,,
+move_KADash,AIR-DASH,
+move_KHoming,HOMING ATTACK,
+desc_KHoming,"A Reticle must appear before you can attack. After attacking, most of your moves reset.",
+,,
+///-----Lucifer Moves-----///,,
+move_LBGlide,BURST-GLIDE,
+desc_LBGlide,"You fall extremely slowly, but it's on a small timer.",
+,,
+///-----Sarah Moves-----///,,
+move_SSHover,SPINNING-HOVER,
+desc_SSHover,Can be done infinitely and you have more air-control.,
+,,
+move_SSSlam,SPINNING-SLAM,
+,,
+///-----Rush Moves-----///,,
+move_RHoming,HOMING ATTACK,
+desc_RHoming,"A Reticle must appear before you can attack. After attacking, most of your moves reset.",
+,,
+move_RSpindash,SPINDASH,
+move_RPeelout,SUPER PEELOUT,
+,,
+///-----Ivy Moves-----///,,
+move_IRevolver,REVOLVER,
+move_IBDash,BULLET-DASH,
+move_IBBounce,BULLET-BOUNCE,
+move_IReload,RELOAD,
+desc_IReload,Reloading won't finish until you land on the ground.,

@@ -9,4 +9,6 @@ with(obj_Player) {
 	scr_ControlSpeedCreate();
 }
 
-set_song_ingame(noone, 180);
+if !global.Jukebox {
+	set_song_ingame(noone, 180);
+}

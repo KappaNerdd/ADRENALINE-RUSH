@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":4.5307937,
+  "duration":0.0,
   "exportDir":"",
   "name":"snd_BGFlame",
   "parent":{

@@ -442,9 +442,20 @@ function scr_option(_option, _link_id) {
 }
 
 // @param text_id
-function create_textbox(_text_id) {
+function create_textbox(_text_id, _boxXScale = 0) {
 	with(instance_create_depth(0, 0, 0, obj_Textbox)) {
 		scr_game_text(_text_id);
+		starterText_Width = _boxXScale;
+		
+		if _boxXScale == 728 {
+			if !speaker2Char[page] {
+				speakerChecker = speaker_Name[page];
+				xChange = xChangeFinish;
+			} else {
+				speakerChecker2 = speaker_Name[page];
+				xChange2 = -xChangeFinish + 120;
+			}
+		}
 	}
 }
 

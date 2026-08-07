@@ -2,6 +2,8 @@ if global.SimplifyVFX {
 	image_speed = 0;
 }
 
+global.MIND = false;
+
 surfaceMask = surface_create(room_width, room_height);
 
 noSurface = false;

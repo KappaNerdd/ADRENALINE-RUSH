@@ -1,4 +1,5 @@
 scr_SpriteDataIvyNormal();
+scr_CharDataIvy();
 
 scr_FreeFallCreate();
 

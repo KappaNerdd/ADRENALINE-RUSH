@@ -275,7 +275,7 @@
 			["You'll Get 'em Next Time", "Stand Proud", "Honorary Sonic", "Honorary Sonic",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardKappaHead, spr_LevelCardKappaHead, 1], //Results Portrait
-			["stagecharkappahead",],
+			["kappahead_icon", "kappahead_icon",],
 			[spr_CheckpointHead, spr_RingHeadIcon, spr_RingKappaHandHead, spr_CharSelectKappaHeadIcon, spr_IntroQuoteKappa, 1],
 		],
 	
@@ -330,7 +330,7 @@
 			["You'll Get 'em Next Time", "Stand Proud", "Honorary Sonic", "Honorary Sonic",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardKappaSet, spr_LevelCardKappaHead, 1], //Results Portrait
-			["stagecharkappanormal",],
+			["kappahead_icon", "kappa_icon", "kappahideki_icon",],
 			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectKappaIcon, spr_IntroQuoteKappa, 1],
 		],
 		
@@ -384,7 +384,7 @@
 			["That Could've Been Better", "You Are Strong", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardLuciferSet, spr_LevelCardLuciferSet, 1], //Results Portrait
-			["stagecharlucifernormal",],
+			["lucifer_icon", "lucifer_icon",],
 			[spr_CheckpointLucifer, spr_RingLuciferIcon, spr_RingLuciferHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
 		],
 	
@@ -437,7 +437,7 @@
 			["You Did Your Best", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardSarahSet, spr_LevelCardSarahSet, 1], //Results Portrait
-			["stagecharsarahnormal",],
+			["sarah_icon", "sarah_icon",],
 			[spr_CheckpointSarah, spr_RingSarahIcon, spr_RingSarahHand, spr_CharSelectSarahIcon, spr_IntroQuoteSarah, 1],
 		],
 	
@@ -490,7 +490,7 @@
 			["Diminuendo", "Allegro", "Crescendo", "Crescendo",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardLoneSet, 1], //Results Portrait
-			["stagecharlonenormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointSarah, spr_RingLoneIcon, spr_RingLoneHand, spr_CharSelectLoneIcon, spr_IntroQuoteLone, 1],
 		],
 	
@@ -543,7 +543,7 @@
 			["Held-Back", "I Knew You Had it in You", "Fisticuffs", "Fistcuffs",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardBrockSet, 1], //Results Portrait
-			["stagecharbrocknormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointKappa, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectBrockIcon, spr_IntroQuoteBrock, 1],
 		],
 	
@@ -596,7 +596,7 @@
 			["¡HIJO DE PUTA!", "I Knew You Had it in You", "Honor Within", "Honor Within",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardNeegiSet, 1], //Results Portrait
-			["stagecharneeginormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectNeegiIcon, spr_IntroQuoteNeegi, 1],
 		],
 	
@@ -649,7 +649,7 @@
 			["Not All Bad", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardCloeeSet, 1], //Results Portrait
-			["stagecharcloeenormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointSarah, spr_RingCloeeIcon, spr_RingCloeeHand, spr_CharSelectCloeeIcon, spr_IntroQuoteCloee, 1],
 		],
 	
@@ -702,7 +702,7 @@
 			["Diminished", "Lighter", "Feelin' Nice", "Feelin' Nice",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardAkiraSet, 1], //Results Portrait
-			["stagecharakiranormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointKappa, spr_RingAkiraIcon, spr_RingAkiraHand, spr_CharSelectAkiraIcon, spr_IntroQuoteAkira, 1],
 		],
 	
@@ -755,7 +755,7 @@
 			["¡HIJO DE PUTA!", "I Knew You Had it in You", "Feel Da Wind", "Feel Da Wind",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardTaylorSet, 1], //Results Portrait
-			["stagechartaylornormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectTaylorIcon, spr_IntroQuoteTaylor, 1],
 		],
 	
@@ -808,7 +808,7 @@
 			["¡HIJO DE PUTA!", "Playmate", "D 4 N G 3 R", "D 4 N G 3 R",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardAyanaSet, 1], //Results Portrait
-			["stagecharayananormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectAyanaIcon, spr_IntroQuoteAyana, 1],
 		],
 		
@@ -861,7 +861,7 @@
 			["¡HIJO DE PUTA!", "I Knew You Had it in You", "¡JODER SÍ!", "¡JODER SÍ!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardRoxxaneSet, 1], //Results Portrait
-			["stagecharroxxanenormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointSarah, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectRoxxaneIcon, spr_IntroQuoteRoxxane, 1],
 		],
 	
@@ -914,7 +914,7 @@
 			["You Gotta be Kiddin' Me", "Ayy, Not Bad", "That's What I'm TALKIN' About!!", "That's What I'm TALKIN' About!!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardRushSet, spr_LevelCardRushSet, 1], //Results Portrait
-			["stagecharrushnormal",],
+			["rush_icon", "rush_icon",],
 			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, spr_IntroQuoteRush, 1],
 		],
 	
@@ -967,7 +967,7 @@
 			["Broken Chaos", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardEdgeSet, 1], //Results Portrait
-			["stageCharEdgeNormal",],
+			["rush_icon", "rush_icon"],
 			[spr_CheckpointRush, spr_RingKappaIcon, spr_RingKappaHand, spr_CharSelectEdgeIcon, spr_IntroQuoteEdge, 1],
 		],
 	
@@ -1020,7 +1020,7 @@
 			["Shot Down", "It's Arright, Pardner", "JUSTICE", "JUSTICE",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
 			[spr_LevelCardIvySet, spr_LevelCardIvySet, 1], //Results Portrait
-			["stagecharivynormal",],
+			["ivy_icon", "ivy_icon"], //Discord Character Icon
 			[spr_CheckpointIvy, spr_RingIvyIcon, spr_RingIvyHand, spr_CharSelectIvyIcon, spr_IntroQuoteIvy, 1],
 		],
 	
@@ -1512,7 +1512,7 @@
 		},
 		
 		{ //MIND Level 3
-			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed3, levelForced: false,
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 3, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed3, levelForced: false,
 		
 			rankS_Time: 135, rankA_Time: 145, rankB_Time: 200, rankC_Time: 220, rankD_Time: 245, rankF_Time: 315,
 			
@@ -1546,7 +1546,7 @@
 		},
 		
 		{ //MIND Level Boss
-			stage_Name: "level_MIND", stage_Type: "freeplay_Level" + "freeplay_Boss", stage_Desc: "freeplay_DescMindBoss", level_Num: "", level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBoss, levelForced: false,
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMindBoss", level_Num: "freeplay_Boss", level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBoss, levelForced: false,
 		
 			rankS_Time: 330, rankA_Time: 340, rankB_Time: 355, rankC_Time: 415, rankD_Time: 440, rankF_Time: 510,
 			

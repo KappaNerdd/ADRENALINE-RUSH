@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_Eggman",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":238.34483,
+  "exportDir":"",
+  "name":"mus_Eggman",
+  "parent":{
+    "name":"DELTARUNE",
+    "path":"folders/Sounds/Music/DELTARUNE.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_Eggman.ogg",
+  "volume":1.0,
+}

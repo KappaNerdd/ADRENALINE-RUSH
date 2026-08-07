@@ -41,6 +41,7 @@
 	burstTrickFrames = 15;
 	bursted = false;
 	bursting = false;
+	burstVel = 0;
 #endregion
 
 #region //Extra Special Idle

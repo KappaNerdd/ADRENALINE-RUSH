@@ -1,4 +1,4 @@
-function scr_CreateSpeedHUD(_timer = true, _resetTime = true, _countUp = false, _lives = true, _camera = true, _ghost = true, _rank = true, _combo = true) {
+function scr_CreateSpeedHUD(_timer = true, _resetTime = true, _countUp = false, _lives = true, _camera = true, _ghost = true, _rank = true, _combo = true, _boost = true) {
 	if _timer && !instance_exists(obj_Timer) {
 		with(instance_create_depth(-10000, 0, -9, obj_Timer)) {
 			resetCount = _resetTime;
@@ -24,6 +24,10 @@ function scr_CreateSpeedHUD(_timer = true, _resetTime = true, _countUp = false, 
 	
 	if _combo && !instance_exists(obj_EnemyComboCounterSpeed) {
 		instance_create_depth(-10000, 0, -9, obj_EnemyComboCounterSpeed);
+	}
+	
+	if _boost && !instance_exists(obj_BoostMeter) {
+		instance_create_depth(-10000, 0, -9, obj_BoostMeter);
 	}
 	
 	//instance_create_depth(-10000, 0, -9, obj_InputRecorder);

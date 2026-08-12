@@ -1,7 +1,6 @@
 fx_set_parameter(hueFX, "g_HueShift", hueColor);
 fx_set_parameter(hueFX, "g_HueSaturation", hueSat);
 
-
 if keyboard_check(vk_alt) {
 	hueColor += 0.005;
 }

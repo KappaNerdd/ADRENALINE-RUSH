@@ -11,7 +11,7 @@ rushColor = c_white;
 rushTimer = 4;
 rushCol = false;
 
-personalBoost = obj_Player.boostEnergy;
+personalBoost = 0;
 
 upBoost = false;
 downBoost = false;

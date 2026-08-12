@@ -19,14 +19,14 @@
 if can_MoveFULL {
 	#region //Movement
 		//Left Movement
-		if left_Key && !spindash && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !prepare && !sliding {
+		if left_Key && !spindash && !homing_Active && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !prepare && !sliding {
 			if !superPeelout && !afterWallJump {
 				scr_PlayerMoveLeft();
 			}
 		}
 
 		//Right Movement
-		if right_Key && !spindash && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !prepare && !sliding {
+		if right_Key && !spindash && !homing_Active && !stomping && !railGrind && !stomped && !ducking && !prepare && !slow_Down && !prepare && !sliding {
 		    if !superPeelout && !afterWallJump {
 				scr_PlayerMoveRight();
 			}
@@ -274,8 +274,6 @@ if can_MoveFULL {
 					sprite_index = sprSpindashRev;
 					image_speed = 1;
 					mask_index = crouch_Mask;
-					
-					
 				}
 			
 				//Dropdash
@@ -430,7 +428,6 @@ if can_MoveFULL {
 	#region //Spindash
 		if ground && !railGrind && !railGrindCrouch && !prepare && !superPeelout && !spindash && vel == 0 && down_Key && (jump_Key or action_Key) {
 			spindashTimer = spindashMax / 2;
-			ducking = false;
 			scr_ControllerRumble();
 			
 			spindash = true;
@@ -438,9 +435,7 @@ if can_MoveFULL {
 			obj_SFXManager.spindashRev = true;
 		}
 		
-		if spindash {
-			ducking = false;
-			
+		if spindash {			
 			if jump_Key or action_Key {
 				scr_ControllerRumble();
 				
@@ -480,7 +475,6 @@ if can_MoveFULL {
 	#region //Super Peelout
 		if ground && vel == 0 && !railGrind && !railGrindCrouch && !prepare && !spindash && !superPeelout && (up_Key && (jump_Key or action_Key)) {
 			superPeeloutTimer = superPeeloutMax / 4;
-			look_up = false;
 			scr_ControllerRumble();
 			
 			superPeelout = true;
@@ -489,8 +483,6 @@ if can_MoveFULL {
 		}
 		
 		if superPeelout {
-			look_up = false;
-			
 			if jump_Key or action_Key {
 				scr_ControllerRumble();
 				
@@ -523,6 +515,12 @@ if can_MoveFULL {
 			}
 			
 			obj_SFXManager.stompingCharged = true;
+		}
+		
+		if superPeelout or spindash {
+			canTalk = false;
+		} else {
+			canTalk = true;
 		}
 	#endregion
 

@@ -8,6 +8,9 @@ ground = true;
 stomped = false;
 specialIdle = false;
 
+ducking = false;
+look_up = false;
+
 moveSpd = 2;
 vel = 0;
 

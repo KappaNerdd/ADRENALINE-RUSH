@@ -36,6 +36,16 @@ function scr_OverRoomTrans(_x = 0, _y = 0, _rm = noone, _xscale = 1, _div = 1, _
 	}
 }
 
+function scr_ChangePos(_x = 0, _y = 0, _div = 1) {
+	if !instance_exists(obj_RoomTransParent) {
+		with(instance_create_depth(-100000, 0, -999999, obj_RoomTransitionSEGAChangePos)) {
+			target_x = _x;
+			target_y = _y;
+			division = _div;
+		}
+	}
+}
+
 function scr_WhiteTrans(_rm = noone, _div = 1) {
 	if !instance_exists(obj_RoomTransParent) {
 		with(instance_create_depth(-100, 0, -10, obj_BaseWhiteTrans)) {

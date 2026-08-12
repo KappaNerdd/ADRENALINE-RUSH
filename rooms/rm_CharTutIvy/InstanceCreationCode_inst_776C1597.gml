@@ -1,0 +1,1 @@
+scr_CreateHint([global.ConS_SP2], "move_IReload", "desc_IReload", spr_IvyRevolverUI, spr_IvyRevolverUI);

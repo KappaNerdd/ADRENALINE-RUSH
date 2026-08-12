@@ -35,8 +35,8 @@ function scr_CharDataKappa() {
 	
 	backTrickBoost = 9;
 	backTrickUpBoost = -5.5;
-	sideTrickBoost = 11;
-	fullTrickBoost = 16;
+	sideTrickBoost = 14;
+	fullTrickBoost = 17;
 	upTrickBoost = -11;
 	
 	//360 movement

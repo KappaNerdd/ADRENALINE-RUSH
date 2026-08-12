@@ -9,8 +9,8 @@
   "name":"obj_Spacebar",
   "overriddenProperties":[],
   "parent":{
-    "name":"User Interface",
-    "path":"folders/Objects/User Interface.yy",
+    "name":"Controls",
+    "path":"folders/Objects/User Interface/Controls.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -33,6 +33,7 @@ scr_Defaults_for_Text();
 		
 		if instance_exists(obj_Player) {
 			obj_Player.can_MoveFULL = false;
+			obj_Player.can_Move = false;
 		}
 	
 		draw_set_font(global.font_main);
@@ -395,6 +396,7 @@ scr_Defaults_for_Text();
 	
 		if instance_exists(obj_Player) {
 			obj_Player.can_MoveFULL = false;
+			obj_Player.can_Move = false;
 		}
 	} else if !setup && setupComplete {
 		_textboxWidth = 0;
@@ -404,6 +406,7 @@ scr_Defaults_for_Text();
 		
 			if instance_exists(obj_Player) {
 				obj_Player.can_MoveFULL = true;
+				obj_Player.can_Move = true;
 			}
 		}
 	}
@@ -513,8 +516,8 @@ scr_Defaults_for_Text();
 				} else {
 					//Link text for option
 					if option_number > 0 {
-						create_textbox(option_link_id[option_pos], 728);
 						instance_destroy();
+						create_textbox(option_link_id[option_pos], 725);
 				
 						if global.PlayerChar == 0 {
 							draw_sprite_ext(spr_CursorHead, image_index / 6, x, y, 1, 1, 0, c_white, 1);

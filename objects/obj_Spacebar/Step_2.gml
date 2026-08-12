@@ -1,7 +1,7 @@
 if instance_exists(obj_Player) {
 	with(obj_Player) {
-		if place_meeting(x, y, obj_TextboxColl) or place_meeting(x, y, obj_LevelDoorHead) {
-			if can_MoveFULL && vel == 0 && ground && !stomped && !specialIdle {
+		if place_meeting(x, y, obj_TextboxColl) or place_meeting(x, y, obj_LevelDoorHead) or place_meeting(x, y, obj_TutorialHint) {
+			if can_MoveFULL && vel == 0 && ground && !stomped && !specialIdle && !ducking && !look_up && canTalk {
 				other.image_alpha = 1;
 			} else {
 				other.image_alpha = 0.5;

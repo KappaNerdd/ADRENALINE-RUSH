@@ -1,0 +1,1 @@
+scr_CreateHint([global.ConS_SP1], "move_IBDash", "desc_IBDash", obj_Player.sprTrickSide, obj_Player.sprTrickSide);

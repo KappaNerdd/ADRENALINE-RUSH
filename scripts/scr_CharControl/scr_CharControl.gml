@@ -77,6 +77,8 @@ function scr_BasicVariablesSpeedCreate() {
 		face_Left = false;
 		visXScale = 1;
 		
+		canTalk = true;
+		
 		mask_index = idle_Mask;
 		
 		localPlayerID = 0;

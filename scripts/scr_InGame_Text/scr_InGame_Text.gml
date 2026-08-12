@@ -636,6 +636,24 @@ function scr_game_text(_text_id) { //("<" = Color) ("<~" = Wavy) ("<^" = Shake)
 		
 				
 		#region ///-----Character Tutorials-----///
+				case "CharTut":
+					scr_text(scr_DialogueText("tut_Char1-1"), "false", ["No One Ghost"]);
+					scr_text(scr_DialogueText("tut_Char1-2"), "false", ["No One Ghost"]);
+						scr_option(scr_LocalText("opt_Yes"), "Char-Yes");
+						scr_option(scr_LocalText("opt_No"), "Char-No");
+				break;
+				
+				case "Char-Yes":
+					obj_Player.can_MoveFULL = true;
+					instance_destroy();
+					scr_ChangePos(23072, 1780);
+				break;
+				
+				case "Char-No":
+					obj_Player.can_Move = true;
+					obj_Player.can_MoveFULL = true;
+					instance_destroy();
+				break;
 				
 				//Kappa Head
 				case "kappaTut":

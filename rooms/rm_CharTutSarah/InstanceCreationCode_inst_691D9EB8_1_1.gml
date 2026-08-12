@@ -1,0 +1,1 @@
+scr_CreateHint(["charSel_Hold", global.ConS_B], "move_ABoost", "desc_ABoost", obj_Player.boostingSprite, obj_Player.boostingSprite);

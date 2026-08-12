@@ -1850,17 +1850,6 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 						if angle >= 45 && angle <= 315 && abs(vel) < xMinSpeedToFall {
 							PlayerFlight();
 							noMoveTimer = 30;
-							yspd = -1;
-							
-							if leftFacer {
-								if face_Left {
-									vel = 2;
-								} else {
-									vel = -2;
-								}
-							} else {
-								vel = -2 * visXScale;
-							}
 						}
 
 						PlayerCollisionCache();

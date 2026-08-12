@@ -272,7 +272,6 @@ if !confirm {
 						tutorialChar = true;
 						obj_SFXManager.funkinCheckpoint = true;
 						confirm = true;
-						set_song_ingame(noone, 60, 0);
 						changingY = -5;
 					}
 				}
@@ -368,7 +367,11 @@ if !confirm {
 				tutorialTimer--;
 				
 				if tutorialTimer <= 0 {
-					
+					if !instance_exists(obj_RoomTransParent) {
+						with(instance_create_depth(-100000, 0, depth, obj_RushTransition)) {
+							target_rm = global.PlayerSelection[global.PlayerChar][7][2];
+						}
+					}
 				}
 			}
 		}

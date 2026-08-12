@@ -1,0 +1,1 @@
+scr_CreateHint([global.ConS_SP1], "move_SSHover", "desc_SSHover", obj_Player.sprRailJumpRight, obj_Player.sprRailJumpRight);

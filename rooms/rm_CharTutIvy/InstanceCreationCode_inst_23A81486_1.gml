@@ -1,0 +1,1 @@
+scr_CreateHint([global.ConS_SP1], "move_IRevolver", "desc_IRevolver", obj_Player.sprShootGround, obj_Player.sprShootGround);

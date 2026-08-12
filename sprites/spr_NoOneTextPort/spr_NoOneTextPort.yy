@@ -81,8 +81,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"TextPorts",
-    "path":"texturegroups/TextPorts",
+    "name":"HUD",
+    "path":"texturegroups/HUD",
   },
   "type":0,
   "VTile":false,

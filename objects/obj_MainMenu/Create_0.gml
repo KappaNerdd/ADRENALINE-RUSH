@@ -71,7 +71,7 @@ extra = [
 	["title_Boombox", spr_GameplayRender, true],
 	["title_Gallery", spr_GameplayRender, false],
 	["title_Bios", spr_GameplayRender, true],
-	["title_Enemy", spr_GameplayRender, false],
+	["title_Enemy", spr_GameplayRender, true],
 ]
 
 gameplayChosen = false;

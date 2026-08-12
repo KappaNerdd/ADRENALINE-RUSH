@@ -3,7 +3,6 @@ image_angle = 0;
 changeAngle = 0;
 changeAngleType = 5;
 
-
 image_alpha = 0;
 
 image_xscale = 3;

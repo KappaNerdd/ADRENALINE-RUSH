@@ -60,7 +60,6 @@ stopText = false;
 speakerName = "";
 _check2 = "";
 
-
 //Options
 option[0] = "";
 option_link_id[0] = -1;

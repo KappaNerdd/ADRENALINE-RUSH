@@ -62,7 +62,7 @@ if !transComplete {
 	
 	if colorRed == 0 {
 		if checkChar {
-			if image_alpha >= 0.99 {
+			if image_alpha >= 0.95 {
 				with(obj_Player) {
 					x = other.target_x + (100 * other.target_xscale);
 					y = other.target_y;

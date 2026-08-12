@@ -33,8 +33,8 @@ function scr_CharDataRush() {
 	
 	backTrickBoost = 10;
 	backTrickUpBoost = -6;
-	sideTrickBoost = 14;
-	fullTrickBoost = 19;
+	sideTrickBoost = 15;
+	fullTrickBoost = 20;
 	upTrickBoost = -11;
 	
 	//360 movement

@@ -105,8 +105,8 @@
   "swatchColours":null,
   "swfPrecision":2.525,
   "textureGroupId":{
-    "name":"MIND",
-    "path":"texturegroups/MIND",
+    "name":"General_Environment",
+    "path":"texturegroups/General_Environment",
   },
   "type":0,
   "VTile":false,

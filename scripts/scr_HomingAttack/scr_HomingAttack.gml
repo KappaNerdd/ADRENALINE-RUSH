@@ -123,7 +123,12 @@ function scr_HomingAttackStep() {
 				yspd = -(normalJspd + 1);
 			} else {
 				yspd = -grav;
-				vel = 0;
+				
+				if object_index != obj_RushSpeed {
+					vel = 0;
+				} else {
+					vel = max_Speed * visXScale;
+				}
 			}
 			
 			if homingTimer > 0 {

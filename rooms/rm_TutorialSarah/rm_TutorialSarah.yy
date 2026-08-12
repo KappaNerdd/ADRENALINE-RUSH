@@ -169,8 +169,8 @@
   ],
   "name":"rm_TutorialSarah",
   "parent":{
-    "name":"Tutorial Rooms",
-    "path":"folders/Rooms/Tutorial Rooms.yy",
+    "name":"Old",
+    "path":"folders/Rooms/Character Tutorial Rooms/Old.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

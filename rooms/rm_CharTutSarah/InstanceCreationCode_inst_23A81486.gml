@@ -1,0 +1,1 @@
+scr_CreateHint([global.ConS_A1, "+", global.ConS_D], "move_SSSlam", "desc_SSSlam", obj_Player.sprOmegaStomping, obj_Player.sprOmegaStomping);

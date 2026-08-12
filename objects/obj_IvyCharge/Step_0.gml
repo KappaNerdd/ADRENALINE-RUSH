@@ -2,12 +2,7 @@ if global.SimplifyVFX {
 	image_index = 0;
 }
 
-
-if global.Particles {
-	visible = true;
-} else {
-	visible = false;
-}
+visible = global.Particles;
 
 if global.MIND {
 	sprite_index = spr_IvyChargeVFXHead;
@@ -44,11 +39,9 @@ if obj_Player.chargeTimer < obj_Player.chargeFrames - 15 {
 	
 	changeAngle = changeAngleType;
 	
-	
 	if image_alpha > 0 {
 		image_alpha -= 0.1;
 	}
-	
 	
 	if image_xscale < 3 {
 		image_xscale += 0.25;

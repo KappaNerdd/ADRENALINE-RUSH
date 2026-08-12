@@ -1,5 +1,5 @@
 #region //Attacking
-	if (realJumping or sliding or upTrick or backTrick or stomping or stompPow or stomped) {
+	if (realJumping or sliding or upTrick or backTrick or stomping or stompPow or stomped or shootAir) {
 		attacking = true;
 	} else {
 		attacking = false;
@@ -296,7 +296,7 @@ if can_MoveFULL {
 					sprite_index = sprShootGround;
 					mask_index = idle_Mask;
 					
-					if image_index == image_number - 1 {
+					if image_index >= image_number - 1 {
 						shootGround = false;
 					}
 				}
@@ -307,11 +307,7 @@ if can_MoveFULL {
 						image_speed = 1;
 					} else {
 						sprite_index = sprSlide;
-						image_speed = 4;
-						
-						if yspd > 1 {
-							shootAir = false;
-						}
+						image_speed = 2;
 					}
 					
 					mask_index = idle_Mask;
@@ -550,7 +546,7 @@ if can_MoveFULL {
 		#endregion
 		
 		#region //Actual Shooting
-			if !instance_exists(obj_CountdownHead) && !instance_exists(obj_Countdown) && revolverAmmo != 0 && !stompPow && !hShoot && !reload && !preStomp && !railGrind && !prepare && !sliding && !rampRing && !afterRailJump && !trick && !stomping && !stomped && !global.Death {
+			if !instance_exists(obj_CountdownHead) && !instance_exists(obj_Countdown) && revolverAmmo != 0 && !stompPow && !hShoot && !reload && !preStomp && !railGrind && !prepare && !sliding && !rampRing && !afterRailJump && !trick && !stomping && !stomped && !playerHurt && !global.Death {
 				if action2_Key_Released {
 					obj_IvyRevolverUI.alphaTimer = obj_IvyRevolverUI.alphaFrames;
 					
@@ -602,36 +598,44 @@ if can_MoveFULL {
 									shootAir = false;
 									obj_SFXManager.ivyShoot = true;
 									scr_ControllerRumble();
+									noMoveTimer = 15;
+									gravTimer = 15;
 									
-									var _shot = 5;
+									var _shot = 4;
 									
 									if left_Key && !right_Key { //Left Movement
 										if vel < 0 {
 											if !speedBreak {
-												vel -= _shot;
+												if vel > -max_Speed {
+													vel -= _shot;
+												}
 											} else {
 												if vel > -full_Speed {
 													vel -= _shot;
 												}
 											}
 										} else if vel > 0 {
-											vel = -max_Speed
+											vel = -max_Speed / 2;
 										}
 									} else if right_Key && !left_Key { //Right Movement
 										if vel > 0 {
 											if !speedBreak {
-												vel += _shot;
+												if vel < max_Speed {
+													vel += _shot;
+												}
 											} else {
 												if vel < full_Speed {
 													vel += _shot;
 												}
 											}
 										} else if vel < 0 {
-											vel = max_Speed
+											vel = max_Speed / 2;
 										}
 									} else if left_Key && right_Key { //Boofum
 										if !speedBreak {
-											vel = _shot * visXScale;
+											if abs(vel) < max_Speed {
+												vel = _shot * visXScale;
+											}
 										} else {
 											if abs(vel) < full_Speed {
 												vel = _shot * visXScale;
@@ -639,7 +643,9 @@ if can_MoveFULL {
 										}
 									} else if !left_Key && !right_Key { //Also Boofum
 										if !speedBreak {
-											vel = _shot * visXScale;
+											if abs(vel) < max_Speed {
+												vel = _shot * visXScale;
+											}
 										} else {
 											if abs(vel) < full_Speed {
 												vel = _shot * visXScale;
@@ -668,7 +674,7 @@ if can_MoveFULL {
 								} else {
 									if jump_Key_Held or jump_Key {
 										shootAir = true;
-										yspd = -normalJspd * 2.5;
+										yspd = -normalJspd * 1.75;
 										revolverAmmo -= 2;
 										realJumping = false;
 										image_index = 0;
@@ -685,12 +691,17 @@ if can_MoveFULL {
 										scr_StopCamMove();
 										
 										vel += 5 * visXScale;
+										yspd = 0;
 									}
 								}
 							}
 						#endregion
 					}
 				}
+			} else {
+				chargeTimer = chargeFrames;
+				fullCharge = false;
+				obj_SFXManager.ivyCharge = false;
 			}
 			
 			#region //Horizontral Shooting
@@ -708,13 +719,10 @@ if can_MoveFULL {
 					obj_SFXManager.UndertaleRainbowLoop = true;
 					scr_ControllerRumble(0.5);
 					scr_ScreenShake(0.75);
-					yspd = 0;
+					gravTimer = 15;
+					noMoveTimer = 15;
 			
-					if visXScale == 1 {
-						vel += acc * 2;
-					} else if visXScale == -1 {
-						vel -= acc * 2;
-					}
+					vel += (normalAcc * 2) * visXScale;
 					
 					if action_Key {
 						hShoot = false;
@@ -722,27 +730,28 @@ if can_MoveFULL {
 					}
 					
 					if yspd <= 0 {
-						if place_meeting(x + 1, y, obj_Solid) {
-							vel = -4;
-							yspd = -7;
+						if place_meeting(x + 6, y, obj_Solid) {
+							vel = -5;
+							yspd = -6;
 							
 							realJumping = false;
 							hShoot = false;
 							hShootFinish = true;
 				
-							obj_SFXManager.stomped = true;
+							obj_SFXManager.stompSound = true;
 							scr_ControllerRumble(0.5);
 							scr_ScreenShake(1);
 							
 							scr_RushBoostBreakVFX();
-						} else if place_meeting(x - 1, y, obj_Solid) {
-							vel = 4;
-							yspd = -7;
-				
+						} else if place_meeting(x - 6, y, obj_Solid) {
+							vel = 5;
+							yspd = -6;
+							
+							realJumping = false;
 							hShootFinish = true;
 							hShoot = false;
 				
-							obj_SFXManager.stomped = true;
+							obj_SFXManager.stompSound = true;
 							scr_ControllerRumble(0.5);
 							scr_ScreenShake(1);
 							
@@ -752,9 +761,7 @@ if can_MoveFULL {
 			
 					if hShootTimer > 0 {
 						hShootTimer -= 1;
-					}
-			
-					if hShootTimer <= 0 {
+					} else {
 						if revolverAmmo > 0 {
 							hShootTimer = hShootFrames;
 							revolverAmmo -= 1;
@@ -797,19 +804,11 @@ if can_MoveFULL {
 				reload = true;
 				obj_SFXManager.airDashSound = true;
 				scr_ControllerRumble();
-			
-				if !ground {
-					if revolverAmmo == 0 {
-						reloadTimer = reloadFramesAir;
-					} else {
-						reloadTimer = reloadFramesAir / revolverAmmo * 1.1;
-					}
+
+				if revolverAmmo == 0 {
+					reloadTimer = reloadFrames;
 				} else {
-					if revolverAmmo == 0 {
-						reloadTimer = reloadFrames;
-					} else {
-						reloadTimer = reloadFrames / revolverAmmo * 1.5;
-					}
+					reloadTimer = reloadFrames / revolverAmmo * 1.5;
 				}
 			}
 		

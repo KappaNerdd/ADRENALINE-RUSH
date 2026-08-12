@@ -159,7 +159,7 @@ if !done {
 							changeRightTimer = changeFrames;
 					
 							if choice < _array - 1 {
-								choice++;
+								//choice++;
 							} else {
 								choice = 0;
 								rushBallAngle = 0 + _rushBS;
@@ -312,8 +312,12 @@ if !done {
 				if confirmChoice == 0 {
 					if !instance_exists(obj_RoomTransParent) {
 						if _choiceLength[choice][1] == restart {
-							with(instance_create_depth(-100000, 0, depth, obj_RushTransition)) {
-								restart = true;
+							if !instance_exists(obj_TrackerTutorial) {
+								with(instance_create_depth(-100000, 0, depth, obj_RushTransition)) {
+									restart = true;
+								}
+							} else {
+								instance_create_depth(-100000, 0, depth, obj_RoomTransitionSEGARestart);
 							}
 							
 							if global.Freeplay {

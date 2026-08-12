@@ -296,7 +296,7 @@
 		
 			[spr_KappaTextbox, 15, spr_MCursorKappa], //Character Textbox (Optional: Sprite Strip)
 		
-			[obj_KappaSpeed, obj_KappaFreeFall], //SPEED STAGE Player Object
+			[obj_KappaSpeed, obj_KappaFreeFall, rm_CharTutKappa], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
 			[spr_LevelCardKappaSet, spr_LevelCardKappaHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
@@ -350,12 +350,12 @@
 		
 			[spr_LuciferTextbox, 12, spr_MCursorLucifer], //Character Textbox (Optional: Sprite Strip)
 		
-			[obj_LuciferSpeed, obj_LuciferFreeFall], //SPEED STAGE Player Object
+			[obj_LuciferSpeed, obj_LuciferFreeFall, rm_CharTutLucifer], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCardLuciferSet, spr_LevelCardLuciferSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCardLuciferSet, spr_LevelCardLuciferSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_FreeplayLuciferSet, spr_FreeplayLuciferSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardLuciferSet, spr_LevelCardLuciferHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardLuciferSet, spr_LevelCardLuciferHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayLuciferSet, spr_FreeplayLuciferHead, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameLucifer, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -383,7 +383,7 @@
 			[mus_BeenBetter, mus_YouStrong, mus_HonoraryBlaze, mus_HonoraryBlaze, mus_ItsDone], //Results Theme Tracks [shit, good, sick, perfect]
 			["That Could've Been Better", "You Are Strong", "Honorary Blaze", "Honorary Blaze",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCardLuciferSet, spr_LevelCardLuciferSet, 1], //Results Portrait
+			[spr_LevelCardLuciferSet, spr_LevelCardLuciferHead, 1], //Results Portrait
 			["lucifer_icon", "lucifer_icon",],
 			[spr_CheckpointLucifer, spr_RingLuciferIcon, spr_RingLuciferHand, spr_CharSelectLuciferIcon, spr_IntroQuoteLucifer, 1],
 		],
@@ -404,12 +404,12 @@
 		
 			[spr_SarahTextbox, 11, spr_MCursorSarah],
 		
-			[obj_SarahSpeed, obj_SarahFreeFall], //SPEED STAGE Player Object
+			[obj_SarahSpeed, obj_SarahFreeFall, rm_CharTutSarah], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCardSarahSet, spr_LevelCardSarahSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCardSarahSet, spr_LevelCardSarahSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_FreeplaySarahSet, spr_FreeplaySarahSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardSarahSet, spr_LevelCardSarahHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardSarahSet, spr_LevelCardSarahHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplaySarahSet, spr_FreeplaySarahHead, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameSarah, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -436,7 +436,7 @@
 			[mus_DidYourBest, mus_KnewYouHadIt, mus_HeartsAround, mus_HeartsAround, mus_YouDidIt], //Results Theme Tracks [shit, good, sick, perfect]
 			["You Did Your Best", "I Knew You Had it in You", "Hearts All Around", "Hearts All Around",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCardSarahSet, spr_LevelCardSarahSet, 1], //Results Portrait
+			[spr_LevelCardSarahSet, spr_LevelCardSarahHead, 1], //Results Portrait
 			["sarah_icon", "sarah_icon",],
 			[spr_CheckpointSarah, spr_RingSarahIcon, spr_RingSarahHand, spr_CharSelectSarahIcon, spr_IntroQuoteSarah, 1],
 		],
@@ -881,12 +881,12 @@
 		
 			[spr_RushTextbox, 24, spr_MCursorRush], //Character Textbox (Optional: Sprite Strip)
 		
-			[obj_RushSpeed, obj_RushFreeFall], //SPEED STAGE Player Object
+			[obj_RushSpeed, obj_RushFreeFall, rm_CharTutRush], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCardRushSet, spr_LevelCardRushSet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCardRushSet, spr_LevelCardRushSet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_FreeplayRushSet, spr_FreeplayRushSet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardRushSet, spr_LevelCardRushHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardRushSet, spr_LevelCardRushHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayRushSet, spr_FreeplayRushHead, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameRush, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -913,7 +913,7 @@
 			[mus_KiddinMe, mus_NotBad, mus_TalkinAbout, mus_TalkinAbout, mus_Groovy], //Results Theme Tracks [shit, good, sick, perfect]
 			["You Gotta be Kiddin' Me", "Ayy, Not Bad", "That's What I'm TALKIN' About!!", "That's What I'm TALKIN' About!!",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCardRushSet, spr_LevelCardRushSet, 1], //Results Portrait
+			[spr_LevelCardRushSet, spr_LevelCardRushHead, 1], //Results Portrait
 			["rush_icon", "rush_icon",],
 			[spr_CheckpointRush, spr_RingRushIcon, spr_RingRushHand, spr_CharSelectRushIcon, spr_IntroQuoteRush, 1],
 		],
@@ -987,12 +987,12 @@
 		
 			[spr_IvyTextbox, 8, spr_MCursorIvy], //Character Textbox (Optional: Sprite Strip)
 		
-			[obj_IvySpeed, obj_IvyFreeFall], //SPEED STAGE Player Object
+			[obj_IvySpeed, obj_IvyFreeFall, rm_CharTutIvy], //SPEED STAGE Player Object
 			obj_ActionPlayer, //ACTION STAGE Player Object
 		
-			[spr_LevelCardIvySet, spr_LevelCardIvySet, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_LevelCardIvySet, spr_LevelCardIvySet, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
-			[spr_FreeplayIvySet, spr_FreeplayIvySet, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardIvySet, spr_LevelCardIvyHead, 1], //SPEED STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_LevelCardIvySet, spr_LevelCardIvyHead, 1], //ACTION STAGE Level Portrait (Optional (Costumes): Sprite Strip)
+			[spr_FreeplayIvySet, spr_FreeplayIvyHead, 1], //Freeplay Character Portrait (Optional (Costumes): Sprite Strip)
 			[spr_CharNameIvy, 1], //Character Select/Freeplay Char Name (Optional (Animated): Sprite Strip)
 		
 			[ //Character Select Stats (SPEED STAGE)
@@ -1019,7 +1019,7 @@
 			[mus_ShotDown, mus_ArrightPardner, mus_JUSTICE, mus_JUSTICE, mus_GunSlinger], //Results Theme Tracks [shit, good, sick, perfect]
 			["Shot Down", "It's Arright, Pardner", "JUSTICE", "JUSTICE",], //Results Theme Track Names (Must be a string, EX: "My Balls")
 			["Kappa Nerd", "Kappa Nerd", "Kappa Nerd", "Kappa Nerd",], //Results Theme Track Composer(s) (Must be a string, EX: "Lord Beerus")
-			[spr_LevelCardIvySet, spr_LevelCardIvySet, 1], //Results Portrait
+			[spr_LevelCardIvySet, spr_LevelCardIvyHead, 1], //Results Portrait
 			["ivy_icon", "ivy_icon"], //Discord Character Icon
 			[spr_CheckpointIvy, spr_RingIvyIcon, spr_RingIvyHand, spr_CharSelectIvyIcon, spr_IntroQuoteIvy, 1],
 		],

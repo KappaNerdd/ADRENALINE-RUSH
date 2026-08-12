@@ -18,10 +18,12 @@ if !transComplete {
 	    } else {
 		    transComplete = true;
 			
-			obj_Player.x = global.RespawnX;
-			obj_Player.y = global.RespawnY;
 			obj_Player.playerHurt = false;
 			obj_Player.can_Move = true;
+			obj_Player.vel = 0;
+			obj_Player.stomping = false;
+			obj_Player.x = global.RespawnX;
+			obj_Player.y = global.RespawnY;
 			scr_SetCamFollow(global.PlayerID);
 			
 			audio_stop_sound(snd_DeltaruneFall);

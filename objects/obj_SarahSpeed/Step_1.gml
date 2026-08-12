@@ -465,8 +465,8 @@ if can_MoveFULL {
 				hover = true;
 				sideWallJump = false;
 				
-				if yspd >= 5 {
-					yspd = 5;
+				if yspd >= 4 {
+					yspd = 4;
 				}
 			} else {
 				hover = false;

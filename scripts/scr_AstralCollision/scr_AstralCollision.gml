@@ -513,7 +513,7 @@ function PlayerCollisionCache() {
 /// @param _angle
 function PlayerGetAngle(_x, _y, _angle) {
 	// Limit the angle to 32 directions to maintain stability and reduce jittering
-	//_angle = round(_angle / 11.25) * 11.25;
+	_angle = round(_angle / 11.25) * 11.25;
 
 	// Store temporary values
 	maskTemp = mask_index;

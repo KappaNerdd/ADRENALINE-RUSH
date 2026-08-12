@@ -1,0 +1,38 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"tls_TutorialTilesNew",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"tls_TutorialTilesNew",
+  "out_columns":16,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tutorial",
+    "path":"folders/Tile Sets/Tutorial.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_TutorialTilesetNew",
+    "path":"sprites/spr_TutorialTilesetNew/spr_TutorialTilesetNew.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"General_Environment",
+    "path":"texturegroups/General_Environment",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":32,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":32,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":250,
+}

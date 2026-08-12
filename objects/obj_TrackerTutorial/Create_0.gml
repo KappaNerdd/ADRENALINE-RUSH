@@ -1,0 +1,1 @@
+set_song_ingame(global.PlayerSelection[global.PlayerChar][20], 60, 60);

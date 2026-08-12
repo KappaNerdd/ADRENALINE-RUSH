@@ -93,12 +93,17 @@ function scr_EnemyStep() {
 					global.EnemyCount += 1;
 				}
 				
+				if instance_exists(obj_EnemyCounter) {
+					obj_EnemyCounter.enemyCount--;
+					obj_EnemyCounter.textScale += 0.5;
+				}
+				
 				instance_destroy();
 				obj_SFXManager.UndertaleDamage = true;
 			}
 		} else {
 			if !launched {
-				obj_SFXManager.playerHurt = true;
+				obj_SFXManager.playerDeath = true;
 			}
 		}
 	}
@@ -144,11 +149,6 @@ function scr_PlayerToEnemyShit() {
 					scr_DRDamageNumbers(-_toji2.enemyHealth, _toji2.x, _toji2.y);
 					_toji2.enemyHealth -= _toji2.enemyHealth;
 					obj_SFXManager.UndertaleDamage = true;
-					
-					if instance_exists(obj_EnemyCounter) {
-						obj_EnemyCounter.enemyCount--;
-						obj_EnemyCounter.textScale += 0.5;
-					}
 				}
 			}
 		}
@@ -169,11 +169,6 @@ function scr_PlayerToEnemyShit() {
 					scr_DRDamageNumbers(-_toji2.enemyHealth, _toji2.x, _toji2.y);
 					_toji2.enemyHealth -= _toji2.enemyHealth;
 					obj_SFXManager.UndertaleDamage = true;
-					
-					if instance_exists(obj_EnemyCounter) {
-						obj_EnemyCounter.enemyCount--;
-						obj_EnemyCounter.textScale += 0.5;
-					}
 				}
 			}
 		}
@@ -221,11 +216,6 @@ function scr_PlayerToEnemyShit() {
 						scr_DRDamageNumbers(-_tojiList[| i].enemyHealth, _tojiList[| i].x, _tojiList[| i].y);
 						_tojiList[| i].enemyHealth -= _tojiList[| i].enemyHealth;
 						obj_SFXManager.UndertaleDamage = true;
-						
-						if instance_exists(obj_EnemyCounter) {
-							obj_EnemyCounter.enemyCount--;
-							obj_EnemyCounter.textScale += 0.5;
-						}
 					} else if megaAttacking {
 						scr_ScreenShake(1, 20, true, false);
 						scr_ControllerRumble(0.25, 20);
@@ -235,11 +225,6 @@ function scr_PlayerToEnemyShit() {
 						_tojiList[| i].launched = true;
 						_tojiList[| i].enemyHealth -= _tojiList[| i].enemyHealth;
 						obj_SFXManager.enemyExplode = true;
-						
-						if instance_exists(obj_EnemyCounter) {
-							obj_EnemyCounter.enemyCount--;
-							obj_EnemyCounter.textScale += 0.5;
-						}
 					}
 				}
 			}

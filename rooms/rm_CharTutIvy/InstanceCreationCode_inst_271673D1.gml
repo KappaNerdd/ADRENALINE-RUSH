@@ -1,0 +1,1 @@
+scr_CreateHint([global.ConS_SP1, "+", global.ConS_J], "move_IBBounce", "desc_IBBounce", obj_Player.sprShootAir, obj_Player.sprShootAir);

@@ -71,7 +71,7 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 ## PERSONAL SPECIAL THANKS
 - [ThatUnnamedPersonXP](https://bsky.app/profile/thatunnamedperson.bsky.social) - Being an asshole and a long-time supporter of the game
 - [sleeplesscake](https://bsky.app/profile/sleeplesscake.bsky.social) - Created the game's first fan-art and being a long-time supporter of the game
-- [Casserole Comix](https://bsky.app/profile/casserolecomix.bsky.social) - Gave me motivation to pursue art back in 5th grade
+- [Casserole Comix](https://www.youtube.com/@CasseroleComix) - Gave me motivation to pursue art back in 5th grade
 - [Hikiyami Moriko Ch](https://www.youtube.com/channel/UCEqEk-Ti4p0vI3s8ufInJgA) - The first to make a video during the game's first prototype
 - [Sonic Retro](https://info.sonicretro.org/Sonic_Physics_Guide) - Sonic Physics Guide
 - [DFelipeh](https://sonicfangameshq.com/forums/members/dfelipeh.5901/) - Sonic Astral Engine 360 Degree Collision Physics

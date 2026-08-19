@@ -8,7 +8,8 @@ This game is both a challenge for myself and a memorial to my cat, Saiyan, who p
 ## PROGRAMS USED DURING DEVELOPMENT
 - This game is programmed in [GameMaker](https://gamemaker.io/en).
 - All original pixel art assets were made in [Piskel](https://www.piskelapp.com).
-- All hand-drawn artwork 'n' renders were made in ibisPaint X. (Sketched out first in a sketchbook.)
+- Most hand-drawn artwork 'n' renders were made in ibisPaint X. (Sketched out first in a sketchbook.)
+- Some hand-drawn artwork 'n' renders were made in FireAlpaca.
 - All music and original sound effects were made in FL Studio Mobile.
 
 # THE GAME'S PROTOTYPE (They all currently use the game's old name)
@@ -86,5 +87,6 @@ SPEED Stages are the Sonic Rush trilogy part of the game. Boost through the leve
 - [nkrapivin](https://github.com/nkrapivin) - NekoPresence Extension
 - [Alejandro Hitti](https://developer.amazon.com/docs/gamemaker/input-replay-system.html) - Replay Inputs System Article Tutorial
 - [DragoniteSpam](https://github.com/DragoniteSpam) - Easing Functions & Hue Shader Tutorial
+- [YellowAfterlife](https://yellowafterlife.itch.io) - Execute Shell Extension
 
 

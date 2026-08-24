@@ -7,6 +7,7 @@ global.MIND = false;
 global.FreeFall = false;
 global.DisableHUD = false;
 
+scr_BPMCreate(165);
 scr_MusicTag();
 
 nerd = round(random(1));
@@ -119,7 +120,10 @@ goFreeplay = false
 goContinue = false;
 goFileSelect = false;
 
+goCredits = false;
+
 goBio = false;
+goEnemy = false;
 goGallery = false;
 
 newGameWarning = false;

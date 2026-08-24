@@ -67,12 +67,7 @@ function scr_HurtPlayer(_damage, _knockback, _imageXscale, _yKnockback, _ringsFl
 			rushTrickCombo = 0;
 		}
 		
-		if !rushMode {
-			boostEnergy -= 50;
-		} else {
-			rushModeTimer = 0;
-			boostEnergy -= 150;
-		}
+		scr_EnergyPlayer(-50, self);
 		
 		obj_SFXManager.playerHurt = true;
 		obj_SFXManager.lightHit = true;

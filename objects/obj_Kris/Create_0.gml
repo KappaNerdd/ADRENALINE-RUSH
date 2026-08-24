@@ -4,6 +4,8 @@ mask_index = spr_KrisIdle;
 can_Move = true;
 can_MoveFULL = true;
 
+canTalk = true;
+
 ground = true;
 stomped = false;
 specialIdle = false;

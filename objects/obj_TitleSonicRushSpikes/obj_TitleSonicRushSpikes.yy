@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_SonicRush_Spikes_Head",
-    "path":"sprites/spr_SonicRush_Spikes_Head/spr_SonicRush_Spikes_Head.yy",
+    "name":"spr_SonicRushSpikesHead",
+    "path":"sprites/spr_SonicRushSpikesHead/spr_SonicRushSpikesHead.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -44,6 +44,7 @@ if raiseMeUpTimer <= 0 {
 			scr_DRDamageNumbers(global.MaxHealth, obj_Player.x, obj_Player.y, 120, c_lime);
 			global.countUp = true;
 			global.DisableHUD = false;
+			scr_DRDimAlpha(true);
 		}
 	} else {
 		if gasterWait > 0 {

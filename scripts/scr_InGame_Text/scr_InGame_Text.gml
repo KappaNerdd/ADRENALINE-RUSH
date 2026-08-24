@@ -216,6 +216,8 @@ function scr_game_text(_text_id) { //("<" = Color) ("<~" = Wavy) ("<^" = Shake)
 					
 					//Options No	
 					case "HeadSave1 - No":
+						scr_SetCharSpeedMove(true, true);
+						scr_SetCharDRMove(true, true);
 						instance_destroy();
 					break;
 				

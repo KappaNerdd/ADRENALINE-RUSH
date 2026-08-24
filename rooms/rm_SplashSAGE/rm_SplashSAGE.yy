@@ -17,8 +17,8 @@
   ],
   "name":"rm_SplashSAGE",
   "parent":{
-    "name":"Splash",
-    "path":"folders/Rooms/Title Rooms/Title Normal/Splash.yy",
+    "name":"Old",
+    "path":"folders/Rooms/Title Rooms/Title Normal/Old.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -1,4 +1,4 @@
-spike = spr_SonicRush_Spikes_Head;
+spike = spr_SonicRushSpikesHead;
 
 x = camera_get_view_x(view_camera[0]) - 50;
 y = camera_get_view_y(view_camera[0]);
@@ -9,7 +9,7 @@ image_yscale = 2.5;
 image_blend = global.fullRGB;
 
 if global.PlayerChar == 0 {
-	sprite_index = spr_SonicRush_Spikes_Head;
+	sprite_index = spr_SonicRushSpikesHead;
 } else {
 	sprite_index = spr_SonicRushSpikesNorm;
 }

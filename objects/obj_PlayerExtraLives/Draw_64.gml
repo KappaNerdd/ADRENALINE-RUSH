@@ -181,7 +181,7 @@ var _relX = _playX - _camX;
 var _relY = _playY - _camY;
 
 
-if _relY >= 330 {
+if _relY >= 300 && _relX <= 200 {
 	image_alpha = lerp(image_alpha, 0.5, 0.5);
 } else {
 	image_alpha = lerp(image_alpha, 1, 0.25);

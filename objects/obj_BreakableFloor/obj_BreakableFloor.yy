@@ -9,8 +9,8 @@
   "name":"obj_BreakableFloor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Gimmicks",
-    "path":"folders/Objects/Environments/General/Gimmicks.yy",
+    "name":"Misc",
+    "path":"folders/Objects/Environments/General/Gimmicks/Misc.yy",
   },
   "parentObjectId":{
     "name":"obj_Solid",

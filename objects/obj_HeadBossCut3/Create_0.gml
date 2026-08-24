@@ -1,3 +1,5 @@
+scr_DRDim(50, true);
+
 lowerPlayerTimer = 90;
 raiseMeUpTimer = 360;
 

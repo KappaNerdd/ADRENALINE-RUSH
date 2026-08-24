@@ -24,14 +24,6 @@ galleries = [
 ]
 
 gallArt = [
-	[spr_GallRenTaylor, "art_RenTJ"],
-	[spr_GallRenTaylorB, "art_RenTJB"],
-	[spr_GallRenAyana, "art_RenAA"],
-	[spr_GallRenAyanaB, "art_RenAAB"],
-	[spr_GallRenRoxxie, "art_RenRG"],
-	[spr_GallRenRoxxie2, "art_RenRG2"],
-	[spr_GallRenLucifer, "art_RenLC"],
-	[spr_GallGradKap, "art_GradKap"],
 	[spr_GallRidersKap, "art_RidersK"],
 	[spr_GallRidersSar, "art_RidersS"],
 	[spr_GallRidersRus, "art_RidersR"],

@@ -9,8 +9,8 @@
   "name":"obj_RailStopper",
   "overriddenProperties":[],
   "parent":{
-    "name":"Gimmicks",
-    "path":"folders/Objects/Environments/General/Gimmicks.yy",
+    "name":"Speed",
+    "path":"folders/Objects/Environments/General/Gimmicks/Speed.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -442,10 +442,13 @@ function scr_option(_option, _link_id) {
 }
 
 // @param text_id
-function create_textbox(_text_id, _boxXScale = 0) {
+function create_textbox(_text_id, _boxXScale = 0, _makeBox = true, _boxX = 0, _boxY = 300, _glow = false) {
 	with(instance_create_depth(0, 0, 0, obj_Textbox)) {
 		scr_game_text(_text_id);
 		starterText_Width = _boxXScale;
+		makeTextbox = _makeBox;
+		textbox_x = _boxX;
+		textbox_y = _boxY;
 		
 		if _boxXScale == 728 {
 			if !speaker2Char[page] {

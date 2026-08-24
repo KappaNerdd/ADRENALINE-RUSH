@@ -1,0 +1,20 @@
+enum DIR {
+	UP = 90,
+	DOWN = 270,
+	LEFT = 180,
+	RIGHT = 0
+}
+
+enum BATTLE {
+	ENTER,
+	LEAVE,
+	IDLE,
+	ATTACK,
+	PREACT,
+	ACT,
+	PREITEM,
+	ITEM,
+	PREMERCY,
+	MERCY,
+	DEFEND
+}

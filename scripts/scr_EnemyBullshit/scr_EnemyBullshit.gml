@@ -60,29 +60,19 @@ function scr_EnemyStep() {
 				obj_EnemyComboCounterSpeed.sizeChange = 1.3;
 					
 				if instance_exists(obj_GOALColl) {
-					if !obj_GOALColl.goal {	
-						if obj_Player.enemyCombo == 0 {
-							charKiller.boostEnergy += 10;
+					if !obj_GOALColl.goal {
+						if obj_Player.enemyCombo < 4 {
+							scr_EnergyPlayer(10, charKiller);
 						} else {
-							charKiller.boostEnergy += 10 * obj_Player.enemyCombo / 4;
+							scr_EnergyPlayer(10 * charKiller.enemyCombo / 4, charKiller);
 						}
-					}
-				
-					if charKiller.rushMode && !obj_GOALColl.goal {
-						obj_SFXManager.rushModeTrick = true;
-						charKiller.rushModeTimer = charKiller.rushModeFrames;
 					}
 				} else {
 					if !global.FreeFall {
-						if obj_Player.enemyCombo == 0 {
-							 charKiller.boostEnergy += 10;
+						if obj_Player.enemyCombo < 4 {
+							scr_EnergyPlayer(10, charKiller);
 						} else {
-							charKiller.boostEnergy += 10 * charKiller.enemyCombo / 4;
-						}
-				
-						if charKiller.rushMode {
-							obj_SFXManager.rushModeTrick = true;
-							charKiller.rushModeTimer = charKiller.rushModeFrames;
+							scr_EnergyPlayer(10 * charKiller.enemyCombo / 4, charKiller);
 						}
 					}
 				}
@@ -90,12 +80,16 @@ function scr_EnemyStep() {
 				scr_GivePoints(100 * obj_Player.enemyCombo);
 				
 				if instance_exists(obj_Timer) {
-					global.EnemyCount += 1;
+					global.EnemyCount++;
 				}
 				
 				if instance_exists(obj_EnemyCounter) {
 					obj_EnemyCounter.enemyCount--;
 					obj_EnemyCounter.textScale += 0.5;
+				}
+				
+				if global.FreeFall {
+					global.EnemyCountCheck++;
 				}
 				
 				instance_destroy();

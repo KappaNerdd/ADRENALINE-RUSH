@@ -166,6 +166,7 @@ instance_activate_object(obj_Solid);
 instance_activate_object(obj_StageTrackerSpeed);
 instance_activate_object(obj_NekoPresenceDemo);
 instance_activate_object(obj_ControllerSystem);
+instance_activate_object(obj_BPMSystem);
 
 instance_activate_object(obj_CustomLeftKeySpeed);
 instance_activate_object(obj_CustomRightKeySpeed);

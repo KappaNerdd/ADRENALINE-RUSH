@@ -1,6 +1,6 @@
 Can I put my balls-,English,Spanish
 ,,
-///-----MIND Intro-----///,,
+///-----MIND Intro-----///,(Ignore the MIND Intro for now),
 new_Intro1-1,"A long time ago, 2 particular clans existed.",
 new_Intro1-2,"They started off living rather quiet and peaceful lives, separate from each other.",
 new_Intro1-3,But both possessed an ancient power.,
@@ -59,19 +59,19 @@ new_Intro4-7,But you shall persevere.,
 new_Intro4-8,Welcome to...,
 ,,
 ///-----DR Egg Man-----///,,
-egg_Pre,He is behind the tree.,
+egg_Pre,He is behind the tree.,Esta detrás del árbol.
 ,,
-egg_Man1-1,"Well, there is a man here.",
-egg_Man1-2,He offered you something...,
+egg_Man1-1,"Well, there is a man here.","Bueno, hay un hombre aquí."
+egg_Man1-2,He offered you something...,Te ofrece algo...
 ,,
-egg_Man2-1A,"Upon him inspecting you closer, you are not who he thought you were.",
-egg_Man2-2A,You are not <rthem>.,
-egg_Man2-3A,He requests you leave.,
+egg_Man2-1A,"Upon him inspecting you closer, you are not who he thought you were.","Al inspeccionarte de cerca, no eres quien él creía que eras."
+egg_Man2-2A,You are not <rthem>.,No eres <resa persona>.
+egg_Man2-3A,He requests you leave.,Te pide que te vayas.
 ,,
-egg_Man2-1B,Who are you talking to?,
+egg_Man2-1B,Who are you talking to?,¿A quién le hablas?
 ,,
-egg_Man3-1,"Well, there is not a man here.",
+egg_Man3-1,"Well, there is not a man here.","Bueno, no hay un hombre aquí."
 ,,
 ///-----Character Tutorial-----///,,
-tut_Char1-1,The beginning part is for general movement that most characters have.,
-tut_Char1-2,Would you like to skip to the character-specific tutorial?,
+tut_Char1-1,The beginning part is for general movement that most characters have.,El inicio corresponde al movimiento general que tienen la mayoría de los personajes.
+tut_Char1-2,Would you like to skip to the character-specific tutorial?,¿Te gustaría saltar al tutorial del personaje?

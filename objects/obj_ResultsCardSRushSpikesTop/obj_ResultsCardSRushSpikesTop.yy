@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_SonicRush_Spikes_HeadUp",
-    "path":"sprites/spr_SonicRush_Spikes_HeadUp/spr_SonicRush_Spikes_HeadUp.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

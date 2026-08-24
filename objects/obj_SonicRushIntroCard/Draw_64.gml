@@ -186,10 +186,11 @@ draw_set_halign(fa_left);
 var _spikes = spr_SonicRushSpikesNorm;
 
 if global.PlayerChar == 0 or global.MIND {
-	_spikes = spr_SonicRush_Spikes_Head;
+	_spikes = spr_SonicRushSpikesHead;
 }
 
-draw_sprite_ext(_spikes, spikeFrames, spikeX, 0, 2.25, 2.25, 0, global.fullRGB, otheralpha * mainAlpha);
+//draw_sprite_ext(_spikes, spikeFrames, spikeX + 5, -5, 1, 12, 0, c_black, (otheralpha * mainAlpha) / 2);
+draw_sprite_ext(_spikes, spikeFrames, spikeX, 0, 1, 15, 0, global.fullRGB, otheralpha * mainAlpha);
 
 var _charSel = global.PlayerSelection[global.SelectedPlayer];
 var _charName = _charSel[0][0];

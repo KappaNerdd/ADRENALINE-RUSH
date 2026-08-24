@@ -15,7 +15,6 @@ if instance_exists(obj_Player) {
 var _relX = _playX - _camX;
 var _relY = _playY - _camY;
 
-
 if _relX <= 100 {
 	image_alpha = lerp(image_alpha, 0.5, 0.5);
 } else {
@@ -66,11 +65,11 @@ if instance_exists(obj_Player) {
 		newY = 50;
 	}
 	
-	if !obj_Player.rushMode or _boost < _maxBoost - 1 {
+	if _boost < _maxBoost {
 		if _boost <= 100 {
 			draw_sprite_ext(boostEmblem, 0, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
 			draw_sprite_ext(boostEmblem, 0, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
-		} else if _boost > 100 && _boost < 200 {
+		} else if _boost > 100 && _boost <= 200 {
 			if emblemSpeed < 2 {
 				emblemSpeed += 1 / 6;
 			}
@@ -81,7 +80,7 @@ if instance_exists(obj_Player) {
 			
 			draw_sprite_ext(boostEmblem, emblemSpeed, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
 			draw_sprite_ext(boostEmblem, emblemSpeed, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
-		} else if _boost >= 200 && _boost < _maxBoost - 1 {
+		} else if _boost > 200 && _boost < _maxBoost {
 			if emblemSpeed < 4 {
 				emblemSpeed += 1 / 8;
 			}
@@ -93,7 +92,10 @@ if instance_exists(obj_Player) {
 			draw_sprite_ext(boostEmblem, emblemSpeed, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
 			draw_sprite_ext(boostEmblem, emblemSpeed, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 		}
-	} else if obj_Player.rushMode && _boost >= _maxBoost - 1 {
+	} else if !obj_Player.rushMode && _boost >= _maxBoost {
+		draw_sprite_ext(rushEmblem, 0, 11 + newX, 68 + newY, 1.5, 1.5, 0, c_black, image_alpha);
+		draw_sprite_ext(rushEmblem, 0, 14 + newX, 65 + newY, 1.5, 1.5, 0, c_white, image_alpha);
+	} else if obj_Player.rushMode && _boost >= _maxBoost {
 		emblemSpeed += emblemSpeedRush;
 	
 		if obj_Player.rushModeTimer >= 150 {
@@ -105,7 +107,6 @@ if instance_exists(obj_Player) {
 		} else {
 			emblemSpeedRush = 1 / 12;
 		}
-	
 	
 		if emblemSpeed >= 4 {
 			emblemSpeed = 0;
@@ -133,7 +134,7 @@ if instance_exists(obj_Player) {
 	
 	var _mainSize = 2.5;
 
-	if !obj_Player.rushMode or _boost < _maxBoost - 1 or _bar1SizeC > 1.5 {
+	if !obj_Player.rushMode or _boost < _maxBoost or _bar1SizeC > 1.5 {
 		#region //Boost Bar 1
 			draw_sprite_ext(boostSprite, 0, 17 + newX, 95 + newY, 1.5, 1.5, 0, c_white, image_alpha);
 			
@@ -814,7 +815,7 @@ if instance_exists(obj_Player) {
 			}
 		#endregion
 		
-	} else if obj_Player.rushMode && _boost >= _maxBoost - 1 && _bar1SizeC <= 1.5 {
+	} else if obj_Player.rushMode && _boost >= _maxBoost && _bar1SizeC <= 1.5 {
 		var _sprCol = 3;
 	
 		if rushCol {

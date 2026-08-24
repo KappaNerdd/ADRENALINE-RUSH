@@ -264,7 +264,7 @@ if doneWave2 && !doneWave3 {
 if doneWave3 && !doneWave4 {
 	if !changeTheme {
 		changeTheme = true;
-		scr_SetMusPos(81.5);
+		scr_SetMusPos(81.5, false);
 	}
 	
 	if blastingTimer > 0 {
@@ -329,6 +329,7 @@ if doneWave3 && !doneWave4 {
 		doneWave4 = true;
 		global.DisableHUD = true;
 		global.countUp = false;
+		scr_DRDimAlpha(false);
 		
 		with(obj_Player) {
 			can_MoveFULL = false;

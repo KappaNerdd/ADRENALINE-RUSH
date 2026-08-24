@@ -156,12 +156,12 @@ function scr_SpriteDataSarahNormal() {
 	sprTrick1Right = spr_SarahTrick1Right;
 	sprTrick2Right = spr_SarahTrick2Right;
 	sprTrick3Right = spr_SarahTrick3Right;
-	sprTrick3FinRight = spr_SarahTrick3FinRight;
+	sprTrick3FinRight = spr_SarahTrickFinRight;
 	
 	sprTrick1Left = spr_SarahTrick1Left;
 	sprTrick2Left = spr_SarahTrick2Left;
 	sprTrick3Left = spr_SarahTrick3Left;
-	sprTrick3FinLeft = spr_SarahTrick3FinLeft;
+	sprTrick3FinLeft = spr_SarahTrickFinLeft;
 	
 	//Hurt
 	sprOmegaFallRight = spr_SarahHurtRight;

@@ -4,11 +4,20 @@ getCharacterControls();
 	#region //Background Shit
 		extraScale = lerp(extraScale, 0, 0.15);
 		
-		if realBPM > 0 {
+		/*if realBPM > 0 {
 			realBPM -= delta_time;
 		} else {
 			realBPM += conBPM;
 			
+			if !global.SimplifyVFX {
+				extraScale = 1;
+				pressStart = !pressStart;
+			}
+		}*/
+		
+		scr_BPMStep();
+		
+		if scr_GetMainBeat() < scr_GetBeatProg() {
 			if !global.SimplifyVFX {
 				extraScale = 1;
 				pressStart = !pressStart;

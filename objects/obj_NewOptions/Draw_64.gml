@@ -813,10 +813,10 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 	var _col = global.fullRGB;
 
 	if global.MIND or global.PlayerChar == 0 {
-		_spikes = spr_SonicRush_Spikes_Head;
+		_spikes = spr_SonicRushSpikesHead;
 		_col = c_white;
 	}
 
-	draw_sprite_ext(_spikes, spikesFrames, leftSpikesX - 200, 0, 2, 2, 0, _col, 1);
-	draw_sprite_ext(_spikes, 20 - spikesFrames, -leftSpikesX + 968, 0, -2, 2, 0, _col, 1);
+	draw_sprite_ext(_spikes, spikesFrames, leftSpikesX - 200, 0, 1, 12, 0, _col, 1);
+	draw_sprite_ext(_spikes, 20 - spikesFrames, -leftSpikesX + 968, 0, -1, 12, 0, _col, 1);
 #endregion

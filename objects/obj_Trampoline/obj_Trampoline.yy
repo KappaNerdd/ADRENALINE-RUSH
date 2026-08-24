@@ -10,8 +10,8 @@
   "name":"obj_Trampoline",
   "overriddenProperties":[],
   "parent":{
-    "name":"Gimmicks",
-    "path":"folders/Objects/Environments/General/Gimmicks.yy",
+    "name":"Bounces",
+    "path":"folders/Objects/Environments/General/Gimmicks/Bounces.yy",
   },
   "parentObjectId":null,
   "persistent":false,

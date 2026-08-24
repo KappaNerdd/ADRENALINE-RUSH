@@ -1,18 +1,15 @@
 scr_GetCharBoostIcon();
 scr_GetCharRushBoostIcon();
 
-textX = 678;
-textY = 80;
+textX = 680;
+textY = 90;
 addedY = 0;
 
-if instance_exists(obj_Player) {
-	if obj_Player.getScore {
-		giveScore = true;
-	} else {
-		giveScore = false;
-	}
-}
-	
+trickChar = noone;
+
+giveScore = true;
+
+alarm_set(0, 1);
 
 numberScale = 1;
 

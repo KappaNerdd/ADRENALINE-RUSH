@@ -8,10 +8,7 @@
 		global.SelectedPlayer = 1;
 	}
 	
-	global.DownBPM = true;
-	global.BPM = 140;
-	global.ConvertedBPM = time_bpm_to_seconds(global.BPM);
-	global.RealBPM = 0;
+	scr_BPMCreate(140);
 #endregion
 
 #region //UI
@@ -121,6 +118,15 @@
 	askGirlySelect = 0;
 	askGirlyY = 432;
 	askGirlyBoxX = 0;
+	
+	askGirlyTimer = 1;
+	askGirlyFrames = 15;
+#endregion
+
+#region //Char Disc
+	charDisc = false;
+	charDiscY = 432;
+	charDiscBoxX = 0;
 #endregion
 
 #region //BPM Shit

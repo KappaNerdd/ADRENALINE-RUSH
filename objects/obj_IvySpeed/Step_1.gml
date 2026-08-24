@@ -305,6 +305,10 @@ if can_MoveFULL {
 					if yspd < 0 {
 						sprite_index = sprShootAir;
 						image_speed = 1;
+						
+						if ceil(image_index) >= image_number - 1 {
+							image_index = image_number - 2;
+						}
 					} else {
 						sprite_index = sprSlide;
 						image_speed = 2;
@@ -541,7 +545,7 @@ if can_MoveFULL {
 		
 			if action2_Key_Released && (railGrind or prepare or sliding or rampRing or afterRailJump or trick or hShoot or preStomp or stomping or stomped or global.Death) {
 				fullCharge = false;
-				chargeTimer = chargeFrames
+				chargeTimer = chargeFrames;
 			}
 		#endregion
 		
@@ -574,8 +578,6 @@ if can_MoveFULL {
 									scr_ControllerRumble();
 									
 									if revolverAmmo == 6 {
-										yspd = -normalJspd * 1.1;
-									} else if revolverAmmo == 6 {
 										yspd = -normalJspd * 1.15;
 									} else if revolverAmmo == 5 {
 										yspd = -normalJspd * 1.2;
@@ -589,7 +591,7 @@ if can_MoveFULL {
 										yspd = -normalJspd * 1.4;
 									}
 									
-									revolverAmmo -= 1;
+									revolverAmmo--;
 									
 									instance_create_depth(x, y, depth, obj_IvyBullet);
 								} else { //Horizontal
@@ -833,6 +835,7 @@ if can_MoveFULL {
 	#region //Extras
 		var _normalBull = instance_find(obj_IvyBullet, 0);
 		var _bigBull = instance_find(obj_IvyBigBullet, 0);
+		var _id = id;
 	
 		if _normalBull != noone {
 			with(_normalBull) {			
@@ -853,6 +856,7 @@ if can_MoveFULL {
 				if _monitor {
 					with(_monitor) {
 						if active {
+							giveCharPower = _id;
 							event_user(0);
 							instance_destroy(other);
 						}
@@ -879,6 +883,7 @@ if can_MoveFULL {
 				if _monitor {
 					with(_monitor) {
 						if active {
+							giveCharPower = _id;
 							event_user(0);
 						}
 					}

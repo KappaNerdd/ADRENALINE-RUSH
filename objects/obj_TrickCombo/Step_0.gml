@@ -47,19 +47,21 @@ if completeSpinTimer > 0 {
 
 //Normal Bull
 if !completed && !died {
-	if personalTrick < obj_Player.rushTrickCombo {
-		personalTrick = obj_Player.rushTrickCombo;
+	if personalTrick < trickChar.rushTrickCombo {
+		personalTrick = trickChar.rushTrickCombo;
 	}
 }
 
 //Completing
 if !died {
-	with(obj_Player) {
+	with(trickChar) {
 		if rushTrickFinish or altFinish {
 			other.completed = true;
 		}
 	}
 }
+
+var _iconY = 0.05;
 
 if completed {
 	if completeSpinTimer > 0 {
@@ -88,18 +90,18 @@ if completed {
 					}
 					
 					icon1Boost = true;
+					
+					scr_EnergyPlayer(10, trickChar);
 						
-					if !obj_Player.rushMode {
-						obj_Player.boostEnergy += 10;
+					if !trickChar.rushMode {
 						obj_SFXManager.funkinFav = true;
 					} else {
-						obj_Player.rushModeTimer = obj_Player.rushModeFrames;
 						obj_SFXManager.rushModeTrick = true;
 					}
 				}
 		
-				if startI1Y > 100 {
-					startI1Y -= 0.25;
+				if startI1Y > 102 {
+					startI1Y -= _iconY;
 				}
 			}
 		#endregion
@@ -122,17 +124,17 @@ if completed {
 					
 					icon2Boost = true;
 						
-					if !obj_Player.rushMode {
-						obj_Player.boostEnergy += 10;
+					scr_EnergyPlayer(10, trickChar);
+						
+					if !trickChar.rushMode {
 						obj_SFXManager.funkinFav = true;
 					} else {
-						obj_Player.rushModeTimer = obj_Player.rushModeFrames;
 						obj_SFXManager.rushModeTrick = true;
 					}
 				}
 		
-				if startI2Y > 100 {
-					startI2Y -= 0.25;
+				if startI2Y > 102 {
+					startI2Y -= _iconY;
 				}
 			}
 		#endregion
@@ -156,17 +158,17 @@ if completed {
 						
 						icon3Boost = true;
 						
-						if !obj_Player.rushMode {
-							obj_Player.boostEnergy += 10;
+						scr_EnergyPlayer(10, trickChar);
+						
+						if !trickChar.rushMode {
 							obj_SFXManager.funkinFav = true;
 						} else {
-							obj_Player.rushModeTimer = obj_Player.rushModeFrames;
 							obj_SFXManager.rushModeTrick = true;
 						}
 					}
 		
-					if startI3Y > 100 {
-						startI3Y -= 0.25;
+					if startI3Y > 102 {
+						startI3Y -= _iconY;
 					}
 				}
 			}
@@ -191,17 +193,17 @@ if completed {
 						
 						icon4Boost = true;
 						
-						if !obj_Player.rushMode {
-							obj_Player.boostEnergy += 10;
+						scr_EnergyPlayer(10, trickChar);
+						
+						if !trickChar.rushMode {
 							obj_SFXManager.funkinFav = true;
 						} else {
-							obj_Player.rushModeTimer = obj_Player.rushModeFrames;
 							obj_SFXManager.rushModeTrick = true;
 						}
 					}
 		
-					if startI4Y > 100 {
-						startI4Y -= 0.25;
+					if startI4Y > 102 {
+						startI4Y -= _iconY;
 					}
 				}
 			}
@@ -226,17 +228,17 @@ if completed {
 						
 						icon5Boost = true;
 						
-						if !obj_Player.rushMode {
-							obj_Player.boostEnergy += 10;
+						scr_EnergyPlayer(10, trickChar);
+						
+						if !trickChar.rushMode {
 							obj_SFXManager.funkinFav = true;
 						} else {
-							obj_Player.rushModeTimer = obj_Player.rushModeFrames;
 							obj_SFXManager.rushModeTrick = true;
 						}
 					}
 		
-					if startI5Y > 100 {
-						startI5Y -= 0.25;
+					if startI5Y > 102 {
+						startI5Y -= _iconY;
 					}
 				}
 			}
@@ -261,17 +263,17 @@ if completed {
 						
 						icon6Boost = true;
 						
-						if !obj_Player.rushMode {
-							obj_Player.boostEnergy += 10;
+						scr_EnergyPlayer(10, trickChar);
+						
+						if !trickChar.rushMode {
 							obj_SFXManager.funkinFav = true;
 						} else {
-							obj_Player.rushModeTimer = obj_Player.rushModeFrames;
 							obj_SFXManager.rushModeTrick = true;
 						}
 					}
 		
-					if startI6Y > 100 {
-						startI6Y -= 0.25;
+					if startI6Y > 102 {
+						startI6Y -= _iconY;
 					}
 				}
 			}

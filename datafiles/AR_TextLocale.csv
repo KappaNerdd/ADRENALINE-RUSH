@@ -1,659 +1,769 @@
-I might swerve-,ENGLISH,ESPAÑOL
-///-----Game Title-----///,,
-wind_Title,ADRENALINE RUSH,ADRENALINE RUSH
-,,
-///-----Language Choice-----///,,
-opt_ChooseLang,CHOOSE A LANGUAGE,
-opt_AskOnce,(This'll only appear once and never again. You can change the language again any time in the Options menu.),
-,,
-///-----File Select-----///,,
-fs_FileSelect,FILE SELECT,ELIGE UN ARCHIVO
-fs_Select,SELECT,SELECCIONAR
-fs_Copy,COPY,COPIAR
-fs_Delete,DELETE,BORRAR
-fs_Back,BACK,ATRÁS
-fs_Cancel,CANCEL,CANCELAR
-fs_Empty,EMPTY,VACÍO
-fs_Save,SAVE,GUARDAR
-fs_ChooseFile,CHOOSE SLOT TO PASTE,ELIGE UN ESPACIO PARA PEGAR
-fs_Erase,ERASE THIS FILE?,¿BORRAR ESTE ARCHIVO?
-fs_Erasing,ARE YOU SURE??,¿¿SEGURO??
-fs_Overwrite,OVERWRITE THIS FILE?,¿SOBREESCRIBIR ESTE ARCHIVO?
-,,
-///-----Controller Shit-----///,,
-conDet_Player,PLAYER,JUGADOR
-conDet_Conn,CONNECTED,CONECTADO
-conDet_ConUnd,CONTROLLER UNDETECTED,CONTROL DESCONECTADO
-,,
-///-----General Game Shit-----///,,
-game_Quitting,QUITTING,SALIR
-game_Prototype,PROTOTYPE,PROTOTIPO
-game_Demo,DEMO,DEMO
-game_NP,NOW PLAYING,REPRODUCIENDO
-game_Track,TRACK,PISTA
-game_By,BY,POR
-game_Length,LENGTH,DURACIÓN
-game_Acquire,You got the,
-,,
-///-----Audio Options-----///,,
-opt_Audio,AUDIO,SONIDO
-opt_Master,MASTER,GENERAL
-opt_Music,MUSIC,MÚSICA
-opt_SFX,SFX,EFECTOS
-opt_Text,TEXT,TEXTO
-opt_Ambiance,AMBIANCE,AMBIENTE
-opt_Pause,UNIQUE PAUSE THEME,TEMA DE PAUSA ÚNICO
-opt_Footstep,FOOTSTEPS,PASOS
-opt_Invincible,INVINCIBILITY THEME,
-,,
-///-----Visual Options-----///,,
-opt_Visual,VISUAL,VISUALES
-opt_SimpVFX,SIMPLIFY VFX,SIMPLIFICAR EFECTOS
-opt_SimpBack,SIMPLE BACKGROUND,
-opt_ScrShk,SCREEN SHAKE,TEMBLOR DE PANTALLA
-opt_Part,PARTICLES,PARTÍCULAS
-opt_TextSpd,TEXT SPEED,VEL. DE TEXTO
-opt_Lang,LANGUAGE,IDIOMA
-opt_ConDis,KEYBOARD/CONTROLLER DISPLAY,TECLADO/MUESTRA DE CONTROL
-opt_Outline,OUTLINE,CONTORNO
-opt_Squash,SQUASH 'N' STRETCH,ESTIRAMIENTO
-opt_VSync,VSYNC,SINCRONIZACIÓN VERTICAL
-,,
-///-----Misc Options-----///,,
-opt_Misc,MISC,MISCELÁNEO
-opt_Fullscr,FULLSCREEN,PANTALLA COMPLETA
-opt_MusTag,MUSIC TAG,INFORMACIÓN DE MÚSICA
-opt_ConType,CONTROLLER TYPE,TIPO DE CONTROL
-opt_ConRum,CONTROLLER RUMBLE,VIBRACIÓN DE CONTROL
-opt_ExtCam,EXTENDED CAMERA,CAMARA EXTENDIDA
-opt_FPS,FPS,FPS
-opt_Speedrun,SPEEDRUN TIMER,TEMPORIZADOR
-,,
-opt_Pref,PREFERENCES,PREFERENCIAS
-opt_ColorCode,CHARACTER COLOR-CODING,COLOREADO DE PERSONAJE
-opt_FocusLoss,AUTO-PAUSE ON FOCUS LOSS,PAUSAR AL PERDER FOCO
-opt_ChangeColor,CHANGE BASE COLOR,CAMBIAR COLOR BASE
-opt_LifeIcon,LIFE ICON,
-,,
-opt_Online,ONLINE,EN LÍNEA
-opt_Discord,DISCORD RICH PRESCENCE,PRESENCIA DE DISCORD
-opt_Ghost,SHOW GHOST,MOSTRAR FANTASMA
-,,
-opt_Display,DISPLAY,
-opt_WindowSize,WINDOW SCALE,
-,,
-opt_ConGen,CONTROLS (GENERAL),CONTROL (GENERAL)
-opt_ConSpeed1,CONTROLS (SPEED/MENU) 1,CONTROL (VELOCIDAD/MENU) 1
-opt_ConSpeed2,CONTROLS (SPEED/MENU) 2,CONTROL (VELOCIDAD/MENU) 2
-opt_ConAction1,CONTROLS (ACTION) 1,CONTROL (ACCIÓN) 1
-opt_ConAction2,CONTROLS (ACTION) 2,CONTROL (ACCIÓN) 2
-opt_ConAction3,CONTROLS (ACTION) 3,CONTROL (ACCIÓN) 3
-opt_ConLeft,LEFT,IZQUIERDA
-opt_ConRight,RIGHT,DERECHA
-opt_ConUp,UP,ARRIBA
-opt_ConDown,DOWN,ABAJO
-opt_ConJump,JUMP,SALTO
-opt_ConAct1,ACTION 1,ACCIÓN 1
-opt_ConBoost,BOOST,TURBO
-opt_ConSpec1,SPECIAL 1,ESPECIAL 1
-opt_ConSwap,SWAP,INTERCAMBIO
-opt_ConSpec2,SPECIAL 2,ESPECIAL 2
-opt_ConStart,START,START
-opt_ConSelect,SELECT,SELECT
-,,
-opt_ActLeft,LEFT,IZQUIERDA
-opt_ActRight,RIGHT,DERECHA
-opt_ActUp,UP,ARRIBA
-opt_ActDown,DOWN,ABAJO
-opt_ActLight,LIGHT ATTACK,ATAQUE LIGERO
-opt_ActMedium,MEDIUM ATTACK,ATAQUE MEDIO
-opt_ActHeavy,HEAVY ATTACK,ATAQUE PESADO
-opt_ActJump,JUMP,SALTO
-opt_ActDash,RUN,CORRER
-opt_ActSuper,DASH,TURBO
-opt_Parry,PARRY,PARRY/CONTRA
-opt_Charge,CHARGE-BOOST,CARGAR TURBO
-,,
-opt_JoyDead,JOYSTICK DEADZONE,ZONA MUERTA PALANCA
-opt_TrigDead,TRIGGER DEADZONE,ZONA MUERTA GATILLO
-,,
-opt_No,NO,NO
-opt_Yes,YES,SÍ
-opt_Off,OFF,APAGADO
-opt_On,ON,ENCENDIDO
-opt_Default,DEFAULT,POR DEFECTO
-opt_ChangeBind,CHANGING BIND...,CAMBIANDO BOTÓN...
-,,
-title_Gameplay,GAMEPLAY,
-title_Extras,EXTRAS,
-title_Options,OPTIONS,OPCIONES
-title_QuitGame,QUIT GAME,SALIR JUEGO
-title_StoryMode,STORY MODE,
-title_Freeplay,FREEPLAY,JUEGO LIBRE
-title_NewGame,NEW GAME,NUEVO JUEGO
-title_Continue,CONTINUE,CONTINUAR
-title_Bios,CHARACTER BIOS,
-title_Gallery,GALLERY,
-title_Boombox,BOOMBOX,
-title_Achievements,ACHIEVEMENTS,
-title_Enemy,ENEMY BIOS,
-title_Credits,CREDITS,
-title_Socials,SOCIALS,
-title_Bluesky,BLUESKY,
-title_Insta,INSTAGRAM,
-title_YT,YOUTUBE,
-title_Discord,DISCORD,
-,,
-freeplay_Speed,SPEED STAGES,ETAPA DE VELOCIDAD
-freeplay_Action,ACTION STAGES,ETAPA DE ACCIÓN
-freeplay_Level,LEVEL ,NIVEL 
-freeplay_Boss,BOSS,JEFE
-freeplay_Bonus,BONUS ,BONUS 
-freeplay_CharSel,SELECT A CHARACTER,ELIGE UN PERSONAJE
-freeplay_ChooseChar1,PRESS,PRESIONA
-freeplay_ChooseChar2,TO CHANGE CHARACTERS,PARA CAMBIAR PERSONAJES
-freeplay_Mix,CHOOSE YER MIX!!,¡¡SELECCIONÁ TU MIX!!
-freeplay_Stage,STAGE,ETAPA
-freeplay_CharTut,TO ENTER THE CHARACTER TUTORIAL,
-,,
-level_MIND,MIND,MENTE
-level_OTHERTOWN,OTHERTOWN,OTHERTOWN
-level_OTD,OTHERTOWN (DAY),OTHERTOWN (DÍA)
-level_OTN,OTHERTOWN (NIGHT),OTHERTOWN (NOCHE)
-,,
-chap_Prologue,PROLOGUE // MY MIND,PRÓLOGO // MI MENTE
-chap_Volume1,VOLUME 1 // REUNION,VOLUMEN 1 // REUNIÓN
-,,
-menu_Paused,PAUSED,PAUSA
-menu_Resume,RESUME,CONTINUAR
-menu_Restart,RESTART,REINICIO
-menu_QRestart,QUICK-RESTART,REINICIO-RÁPIDO
-menu_HUB,HUB,HUB
-menu_MainMenu,MAIN MENU,MENÚ PRINCIPAL
-menu_NameAsk,What is YOUR name?,¿Cuál es TU nombre?
-menu_ConLetter,CONFIRM,COLOCAR
-menu_ReLetter,REMOVE,QUITAR
-menu_AddSpace,ADD SPACE,AÑADIR ESPACIO
-,,
-story_NOBJ,NEW OBJECTIVE,NUEVO OBJETIVO
-story_UOBJ,UPDATED OBJECTIVE,OBJETIVO ACTUALIZADO
-story_OBJ,OBJECTIVE,OBJETIVO
-story_Chal,CHALLENGE,DESAFÍO
-,,
-enviro_Secret,J.S.R. SPRAY,SPRAY J.S.R.
-enviro_MusSecret,CASSETTE,CASETE
-,,
-name_Kappa,KAPPA SUKI,KAPPA SUKI
-name_Kap,KAPPA,KAPPA
-name_Sarah,SARAH SUKI,SARAH SUKI
-name_Sar,SARAH,SARAH
-name_Alone,LONE SUKI,LONE SUKI
-name_Lone,LONE,LONE
-name_Brock,"MOON ""SON BROCK"" MASH","MOON ""SON BROCK"" MASH"
-name_Bro,BROCK,BROCK
-name_Neegi,NEEGI BUTCHER,NEEGI BUTCHER
-name_Nee,NEEGI,NEEGI
-name_Cloee,CLOEE BUTCHER,CLOEE BUTCHER
-name_Clo,CLOEE,CLOEE
-name_Akira,"AKIRA ""A.K."" KAGEMORI","AKIRA ""A.K."" KAGEMORI"
-name_AK,AKIRA,AKIRA
-name_Taylor,"TAYLOR ""T.J."" JACKSON","TAYLOR ""T.J."" JACKSON"
-name_TJ,TAYLOR,TAYLOR
-name_Ayana,"AYANA ""A.A."" ASHLEY","AYANA ""A.A."" ASHLEY"
-name_AA,AYANA,AYANA
-name_Rush,RUSH MAURICE,RUSH MAURICE
-name_Ru,RUSH,RUSH
-name_Edge,EDGE TERIOS,EDGE TERIOS
-name_Ed,EDGE,EDGE
-name_Roxxane,ROXXANE GONZÁLEZ,ROXXANE GONZÁLEZ
-name_Rocks,ROXXANE,ROXXANE
-name_Lucifer,LUCIFER CULA,LUCIFER CULA
-name_Luci,LUCIFER,LUCIFER
-name_Ivy,IVY,IVY
-name_Sophi,SOPHI SUKI,SOPHI SUKI
-name_Sop,SOPHI,SOPHI
-name_Scott,SCOTT SUKI,SCOTT SUKI
-name_Sco,SCOTT,SCOTT
-,,
-mus_Fade,Fading Dreams,Sueños Desvaneciendose
-mus_Accept,It Takes a Lot to Accept Reality,Es Difícil Aceptar La Realidad
-,,
-mus_Solemn,Solemn,Solemne
-mus_Wakey,Wakey-Wakey,A Levantarse
-mus_Cest,C'est La Vie,C'est La Vie
-mus_MindBody,MIND 'N' BODY,
-mus_MINDWAVE,MINDWAVE,
-mus_MINDWAVE2,MINDWAVE (Allegro),
-mus_RoundN,Round 'n' Round,
-mus_Wrap,Wrap It Up,
-mus_WrapK,Wrap It Up (Kappa Mvt.),
-mus_WrapL,Wrap It Up (Lucifer Mvt.),
-mus_Funk,Funk 'n' Rush,Funk 'n' Rush
-mus_Unwind,"Unwind a Lil' Bit, Yeah?",
-mus_Backstreet,Backstreet Newgrounds,
-,,
-mus_FKap,Waitin',Waitin'
-mus_FSar,No Rush,No Rush
-mus_FLon,Arpeggio,Arpeggio
-mus_FBro,Fightin' Glove,
-mus_FNee,Euro-Step,Euro-Step
-mus_FClo,Star-Bright,Star-Bright
-mus_FAki,Flamerunner,Flamerunner
-mus_FTay,Knuckleblaster,Knuckleblaster
-mus_FAya,Sharpshooter,Sharpshooter
-mus_FRus,Hurry Up,Hurry Up
-mus_FEdg,Black Arms,Black Arms
-mus_FRox,Guadaña,Scythe
-mus_FLuc,Waiting,Waiting
-mus_FIvy,Holster,Holster
-,,
-mus_Dis,DISCONNECTED,DESCONECTADO
-mus_Lost,LOST REASON,SIN RAZÓN
-mus_Mind,MY MIND,MI MENTE
-mus_MindG,MY MIND (Girly Mix),MI MENTE (Girly Mix)
-mus_Dist,DISTURBING THE MIND,DESASTRE MENTAL
-mus_DistAllegro,DISTURBING THE MIND (Allegro),DESASTRE MENTAL (Allegro)
-mus_DistG,DISTURBING THE MIND (Girly Mix),DESASTRE MENTAL (Girly Mix)
-mus_DistGAllegro,DISTURBING THE MIND (Allegro) (Girly Mix),DESASTRE MENTAL (Allegro) (Girly Mix)
-,,
-mus_NewDay,"New Night, New Day","Nueva Noche, Nuevo Día"
-mus_Sunlight,Clair De Soleil,Clair De Soleil
-mus_SunlightG,Clair De Soleil (Girly Mix),Clair De Soleil (Girly Mix)
-mus_NewNight,"New Day, New Night","Nuevo Día, Nueva Noche"
-mus_Moonlight,Clair De Lune,Clair De Lune
-mus_MoonlightG,Clair De Lune (Girly Mix),Clair De Lune (Girly Mix)
-,,
-mus_NextTime,You'll Get 'em Next Time,Quizás A La Próxima
-mus_Stand,Stand Proud,Que Orgullo
-mus_Sonic,Honorary Sonic,Honorary Sonic
-,,
-mus_YourBest,You Did Your Best,Diste Lo Mejor
-mus_InYou,I Knew You Had it in You,Sabía Que Podías
-mus_Hearts,Hearts All Around,Corazones Por Doquier
-,,
-mus_Diminuendo,Diminuendo,Diminuendo
-mus_Allegro,Allegro,Allegro
-mus_Crescendo,Crescendo,Crescendo
-,,
-mus_Diminished,Diminished,Diminuto
-mus_Lighter,Lighter,Ligero
-mus_FeelinNice,Feelin' Nice,Bieeeen
-,,
-mus_BeenBetter,That Could've Been Better,Podría haber sido mejor
-mus_YouStrong,You Are Strong,Eres fuerte
-mus_Blaze,Honorary Blaze,Flama Honoraria
-,,
-mus_Kiddin,You Gotta be Kiddin' Me,No Bromees
-mus_NotBad,"Ayy, Not Bad","Ey, Nada Mal"
-mus_Talkin,That's What I'm TALKIN' About,A ESO Me Refería
-,,
-mus_Shot,Shot Down,Caído
-mus_Pardner,"It's Arright, Pardner","Esta Bien, Compañero"
-mus_JUSTICE,JUSTICE,JUSTICIA
-,,
-bon_Time,TIME BONUS,BONUS DE TIEMPO
-bon_Ring,RING BONUS,BONUS DE ANILLO
-bon_Trink,TRINKET BONUS,BONUS DE TRINQUETE
-bon_Perf,PERFECT BONUS,BONUS PERFECTO
-bon_Enemy,ENEMY BONUS,BONUS DE ENEMIGOS
-,,
-cost_Cost,COSTUME,TRAJES
-,,
-cost_Kap1,RUSH-STYLE,ESTILO-RUSH
-cost_Kap2,HIDEKI NERD,HIDEKI NERD
-,,
-cost_Sar1,HEARTACHE,HEARTACHE
-,,
-cost_Lon1,BUN-BUN,BUN-BUN
-,,
-cost_Bro1,BRAVERY,VALENTÍA
-,,
-cost_Nee1,HEARTACHE,HEARTACHE
-,,
-cost_Clo1,DAISY,DAISY
-,,
-cost_Aki1,UZI-STYLE,ESTILO-UZI
-,,
-cost_Tay1,UZI-STYLE,ESTILO-UZI
-,,
-cost_Aya!,UZI-STYLE,ESTILO-UZI
-,,
-cost_Rus1,JET-SET,SET-JET
-,,
-cost_Edg1,JET-SET,SET-JET
-,,
-cost_Rox1,LAZULI,LAZULI
-,,
-cost_Luc1,RUSH-STYLE,ESTILO-RUSH
-,,
-cost_Ivy1,BUTTERCUP,FLOR DORADA
-,,
-desc_Master,Change the game's overall volume. (Decreases by 10% per press.),Cambia el volumen general del juego. (Disminuye 10% al presionar)
-desc_Music,Change the game's BGM volume. (Decreases by 10% per press.),Cambia el volumen de fondo del juego. (Disminuye 10% al presionar)
-desc_SFX,Change the game's sound effect volume. (Decreases by 10% per press.),Cambia el volumen de los efectos de sonido. (Disminuye 10% al presionar)
-desc_Text,Change the game's textbox type-writer volume. (Decreases by 10% per press.),Cambia el volumen del efecto cuadro de texto. (Disminuye 10% al presionar)
-desc_Ambiance,Change the game's world ambiance volume. (Decreases by 10% per press.),Cambia el volumen del ambiente. (Disminuye 10% al presionar)
-desc_Pause,Have a BGM track play based on the character you're playing as while the game is paused.,Un tema de pausa se reproduce dependiendo del personaje que estes usando.
-desc_Footstep,Have footstep and landing sounds play based on certain situations during gameplay.,Sonido de pasos y aterrizaje se reproducen durante el gameplay.
-desc_Invincible,Change the invincibility BGM track.,
-,,
-desc_SimpVFX,"Reduce, stop, or get rid of things that could be eye-straining. (I.E., flashing lights, textbox animations, 'n' some moving assets.)","Reduce, detiene o elimina los elementos que cansen la vista. (Ejemplo: luces, animaciones y algunos movimientos)."
-desc_SimpBack,Remove elements from Environment backgrounds to reduce clutter and/or lag.,
-desc_Part,Have tiny sprites and effects appear or not.,Hace que pequeños sprites y efectos aparezcan o no.
-desc_ScrShk,Have the screen shake during certain events and actions.,La pantalla se agita durante ciertos eventos y acciones.
-desc_TextSpd,Change how fast text appears during dialogue.,Cambie lo rápido que el texto aparece en diálogos.
-desc_Lang,"Change the game's text language and assets to your liking. (English, Spanish)","Cambia el idioma del juego. (Inglés, Español)"
-desc_ConDis,Have your keyboard or controller inputs appear at the bottom-right of the screen.,Muestra tu teclado o control en la esquina inferior derecha de la pantalla.
-desc_Outline,Have black 'n' white outlines around the characters and certain objects during gameplay.,Activa un contorno blanco y negro en algunos personajes y objetos durante el gameplay.
-desc_Squash,Have the characters' body morph a lil' during certain situations.,Los personajes se deforman ligeramente durante ciertas situaciones.
-desc_LifeIcon,Change what life icon to use during gameplay.,
-,,
-desc_ColorCode,"Have tons of colors from certain elements change based on the character you're playing. (If off, colors default to the Change Base Color option.)","Cambia colores de muchos elementos según el personaje que estés usando. (Si está desactivado, los colores se configuran por defecto en la opción de Cambiar Color de Base)."
-desc_VSync,Have the game match the refresh-rate of your monitor. (Usually fixes screen-tearing.),Configura el juego para que coincida con la frecuencia de actualización de tu monitor. (Normalmente soluciona el problema del desgarro de pantalla).
-desc_ChangeColor,Change the color to a bunch of game elements. (Character Color-Coding must be off.),Cambia el color de varios elementos del juego. (Coloreado de Personaje debe estar desactivado).
-desc_FocusLoss,Have the game automatically pause if it's no longer focused.,Hace que el juego se pause al perder foco.
-,,
-desc_Discord,Have the game pop up on your Discord profile.,Haz que el juego aparezca en tu perfil de Discord.
-desc_Ghost,Have your saved ghost appear during gameplay. (SPEED Stages only.),Haz que tua fantasma guardado aparezca durante el gameplay (Solo niveles de Velocidad)
-, ,
-desc_Fullscr,Have the game display at your monitor's full resolution.,Pone el juego en la resolución completa de tu pantalla.
-desc_MusTag,Have the current BGM track's name & composer display at certain points.,El nombre del tema de fondo y compositor aparezca en ciertos puntos.
-desc_ConType,Change the controls' input display based on a console. (Controller only.),Cambia el tipo de botón que se muestra. (Solo Control)
-desc_ConRum,Have your controller shake during certain events and actions. (Controller only.),Vibración durante ciertos eventos y acciones. (Solo Control)
-desc_ExtCam,Have the camera move ahead of you based on your speed and how fast you're falling. (OVERWORLD & SPEED Stages only.),La cámara se adelanta basado en tu velocidad al correr y caer. (Solo Overworld y Etapas de Velocidad)
-desc_FPS,"Have the game's framerate, real framerate, and version display at the top-right of the screen.","Muestra los FPS, FPS Reales y versión del juego arriba a la izquierda y abajo a la derecha."
-desc_Speedrun,"Display a speedrun timer that stops during cutscenes, transitions, and the game being paused.","Muestra un temporizador de speedrun que se detiene en cinemáticas, transiciones y pausa."
-,,
-desc_WindowSize,Change the scale of the game window while not in Fullscreen.,
-,,
-desc_Control,Change this input bind.,Cambia el botón de esta acción.
-desc_JoyDead,Change how far you need to move your controller's joystick. (Controller only.) (Decreases by 10% per press.),Cambia lo rápido que tienes que mover la palanca. (Solo Control) (Disminuye 10% al presionar)
-desc_TrigDead,Change how hard you need to push your controller's triggers. (Controller only.) (Decreases by 10% per press.),Cambia cuanto debes presionar los gatillos. (Solo Control) (Disminuye 10% al presionar)
-,,
-con_Circle,CIRCLE,CÍRCULO
-con_Triangle,TRIANGLE,TRIÁNGULO
-con_Square,SQUARE,CUADRADO
-con_Touchpad,TOUCHPAD,TOUCHPAD
-,,
-freeplay_CharSelect,CHARACTER SELECT,
-,,
-freeplay_DescMind1,"A section that's conjoined to a more devious part of one's mind. While not dangerous to the real body of the user experiencing it, any damage taken or fake deaths that occure can cause extreme anxiety and distress. (Every bit of one's mind does not look the same as another person's, with 1 exception.)","Una sección conectada a una parte más retorcida de la mente. Si bien no es peligroso para el cuerpo del usuario, cualquier daño recibido o muertes simuladas puede causar ansiedad y angustia extremas. (La mente de uno no es idéntica a la de otra persona, con 1 excepción)."
-freeplay_DescMind2,"A section that's conjoined to a more devious part of one's mind. While not dangerous to the real body of the user experiencing it, any damage taken or fake deaths that occure can cause extreme anxiety and distress. (Every bit of one's mind does not look the same as another person's, with 1 exception.)","Una sección conectada a una parte más retorcida de la mente. Si bien no es peligroso para el cuerpo del usuario, cualquier daño recibido o muertes simuladas puede causar ansiedad y angustia extremas. (La mente de uno no es idéntica a la de otra persona, con 1 excepción)."
-freeplay_DescMindBoss,"A section far below the rest of one's mind. No one dares jump down due to fear of severe anxiety attacks, but under your circumstances, you have no choice.","Una sección muy por debajo del resto de la mente. Nadie se atreve a saltar por miedo a sufrir ataques de ansiedad severos, pero dadas tus circunstancias, no tienes otra opción."
-freeplay_DescMindBon1,An unused part of the mind that's normally inaccessible unless specific conditions are met.,Una parte no utilizada de la mente a la que no se puede acceder a menos que se cumplan ciertas condiciones.
-freeplay_DescMindBon2,An unused part of the mind that's normally inaccessible unless specific conditions are met.,Una parte no utilizada de la mente a la que no se puede acceder a menos que se cumplan ciertas condiciones.
-,,
-freeplay_DescOTD1,"An unfinished portion of the town. Construction died down today, so you're safe to roam around without gettin' caught. Usually people don't mess around there, but it's the fastest route to the cemetary.","Una parte inacabada del pueblo. Las obras pararon hoy, así que puedes pasear con seguridad sin que te pillen. Normalmente la gente no entra por ahí, pero es la ruta más rápida al cementerio."
-freeplay_DescOTN1,"A far-off place from the town. Thanks to how vast the area is, you'll hardly ever see other people near you. Even if you do, no one's gonna bother you.","Un lugar alejado del pueblo. Gracias a lo grande del lugar, casi nunca verás gente. Incluso si lo haces, nadie te molestará."
-,,
-freeplay_Desc,LEVEL DESCRIPTION,DESCRIPCIÓN DEL NIVEL
-,,
-condit_Available,UNAVAILABLE,NO DISPONIBLE
-condit_StoryMode,BEAT THE STAGE IN THE MAIN STORY,PASA LA ETAPA EN MODO HISTORIA
-condit_CRankMind,GET A C-RANK OR HIGHER IN THE 3 MAIN MIND LEVELS,OBTIENE UN RANGO C O MAS ALTO EN LOS 3 NIVELES DE MENTE
-,,
-freeplay_Trinkets,TRINKETS:,OBJETOS:
-freeplay_BestTime,BEST TIME:,MEJOR TIEMPO:
-freeplay_BestScore,BEST SCORE:,MEJOR PUNTAJE:
-freeplay_Enemies,ENEMIES:,ENEMIGOS:
-freeplay_Rank,RANK:,RANGO:
-,,
-freeplay_Track,LEVEL TRACK,TEMA DEL NIVEL
-freeplay_StopTrack,STOP TRACK,DETENER TEMA
-freeplay_Refresh,REFRESH,
-freeplay_Juke,BOOMBOX,BOOMBOX
-freeplay_ChooseJuke,TO OPEN THE BOOMBOX,ABRIR LA BOOMBOX
-freeplay_NormJuke,OFFICIAL SOUNDTRACK,NORMAL
-freeplay_CustJuke,CUSTOM MUSIC,PERSONALIZADA MÚSICA
-freeplay_JukeOff,BOOMBOX OFF,BOOMBOX APAGADA
-freeplay_JukeOn,BOOMBOX OST,BOOMBOX OST
-freeplay_JukeCust,BOOMBOX CUSTOM,BOOMBOX
-freeplay_MTJuke,No Custom Track Selected,
-juke_NoFolders,NO FOLDERS DETECTED,
-juke_NoTracks,NO TRACKS DETECTED,
-,,
-results_Cont,CONTINUE,CONTINUAR
-results_Retry,RETRY LEVEL,REINTENTAR
-results_Ghost,SAVE GHOST,GUARDAR FANTASMA
-results_GhostSaved,GHOST SAVED,FANTASMA GUARDADO
-results_Replay,SAVE REPLAY,GUARDAR REPLAY
-results_ReplaySaved,REPLAY SAVED,REPLAY GUARDADO
-results_ReplayText,REPLAY,REPLAY
-,,
-col_White,WHITE,BLANCO
-col_LightGray,LIGHT-GRAY,GRIS CLARO
-col_Gray,GRAY,GRIS
-col_DarkGray,DARK-GRAY,GRIS OSCURO
-col_Black,BLACK,NEGRO
-col_Maroon,MAROON,GRANATE
-col_Red,RED,ROJO
-col_Orange,ORANGE,NARANJA
-col_Olive,OLIVE,OLIVA
-col_Yellow,YELLOW,AMARILLO
-col_Lime,LIME,LIMA
-col_Green,GREEN,VERDE
-col_Aqua,AQUA,AGUA
-col_Teal,TEAL,TEAL
-col_Blue,BLUE,AZUL
-col_Navy,NAVY-BLUE,AZUL MARINO
-col_Purple,PURPLE,PÚRPURA
-col_Magenta,MAGENTA,MAGENTA
-,,
-life_Sil,SILHOUETTE,
-life_Color,COLORED,
-life_Old,OLD,
-,,
-inv_Level,LEVEL,
-inv_Char,CHARACTER,
-inv_None,NONE,
-,,
-level_Markiplier,ON YOUR MARK,EN SUS MARCAS
-level_Ready,READY?,¿PREPARADOS?
-level_Set,SET!,¡LISTOS!
-level_Go,GO!,¡YA!
-level_Adrenaline,ADRENALINE,ADRENALINE
-level_Rush,RUSH   RUSH,RUSH   RUSH
-level_Run,RUN!,
-,,
-game_Whoops,"Whoops, sorry about that.",
-game_ToSkip,TO SKIP,
-game_Disc,DISCLAIMER,
-game_MainDisc,"This game contains violence, cursin', & potentially sensitive themes. This is not intended for people under age 13 or those who are easily disturbed. \nThe game also contains flashing lights, screen shaking, & others of the sort that can be turned off in the Options menu. (Controller is EXTREMELY recommended!) \nThis is a completely separate demo to the old ""The Boy and his Story"" prototypes and files cannot be transferred over to this version. \nWould you like to open the Options menu first? ",
-game_CharDisc,"NOTE: While this character is fully playable, they have not received the animation upgrade that other playable characters have, so you'll see either unfinished or replacement animations for stuff the other characters have.",
-,,
-check_Name,Is this name correct?,
-check_Kappa,Not happenin'.,
-check_Lucifer,"Sorry, but no.",
-check_Sarah,Hiiii!! :D We can share!,
-check_Lone,I don't mind.,
-check_Brock,More than happy to share!,
-check_Neegi,Yeah... no.,
-check_Cloee,"Eh, sure, why not.",
-check_Akira,Nope. Choose a different name.,
-check_Taylor,Sorry. Gotta pick another name.,
-check_Ayana,Nah! Get your own damn name!,
-check_Roxxane,HAH! You misspelled your name. Pendejo.,
-check_Rush,Count me out.,
-check_Edge,Choose a different name before I beat your ass.,
-check_Ivy,A child of JUSTICE.,
-,,
-check_Nerd,Still not happenin'.,
-check_Frisk,WARNING: This name will not make your life hell.,
-check_Chara,The untrue name.,
-check_Sonic,The legend who started it.,
-check_Blaze,The legend who continued it.,
-check_OnTheNose,"That's pretty on-the-nose, don't you think?",
-check_AAAAAA,"Not very creative, huh?",
-,,
-new_Warning,WARNING!,
-new_WarnDisc,This will delete your current save file and it will be unrecoverable. Do you wish to continue?,
-,,
-///-----Music Credits-----///,,
-comp_Nerd,Nerd.,
-,,
-///-----Credits-----///,,
-cred_BaseName,Name:,
-cred_BasePos,Position: ,
-cred_BaseType,Role:,
-cred_BaseDesc,Quote:,
-,,
-///-----Credit Nerd.-----///,,
-cred_NerdName,Nerd.,
-cred_NerdPos,The Nerd,
-cred_NerdType,Damn-near Everything,
-cred_NerdDesc,"""Un-kept hair, baggy pants, pizza, and terrible coding practices is not a good life to live, but at least it works.""",
-,,
-///-----Credit Huisti-----///,,
-cred_HuisName,Huisti,
-cred_HuisPos,The Crew,
-cred_HuisType,Spanish Localization || Playtesting,
-cred_HuisDesc,"""The 'furro' translating the game to Spanish.""",
-,,
-///-----Credit Brandon-----///,,
-cred_BranName,Brandon,
-cred_BranPos,Special Guest,
-cred_BranType,"Created Akira, Taylor, & Ayana || Playtesting",
-cred_BranDesc,"""a.""",
-,,
-///-----Credit Ness-----///,,
-cred_NessName,Ness,
-cred_NessPos,Special Guest,
-cred_NessType,Created Ivy || Ivy Concept Art || Playtesting,
-cred_NessDesc,"""Saw this nerd go from Deltarune AUs to epic platformers. The moment you can, give him money.""",
-,,
-///-----Char Select Stats-----///,,
-charSel_Acc,ACCELERATION,ACELERACIÓN
-charSel_Jump,JUMP POWER,SALTO
-charSel_Grav,GRAVITY FORCE,GRAVEDAD
-charSel_Max,MAX SPEED,VELOCIDAD
-charSel_Break,BREAK SPEED,VEL. DE BREAK
-charSel_Boost,BOOST SPEED,VEL. DE TURBO
-charSel_Ground,GROUND,EN SUELO
-charSel_Midair,MID-AIR,EN EL AIRE
-charSel_Wall,ON WALL,EN MUROS
-charSel_Slide,SLIDING,DESLIZAMIENTO
-charSel_Twirl,TWIRLING,GIRO
-charSel_Charge,CHARGEABLE,RECARGABLE
-charSel_Ret,RETICLE,RETÍCULA
-charSel_Hold,HOLD,
-charSel_Spam,SPAM,
-charSel_Or,OR,
-,,
-///-----General Moves-----///,,
-move_Move,MOVE,
-move_Jump,JUMP,
-desc_Jump,"While at the peak of your jump, you will automatically lose speed unless you're Boosting.",
-,,
-move_DJump,DOUBLE-JUMP,
-move_SSlide,START SLIDE,
-desc_SSlide,Can only be done while not moving.,
-,,
-move_Slide,SLIDING,
-desc_Slide,"While Sliding, you slow down automatically, the effects of slopes is increased, and you damage enemies.",
-,,
-move_CSlide,SLIDE-CANCEL,
-desc_CSlide,Stop sliding without jumping and continue running.,
-,,
-move_Roll,ROLLING,
-desc_Roll,"While Rolling, you slow down automatically, the effects of slopes is increased, and you damage enemies. (You cannot cancel out of Rolling.)",
-,,
-move_Slam,SLAM,
-desc_Slam,Can only be done mid-air.,
-,,
-move_DSlam,SLAM-DASH,
-move_Boost,BOOST,
-desc_Boost,"While Boosting, your acceleration is tripled, you're invulnerable to spikes, and you damage enemies. Damage enemies to increase your TENSION meter. Initiating a Boost will always cost 2 bars of TENSION.",
-,,
-move_ABoost,AIR-BOOST,
-desc_ABoost,Can only be done mid-air. Suspends you in the air for a little. Initiating an Air-Boost will always cost 10 bars of TENSION.,
-,,
-move_Trick,FREESTYLE-TRICK,
-desc_Trick,"Anything that launches you that isn't the Environment, Hazards, or Enemies will allow you to perform all kinds of tricks that earn you TENSION.",
-,,
-move_DTrick,DIRECTIONAL-TRICK,
-desc_DTrick,Hold any direction (other than down) and you'll launch yourself accordingly along with continuing your FREESTYLE-TRICKS.,
-,,
-move_BTrick,BACKWARDS-TRICK,
-desc_BTrick,Don't hold a direction and you'll be launched opposite of where you're facing.,
-,,
-move_RTrick,RAIL-TRICK,
-desc_RTrick,Earn TENSION and increase your speed.,
-,,
-move_RJump,RAIL-JUMP,
-desc_RJump,Jump right before a Rail-Stopper to do FREESTYLE-TRICKS.,
-,,
-///-----Kappa Moves-----///,,
-move_KADash,AIR-DASH,
-move_KHoming,HOMING ATTACK,
-desc_KHoming,"A Reticle must appear before you can attack. After attacking, most of your moves reset.",
-,,
-///-----Lucifer Moves-----///,,
-move_LBGlide,BURST-GLIDE,
-desc_LBGlide,"You fall extremely slowly, but it's on a small timer.",
-,,
-///-----Sarah Moves-----///,,
-move_SSHover,SPINNING-HOVER,
-desc_SSHover,Can be done infinitely and you have more air-control.,
-,,
-move_SSSlam,SPINNING-SLAM,
-desc_SSSlam,Hold to make it slam down faster than usual.,
-,,
-///-----Rush Moves-----///,,
-move_RHoming,HOMING ATTACK,
-desc_RHoming,"A Reticle must appear before you can attack. After attacking, most of your moves reset.",
-,,
-move_RSpindash,SPINDASH,
-move_RPeelout,SUPER PEELOUT,
-,,
-///-----Ivy Moves-----///,,
-move_IRevolver,REVOLVER,
-desc_IRevolver,Can be charged. Will take more bullets,
-,,
-move_IBDash,BULLET-DASH,
-move_IBBounce,BULLET-BOUNCE,
-move_IReload,RELOAD,
-desc_IReload,Reloading won't finish until you land on the ground.,
-,,
-///-----Base Bios-----///,,
-bio_Name,NAME,
-bio_Age,AGE,
-bio_Birth,BIRTHDAY,
-,,
-///-----Char Bios-----///,,
-bio_Kappa,"The adopted, oldest child of the Suki family and a descendant of the ADRENALINE Clan. One half of a coin. When he was 10 years old, his mother died due to an unexpected event in front of his eyes. This lead to dormant power of his to be released in one big burst. This power, known as TENSION, is something everyone has. But because of his ancient lineage, it was more hidden, but far more powerful than a normal person's. After the event, his best friend's family was more than willing to bring him in. His adoptive sister, Sarah, and her mother, Sophi, because they know he loves cats, made him the cat beanie he still wears to this day, which now looks small on him thanks to his giant hair. (And naturally just growin' out of it.) He's grown to be more silent than usual, but he still finds joy in the things he does. Collecting cassettes 'n' CDs with his adoptive father, Scott, learning to bake with Sophi, learning to draw with Sarah, learning piano with Lone, learning boxing with Brock, sparring and sharing manga with Neegi, adventuring with Cloee, spray-painting with Akira 'n' his gang, and rocking each other's shits with Roxxane. Alongside workin' at a café, he occasionally does fruit deliveries for people in OTHERTOWN thanks to his family's farming business and his incredible speed. Holds the left, cracked, gold, heart-shaped pendant of the Suki Siblings, given by his adoptive grandfather.",
-bio_Lucifer,"A hybrid of the DEFECTIVE Clan & ADRENALINE Clan. One half of a coin. She's a pretty reserved individual, often not showing emotion. She's forced to train herself and her troops everyday to continue the self-dubbed DEFECTIVE Clan's goal of killing everyone in the ADRENALINE Clan. Having to harvesting their blood to attain the power of ADRENALINE, figuring out how to use it without it melting 'n' killing themselves, and effectively letting them live forever with infinite, unbelievable power. She knows everything being done is wrong, but it's either she does this or die by her family's hand. She already suffered a skull fracture at the hand of her father and uncle, the 2 leaders of the DEFECTIVE Clan in modern-day, for missing a shot on a member of the ADRENALINE Clan. Ever since, she's needed a headband imbued with a TENSION Seal to stave off the pain. Despite all of this, she does find time at night to rest or let herself have some fun. Simply running in the night, seeing the stars, eating some pizza, and enjoying her time without worries is enough for her, often humming Clair de Lune to herself. Holds the pink, heart-shaped pendant of her deceased mother, given to her daughter herself shortly before passing away. Lucifer often blames herself for her mother's death.",
-bio_Sarah,"The middle child of the Suki family. The childhood best friend-turned sister of Kappa; she's your happy-go-lucky, next-door neighbor-type of girl. She's pretty cheerful, loves anything cute, big fan of hamburgers, and always tries to look at the brightside of anything. She and the rest of her family have a heart theme going on, all family members having heart-shaped ahoges. She has a fondness for making tea as well, especially for her girlfriend, Neegi. She's actively learning to draw & paint, hopin' to use those skills to get to an art school 'n' develope them more, alongside doing freelance work. Holds the middle, cracked, gold, heart-shaped pendant of the Suki Siblings, given by her grandfather.",
-bio_Lone,"The adopted, youngest child of the Suki family. A trans girl left abandoned by her previous family at a very young age. Forced to fend for herself without any experience in a harsh city, she ended up losing her eyes before meeting the Suki family. Despite their similarities, her and Kappa are not blood-related. She was found by Kappa and Sarah during a fruit delivery they had to do when they had to work at their grandfather's farm outside OTHERTOWN. Despite being terrified, she became relieved when she listened to their gentle voices. After some months living with the Suki family, she not only was properly adopted, but also was taught how to use TENSION. She was also taught by Sarah how to use her other senses. Upon a couple years of living and working at the farm, she gained a special interest in learning piano after hearing Kappa play it occasionally, albeit, very basic songs. Holds the right, cracked, gold, heart-shaped pendant of the Suki Siblings, given by her grandfather.",
-bio_Brock,,
-bio_Neegi,,
-bio_Cloee,,
-bio_Akira,"The 1st member 'n' leader of the gang of goons in OTHERCITY, ""The Bandanas"", and the 2nd dumbest person of the gang. He managed to cheat his way through high school so well that he got accepted to a college, but ultimately didn't learn nothin', so he dropped out. His group is a gang of 3 self-proclaimed assassins in OTHERCITY, chargin' high prices to kill anyone they're asked and only IF they don't like this person after observing them for a bit. He and his goons live in an abandoned harbor in OTHERCITY full of shipping containers that they set up to be a proper living space. It's also where their hideout is for their killin' business, which is probably not the best idea on his part. Any time he refused an offer, the client would try 'n' kill him, which usually ends up failing and always ends up with the client dead, with their weapon choice snatched as a trophy. For those that DO leave alive 'n' they try to rat out The Bandanas, they get swiftly dealt with. Thanks to Akira's pyrokenisis, he's able to completely destroy the bodies as well. Unforunately, this does not stop getting him and his gang on a wanted list, having posters scattered throughout OTHERCITY and some in OTHERTOWN.",
-bio_Taylor,"The 2nd member of The Bandanas and the actual smartest person of the gang. She's basically the ""tank"" of the group, havin' the most muscle out of everyone in the group.",
-bio_Ayana,"The 3rd member of The Bandanas and the actual dumbest person of the gang. She's extremely mischievious, often lying to get her way. She hates following any rules, she cheated her entire way through school to college before dropping out, and owns a whole knife collection. She especially loves pissing off OTHERCITY's authorities by spray-painting on walls, trains, and cargo way more than Akira & Taylor. Despite this, she does have soft-spot for certain things. She doesn't have any elemental abilities like the rest of her gang.",
-bio_Roxxane,,
-bio_Rush,,
-bio_Edge,,
-bio_Ivy,,
-,,
-///-----Months-----///,,
-mon_Jan,JANUARY,
-mon_Feb,FEBRUARY,
-mon_Mar,MARCH,
-mon_Apr,APRIL,
-mon_May,MAY,
-mon_Jun,JUNE,
-mon_Jul,JULY,
-mon_Aug,AUGUST,
-mon_Sep,SEPTEMBER,
-mon_Oct,OCTOBER,
-mon_Nov,NOVEMBER,
-mon_Dec,DECEMBER,
-,,
-///-----Days-----///,,
-day_Sun,SUNDAY,
-day_Mon,MONDAY,
-day_Tue,TUESDAY,
-day_Wed,WEDNESDAY,
-day_Thu,THURSDAY,
-day_Fri,FRIDAY,
-day_Sat,SATURDAY,
+I might swerve-,ENGLISH,ESPAÑOL,
+///-----Game Title-----///,,,
+wind_Title,ADRENALINE RUSH,ADRENALINE RUSH,
+,,,
+///-----Language Choice-----///,,,
+opt_ChooseLang,CHOOSE A LANGUAGE,ELIGE UN IDIOMA,
+opt_AskOnce,(This'll only appear once and never again. You can change the language again any time in the Options menu.),(Esto aparecerá solo una vez. Puedes cambiar el idioma en cualquier momento en el menú Opciones.),
+,,,
+///-----File Select-----///,,,
+fs_FileSelect,FILE SELECT,ELIGE UN ARCHIVO,
+fs_Select,SELECT,SELECCIONAR,
+fs_Copy,COPY,COPIAR,
+fs_Delete,DELETE,BORRAR,
+fs_Back,BACK,ATRÁS,
+fs_Cancel,CANCEL,CANCELAR,
+fs_Empty,EMPTY,VACÍO,
+fs_Save,SAVE,GUARDAR,
+fs_ChooseFile,CHOOSE SLOT TO PASTE,ELIGE UN ESPACIO PARA PEGAR,
+fs_Erase,ERASE THIS FILE?,¿BORRAR ESTE ARCHIVO?,
+fs_Erasing,ARE YOU SURE??,¿¿SEGURO??,
+fs_Overwrite,OVERWRITE THIS FILE?,¿SOBRESCRIBIR ESTE ARCHIVO?,
+,,,
+///-----Controller Shit-----///,,,
+conDet_Player,PLAYER,JUGADOR,
+conDet_Conn,CONNECTED,CONECTADO,
+conDet_ConUnd,CONTROLLER UNDETECTED,CONTROL DESCONECTADO,
+,,,
+///-----General Game Shit-----///,,,
+game_Quitting,QUITTING,SALIR,
+game_Prototype,PROTOTYPE,PROTOTIPO,
+game_Demo,DEMO,DEMO,
+game_NP,NOW PLAYING,REPRODUCIENDO,
+game_Track,TRACK,PISTA,
+game_By,BY,POR,
+game_Length,LENGTH,DURACIÓN,
+game_Acquire,You got the...,Obtuviste...,
+,,,
+///-----Audio Options-----///,,,
+opt_Audio,AUDIO,SONIDO,
+opt_Master,MASTER,GENERAL,
+opt_Music,MUSIC,MÚSICA,
+opt_SFX,SFX,EFECTOS,
+opt_Text,TEXT,TEXTO,
+opt_Ambiance,AMBIANCE,AMBIENTE,
+opt_Pause,UNIQUE PAUSE THEME,TEMA DE PAUSA ÚNICO,
+opt_Footstep,FOOTSTEPS,PASOS,
+opt_Invincible,INVINCIBILITY THEME,TEMA DE INVENCIBILIDAD,
+,,,
+///-----Visual Options-----///,,,
+opt_Visual,VISUAL,VISUALES,
+opt_SimpVFX,SIMPLIFY VFX,SIMPLIFICAR EFECTOS,
+opt_SimpBack,SIMPLE BACKGROUND,FONDO SIMPLE,
+opt_ScrShk,SCREEN SHAKE,TEMBLOR DE PANTALLA,
+opt_Part,PARTICLES,PARTÍCULAS,
+opt_TextSpd,TEXT SPEED,VEL. DE TEXTO,
+opt_Lang,LANGUAGE,IDIOMA,
+opt_Outline,OUTLINE,CONTORNO,
+opt_Squash,SQUASH 'N' STRETCH,ESTIRAMIENTO,
+opt_ExtCam,EXTENDED CAMERA,CAMARA EXTENDIDA,
+,,,
+///-----Misc Options-----///,,,
+opt_Misc,MISC,MISCELÁNEO,
+opt_MusTag,MUSIC TAG,INFORMACIÓN DE MÚSICA,
+opt_ConType,CONTROLLER TYPE,TIPO DE CONTROL,
+opt_ConRum,CONTROLLER RUMBLE,VIBRACIÓN DE CONTROL,
+opt_FPS,FPS,FPS,
+opt_Speedrun,SPEEDRUN TIMER,TEMPORIZADOR,
+opt_ConDis,KEYBOARD/CONTROLLER DISPLAY,TECLADO/MUESTRA DE CONTROL,
+,,,
+///-----Preference Options-----///,,,
+opt_Pref,PREFERENCES,PREFERENCIAS,
+opt_ColorCode,CHARACTER COLOR-CODING,COLOREADO DE PERSONAJE,
+opt_FocusLoss,AUTO-PAUSE ON FOCUS LOSS,PAUSAR AL PERDER FOCO,
+opt_ChangeColor,CHANGE BASE COLOR,CAMBIAR COLOR BASE,
+opt_LifeIcon,LIFE ICON,ICONO DE VIDA,
+,,,
+///-----Online Options-----///,,,
+opt_Online,ONLINE,EN LÍNEA,
+opt_Discord,DISCORD RICH PRESCENCE,PRESENCIA DE DISCORD,
+opt_Ghost,SHOW GHOST,MOSTRAR FANTASMA,
+,,,
+///-----Display Options-----///,,,
+opt_Display,DISPLAY,MODO DE PANTALLA,
+opt_WindowSize,WINDOW SCALE,TAMAÑO DE VENTANA,
+opt_VSync,VSYNC,SINCRONIZACIÓN VERTICAL,
+opt_Fullscr,FULLSCREEN,PANTALLA COMPLETA,
+,,,
+///-----Controls Options-----///,,,
+opt_ConGen,CONTROLS (GENERAL),CONTROL (GENERAL),
+opt_ConSpeed1,CONTROLS (SPEED / MENU) 1,CONTROL (VELOCIDAD / MENU) 1,
+opt_ConSpeed2,CONTROLS (SPEED / MENU) 2,CONTROL (VELOCIDAD / MENU) 2,
+opt_ConAction1,CONTROLS (ACTION) 1,CONTROL (ACCIÓN) 1,
+opt_ConAction2,CONTROLS (ACTION) 2,CONTROL (ACCIÓN) 2,
+opt_ConAction3,CONTROLS (ACTION) 3,CONTROL (ACCIÓN) 3,
+,,,
+opt_ConLeft,LEFT,IZQUIERDA,
+opt_ConRight,RIGHT,DERECHA,
+opt_ConUp,UP,ARRIBA,
+opt_ConDown,DOWN,ABAJO,
+opt_ConJump,JUMP,SALTO,
+opt_ConAct1,ACTION 1,ACCIÓN 1,
+opt_ConBoost,BOOST,TURBO,
+opt_ConSpec1,SPECIAL 1,ESPECIAL 1,
+opt_ConSwap,SWAP,INTERCAMBIO,
+opt_ConSpec2,SPECIAL 2,ESPECIAL 2,
+opt_ConStart,START,START,
+opt_ConSelect,SELECT,SELECT,
+,,,
+opt_ActLeft,LEFT,IZQUIERDA,
+opt_ActRight,RIGHT,DERECHA,
+opt_ActUp,UP,ARRIBA,
+opt_ActDown,DOWN,ABAJO,
+opt_ActLight,LIGHT ATTACK,ATAQUE LIGERO,
+opt_ActMedium,MEDIUM ATTACK,ATAQUE MEDIO,
+opt_ActHeavy,HEAVY ATTACK,ATAQUE PESADO,
+opt_ActJump,JUMP,SALTO,
+opt_ActDash,RUN,CORRER,
+opt_ActSuper,DASH,TURBO,
+opt_Parry,PARRY,PARRY/CONTRA,
+opt_Charge,CHARGE-BOOST,CARGAR TURBO,
+,,,
+opt_JoyDead,JOYSTICK DEADZONE,ZONA MUERTA DE PALANCA,
+opt_TrigDead,TRIGGER DEADZONE,ZONA MUERTA DE GATILLO,
+,,,
+///-----Choices-----///,,,
+opt_No,NO,NO,
+opt_Yes,YES,SÍ,
+opt_Off,OFF,APAGADO,
+opt_On,ON,ENCENDIDO,
+opt_Default,DEFAULT,POR DEFECTO,
+opt_ChangeBind,CHANGING BIND...,CAMBIANDO BOTÓN...,
+,,,
+///-----Main Menu-----///,,,
+title_Gameplay,GAMEPLAY,JUGAR,
+title_Extras,EXTRAS,EXTRAS,
+title_Options,OPTIONS,OPCIONES,
+title_QuitGame,QUIT GAME,SALIR DEL JUEGO,
+title_StoryMode,STORY MODE,MODO HISTORIA,
+title_Freeplay,FREEPLAY,JUEGO LIBRE,
+title_NewGame,NEW GAME,NUEVO JUEGO,
+title_Continue,CONTINUE,CONTINUAR,
+title_Bios,CHARACTER BIOS,PERSONAJES,
+title_Gallery,GALLERY,GALERÍA,
+title_Boombox,BOOMBOX,BOOMBOX,
+title_Achievements,ACHIEVEMENTS,LOGROS,
+title_Enemy,ENEMY HIT LIST,ENEMIGOS,
+title_Credits,CREDITS,CRÉDITOS,
+title_Socials,SOCIALS,REDES SOCIALES,
+title_Bluesky,BLUESKY,BLUESKY,
+title_Insta,INSTAGRAM,INSTAGRAM,
+title_YT,YOUTUBE,YOUTUBE,
+title_Discord,DISCORD,DISCORD,
+,,,
+///-----Freeplay Shit-----///,,,
+freeplay_Speed,SPEED STAGES,ETAPAS DE VELOCIDAD,
+freeplay_Action,ACTION STAGES,ETAPAS DE ACCIÓN,
+freeplay_Level,LEVEL ,NIVEL ,
+freeplay_Boss,BOSS,JEFE,
+freeplay_Bonus,BONUS ,BONUS ,
+freeplay_CharSel,SELECT A CHARACTER,ELIGE UN PERSONAJE,
+freeplay_ChooseChar1,PRESS,PRESIONA,
+freeplay_ChooseChar2,TO CHANGE CHARACTERS,PARA CAMBIAR PERSONAJES,
+freeplay_Mix,CHOOSE YER MIX!!,¡¡SELECCIONÁ TU MIX!!,
+freeplay_Stage,STAGE,ETAPA,
+freeplay_CharTut,TO ENTER THE CHARACTER TUTORIAL,IR A TUTORIAL DE PERSONAJE,
+freeplay_CharSelect,CHARACTER SELECT,SELECCIÓN DE PERSONAJE,
+,,,
+freeplay_Trinkets,TRINKETS:,OBJETOS:,
+freeplay_BestTime,BEST TIME:,MEJOR TIEMPO:,
+freeplay_BestScore,BEST SCORE:,MEJOR PUNTAJE:,
+freeplay_Enemies,ENEMIES:,ENEMIGOS:,
+freeplay_Rank,RANK:,RANGO:,
+,,,
+freeplay_Track,LEVEL TRACK,TEMA DEL NIVEL,
+freeplay_StopTrack,STOP TRACK,DETENER TEMA,
+freeplay_Refresh,REFRESH,RECARGAR,
+freeplay_Juke,BOOMBOX,BOOMBOX,
+freeplay_ChooseJuke,TO OPEN THE BOOMBOX,ABRIR LA BOOMBOX,
+freeplay_NormJuke,OFFICIAL SOUNDTRACK,NORMAL,
+freeplay_CustJuke,CUSTOM MUSIC,MÚSICA PERSONALIZADA,
+freeplay_JukeOff,BOOMBOX OFF,BOOMBOX APAGADA,
+freeplay_JukeOn,BOOMBOX OST,BOOMBOX OST,
+freeplay_JukeCust,BOOMBOX CUSTOM,BOOMBOX PERSONALIZADO,
+freeplay_MTNorm,No Track Selected,Sin Música ,
+freeplay_MTJuke,No Custom Track Selected,Sin Música personalizada,
+juke_NoFolders,NO FOLDERS DETECTED,NO SE DETECTARON CARPETAS,
+juke_NoTracks,NO TRACKS DETECTED,NO SE DETECTARON PISTAS,
+juke_OpenFold,OPEN FOLDER,ABRIR CARPETA,
+,,,
+///-----Level Descriptions-----///,,,
+freeplay_Desc,LEVEL DESCRIPTION,DESCRIPCIÓN DEL NIVEL,
+freeplay_DescMind,"An extension of one's MIND. While not dangerous to the real body of the user, any damage taken or fake deaths that occur can cause extreme anxiety and distress. (Every bit of one's MIND does not look the same as another person's, with an exception.)","Una extensión de la MENTE. Mientras no presenta un riesgo para el usuario, cualquier daño o muerte falsa que ocurra causará una ansiedad y angustia. (Cada parte de la MENTE de uno no se ve parecido al de otra persona, con una excepción).",
+freeplay_DescMindBoss,"A section far below the rest of one's MIND. No one falls below the fog as to avoid the BEAST that resides there. Unfortunately, you don't have a choice.","Una sección más abajo del resto de la MENTE. Nadie cae más bajo de la niebla para evitar a la BESTIA que vive ahí. Desafortunadamente, no tienes elección.",
+freeplay_DescOTD1,"An unfinished portion of the town. Construction died down today, so you're safe to roam around without gettin' caught. Usually people don't mess around there, but it's the fastest route to the cemetary.","Una parte inacabada del pueblo. Las obras pararon hoy, así que puedes pasear con seguridad sin que te pillen. Normalmente la gente no entra por ahí, pero es la ruta más rápida al cementerio.",
+freeplay_DescOTN1,"A far-off place from the town. Thanks to how vast the area is, you'll hardly ever see other people near you. Even if you do, no one's gonna bother you.","Un lugar alejado del pueblo. Gracias a lo grande del lugar, casi nunca verás gente. Incluso si lo haces, nadie te molestará.",
+,,,
+///-----Char Select Shit-----///,,,
+charSel_Acc,ACCELERATION,ACELERACIÓN,
+charSel_Jump,JUMP POWER,SALTO,
+charSel_Grav,GRAVITY FORCE,GRAVEDAD,
+charSel_Max,MAX SPEED,VELOCIDAD,
+charSel_Break,BREAK SPEED,VEL. DE BREAK,
+charSel_Boost,BOOST SPEED,VEL. DE TURBO,
+charSel_Ground,GROUND,EN SUELO,
+charSel_Midair,MID-AIR,EN EL AIRE,
+charSel_Wall,ON WALL,EN MUROS,
+charSel_Slide,SLIDING,DESLIZAMIENTO,
+charSel_Twirl,TWIRLING,GIRO,
+charSel_Charge,CHARGEABLE,RECARGABLE,
+charSel_Ret,RETICLE,RETÍCULA,
+charSel_Hold,HOLD,SOSTÉN,
+charSel_Spam,SPAM,PRESIONA REPETIDAS VECES,
+charSel_Or,OR,O,
+,,,
+///-----STAGES-----///,,,
+level_MIND,MIND,MENTE,
+level_MIND?,MIND?,¿MENTE?,
+level_OTHERTOWN,OTHERTOWN,OTHERTOWN,
+level_OTD,OTHERTOWN (DAY),OTHERTOWN (DÍA),
+level_OTN,OTHERTOWN (NIGHT),OTHERTOWN (NOCHE),
+,,,
+///-----General Level Shit-----///,,,
+level_Markiplier,ON YOUR MARK,EN SUS MARCAS,
+level_Ready,READY?,¿PREPARADOS?,
+level_Set,SET!,¡LISTOS!,
+level_Go,GO!,¡YA!,
+level_Adrenaline,ADRENALINE,ADRENALINE,
+level_Rush,RUSH   RUSH,RUSH   RUSH,
+level_Run,RUN,CORRE,
+,,,
+///-----Chapter Names-----///,,,
+chap_Prologue,PROLOGUE /// MIND,PRÓLOGO /// MENTE,
+chap_Volume1,VOLUME 1 /// REUNION,VOLUMEN 1 /// REUNIÓN,
+,,,
+///-----General Menus-----///,,,
+menu_Paused,PAUSED,PAUSA,
+menu_Resume,RESUME,CONTINUAR,
+menu_Restart,RESTART,REINICIAR,
+menu_QRestart,QUICK-RESTART,REINICIO-RÁPIDO,
+menu_HUB,HUB,HUB,
+menu_MainMenu,MAIN MENU,MENÚ PRINCIPAL,
+menu_NameAsk,What is YOUR name?,¿Cuál es TU nombre?,
+menu_ConLetter,CONFIRM,COLOCAR,
+menu_ReLetter,REMOVE,QUITAR,
+menu_AddSpace,ADD SPACE,AÑADIR ESPACIO,
+,,,
+///-----Story Mode Shit-----///,,,
+story_NOBJ,NEW OBJECTIVE,NUEVO OBJETIVO,
+story_UOBJ,UPDATED OBJECTIVE,OBJETIVO ACTUALIZADO,
+story_OBJ,OBJECTIVE,OBJETIVO,
+story_Chal,CHALLENGE,DESAFÍO,
+,,,
+///-----Environment Shit-----///,,,
+enviro_Secret,J.S.R. SPRAY,SPRAY J.S.R.,
+enviro_MusSecret,CASSETTE,CASETE,
+,,,
+///-----Main Char Names-----///,,,
+name_Kappa,KAPPA SUKI,KAPPA SUKI,
+name_Kap,KAPPA,KAPPA,
+name_Sarah,SARAH SUKI,SARAH SUKI,
+name_Sar,SARAH,SARAH,
+name_Alone,LONE SUKI,LONE SUKI,
+name_Lone,LONE,LONE,
+name_Brock,"DANTE ""BROCK"" LUNA","DANTE ""BROCK"" LUNA",
+name_Bro,BROCK,BROCK,
+name_Neegi,NEEGI BUTCHER,NEEGI BUTCHER,
+name_Nee,NEEGI,NEEGI,
+name_Cloee,CLOEE BUTCHER,CLOEE BUTCHER,
+name_Clo,CLOEE,CLOEE,
+name_Akira,"AKIRA ""A.K."" KAGEMORI","AKIRA ""A.K."" KAGEMORI",
+name_AK,AKIRA,AKIRA,
+name_Taylor,"TAYLOR ""T.J."" JACKSON","TAYLOR ""T.J."" JACKSON",
+name_TJ,TAYLOR,TAYLOR,
+name_Ayana,"AYANA ""A.A."" ASHLEY","AYANA ""A.A."" ASHLEY",
+name_AA,AYANA,AYANA,
+name_Roxxane,ROXXANE GONZÁLEZ,ROXXANE GONZÁLEZ,
+name_Rocks,ROXXANE,ROXXANE,
+name_Lucifer,LUCIFER CULA,LUCIFER CULA,
+name_Luci,LUCIFER,LUCIFER,
+,,,
+///-----Extra Char Names-----///,,,
+name_Rush,RUSH MAURICE,RUSH MAURICE,
+name_Ru,RUSH,RUSH,
+name_Edge,EDGE TERIOS,EDGE TERIOS,
+name_Ed,EDGE,EDGE,
+name_Ivy,IVY,IVY,
+,,,
+///-----Side Char Names-----///,,,
+name_Sophi,SOPHI SUKI,SOPHI SUKI,
+name_Sop,SOPHI,SOPHI,
+name_Scott,SCOTT SUKI,SCOTT SUKI,
+name_Sco,SCOTT,SCOTT,
+,,,
+///----Game Over Tracks-----///,,,
+mus_Fade,Fading Dreams,Sueños Desvaneciendo,
+mus_Accept,It Takes a Lot to Accept Reality,Es Difícil Aceptar La Realidad,
+,,,
+///-----Main Menu Tracks-----///,,,
+mus_Solemn,Solemn,Solemne,
+mus_Wakey,Wakey-Wakey,A Levantarse,
+mus_Cest,C'est La Vie,C'est La Vie,
+mus_MindBody,MIND 'N' BODY,MIND 'N' BODY,
+mus_MINDWAVE,MINDWAVE,MINDWAVE,
+mus_MINDWAVE2,MINDWAVE (Allegro),MINDWAVE (Allegro),
+mus_RoundN,Round 'n' Round,Round 'n' Round,
+mus_Wrap,Wrap It Up,Wrap It Up,
+mus_WrapK,Wrap It Up (Kappa Mvt.),Wrap It Up (Kappa Mvt.),
+mus_WrapL,Wrap It Up (Lucifer Mvt.),Wrap It Up (Lucifer Mvt.),
+mus_Funk,Funk 'n' Rush,Funk 'n' Rush,
+mus_Unwind,"Unwind a Lil' Bit, Yeah?","Unwind a Lil' Bit, Yeah?",
+mus_Backstreet,Backstreet Newgrounds,Backstreet Newgrounds,
+,,,
+///-----Freeplay Tracks-----///,,,
+mus_FKap,Waitin',Waitin',
+mus_FSar,No Rush,No Rush,
+mus_FLon,Arpeggio,Arpeggio,
+mus_FBro,Fightin' Glove,Fightin' Glove,
+mus_FNee,Euro-Slide,Euro-Slide,
+mus_FClo,Star-Bright,Star-Bright,
+mus_FAki,Flamerunner,Flamerunner,
+mus_FTay,Knuckleblaster,Knuckleblaster,
+mus_FAya,Sharpshooter,Sharpshooter,
+mus_FRus,Hurry Up,Hurry Up,
+mus_FEdg,Black Arms,Black Arms,
+mus_FRox,Guadaña,Scythe,
+mus_FLuc,Waiting,Waiting,
+mus_FIvy,Holster,Holster,
+,,,
+///-----MIND Tracks-----///,,,
+mus_Dis,DISCONNECTED,DESCONECTADO,
+mus_Lost,LOST REASON,SIN RAZÓN,
+mus_Mind,MY MIND,MI MENTE,
+mus_MindG,MY MIND (Girly Mix),MI MENTE (Girly Mix),
+mus_Dist,DISTURBING THE MIND,DESASTRE MENTAL,
+mus_DistAllegro,DISTURBING THE MIND (Allegro),DESASTRE MENTAL (Allegro),
+mus_DistG,DISTURBING THE MIND (Girly Mix),DESASTRE MENTAL (Girly Mix),
+mus_DistGAllegro,DISTURBING THE MIND (Allegro) (Girly Mix),DESASTRE MENTAL (Allegro) (Girly Mix),
+,,,
+///-----O.TOWN Tracks-----///,,,
+mus_NewDay,"New Night, New Day","Nueva Noche, Nuevo Día",
+mus_Sunlight,Clair De Soleil,Clair De Soleil,
+mus_SunlightG,Clair De Soleil (Girly Mix),Clair De Soleil (Girly Mix),
+mus_NewNight,"New Day, New Night","Nuevo Día, Nueva Noche",
+mus_Moonlight,Clair De Lune,Clair De Lune,
+mus_MoonlightG,Clair De Lune (Girly Mix),Clair De Lune (Girly Mix),
+,,,
+///-----Results Tracks-----///,,,
+///-----Kappa Results-----///,,,
+mus_NextTime,You'll Get 'em Next Time,Quizás A La Próxima,
+mus_Stand,Stand Proud,Que Orgullo,
+mus_Sonic,Honorary Sonic,Honorary Sonic,
+,,,
+///-----Sarah Results-----///,,,
+mus_YourBest,You Did Your Best,Diste Lo Mejor,
+mus_InYou,I Knew You Had it in You,Sabía Que Podías,
+mus_Hearts,Hearts All Around,Corazones Por Doquier,
+,,,
+///-----Lone Results-----///,,,
+mus_Diminuendo,Diminuendo,Diminuendo,
+mus_Allegro,Allegro,Allegro,
+mus_Crescendo,Crescendo,Crescendo,
+,,,
+///-----Akira Results-----////,,,
+mus_Diminished,Diminished,Diminuto,
+mus_Lighter,Lighter,Ligero,
+mus_FeelinNice,Feelin' Nice,Bieeeen,
+,,,
+///-----Lucifer Results-----///,,,
+mus_BeenBetter,That Could've Been Better,Podría haber sido mejor,
+mus_YouStrong,You Are Strong,Eres fuerte,
+mus_Blaze,Honorary Blaze,Flama Honoraria,
+,,,
+///-----Rush Results-----///,,,
+mus_Kiddin,You Gotta be Kiddin' Me,No Bromees,
+mus_NotBad,"Ayy, Not Bad","Hey, Nada Mal",
+mus_Talkin,That's What I'm TALKIN' About,A ESO Me Refería,
+,,,
+///-----Ivy Results-----///,,,
+mus_Shot,Shot Down,Caído,
+mus_Pardner,"It's Arright, Pardner","Está Bien, Compañero",
+mus_JUSTICE,JUSTICE,JUSTICIA,
+,,,
+///-----Bonus Shit-----///,,,
+bon_Time,TIME BONUS,BONUS DE TIEMPO,
+bon_Ring,RING BONUS,BONUS DE ANILLO,
+bon_Trink,TRINKET BONUS,BONUS DE OBJETOS,
+bon_Perf,PERFECT BONUS,BONUS PERFECTO,
+bon_Enemy,ENEMY BONUS,BONUS DE ENEMIGOS,
+,,,
+///-----Char Costumes-----///,,,
+cost_Cost,COSTUME,TRAJE,
+,,,
+cost_Kap1,RUSH-STYLE,ESTILO-RUSH,
+cost_Kap2,HIDEKI,HIDEKI,
+,,,
+cost_Sar1,HEARTACHE,HEARTACHE,
+,,,
+cost_Lon1,BUN-BUN,BUN-BUN,
+,,,
+cost_Bro1,JA-ORANGE,JA-RANJA,
+,,,
+cost_Nee1,HEARTACHE,HEARTACHE,
+,,,
+cost_Clo1,DAISY,DAISY,
+,,,
+cost_Aki1,UZI-STYLE,ESTILO-UZI,
+,,,
+cost_Tay1,UZI-STYLE,ESTILO-UZI,
+,,,
+cost_Aya!,UZI-STYLE,ESTILO-UZI,
+,,,
+cost_Rus1,JET-SET,SET-JET,
+,,,
+cost_Edg1,JET-SET,SET-JET,
+,,,
+cost_Rox1,LAZULI,LAZULI,
+,,,
+cost_Luc1,RUSH-STYLE,ESTILO-RUSH,
+,,,
+cost_Ivy1,BUTTERCUP,FLOR DORADA,
+,,,
+///-----Audio Description-----///,,,
+desc_Master,Change the game's overall volume. (Decreases by 10% per press.),Cambia el volumen general del juego. (Disminuye 10% al presionar.),
+desc_Music,Change the game's music volume. (Decreases by 10% per press.),Cambia el volumen de fondo del juego. (Disminuye 10% al presionar.),
+desc_SFX,Change the game's sound effect volume. (Decreases by 10% per press.),Cambia el volumen de los efectos de sonido. (Disminuye 10% al presionar.),
+desc_Text,Change the game's textbox type-writer volume. (Decreases by 10% per press.),Cambia el volumen del efecto cuadro de texto. (Disminuye 10% al presionar.),
+desc_Ambiance,Change the game's world ambiance volume. (Decreases by 10% per press.),Cambia el volumen del ambiente. (Disminuye 10% al presionar.),
+desc_Pause,Have a BGM track play based on the character you're playing as while the game is paused.,Un tema de pausa se reproduce dependiendo del personaje que estés usando.,
+desc_Footstep,Have footstep and landing sounds play based on certain situations during gameplay.,Sonido de pasos y aterrizaje se reproducen durante el gameplay.,
+desc_Invincible,Change the invincibility music track.,Cambia la pista de invencibilidad.,
+,,,
+///-----Visual Description-----///,,,
+desc_SimpVFX,"Reduce, stop, or get rid of things that could be eye-straining. (I.E., flashing lights, textbox animations, 'n' some moving assets.)","Reduce, detiene o elimina los elementos que cansan la vista. (Ejemplo: luces, animaciones y algunos movimientos.)",
+desc_SimpBack,Remove elements from Environment backgrounds to reduce clutter and/or lag.,Elimina elementos del fondo para reducir el ruido visual y/o el lag.,
+desc_Part,Have tiny sprites and effects appear or not.,Hace que pequeños sprites y efectos aparezcan o no.,
+desc_ScrShk,Have the screen shake during certain events and actions.,La pantalla se agita durante ciertos eventos y acciones.,
+desc_TextSpd,Change how fast text appears during dialogue.,Cambie lo rápido que el texto aparece en diálogos.,
+desc_Lang,"Change the game's text language and assets to your liking. (English, Spanish)","Cambia el idioma del juego. (Inglés, Español)",
+desc_ConDis,Have your keyboard or controller inputs appear at the bottom-right of the screen.,Muestra tu teclado o control en la esquina inferior derecha de la pantalla.,
+desc_Outline,Have black 'n' white outlines around the characters and certain objects during gameplay.,Activa un contorno blanco y negro en algunos personajes y objetos durante el gameplay.,
+desc_Squash,Have the characters' body morph a lil' during certain situations.,Los personajes se deforman ligeramente durante ciertas situaciones.,
+,,,
+///-----Pref Description-----///,,,
+desc_ColorCode,"Have tons of colors from certain elements change based on the character you're playing. (If off, colors default to the Change Base Color option.)","Cambia colores de muchos elementos según el personaje que estés usando. (Si está desactivado, los colores se configuran por defecto en la opción de Cambiar Color de Base.)",
+desc_ChangeColor,Change the color to a bunch of game elements. (Character Color-Coding must be off.),Cambia el color de varios elementos del juego. (Coloreado de Personaje debe estar desactivado.),
+desc_FocusLoss,Have the game automatically pause if it's no longer focused.,Hace que el juego se pause al perder foco.,
+desc_LifeIcon,Change what life icon to use during gameplay.,Cambia el ícono de vida usado en el juego.,
+,,,
+///-----Online Description-----///,,,
+desc_Discord,Have the game pop up on your Discord profile.,Haz que el juego aparezca en tu perfil de Discord.,
+desc_Ghost,Have your saved ghost appear during gameplay. (SPEED Stages only.),Haz que tu fantasma guardado aparezca durante el gameplay. (Solo niveles de VELOCIDAD.),
+, ,,
+///-----Misc Description-----////,,,
+desc_MusTag,"Have the music name & composer display at times, usually whenever the track changes.",El nombre de la música y el compositor se muestran cada vez que se cambia la pista.,
+desc_ConType,Change the controls' input display based on a console. (Controller only.),Cambia el tipo de botón que se muestra. (Solo Control.),
+desc_ConRum,Have your controller shake during certain events and actions. (Controller only.),Vibración durante ciertos eventos y acciones. (Solo Control.),
+desc_ExtCam,Have the camera move ahead of you based on your speed and how fast you're falling. (OVERWORLD & SPEED Stages only.),La cámara se adelanta a tu posición respecto a tu velocidad y la rapidez con la que caes. (Solo en fases de MUNDO ABIERTO y VELOCIDAD.),
+desc_FPS,"Have the game's framerate, real framerate, and version display at the top-right of the screen.","Los FPS, real FPS y la versión se muestran en la parte superior derecha de la pantalla.",
+desc_Speedrun,"Display a speedrun timer that stops during cutscenes, transitions, the game being paused, 'n' others of the sort.","Muestra un cronómetro de speedrun que se detiene durante las cinemáticas, las transiciones, las pausas del juego y otros momentos similares.",
+,,,
+///-----Display Description-----///,,,
+desc_Fullscr,Have the game display at your monitor's full resolution.,Pone el juego en la resolución completa de tu pantalla.,
+desc_WindowSize,Change the scale of the game window while not in Fullscreen.,Cambia la escala de la ventan del juego si no está en pantalla completa.,
+desc_VSync,Have the game match the refresh-rate of your monitor. (Usually fixes screen-tearing.),Configura el juego para que coincida con la frecuencia de actualización de tu monitor. (Normalmente soluciona el problema del desgarro de pantalla.),
+,,,
+///-----Control Description-----///,,,
+desc_Control,Change this input bind.,Cambia el botón de esta acción.,
+desc_JoyDead,Change how far you need to move your controller's joystick. (Controller only.) (Decreases by 10% per press.),Cambia lo rápido que tienes que mover la palanca. (Solo Control.) (Disminuye 10% al presionar.),
+desc_TrigDead,Change how hard you need to push your controller's triggers. (Controller only.) (Decreases by 10% per press.),Cambia cuánto debes presionar los gatillos. (Solo Control.) (Disminuye 10% al presionar.),
+,,,
+///-----PS Button Names-----///,,,
+opt_ConCircle,CIRCLE,CÍRCULO,
+scr_ConTriangle,TRIANGLE,TRIÁNGULO,
+opt_ConSquare,SQUARE,CUADRADO,
+con_Touchpad,SHARE,SHARE,
+,,,
+///-----Conditions-----///,,,
+condit_Available,UNAVAILABLE,NO DISPONIBLE,
+condit_StoryMode,BEAT THE STAGE IN THE MAIN STORY,PASA LA ETAPA EN MODO HISTORIA,
+condit_CRankMind,GET A C-RANK OR HIGHER IN THE 3 MAIN MIND LEVELS,OBTIENE UN RANGO C O MÁS ALTO EN LOS 3 NIVELES DE MENTE,
+,,,
+///-----Results Shit-----///,,,
+results_Cont,CONTINUE,CONTINUAR,
+results_Retry,RETRY LEVEL,REINTENTAR,
+results_Ghost,SAVE GHOST,GUARDAR FANTASMA,
+results_GhostSaved,GHOST SAVED,FANTASMA GUARDADO,
+results_Replay,SAVE REPLAY,GUARDAR REPLAY,
+results_ReplaySaved,REPLAY SAVED,REPLAY GUARDADO,
+results_ReplayText,REPLAY,REPLAY,
+,,,
+///-----Bro's Seein' Colors-----///,,,
+col_White,WHITE,BLANCO,
+col_LightGray,LIGHT-GRAY,GRIS CLARO,
+col_Gray,GRAY,GRIS,
+col_DarkGray,DARK-GRAY,GRIS OSCURO,
+col_Black,BLACK,NEGRO,
+col_Maroon,MAROON,GRANATE,
+col_Red,RED,ROJO,
+col_Orange,ORANGE,NARANJA,
+col_Olive,OLIVE,OLIVA,
+col_Yellow,YELLOW,AMARILLO,
+col_Lime,LIME,LIMA,
+col_Green,GREEN,VERDE,
+col_Aqua,AQUA,AGUA,
+col_Teal,TEAL,TEAL,
+col_Blue,BLUE,AZUL,
+col_Navy,NAVY-BLUE,AZUL MARINO,
+col_Purple,PURPLE,PÚRPURA,
+col_Magenta,MAGENTA,MAGENTA,
+,,,
+///-----Life Icon Style-----///,,,
+life_Sil,SILHOUETTE,SILUETA,
+life_Color,COLORED,COLOREADO,
+life_Old,OLD,ANTIGUO,
+,,,
+///-----Invincibility Type-----///,,,
+inv_Level,LEVEL,NIVEL,
+inv_Char,CHARACTER,PERSONAJE,
+inv_None,NONE,NINGUNO,
+,,,
+///-----General Game Shit-----///,,,
+game_Whoops,"Whoops, sorry about that.","Oops, lo siento.",
+game_ToSkip,TO SKIP,SALTAR,
+game_Disc,DISCLAIMER,ADVERTENCIA,
+game_MainDisc,"This game contains violence, cursin', & potentially sensitive themes. This is not intended for people under age 13 or those who are easily disturbed. \nThe game also contains flashing lights, screen shaking, & others of the sort that can be turned off in the Options menu. (Controller is EXTREMELY recommended!) \nThis is a completely separate game to the old ""THE BOY AND HIS STORY"" prototypes and files cannot be transferred over to this version. \nThis Pre-Demo was made specifically for SFGHQ's SAGE '26 online event, but being a Pre-Demo means bugs 'n' glitches will likely occur. This also means everything in here isn't fully representitive of the game's future updates. With that bein' said, I hope you enjoy this completely expanded Pre-Demo. \nWould you like to open the Options menu before gettin' into the action? ","Este juego contiene violencia, lenguaje soez y temas potencialmente sensibles. No está dirigido a menores de 13 años ni a personas sensibles. \nEl juego también incluye luces parpadeantes, sacudidas de pantalla y otros efectos similares que pueden desactivarse en el menú de opciones. (¡Se recomienda MUCHO el uso de un mando!) \nEste juego es totalmente independiente de los antiguos prototipos de ""THE BOY AND HIS STORY"", por lo que no es posible transferir archivos a esta versión. \nEsta pre-demo se creó específicamente para el evento en línea SAGE '26 de SFGHQ; al tratarse de una pre-demo, es probable que hayan errores y fallos técnicos. Y así, el contenido actual no refleja necesariamente cómo será el juego en futuras actualizaciones. Dicho esto, espero que disfrutes de esta pre-demo totalmente ampliada. \n¿Quieres abrir el menú de opciones antes de pasar a la acción?",
+game_CharDisc,"NOTE: While this character is fully playable, they have not received the animation upgrade that the other playable characters have, so you'll see either unfinished or replacement animations for stuff the other characters have.","NOTA: Aunque este personaje es totalmente jugable, no ha recibido la mejora de animaciones que tienen los demás personajes jugables; por ello, verás animaciones inacabadas o provisionales en los aspectos que los otros personajes ya tienen resueltos.",
+,,,
+///-----Name Maker Check-----///,,,
+check_Name,Is this name correct?,¿Es el nombre correcto?,
+check_Kappa,Not happenin'.,Ni lo pienses.,
+check_Lucifer,"Sorry, but no.","Lo siento, pero no.",
+check_Sarah,Hiiii!! :D We can share!,¡Holiiii! :D ¡Podemos compartir!,
+check_Lone,I don't mind.,No me importa.,
+check_Brock,More than happy to share!,¡Más que feliz de compartir!,
+check_Neegi,Yeah... no.,Seh....no.,
+check_Cloee,"Eh, sure, why not.","Eeh, claro, por qué no.",
+check_Akira,Nope. Choose a different name.,Nop. Usa otro nombre.,
+check_Taylor,Sorry. Gotta pick another name.,Perdón. Debes usar otro nombre.,
+check_Ayana,Nah! Get your own damn name!,¡Nah! ¡Consíguete tu propio estúpido nombre!,
+check_Roxxane,HAH! You misspelled your name. Pendejo.,"¡JAJA! Lo escribiste mal, pendejo.",
+check_Rush,Count me out.,No me invluyas.,
+check_Edge,Choose a different name before I beat your ass.,Escoge otro nombre o te pateo el culo.,
+check_Ivy,A child of JUSTICE.,Alguien de JUSTICIA.,
+,,,
+check_Nerd,Still not happenin'.,Tampoco lo pienses.,
+check_Frisk,WARNING: This name will not make your life hell.,ADVERTENCIA: Este nombre hará tu vida un infierno.,
+check_Chara,The untrue name.,El nombre no verdadero.,
+check_Sonic,The legend who started it.,La leyenda que lo comenzó.,
+check_Blaze,The legend who continued it.,La leyenda que lo continuó,
+check_OnTheNose,"That's pretty on-the-nose, don't you think?",Un poco DEMASIADO exacto ¿no?,
+check_AAAAAA,"Not very creative, huh?",No eres muy creativo ¿Cierto?,
+,,,
+///-----New Game Shit-----///,,,
+new_Warning,WARNING!,ADVERTENCIA,
+new_WarnDisc,This will delete your current save file and it will be unrecoverable. Do you wish to continue?,Esto eliminará tu archivo de guardado actual y no se podrá recuperar. ¿Quieres continuar?,
+,,,
+///-----Music Credits-----///,,,
+comp_Nerd,Nerd.,Nerd.,
+,,,
+///-----Credits-----///,,,
+cred_BaseName,Name,Nombre,
+cred_BasePos,Position,Posición,
+cred_BaseType,Role,Tipo,
+cred_BaseDesc,Quote,Cita,
+,,,
+///-----Credit Nerd.-----///,,,
+cred_NerdName,Nerd.,Nerd.,
+cred_NerdPos,The Nerd,El Nerd,
+cred_NerdType,Damn-near Everything,Casi todo,
+cred_NerdDesc,"""Un-kept hair, baggy pants, pizza, and terrible coding practices is not a good life to live, but at least it works.""","""Pelo descuidado, pantalones holgados, comer pizza y pésimas prácticas de programación no es una buena forma de vivir, pero al menos funciona.""",
+,,,
+///-----Credit Huisti-----///,,,
+cred_HuisName,Huisti,Huisti,
+cred_HuisPos,The Crew,The Crew,
+cred_HuisType,Spanish Localization || Playtesting,Localización al español || Playtesting,
+cred_HuisDesc,"""The 'furro' translating the game to Spanish.""","""El pinche furro traduciendo el juego al español.""",
+,,,
+///-----Credit Brandon-----///,,,
+cred_BranName,Brandon,Brandon,
+cred_BranPos,Special Guest,Invitado Especial,
+cred_BranType,"Created Akira, Taylor, & Ayana || Playtesting","Creador de Akira, Taylor & Ayana || Playtesting",
+cred_BranDesc,"""a.""","""a.""",
+,,,
+///-----Credit Ness-----///,,,
+cred_NessName,Ness,Ness,
+cred_NessPos,Special Guest,Invitada Especial,
+cred_NessType,Created Ivy || Ivy Concept Art || Playtesting,Creadora de Ivy || Arte Conceptual de Ivy || Playtesting,
+cred_NessDesc,"""Saw this nerd go from Deltarune AUs to epic platformers. The moment you can, give him money.""","""Vi a este nerd pasar de los AUs de Deltarune a plataformeros épicos. Apenas puedas, dale dinero.""",
+,,,
+///-----General Moves-----///,,,
+move_Move,MOVE,MOVIMIENTO,
+move_Jump,JUMP,SALTAR,
+desc_Jump,"While going up in the air, you will automatically lose speed due to air-drag unless you're BOOSTING.","Al ascender, perderás velocidad debido a la resistencia del aire, a menos que estés usando el BOOST.",
+,,,
+move_DJump,DOUBLE-JUMP,DOBLE-SALTO,
+move_SSlide,START SLIDE,DESLIZAMIENTO,
+desc_SSlide,Can only be done while not moving.,Solo se puede hacer quieto.,
+,,,
+move_Slide,SLIDING,DESLIZARSE,
+desc_Slide,"While SLIDING, you slow down automatically, the effects of slopes is increased, and you damage enemies.","Al deslizarte, bajas la velocidad automáticamente, el efecto de las pendientes aumenta y dañas a los enemigos.",
+,,,
+move_CSlide,SLIDE-CANCEL,LEVANTARSE,
+desc_CSlide,Stop SLIDING without jumping and continue running.,Deja de DESLIZARTE sin saltar y sigue corriendo.,
+,,,
+move_SRoll,START ROLL,RODAR,
+desc_SRoll,Can only be done while not moving.,Solo se puede hacer quieto.,
+,,,
+move_Roll,ROLLING,RODANDO,
+desc_Roll,"While ROLLING, you slow down automatically, the effects of slopes is increased, and you damage enemies. (You cannot cancel out of ROLLING.)","Mientras RUEDAS, bajas la velocidad automáticamente, los efectos de las pendientes aumentan y dañas a los enemigos. (No puedes cancelarlo.)",
+,,,
+move_Slam,SLAM,PISOTÓN,
+desc_Slam,Can only be done mid-air.,Se puede hacer en el aire.,
+,,,
+move_DSlam,SLAM-DASH,PISOTÓN-IMPULSO,
+move_Boost,BOOST,BOOST,
+desc_Boost,"Your acceleration is tripled, you're invulnerable to spikes, and you damage enemies. Damage enemies to increase your TENSION meter. Initiating a Boost will always cost 2 bars of TENSION.","Tu aceleración se triplica, eres invulnerable a los pinchos y dañas a los enemigos. Daña a los enemigos para aumentar tu medidor de TENSIÓN. Activar el Boost siempre consumirá 2 barras de TENSIÓN.",
+,,,
+move_ABoost,AIR-BOOST,BOOST-AÉREO,
+desc_ABoost,Can only be done once mid-air. Suspends you in the air for a little. Initiating an Air-Boost will always cost 10 bars of TENSION. (Can also be done while SLAMMING.),Solo se puede hacer una vez en el aire. Te mantiene suspendido en el aire por un breve instante. Hacer un boost aéreo siempre consume 10 barras de TENSIÓN. (También se puede realizar durante un PISOTÓN.),
+,,,
+move_Trick,FREESTYLE-TRICK,TRUCOS,
+desc_Trick,"Anything that launches you that isn't the environment, hazards, or enemies will allow you to perform all kinds of tricks that earn you TENSION.","Cualquier cosa que te impulse que no sea entorno, peligros o enemigos te permitirá realizar todo tipo de trucos con los que ganarás TENSIÓN.",
+,,,
+move_DTrick,DIRECTIONAL-TRICK,TRUCO-DIRECCIONAL,
+desc_DTrick,Hold any direction (other than down) and you'll launch yourself accordingly along with continuing your FREESTYLE-TRICKS.,Mantén presionada cualquier dirección (que no sea abajo) y te lanzaras mientras continúas realizando TRUCOS.,
+,,,
+move_BTrick,BACKWARDS-TRICK,TRUCO-INVERSO,
+desc_BTrick,Don't hold a direction and you'll be launched opposite of where you're facing.,No mantengas una dirección y saldrás volando al lado opuesto que ves.,
+,,,
+move_RTrick,RAIL-TRICK,TRUCO-RAIL,
+desc_RTrick,Earn TENSION and increase your speed with each trick.,Gana TENSIÓN y aumenta tu velocidad con cada truco.,
+,,,
+move_RJump,RAIL-JUMP,SALTO-RAIL,
+desc_RJump,Jump right before a Rail-Stopper or before the end of a striaght rail to be launched and do FREESTYLE-TRICKS.,Salta justo antes de un Rail-Stopper o del final de un rail recto para salir disparado y realizar TRUCOS.,
+,,,
+///-----Kappa Moves-----///,,,
+move_KADash,AIR-DASH,IMPULSO-AÉREO,
+desc_KADash,Can only be done mid-air. Thrusts you forward and suspends you in the air for a little bit.,Solo se puede hacer en el aire. Te impulsa hacia adelante y te suspende en el aire por un breve instante.,
+,,,
+move_KHoming,HOMING ATTACK,ATAQUE-TELEDIRIGIDO,
+desc_KHoming,"A Reticle must appear before you can attack. After attacking, most of your moves reset. (You cannot attack if you've already air-dashed.)","Debe aparecer una retícula para atacar. Tras atacar, la mayoría de tus movimientos se reinician. (No puedes atacar si ya has realizado un impulso-aéreo.)",
+,,,
+///-----Lucifer Moves-----///,,,
+move_LBGlide,BURST-GLIDE,PLANEO,
+desc_LBGlide,"Can only be done mid-air. You fall extremely slowly, but it's on a small timer.","Solo se puede hacer en el aire. Caes extremadamente despacio, pero por poco tiempo.",
+,,,
+///-----Sarah Moves-----///,,,
+move_SSHover,SPINNING-HOVER,GIRO-FLOTADOR,
+desc_SSHover,Can only be done mid-air. Can be done infinitely and you have more air-control.,Solo se puede hacer en el aire. Se puede usar infinitamente y ofrece mayor control aéreo.,
+,,,
+move_SSSlam,SPINNING-SLAM,PISOTÓN-GIRATORIO,
+desc_SSSlam,"While slamming, hold to charge for a little and you'll slam down faster than usual.","Si haces un pisotón, mantén pulsado el botón para cargar el ataque un instante y caerás mucho más rápido.",
+,,,
+///-----Rush Moves-----///,,,
+move_RHoming,HOMING ATTACK,ATAQUE-TELEDIRIGIDO,
+desc_RHoming,"A Reticle must appear before you can attack. After attacking, most of your moves reset and you keep your momentum.","Debe aparecer una retícula para atacar. Tras atacar, la mayoría de tus movimientos se reinician y conservas tu impulso.",
+,,,
+move_RSpindash,SPINDASH,SPINDASH,
+desc_RSpindash,Can only be done while not moving. Spam your JUMP & ACTION 1 buttons to rev up. Release DOWN to let loose at blistering speeds while ROLLING.,Solo se puede hacer quieto. Presiona repetidamente los botones de SALTO y ACCIÓN 1 para acelerar. Suelta el botón ABAJO para salir disparado mientras RUEDAS.,
+,,,
+move_RPeelout,SUPER PEELOUT,SÚPER PEELOUT,
+desc_RPeelout,"Can only be done while not moving. Spam your JUMP & ACTION 1 buttons to rev up. It takes a little longer charge up, but has more power on release. Release UP to let loose at blistering speeds.","Solo se puede hacer quieto. Pulsa repetidamente los botones de SALTO y ACCIÓN 1 para acelerar. La carga tarda un poco más, pero el disparo es más potente. Suelta el botón ARRIBA para salir disparado a gran velocidad.",
+,,,
+///-----Ivy Moves-----///,,,
+move_IRevolver,REVOLVER,REVÓLVER,
+desc_IRevolver,Can be charged. All REVOLVER & BULLET actions will take more rounds.,Se puede cargar. Todas las acciones de REVÓLVER y BALAS usarán cartuchos.,
+,,,
+move_IBDash,BULLET-DASH,IMPULSO DE BALA,
+desc_IBDash,Can only be done mid-air. Thrusts you forward and suspends you in the air for a little bit. Charged version defeats enemies.,Solo se puede hacer en el aire. Te impulsa hacia adelante y te suspende en el aire por un instante. Versiones cargadas derrotan enemigos.,
+,,,
+move_IBBounce,BULLET-BOUNCE,REBOTE DE BALA,
+desc_IBBounce,Can only be done mid-air. Becomes more powerful the less rounds you have.,Solo se puede hacer en el aire. Se vuelve más poderoso mientras menos cartuchos tengas,
+,,,
+move_IReload,RELOAD,RECARGA,
+desc_IReload,Can be done regardless of what action you're doing. RELOADING fluctuates depending on how many rounds you already had in the chamber and won't finish unless you're on the ground.,Se puede hacer en cualquier momento. RECARGAR varía según cuántas balas tengas en la recámara y no terminará a menos que estés en el suelo.,
+,,,
+///-----Base Bios-----///,,,
+bio_Name,NAME,NOMBRE,
+bio_NName,NICKNAME,APODO,
+bio_Age,AGE,EDAD,
+bio_Birth,BIRTHDAY,CUMPLEAÑOS,
+bio_Origin,ORIGIN,ORIGEN,
+bio_Defeat,DEFEATED,DERROTADOS,
+bio_Broly,BIO,DESCRIPCIÓN,
+,,,
+///-----Char Bios-----///,,,
+bio_Kappa,"The adopted, oldest child of the Suki family and unknowingly a descendant of the ADRENALINE Clan. One half of a coin. When he was 10 years old, his mother died due to an unexpected event right in front of his eyes. This lead to dormant power of his to be released in one big burst due to overwhelming emotions surfacing. This power, known as TENSION, derived purely from one's SOUL, is something everyone has. Because of his ancient lineage, his power was more hidden, but far more powerful than a normal person's. After the event, his best friend's family was more than willing to bring him in. His adoptive sister, Sarah, and her mother, Sophi, because they know he loves cats, made him the cat beanie he still wears to this day, which now looks small on him thanks to his giant hair. (And naturally just growin' out of it.) He's grown to be more silent than usual, but he still finds joy in the things he does. Collecting cassettes 'n' CDs with his adoptive father, Scott, learning to bake with Sophi, learning to draw with Sarah, learning piano with Lone, learning boxing from Brock, sparring and sharing manga with Neegi, adventuring with Cloee, spray-painting with Akira 'n' his gang, and rocking each other's shits with Roxxane. Alongside workin' at a café, he occasionally does fruit deliveries for people in OTHERTOWN thanks to his family's farming business and his incredible speed. He learned everything speed 'n' parkour related from, what he considers his mentor, Rush. Has a fear of huge and deep bodies of water. Holds the left-cracked, gold, heart-shaped pendant of the Suki Siblings, given by his adoptive grandfather.","El hijo mayor y adoptado de la familia Suki, y sin saberlo, descendiente del clan ADRENALINE. Una cara de la misma moneda. Cuando tenía 10 años, su madre murió por un evento inesperado ante sus ojos. Llevando a liberar su poder inactivo en una gran explosión por emociones muy fuertes que surgieron. Este poder, conocido como TENSIÓN, proviene exclusivamente del ALMA, que es algo que todos tienen. Debido a su linaje, su poder estaba más oculto, pero era mucho más poderoso que el de una persona normal. Después de aquel evento, la familia de su mejor amiga estuvo más que dispuesta a acogerlo. Su hermana adoptiva, Sarah, y su madre, Sophi, porque saben que ama a los gatos, le hicieron una gorra de gato que aún usa, aunque se ve pequeña por su gran cabello (y pues porque creció). Al crecer, sí se hizo más reservado, pero aún disfruta de las cosas que hace. Coleccionar casetes y CDs con su padre adoptivo Scott, aprender a hornear con Sophi, dibujar con Sarah, tocar el piano con Lone, boxear con Brock, practicar y compartir manga con Neegi, ir de aventuras con Cloee, hacer grafiti con Akira y su grupo y darse de putazos con Roxxane. Además de trabajar en un café, también hace entregas de fruta para la gente de OTHERTOWN gracias al negocio agrícola de su familia y su increíble velocidad. Aprendió todo lo relacionado con la velocidad y acrobacias de quien considera su mentor, Rush. Le teme a las grandes masas de agua. Lleva el colgante dorado con forma de corazón agrietado a la izquierda de los hermanos Suki, que le regaló su abuelo adoptivo.", 
+bio_Lucifer,"A hybrid of the DEFECTIVE Clan & ADRENALINE Clan. One half of a coin. She's a pretty reserved individual, often not showing emotion. She's forced to train herself and her troops everyday to continue the self-dubbed DEFECTIVE Clan's goal of killing everyone in the ADRENALINE Clan. Having to harvest their blood to attain the power of ADRENALINE, figuring out how to use it without it melting their bodies (effectively killing them), and pretty much letting them live forever with infinite, unbelievable power. She knows everything being done is wrong, but it's either she does this or die by her family's hand, already suffering a skull fracture at the hand of her father and uncle, the 2 leaders of the DEFECTIVE Clan in modern-day, for missing a shot on a member of the ADRENALINE Clan. Ever since, she's needed a headband imbued with a TENSION seal to stave off the pain. Despite all of this, she does find time at night to rest or let herself have some fun. Simply running in the night, seeing the stars, eating some pizza, and enjoying her time without worries is enough for her, often humming Clair de Lune to herself (used to be how her mother would put her to sleep as a child). Has a fear of heights, which isn't favorable when you live in a floating fortress. Holds the pink, heart-shaped pendant of her deceased mother, given to her daughter herself shortly before passing away. Lucifer often blames herself for her mother's death.","Un híbrido del clan DEFECTIVE y ADRENALINE. Una cara de la misma moneda. Es una persona muy reservada, a menudo sin mostrar emociones. Se ve obligada a entrenarse a sí misma y a sus tropas todos los días para seguir adelante con el objetivo del clan DEFECTIVE: matar a todos los miembros del clan ADRENALINE. Debe extraer su sangre para obtener el poder ADRENALINE y descubrir cómo usarlo sin que sus cuerpos se derritan (lo cual significa la muerte), y de esa forma poder vivir para siempre con un increíble poder infinito. Ella sabe que lo que hace está mal, pero es eso o ser asesinada por su familia; ya sufre de una fractura de cráneo por culpa de su padre y tío, los 2 líderes actuales del clan DEFECTIVE, por fallar un disparo a un miembro del clan ADRENALINE. Desde entonces, necesita una diadema con un sello TENSIÓN para aliviar el dolor. A pesar de todo, encuentra el tiempo en las noches para descansar o divertirse. Ya sea solo correr, ver las estrellas, comer pizza o disfrutar su tiempo sin preocupaciones, es suficiente para ella, a menudo tarareando Clair de Lune para sí misma (que es lo que su madre cantaba para arrullarla). Le teme a las alturas, lo cual no es bueno cuando se vive en una fortaleza flotante. Lleva el colgante rosa con forma de corazón de su difunta madre, que le entregó a su hija poco antes de fallecer. Lucifer suele culparse a sí misma por la muerte de su madre.",
+bio_Sarah,"The middle child of the Suki family. The childhood best friend-turned sister of Kappa; she's your happy-go-lucky, next-door neighbor-type of girl. She's pretty cheerful, loves anything cute, big fan of hamburgers, and always tries to look at the brightside of anything. She and the rest of her family have a heart theme going on; all family members having heart-shaped ahoges. She has a fondness for making tea, especially for her girlfriend, Neegi, who really loves it. She's actively learning to draw & paint, hopin' to use those skills to get to an art school 'n' develop them more, alongside doing freelance work. Ever since having Kappa as her brother, she sometimes wakes up to him playing piano at night, and every time, sitting next to him to listen, then slowly dozing off. She unfortunately can be prone to panic attacks. Holds the middle-cracked, gold, heart-shaped pendant of the Suki Siblings, given by her grandfather.","La hija mediana de la familia Suki. La mejor amiga de Kappa, la cual se convirtió en su hermana; es la típica chica optimista, como si fuera tu amigable vecina. Es muy alegre, ama todo lo adorable, es una gran fan de las hamburguesas y siempre trata de ver el lado positivo a todo. Ella y toda su familia usan una temática de corazón; toda su familia tiene mechones con forma de corazón. Le encanta hacer té, especialmente para su novia, Neegi, quien lo ama. Está aprendiendo a dibujar y pintar, con la esperanza de usar sus habilidades en una escuela de arte y desarrollarlas más, junto a trabajo autónomo. Desde que Kappa se volvió su hermano, a veces se despierta en las noches por él tocando el piano, y cada vez, se sienta a su lado a escucharlo, lentamente quedándose dormida. Desafortunadamente, es propensa a ataques de pánico. Lleva el colgante dorado con forma de corazón agrietado en medio de los hermanos Suki, que le regaló su abuelo.",
+bio_Lone,"The adopted, youngest child of the Suki family. A trans girl left abandoned by her previous family at a very young age. Forced to fend for herself without any experience in a harsh city, she ended up losing her eyes, using her hair to cover up where they would be. Despite their similarities, her and Kappa are not blood-related. She was found by Kappa and Sarah during a fruit delivery they had to do when their family had to work at their grandfather's farm outside OTHERTOWN. Despite being terrified, she slowly trusted the Suki family after being taken care of by them. Being alone for many years at such a young age, she's forgotten her own name and just went with ""Alone"", but preferring the nickname ""Lone"" due to lack of a better name. Not being able to find her original family after some months, she was properly adopted. As if a trend, she was also taught how to use TENSION. She was also taught by Sarah how to use her other senses properly, alongside being able to sense others' TENSION to give herself a vague visual on the person. She later taught herself how to convert TENSION as a healing ability, but a healer cannot heal themselves. Upon a couple years of living at the Suki farm, she gained a special interest in learning piano after hearing Kappa play it occasionally, albeit, very basic songs. Despite loving her cats and having a cat-themed shirt in her clothing line-up, she's a really big fan of bunnies. She also loves wearing a suit when the Suki family goes to church. Holds the right-cracked, gold, heart-shaped pendant of the Suki Siblings, given by her grandfather.","La hija menor adoptada de la familia Suki. Una chica transgénero abandonada por su anterior familia a corta edad. Forzada a valerse por sí misma sin experiencia alguna en una mala ciudad, terminó perdiendo sus ojos, usando su cabello para tapar donde deberían estar. A pesar de sus similitudes, ella y Kappa no son hermanos de sangre. Fue encontrada por Kappa y Sarah en una entrega de fruta que hicieron cuando su familia trabajó en la granja de su abuelo fuera de OTHERTOWN. Incluso aterrada, lentamente comenzó a confiar en la familia Suki después de ser cuidada por ellos. Estar sola por tantos años y tan joven hizo que olvidara su propio nombre y se quedara con ""Alone"" (Sola), pero prefirió el nombre de ""Lone"" a falta de un buen nombre. Al no poder encontrar a su familia original después de meses, fue adoptada legalmente. También se le enseñó cómo usar la TENSIÓN. Y Sarah le enseñó cómo usar sus otros sentidos apropiadamente, además de poder percibir la TENSIÓN de otros para tener una vista vaga de la persona. Más tarde aprendió por su cuenta a convertir la TENSIÓN en una habilidad curativa, pero los sanadores no pueden sanarse a sí mismos. Al cabo de unos años viviendo en la granja Suki, desarrolló un interés especial en aprender a tocar el piano después de escuchar a Kappa, incluso si solo eran canciones simples. A pesar de amar a los gatos y tener ropa con esa temática, es una gran fan de los conejos. Le encanta usar un traje cuando la familia Suki va a la iglesia. Lleva el colgante dorado con forma de corazón agrietado a la derecha de los hermanos Suki, que le regaló su abuelo adoptivo.",
+bio_Brock,"The only child in his family. Was given his nickname due to his drive of being an unflinching powerhouse. Brock is the most upliftin' guy you'll ever meet, always wearin' a smile on his face. Don't take that for him bein' weak. Bein' fan of a martial arts anime and boxing in general, he took boxing classes for the love of the sport. Alongside taking 'em, he constantly honed his body for years to keep it in tip-top shape. With that, he's an absolute tank; able to take many hits before he can start flinching. His favorite stance to mimic is Hitman. He was one of the finalists in the 1st World Brawling Tournament while the Suki family was out, going against Neegi, but ended up losing. What he lacks in movement speed he makes up with pure contact, power, & strength. Before the Suki family left, he was Kappa's mentor, teaching him the fundementals of boxing. Outside of boxing, Brock likes playing basketball in his free time. Another thing he likes doing is cooking, famously known within his friends & family for his jaw-droppin' pancake breakfast meal his mother taught him to make. His boyfriend, C.J., is the biggest fan of his cooking.","El hijo único de su familia. Se ganó su apodo por su determinación y por su fuerza. Brock es el tipo más animado que conocerás, siempre sonriendo. Pero no lo malinterpretes como debilidad. Es un fan de los animes de artes marciales y del boxeo; tomó clases de boxeo por amor al deporte. Además de constantemente entrenar su cuerpo para estar en la mejor forma. Y así, se volvió un verdadero tanque, pudiendo aguantar muchos golpes antes de siquiera reaccionar. Le gusta imitar la postura de Hitman, que es su favorita. Fue uno de los finalistas del 1er Torneo Mundial de Lucha, durante la ausencia de la familia Suki, junto a Neegi, aunque perdió. Lo que carece de velocidad lo compensa con fuerza y poder de combate puro. Antes de que la familia Suki se fuera, fue el mentor de Kappa, enseñándole lo esencial del boxeo. Fuera de eso, a Brock le gusta jugar baloncesto en su tiempo libre. Y otro pasatiempo que tiene es la cocina, por lo cual es famoso entre sus amigos y familia por sus exquisitos panqueques de desayuno que su madre le enseñó a hacer. Su novio, C.J., es el mayor fan de su cocina.",
+bio_Neegi,"The youngest of the Butcher twins (by like, 2 minutes). She used to be extremely shy and quiet, obscuring herself with her hair while at school. She used to keep to herself until she met Sarah, later getting into a relationship with her, even being given heart-shaped hair clips from Sarah that matched her own heart theme. From then on, she wanted to ensure she could protect Sarah as much as possible. Being a fan of a certain manga & anime with martial arts themes, introduced to her by Kappa, she took up martial arts classes and continues to do so for many years. She became so proficient that she even ended up becoming a teacher at the very place where she had learned; her knowledge of TENSION only accelerated her learning process. Thanks to this, she's become more outgoing, have more grit, and be more talkative. She even won OTHERCITY's 1st World Brawling Tournament when the Suki family was out, with her and Brock being finalists, only barely beating him. Being a way more technical fighter and having impressive speed, she use Brock's bigger and heavier body to her advantage. She's a really big fan of tea, loves candy suckers (always having some on-hand, especially the Pink Bubblegum flavor), and owns a motorcycle gifted to her by her parents, who are part of a decently large, but extremely friendly biker gang. Basically extended family. They even taught her the inner workings of her bike in case she ever needs to fix any problems with it. Sometimes when she's doin' somethin' in the garage, her sister, Cloee, plays her guitar to pass the time. She gets her hair color from her father.
+","La joven de las gemelas Butcher (como por 2 minutos). Solía ser extremadamente tímida y callada, ocultándose tras su cabello en la escuela. Solía ser muy reservada hasta que conoció a Sarah, eventualmente teniendo una relación amorosa con ella, hasta recibir un clip con forma de corazón que combinaba con el de Sarah. Desde entonces, se ha asegurado de proteger a Sarah lo más posible. Siendo fan de ciertos mangas y animes de artes marciales, que Kappa le mostró, terminó tomando clases por muchos años. Se volvió tan buena que se convirtió en profesora en el mismo lugar en el que aprendió; su conocimiento de la TENSIÓN solo aceleró su aprendizaje. Gracias a esto, se volvió más extrovertida, confiada y sociable. Incluso ganó el 1er Torneo Mundial de Lucha de OTHERCITY, durante la ausencia de la familia Suki, siendo ella y Brok los finalistas, apenas logrando vencerlo. Por ser una luchadora más técnica y veloz, usando el tamaño y peso de Brock a su ventaja. Es una gran fan del té y de las paletas (siempre llevando consigo, especialmente sabor Chicle Rosa); tiene una motocicleta que le dieron sus padres, quienes forman parte de una gran, pero muy amigable, banda de motociclistas. Son como una familia extendida. Incluso le enseñaron cómo funcionaba la motocicleta por dentro en caso de que necesite arreglarla. A veces, cuando hace algo en el garaje, su hermana Cloee toca la guitarra para pasar el rato. Obtuvo el color de cabello de su padre.",
+bio_Cloee,"The oldest of the Butcher twins (by like, 2 minutes). The ever-so hyperactive and adventerous girl. She doesn't like staying couped up in a single spot for a long period of time and would much rather move around. With that, she's taken a liking to sightseeing, so much to the point where she has a camera so she could take a picture of the environments she goes to, but mostly to take pictures of and with her friends & family. Thanks to her more adventerous nature, she's got a lot more grit to her, but that also comes with a lot cuts, bruises, 'n' bandages. She also owns a guitar and usually goes out to get inspiration for whatever she ends up writing. Either that, or comin' up with somethin' on-the-fly while watching her sister do whatever in their garage. Their house also being a saloon for the family biker gang and the public in general, she also plays in front of people whenever she feels like it, being encouraged by her parents to put on a show when people are around. She's a big fan of stars and loves sitting on top of her house to watch the night-sky, sometimes accompanied by her sister. Carries a lot of her sister's candy suckers in her bag that also holds her polaroid camera. She gets her hair color from her mother.","La mayor de las gemelas Butcher (como por 2 minutos). Una chica hiperactiva y aventurera. No le gusta quedarse mucho tiempo en un lugar porque prefiere moverse. Y así, le tomó el gusto a turistear, al punto de llevar una cámara para que pueda tomar fotos a donde sea que vaya, especialmente fotos con su familia y amigos. Por su carácter aventurero, se ha vuelto mucho más valiente, pero eso también conlleva muchos cortes, heridas y vendajes. Posee una guitarra y suele salir en busca de inspiración para lo que sea que escriba. Eso, o inventar cualquier melodía mientras ve a su hermana en el garaje. Su casa también es un salón para el grupo de motociclistas y el público en general; también toca enfrente de las personas cuando quiere, siendo alentada por sus padres para hacer un show cuando hay gente. Es una gran fan de las estrellas y le encanta sentarse en el techo de su casa para ver el cielo nocturno, a veces acompañada de su hermana. Carga muchos de los dulces de su hermana en la mochila junto a su cámara Polaroid. Obtuvo el color de cabello de su madre.",
+bio_Akira,"The 1st member 'n' leader of the gang of goons in OTHERCITY, ""The Bandanas"", and the 2nd dumbest person of the gang. He managed to cheat his way through high school so well that he got accepted to a college, but ultimately didn't learn nothin', so he dropped out. His group is a gang of 3 self-proclaimed assassins in OTHERCITY 'n' a giant, fluffy husky, chargin' high prices to kill anyone they're asked and only IF they don't like the person they need to kill. He and his goons live in an abandoned harbor in OTHERCITY full of shipping containers that they set up to be a proper living space. It's also where their hideout is for their killin' business, which is probably not the best idea on his part. Sometimes when he refuses an offer, the client would try 'n' kill him, which usually ends up failing and always ends up with the client dead, with their weapon choice snatched as a trophy. They casually have over 300 bullets chilling in a drawer from people that tried to kill them. For those that DO leave alive 'n' they try to rat out The Bandanas, they get swiftly dealt with. Usin' TENSION, Akira developed it more into an elemental ability he likes, pyrokenisis, and completely destroys the bodies as well. (His goons tease him by simply calling him an arsonist.) Unfortunately, this does not stop him and his gang from getting on a wanted list, having posters scattered throughout OTHERCITY. They even have some chilling in their house just 'cause they think it's funny. Thanks to that, though, Akira usually stays up at night to protect himself and his goons, causing him to be tired all the time. Even he doesn't know why he has extra, animal-like ears at the top of his head.","El 1er miembro y líder del grupo de secuaces en OTHERCITY, ""Los Bandanas"", y el 2.º más tonto del grupo. Logró hacer trampa en la secundaria para ser aceptado en la universidad, pero al final no aprendió nada, así que lo dejó. Su pandilla está formada por 3 autoproclamados asesinos en OTHERCITY y un husky gigante y peludo; cobran precios altísimos por matar a quien les pidan y solo SI no les agrada la persona a la que tienen que matar. Él y sus secuaces viven en un puerto abandonado en OTHERCITY, lleno de contenedores de carga que han acondicionado para convertirlos en un espacio habitable adecuado. También es el escondite de su negocio, lo cual probablemente no es la mejor idea. A veces, cuando rechaza una oferta, el cliente intenta matarlo, lo cual termina fallando y siempre con el cliente muerto, con su arma guardada como trofeo. Tienen, como si nada, más de 300 balas guardadas en un cajón de personas que intentaron matarlos. Para los que SÍ logran salir con vida y tratan de delatar a Los Bandanas, se deshacen de ellos de inmediato. Usando TENSIÓN, Akira lo desarrolló en una habilidad que le gusta, la piroquinesis, para desintegrar los cuerpos. (Sus secuaces suelen bromear llamándolo pirómano). Desafortunadamente, esto no evita que él y su pandilla sean buscados, teniendo pósters pegados en toda OTHERCITY. Incluso tienen algunos pegados en sus casas porque creen que es divertido. A pesar de todo, Akira se queda despierto en las noches para protegerse a él y a sus secuaces, causando que esté cansado todo el tiempo. No tiene idea de por qué tiene orejas de animale extra encima de su cabeza.",
+bio_Taylor,"The 2nd member of The Bandanas and the actual smartest person of the gang. She's basically the ""tank"" of the group, havin' the most muscle 'n' grit out of everyone in the group. That doesn't mean she's dumb as bricks, often the most reasonable and the only one in the group to have a fully proper education, having went to college before dropping out. She met Akira near the end of her middle school years, both getting extremely bored one day and ditchin' to go goof around. They picked up spray-painting around that time and went around tagging multiple things a day. She usually tries to be cheerful, but if something pisses her off, she'll either lose her shit, or act like a disappointed mother. She often gets woken up by Ayana and/or Akira to have her make breakfast for them in exchange for them buying her a snack or pastry later into day. After being taught how to use TENSION, she learned to harness it into an elemental ability as well, specifically wind-style abilities, making up for her pretty slow movement compared to the other goons. She usually uses it to draw in dust if her and the gang get caught by OTHERCITY's authorities for whatever reason.","La 2.ª miembro de Los Bandanas y la persona más inteligente de la pandilla. Ella es el ""tanque"" del grupo, teniendo más músculo y valentía que cualquiera del grupo. Pero eso no significa que sea tonta como una piedra; es la más razonable y la única del grupo en tener una educación apropiada, antes de abandonar la universidad. Conoció a Akira cerca del final de sus años de secundaria; un día ambos estaban muy aburridos y simplemente se fueron a jugar por ahí. En ese tiempo descubrieron su gusto por el grafiti, pintando muchas cosas al día. Ella intenta ser alegre, pero si algo la enfada, se va a emputar muchísimo o actuará como madre decepcionada. A menudo es despertada por Ayana y/o Akira para que les haga el desayuno a cambio de comprarle bocadillos o repostería después en el día. Después de que le enseñaran a usar TENSIÓN, aprendió a usarla como habilidad elemental, especialmente de tipo viento, haciendo sus movimientos más lentos comparados a los otros secuaces. Por lo general, lo usa para despistar a las autoridades de OTHERCITY si a ella y a su pandilla las atrapan por cualquier motivo.",
+bio_Ayana,"The 3rd member of The Bandanas and the actual dumbest person of the gang. (And the shortest.) She met Akira & Taylor early into high school when she caught them spray-painting a wall right outside school grounds and being impressed. She basically butted her way into the group and while annoyed at first, the other two ended up lovin' her later on. She's extremely mischievious, often lying to get her way with strangers, she hates following any rules, she cheated nearly her entire way through school to college before dropping out, and owns a whole knife collection. She especially loves pissing off OTHERCITY's authorities by spray-painting on walls, trains, and cargo way more than Akira & Taylor. Despite all this, she does have a soft-spot for certain things, having been caring for a giant husky, Phoenix, for years. She doesn't have any elemental abilities like the rest of her gang, but she makes up for it with her utility with knives. Always carrying a Tether-Knife that ups her already impressive movement severalfold. She instead uses TENSION to further her knife utility. For some reason likes wearing things way bigger than her. Loves acting like a shark with her sharp teeth.","La 3.ª miembro de Los Bandanas y la más tonta de la pandilla (también la más pequeña). Conoció a Akira y Taylor en sus primeros años de secundaria cuando los descubrió pintando un muro justo en las afueras de los terrenos de la escuela y quedó impresionada. Simplemente decidió meterse en el grupo y, a pesar de estar en desacuerdo, ambos terminaron agarrándole cariño después. Es extremadamente traviesa, suele mentir para salirse con la suya con desconocidos, odia seguir las reglas, hizo trampa prácticamente durante toda su trayectoria escolar y universitaria antes de abandonar los estudios, y posee toda una colección de cuchillos. Le encanta enfadar a las autoridades de OTHERCITY pintando en las paredes, trenes y cargamentos mucho más que a Akira y Taylor. A pesar de todo, tiene algo de amabilidad por ciertas cosas, por ejemplo el husky gigante, Phoenix, que ha estado cuidando por años. No posee habilidades elementales como el resto de su pandilla, pero lo compensa con su habilidad con los cuchillos. Siempre lleva un cuchillo Tether que multiplica varias veces su ya de por sí impresionante agilidad. Usa la TENSIÓN para alargar la vida útil de su cuchillo. Por algún motivo le gusta vestir cosas más grandes que ella. Ama actuar como un tiburón con sus dientes afilados.",
+bio_Roxxane,"An ex-bully and a cousin of Brock. She used to live with Brock in order to go to a proper school. She barely knew how to spell, constantly misspelling her name in particular. When she met Kappa and later learned his whole story, she felt resentment towards him immediately getting a new family after losing his old one. She was his bully for a good bit, only ever messing with him. Brock constantly tries to keep her in check, but to no avail. Until, one of the times she was picking on Kappa, she let her emotions slip and frustratingly vented everything out. After that, they sat together in silence, then Kappa laid his head on her shoulder, flustering and comforting her. Afterwards, she toned it down, doin' light teasing that was only then reciprocated, later getting flirtatious. After gaining enough trust, she was taught by Kappa how to use TENSION, in exchange, she'd also sometimes teach him Spanish. After the Suki family left, she felt she lost her only avenue of redemption, so she went back to her home island she originally grew up on. There, she wanted to properly repent for what she did, among other things. She's still a pretty rough rebel with grit, but she's grown to be much softer to those she cares for. Her constant help around her island over the years lead to everyone loving her and seeing her as family. But on the other hand, the DEFECTIVE Clan started seeking out that very island after the Suki family left. The only one there with any kind of power, she always fended for the island, sometimes succeeding, most times not. They keep her alive, letting her continue this futile struggle, alongside uping their kill count residents of the island, even drowning a portion of the island itself with people on it. The more battles she gets into, the more scars she gets across her body, needing to steal some clothes to cover them up and keep these fights under wraps. On one of her crusades, she ends up killing one of the members that held some TENSION-filled equipment: 2 pink earrings and a pink scythe, tailored to said earrings, stealing them off the corpse.","Una ex bully y prima de Brock. Solía vivir con Brock para ir a la escuela. Apenas sabe deletrear, así que varias veces escribía mal su nombre. Cuando conoció a Kappa y aprendió toda su historia, sintió resentimiento hacia el por perder a su familia e inmediatamente ser parte de otra. Ella lo molestó por un tiempo, pero nada grave. Brock intentaba mantenerla vigilada, pero no funcionaba. No fue hasta que se peleó con Kappa que dijo todo lo que sentía. Después de dejarlo salir todo, se sentaron juntos en silencio, y entonces Kappa apoyó su cabeza en su hombro, ambos avergonzados y calmándola. Después de eso, redujo el bullying a simples bromas que eran recíprocas, lo cual se convirtió en pequeños coqueteos. Al ganarse la confianza suficiente él le enseñó de la TENSIÓN, a cambio, ella le enseñó español. Después de que la familia Suki tuviera que irse, sintió que perdió su única oportunidad de redención, así que volvió a la isla donde creció para redimirse por lo que hizo. Sigue siendo una chica rebelde y valiente, pero cerca de los que ama es mucho más suave. Su ayuda constante a través de la isla hizo que con los años todos la amaran y vieran a su familia. Pero, por otro lado, el clan DEFECTIVE comenzó a rondar la misma isla después de que la familia Suki se fuera. La única con ese tipo de poder, ella siempre intenta proteger la isla, a veces teniendo éxito y la mayoría no. Pero la dejan vivir para que continúe su esfuerzo en vano, y cada vez que lo hacen, suman más víctimas entre los habitantes de la isla, al punto de que una parte de la isla, se hunda en las profundidades del océano. Cuantas más batallas peleé, más cicatrices obtiene en su cuerpo, a tal punto de tener que robar ropa para cubrirlas mientras sigue peleando. En una de sus batallas, terminó matando a uno de los miembros quien tenía un equipamiento lleno de TENSIÓN: 2 aretes de color rosa brillante y una guadaña del mismo color que combina a la perfección con dichos aretes, robándolos de cuerpo.",
+,,,
+///-----Extra Char Bios-----///,(Ignore these 3 for now),,
+bio_Rush,"THE parkouring master in a very literal sense. She's the one who taught Kappa everything when it comes to speed and parkouring, to which he was able to pass down on his sisters. They have a master & student relationship; Kappa really looking up to Rush. ",,
+bio_Edge,,,
+bio_Ivy,,,
+,,,
+///-----Enemy Bios-----///,,,
+name_Angel,FALSE ANGEL,ÁNGEL FALSO,
+bio_Angel,"Simply a flying eyeball with wings. It's made to be an imitation of what people consider ""Biblically Accurate Angels"", but fail to do so. It harnesses no TENSION at all as it's unable to connect itself to the MIND user's SOUL, only floating in-place and staring at those who get close to it. It's normally of no threat due to technically still being angels, but anyone coming in contact with one will still be dealt pain and experience anxiety. ","Simplemente, un globo ocular con alas. Está diseñado para imitar lo que la gente considera «ángeles bíblicamente precisos», aunque no logra conseguirlo del todo. No genera ninguna clase de TENSIÓN, ya que es incapaz de vincularse al ALMA del usuario de la MENTE, se limita a flotar en el sitio y a observar fijamente a quienes se le acercan. Por lo general, no representa una amenaza, pues, técnicamente, sigue siendo un ángel, pero cualquiera que lo toque sufrirá dolor y experimentará ansiedad.",
+name_Flea,FLEA,FLEA,
+bio_Flea,"Unlike FALSE ANGELs, FLEAs are extremely hostile, but cannot move from its floating spot. No one knows what it's trying imitate. Some believe bees as it only attacks when provoked, others believe hornets since you don't have to be that close to it for it to agro. Also unlike FALSE ANGELs, FLEAs can connect to the MIND user's SOUL, thus can harness TENSION. When agro, it'll roar and charge up TENSION. When it's done, it'll launch an energy blast at the nearest target that dissipates as it loses TENSION. It'll de-agro if you move away from it. Thankfully, their energy blast is so pitiful that even the weakest TENSION user can simply boost through it without casualties. It CAN, however, damage other enemies with its energy blast.","A diferencia de los ÁNGELES FALSOS, los FLEAs son extremadamente hostiles, pero no pueden moverse de su lugar. Nadie sabe qué es lo que intentan imitar. Algunos creen que a las abejas, ya que solo atacan cuando se las provoca; otros creen que a los avispones, ya que no es necesario estar tan cerca de ellas para que te ataquen. Además, a diferencia de los ÁNGELES FALSOS, los FLEAs pueden conectarse con el ALMA del usuario de MIND, por lo que pueden aprovechar la TENSIÓN. Cuando se enoja, ruge y acumula TENSIÓN. Una vez que termina, lanza una ráfaga de energía contra el objetivo más cercano que se disipa a medida que pierde TENSIÓN. Dejará de atacarte si te alejas de él. Afortunadamente, su ráfaga de energía es tan insignificante que incluso el usuario de TENSIÓN más débil puede atravesar sin sufrir bajas. PERO, puede dañar otros enemigos.",
+name_Chimera,CHIMERA,QUIMERA,
+bio_Chimera,"WARNING! CHIMERAs are nothing but beasts. Unlike other entities, it is always hostile and hungry; always searching for its next meal. Resides at the absolute lowest part of one's MIND; rarely ever emerging... usually. It has no legs; only moving with its arms, but still moves quickly. It cannot speak or think. Its purpose is to kill and feast. It will adapt to any scenario it's put in. If the MIND user speaks in their head, it WILL hear them, letting it know where they are. It will eat you alive if it catches you, completely mutilating your body and killing you in the real world. Despite each person's MIND being separate from everyone else (except 2 people), all CHIMERAs are shared and at least 1 exists per person. All have blood on them from their past meals. Anyone it consumes will strengthen it and the rest. Dealing damage to it will anger it, powering it up, but it becomes more sloppy. Additionally, any killed will weaken the rest. Nobody is sure of its real origins, but it started appearing in people's MINDs after the DEFECTIVE Clan tried harnessing ADRENALINE. It only appears to people who are not part of the DEFECTIVE Clan, with an exception.","¡ADVERTENCIA! Las QUIMERAS son bestias. Al contrario de otras entidades, son hostiles y voraces; siempre buscando comida. Vive en la parte más baja de la MENTE; rara vez emergiendo... normalmente. No tiene piernas; se mueve solo con sus brazos, pero lo hace muy rápido. No puede hablar o pensar. Su propósito es matar y comer. Se adapta a donde sea. Te comerá vivo si te atrapa, mutilando tu cuerpo y matándote en el mundo real. A pesar de que cada MENTE sea diferente (exceptuando a 2 personas), todas las QUIMERAS estan conectadas y existe 1 al menos por persona. La sangre en sus cuerpos es de comidas pasadas. Todo lo que consuman los fortalecerá. Lastimarlos los enfurecerá, fortaleciéndolos, pero a la vez haciéndolos más torpes. Además, cualquiera que sea asesinada debilitará al resto. Nadie sabe su origen verdadero, pero comenzó a aparecer en la MENTE de las personas después de que el clan DEFECTIVE intentó cosechar ADRENALINA. Solo aparece para las personas que no son parte del clan DEFECTIVE, con una excepción.",
+,,,
+///-----Months-----///,,,
+mon_Jan,JANUARY,ENERO,
+mon_Feb,FEBRUARY,FEBRERO,
+mon_Mar,MARCH,MARZO,
+mon_Apr,APRIL,ABRIL,
+mon_May,MAY,MAYO,
+mon_Jun,JUNE,JUNIO,
+mon_Jul,JULY,JULIO,
+mon_Aug,AUGUST,AGOSTO,
+mon_Sep,SEPTEMBER,SEPTIEMBRE,
+mon_Oct,OCTOBER,OCTUBRE,
+mon_Nov,NOVEMBER,NOVIEMBRE,
+mon_Dec,DECEMBER,DICIEMBRE,
+,,,
+///-----Days-----///,,,
+day_Sun,SUNDAY,DOMINGO,
+day_Mon,MONDAY,LUNES,
+day_Tue,TUESDAY,MARTES,
+day_Wed,WEDNESDAY,MIÉRCOLES,
+day_Thu,THURSDAY,JUEVES,
+day_Fri,FRIDAY,VIERNES,
+day_Sat,SATURDAY,SÁBADO,
+,,,
+///-----Ordinal Indicators-----///,,,
+ind_ST,st,er,
+ind_ND,nd,do,
+ind_RD,rd,er,
+ind_TH,th,to,
+ind_STAlt,st,,
+ind_NDAlt,nd,,
+ind_RDAlt,rd,,
+ind_THAlt,th,,
+,,,
+///-----Char Duo Names-----///,(Ignore everything below here for now.),,
+///-----Duo Kappa-----///,,,
+duo_KL,2 SIDES OF THE SAME COIN,,
+duo_KS,BEST FRIENDS-TURNED FAMILY,,
+duo_KLO,COPYCATS,,
+duo_KB,BRAWLIN',,
+duo_KN,ANIME NERDS,,
+duo_KC,,,
+duo_KA,,,
+duo_KRX,LOVINGLY TOXIC,,
+duo_KR,STUDENT & MASTER,,
+duo_KE,DARK 'N' WEIRD,,
+,,,
+///-----Duo Lucifer-----///,,,
+duo_LK,2 SIDES OF THE SAME COIN,,
+,,,
+,,,
+,,,
+///-----Duo Sarah-----///,,,
+duo_SK,BEST FRIENDS-TURNED FAMILY,,
+duo_SLO,,,
+duo_SB,,,
+duo_SN,,,
+duo_SC,OVERWHELMINGLY ENERGETIC,,

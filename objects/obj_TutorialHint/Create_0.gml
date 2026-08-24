@@ -1,6 +1,6 @@
 checkCons = [
 	global.ConS_L, 
-	"OR", 
+	"charSel_Or",
 	global.ConS_R
 ]
 

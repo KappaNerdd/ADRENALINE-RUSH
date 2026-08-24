@@ -9,7 +9,9 @@ boxX = 192;
 boxY = 600;
 
 custAlbum = spr_AlbumPlaceholder;
-custNum = -1;
+
+
+	custNum = -1;
 
 speakerScale = 4;
 speakerTimer = ceil(random(20));
@@ -18,7 +20,7 @@ moveTimer = 1;
 moveFrames = 10;
 
 boomChoice = 0;
-chosenBoom = true;
+chosenBoom = false;
 
 playChoice = 0;
 chosenPlay = false;
@@ -44,6 +46,9 @@ upFrames = 0;
 
 downArrow = false;
 downFrames = 0;
+
+normJukeChoice = 0;
+custJukeChoice = 0;
 
 if obj_MusicManager.songAsset == mus_WrapItUpK or obj_MusicManager.songAsset == mus_WrapItUpL or room == rm_FreeplayNew {
 	set_song_ingame(noone, 60);

@@ -132,8 +132,17 @@ display_set_gui_size(768, 432);
 		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
-			draw_text_transformed_color(menuX + _textX + 665, menuY + _textY + 332, scr_LocalText(_menu[i][0]), 1 * _yScale, 1 * _yScale, menuAngle - 45 + ((360 / array_length(_menu)) * i), c_black, c_black, c_black, c_black, 0.5);
-			draw_text_transformed_color(menuX + _textX + 665, menuY + _textY + 330, scr_LocalText(_menu[i][0]), 1 * _yScale, 1 * _yScale, menuAngle - 45 + ((360 / array_length(_menu)) * i), _col, _col, _col, _col, 1);
+			var _menuLength = string_length(scr_LocalText(_menu[i][0]));
+			var _menuScale = 1;
+			
+			if _menuLength > 16 && _menuLength < 22 {
+				_menuScale = 0.75;
+			} else if _menuLength >= 22 {
+				_menuScale = 0.6;
+			}
+		
+			draw_text_transformed_color(menuX + _textX + 665, menuY + _textY + 332, scr_LocalText(_menu[i][0]), _menuScale * _yScale, 1 * _yScale, menuAngle - 45 + ((360 / array_length(_menu)) * i), c_black, c_black, c_black, c_black, 0.5);
+			draw_text_transformed_color(menuX + _textX + 665, menuY + _textY + 330, scr_LocalText(_menu[i][0]), _menuScale * _yScale, 1 * _yScale, menuAngle - 45 + ((360 / array_length(_menu)) * i), _col, _col, _col, _col, 1);
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 	}
@@ -161,8 +170,8 @@ display_set_gui_size(768, 432);
 	draw_sprite_ext(spr_TextboxRushMenu, 0, menuX + 550 + (-20 * extraScale), 30, 5, 1, 0, c_white, 1);
 	draw_text_transformed_color(menuX + 566 + (-20 * extraScale), 48, scr_LocalText(_menuText), 1, 1, 0, c_white, c_white, c_white, charShit[nerd][2], 1);
 
-	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, 820, 50, 3 + extraScale / 2, 3 + extraScale / 2, -135, charShit[1 - nerd][2], 1);
-	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, -52, 382, 3 + extraScale / 2, 3 + extraScale / 2, 45, charShit[1 - nerd][2], 1);
+	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, 820, 50, 1, 5 + extraScale / 2, -135, charShit[1 - nerd][2], 1);
+	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, -52, 382, 1, 5 + extraScale / 2, 45, charShit[1 - nerd][2], 1);
 #endregion
 
 #region //New Game Warning

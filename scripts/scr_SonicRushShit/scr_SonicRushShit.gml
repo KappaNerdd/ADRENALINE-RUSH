@@ -58,7 +58,7 @@ function scr_BoostCreate() {
 	boost = false;
 	airBoost = false;
 	airBoosting = false;
-	boostEnergy = 100;
+	boostEnergy = 0;
 	maxBoostEnergy = 300;
 	
 	boostBarTimer = 0;
@@ -106,10 +106,6 @@ function scr_BoostingStep() {
 	
 	if boostEnergy <= 0 {
 		boostEnergy = 0;
-	}
-	
-	if boostEnergy > maxBoostEnergy {
-		boostEnergy = maxBoostEnergy;
 	}
 	
 	if rushModeTimer >= rushModeFrames {
@@ -176,7 +172,7 @@ function scr_BoostingStep() {
 			image_index = 0;
 			
 			if !rushMode {
-				boostEnergy -= 25;
+				scr_EnergyPlayer(-50, self);
 			}
 			
 			rampRing = false;
@@ -199,7 +195,7 @@ function scr_BoostingStep() {
 		}
 		
 		if !rushMode && ground {
-			boostEnergy -= 10;
+			scr_EnergyPlayer(-10, self);
 		}
 		
 		if !left_Key && !right_Key {
@@ -300,7 +296,7 @@ function scr_BoostingStep() {
 				boostBarTimer--;
 			} else {
 				boostBarTimer = boostBarFrames;
-				boostEnergy--;
+				scr_EnergyPlayer(-1, self);
 			}
 		}
 		
@@ -544,8 +540,8 @@ function scr_AirTricksStep() {
 	}
 	
 	if afterRailJump or rampRing {
-		if rushTrickBuffered && rushTrickTimer == 0 && !rushTrickFinish && !place_meeting(x, y, obj_RailTrickColl) {
-			boostEnergy += 10;
+		if rushTrickBuffered && rushTrickTimer == 0 && !rushTrickFinish && !place_meeting(x, y + 5, obj_RailTrickColl) && !place_meeting(x, y + 5, obj_Ramp) {
+			scr_EnergyPlayer(10, self);
 			rushTrick = true;
 			scr_ControllerRumble();
 			
@@ -578,7 +574,9 @@ function scr_AirTricksStep() {
 						_depth = -1;
 					}
 						
-					instance_create_depth(-1000000, 0, _depth, obj_TrickCombo);
+					with(instance_create_depth(-1000000, 0, _depth, obj_TrickCombo)) {
+						trickChar = other.id;
+					}
 				}
 				
 				rushTrickCombo = 1;
@@ -630,12 +628,11 @@ function scr_AirTricksStep() {
 				scr_RushTrickVFX(3 + _particles)
 				scr_RushTrickConfetti(10 + _particles);
 			}
-
 		}
 		
 		if rushTrickCombo >= 2 {
 			if rushTrickFinaleBuffered && !rushTrickFinish && rushTrickTimer <= 0 {
-				boostEnergy += 20;
+				scr_EnergyPlayer(20, self);
 				altFinish = false;
 				leftTrick = false;
 				rightTrick = false;
@@ -757,7 +754,6 @@ function scr_AirTricksStep() {
 				rushTrickCombo = 0;
 				rushTrickFinish = false;
 			}
-			
 			
 			yspd = upTrickBoost;
 			
@@ -1108,7 +1104,7 @@ function scr_RailTricksStep() {
 				railTrickUno = true;
 				obj_SFXManager.crowd = true;
 				
-				boostEnergy += 10;
+				scr_EnergyPlayer(10, self);
 				
 				vel += 0.5 * sign(vel);
 				
@@ -1125,7 +1121,7 @@ function scr_RailTricksStep() {
 				railTrickDos = true;
 				obj_SFXManager.crowd = true;
 				
-				boostEnergy += 20;
+				scr_EnergyPlayer(20, self);
 				
 				vel += 1 * sign(vel);
 				
@@ -1142,7 +1138,7 @@ function scr_RailTricksStep() {
 				railTrickTres = true;
 				obj_SFXManager.crowdComplete = true;
 				
-				boostEnergy += 30;
+				scr_EnergyPlayer(30, self);
 				
 				vel += 2 * sign(vel);
 				
@@ -1171,8 +1167,9 @@ function scr_RailTricksStep() {
 
 //Rush Mode
 function scr_RushMode() {
-	if boostEnergy > maxBoostEnergy - 1 && !rushMode {
+	if boostEnergy > maxBoostEnergy + 1 && !rushMode {
 		rushMode = true;
+		scr_SetEnergyPlayer(maxBoostEnergy, self);
 		obj_SFXManager.rushModeGain = true;
 		scr_ControllerRumble();
 	}
@@ -1182,29 +1179,22 @@ function scr_RushMode() {
 			stealBoost = true;
 		}
 		
-		if boostEnergy >= maxBoostEnergy {
-			boostEnergy = maxBoostEnergy;
-		}
-		
 		if rushModeTimer > 0 {
-			rushModeTimer -= 1;
+			rushModeTimer--;
+		} else {
+			rushMode = false;
+			rushModeLose = true;
+			obj_SFXManager.rushModeLose = true;
 		}
 	} else {
 		rushModeTimer = rushModeFrames;
-	}
-	
-	if rushModeTimer <= 0 {
-		rushMode = false;
-		rushModeLose = true;
-		obj_SFXManager.rushModeLose = true;
-		boostEnergy -= 2;
 	}
 	
 	if rushModeLose {
 		rushModeLose = false;
 		
 		if stealBoost {
-			boostEnergy -= 100;
+			scr_SetEnergyPlayer(150, self);
 			stealBoost = false;
 		}
 	}

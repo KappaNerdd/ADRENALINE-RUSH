@@ -1,7 +1,5 @@
 image_blend = global.fullRGB;
 
-scr_GetCharRushBoostIcon();
-
 if active {
 	homingAttackable = true;
 	

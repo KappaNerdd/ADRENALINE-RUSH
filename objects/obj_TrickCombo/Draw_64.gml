@@ -23,7 +23,7 @@ var _relX = _playX - _camX;
 var _relY = _playY - _camY;
 
 
-if _relX >= 700 {
+if _relX >= 650 && _relY <= 100 {
 	image_alpha = lerp(image_alpha, 0.5, 0.5);
 } else {
 	image_alpha = lerp(image_alpha, 1, 0.25);

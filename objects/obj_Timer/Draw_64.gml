@@ -28,7 +28,7 @@ var _relX = _playX - _camX;
 var _relY = _playY - _camY;
 
 
-if _relY <= 100 {
+if _relY <= 130 && _relX <= 300 {
 	image_alpha = lerp(image_alpha, 0.25, 0.25);
 } else {
 	image_alpha = lerp(image_alpha, 1, 0.25);
@@ -67,11 +67,11 @@ draw_set_halign(fa_left);
 		_eggmanFrames = image_index;
 	}
 	
-	draw_sprite_ext(_arrow, image_index, 103, moveY + 3, 1, 0.5, 0, c_black, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 103, moveY + 3, 0.75, 0.5, 0, c_black, image_alpha);
 	draw_sprite_ext(sprite_index, image_index, 81, moveY + 11, 0.5, 0.5, 0, c_black, image_alpha);
-	draw_sprite_ext(_arrow, image_index, 113, moveY + 29, 1, 0.5, 0, c_black, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 113, moveY + 29, 0.75, 0.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_scoreSprite, image_index, 80, moveY + 29, 1, 1, 0, c_black, image_alpha);
-	draw_sprite_ext(_arrow, image_index, 103, moveY + 55, 1, 0.5, 0, c_black, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 103, moveY + 55, 0.75, 0.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_eggman, _eggmanFrames, 59, moveY + 47, 0.5, 0.5, 0, c_black, image_alpha);
 	
 	if global.seconds < 10 && global.minutes < 10 {
@@ -88,13 +88,13 @@ draw_set_halign(fa_left);
 	
 	draw_text_transformed_color(97, moveY + 55, string(global.EnemyCount), _xscale, _yscale, _ang, c_black, c_black, c_black, c_black, image_alpha);
 	
-	draw_sprite_ext(_arrow, image_index, 106, moveY, 1, 0.5, 0, global.fullRGB, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 106, moveY, 0.75, 0.5, 0, global.fullRGB, image_alpha);
 	draw_sprite_ext(sprite_index, image_index, 84, moveY + 8, 0.5, 0.5, 0, global.fullRGB, image_alpha);
 	
-	draw_sprite_ext(_arrow, image_index, 116, moveY + 26, 1, 0.5, 0, global.fullRGB, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 116, moveY + 26, 0.75, 0.5, 0, global.fullRGB, image_alpha);
 	draw_sprite_ext(_scoreSprite, image_index, 83, moveY + 26, 1, 1, 0, global.fullRGB, image_alpha);
 	
-	draw_sprite_ext(_arrow, image_index, 106, moveY + 52, 1, 0.5, 0, global.fullRGB, image_alpha);
+	draw_sprite_ext(_arrow, image_index, 106, moveY + 52, 0.75, 0.5, 0, global.fullRGB, image_alpha);
 	
 	if !global.MIND && global.PlayerChar != 0 {
 		draw_sprite_ext(_eggman, 1, 62, moveY + 44, 0.5, 0.5, 0, c_white, image_alpha);	

@@ -38,7 +38,7 @@ getCharacterControls();
 		srBall = spr_CharSelectRushBall2;
 		sprite_index = spr_SonicRushBG;
 	} else {
-		srSpikes = spr_SonicRush_Spikes_Head;
+		srSpikes = spr_SonicRushSpikesHead;
 		srBlock = spr_CharSelectTopHead;
 		srBall = spr_CharSelectRushBossBallHead;
 		sprite_index = spr_SonicRushBGHead;

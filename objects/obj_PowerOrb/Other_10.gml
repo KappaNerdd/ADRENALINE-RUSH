@@ -6,15 +6,10 @@ scr_ControllerRumble();
 						
 //Powers
 if powerUp == 0 or powerUp == 1 or powerUp == 2 {
-	obj_Player.boostEnergy += powers[powerUp][0];
-		
-	if obj_Player.rushMode {
-		obj_Player.rushModeTimer = obj_Player.rushModeFrames;
-		obj_SFXManager.rushModeTrick = true;
-	}
+	scr_EnergyPlayer(powers[powerUp][0], giveCharPower);
 		
 	with (instance_create_depth(-1000000, 0, 0, obj_PowerUpHUD)) {
-		powerUp = powerUp;
+		powerUp = other.powerUp;
 	}
 } else if powerUp == 3 or powerUp == 4 or powerUp == 5 or powerUp == 6 {
 	global.Rings += powers[powerUp][0];

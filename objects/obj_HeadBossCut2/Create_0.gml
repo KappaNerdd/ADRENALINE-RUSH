@@ -2,6 +2,7 @@ obj_Player.can_Move = false;
 obj_Player.action1_Key_Held = false;
 obj_Player.stomping = false;
 global.DisableHUD = true;
+obj_HeadBeam.stopped = true;
 
 moveLeftTimer = 30;
 

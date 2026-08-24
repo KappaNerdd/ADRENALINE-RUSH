@@ -7,6 +7,6 @@ if global.SimplifyVFX {
 var _dir = working_directory + "/saves/";
 
 if !file_exists(_dir + string(global.PastMindDataFile) + ".sav") {
-	sprite_index = spr_SonicRush_Spikes_Head;
+	sprite_index = spr_SonicRushSpikesHead;
 	image_blend = c_white;
 }

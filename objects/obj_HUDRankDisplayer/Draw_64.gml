@@ -16,7 +16,7 @@ if instance_exists(obj_Player) {
 var _relX = _playX - _camX;
 var _relY = _playY - _camY;
 
-if _relY <= 100 {
+if _relY <= 130 && _relX <= 370 {
 	image_alpha = lerp(image_alpha, 0.25, 0.25);
 } else {
 	image_alpha = lerp(image_alpha, 1, 0.25);

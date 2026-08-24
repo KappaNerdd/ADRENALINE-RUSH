@@ -38,10 +38,10 @@ if boomChoice == 1 {
 if boomChoice == 0 && chosenBoom {
 	draw_set_halign(fa_center);
 		gpu_set_fog(true, c_white, 0, 1);
-			draw_sprite_ext(global.JukeboxPlaylist[global.JukeBoxChoice][2][0], 0, boxX + 330, 190 * (bgAlph * 2) + albumY * 2.5, 0.25, 0.25, -15, c_white, bgAlph * 2);
+			draw_sprite_ext(global.JukeboxPlaylist[normJukeChoice][2][0], 0, boxX + 330, 190 * (bgAlph * 2) + albumY * 2.5, 0.25, 0.25, -15, c_white, bgAlph * 2);
 		gpu_set_fog(false, c_black, 0, 1);
 		
-		draw_sprite_ext(global.JukeboxPlaylist[global.JukeBoxChoice][2][0], 0, boxX + 320, 180 * (bgAlph * 2) + albumY, 0.25, 0.25, -5, c_white, bgAlph * 2);
+		draw_sprite_ext(global.JukeboxPlaylist[normJukeChoice][2][0], 0, boxX + 320, 180 * (bgAlph * 2) + albumY, 0.25, 0.25, -5, c_white, bgAlph * 2);
 	draw_set_halign(fa_left);
 } else if boomChoice == 1 && chosenBoom {
 	gpu_set_fog(true, c_white, 0, 1);
@@ -52,7 +52,7 @@ if boomChoice == 0 && chosenBoom {
 }
 
 if chosenBoom {
-	var _altText = global.JukeboxPlaylist[global.JukeBoxChoice][2][1];
+	var _altText = global.JukeboxPlaylist[normJukeChoice][2][1];
 	
 	if boomChoice == 1 {
 		_altText = string(filename_name(global.NewJukes[playChoice]));
@@ -65,7 +65,7 @@ if chosenBoom {
 }
 
 gpu_set_scissor(0, 0, 96 * 8, 64 * 15);
-	var _track = global.JukeboxPlaylist[global.JukeBoxChoice][1];
+	var _track = global.JukeboxPlaylist[normJukeChoice][1];
 
 	if boomChoice == 1 {
 		if chosenPlay {
@@ -77,7 +77,7 @@ gpu_set_scissor(0, 0, 96 * 8, 64 * 15);
 				}
 			} else {
 				if array_length(global.CustomJukeboxPlaylist) > 0 {
-					_track = string(filename_name(global.CustomJukeboxPlaylist[global.CustomJukeChoice]));
+					_track = string(filename_name(global.CustomJukeboxPlaylist[custJukeChoice]));
 				} else {
 					_track = "juke_NoTracks";
 				}
@@ -121,10 +121,10 @@ draw_set_valign(fa_middle);
 draw_set_font(global.BoomboxFont);
 	var _hund = "0";
 	var _ten = "0";
-	var _int = global.JukeBoxChoice + 1;
+	var _int = normJukeChoice + 1;
 	
 	if boomChoice == 1 {
-		_int = global.CustomJukeChoice + 1;
+		_int = custJukeChoice + 1;
 	}
 	
 	if _int >= 10 {
@@ -153,11 +153,11 @@ var _buttScale = 1;
 
 if chosenBoom {
 	if boomChoice == 0 {
-		if audio_is_playing(global.JukeboxPlaylist[global.JukeBoxChoice][0]) {
+		if audio_is_playing(global.JukeboxPlaylist[normJukeChoice][0]) {
 			_playIndex = 1;
 		}
 	} else {
-		if custNum == global.CustomJukeChoice {
+		if custNum == (playChoice * 10) + custJukeChoice {
 			_playIndex = 1;
 		}
 	}
@@ -166,7 +166,18 @@ if chosenBoom {
 }
 
 draw_sprite_ext(_buttSprite, obj_CustomJumpKeySpeed.image_index, boxX - 160, boxY + 110, _buttScale, _buttScale, 0, c_white, 1);
-draw_sprite_ext(spr_BoomboxButts, _playIndex, boxX - 128, boxY + 145, _buttScale, _buttScale, 0, c_white, 1);
+draw_sprite_ext(spr_BoomboxButts, _playIndex, boxX - 128, boxY + 144, _buttScale, _buttScale, 0, c_white, 1);
 
-draw_sprite_ext(_buttSprite, obj_CustomAct1KeySpeed.image_index, boxX + 80, boxY + 110, _buttScale, _buttScale, 0, c_white, 1);
-draw_sprite_ext(spr_BoomboxButts, 2, boxX + 112, boxY + 145, _buttScale, _buttScale, 0, c_white, 1);
+draw_sprite_ext(_buttSprite, obj_CustomAct1KeySpeed.image_index, boxX + 96, boxY + 110, _buttScale, _buttScale, 0, c_white, 1);
+draw_sprite_ext(spr_BoomboxButts, 2, boxX + 128, boxY + 144, _buttScale, _buttScale, 0, c_white, 1);
+
+if chosenPlay && boomChoice == 1 {
+	draw_sprite_ext(_buttSprite, global.ConS_SW, boxX + 16, boxY + 110, _buttScale, _buttScale, 0, c_white, 1);
+	draw_sprite_ext(spr_PauseFileNew, 2, boxX + 46, boxY + 144, _buttScale, _buttScale, 0, c_white, 1);
+	
+	if !chosenBoom {
+		draw_sprite_ext(_buttSprite, global.ConS_B, boxX - 80, boxY + 110, _buttScale, _buttScale, 0, c_white, 1);
+		draw_sprite_ext(spr_PauseRestartNew, 2, boxX - 48, boxY + 144, _buttScale, _buttScale, 0, c_white, 1);
+	}
+}
+	

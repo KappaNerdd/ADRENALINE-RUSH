@@ -2,10 +2,10 @@ display_set_gui_size(768, 432);
 
 draw_set_halign(fa_middle);
 	if !instance_exists(obj_NewOptions) && !createOpt {
-		draw_text_transformed(384, 10, scr_LocalText("game_Disc") + "\n-----------------------------------------------", 1.5, 1.5, 0);
+		draw_text_transformed(384, 10, scr_LocalText("game_Disc") + "\n---------------------------------------------------", 1.5, 1.5, 0);
 		
 		//draw_set_valign(fa_center);
-			draw_text_ext_transformed(384, 80, scr_LocalText("game_MainDisc"), 20, 650, 1, 1, 0);
+			draw_text_ext_transformed(384, 80, scr_LocalText("game_MainDisc"), 20, 750, 1, 1, 0);
 		//draw_set_valign(fa_top);
 		
 		for(var i = 0; i < 2; i++) {

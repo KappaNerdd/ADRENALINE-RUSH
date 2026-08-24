@@ -409,7 +409,7 @@ if !gamepad_is_connected(global.Player1Con) {
 				if global.ConType == 0 {
 					keyText = "[" + scr_LocalText("opt_ConStart") + "]";
 				} else if global.ConType == 1 {
-					keyText = "[" + scr_LocalText("title_Options") +"]";
+					keyText = "[OPTIONS]";
 				} else if global.ConType == 2 {
 					keyText = "[+]";
 				}

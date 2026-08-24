@@ -1,5 +1,5 @@
 function scr_SetCamFollow(_following = noone) {
-	with(obj_CameraExtended) {
+	with(obj_CameraParent) {
 		if _following == noone {
 			targetCutX = baseX;
 			targetCutY = baseY;
@@ -17,7 +17,7 @@ function scr_StopCamDir(_stop = "", _check = false) {
 		case "H":
 		case "hori":
 		case "horizontal":
-			with(obj_CameraExtended) {
+			with(obj_CameraParent) {
 				camHori = !_check;
 			}
 		break;
@@ -26,7 +26,7 @@ function scr_StopCamDir(_stop = "", _check = false) {
 		case "V":
 		case "verti":
 		case "vertical":
-			with(obj_CameraExtended) {
+			with(obj_CameraParent) {
 				camVerti = !_check;
 			}
 		break;
@@ -34,14 +34,14 @@ function scr_StopCamDir(_stop = "", _check = false) {
 }
 
 function scr_StopCamMove(_resetTimer = 2, _timer = 10) {
-	with(obj_CameraExtended) {
+	with(obj_CameraParent) {
 		resetTimer = _resetTimer;
 		inactiveTimer = _timer;
 	}
 }
 
 function scr_ChangeCamZoom(_sizeMult = 1, _speed = 0.1, _bars = false) {
-	with(obj_CameraExtended) {
+	with(obj_CameraParent) {
 		ingameCamX = _sizeMult;
 		ingameCamY = _sizeMult;
 		barSpd = _speed;
@@ -50,13 +50,13 @@ function scr_ChangeCamZoom(_sizeMult = 1, _speed = 0.1, _bars = false) {
 }
 
 function scr_CamFollowAngle(_follow = false) {
-	with(obj_CameraExtended) {
+	with(obj_CameraParent) {
 		followAngle = _follow;
 	}
 }
 
 function scr_CutsceneCamMove(_x = 0, _y = 0, _ease = Easings.QUAD_IO, _effect = 0.1) {
-	with(obj_CameraExtended) {
+	with(obj_CameraParent) {
 		targetCutX = baseX + _x;
 		targetCutY = baseY + _y;
 		easeType = _ease;
@@ -65,7 +65,7 @@ function scr_CutsceneCamMove(_x = 0, _y = 0, _ease = Easings.QUAD_IO, _effect = 
 }
 
 function scr_ScreenShake(_shakePower = 0.5, _shakeDuration = 10, _shakeHori = false, _shakeVerti = true) {
-	with(obj_CameraExtended) {
+	with(obj_CameraParent) {
 		if global.ScreenShake {
 			shakeValue = _shakePower;
 			shakeTimer = _shakeDuration;
@@ -81,7 +81,7 @@ function scr_MoveCam(_type = "", _num = 1) {
 		case "H":
 		case "hori":
 		case "horizontal":
-			with(obj_CameraExtended) {
+			with(obj_CameraParent) {
 				noCamX = _num;
 			}
 		break;
@@ -90,7 +90,7 @@ function scr_MoveCam(_type = "", _num = 1) {
 		case "V":
 		case "verti":
 		case "vertical":
-			with(obj_CameraExtended) {
+			with(obj_CameraParent) {
 				noCamY = _num;
 			}
 		break;

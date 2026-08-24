@@ -49,8 +49,6 @@ function scr_LoadMods() {
 	file_find_close();*/
 }
 
-
-
 function scr_CharacterModData(_modChar) {
 	/*//Character Select Data
 	var _modPath = "mods/";
@@ -82,9 +80,20 @@ function scr_LoadCustomMusic() {
 	var _musDir = file_find_first(_musPath + "/*", fa_directory);
 
 	while (_musDir != "") {
-		array_push(global.NewJukes, _musPath + "/" + _musDir);
-	    _musDir = file_find_next();
+		if !string_ends_with(_musDir, ".txt") {
+			array_push(global.NewJukes, _musPath + "/" + _musDir);
+		}
+		
+		_musDir = file_find_next();
 	}
 	
 	file_find_close();
+}
+
+function scr_OpenWorkDir(_subFold) {
+	var _winDir = environment_get_variable("WINDIR");
+
+	if os_type == os_windows {
+		execute_shell_simple("explorer.exe", game_save_id + _subFold, "open", 5, _winDir);
+	}
 }

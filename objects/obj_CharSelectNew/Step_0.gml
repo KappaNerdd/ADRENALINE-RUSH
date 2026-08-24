@@ -104,7 +104,7 @@ if !finished {
 		
 		if !switchChar && !confirmed {
 			#region //Move Shit
-				if right_Key && !checkUniversalMoves && !askGirly {
+				if right_Key && !checkUniversalMoves && !askGirly && !charDisc {
 					do {
 				        if global.SelectedPlayer < global.PlayerNum - 1 {
 							global.SelectedPlayer++;
@@ -122,7 +122,7 @@ if !finished {
 					
 					charSpriteAlpha = 0;
 					charSpriteX = 0;
-				} else if left_Key && !checkUniversalMoves && !askGirly {
+				} else if left_Key && !checkUniversalMoves && !askGirly && !charDisc {
 					do {
 				        if global.SelectedPlayer > 1 {
 							global.SelectedPlayer--;
@@ -215,52 +215,88 @@ if !finished {
 		
 		if !confirmed {
 			if (jump_Key or pause_Key) && !cancelled && !checkUniversalMoves {
-				if !askGirly {
-					if !global.PlayerSelection[global.SelectedPlayer][2] && global.PlayerSelection[global.SelectedPlayer][4][global.PlayerCostume][0] {
-						if !global.PlayerSelection[global.SelectedPlayer][3] {
-							global.Girly = global.PlayerSelection[global.PlayerChar][0][1];
+				if global.SelectedPlayer == 12 or global.SelectedPlayer == 14 {
+					if !charDisc {
+						charDisc = true;
+						obj_SFXManager.funkinFav = true;
+					} else {
+						if !askGirly {
+							if !global.PlayerSelection[global.SelectedPlayer][3] {
+								global.Girly = global.PlayerSelection[global.PlayerChar][0][1];
+								confirmed = true;
+							
+								if !global.SimplifyVFX {
+									confirmedOpacity = 1;
+								}
+								
+								charDisc = false;
+								
+								obj_SFXManager.funkinCheckpoint = true;
+								set_song_ingame(noone, 90);
+							} else {
+								askGirly = true;
+								obj_SFXManager.funkinFav = true;
+							}
+						} else {
+							global.Girly = askGirlySelect;
+							askGirly = false;
 							confirmed = true;
+							charDisc = false;
 							
 							if !global.SimplifyVFX {
 								confirmedOpacity = 1;
 							}
-								
+					
 							obj_SFXManager.funkinCheckpoint = true;
 							set_song_ingame(noone, 90);
-						} else {
-							askGirly = true;
-							obj_SFXManager.funkinFav = true;
 						}
-					} else {
-						lockAnim = true;
-						obj_SFXManager.funkinLocked = true;
 					}
 				} else {
-					global.Girly = askGirlySelect;
-					askGirly = false;
-					confirmed = true;
+					if !askGirly {
+						if !global.PlayerSelection[global.SelectedPlayer][2] && global.PlayerSelection[global.SelectedPlayer][4][global.PlayerCostume][0] {
+							if !global.PlayerSelection[global.SelectedPlayer][3] {
+								global.Girly = global.PlayerSelection[global.PlayerChar][0][1];
+								confirmed = true;
+							
+								if !global.SimplifyVFX {
+									confirmedOpacity = 1;
+								}
+								
+								obj_SFXManager.funkinCheckpoint = true;
+								set_song_ingame(noone, 90);
+							} else {
+								askGirly = true;
+								obj_SFXManager.funkinFav = true;
+							}
+						} else {
+							lockAnim = true;
+							obj_SFXManager.funkinLocked = true;
+						}
+					} else {
+						global.Girly = askGirlySelect;
+						askGirly = false;
+						confirmed = true;
 					
-					if !global.SimplifyVFX {
-						confirmedOpacity = 1;
+						if !global.SimplifyVFX {
+							confirmedOpacity = 1;
+						}
+					
+						obj_SFXManager.funkinCheckpoint = true;
+						set_song_ingame(noone, 90);
 					}
-					
-					obj_SFXManager.funkinCheckpoint = true;
-					set_song_ingame(noone, 90);
 				}
 			}
 			
 			if askGirly {
-				if right_Key_Once {
-					if askGirlySelect == 0 {
-						askGirlySelect = 1;
-					} else {
-						askGirlySelect = 0;
-					}
-					
-					obj_SFXManager.menuTap = true;
+				if right_Key or left_Key {
+					askGirlyTimer--;
+				} else {
+					askGirlyTimer = 1;
 				}
 				
-				if left_Key_Once {
+				if askGirlyTimer <= 0 {
+					askGirlyTimer = askGirlyFrames;
+					
 					if askGirlySelect == 0 {
 						askGirlySelect = 1;
 					} else {
@@ -274,12 +310,22 @@ if !finished {
 			if !cancelled {
 				if action_Key {
 					if !askGirly {
-						cancelled = true;
-						obj_SFXManager.UNDERTALEBombFly = true;
-						set_song_ingame(noone, 30);
-						global.SelectedPlayer = setPlayer;
+						if !charDisc {
+							cancelled = true;
+							obj_SFXManager.UNDERTALEBombFly = true;
+							set_song_ingame(noone, 30);
+							global.SelectedPlayer = setPlayer;
+						} else {
+							charDisc = false;
+							obj_SFXManager.menuTap = true;
+						}
 					} else {
 						askGirly = false;
+						obj_SFXManager.menuTap = true;
+					}
+					
+					if charDisc {
+						charDisc = false;
 						obj_SFXManager.menuTap = true;
 					}
 				}
@@ -443,7 +489,7 @@ if !finished {
 }
 
 #region //BPM Animations
-	if global.RealBPM > 0 {
+	/*if global.RealBPM > 0 {
 		global.RealBPM -= delta_time / 1000000;
 	} else {
 		if !global.SimplifyVFX {
@@ -456,6 +502,19 @@ if !finished {
 		}
 		
 		global.RealBPM = global.ConvertedBPM;
+	}*/
+	
+	scr_BPMStep();
+	
+	if !global.SimplifyVFX {	
+		if scr_GetMainBeat() < scr_GetBeatProg() {
+			nameScale = 1;
+			arrowScale = 1.75;
+			circleScale = 1.5;
+			whiteCircleScale = 2;
+			whiteBarScale = 1.25;
+			iconScale = 0.25;
+		}
 	}
 	
 	nameScale = lerp(nameScale, 0.9, 0.1);
@@ -485,4 +544,10 @@ if askGirly {
 	askGirlyY = lerp(askGirlyY, 136, 0.1);
 } else {
 	askGirlyY = lerp(askGirlyY, 432, 0.1);
+}
+
+if charDisc && !askGirly {
+	charDiscY = lerp(charDiscY, 136, 0.1);
+} else {
+	charDiscY = lerp(charDiscY, 432, 0.1);
 }

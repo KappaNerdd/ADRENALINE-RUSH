@@ -174,7 +174,7 @@ if !global.SongTag {
 
 	///-----Black Arms (Edge Mvt.)-----///
 	if audio_is_playing(mus_FreeplayEMvt) or audio_is_playing(mus_BlackArms) {
-		songName = scr_LocalText("mus_Edg");
+		songName = scr_LocalText("mus_FEdg");
 		songCredits = scr_LocalText("comp_Nerd");
 	}
 

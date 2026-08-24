@@ -22,7 +22,7 @@ getCharacterControls();
 	#region //Background Shit
 		extraScale = lerp(extraScale, 0, 0.15);
 		
-		if realBPM > 0 {
+		/*if realBPM > 0 {
 			realBPM -= delta_time;
 		} else {
 			realBPM += conBPM;
@@ -30,6 +30,18 @@ getCharacterControls();
 			if !global.SimplifyVFX {
 				extraScale = 1;
 				
+				if !menuChosen {
+					menuRet = !menuRet;
+				}
+			}
+		}*/
+		
+		scr_BPMStep();
+		
+		if scr_GetMainBeat() < scr_GetBeatProg() {
+			if !global.SimplifyVFX {
+				extraScale = 1;
+			
 				if !menuChosen {
 					menuRet = !menuRet;
 				}
@@ -164,6 +176,8 @@ if !confirm {
 						break;
 					
 						case "title_Credits":
+							menuChosen = true;
+							goCredits = true;
 							obj_SFXManager.funkinCheckpoint = true;
 							set_song_ingame(noone, 60);
 						break;
@@ -248,6 +262,13 @@ if !confirm {
 							obj_SFXManager.funkinCheckpoint = true;
 							set_song_ingame(noone, 60);
 						break;
+						
+						case "title_Enemy":
+							goEnemy = true;
+							menuChosen = true;
+							obj_SFXManager.funkinCheckpoint = true;
+							set_song_ingame(noone, 60);
+						break;
 					#endregion
 				}
 			} else {
@@ -323,13 +344,21 @@ if !confirm {
 					scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_FileSelectNew);
 				}
 				
+				if goCredits {
+					scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_Credits);
+				}
+				
 				if goNewGame {
 					scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_NameMakerNew);
 					global.PlayerChar = 0;
 				}
 				
 				if goBio {
-					
+					scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_CharBios);
+				}
+				
+				if goEnemy {
+					scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_EnemyBios);
 				}
 				
 				if goGallery {

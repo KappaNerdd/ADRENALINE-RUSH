@@ -1,6 +1,12 @@
 getCharacterControls();
 
 if kysTimer > 0 {
+	spikeFrames += spikeAnim;
+
+	if spikeFrames >= 20 {
+		spikeFrames = 0;
+	}
+	
 	if mainAlpha < 1 {
 		mainAlpha += 0.025;
 	}
@@ -99,16 +105,14 @@ if kysTimer > 0 {
 			
 			finishedCreate = true;
 			instance_create_depth(x, y, depth, obj_SonicRushGO);
+			
+			if room != rm_HeadSpeedBoss {
+				scr_SetEnergyPlayer(100, "both");
+			}
 		}
 		
 		if mainAlpha <= 0 {
 			instance_destroy();
 		}
 	}
-}
-
-spikeFrames += spikeAnim;
-
-if spikeFrames >= 20 {
-	spikeFrames = 0;
 }

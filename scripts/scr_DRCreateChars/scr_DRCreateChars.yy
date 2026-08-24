@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_DRCreateChars",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_DRCreateChars",
+  "parent":{
+    "name":"DELTARUNE",
+    "path":"folders/Scripts/DELTARUNE.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

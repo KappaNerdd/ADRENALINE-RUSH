@@ -63,7 +63,7 @@ if file_exists(_dir) {
 	srBall = spr_CharSelectRushBall2;
 	set_song_ingame(mus_CestLaVie);
 } else {
-	srSpikes = spr_SonicRush_Spikes_Head;
+	srSpikes = spr_SonicRushSpikesHead;
 	srBlock = spr_CharSelectTopHead;
 	srBall = spr_CharSelectRushBossBallHead;
 	sprite_index = spr_SonicRushBGHead;

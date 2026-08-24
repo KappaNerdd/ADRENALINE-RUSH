@@ -32,9 +32,22 @@ if !transComplete {
 				}
 			}
 			
+			if type == "credits" {
+				with(obj_MainMenu) {
+					menuChoice = 4;
+				}
+			}
+			
 			if type == "bio" {
 				with(obj_MainMenu) {
 					menuChoice = 3;
+					moveExtra = true;
+				}
+			}
+			
+			if type == "enemy" {
+				with(obj_MainMenu) {
+					menuChoice = 4;
 					moveExtra = true;
 				}
 			}

@@ -1,3 +1,7 @@
+if !global.ShowGhost {
+	instance_destroy();
+}
+
 frame = 0;
 image_blend = c_white;
 

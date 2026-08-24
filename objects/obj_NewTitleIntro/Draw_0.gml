@@ -29,8 +29,8 @@ if !chowder {
 	draw_sprite_ext(spr_LuciferTitle, 0, 568, _checkY, 0.66, 0.66, 0, c_white, 1);
 }
 
-draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, 820, 50, 3, 3, -135, c_fuchsia, 1);
-draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, -52, 382, 3, 3, 45, c_blue, 1);
+draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, 820, 50, 1, 3, -135, c_fuchsia, 1);
+draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, -52, 382, 1, 3, 45, c_blue, 1);
 
 surface_set_target(surfaceMask);
 	draw_sprite_ext(spr_RainSplash, 0, 0, 0, 768 / 4, 432 / 2, 0, c_black, 1);

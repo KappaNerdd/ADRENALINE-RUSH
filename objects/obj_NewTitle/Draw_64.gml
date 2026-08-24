@@ -89,6 +89,6 @@ display_set_gui_size(768, 432);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 
-	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, 820, 50, 3 + extraScale / 2, 3 + extraScale / 2, -135, c_blue, 1);
-	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, -52, 382, 3 + extraScale / 2, 3 + extraScale / 2, 45, c_fuchsia, 1);
+	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, 820, 50, 1, 5 + extraScale / 2, -135, c_blue, 1);
+	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesIndex, -52, 382, 1, 5 + extraScale / 2, 45, c_fuchsia, 1);
 #endregion

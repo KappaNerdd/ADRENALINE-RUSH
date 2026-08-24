@@ -313,8 +313,8 @@ if !completed {
 }
 
 //Player
-draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX - 15, _camY + 25 + 25 + 40, 0.5, 0.5, 0, c_black, 0.5);
-draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX, _camY + 35 + 40, 0.5, 0.5, 0, c_white, 1);
+draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX - 15, _camY + 25 + 25 + 50, 0.5, 0.5, 0, c_black, 0.5);
+draw_sprite_ext(playerSprite, playerCostume, _camX + playerMoveX, _camY + 35 + 50, 0.5, 0.5, 0, c_white, 1);
 
 var _rank = spr_RankFHead;
 var _mod = global.Rank;
@@ -359,13 +359,13 @@ if createRank {
 }
 
 //Draw Sonic Rush Spikes
-draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + 768 + 10, _camY + moveUp + 10, 3.1, 3.1, -90, c_black, 0.5);
-draw_sprite_ext(srSpikes, srSpikesImageIndexBack, _camX + 768 + 10, _camY + moveDown - 10, 3.1, -3.1, 90, c_black, 0.5);
-draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + moveRight + 10, _camY + 10, 2.75, 2.75, 0, c_black, 0.5);
+draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + 768 + 10, _camY + moveUp + 10, 1, 20, -90, c_black, 0.5);
+draw_sprite_ext(srSpikes, srSpikesImageIndexBack, _camX + 768 + 10, _camY + moveDown - 10, 1, -20, 90, c_black, 0.5);
+draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + moveRight + 10, _camY + 10, 1, 12, 0, c_black, 0.5);
 
-draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + 768, _camY + moveUp, 3.1, 3.1, -90, _col, 1);
-draw_sprite_ext(srSpikes, srSpikesImageIndexBack, _camX + 768, _camY + moveDown, 3.1, -3.1, 90, _col, 1);
-draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + moveRight, _camY, 2.75, 2.75, 0, _col, 1);
+draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + 768, _camY + moveUp, 1, 20, -90, _col, 1);
+draw_sprite_ext(srSpikes, srSpikesImageIndexBack, _camX + 768, _camY + moveDown, 1, -20, 90, _col, 1);
+draw_sprite_ext(srSpikes, srSpikesImageIndex, _camX + moveRight, _camY, 1, 12, 0, _col, 1);
 
 
 var _return = "RETURN";

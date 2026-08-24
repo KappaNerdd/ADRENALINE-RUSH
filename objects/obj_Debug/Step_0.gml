@@ -42,7 +42,7 @@ if global.DEBUG {
 	}
 	
 	if keyboard_check_pressed(vk_rshift) {
-		room_goto(rm_HeadSpeedBossP2);
+		room_goto(rm_DRRoom);
 	}
 	
 	if keyboard_check_pressed(ord("8")) {

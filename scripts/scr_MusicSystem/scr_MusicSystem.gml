@@ -13,8 +13,14 @@ function set_song_ingame(_song = noone, _fadeOutCurrentSong = 0, _fadeIn = 0, _p
 	}
 }
 
-function scr_SetMusPos(_seconds) {
-	audio_sound_set_track_position(obj_MusicManager.songInstance, _seconds);
+function scr_SetMusPos(_seconds, _ignore) {
+	if _ignore {
+		audio_sound_set_track_position(obj_MusicManager.songInstance, _seconds);
+	} else {
+		if global.Jukebox == 0 {
+			audio_sound_set_track_position(obj_MusicManager.songInstance, _seconds);
+		}
+	}
 }
 
 function scr_SetMusPitch(_pitch) {

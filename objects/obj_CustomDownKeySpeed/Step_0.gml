@@ -419,7 +419,7 @@ if !gamepad_is_connected(global.Player1Con) {
 				if global.ConType == 0 {
 					keyText = "[" + scr_LocalText("opt_ConSelect") + "]";
 				} else if global.ConType == 1 {
-					keyText = "[" + scr_LocalText("con_Touchpad") +"]";
+					keyText = "[OPTIONS]";
 				} else if global.ConType == 2 {
 					keyText = "[-]";
 				}

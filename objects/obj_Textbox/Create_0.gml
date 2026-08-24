@@ -2,6 +2,10 @@
 textbox_width = 768;
 starterText_Width = 30;
 
+textbox_x = 0;
+textbox_y = 300;
+makeTextbox = true;
+
 textbox_height = 120;
 border = 30;
 line_sep = 20;

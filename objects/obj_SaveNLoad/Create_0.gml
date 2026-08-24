@@ -161,6 +161,20 @@
 		directory_create("custom_boombox");
 	}
 	
+	var _work = working_directory + "custom_boombox/"
+				
+	var _file = file_text_open_write(_work + "PUT FOLDERS HERE.txt");
+	file_text_close(_file);
+				
+	var _file2 = file_text_open_write(_work + "HOW TO ADD TRACKS.txt");
+	file_text_write_string(_file2, 
+	"1. Make your own folder in \"custom_boombox\"." +
+	"\n2. Add in music files into that folder. (MUST be a \".OGG\" file.)" +
+	"\n3. Press the \"reload\" button in-game while browsing the folders section of the Boombox." + 
+	"\nOPTIONAL: If you want a custom album cover, add in a .PNG file (preferably at the resolution of 768x768) and name it \"album.png\"." +
+	"\nExtra: If you want to have a custom track play during a Level, you need to beat whatever Level you want first, then select a track in the Custom Boombox, then choose \"BOOMBOX CUSTOM\" when selecting a Level. (Works with the Normal Boombox as well.)");
+	file_text_close(_file2);
+	
 	if !directory_exists("screenshots") {
 		directory_create("screenshots");
 	}
@@ -211,6 +225,7 @@
 	global.MIND = false;
 	
 	global.PlayerID = noone;
+	global.PartnerID = noone;
 #endregion
 
 #region ///-----Title BS-----///
@@ -1093,6 +1108,9 @@
 	image_speed = 0.5;
 	global.ForceLine = 0;
 	langCheck = 0;
+	global.BaseX = 0;
+	global.BaseScale = 0;
+	global.BaseSpikes = 0;
 	//show_debug_overlay(true);
 #endregion
 
@@ -1112,6 +1130,9 @@
 	global.JukeBoxChoice = 0;
 	global.CustomJukeChoice = 0;
 	
+	global.NormTrack = noone;
+	global.CustTrack = noone;
+	
 	global.CustomID = 0;
 	
 	global.JukeOptions = [
@@ -1126,52 +1147,52 @@
 	]
 	
 	global.JukeboxPlaylist = [
-		[mus_MindnBody, "mus_MindBody", [spr_AlbumPlaceholder, "alb_Bullshitttttttt tttttttt ttttt tttt tttt ttttttttt"], false],
-		[mus_MINDWAVE, "mus_MINDWAVE", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_MINDWAVE_A, "mus_MINDWAVE2", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_DISCONNECTED, "mus_Dis", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_MyMind, "mus_Mind", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_MyMindGirly, "mus_MindG", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_DisturbingMind, "mus_Dist", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_DisturbingMindAllegro, "mus_DistAllegro", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_DisturbingMindGirly, "mus_DistG", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_DisturbingMindGirlyAllegro, "mus_DistGAllegro", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_LostReason, "mus_Lost", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_MindnBody, "mus_MindBody", [spr_AlbumPlaceholder, "alb_Bullshitttttttt tttttttt ttttt tttt tttt ttttttttt"], false, 120],
+		[mus_MINDWAVE, "mus_MINDWAVE", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 90],
+		[mus_MINDWAVE_A, "mus_MINDWAVE2", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 90],
+		[mus_DISCONNECTED, "mus_Dis", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 70],
+		[mus_MyMind, "mus_Mind", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 103],
+		[mus_MyMindGirly, "mus_MindG", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 103],
+		[mus_DisturbingMind, "mus_Dist", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
+		[mus_DisturbingMindAllegro, "mus_DistAllegro", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
+		[mus_DisturbingMindGirly, "mus_DistG", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
+		[mus_DisturbingMindGirlyAllegro, "mus_DistGAllegro", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
+		[mus_LostReason, "mus_Lost", [spr_AlbumPlaceholder, "alb_Bullshit"], true, 120],
 		
-		[mus_CestLaVie, "mus_Cest", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_RoundNRound_Full, "mus_RoundN", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_WrapItUpK, "mus_WrapK", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_WrapItUpL, "mus_WrapL", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FunknRushNew, "mus_Funk", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_UnwindaBit, "mus_Unwind", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_Backstreet, "mus_Backstreet", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_CestLaVie, "mus_Cest", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 140],
+		[mus_RoundNRound_Full, "mus_RoundN", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
+		[mus_WrapItUpK, "mus_WrapK", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
+		[mus_WrapItUpL, "mus_WrapL", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
+		[mus_FunknRushNew, "mus_Funk", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 140],
+		[mus_UnwindaBit, "mus_Unwind", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 83],
+		[mus_Backstreet, "mus_Backstreet", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 90],
 		
-		[mus_FreeplayKMvt, "mus_FKap", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayLuMvt, "mus_FLuc", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplaySMvt, "mus_FSar", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayLMvt, "mus_FLon", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayBMvt, "mus_FBro", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayNMvt, "mus_FNee", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayCMvt, "mus_FClo", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayAMvt, "mus_FAki", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayTMvt, "mus_FTay", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayAYMvt, "mus_FAya", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayRXMvt, "mus_FRox", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayRMvt, "mus_FRus", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayEMvt, "mus_FEdg", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_FreeplayIMvt, "mus_FIvy", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_FreeplayKMvt, "mus_FKap", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayLuMvt, "mus_FLuc", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplaySMvt, "mus_FSar", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayLMvt, "mus_FLon", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayBMvt, "mus_FBro", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayNMvt, "mus_FNee", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayCMvt, "mus_FClo", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayAMvt, "mus_FAki", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayTMvt, "mus_FTay", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayAYMvt, "mus_FAya", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayRXMvt, "mus_FRox", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayRMvt, "mus_FRus", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayEMvt, "mus_FEdg", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_FreeplayIMvt, "mus_FIvy", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
 		
-		[mus_NextTime, "mus_NextTime", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_StandProud, "mus_Stand", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_HonorarySonic, "mus_Sonic", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_NextTime, "mus_NextTime", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 120],
+		[mus_StandProud, "mus_Stand", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_HonorarySonic, "mus_Sonic", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 165],
 		
-		[mus_BeenBetter, "mus_BeenBetter", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_YouStrong, "mus_YouStrong", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_HonoraryBlaze, "mus_Blaze", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_BeenBetter, "mus_BeenBetter", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 120],
+		[mus_YouStrong, "mus_YouStrong", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
+		[mus_HonoraryBlaze, "mus_Blaze", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 140],
 		
-		[mus_DidYourBest, "mus_YourBest", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_KnewYouHadIt, "mus_InYou", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_HeartsAround, "mus_Hearts", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_DidYourBest, "mus_YourBest", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 120],
+		[mus_KnewYouHadIt, "mus_InYou", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 120],
+		[mus_HeartsAround, "mus_Hearts", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 160],
 		
 		[mus_Diminuendo, "mus_Diminuendo", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
 		[mus_Allegro, "mus_Allegro", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
@@ -1196,15 +1217,15 @@
 		[mus_HijoDePuta, "mus_HijoDePuta", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
 		[mus_JoderSi, "mus_JoderSi", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
 		
-		[mus_KiddinMe, "mus_Kiddin", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_NotBad, "mus_NotBad", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_TalkinAbout, "mus_Talkin", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_KiddinMe, "mus_Kiddin", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 120],
+		[mus_NotBad, "mus_NotBad", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 186],
+		[mus_TalkinAbout, "mus_Talkin", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 140],
 		
 		[mus_BrokenChaos, "mus_BrokenChaos", [spr_AlbumPlaceholder, "alb_Bullshit"], true],
 		
-		[mus_ShotDown, "mus_Shot", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_ArrightPardner, "mus_Pardner", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
-		[mus_JUSTICE, "mus_JUSTICE", [spr_AlbumPlaceholder, "alb_Bullshit"], false],
+		[mus_ShotDown, "mus_Shot", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 60],
+		[mus_ArrightPardner, "mus_Pardner", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 120],
+		[mus_JUSTICE, "mus_JUSTICE", [spr_AlbumPlaceholder, "alb_Bullshit"], false, 120],
 	]
 	
 	global.CustomJukeboxPlaylist = [
@@ -1421,6 +1442,7 @@
 	global.EnemyCount = 0;
 	global.CustomMus = false
 	global.CustomMusic = noone;
+	global.EnemyCountCheck = 0;
 	
 	global.Secrets = 0;
 	global.MusicSecret = false;
@@ -1444,15 +1466,15 @@
 	
 		//Mind Levels (I keep switchin' between "Mind" and "Head." I don't fuckin' know why.)
 		{ //MIND Level 1
-			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind1", level_Num: 1, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed1, levelForced: false,
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind", level_Num: 1, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed1, levelForced: false,
 		
 			rankS_Time: 140, rankA_Time: 150, rankB_Time: 205, rankC_Time: 225, rankD_Time: 250, rankF_Time: 320,
 			
-			rankS_Score: 125000, rankA_Score: 100000, rankB_Score: 65000, rankC_Score: 30000, rankD_Score: 10000,
+			rankS_Score: 120000, rankA_Score: 100000, rankB_Score: 65000, rankC_Score: 30000, rankD_Score: 10000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 275,
+			rings: 0, rings_Rank: 0, rankS_Ring: 260,
 			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 30,
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 28,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1478,15 +1500,15 @@
 		},
 	
 		{ //MIND Level 2
-			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed2, levelForced: false,
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind", level_Num: 2, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed2, levelForced: false,
 		
 			rankS_Time: 205, rankA_Time: 215, rankB_Time: 230, rankC_Time: 250, rankD_Time: 315, rankF_Time: 340,
 			
-			rankS_Score: 180000, rankA_Score: 130000, rankB_Score: 80000, rankC_Score: 55000, rankD_Score: 30000,
+			rankS_Score: 150000, rankA_Score: 120000, rankB_Score: 80000, rankC_Score: 55000, rankD_Score: 30000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 275,
+			rings: 0, rings_Rank: 0, rankS_Ring: 270,
 			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 50,
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 45,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1512,11 +1534,11 @@
 		},
 		
 		{ //MIND Level 3
-			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind2", level_Num: 3, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed3, levelForced: false,
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind", level_Num: 3, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed3, levelForced: false,
 		
-			rankS_Time: 135, rankA_Time: 145, rankB_Time: 200, rankC_Time: 220, rankD_Time: 245, rankF_Time: 315,
+			rankS_Time: 145, rankA_Time: 155, rankB_Time: 210, rankC_Time: 230, rankD_Time: 255, rankF_Time: 325,
 			
-			rankS_Score: 75000, rankA_Score: 55000, rankB_Score: 35000, rankC_Score: 15000, rankD_Score: 5000,
+			rankS_Score: 65000, rankA_Score: 50000, rankB_Score: 30000, rankC_Score: 10000, rankD_Score: 5000,
 			
 			rings: 0, rings_Rank: 0, rankS_Ring: 350,
 			
@@ -1550,7 +1572,7 @@
 		
 			rankS_Time: 330, rankA_Time: 340, rankB_Time: 355, rankC_Time: 415, rankD_Time: 440, rankF_Time: 510,
 			
-			rankS_Score: 210000, rankA_Score: 135000, rankB_Score: 85000, rankC_Score: 60000, rankD_Score: 35000,
+			rankS_Score: 200000, rankA_Score: 135000, rankB_Score: 85000, rankC_Score: 60000, rankD_Score: 35000,
 			
 			rings: 0, rings_Rank: 0, rankS_Ring: 425, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
 			

@@ -9,7 +9,7 @@ colorRed = 0;
 colorGreen = 0;
 colorBlue = 0;
 
-division = 1;
+division = 0.75;
 
 target_x = 0;
 target_y = 0;

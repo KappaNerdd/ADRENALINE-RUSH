@@ -112,10 +112,10 @@ var _camY = 0;
 		
 		draw_sprite_ext(spr_CharSelectWhiteCircle, 0, _camX + 384, _camY + bottomShitY - 120, circleScale, circleScale, 0, c_white, 1);
 		
-		draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesFrames, _camX + srSpikesX, _camY, 2, 2, 0, global.fullRGB, 1);
-		draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 19, _camX + srSpikesNegaX, _camY, -2, 2, 0, global.fullRGB, 1);
-		draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesFrames, _camX + srSpikesX, _camY, 2, 2, 0, c_white, confirmedOpacity);
-		draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 19, _camX + srSpikesNegaX, _camY, -2, 2, 0, c_white, confirmedOpacity);
+		draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesFrames, _camX + srSpikesX, _camY, 1, 12, 0, global.fullRGB, 1);
+		draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 20, _camX + srSpikesNegaX, _camY, -1, 12, 0, global.fullRGB, 1);
+		draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesFrames, _camX + srSpikesX, _camY, 1, 12, 0, c_white, confirmedOpacity);
+		draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 20, _camX + srSpikesNegaX, _camY, -1, 12, 0, c_white, confirmedOpacity);
 		
 		draw_sprite_ext(spr_CharSelectBottom, 0, _camX, _camY + bottomShitY, 1.47977, 1, 0, global.fullRGB, 1);
 		draw_sprite_ext(spr_CharSelectBottom, 0, _camX, _camY + bottomShitY, 1.47977, 1, 0, c_white, confirmedOpacity);
@@ -329,5 +329,14 @@ var _camY = 0;
 		
 		draw_sprite_ext(spr_CharSelectBullshit, 0, _camX + 224 + 64, _camY + askGirlyY + 108, 2, 2, 0, _cellCol1, 1);
 		draw_sprite_ext(spr_CharSelectBullshit, 1, _camX + 224 + 256, _camY + askGirlyY + 108, 2, 2, 0, _cellCol2, 1);
+	#endregion
+	
+	#region //Char Disc
+		draw_sprite_ext(_charBox2, charBoxFrames, _camX + 224 - 128, _camY + charDiscY, 18, 5, 0, c_grey, 1);
+		draw_sprite_ext(spr_TextboxTrans, charBoxFrames, _camX + 224 - 128, _camY + charDiscY, 18, 5, 0, c_white, 1);
+		
+		draw_set_halign(fa_center);
+			draw_text_ext_transformed(_camX + 384, _camY + charDiscY + 12, scr_LocalText("game_CharDisc"), 24, 550, 1, 1, 0);
+		draw_set_halign(fa_left);
 	#endregion
 #endregion

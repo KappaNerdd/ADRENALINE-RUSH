@@ -180,34 +180,45 @@ if !confirm {
 	
 			#region //Custom Music
 				if right_Key_Once && chosen && !jukebox {
-					/*var _chooseSpeed = global.speedStageData[chosenSpeed];
+					var _chooseSpeed = global.speedStageData[chosenSpeed];
 					
 					if _chooseSpeed.complete {
 						if jukeCheck == 0 {
-							jukeCheck++;
-							obj_SFXManager.homingLockOn = true;
+							if global.NormTrack != noone {
+								jukeCheck++;
+								obj_SFXManager.homingLockOn = true;
+							} else {
+								obj_SFXManager.menuCancel = true;
+								scr_ULTRATEXT("freeplay_MTNorm");
+								
+								if global.CustTrack != noone {
+									jukeCheck = 2;
+								}
+							}
 						} else if jukeCheck == 1 {
-							if array_length(global.CustomJukeboxPlaylist) > 0  {
+							if global.CustTrack != noone {
 								jukeCheck++;
 								obj_SFXManager.homingLockOn = true;
 							} else {
 								scr_ULTRATEXT("freeplay_MTJuke");
 								jukeCheck = 0;
+								obj_SFXManager.menuCancel = true;
 							}
 						} else {
 							jukeCheck = 0;
+							obj_SFXManager.homingLockOn = true;
 						}
 					} else {
 						obj_SFXManager.menuCancel = true;
-					}*/
+					}
 				}
 			#endregion
 	
 			#region //Replay Button
 				if !speedStage && !actionStage {
 					if action1_Key {
-						//instance_create_depth(x, y, depth, obj_Boombox);
-						//obj_SFXManager.clench = true;
+						instance_create_depth(x, y, depth, obj_Boombox);
+						obj_SFXManager.clench = true;
 					}
 				} else if speedStage && chosen {
 					var _dir = working_directory + "/replay" + string(global.speedStageData[global.SpeedSelected].folder_Name);

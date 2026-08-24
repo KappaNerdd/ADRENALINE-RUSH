@@ -270,8 +270,8 @@ if srSpikeFrames >= 20 {
 }
 
 
-draw_sprite_ext(srSpikes, srSpikeFrames, 0, 0, 2, 2, 0, fullCol, 1);
-draw_sprite_ext(srSpikes, -srSpikeFrames + (20), 768, 0, -2, 2, 0, fullCol, 1);
+draw_sprite_ext(srSpikes, srSpikeFrames, 0, 0, 1, 12, 0, fullCol, 1);
+draw_sprite_ext(srSpikes, -srSpikeFrames + (20), 768, 0, -1, 12, 0, fullCol, 1);
 
 draw_sprite_ext(srBlock, 0, 0, -70, 1.2, 1, 0, fullCol, 1);
 draw_sprite_ext(srBlock, 0, 0, 502, 1.2, -1, 0, fullCol, 1);

@@ -69,7 +69,7 @@ x = -1000000;
 
 #region //Sonic Rush Spikes
 	if global.PlayerChar == 0 or global.MIND {
-		srSpikes = spr_SonicRush_Spikes_Head;
+		srSpikes = spr_SonicRushSpikesHead;
 	} else {
 		srSpikes = spr_SonicRushSpikesNorm;
 	}

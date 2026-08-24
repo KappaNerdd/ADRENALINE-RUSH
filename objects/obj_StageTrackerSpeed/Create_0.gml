@@ -18,6 +18,8 @@ if !global.FreeFall {
 	global.TargetX = 0;
 	global.TargetY = 0;
 	
+	global.EnemyCountCheck = 0;
+	
 	if !global.LevelForced {
 		with(instance_create_depth(-10000000, 0, 0, obj_SonicRushIntroCard)) {
 			kysTimer = 240;
@@ -49,10 +51,8 @@ if !global.FreeFall {
 		set_song_ingame(playTrack);
 	} else if global.Jukebox == 1 {
 		set_song_ingame(global.JukeboxPlaylist[global.JukeBoxChoice][0]);
-	} else {
-		var _newJuke = audio_create_stream(global.CustomJukeboxPlaylist[global.CustomJukeChoice]);
-	
-		set_song_ingame(_newJuke);
+	} else {	
+		set_song_ingame(global.CustTrack);
 	}
 
 	scr_CreateSpeedHUD();

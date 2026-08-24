@@ -18,6 +18,7 @@ global.BaseScale = 0;
 global.BaseSpikes = 0;
 
 scr_MusicTag();
+scr_BPMCreate(165);
 set_song_ingame(mus_RoundNRound_Loop);
 
 beats = 165;

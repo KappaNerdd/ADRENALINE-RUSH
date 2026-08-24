@@ -178,6 +178,10 @@ if !completed {
 					obj_SFXManager.menuPop = true;
 					
 					global.Jukebox = global.JukeCheck;
+					
+					if global.Freeplay {
+						global.Health = global.MaxHealth;
+					}
 				}
 				
 				if instance_exists(obj_InputRecorder) {

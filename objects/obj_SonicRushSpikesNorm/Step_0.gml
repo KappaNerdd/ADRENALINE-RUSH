@@ -2,13 +2,13 @@ scr_ShiftRGB();
 
 if room != rm_CharSelect {
 	if global.PlayerChar == 0 {
-		sprite_index = spr_SonicRush_Spikes_Head;
+		sprite_index = spr_SonicRushSpikesHead;
 	} else {
 		sprite_index = spr_SonicRushSpikesNorm;
 	}
 } else {
 	if global.SelectedPlayer == 0 {
-		sprite_index = spr_SonicRush_Spikes_Head;
+		sprite_index = spr_SonicRushSpikesHead;
 	} else {
 		sprite_index = spr_SonicRushSpikesNorm;
 	}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_DRControl",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_DRControl",
+  "parent":{
+    "name":"DELTARUNE",
+    "path":"folders/Scripts/DELTARUNE.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

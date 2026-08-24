@@ -10,6 +10,8 @@ if global.PlayerExtraLives > 0 {
 		instance_create_depth(x, y, depth, obj_RoomTransitionSEGACheckpoint);
 	} else {
 		instance_create_depth(x, y, depth, obj_RoomTransitionSEGARestart);
+		global.EnemyCount -= global.EnemyCountCheck;
+		global.EnemyCountCheck = 0;
 	}
 	
 	global.Health = global.MaxHealth;
@@ -21,9 +23,7 @@ obj_Player.yspd = 0;
 obj_Player.can_Move = true;
 obj_Player.playerHurt = false;
 	
-if obj_Player.boostEnergy < 100 {
-	obj_Player.boostEnergy = 100;
-}
+scr_SetEnergyPlayer(100, "both");
 
 if instance_exists(obj_RedDeath) {
 	instance_destroy(obj_RedDeath);

@@ -1,5 +1,7 @@
 if hudTimer > 0 {
 	hudTimer -= 1;
+} else {
+	instance_destroy();
 }
 
 if !global.SimplifyVFX {
@@ -14,10 +16,3 @@ if !global.SimplifyVFX {
 	}
 }
 
-if hudTimer <= 0 {
-	instance_destroy();
-} else {
-	if hudTimer > 60 {
-		visible = !global.DisableHUD;
-	}
-}

@@ -10,8 +10,8 @@
   "name":"obj_DRFountainSmoke",
   "overriddenProperties":[],
   "parent":{
-    "name":"Head",
-    "path":"folders/Objects/Particles/Smoke/Head.yy",
+    "name":"Particles",
+    "path":"folders/Objects/DELTARUNE/Particles.yy",
   },
   "parentObjectId":null,
   "persistent":false,

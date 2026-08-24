@@ -16,9 +16,6 @@ if setGUI {
 	depth = -10000;
 }
 
-textbox_x = _camX;
-textbox_y = _camY + 300;
-
 txtb_spr_w = sprite_get_width(txtb_spr[page]);
 txtb_spr_h = sprite_get_height(txtb_spr[page]);
 txtb_XFull = textbox_width / txtb_spr_w + 0.15;
@@ -30,10 +27,12 @@ scr_Defaults_for_Text();
 #region //Setup
 	if !setup && !setupComplete {
 		setup = true;
+		scr_SetCharSpeedMove(false, false, true);
+		scr_SetCharDRMove(false, false, true, true);
 		
 		if instance_exists(obj_Player) {
-			obj_Player.can_MoveFULL = false;
-			obj_Player.can_Move = false;
+			obj_Player.action2_Key = false;
+			obj_Player.action2_Key_Held = false;
 		}
 	
 		draw_set_font(global.font_main);
@@ -394,20 +393,16 @@ scr_Defaults_for_Text();
 	if setup {
 		_textboxWidth = 728;
 	
-		if instance_exists(obj_Player) {
-			obj_Player.can_MoveFULL = false;
-			obj_Player.can_Move = false;
-		}
+		scr_SetCharSpeedMove(false, false, true);
+		scr_SetCharDRMove(false, false, true, true);
 	} else if !setup && setupComplete {
 		_textboxWidth = 0;
 	
 		if starterText_Width <= 0.5 {
 			instance_destroy();
 		
-			if instance_exists(obj_Player) {
-				obj_Player.can_MoveFULL = true;
-				obj_Player.can_Move = true;
-			}
+			scr_SetCharSpeedMove(true, true);
+			scr_SetCharDRMove(true, true);
 		}
 	}
 
@@ -714,7 +709,6 @@ scr_Defaults_for_Text();
 		}
 	}
 
-
 	//Apply Gravity
 	if !increaseY {
 		if yChange < 0 {
@@ -774,10 +768,12 @@ scr_Defaults_for_Text();
 #endregion
 
 #region //Back of textbox
-	draw_sprite_ext(spr_TextboxHead, 0, _txtb_x, _txtb_y + textboxYChange, starterText_Width/txtb_spr_w + 0.15, textbox_height/txtb_spr_h, 0, c_white, 1);
-	draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x, _txtb_y + textboxYChange, starterText_Width/txtb_spr_w + 0.15, textbox_height/txtb_spr_h, 0, c_white, 0.5);
-	draw_sprite_ext(spr_TextboxTrans, 0, _txtb_x, _txtb_y + textboxYChange, starterText_Width/txtb_spr_w + 0.15, textbox_height/txtb_spr_h, 0, c_white, 1);
-
+	if makeTextbox {
+		draw_sprite_ext(spr_TextboxHead, 0, _txtb_x, _txtb_y + textboxYChange, starterText_Width/txtb_spr_w + 0.15, textbox_height/txtb_spr_h, 0, c_white, 1);
+		draw_sprite_ext(txtb_spr[page], txtb_img, _txtb_x, _txtb_y + textboxYChange, starterText_Width/txtb_spr_w + 0.15, textbox_height/txtb_spr_h, 0, c_white, 0.5);
+		draw_sprite_ext(spr_TextboxTrans, 0, _txtb_x, _txtb_y + textboxYChange, starterText_Width/txtb_spr_w + 0.15, textbox_height/txtb_spr_h, 0, c_white, 1);
+	}
+	
 	//Options
 	up_key = up_Key_Once;
 	down_key = down_Key_Once;
@@ -790,7 +786,6 @@ scr_Defaults_for_Text();
 		if (down_Key_Once or up_Key_Once) && !clamp(option_pos, 0, option_number - 1) {
 			obj_SFXManager.menuTap = true;
 		}
-	
 	
 		//Drawing options
 		var _op_space = 32;
@@ -899,7 +894,7 @@ scr_Defaults_for_Text();
 		}
 	
 		//The text
-		draw_text_transformed_color(_camX + 47 + char_x[c, page] - 10 + _shake_x + _cirX, _camY + 331 + char_y[c, page] - 17 + _float_y + _shake_y + _cirY, char[c, page], text_Size[c, page] * _tScale, text_Size[c, page] * _tScale, 0, col_1[c, page], col_2[c, page], col_3[c, page], col_4[c, page], text_Alpha[c, page]);
+		draw_text_transformed_color(textbox_x + 41 + char_x[c, page] - 10 + _shake_x + _cirX, textbox_y + 31 + char_y[c, page] - 20 + _float_y + _shake_y + _cirY, char[c, page], text_Size[c, page] * _tScale, text_Size[c, page] * _tScale, 0, col_1[c, page], col_2[c, page], col_3[c, page], col_4[c, page], text_Alpha[c, page]);
 	}
 	
 	if draw_char == text_length[page] && !setupComplete {
@@ -912,7 +907,7 @@ scr_Defaults_for_Text();
 			iconIndex = 0;
 		}
 		
-		draw_sprite_ext(_charCheck3, iconIndex, _camX + 720, _camY + 395, 1, 1, 0, c_white, 1);
+		draw_sprite_ext(_charCheck3, iconIndex, textbox_x + 720, textbox_y + 95, 1, 1, 0, c_white, 1);
 	}
 	
 	//Character Name

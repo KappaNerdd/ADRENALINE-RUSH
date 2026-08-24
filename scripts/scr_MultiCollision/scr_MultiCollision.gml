@@ -628,10 +628,12 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 			#region //Power-Ups
 				var _power = instance_place(x, y, obj_PowerOrb);
 				var _stomped = instance_find(obj_StompVFX, 0);
+				var _id = id;
 				
 				if _power {
 					if _power.active {
 						with(_power) {
+							giveCharPower = other.id;
 							event_user(0);
 						}
 	
@@ -648,6 +650,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 						if _otherPower && image_index >= 2 {
 							if _otherPower.active {
 								with(_otherPower) {
+									giveCharPower = _id;
 									event_user(0);
 								}
 							}
@@ -670,17 +673,6 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 						global.CollectedLives += 1;
 						obj_PlayerExtraLives.lifeScale = 1.5;
 						obj_SFXManager.funkinCheckpoint = true;
-					} else {
-						obj_SFXManager.rushModeGain = true;
-						
-						if !rushMode {
-							rushMode = true;
-						} else {
-							obj_SFXManager.rushModeTrick = true;
-						}
-						
-						boostEnergy = 300;
-						rushModeTimer = rushModeFrames;
 					}
 					
 					instance_destroy(_extraLife);
@@ -699,7 +691,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 							checkSpringB = noone;
 							
 							if _ramp.giveScore {
-								scr_BonusPoints(5000);
+								scr_BonusPoints(2000);
 							}
 							
 							#region //Actual Function
@@ -884,7 +876,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 							obj_SFXManager.trickPanel = true;
 							
 							if _launchRing.giveScore {
-								scr_BonusPoints(5000);
+								scr_BonusPoints(2000);
 							}
 							
 							sideLaunch = false;
@@ -959,7 +951,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 					if _block.giveScore {
 						_block.giveScore = false;
 						getScore = true;
-						scr_BonusPoints(_block.bonus);
+						scr_BonusPoints(2000);
 					}
 				}
 			#endregion
@@ -1430,26 +1422,26 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 				var _spikeLeft = instance_place(x - 4, y, obj_Spikes);
 				var _spikeRight = instance_place(x + 4, y, obj_Spikes);
 				
-				if _spikeDown {
+				if _spikeDown && yspd >= 0 {
 					if _spikeDown.image_angle == 0 && PlayerCollisionObjectBottom(x, y + 1, angle, maskMid, obj_Spikes) {
 						scr_SpikeHurt();
 					}
 				}
 				
-				if _spikeUp {
+				if _spikeUp && yspd < 0 {
 					if _spikeUp.image_angle == 180 && PlayerCollisionObjectTop(x, y - sensorTopDistance - 60, angle, maskBig, obj_Spikes) && yspd < 0 {
 						scr_SpikeHurt();
 					}
 				}
 				
 				if _spikeLeft {
-					if _spikeLeft.image_angle == 270 && (PlayerCollisionObjectLeft(x - 3, y, angle, maskMid, obj_Spikes) or PlayerCollisionObjectLeft(x - 3, y - sensorTopDistance, angle, maskMid, obj_Spikes)) && vel <= 0 {
+					if (_spikeLeft.image_angle == 270 or _spikeLeft.image_angle == -90) && (PlayerCollisionObjectLeft(x - 3, y, angle, maskMid, obj_Spikes) or PlayerCollisionObjectLeft(x - 3, y - sensorTopDistance, angle, maskMid, obj_Spikes)) && vel <= 0 {
 						scr_SpikeHurt();
 					}
 				}
 				
 				if _spikeRight {
-					if _spikeRight.image_angle == 90 && (PlayerCollisionObjectRight(x + 2, y, angle, maskMid, obj_Spikes) or PlayerCollisionObjectRight(x + 2, y - sensorTopDistance, angle, maskMid, obj_Spikes)) && vel >= 0 {
+					if (_spikeRight.image_angle == 90 or _spikeRight.image_angle == -270) && (PlayerCollisionObjectRight(x + 2, y, angle, maskMid, obj_Spikes) or PlayerCollisionObjectRight(x + 2, y - sensorTopDistance, angle, maskMid, obj_Spikes)) && vel >= 0 {
 						scr_SpikeHurt();
 					}
 				}
@@ -1531,7 +1523,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 						obj_HeadBeam.savedY = obj_HeadBeam.y;
 					}
 	
-					scr_BonusPoints(2000);
+					scr_BonusPoints(2500);
 					scr_HealthPlayer(100000);
 					scr_HealingEffect(self);
 					scr_DRDamageNumbers(100000, x, y, 120, c_lime);
@@ -1545,12 +1537,8 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 	
 					_checkpoint.sprColor = c_gray;
 					_checkpoint.active = true;
-					boostEnergy += 50;
-	
-					if rushMode {
-						rushModeTimer = rushModeFrames;
-						obj_SFXManager.rushModeTrick = true;
-					}
+					
+					scr_EnergyPlayer(50, "both");
 	
 					obj_SFXManager.rushCheckpoint = true;
 	
@@ -1589,6 +1577,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 							obj_SFXManager.deltaFall = true;
 							playerHurt = true;
 							can_Move = false;
+							rushModeTimer = 0;
 							
 							instance_create_depth(x, y, depth, obj_RoomTransitionSEGACheckpoint);
 							scr_SetCamFollow(noone);
@@ -1617,7 +1606,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 	
 						if rushMode {
 							rushMode = false;
-							boostEnergy = 100;
+							scr_SetEnergyPlayer(100, "both");
 							obj_SFXManager.rushModeLose = true;
 						}
 					}
@@ -2061,7 +2050,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 }
 
 
-function scr_Landing(_type = "hard") {
+function scr_Landing(_type = "hard") { //Oh, I'm hard. -Dino, Rhymestyle
 	if global.Footstep {
 		if _type == "grass" {
 			obj_SFXManager.landGrass = true;

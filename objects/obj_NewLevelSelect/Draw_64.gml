@@ -460,7 +460,7 @@ display_set_gui_size(768, 432);
 			#endregion
 			
 			#region //Custom Music (I'm Shadow Freddy. I'm so awesome and black.)
-				var _custCol = c_grey;
+				var _custCol = c_dkgrey;
 				var _custText = "freeplay_JukeOff";
 				
 				if jukeCheck == 1 {
@@ -474,11 +474,11 @@ display_set_gui_size(768, 432);
 				}
 			
 				draw_set_halign(fa_right);
-					//draw_text_transformed_color(703, 173, scr_LocalText(_custText), 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
-					//draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 623, 148, 1, 1, 0, c_black, chosenTextAlpha);
+					draw_text_transformed_color(703, 183, scr_LocalText(_custText), 1, 1, 0, c_black, c_black, c_black, c_black, chosenTextAlpha);
+					draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 623, 158, 1, 1, 0, c_black, chosenTextAlpha);
 				
-					//draw_text_transformed_color(700, 170, scr_LocalText(_custText), 1, 1, 0, c_white, c_white, _custCol, _custCol, chosenTextAlpha);
-					//draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 620, 145, 1, 1, 0, _custCol, chosenTextAlpha);
+					draw_text_transformed_color(700, 180, scr_LocalText(_custText), 1, 1, 0, c_white, c_white, _custCol, _custCol, chosenTextAlpha);
+					draw_sprite_ext(_button, obj_CustomRightKeySpeed.image_index, 620, 155, 1, 1, 0, _custCol, chosenTextAlpha);
 				draw_set_halign(fa_left);
 			#endregion
 		#endregion
@@ -495,8 +495,8 @@ display_set_gui_size(768, 432);
 			draw_text_transformed_color(384, 353, _press, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
 			draw_text_transformed_color(384, 350, _press, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
 			
-			//draw_text_transformed_color(384, 378, _press2, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
-			//draw_text_transformed_color(384, 375, _press2, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
+			draw_text_transformed_color(384, 378, _press2, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
+			draw_text_transformed_color(384, 375, _press2, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
 			
 			draw_text_transformed_color(384, 403, _press3, 1, 1, 0, c_black, c_black, c_black, c_black, changeCharAlpha);
 			draw_text_transformed_color(384, 400, _press3, 1, 1, 0, c_white, c_white, c_white, c_white, changeCharAlpha);
@@ -513,6 +513,6 @@ display_set_gui_size(768, 432);
 		srSpikesFrames = 0;
 	}
 
-	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesFrames, 0 - srSpikesX, 0, 2, 2, 0, global.fullRGB, 1);
-	draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 20, 769 + srSpikesX, 0, -2, 2, 0, global.fullRGB, 1);
+	draw_sprite_ext(spr_SonicRushSpikesNorm, srSpikesFrames, 0 - srSpikesX, 0, 1, 12, 0, global.fullRGB, 1);
+	draw_sprite_ext(spr_SonicRushSpikesNorm, -srSpikesFrames + 20, 769 + srSpikesX, 0, -1, 12, 0, global.fullRGB, 1);
 #endregion

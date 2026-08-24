@@ -28,7 +28,12 @@ if fullVelTimer > 0 {
 				action1_Key = false;
 			}
 			
-			action1_Key_Held = true;
+			if other.boostingTimer > 60 {
+				action1_Key_Held = true;
+			} else {
+				action1_Key_Held = false;
+			}
+			
 			vel = -20;
 		}
 	} else {
@@ -37,7 +42,8 @@ if fullVelTimer > 0 {
 		scr_StopCamDir("v", false);
 		scr_ChangeCamZoom(1, 0.1);
 		global.DisableHUD = false;
-
+		obj_HeadBeam.stopped = false;
+		
 		instance_destroy(createdChar);
 	}
 }

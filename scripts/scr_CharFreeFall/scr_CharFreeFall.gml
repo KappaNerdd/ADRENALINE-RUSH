@@ -358,16 +358,8 @@ function scr_FreeFallControl() {
 				
 				if _twinkLmao > 0 && (hurtTimer < 90 or !playerHurt) { //Now the meme doesn't make sense
 					for(var i = 0; i < _twinkLmao; i++) {
-						global.Rings++;
+						scr_RingsPlayer();
 						instance_create_depth(_twinkList[| i].x + 10, _twinkList[| i].y + 8, depth, obj_GOALRingSparkles);
-					
-						obj_SFXManager.funkinFav = true;
-						
-						if instance_exists(obj_Timer) {
-							obj_Timer.trinket = true;
-							obj_Timer.trinketFrames = 0;
-							obj_Timer.trinketScale = 1.5;
-						}
 					
 						with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
 							var _camX = camera_get_view_x(view_camera[0]);
@@ -389,16 +381,8 @@ function scr_FreeFallControl() {
 				//Lost ones
 				if _twink2 > 0 && (hurtTimer < 90 or !playerHurt) {
 					for(var i = 0; i < _twink2; i++) {
-						global.Rings++;
+						scr_RingsPlayer(1, false);
 						instance_create_depth(_twink2List[| i].x + 10, _twink2List[| i].y + 8, depth, obj_GOALRingSparkles);
-					
-						obj_SFXManager.funkinFav = true;
-						
-						if instance_exists(obj_Timer) {
-							obj_Timer.trinket = true;
-							obj_Timer.trinketFrames = 0;
-							obj_Timer.trinketScale = 1.5;
-						}
 						
 						with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
 							var _camX = camera_get_view_x(view_camera[0]);
@@ -423,41 +407,6 @@ function scr_FreeFallControl() {
 		if can_MoveFULL {
 			x += vel;
 			y += yspd;
-		}
-	
-		//Getting Hurt
-		if fakeHurt {
-			if hurtTimer > 0 {
-				hurtTimer--;
-				
-				if hurtTimer < 150 {
-					playerHurt = false;
-				}
-				
-				if global.SimplifyVFX {
-					image_alpha = 0.5;
-				}
-			
-				if flashTimer > 0 {
-					flashTimer--;
-				} else {
-					if !global.SimplifyVFX {
-						visible = !visible;
-					}
-					
-					flashTimer = 10;
-				}
-			} else {
-				flashTimer = 10;
-				hurtTimer = hurtFrames;
-				fakeHurt = false;
-				visible = true;
-				image_alpha = 1;
-			}
-		} else {
-			flashTimer = 10;
-			hurtTimer = hurtFrames;
-			fakeHurt = playerHurt;
 		}
 	}
 	
@@ -498,6 +447,41 @@ function scr_FreeFallControl() {
 				other.enemyCombo = 0;
 			}
 		}
+	}
+	
+	//Getting Hurt
+	if fakeHurt {
+		if hurtTimer > 0 {
+			hurtTimer--;
+				
+			if hurtTimer < 150 {
+				playerHurt = false;
+			}
+				
+			if global.SimplifyVFX {
+				image_alpha = 0.5;
+			}
+			
+			if flashTimer > 0 {
+				flashTimer--;
+			} else {
+				if !global.SimplifyVFX {
+					visible = !visible;
+				}
+				
+				flashTimer = 10;
+			}
+		} else {
+			flashTimer = 10;
+			hurtTimer = hurtFrames;
+			fakeHurt = false;
+			visible = true;
+			image_alpha = 1;
+		}
+	} else {
+		flashTimer = 10;
+		hurtTimer = hurtFrames;
+		fakeHurt = playerHurt;
 	}
 }
 	

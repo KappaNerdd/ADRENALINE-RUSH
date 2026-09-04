@@ -387,8 +387,8 @@ if !ultrakilled {
 		}
 	#endregion
 } else {
-	boxY = lerp(boxY, -170, 0.15);
-	bgAlph = lerp(bgAlph, 0, 0.15);
+	boxY = lerp(boxY, -170, 0.25);
+	bgAlph = lerp(bgAlph, 0, 0.25);
 	
 	if boxY <= -169.5 {
 		instance_destroy();

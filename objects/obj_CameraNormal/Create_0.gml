@@ -7,7 +7,7 @@ y = floor(obj_Player.y);
 camTrailSpd = 0.25;
 
 
-instance_create_depth(x, y, depth, obj_CameraExtended);
+instance_create_depth(x, y, depth, obj_CameraSpeed);
 instance_destroy();
 
 

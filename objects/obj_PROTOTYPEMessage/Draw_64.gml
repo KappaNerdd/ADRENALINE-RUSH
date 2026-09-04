@@ -2,7 +2,7 @@ display_set_gui_size(640, 360);
 
 draw_set_halign(fa_right);
 	var _prototype = "";
-	var _version = " V0.1.0";
+	var _version = " V0.1.0C";
 
 	if global.FPSOn {
 		draw_text_transformed(640, 0, "PRE-DEMO" + string(_version), 0.5, 0.5, 0);

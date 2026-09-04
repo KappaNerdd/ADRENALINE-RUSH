@@ -33,10 +33,10 @@ creds = [
 	
 	[ //Brandon
 		spr_CredBrandonPlace, 
-		"cred_BranName",
-		"cred_BranType",
-		"cred_BranPos",
-		"cred_BranDesc",
+		"cred_NoOkName",
+		"cred_NoOkType",
+		"cred_NoOkPos",
+		"cred_NoOkDesc",
 		[143, 000, 000],
 	],
 	

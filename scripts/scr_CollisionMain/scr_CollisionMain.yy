@@ -6,7 +6,7 @@
   "name":"scr_CollisionMain",
   "parent":{
     "name":"Bruh",
-    "path":"folders/Scripts/Collisions/Speed/Bruh.yy",
+    "path":"folders/Scripts/Character Data/Speed/Collisions/Bruh.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,8 +6,11 @@ enum DIR {
 }
 
 enum BATTLE {
+	RUN,
+	LAND,
 	ENTER,
 	LEAVE,
+	START,
 	IDLE,
 	ATTACK,
 	PREACT,
@@ -16,5 +19,13 @@ enum BATTLE {
 	ITEM,
 	PREMERCY,
 	MERCY,
-	DEFEND
+	DEFEND,
+	HURT,
+	FALLEN,
+}
+
+enum SOUL {
+	IDLE,
+	HURT,
+	SIL,
 }

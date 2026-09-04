@@ -51,7 +51,7 @@ draw_sprite_ext(global.ConSpr, global.ConS_L, 150, 216, 1, 1, 0, c_white, 1);
 draw_sprite_ext(global.ConSpr, global.ConS_R, 560, 216, 1, 1, 0, c_white, 1);
 
 draw_set_halign(fa_middle);
-	draw_sprite_ext(spr_TextboxULTRAKILL, 0, 384, 217, 13, bioBoxScale, 0, c_white, 0.5);
+	draw_sprite_ext(spr_TextboxULTRAKILL, 0, 384, 217, 13, bioBoxScale, 0, c_white, 0.75);
 	draw_text_ext_transformed_color(384, 4, scr_LocalText(chars[shownChar][5]), 24, 1000, 0.75, 0.75, 0, c_white, c_white, c_white, c_white, charAlpha * bioAlpha);
 draw_set_halign(fa_left);
 

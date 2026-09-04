@@ -6,6 +6,8 @@ if global.Rings >= 999 {
 	global.Rings = 999;
 }
 
+otherRingCount = scr_Approach(otherRingCount, global.Rings, 0.25);
+
 #region //Extra Life 1
 	if global.Rings >= 100 && !extraLife[0] {
 		if global.Freeplay {

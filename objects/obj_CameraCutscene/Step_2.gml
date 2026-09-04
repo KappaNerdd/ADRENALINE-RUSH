@@ -51,5 +51,5 @@ camera_set_view_pos(view_camera[0], finalCamX, finalCamY);
 
 
 if !instance_exists(obj_CutsceneParent) {
-	instance_change(obj_CameraExtended, true);
+	instance_change(obj_CameraSpeed, true);
 }

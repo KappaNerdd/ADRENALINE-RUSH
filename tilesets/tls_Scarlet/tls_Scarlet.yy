@@ -23,8 +23,8 @@
   },
   "spriteNoExport":false,
   "textureGroupId":{
-    "name":"MIND",
-    "path":"texturegroups/MIND",
+    "name":"DELTARUNE",
+    "path":"texturegroups/DELTARUNE",
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

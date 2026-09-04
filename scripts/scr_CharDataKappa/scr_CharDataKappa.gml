@@ -4,6 +4,10 @@ function scr_CharDataKappa() {
 		charR = 010; 
 		charG = 036; 
 		charB = 203;
+	} else {
+		charR = 255;
+		charG = 255;
+		charB = 255;
 	}
 	
 	///-----Number Variables-----///

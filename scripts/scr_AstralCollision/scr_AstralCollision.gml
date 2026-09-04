@@ -1,17 +1,19 @@
 function PlayerCollision(_x, _y) {
 	var _extraSense = 0;
 	
+	//Check for Main Solids
 	if place_meeting(_x, _y, obj_Solid)
-	|| (place_meeting(_x, _y, obj_SolidA) && terrainLayer == 0)
-	|| (place_meeting(_x, _y, obj_SolidB) && terrainLayer == 1) {
+	or (place_meeting(_x, _y, obj_SolidA) && terrainLayer == 0)
+	or (place_meeting(_x, _y, obj_SolidB) && terrainLayer == 1) {
 		onPlatform = false;
 		return true;
 	}
 	
 	//Check for Rails
-	if ground && (place_meeting(_x, _y + _extraSense, obj_RailParent)
-	|| (place_meeting(_x, _y + _extraSense, obj_RailParentA) && terrainLayer == 0) 
-	|| (place_meeting(_x, _y + _extraSense, obj_RailParentB) && terrainLayer == 1)) {
+	if (place_meeting(_x, _y, obj_RailParent)
+	or (place_meeting(_x, _y, obj_RailParentA) && terrainLayer == 0) 
+	or (place_meeting(_x, _y, obj_RailParentB) && terrainLayer == 1))
+	&& ground {
 		onPlatform = false;
 		return true;
 	}
@@ -219,8 +221,8 @@ function PlayerCollisionSlope(argument0, argument1, argument2, argument3) {
 	sensorCos = dcos(argument2);
 	sensorSin = dsin(argument2);
 
-	sensorX = floor(argument0 + sensorSin * 23);
-	sensorY = floor(argument1 + sensorCos * 23);
+	sensorX = floor(argument0 + sensorSin * 22);
+	sensorY = floor(argument1 + sensorCos * 22);
 
 	// Test collision
 	collisionTest = PlayerCollision(sensorX, sensorY);
@@ -301,7 +303,7 @@ function PlayerCollisionLeftEdge(argument0, argument1, argument2) {
 		return true;
 	}
 	
-	if collision_line(sensorX, sensorY, argument0 - sensorCos * 8 + sensorSin * 36, argument1 + sensorSin * 8 + sensorCos * 36, obj_RailParent, 1, 0) {
+	if collision_line(sensorX, sensorY, argument0 - sensorCos * 8 + sensorSin * 36, argument1 + sensorSin * 8 + sensorCos * 36, obj_RailParent, 1, 0) && ground {
 		railGrind = true;
 	    return true;
 	}
@@ -320,7 +322,7 @@ function PlayerCollisionLeftEdge(argument0, argument1, argument2) {
 	            return true;
 	        }
 			
-			if collision_line(sensorX, sensorY, argument0 - sensorCos * 8 + sensorSin * 36, argument1 + sensorSin * 8 + sensorCos * 36, obj_RailParentA, 1, 0) {
+			if collision_line(sensorX, sensorY, argument0 - sensorCos * 8 + sensorSin * 36, argument1 + sensorSin * 8 + sensorCos * 36, obj_RailParentA, 1, 0) && ground {
 				railGrind = true;
 				return true;
 			}
@@ -333,7 +335,7 @@ function PlayerCollisionLeftEdge(argument0, argument1, argument2) {
 	            return true;
 	        }
 			
-			if collision_line(sensorX, sensorY, argument0 - sensorCos * 8 + sensorSin * 36, argument1 + sensorSin * 8 + sensorCos * 36, obj_RailParentB, 1, 0) {
+			if collision_line(sensorX, sensorY, argument0 - sensorCos * 8 + sensorSin * 36, argument1 + sensorSin * 8 + sensorCos * 36, obj_RailParentB, 1, 0) && ground {
 				railGrind = true;
 				return true;
 			}
@@ -414,7 +416,7 @@ function PlayerCollisionRightEdge(argument0, argument1, argument2) {
 		return true;
 	}
 	
-	if collision_line(sensorX, sensorY, argument0 + sensorCos * 8 + sensorSin * 36, argument1 - sensorSin * 8 + sensorCos * 36, obj_RailParent, 1, 0) {
+	if collision_line(sensorX, sensorY, argument0 + sensorCos * 8 + sensorSin * 36, argument1 - sensorSin * 8 + sensorCos * 36, obj_RailParent, 1, 0) && ground {
 	    railGrind = true;
 		return true;
 	}
@@ -433,7 +435,7 @@ function PlayerCollisionRightEdge(argument0, argument1, argument2) {
 				return true;
 	        }
 			
-			if collision_line(sensorX, sensorY, argument0 + sensorCos * 8 + sensorSin * 36, argument1 - sensorSin * 8 + sensorCos * 36, obj_RailParentA, 1, 0) {
+			if collision_line(sensorX, sensorY, argument0 + sensorCos * 8 + sensorSin * 36, argument1 - sensorSin * 8 + sensorCos * 36, obj_RailParentA, 1, 0) && ground {
 				railGrind = true;
 				return true;
 			}
@@ -446,7 +448,7 @@ function PlayerCollisionRightEdge(argument0, argument1, argument2) {
 				return true;
 	        }
 			
-			if collision_line(sensorX, sensorY, argument0 + sensorCos * 8 + sensorSin * 36, argument1 - sensorSin * 8 + sensorCos * 36, obj_RailParentB, 1, 0) {
+			if collision_line(sensorX, sensorY, argument0 + sensorCos * 8 + sensorSin * 36, argument1 - sensorSin * 8 + sensorCos * 36, obj_RailParentB, 1, 0) && ground {
 				railGrind = true;
 				return true;
 			}
@@ -499,6 +501,7 @@ function PlayerCollisionCache() {
 	var _x, _y;
 	_x = floor(x);
 	_y = floor(y);
+	
 	//Cache collisions
 	edgeCollision = PlayerCollisionLeftEdge(_x, _y, angle) && PlayerCollisionRightEdge(_x, _y, angle);
 	bottomCollision = PlayerCollisionBottom(_x, _y, angle, maskBig);
@@ -537,6 +540,7 @@ function PlayerGetAngle(_x, _y, _angle) {
 	
 	_collisionLeft = false;
 	_collisionRight = false;
+	
 	// Check if it is colliding with the ground
 	// Now, perform the checking. Push down the two points in order to touch the floor
 	repeat (max(20, abs(vel) + 4)) {
@@ -634,6 +638,11 @@ function PlayerHandleLayers() {
 	if PlayerCollisionObjectMain(x, y, obj_SwitchLayerA) {
 		terrainLayer = 0;
 	}
+	
+	//Layer 1
+	if PlayerCollisionObjectMain(x, y, obj_SwitchLayerB) {
+		terrainLayer = 1;
+	}
 
 	//Layer switch
 	if PlayerCollisionObjectMain(x, y, obj_SwitchLayerAlt) {
@@ -658,11 +667,6 @@ function PlayerHandleLayers() {
 		if terrainVel > 0 {
 		    terrainLayer = 0;
 		}
-	}
-
-	//Layer 1
-	if PlayerCollisionObjectMain(x, y, obj_SwitchLayerB) {
-		terrainLayer = 1;
 	}
 }
 	

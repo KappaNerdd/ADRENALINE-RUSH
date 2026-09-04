@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Partner 2 Parent",
-    "path":"folders/Objects/Characters/Partner 2/Partner 2 Parent.yy",
+    "path":"folders/Objects/Characters/Old/Partner 2/Partner 2 Parent.yy",
   },
   "parentObjectId":null,
   "persistent":false,

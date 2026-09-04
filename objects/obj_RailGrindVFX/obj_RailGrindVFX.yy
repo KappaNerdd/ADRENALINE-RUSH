@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_RailGrindVFXKappa",
-    "path":"sprites/spr_RailGrindVFXKappa/spr_RailGrindVFXKappa.yy",
+    "name":"spr_KappaSpeedBreakVFX",
+    "path":"sprites/spr_KappaSpeedBreakVFX/spr_KappaSpeedBreakVFX.yy",
   },
   "spriteMaskId":null,
   "visible":true,

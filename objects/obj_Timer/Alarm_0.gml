@@ -10,3 +10,7 @@ if resetCount {
 		image_speed = 0;
 	}
 }
+
+if !instance_exists(obj_SonicRushIntroCard) {
+	otherRingCount = global.Rings;
+}

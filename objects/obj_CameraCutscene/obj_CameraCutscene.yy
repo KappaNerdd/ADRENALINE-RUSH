@@ -10,8 +10,8 @@
   "name":"obj_CameraCutscene",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/Objects/Cameras/General.yy",
+    "name":"Old",
+    "path":"folders/Objects/Cameras/Old.yy",
   },
   "parentObjectId":{
     "name":"obj_CameraParent",

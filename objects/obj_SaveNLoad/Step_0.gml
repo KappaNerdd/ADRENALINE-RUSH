@@ -38,12 +38,12 @@ global.PlayerTimeSeconds += 1 / 60;
 
 if global.PlayerTimeSeconds < 60 && global.PlayerTimeSeconds > 59.9 {
 	global.PlayerTimeSeconds = 0;
-	global.PlayerTimeMinutes += 1;
+	global.PlayerTimeMinutes++;
 }
 
 if global.PlayerTimeMinutes == 60 {
 	global.PlayerTimeMinutes = 0;
-	global.PlayerTimeHours += 1;
+	global.PlayerTimeHours++;
 }
 
 
@@ -75,8 +75,8 @@ if global.Death {
 		}
 	}
 } else {
-	global.DeathCountdown = 120;
-	global.GameOverCountdown = 180;
+	global.DeathCountdown = 60;
+	global.GameOverCountdown = 120;
 }
 
 //If you DON'T have extra lives

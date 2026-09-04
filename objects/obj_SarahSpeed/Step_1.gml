@@ -298,7 +298,7 @@ if can_MoveFULL {
 
 	#region //Double Jump
 		if jump_Key && jumpinTimer <= 0 && !playerHurt && !ground && !wallJump && !hover && jumping && !dJumping && !stomping && !afterRailJump && !rampRing && !stomped && !global.Death && yspd > -3 {
-			yspd = -jspd;
+			scr_JumpManipulate();
 			
 			realJumping = true;
 			dJumping = true;

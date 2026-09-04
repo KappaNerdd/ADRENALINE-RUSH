@@ -10,8 +10,8 @@
   "name":"obj_CameraAction",
   "overriddenProperties":[],
   "parent":{
-    "name":"Action",
-    "path":"folders/Objects/Cameras/Action.yy",
+    "name":"Cameras",
+    "path":"folders/Objects/Cameras.yy",
   },
   "parentObjectId":{
     "name":"obj_CameraParent",

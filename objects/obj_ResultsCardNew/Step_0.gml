@@ -133,9 +133,7 @@ if !completed {
 		if rankSize > 0 {
 			rankSize -= lowerRankSize;
 			lowerRankSize += 0.025;
-		}
-		
-		if rankSize <= 0 {
+		} else {
 			rankSize = 0;
 			
 			if !rankShook {
@@ -202,27 +200,7 @@ if !completed {
 				
 				with(obj_GhostRecorder) {
 					if other.action3_Key && !saveGhost {
-						var _dir = working_directory + "/ghosts" + string(global.speedStageData[global.SpeedSelected].folder_Name);
-						
-						if ds_exists(ghostRecordList, ds_type_list) {
-							var _wrapper = ds_map_create();
-		
-							ds_map_add_list(_wrapper, "root", ghostRecordList);
-							
-							var _theLot = json_encode(_wrapper);
-							var _recordName = _dir + string(global.speedStageData[global.SpeedSelected].record_File) + ".sav";
-							
-							if file_exists(_recordName) {
-								file_delete(_recordName);
-							}
-							
-							var _recordFile = file_text_open_write(_recordName);
-							
-							file_text_write_string(_recordFile, _theLot);
-							file_text_close(_recordFile);
-							ds_map_destroy(_wrapper);
-						}
-						
+						scr_SaveGhost();
 						obj_SFXManager.clench = true;
 						saveGhost = true;
 						other.ghostGotSaved = true;
@@ -233,10 +211,8 @@ if !completed {
 	}
 } else {
 	if completedTimer > 0 {
-		completedTimer -= 1;
-	}
-	
-	if completedTimer <= 0 {
+		completedTimer--;
+	} else {
 		if instance_exists(obj_GhostRecorder) {
 			instance_destroy(obj_GhostRecorder);
 		}
@@ -258,7 +234,7 @@ if !completed {
 		#endregion
 	
 		#region //Player
-			playerMoveX = lerp(playerMoveX, -600, 0.1);
+			playerMoveX = lerp(playerMoveX, 1200, 0.1);
 		#endregion
 	
 		#region //Side Bar

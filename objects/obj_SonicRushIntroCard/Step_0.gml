@@ -24,7 +24,6 @@ if kysTimer > 0 {
 	if global.LevelForced {
 		obj_Player.can_Move = false;
 		obj_Player.noMoveTimer = 30;
-		obj_Player.rushModeTimer = obj_Player.rushModeFrames;
 	} else {
 		if jump_Key {
 			kysTimer = 0;
@@ -33,6 +32,22 @@ if kysTimer > 0 {
 			whiteAlpha = 0;
 			other.can_MoveFULL = true;
 			other.can_Move = true;
+			
+			if !instance_exists(obj_ActualGhost) {
+				if global.ShowGhost {
+					instance_create_depth(x, y, depth, obj_ActualGhost);
+				}
+			} else {
+				obj_ActualGhost.repeatGhost = true;
+			}
+			
+			if instance_exists(obj_InputRecorder) {
+				if global.Replay {
+					obj_InputRecorder.isPlaying = true;
+				} else {
+					obj_InputRecorder.isRecording = true;
+				}
+			}
 		}
 		
 		obj_Player.can_MoveFULL = false;
@@ -97,10 +112,12 @@ if kysTimer > 0 {
 				}
 			}
 		
-			if !instance_exists(obj_ActualGhost) && !global.LevelForced {
+			if !instance_exists(obj_ActualGhost) {
 				if global.ShowGhost {
 					instance_create_depth(x, y, depth, obj_ActualGhost);
 				}
+			} else {
+				obj_ActualGhost.repeatGhost = true;
 			}
 			
 			finishedCreate = true;

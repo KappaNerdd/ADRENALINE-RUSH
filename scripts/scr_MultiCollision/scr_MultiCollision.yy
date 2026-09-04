@@ -6,7 +6,7 @@
   "name":"scr_MultiCollision",
   "parent":{
     "name":"Other Collision",
-    "path":"folders/Scripts/Collisions/Speed/Other Collision.yy",
+    "path":"folders/Scripts/Character Data/Speed/Collisions/Other Collision.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

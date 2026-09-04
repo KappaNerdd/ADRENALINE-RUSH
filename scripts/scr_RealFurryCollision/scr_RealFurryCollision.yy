@@ -6,7 +6,7 @@
   "name":"scr_RealFurryCollision",
   "parent":{
     "name":"Furry Framework Shit",
-    "path":"folders/Scripts/Collisions/Speed/Furry Framework Shit.yy",
+    "path":"folders/Scripts/Character Data/Speed/Collisions/Furry Framework Shit.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

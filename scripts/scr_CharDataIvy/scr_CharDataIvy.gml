@@ -4,6 +4,10 @@ function scr_CharDataIvy() {
 		charR = 255; 
 		charG = 189; 
 		charB = 000;
+	} else {
+		charR = 255;
+		charG = 255;
+		charB = 255;
 	}
 	
 	///-----Number Variables-----///

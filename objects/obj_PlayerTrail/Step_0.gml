@@ -1,15 +1,5 @@
-image_alpha -= 0.1;
-
-if (image_alpha <= 0) {
+if image_alpha > 0 {
+	image_alpha -= 0.1;
+} else {
 	instance_destroy();
-}
-
-
-
-if lookingTimer > 0 {
-	lookingTimer -= 1;
-}
-
-if !global.SimplifyVFX {
-	visible = !visible;
 }

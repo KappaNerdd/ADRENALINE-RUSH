@@ -3,10 +3,8 @@ depth = -2;
 randomize();
 
 nerd = round(random(1));
-
 if global.PlayerChar == 0 {
 	global.PlayerChar = 1;
-	global.SelectedPlayer = 1;
 }
 
 global.Freeplay = false;

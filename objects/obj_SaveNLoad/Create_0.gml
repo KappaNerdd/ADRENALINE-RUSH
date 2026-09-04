@@ -574,7 +574,7 @@
 				[true, spr_KappaIdle, 9, "cost_Nee1"], //Normal
 			],
 		
-			[114, 0, 255], //RGB (Must be filled out)
+			[114, 000, 255], //RGB (Must be filled out)
 		
 			[spr_NeegiTextbox, 13, spr_MCursorNeegi], //Character Textbox (Optional: Sprite Strip)
 		
@@ -786,7 +786,7 @@
 				[true, spr_KappaIdle, 9, "cost_Aya1"], //Normal
 			],
 		
-			[207, 46, 87], //RGB (Must be filled out)
+			[207, 046, 087], //RGB (Must be filled out)
 		
 			[spr_AyanaTextbox, 2, spr_MCursorAyana],
 		
@@ -1463,14 +1463,13 @@
 
 	global.speedStageData = 
 	[
-	
 		//Mind Levels (I keep switchin' between "Mind" and "Head." I don't fuckin' know why.)
 		{ //MIND Level 1
 			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMind", level_Num: 1, level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeed1, levelForced: false,
 		
 			rankS_Time: 140, rankA_Time: 150, rankB_Time: 205, rankC_Time: 225, rankD_Time: 250, rankF_Time: 320,
 			
-			rankS_Score: 120000, rankA_Score: 100000, rankB_Score: 65000, rankC_Score: 30000, rankD_Score: 10000,
+			rankS_Score: 125000, rankA_Score: 100000, rankB_Score: 70000, rankC_Score: 35000, rankD_Score: 10000,
 			
 			rings: 0, rings_Rank: 0, rankS_Ring: 260,
 			
@@ -1496,7 +1495,7 @@
 		
 			requirement: "condit_StoryMode", record_File: "mind1_Ghost", folder_Name: "/mind1/",
 			
-			levelID: "Mind1",
+			levelID: "Mind1", ghostRooms: 1,
 		},
 	
 		{ //MIND Level 2
@@ -1504,9 +1503,9 @@
 		
 			rankS_Time: 205, rankA_Time: 215, rankB_Time: 230, rankC_Time: 250, rankD_Time: 315, rankF_Time: 340,
 			
-			rankS_Score: 150000, rankA_Score: 120000, rankB_Score: 80000, rankC_Score: 55000, rankD_Score: 30000,
+			rankS_Score: 175000, rankA_Score: 130000, rankB_Score: 100000, rankC_Score: 75000, rankD_Score: 30000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 270,
+			rings: 0, rings_Rank: 0, rankS_Ring: 275,
 			
 			enemies: 0, enemy_Rank: 0, rankS_Enemy: 45,
 			
@@ -1530,7 +1529,7 @@
 		
 			requirement: "condit_StoryMode", record_File: "mind2_Ghost", folder_Name: "/mind2/",
 			
-			levelID: "Mind2",
+			levelID: "Mind2", ghostRooms: 1,
 		},
 		
 		{ //MIND Level 3
@@ -1538,9 +1537,9 @@
 		
 			rankS_Time: 145, rankA_Time: 155, rankB_Time: 210, rankC_Time: 230, rankD_Time: 255, rankF_Time: 325,
 			
-			rankS_Score: 65000, rankA_Score: 50000, rankB_Score: 30000, rankC_Score: 10000, rankD_Score: 5000,
+			rankS_Score: 80000, rankA_Score: 60000, rankB_Score: 45000, rankC_Score: 20000, rankD_Score: 10000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 350,
+			rings: 0, rings_Rank: 0, rankS_Ring: 450,
 			
 			enemies: 0, enemy_Rank: 0, rankS_Enemy: 25,
 			
@@ -1564,7 +1563,7 @@
 		
 			requirement: "condit_StoryMode", record_File: "mind3_Ghost", folder_Name: "/mind3/",
 			
-			levelID: "Mind3",
+			levelID: "Mind3", ghostRooms: 1,
 		},
 		
 		{ //MIND Level Boss
@@ -1572,11 +1571,11 @@
 		
 			rankS_Time: 330, rankA_Time: 340, rankB_Time: 355, rankC_Time: 415, rankD_Time: 440, rankF_Time: 510,
 			
-			rankS_Score: 200000, rankA_Score: 135000, rankB_Score: 85000, rankC_Score: 60000, rankD_Score: 35000,
+			rankS_Score: 225000, rankA_Score: 150000, rankB_Score: 100000, rankC_Score: 60000, rankD_Score: 35000,
 			
-			rings: 0, rings_Rank: 0, rankS_Ring: 425, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
+			rings: 0, rings_Rank: 0, rankS_Ring: 375, rankA_Ring: 35, rankB_Ring: 20, rankC_Ring: 10, rankD_Ring: 5, 
 			
-			enemies: 0, enemy_Rank: 0, rankS_Enemy: 80, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
+			enemies: 0, enemy_Rank: 0, rankS_Enemy: 75, rankA_Enemy: 35, rankB_Enemy: 20, rankC_Enemy: 10, rankD_Enemy: 5,
 			
 			jsrSecrets: [false, false, false, false, false], musicSecret: false,
 			
@@ -1598,9 +1597,8 @@
 		
 			requirement: "condit_StoryMode", record_File: "mindBoss_Ghost", folder_Name: "/mind_boss/",
 			
-			levelID: "MindBoss",
+			levelID: "MindBoss", ghostRooms: 2,
 		},
-	
 	]
 #endregion
 

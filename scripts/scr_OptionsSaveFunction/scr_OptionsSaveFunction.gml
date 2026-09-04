@@ -48,7 +48,6 @@ function save_options() {
 	buffer_write(_buffer, buffer_string, _json);
 	buffer_save(_buffer, _filename);
 	buffer_delete(_buffer);
-
 }
 	
 	
@@ -69,13 +68,13 @@ function load_options() {
 	//Unstringify and get the data array
 	var _loadArray = json_parse(_json);
 	
-	for (var i = 0; i < array_length(_loadArray); i++) {
-		if (i < array_length(global.optionsData)) {
+	for(var i = 0; i < array_length(_loadArray); i++) {
+		if i < array_length(global.optionsData) {
 		    var _saved = _loadArray[i];
 		    var _current = global.optionsData[i];
 		    var _keys = variable_struct_get_names(_saved);
 				
-		    for (var k = 0; k < array_length(_keys); k++) {
+		    for(var k = 0; k < array_length(_keys); k++) {
 		        var _key = _keys[k];
 				
 		        variable_struct_set(_current, _key, variable_struct_get(_saved, _key));

@@ -9,9 +9,10 @@ global.Health = global.MaxHealth;
 global.CustomMus = false
 global.CustomMusic = noone;
 
-if global.PlayerChar == 0 {
-	global.PlayerChar = 1;
-	global.SelectedPlayer = 1;
+if global.SelectedPlayer != 0 {
+	global.PlayerChar = global.SelectedPlayer;
+} else {
+	global.SelectedPlayer = global.PlayerChar;
 }
 
 stages = [

@@ -23,16 +23,8 @@ if !transd {
 				room_goto(target_rm);
 				instance_destroy();
 				
-				if global.Jukebox == 2 {
-					var _custArray = global.CustomJukeboxPlaylist;
-				
-					if global.JukeboxShuffle {
-						_custArray = global.CustomJukeShuffled;
-					}
-				
-					var _custTrack = audio_create_stream(_custArray[global.CustomJukeChoice]);
-				
-					set_song_ingame(_custTrack, 0, 0);
+				if global.Jukebox == 2 {				
+					set_song_ingame(global.CustTrack, 0, 0);
 				}
 			}
 		}

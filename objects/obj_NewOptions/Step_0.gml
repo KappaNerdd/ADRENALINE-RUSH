@@ -11,6 +11,12 @@ if !done {
 		iconY = lerp(iconY, 32 * choice, 0.1);
 		leftSpikesX = lerp(leftSpikesX, 190, 0.1);
 		
+		if mindFrames < 3 {
+			mindFrames += mindAnim;
+		} else {
+			mindFrames = 0;
+		}
+		
 		if iconFrames >= 4 {
 			iconFrames = 0;
 		}

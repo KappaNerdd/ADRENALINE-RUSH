@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Name Maker",
-    "path":"folders/Objects/New Game Shit/Name Maker.yy",
+    "path":"folders/Objects/New Game Shit/Old/Name Maker.yy",
   },
   "parentObjectId":null,
   "persistent":false,

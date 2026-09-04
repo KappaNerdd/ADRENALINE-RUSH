@@ -205,9 +205,9 @@ draw_set_font(global.LifeFont);
 		}
 	}
 	
-	if global.Rings < 10 {
+	if round(otherRingCount) < 10 {
 		_extra0s = "00";
-	} else if global.Rings < 100 && global.Rings >= 10 {
+	} else if round(otherRingCount) < 100 && round(otherRingCount) >= 10 {
 		_extra0s = "0";
 	}
 	
@@ -224,10 +224,10 @@ draw_set_font(global.LifeFont);
 	
 	draw_sprite_ext(spr_TrinketRing, 0, 28, moveY + 19, trinketScale + 0.5, trinketScale + 0.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_trinketSprite, trinketFrames, 19, moveY + 11, 1, 1, 0, c_black, image_alpha);
-	draw_text_transformed_color(28, moveY + 48, "x" + string(_extra0s) + string(global.Rings), trinketScale - 0.25, trinketScale - 0.25, 0, c_black, c_black, c_black, c_black, image_alpha);
+	draw_text_transformed_color(28, moveY + 48, "x" + string(_extra0s) + string(round(otherRingCount)), trinketScale - 0.25, trinketScale - 0.25, 0, c_black, c_black, c_black, c_black, image_alpha);
 	
 	draw_sprite_ext(spr_TrinketRing, 0, 31, moveY + 16, trinketScale + 0.5, trinketScale + 0.5, 0, _ringCol, image_alpha);
 	draw_sprite_ext(_trinketSprite, trinketFrames, 22, moveY + 8, 1, 1, 0, c_white, image_alpha);
-	draw_text_transformed_color(31, moveY + 45, "x" + string(_extra0s) + string(global.Rings), trinketScale - 0.25, trinketScale - 0.25, 0, c_white, c_white, c_white, _ringCol, image_alpha);
+	draw_text_transformed_color(31, moveY + 45, "x" + string(_extra0s) + string(round(otherRingCount)), trinketScale - 0.25, trinketScale - 0.25, 0, c_white, c_white, c_white, _ringCol, image_alpha);
 draw_set_font(global.font_main);
 draw_set_halign(fa_left);

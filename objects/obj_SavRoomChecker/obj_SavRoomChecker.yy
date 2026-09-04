@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Save Box Shit",
-    "path":"folders/Objects/Initialization/Save & Load System/Save Box Shit.yy",
+    "path":"folders/Objects/Initialization/Save & Load System/Old/Save Box Shit.yy",
   },
   "parentObjectId":null,
   "persistent":false,

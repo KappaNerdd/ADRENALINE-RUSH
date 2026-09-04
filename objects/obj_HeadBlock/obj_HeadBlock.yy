@@ -8,8 +8,8 @@
   "name":"obj_HeadBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ground",
-    "path":"folders/Objects/Environments/Head/Ground.yy",
+    "name":"Old",
+    "path":"folders/Objects/Environments/Head/Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

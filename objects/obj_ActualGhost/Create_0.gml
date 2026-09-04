@@ -2,6 +2,7 @@ if !global.ShowGhost {
 	instance_destroy();
 }
 
+repeatGhost = false;
 frame = 0;
 image_blend = c_white;
 
@@ -19,3 +20,6 @@ if file_exists(ghostFileName) {
 } else {
 	instance_destroy();
 }
+
+alarm_set(0, 2);
+

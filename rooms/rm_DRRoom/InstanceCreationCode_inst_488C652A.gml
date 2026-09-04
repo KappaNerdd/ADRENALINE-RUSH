@@ -1,0 +1,1 @@
+enemObject = global.DREnemyList.angel;

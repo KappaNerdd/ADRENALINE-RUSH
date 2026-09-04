@@ -29,7 +29,9 @@ if !global.FreeFall {
 			obj_Player.can_Move = false;
 		}
 	} else {
-		instance_create_depth(-10000000, 0, 0, obj_SonicRushIntroCard);
+		with(instance_create_depth(-10000000, 0, 0, obj_SonicRushIntroCard)) {
+			kysTimer = 240;
+		}
 	}
 
 	if instance_exists(obj_InputRecorder) {
@@ -56,6 +58,6 @@ if !global.FreeFall {
 	}
 
 	scr_CreateSpeedHUD();
-	instance_create_depth(x, y, depth, obj_CameraExtended);
+	instance_create_depth(x, y, depth, obj_CameraSpeed);
 	scr_SetCamFollow(global.PlayerID);
 }

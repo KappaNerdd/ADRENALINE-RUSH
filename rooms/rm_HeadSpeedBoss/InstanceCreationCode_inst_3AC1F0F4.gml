@@ -1,7 +1,7 @@
 can_Move = false;
 vel = -full_Speed;
 yspd = 10;
-boostEnergy = 300;
+scr_SetEnergyPlayer(301);
 rushMode = true;
 ground = false;
 jumping = true;

@@ -346,12 +346,7 @@ if !confirm {
 				global.JukeCheck = jukeCheck;
 				
 				with(instance_create_depth(-100000, 0, depth, obj_RushTransition)) {
-					if !global.speedStageData[global.SpeedSelected].levelForced {
-						global.LevelForced = false;
-					} else {
-						global.LevelForced = true;
-					}
-					
+					global.LevelForced = global.speedStageData[global.SpeedSelected].levelForced;
 					speedStage = true;
 					target_rm = global.speedStageData[global.SpeedSelected].stage_RM;
 				}
@@ -391,7 +386,7 @@ if !confirm {
 
 
 #region //Extra Bullshit
-	if !global.speedStageData[global.SpeedSelected].complete && speedStage {
+	if !global.speedStageData[global.SpeedSelected].complete && speedStage && levelChosen {
 		global.Jukebox = 0;
 		jukeCheck = 0;
 	}

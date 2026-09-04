@@ -1,4 +1,4 @@
-if ghostRecord && instance_exists(obj_Player) {
+if ghostRecord && instance_exists(global.PlayerID) {
 	if !ds_exists(ghostRecordList, ds_type_list) {
 		ghostRecordFrames = 1;
 		ghostRecordList = ds_list_create;
@@ -6,7 +6,7 @@ if ghostRecord && instance_exists(obj_Player) {
 	
 	var _frametoRecord = ds_map_create();
 	
-	with(obj_Player) {
+	with(global.PlayerID) {
 		_frametoRecord[? "x"] = x;
 		_frametoRecord[? "y"] = y;
 		_frametoRecord[? "xscale"] = visXScale;

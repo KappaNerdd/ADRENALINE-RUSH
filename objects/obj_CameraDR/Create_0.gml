@@ -1,5 +1,6 @@
 depth = -25;
 
+camera_set_view_size(view_camera[0], 512, 288);
 
 //Cam Shit
 baseX = 0;
@@ -41,7 +42,9 @@ vertiBorders = false;
 
 
 //Cam Following
-following = noone;
+if global.DRPlayerID != noone {
+	following = global.DRPlayerID;
+}
 
 resetTimer = 0;
 inactiveTimer = 0;

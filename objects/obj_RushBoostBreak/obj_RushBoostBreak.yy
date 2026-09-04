@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_StompVFXKappa",
-    "path":"sprites/spr_StompVFXKappa/spr_StompVFXKappa.yy",
+    "name":"spr_KappaStompedVFX",
+    "path":"sprites/spr_KappaStompedVFX/spr_KappaStompedVFX.yy",
   },
   "spriteMaskId":null,
   "visible":true,

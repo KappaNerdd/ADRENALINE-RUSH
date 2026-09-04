@@ -2,7 +2,7 @@ function scr_BasicVariablesSpeedCreate() {
 	#region //Health Checks
 		scr_HealthSystemCreate();
 		
-		if !instance_exists(obj_CreatePauseSpeed) {
+		if !instance_exists(obj_CreatePauseSpeed) && room != rm_Eggman {
 			instance_create_depth(-100000, 0, -9, obj_CreatePauseSpeed);
 		}
 	#endregion
@@ -1534,6 +1534,7 @@ function scr_JumpManipulate() {
 			}*/
 		} else {
 			yspd = -normalJspd;
+			scr_DJumpVFX();
 		}
 	}
 	

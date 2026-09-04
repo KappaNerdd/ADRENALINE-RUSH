@@ -352,6 +352,8 @@ if !done {
 								instance_destroy(obj_InputRecorder);
 							}
 							
+							global.LevelForced = false;
+							
 							if !audio_is_paused(pause) {
 								audio_stop_sound(pause);
 								audio_resume_sound(obj_MusicManager.targetSongAsset);
@@ -361,6 +363,7 @@ if !done {
 						if _choiceLength[choice][1] == fileSelect {
 							scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_FileSelectNew);
 							set_song_ingame(noone, 60);
+							global.LevelForced = false;
 						}
 						
 						if _choiceLength[choice][1] == mainMenu {
@@ -371,6 +374,8 @@ if !done {
 							if instance_exists(obj_InputRecorder) {
 								instance_destroy(obj_InputRecorder);
 							}
+							
+							global.LevelForced = false;
 							
 							scr_RoomTrans(obj_RoomTransitionSEGAMenu, rm_MainMenuNew);
 							set_song_ingame(noone, 60);

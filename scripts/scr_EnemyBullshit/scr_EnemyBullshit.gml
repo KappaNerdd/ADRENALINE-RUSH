@@ -55,13 +55,19 @@ function scr_EnemyStep() {
 				scr_ScreenShake();
 				scr_ControllerRumble();
 					
-				obj_Player.enemyCombo += 1;
-				obj_Player.enemyComboTimer = obj_Player.enemyComboFrames;
+				global.PlayerID.enemyCombo++;
+				
+				if global.PlayerID.enemyCombo < 10 {
+					global.PlayerID.enemyComboTimer = global.PlayerID.enemyComboFrames;
+				} else {
+					global.PlayerID.enemyComboTimer = global.PlayerID.enemyComboFrames / 1.5;
+				}
+				
 				obj_EnemyComboCounterSpeed.sizeChange = 1.3;
 					
 				if instance_exists(obj_GOALColl) {
 					if !obj_GOALColl.goal {
-						if obj_Player.enemyCombo < 4 {
+						if global.PlayerID.enemyCombo < 4 {
 							scr_EnergyPlayer(10, charKiller);
 						} else {
 							scr_EnergyPlayer(10 * charKiller.enemyCombo / 4, charKiller);
@@ -69,7 +75,7 @@ function scr_EnemyStep() {
 					}
 				} else {
 					if !global.FreeFall {
-						if obj_Player.enemyCombo < 4 {
+						if global.PlayerID.enemyCombo < 4 {
 							scr_EnergyPlayer(10, charKiller);
 						} else {
 							scr_EnergyPlayer(10 * charKiller.enemyCombo / 4, charKiller);
@@ -77,7 +83,7 @@ function scr_EnemyStep() {
 					}
 				}
 				
-				scr_GivePoints(100 * obj_Player.enemyCombo);
+				scr_GivePoints(100 * global.PlayerID.enemyCombo);
 				
 				if instance_exists(obj_Timer) {
 					global.EnemyCount++;

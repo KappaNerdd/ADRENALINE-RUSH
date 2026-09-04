@@ -9,7 +9,7 @@
     "TileDataFormat":1,
   },
   "name":"tls_HeadTiles",
-  "out_columns":16,
+  "out_columns":24,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -35,5 +35,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":250,
+  "tile_count":560,
 }

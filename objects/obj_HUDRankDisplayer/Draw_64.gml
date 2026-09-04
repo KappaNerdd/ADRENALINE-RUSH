@@ -35,16 +35,16 @@ if rankFrames >= _animCheck {
 }
 
 if _level.complete {	
-	draw_sprite_ext(sprite_index, rankFrames, 327, moveY + 3, image_xscale, image_yscale, 0, c_black, image_alpha);
-	draw_sprite_ext(rankGraphic2, rankFrames, 317, moveY + 33, image_xscale, image_yscale, 0, c_black, image_alpha);
-	draw_sprite_ext(rankGraphic4, rankFrames, 307, moveY + 63, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(sprite_index, rankFrames, 257, moveY + 3, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(rankGraphic2, rankFrames, 267, moveY + 33, image_xscale, image_yscale, 0, c_black, image_alpha);
+	draw_sprite_ext(rankGraphic4, rankFrames, 257, moveY + 63, image_xscale, image_yscale, 0, c_black, image_alpha);
 	
 	draw_sprite_ext(rankGraphic3, rankFrames, 15, moveY + 73, image_xscale, image_yscale, 0, c_black, image_alpha);
 	
 	
-	draw_sprite_ext(sprite_index, rankFrames, 330, moveY, image_xscale, image_yscale, 0, c_white, image_alpha);
-	draw_sprite_ext(rankGraphic2, rankFrames, 320, moveY + 30, image_xscale, image_yscale, 0, c_white, image_alpha);
-	draw_sprite_ext(rankGraphic4, rankFrames, 310, moveY + 60, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(sprite_index, rankFrames, 260, moveY, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(rankGraphic2, rankFrames, 270, moveY + 30, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(rankGraphic4, rankFrames, 260, moveY + 60, image_xscale, image_yscale, 0, c_white, image_alpha);
 	
 	draw_sprite_ext(rankGraphic3, rankFrames, 18, moveY + 70, image_xscale, image_yscale, 0, c_white, image_alpha);
 }

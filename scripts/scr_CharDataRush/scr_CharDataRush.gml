@@ -4,6 +4,10 @@ function scr_CharDataRush() {
 		charR = 000; 
 		charG = 200; 
 		charB = 248;
+	} else {
+		charR = 255;
+		charG = 255;
+		charB = 255;
 	}
 	
 	///-----Number Variables-----///

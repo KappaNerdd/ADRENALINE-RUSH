@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Old",
-    "path":"folders/Objects/Cameras/Overworld & Speed/Old.yy",
+    "path":"folders/Objects/Cameras/Old.yy",
   },
   "parentObjectId":{
     "name":"obj_CameraParent",

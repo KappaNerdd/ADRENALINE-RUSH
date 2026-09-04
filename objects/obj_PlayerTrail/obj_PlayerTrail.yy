@@ -10,8 +10,8 @@
   "name":"obj_PlayerTrail",
   "overriddenProperties":[],
   "parent":{
-    "name":"Obsolete",
-    "path":"folders/Objects/Characters/VFX/General/Obsolete.yy",
+    "name":"Overall",
+    "path":"folders/Objects/Characters/VFX/General/Overall.yy",
   },
   "parentObjectId":null,
   "persistent":false,

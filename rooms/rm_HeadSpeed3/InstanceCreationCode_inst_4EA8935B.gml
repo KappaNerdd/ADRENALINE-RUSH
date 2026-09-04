@@ -1,3 +1,3 @@
 hori = true;
 
-launchYspd = -20;
+launchYspd = -13;

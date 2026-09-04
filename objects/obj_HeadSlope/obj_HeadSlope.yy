@@ -6,8 +6,8 @@
   "name":"obj_HeadSlope",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ground",
-    "path":"folders/Objects/Environments/Head/Ground.yy",
+    "name":"Old",
+    "path":"folders/Objects/Environments/Head/Old.yy",
   },
   "parentObjectId":{
     "name":"obj_HeadBlock",

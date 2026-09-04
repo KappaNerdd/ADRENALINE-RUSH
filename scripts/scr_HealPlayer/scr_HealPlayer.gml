@@ -8,7 +8,7 @@ function scr_HealthPlayer(_amount = 100000) {
 	global.Health += _amount;
 }
 
-function scr_HealingEffect(_obj, _stars = true, _col = c_white) {
+function scr_HealingEffect(_obj, _stars = true, _col = c_lime) {
 	if !global.SimplifyVFX {
 		with(instance_create_depth(_obj.x, _obj.y, _obj.depth - 2, obj_HealingSil)) {
 			healedObj = _obj;

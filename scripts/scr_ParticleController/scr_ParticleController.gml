@@ -19,6 +19,32 @@ function scr_DustParticles(_x = 0, _y = -1) {
 	}
 }
 
+function scr_DJumpVFX(_col = c_lime) {
+	if global.Particles {
+		with(instance_create_depth(x + angleSin * 10, y + angleCos * 10, depth - 1, obj_DJumpVFX)) {
+			image_xscale = 0.5;
+			image_yscale = 2;
+			image_angle = point_direction(0, 0, other.vel, other.yspd);
+			
+			if !global.MIND && global.PlayerChar != 0 {
+				image_blend = _col;
+			}
+		}
+		
+		with(instance_create_depth(x + angleSin * 20, y + angleCos * 20, depth - 1, obj_DJumpVFX)) {
+			image_xscale = 0.5;
+			image_yscale = 3;
+			image_angle = point_direction(0, 0, other.vel, other.yspd);
+
+			if !global.MIND && global.PlayerChar != 0 {
+				image_blend = merge_colour(_col, c_black, 0.5);
+			} else {
+				image_blend = c_grey;
+			}
+		}
+	}
+}
+
 function scr_SpeedBreakVFX(_sprite) {
 	if speedBreakSprTimer > 0 {
 		speedBreakSprTimer--;

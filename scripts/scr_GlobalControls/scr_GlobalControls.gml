@@ -1,5 +1,4 @@
 function scr_GlobalControls() {
-	
 	//Change Control
 	changeBind = false;
 	changeBindTimer = 0;
@@ -16,153 +15,154 @@ function scr_GlobalControls() {
 	sprConInd = 0;
 	
 
-		//Keyboard
-		sprite = spr_KeyboardBinds;
+	//Keyboard
+	sprite = spr_KeyboardBinds;
 		
 		
-		//Movement
-		left = 0;
-		right = 1;
-		up = 2;
-		down = 3;
+	//Movement
+	left = 0;
+	right = 1;
+	up = 2;
+	down = 3;
 		
 		
-		//Numbers
-		num1 = 4;
-		num2 = 5;
-		num3 = 6;
-		num4 = 7;
-		num5 = 8;
-		num6 = 9;
-		num7 = 10;
-		num8 = 11;
-		num9 = 12;
-		num0 = 13;
+	//Numbers
+	num1 = 4;
+	num2 = 5;
+	num3 = 6;
+	num4 = 7;
+	num5 = 8;
+	num6 = 9;
+	num7 = 10;
+	num8 = 11;
+	num9 = 12;
+	num0 = 13;
 		
 		
-		//Alphabet
-		alphA = 14;
-		alphB = 15;
-		alphC = 16;
-		alphD = 17;
-		alphE = 18;
-		alphF = 19;
-		alphG = 20;
+	//Alphabet
+	alphA = 14;
+	alphB = 15;
+	alphC = 16;
+	alphD = 17;
+	alphE = 18;
+	alphF = 19;
+	alphG = 20;
 		
-		alphH = 21;
-		alphI = 22;
-		alphJ = 23;
-		alphK = 24;
+	alphH = 21;
+	alphI = 22;
+	alphJ = 23;
+	alphK = 24;
 		
-		alphL = 25;
-		alphM = 26;
-		alphN = 27;
-		alphO = 28;
-		alphP = 29;
+	alphL = 25;
+	alphM = 26;
+	alphN = 27;
+	alphO = 28;
+	alphP = 29;
 		
-		alphQ = 30;
-		alphR = 31;
-		alphS = 32;
+	alphQ = 30;
+	alphR = 31;
+	alphS = 32;
 		
-		alphT = 33;
-		alphU = 34;
-		alphV = 35;
+	alphT = 33;
+	alphU = 34;
+	alphV = 35;
 		
-		alphW = 36;
-		alphX = 37;
-		alphY = 38;
-		alphZ = 39;
-		
-		
-		//Punctuation
-		punctLBrac = 40;
-		punctRBrac = 41;
-		punctBSlash = 42;
-		punctFSlash = 43;
-		
-		punctPeriod = 44;
-		punctComma = 45;
-		punctSemiColon = 46;
-		punctApostrophe = 47;
-		
-		punctMinus = 48;
-		punctEqual = 49;
-		
-		punctBQuote = 50;
+	alphW = 36;
+	alphX = 37;
+	alphY = 38;
+	alphZ = 39;
 		
 		
-		//Special
-		rAlt = 51;
-		rCtrl = 52;
-		enter = 53;
-		space = 54;
-		backspace = 55;
+	//Punctuation
+	punctLBrac = 40;
+	punctRBrac = 41;
+	punctBSlash = 42;
+	punctFSlash = 43;
 		
-		lShift = 56;
-		rShift = 57;
-		lCtrl = 58;
-		lAlt = 59;
-		tab = 60;
+	punctPeriod = 44;
+	punctComma = 45;
+	punctSemiColon = 46;
+	punctApostrophe = 47;
 		
+	punctMinus = 48;
+	punctEqual = 49;
 		
-		//F
-		fF1 = 61;
-		fF2 = 62;
-		fF3 = 63;
-		fF4 = 64;
-		fF5 = 65;
-		fF6 = 66;
-		fF7 = 67;
-		fF8 = 68;
-		fF9 = 69;
-		fF10 = 70;
-		fF11 = 71;
-		fF12 = 72;
+	punctBQuote = 50;
 		
 		
-		//Escape
-		escape = 73;
+	//Special
+	rAlt = 51;
+	rCtrl = 52;
+	enter = 53;
+	space = 54;
+	backspace = 55;
+	
+	lShift = 56;
+	rShift = 57;
+	lCtrl = 58;
+	lAlt = 59;
+	tab = 60;
 		
-		if global.ConType == 0 {
-			//Xbox
-			sprite = spr_XboxBinds;
-		} else if global.ConType == 1 {
-			//PS
-			sprite = spr_PSBinds;
-		} else if global.ConType == 2 {
-			//Switch
-			sprite = spr_SwitchBinds;
-		}
 		
-		//Sticks
-		lStickBut = 0;
-		rStickBut = 1;
+	//F
+	fF1 = 61;
+	fF2 = 62;
+	fF3 = 63;
+	fF4 = 64;
+	fF5 = 65;
+	fF6 = 66;
+	fF7 = 67;
+	fF8 = 68;
+	fF9 = 69;
+	fF10 = 70;
+	fF11 = 71;
+	fF12 = 72;
+		
+		
+	//Escape
+	escape = 73;
+	capsLock = 74;
+		
+	if global.ConType == 0 {
+		//Xbox
+		sprite = spr_XboxBinds;
+	} else if global.ConType == 1 {
+		//PS
+		sprite = spr_PSBinds;
+	} else if global.ConType == 2 {
+		//Switch
+		sprite = spr_SwitchBinds;
+	}
+		
+	//Sticks
+	lStickBut = 0;
+	rStickBut = 1;
 			
 			
-		//D-Pad
-		padLeft = 2;
-		padRight = 3;
-		padUp = 4;
-		padDown = 5;
+	//D-Pad
+	padLeft = 2;
+	padRight = 3;
+	padUp = 4;
+	padDown = 5;
 		
 		
-		//Faces
-		face1 = 6;
-		face2 = 7;
-		face3 = 8;
-		face4 = 9;
+	//Faces
+	face1 = 6;
+	face2 = 7;
+	face3 = 8;
+	face4 = 9;
 		
 		
-		//Shoulders
-		shouldLB = 10;
-		shouldRB = 11;
-		shouldLT = 12;
-		shouldRT = 13;
+	//Shoulders
+	shouldLB = 10;
+	shouldRB = 11;
+	shouldLT = 12;
+	shouldRT = 13;
 		
 		
-		//Start & Select
-		butStart = 14;
-		butSelect = 15;
+	//Start & Select
+	butStart = 14;
+	butSelect = 15;
 }
 
 
@@ -170,7 +170,7 @@ function scr_GlobalControls() {
 function scr_SetControl() {
 	if changeBind {
 		if changeBindTimer > 0 {
-			changeBindTimer -= 1;
+			changeBindTimer--;
 		}
 	} else {
 		changeBindTimer = changeBindFrames;
@@ -180,130 +180,92 @@ function scr_SetControl() {
 		if !gamepad_is_connected(global.Player1Con) {
 			if keyboard_check_pressed(vk_anykey) {
 				remappedBind = keyboard_lastkey;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			}
 		} else {
 			//Faces
 			if gamepad_button_check_pressed(global.Player1Con, gp_face1) {
 				remappedBind = gp_face1;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_face2) {
 				remappedBind = gp_face2;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_face3) {
 				remappedBind = gp_face3;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_face4) {
 				remappedBind = gp_face4;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			}
-			
 			
 			//Pad
 			if gamepad_button_check_pressed(global.Player1Con, gp_padu) {
 				remappedBind = gp_padu;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_padd) {
 				remappedBind = gp_padd;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_padl) {
 				remappedBind = gp_padl;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_padr) {
 				remappedBind = gp_padr;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			}
-			
 			
 			//Sticks
 			if gamepad_button_check_pressed(global.Player1Con, gp_stickl) {
 				remappedBind = gp_stickl;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_stickr) {
 				remappedBind = gp_stickr;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			}
-			
 			
 			//Shoulders
 			if gamepad_button_check_pressed(global.Player1Con, gp_shoulderl) {
 				remappedBind = gp_shoulderl;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_shoulderr) {
 				remappedBind = gp_shoulderr;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_shoulderlb) {
 				remappedBind = gp_shoulderlb;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_shoulderrb) {
 				remappedBind = gp_shoulderrb;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			}
-			
 			
 			//Starts
 			if gamepad_button_check_pressed(global.Player1Con, gp_start) {
 				remappedBind = gp_start;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			} else if gamepad_button_check_pressed(global.Player1Con, gp_select) {
 				remappedBind = gp_select;
-				
 				waiting = true;
-				
 				obj_SFXManager.funkinFav = true;
 			}
 		}
 		
 		if waiting {
-			waitTimer -= 1;
+			waitTimer--;
 		}
 		
 		if waitTimer <= 0 {
@@ -313,7 +275,6 @@ function scr_SetControl() {
 	} else {
 		waitTimer = waitFrames;
 	}
-	
 }
 
 
@@ -507,9 +468,7 @@ function scr_ChangeControlSprites() {
 			if keyboard_check_pressed(vk_escape) {
 				sprKeyInd = escape;
 			}
-			
 		} else {
-			
 			if gamepad_button_check_pressed(0, gp_stickl) {
 				sprConInd = lStickBut;
 			} else if gamepad_button_check_pressed(0, gp_stickr) {
@@ -555,7 +514,6 @@ function scr_ChangeControlSprites() {
 			} else if gamepad_button_check_pressed(0, gp_select) {
 				sprConInd = butSelect;
 			}
-			
 		}
 	}
 }

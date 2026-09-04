@@ -100,8 +100,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Lucifer",
-    "path":"texturegroups/Lucifer",
+    "name":"Kris",
+    "path":"texturegroups/Kris",
   },
   "type":0,
   "VTile":false,

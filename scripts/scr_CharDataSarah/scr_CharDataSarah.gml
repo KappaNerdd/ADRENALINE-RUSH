@@ -4,6 +4,10 @@ function scr_CharDataSarah() {
 		charR = 255; 
 		charG = 054; 
 		charB = 144;
+	} else {
+		charR = 255;
+		charG = 255;
+		charB = 255;
 	}
 	
 	///-----Number Variables-----///
@@ -18,9 +22,9 @@ function scr_CharDataSarah() {
 	dcc = 0.14;
 	fric = 0.07;
 	vel = 0;
-	max_Speed = 10;
-	full_Speed = 15;
-	boost_Speed = 17;
+	max_Speed = 9;
+	full_Speed = 14;
+	boost_Speed = 16;
 
 	//Jump Speed & Gravity
 	grav = 0.225;

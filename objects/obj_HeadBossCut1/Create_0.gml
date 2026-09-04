@@ -1,4 +1,5 @@
 obj_Player.can_Move = false;
+obj_Player.down_Key = false;
 obj_Player.sliding = false;
 obj_Player.collideTimer = 0;
 obj_Player.collide = false;

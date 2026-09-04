@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Multiple Save Files",
-    "path":"folders/Objects/Initialization/Save & Load System/Multiple Save Files.yy",
+    "path":"folders/Objects/Initialization/Save & Load System/Old/Multiple Save Files.yy",
   },
   "parentObjectId":null,
   "persistent":false,

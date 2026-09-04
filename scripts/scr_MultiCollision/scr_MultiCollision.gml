@@ -1,26 +1,3 @@
-function scr_SemiSolidCheck(_x, _y) {
-	var _rtrn = noone;
-	
-	if yspd >= 0 && place_meeting(_x, _y, obj_SemiSolid) {
-		var _list = ds_list_create();
-		var _listSize = instance_place_list(_x, _y, obj_SemiSolid, _list, false);
-		
-		for(var i = 0; i < _listSize; i++) {
-			var _listInst = _list[| i];
-			
-			if floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd) {
-				_rtrn = _listInst;
-				
-				i = _listSize;
-			}
-		}
-		
-		ds_list_destroy(_list);
-	}
-	
-	return _rtrn;
-}
-
 function scr_XCollision() {
 	if !global.Death {
 		#region //X Collision (Old)
@@ -538,16 +515,8 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 				
 				if _twinkLmao > 0 && (invincibleTimer < 90 or !invincible) { //Y'know the meme
 					for(var i = 0; i < _twinkLmao; i++) {
-						global.Rings++;
+						scr_RingsPlayer();
 						instance_create_depth(_twinkList[| i].x + 10, _twinkList[| i].y + 8, depth, obj_GOALRingSparkles);
-					
-						obj_SFXManager.funkinFav = true;
-						
-						if instance_exists(obj_Timer) {
-							obj_Timer.trinket = true;
-							obj_Timer.trinketFrames = 0;
-							obj_Timer.trinketScale = 1.5;
-						}
 					
 						with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
 							var _camX = camera_get_view_x(view_camera[0]);
@@ -569,16 +538,8 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 				//Lost ones
 				if _twink2 > 0 && (invincibleTimer < 90 or !invincible) {
 					for(var i = 0; i < _twink2; i++) {
-						global.Rings++;
+						scr_RingsPlayer(1, false);
 						instance_create_depth(_twink2List[| i].x + 10, _twink2List[| i].y + 8, depth, obj_GOALRingSparkles);
-					
-						obj_SFXManager.funkinFav = true;
-						
-						if instance_exists(obj_Timer) {
-							obj_Timer.trinket = true;
-							obj_Timer.trinketFrames = 0;
-							obj_Timer.trinketScale = 1.5;
-						}
 						
 						with(instance_create_depth(-100000, y, -8, obj_TrinketUI)) {
 							var _camX = camera_get_view_x(view_camera[0]);
@@ -1419,8 +1380,8 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 			#region //Spikes
 				var _spikeDown = instance_place(x, y + 4, obj_Spikes);
 				var _spikeUp = instance_place(x, y - 2, obj_Spikes);
-				var _spikeLeft = instance_place(x - 4, y, obj_Spikes);
-				var _spikeRight = instance_place(x + 4, y, obj_Spikes);
+				var _spikeLeft = instance_place(x - 5, y, obj_Spikes);
+				var _spikeRight = instance_place(x + 5, y, obj_Spikes);
 				
 				if _spikeDown && yspd >= 0 {
 					if _spikeDown.image_angle == 0 && PlayerCollisionObjectBottom(x, y + 1, angle, maskMid, obj_Spikes) {
@@ -2146,9 +2107,10 @@ function scr_RailGrindingStep() {
 			}
 		}*/
 		
-		if ground && ((PlayerCollisionObjectBottom(x, y, angle, maskBig, obj_RailParent)
+		if ((PlayerCollisionObjectBottom(x, y, angle, maskBig, obj_RailParent)
 		or (PlayerCollisionObjectBottom(x, y, angle, maskBig, obj_RailParentA) && terrainLayer == 0)
-		or (PlayerCollisionObjectBottom(x, y, angle, maskBig, obj_RailParentB) && terrainLayer == 1))) {
+		or (PlayerCollisionObjectBottom(x, y, angle, maskBig, obj_RailParentB) && terrainLayer == 1)))
+		&& ground {
 			railGrind = true;
 		} else {
 			railGrind = false;

@@ -50,6 +50,9 @@ arrowAnim = 1 / 12;
 arrowFrames = 0;
 changeBindY = 500;
 
+mindFrames = 0;
+mindAnim = 1 / 12;
+
 x = -10000000;
 depth = -4;
 

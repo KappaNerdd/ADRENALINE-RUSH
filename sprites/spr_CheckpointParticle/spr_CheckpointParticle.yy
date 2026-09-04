@@ -101,8 +101,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"HUD",
-    "path":"texturegroups/HUD",
+    "name":"General_Environment",
+    "path":"texturegroups/General_Environment",
   },
   "type":0,
   "VTile":false,

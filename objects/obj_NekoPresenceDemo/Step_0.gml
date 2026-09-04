@@ -1,6 +1,6 @@
 /// @description Update NekoPresence so async events will execute.
 
-var _charCheck = 1 + global.PlayerCostume;
+var _charCheck = global.PlayerCostume;
 
 if global.MIND or global.PlayerChar == 0 {
 	_charCheck = 0;

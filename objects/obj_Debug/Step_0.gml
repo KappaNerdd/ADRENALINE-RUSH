@@ -18,7 +18,7 @@ if global.DEBUG {
 	}
 	
 	if keyboard_check_pressed(ord("9")) {
-		room_goto(rm_MainMenuNew);
+		scr_BattleStart();
 	}
 	
 	if keyboard_check_pressed(ord("Q")) {

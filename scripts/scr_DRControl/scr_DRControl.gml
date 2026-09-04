@@ -11,11 +11,34 @@ function scr_DRCharCreate() {
 		can_Move = true;
 		can_MoveFULL = true;
 		charDir = DIR.DOWN;
+		
+		prevX = 0;
+		prevY = 0;
+		
+		extraX = 0;
+		extraY = 0;
+		extraVel = 0;
+		extraYspd = 0;
 	#endregion
 	
 	#region //Running
 		runTimer = 150;
 		runFrames = 150;
+	#endregion
+	
+	#region //Battling
+		//Landing
+		battleLand = false;
+	
+		//Actioning
+		action = false;
+		
+		//Before & After Battle
+		battleStart = false;
+		battleEnd = false;
+		
+		//Actions
+		battleAttack = false;
 	#endregion
 }
 
@@ -23,193 +46,150 @@ function scr_DRCharStep() {
 	#region //Depth
 		depth = -bbox_bottom;
 	#endregion
-
-	#region //Movement, Interaction, & Menu
-		if mainPlayer {
-			if can_Move {
-				getCharacterControls();
-			}
-		} else {
-			//Following
-			x = global.DRPlayerID.pos_x[record];
-			y = global.DRPlayerID.pos_y[record];
-			
-			charDir = global.DRPlayerID.toRecordSprite[record];
-
-			if global.DRPlayerID.vel == 0 && global.DRPlayerID.yspd == 0 {
-				image_speed = 0;
-				image_index = 0;
-			} else {
-				image_speed = global.DRPlayerID.image_speed;
-			}
+	
+	#region //Extra Movement
+		var _grav = 0.25;
+		
+		extraYspd += _grav;
+		extraY += extraYspd;
+		
+		if extraY >= 0 {
+			extraY = 0;
+			extraYspd = 0;
 		}
-
-		if mainPlayer {			
-			//Running
-			if action_Key_Held && (vel != 0 or yspd != 0) {
-				if runTimer > 0 {
-					runTimer--;
+	#endregion
+	
+	if !global.DRBattle {
+		#region //Movement, Interaction, & Menu
+			if mainPlayer {
+				if can_Move {
+					getCharacterControls();
+				}
 				
-					if runTimer > 90 {
-						runSpd = 1.5;
+				//Testing DR SOUL transfer VFX
+				/*if jump_Key {
+					scr_DRSOULVFX(self, spr_DRSOULLoneSil);
+				}
+			
+				if action_Key {
+					scr_DRSOULVFX(global.DRPartyReal[1], spr_DRSOULRoxxaneSil);
+				}
+			
+				if action1_Key {
+					scr_DRSOULVFX(global.DRPartyReal[2], spr_DRSOULCloeeSil);
+				}*/
+			} else {
+				//Following
+				x = global.DRPlayerID.pos_x[record];
+				y = global.DRPlayerID.pos_y[record];
+			
+				charDir = global.DRPlayerID.toRecordSprite[record];
+
+				if global.DRPlayerID.vel == 0 && global.DRPlayerID.yspd == 0 {
+					image_speed = 0;
+					image_index = 0;
+				} else {
+					image_speed = global.DRPlayerID.image_speed;
+				}
+			}
+
+			if mainPlayer {			
+				//Running
+				if action_Key_Held && (vel != 0 or yspd != 0) {
+					if runTimer > 0 {
+						runTimer--;
+				
+						if runTimer > 90 {
+							runSpd = 1.5;
+						} else {
+							runSpd = 2;
+						}
 					} else {
-						runSpd = 2;
+						runSpd = 2.5;
 					}
 				} else {
-					runSpd = 2.5;
-				}
-			} else {
-				runSpd = 1;
+					runSpd = 1;
 				
-				if runTimer < runFrames {
-					runTimer = runFrames;
-					charFace = walkSpr[charDir];
-					sprite_index = walkSpr[charDir];
+					if runTimer < runFrames {
+						runTimer = runFrames;
+						charFace = walkSpr[charDir];
+						sprite_index = walkSpr[charDir];
+					}
 				}
-			}
 
-			if vel == 0 && yspd == 0 {
-				image_speed = 0;
-				image_index = 0;
-			} else {
-				if action_Key_Held {
-					if runTimer < runFrames - 2 {
-						image_speed = 2;
+				if vel == 0 && yspd == 0 {
+					image_speed = 0;
+					image_index = 0;
+				} else {
+					if action_Key_Held {
+						if runTimer < runFrames - 2 {
+							if runTimer > 0 {
+								image_speed = 2;
+							} else {
+								image_speed = 2.25;
+							}
+						} else {
+							image_speed = 1;
+						}
 					} else {
 						image_speed = 1;
 					}
-				} else {
-					image_speed = 1;
 				}
-			}
 		
-			vel = (right_Key - left_Key) * moveSpd * (runSpd);
+				vel = (right_Key - left_Key) * moveSpd * (runSpd);
 				
-			if down_Key {
-				yspd = moveSpd * runSpd;
-			}
-				
-			if up_Key {
-				if !place_meeting(x, y - (moveSpd * runSpd), obj_Solid) {
-					yspd = -(moveSpd * runSpd);
-				} else {
-					charFace = baseSpr[DIR.UP];
-					runTimer = runFrames;
+				if down_Key {
+					yspd = moveSpd * runSpd;
 				}
-			}
 				
-			if !up_Key && !down_Key {
-				yspd = 0;
-			}
-			
-			if can_Move {
-				if jump_Key {
-					var _intSpr = spr_DRInteractH;
-					var _xScale = 1;
-					var _yScale = 1;
-					
-					if charDir == DIR.LEFT {
-						_xScale = -1;
-					} else if charDir == DIR.UP {
-						_intSpr = spr_DRInteractV;
-					} else if charDir == DIR.DOWN {
-						_intSpr = spr_DRInteractV;
-						_yScale = -1;
-					}
-					
-					with(instance_create_depth(x, y, depth, obj_DRInteract)) {
-						sprite_index = _intSpr;
-						image_xscale = _xScale;
-						image_yscale = _yScale;
-						followChar = other.id;
-					}
-				}
-			}
-		}
-	#endregion
-
-	#region //Animation Handling
-		if mainPlayer {
-			if runSpd >= 2 {
-				baseSpr[DIR.UP] = runSpr[DIR.UP];
-				baseSpr[DIR.DOWN] = runSpr[DIR.DOWN];
-				baseSpr[DIR.LEFT] = runSpr[DIR.LEFT];
-				baseSpr[DIR.RIGHT] = runSpr[DIR.RIGHT];
-			} else {
-				baseSpr[DIR.UP] = walkSpr[DIR.UP];
-				baseSpr[DIR.DOWN] = walkSpr[DIR.DOWN];
-				baseSpr[DIR.LEFT] = walkSpr[DIR.LEFT];
-				baseSpr[DIR.RIGHT] = walkSpr[DIR.RIGHT];
-			}
-			
-			if vel != 0 && yspd != 0 {
-				if charDir == DIR.RIGHT && vel > 0 {
-					charFace = baseSpr[DIR.RIGHT];
-					charDir = DIR.RIGHT;
-				} else if charDir == DIR.LEFT && vel < 0 {
-					charFace = baseSpr[DIR.LEFT];
-					charDir = DIR.LEFT;
-				} else if charDir == DIR.DOWN && yspd > 0 {
-					charFace = baseSpr[DIR.DOWN];
-					charDir = DIR.DOWN;
-				} else if charDir == DIR.UP && yspd < 0 {
-					charFace = baseSpr[DIR.UP];
-					charDir = DIR.UP;
-				} else {
-					if vel != 0 {
-						charDir = vel > 0 ? DIR.RIGHT : DIR.LEFT;
-						charFace = baseSpr[charDir];
+				if up_Key {
+					if !place_meeting(x, y - (moveSpd * runSpd), obj_Solid) {
+						yspd = -(moveSpd * runSpd);
 					} else {
-						charDir = yspd > 0 ? DIR.DOWN : DIR.UP;
-						charFace = baseSpr[charDir];
+						charFace = baseSpr[DIR.UP];
+						runTimer = runFrames;
 					}
 				}
-			} else if vel != 0 {
-				charDir = vel > 0 ? DIR.RIGHT : DIR.LEFT;
-				charFace = baseSpr[charDir];
-			} else if yspd != 0 {
-				charDir = yspd > 0 ? DIR.DOWN : DIR.UP;
-				charFace = baseSpr[charDir];
-			}
-		
-			if !can_Move {
-				if yspd <= 0 && charFace == baseSpr[DIR.DOWN] {
-					charFace = baseSpr[DIR.DOWN];
-					charDir = DIR.DOWN;
-				} else if yspd > 0 {
-					charFace = baseSpr[DIR.DOWN];
-					charDir = DIR.DOWN;
+				
+				if !up_Key && !down_Key {
+					yspd = 0;
 				}
-	
-				if yspd >= 0 && charFace == baseSpr[DIR.UP] {
-					charFace = baseSpr[DIR.UP];
-					charDir = DIR.UP;
-				} else if yspd < 0 {
-					charFace = baseSpr[DIR.UP];
-					charDir = DIR.UP;
-				}
-	
-				if vel <= 0 && charFace == baseSpr[DIR.RIGHT] {
-					charFace = baseSpr[DIR.RIGHT];
-					charDir = DIR.RIGHT;
-				} else if vel > 0 {
-					charFace = baseSpr[DIR.RIGHT];
-					charDir = DIR.RIGHT;
-				}
-	
-				if vel >= 0 && charFace == baseSpr[DIR.LEFT] {
-					charFace = baseSpr[DIR.LEFT];
-					charDir = DIR.LEFT;
-				} else if vel < 0 {
-					charFace = baseSpr[DIR.LEFT];
-					charDir = DIR.LEFT;
+			
+				if can_Move {
+					if jump_Key {
+						var _intSpr = spr_DRInteractH;
+						var _xScale = 1;
+						var _yScale = 1;
+					
+						if charDir == DIR.LEFT {
+							_xScale = -1;
+						} else if charDir == DIR.UP {
+							_intSpr = spr_DRInteractV;
+						} else if charDir == DIR.DOWN {
+							_intSpr = spr_DRInteractV;
+							_yScale = -1;
+						}
+					
+						with(instance_create_depth(x, y, depth, obj_DRInteract)) {
+							sprite_index = _intSpr;
+							image_xscale = _xScale;
+							image_yscale = _yScale;
+							followChar = other.id;
+						}
+					}
+					
+					if action1_Key {
+						if !instance_exists(obj_RoomTransParent) {
+							instance_create_depth(-10000, 0, depth, obj_DRMenu);
+						}
+					}
 				}
 			}
-	
-			sprite_index = charFace;
-		} else {
-			if global.DRPlayerID != noone {
-				if global.DRPlayerID.runSpd >= 2 {
+		#endregion
+
+		#region //Animation Handling
+			if mainPlayer {
+				if runSpd >= 2 {
 					baseSpr[DIR.UP] = runSpr[DIR.UP];
 					baseSpr[DIR.DOWN] = runSpr[DIR.DOWN];
 					baseSpr[DIR.LEFT] = runSpr[DIR.LEFT];
@@ -220,68 +200,187 @@ function scr_DRCharStep() {
 					baseSpr[DIR.LEFT] = walkSpr[DIR.LEFT];
 					baseSpr[DIR.RIGHT] = walkSpr[DIR.RIGHT];
 				}
-				
-				charFace = baseSpr[charDir];
-				sprite_index = charFace;
-			}
-		}
-	#endregion
-
-	#region //Collision and X & Y Manipulation
-		if mainPlayer {
-			if place_meeting(x + vel, y, obj_Solid) {
-				vel = 0;
-				runTimer = runFrames;
-			}
+			
+				if vel != 0 && yspd != 0 {
+					if charDir == DIR.RIGHT && vel > 0 {
+						charFace = baseSpr[DIR.RIGHT];
+						charDir = DIR.RIGHT;
+					} else if charDir == DIR.LEFT && vel < 0 {
+						charFace = baseSpr[DIR.LEFT];
+						charDir = DIR.LEFT;
+					} else if charDir == DIR.DOWN && yspd > 0 {
+						charFace = baseSpr[DIR.DOWN];
+						charDir = DIR.DOWN;
+					} else if charDir == DIR.UP && yspd < 0 {
+						charFace = baseSpr[DIR.UP];
+						charDir = DIR.UP;
+					} else {
+						if vel != 0 {
+							charDir = vel > 0 ? DIR.RIGHT : DIR.LEFT;
+							charFace = baseSpr[charDir];
+						} else {
+							charDir = yspd > 0 ? DIR.DOWN : DIR.UP;
+							charFace = baseSpr[charDir];
+						}
+					}
+				} else if vel != 0 {
+					charDir = vel > 0 ? DIR.RIGHT : DIR.LEFT;
+					charFace = baseSpr[charDir];
+				} else if yspd != 0 {
+					charDir = yspd > 0 ? DIR.DOWN : DIR.UP;
+					charFace = baseSpr[charDir];
+				}
+		
+				if !can_Move {
+					if yspd <= 0 && charFace == baseSpr[DIR.DOWN] {
+						charFace = baseSpr[DIR.DOWN];
+						charDir = DIR.DOWN;
+					} else if yspd > 0 {
+						charFace = baseSpr[DIR.DOWN];
+						charDir = DIR.DOWN;
+					}
 	
-			if place_meeting(x, y + yspd, obj_Solid) {
-				yspd = 0;
-				runTimer = runFrames;
-			}
-
-			x += vel;
-			y += yspd;
+					if yspd >= 0 && charFace == baseSpr[DIR.UP] {
+						charFace = baseSpr[DIR.UP];
+						charDir = DIR.UP;
+					} else if yspd < 0 {
+						charFace = baseSpr[DIR.UP];
+						charDir = DIR.UP;
+					}
 	
-			if !can_MoveFULL {
-				vel = 0;
-				yspd = 0;
-			}
+					if vel <= 0 && charFace == baseSpr[DIR.RIGHT] {
+						charFace = baseSpr[DIR.RIGHT];
+						charDir = DIR.RIGHT;
+					} else if vel > 0 {
+						charFace = baseSpr[DIR.RIGHT];
+						charDir = DIR.RIGHT;
+					}
 	
-			if yspd == 0 && charFace == baseSpr[DIR.UP] {
-				charFace = baseSpr[DIR.UP];
-				charDir = DIR.UP;
-			} else if yspd == 0 && charFace == baseSpr[DIR.DOWN] {
-				charFace = baseSpr[DIR.DOWN];
-				charDir = DIR.DOWN;
-			}
-
-			if vel == 0 && charFace == baseSpr[DIR.LEFT] {
-				charFace = baseSpr[DIR.LEFT];
-				charDir = DIR.LEFT;
-			} else if vel == 0 && charFace == baseSpr[DIR.RIGHT] {
-				charFace = baseSpr[DIR.RIGHT];
-				charDir = DIR.RIGHT;
-			}
-		}
-	#endregion
-	
-	#region //Update Path Recording
-		if global.DRPlayerID == id {
-			if x != xprevious or y != yprevious {
-				for(var i = followSize - 1; i > 0; i--) {
-					pos_x[i] = pos_x[i - 1];
-					pos_y[i] = pos_y[i - 1];
-					toRecordSprite[i] = toRecordSprite[i - 1];
+					if vel >= 0 && charFace == baseSpr[DIR.LEFT] {
+						charFace = baseSpr[DIR.LEFT];
+						charDir = DIR.LEFT;
+					} else if vel < 0 {
+						charFace = baseSpr[DIR.LEFT];
+						charDir = DIR.LEFT;
+					}
 				}
 	
-				pos_x[0] = x;
-				pos_y[0] = y;
-				toRecordSprite[0] = charDir;
+				sprite_index = charFace;
+			} else {
+				if global.DRPlayerID != noone {
+					if global.DRPlayerID.runSpd >= 2 {
+						baseSpr[DIR.UP] = runSpr[DIR.UP];
+						baseSpr[DIR.DOWN] = runSpr[DIR.DOWN];
+						baseSpr[DIR.LEFT] = runSpr[DIR.LEFT];
+						baseSpr[DIR.RIGHT] = runSpr[DIR.RIGHT];
+					} else {
+						baseSpr[DIR.UP] = walkSpr[DIR.UP];
+						baseSpr[DIR.DOWN] = walkSpr[DIR.DOWN];
+						baseSpr[DIR.LEFT] = walkSpr[DIR.LEFT];
+						baseSpr[DIR.RIGHT] = walkSpr[DIR.RIGHT];
+					}
+				
+					charFace = baseSpr[charDir];
+					sprite_index = charFace;
+				}
 			}
-		}
-	#endregion
+		#endregion
+
+		#region //Collision and X & Y Manipulation
+			if mainPlayer {
+				if place_meeting(x + vel, y, obj_Solid) {
+					vel = 0;
+					runTimer = runFrames;
+				}
+	
+				if place_meeting(x, y + yspd, obj_Solid) {
+					yspd = 0;
+					runTimer = runFrames;
+				}
+
+				x += vel;
+				y += yspd;
+	
+				if !can_MoveFULL {
+					vel = 0;
+					yspd = 0;
+				}
+	
+				if yspd == 0 && charFace == baseSpr[DIR.UP] {
+					charFace = baseSpr[DIR.UP];
+					charDir = DIR.UP;
+				} else if yspd == 0 && charFace == baseSpr[DIR.DOWN] {
+					charFace = baseSpr[DIR.DOWN];
+					charDir = DIR.DOWN;
+				}
+
+				if vel == 0 && charFace == baseSpr[DIR.LEFT] {
+					charFace = baseSpr[DIR.LEFT];
+					charDir = DIR.LEFT;
+				} else if vel == 0 && charFace == baseSpr[DIR.RIGHT] {
+					charFace = baseSpr[DIR.RIGHT];
+					charDir = DIR.RIGHT;
+				}
+			}
+		#endregion
+	
+		#region //Update Path Recording
+			if global.DRPlayerID == id {
+				if x != xprevious or y != yprevious {
+					for(var i = followSize - 1; i > 0; i--) {
+						pos_x[i] = pos_x[i - 1];
+						pos_y[i] = pos_y[i - 1];
+						toRecordSprite[i] = toRecordSprite[i - 1];
+					}
+	
+					pos_x[0] = x;
+					pos_y[0] = y;
+					toRecordSprite[0] = charDir;
+				}
+			}
+		#endregion
+	} else {
+		#region //Actioning
+			if !action {
+				if extraY < 0 {
+					//Enter
+					sprite_index = battleSpr[BATTLE.ENTER];
+				} else {
+					if !battleLand {
+						//Idle
+						sprite_index = battleSpr[BATTLE.IDLE];
+					} else {
+						//Landing
+						sprite_index = battleSpr[BATTLE.LAND];
+					
+						if ceil(image_index) >= image_number - 1 {
+							image_index = image_number - 1;
+						}
+					}
+				}
+			} else {
+				//Start
+				if battleStart {
+					sprite_index = battleSpr[BATTLE.START];
+					
+					if ceil(image_index) >= image_number - 1 {
+						image_index = image_number - 1;
+					}
+				}
+				
+				//Attacking
+				if battleAttack {
+					sprite_index = battleSpr[BATTLE.ATTACK];
+					
+					if ceil(image_index) >= image_number - 1 {
+						image_index = image_number - 1;
+					}
+				}
+			}
+		#endregion
+	}
 }
 
 function scr_DRCharDraw() {
-	draw_sprite_ext(sprite_index, image_index, floor(x), floor(y), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+	draw_sprite_ext(sprite_index, image_index, floor(x + extraX), floor(y + extraY), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"File Checker",
-    "path":"folders/Objects/New Game Shit/File Checker.yy",
+    "path":"folders/Objects/New Game Shit/Old/File Checker.yy",
   },
   "parentObjectId":null,
   "persistent":false,

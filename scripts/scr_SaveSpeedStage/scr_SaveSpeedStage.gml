@@ -1,4 +1,4 @@
-///Find Speed Stage ID
+//Find Speed Stage ID
 function scr_SpeedStageID(_id) {
 	for(var i = 0; i < array_length(global.speedStageData); i++) {
 		if global.speedStageData[i].levelID == _id {

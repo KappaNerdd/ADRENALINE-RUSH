@@ -10,12 +10,14 @@ function scr_CreateSpeedHUD(_timer = true, _resetTime = true, _countUp = false, 
 		instance_create_depth(-10000, 0, -9, obj_PlayerExtraLives);
 	}
 	
-	if _camera && !instance_exists(obj_CameraExtended) {
-		instance_create_depth(-10000, 0, -9, obj_CameraExtended);
+	if _camera && !instance_exists(obj_CameraSpeed) {
+		instance_create_depth(-10000, 0, -9, obj_CameraSpeed);
 	}	
 	
-	if _ghost && !instance_exists(obj_GhostRecorder) {
-		instance_create_depth(-10000, 0, -9, obj_GhostRecorder);
+	if _ghost {
+		if !instance_exists(obj_GhostRecorder) {
+			instance_create_depth(-10000, 0, -9, obj_GhostRecorder);
+		}
 	}
 	
 	if _rank && !instance_exists(obj_HUDRankDisplayer) {

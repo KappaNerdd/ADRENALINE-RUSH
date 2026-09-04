@@ -12,17 +12,15 @@ if powerUp == 0 or powerUp == 1 or powerUp == 2 {
 		powerUp = other.powerUp;
 	}
 } else if powerUp == 3 or powerUp == 4 or powerUp == 5 or powerUp == 6 {
-	global.Rings += powers[powerUp][0];
-	obj_SFXManager.funkinFav = true;
+	scr_RingsPlayer(powers[powerUp][0]);
 } else if powerUp == 7 {
 	var _randomRing = random(round(5));
 		
-	obj_SFXManager.funkinFav = true;
-	global.Rings += powers[powerUp][_randomRing];
+	scr_RingsPlayer(powers[powerUp][_randomRing]);
 }
 	
 if global.Particles {
-	repeat(10) {
+	repeat(8) {
 		instance_create_depth(x, y, depth, obj_PowerOrbPart);
 	}
 }

@@ -36,3 +36,5 @@ trinket = false;
 trinketScale = 1;
 trinkColCheck = false;
 trinkColCheckTimer = 5;
+
+otherRingCount = 0;

@@ -14,6 +14,7 @@ function scr_EnergyPlayer(_amount = 10, _person = global.PlayerID) {
 		} else {
 			if _amount >= 0 {
 				_person.rushModeTimer = _person.rushModeFrames;
+				obj_SFXManager.rushModeTrick = true;
 			} else {
 				_person.rushModeTimer = 0;
 				_person.boostEnergy = 200;
@@ -34,6 +35,7 @@ function scr_EnergyPlayer(_amount = 10, _person = global.PlayerID) {
 		} else {
 			if _amount >= 0 {
 				global.PlayerID.rushModeTimer = global.PlayerID.rushModeFrames;
+				obj_SFXManager.rushModeTrick = true;
 			} else {
 				global.PlayerID.rushModeTimer = 0;
 				global.PlayerID.boostEnergy = 200;
@@ -55,6 +57,7 @@ function scr_EnergyPlayer(_amount = 10, _person = global.PlayerID) {
 			} else {
 				if _amount >= 0 {
 					global.PartnerID.rushModeTimer = global.PartnerID.rushModeFrames;
+					obj_SFXManager.rushModeTrick = true;
 				} else {
 					global.PartnerID.rushModeTimer = 0;
 					global.PartnerID.boostEnergy = 200;
@@ -71,6 +74,7 @@ function scr_SetEnergyPlayer(_amount = 100, _person = global.PlayerID) {
 		} else {
 			if _amount >= 0 {
 				_person.rushModeTimer = _person.rushModeFrames;
+				obj_SFXManager.rushModeTrick = true;
 			} else {
 				_person.rushModeTimer = 0;
 				_person.boostEnergy = 200;
@@ -82,6 +86,7 @@ function scr_SetEnergyPlayer(_amount = 100, _person = global.PlayerID) {
 		} else {
 			if _amount >= 0 {
 				global.PlayerID.rushModeTimer = global.PlayerID.rushModeFrames;
+				obj_SFXManager.rushModeTrick = true;
 			} else {
 				global.PlayerID.rushModeTimer = 0;
 				global.PlayerID.boostEnergy = 200;
@@ -94,6 +99,7 @@ function scr_SetEnergyPlayer(_amount = 100, _person = global.PlayerID) {
 			} else {
 				if _amount >= 0 {
 					global.PartnerID.rushModeTimer = global.PartnerID.rushModeFrames;
+					obj_SFXManager.rushModeTrick = true;
 				} else {
 					global.PartnerID.rushModeTimer = 0;
 					global.PartnerID.boostEnergy = 200;

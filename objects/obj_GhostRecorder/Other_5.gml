@@ -1,0 +1,3 @@
+if ghostRecord {
+	lastSavedFrame = ghostRecordFrames;
+}

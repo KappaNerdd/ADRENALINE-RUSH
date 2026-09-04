@@ -247,12 +247,15 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 			draw_sprite_ext(_pauseArrow, arrowFrames, setX + _gapX, setY + 75 + (_gapY * a), 1, 0.5, 0, _chosenCol, 1);
 			
 			if a == 0 {
-				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice)) + 14, setY + 67 + (_gapY * a), scr_LocalText("I might swerve-"), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
-				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice)) + 17, setY + 64 + (_gapY * a), scr_LocalText("I might swerve-"), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice)) + 14, setY + 67 + (_gapY * a), "-  " + scr_LocalText("I might swerve-"), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice)) + 17, setY + 64 + (_gapY * a), "-  " + scr_LocalText("I might swerve-"), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
+				
+				draw_sprite_ext(global.langFlags[global.Language - 1][global.MIND], mindFrames, setX + _gapX + string_width(scr_LocalText(_choice)) + string_width("-  " + scr_LocalText("I might swerve-")) + 63, setY + 79 + (_gapY * a), 1, 1, 0, c_black, 1);
+				draw_sprite_ext(global.langFlags[global.Language - 1][global.MIND], mindFrames, setX + _gapX + string_width(scr_LocalText(_choice)) + string_width("-  " + scr_LocalText("I might swerve-")) + 60, setY + 76 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 1 {
 				_choice = _choice2;
-				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 14, setY + 67 + (_gapY * a), "x" + string(global.TextSpd), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
-				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 17, setY + 64 + (_gapY * a), "x" + string(global.TextSpd), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 14, setY + 67 + (_gapY * a), "-  x" + string(global.TextSpd), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 17, setY + 64 + (_gapY * a), "-  x" + string(global.TextSpd), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
 			} else if a == 2 {
 				_choice = _choice3;
 				draw_sprite_ext(spr_OptionCheckbox, global.SongTag, setX + _gapX + string_width(scr_LocalText(_choice3)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);
@@ -373,8 +376,8 @@ draw_sprite_ext(spr_TextboxTrans, image_index, setX, setY, 26, 12.5, 0, c_white,
 				draw_sprite_ext(spr_OptionCheckbox, global.FullScreen, setX + _gapX + string_width(scr_LocalText(_choice)) + 20, setY + 58 + (_gapY * a), 1, 1, 0, _chosenCol2, 1);
 			} else if a == 1 {
 				_choice = _choice2;
-				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 14, setY + 67 + (_gapY * a), "x" + string(global.WindowSize), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
-				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 17, setY + 64 + (_gapY * a), "x" + string(global.WindowSize), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 14, setY + 67 + (_gapY * a), "-  x" + string(global.WindowSize), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
+				draw_text_transformed_color(setX + _gapX + string_width(scr_LocalText(_choice2)) + 17, setY + 64 + (_gapY * a), "-  x" + string(global.WindowSize), 1, 1, 0, c_white, c_white, _chosenCol, _chosenCol, 1);
 			} else if a == 2 {
 				_choice = _choice3;
 				draw_sprite_ext(spr_OptionCheckbox, global.VSync, setX + _gapX + string_width(scr_LocalText(_choice3)) + 17, setY + 61 + (_gapY * a), 1, 1, 0, c_black, 1);

@@ -22,20 +22,6 @@ getCharacterControls();
 	#region //Background Shit
 		extraScale = lerp(extraScale, 0, 0.15);
 		
-		/*if realBPM > 0 {
-			realBPM -= delta_time;
-		} else {
-			realBPM += conBPM;
-			
-			if !global.SimplifyVFX {
-				extraScale = 1;
-				
-				if !menuChosen {
-					menuRet = !menuRet;
-				}
-			}
-		}*/
-		
 		scr_BPMStep();
 		
 		if scr_GetMainBeat() < scr_GetBeatProg() {
@@ -75,14 +61,14 @@ getCharacterControls();
 			menuRet = true;
 		}
 		
-		if !storyChosen && !goContinue {
-			/*if nerd == 0 {
+		if !storyChosen && !goContinue && !goNewGame {
+			if nerd == 0 {
 				global.PlayerChar = 1;
 				global.Girly = false;
 			} else {
 				global.PlayerChar = 2;
 				global.Girly = true;
-			}*/
+			}
 		}
 	#endregion
 

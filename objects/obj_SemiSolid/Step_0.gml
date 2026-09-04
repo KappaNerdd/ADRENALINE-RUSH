@@ -1,5 +1,1 @@
-if global.DEBUG {
-	visible = true;
-} else {
-	visible = false;
-}
+visible = global.DEBUG;

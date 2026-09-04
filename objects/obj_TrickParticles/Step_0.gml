@@ -8,17 +8,8 @@ if createTimer > 0 {
 	}
 }
 
-if movedX > 0 {
-	movedX -= 0.1;
-} else if movedX < 0 {
-	movedX += 0.1;
-}
-
-if movedY > 0 {
-	movedY -= 0.1;
-} else if movedY < 0 {
-	movedY += 0.1;
-}
+movedX = lerp(movedX, 0, 0.05);
+movedY = lerp(movedY, 0, 0.05);
 
 drawX += movedX;
 drawY += movedY;

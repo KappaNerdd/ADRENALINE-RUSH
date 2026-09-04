@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Partners",
-    "path":"folders/Objects/Characters/Partners.yy",
+    "path":"folders/Objects/Characters/Old/Partners.yy",
   },
   "parentObjectId":{
     "name":"obj_Partner",

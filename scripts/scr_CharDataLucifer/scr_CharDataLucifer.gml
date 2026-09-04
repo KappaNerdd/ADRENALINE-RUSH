@@ -4,6 +4,10 @@ function scr_CharDataLucifer() {
 		charR = 207; 
 		charG = 041; 
 		charB = 229;
+	} else {
+		charR = 255;
+		charG = 255;
+		charB = 255;
 	}
 	
 	///-----Number Variables-----///
@@ -12,11 +16,11 @@ function scr_CharDataLucifer() {
 	drawAngle = 0;
 
 	//Speed
-	acc = 0.08;
-	normalAcc = 0.08;
+	acc = 0.075;
+	normalAcc = 0.075;
 	
-	dcc = 0.16;
-	fric = 0.08;
+	dcc = 0.15;
+	fric = 0.075;
 	vel = 0;
 	max_Speed = 10;
 	full_Speed = 15;

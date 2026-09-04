@@ -1,19 +1,21 @@
 if instance_exists(obj_StageTrackerSpeed) {
-	if frame < ghostFrames {
-		frameData = ghostData[| frame];
+	if repeatGhost {
+		if frame < ghostFrames {
+			frameData = ghostData[| frame];
 	
-		x = frameData[? "x"];
-		y = frameData[? "y"];
-		image_xscale = frameData[? "xscale"];
-		image_yscale = frameData[? "yscale"];
-		image_angle = frameData[? "angle"];
-		sprite_index = frameData[? "sprite"];
-		image_index = frameData[? "image"];
+			x = frameData[? "x"];
+			y = frameData[? "y"];
+			image_xscale = frameData[? "xscale"];
+			image_yscale = frameData[? "yscale"];
+			image_angle = frameData[? "angle"];
+			sprite_index = frameData[? "sprite"];
+			image_index = frameData[? "image"];
 	
-		frame++;
+			frame++;
+		}
 	}
 	
-	if instance_exists(obj_GOALRing) {
+	if instance_exists(obj_GOALRing) && room != rm_HeadSpeedBossP2 {
 		if x > obj_GOALRing.x {
 			instance_destroy();
 		}

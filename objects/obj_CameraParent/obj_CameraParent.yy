@@ -8,8 +8,8 @@
   "name":"obj_CameraParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/Objects/Cameras/General.yy",
+    "name":"Cameras",
+    "path":"folders/Objects/Cameras.yy",
   },
   "parentObjectId":null,
   "persistent":false,

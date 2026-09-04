@@ -108,8 +108,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"MIND",
-    "path":"texturegroups/MIND",
+    "name":"DELTARUNE",
+    "path":"texturegroups/DELTARUNE",
   },
   "type":0,
   "VTile":false,

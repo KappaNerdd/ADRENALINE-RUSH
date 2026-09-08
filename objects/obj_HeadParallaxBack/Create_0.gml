@@ -28,13 +28,13 @@ if room != rm_HeadSpeedBossP2 && room != rm_NameMakerNew {
 	for(var i = 0; i < 16; i++) {
 		var _random = random_range(0.05, 10);
 	
-		with(instance_create_depth(x, y, -100, obj_DRFountainFog)) {
+		with(instance_create_depth(x, y, -100, obj_HeadDRFountainFog)) {
 			col = c_black;
 			randomAngle = _random;
 			savedX = 50 * i;
 		}
 	
-		with(instance_create_depth(x, y, -99, obj_DRFountainFog)) {
+		with(instance_create_depth(x, y, -99, obj_HeadDRFountainFog)) {
 			col = c_white;
 			randomAngle = _random;
 			savedX = 50 * i;

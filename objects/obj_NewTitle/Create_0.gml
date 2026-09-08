@@ -24,7 +24,7 @@ conBPM = 1000000 * (60 / beats);
 realBPM = 0;
 
 confirm = false;
-confirmTimer = 120;
+confirmTimer = 90;
 
 extraScale = 0;
 

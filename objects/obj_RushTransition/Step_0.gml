@@ -1,7 +1,7 @@
 if !transd {
-	rushX = lerp(rushX, -20, 0.15);
+	rushX = lerp(rushX, -35, 0.15);
 	
-	if rushX <= -19.5 {
+	if rushX <= -34.5 {
 		transd = true;
 		
 		if !speedStage && !restart {
@@ -11,9 +11,9 @@ if !transd {
 } else {
 	if !restart {
 		if !speedStage {
-			rushX = lerp(rushX, -400, 0.15);
+			rushX = lerp(rushX, -750, 0.15);
 		
-			if rushX <= -399.5 {
+			if rushX <= -749.5 {
 				instance_destroy();
 			}
 		} else {

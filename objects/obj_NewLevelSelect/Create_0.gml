@@ -11,6 +11,7 @@ global.CustomMusic = noone;
 
 if global.SelectedPlayer != 0 {
 	global.PlayerChar = global.SelectedPlayer;
+	global.Girly = global.PlayerSelection[global.SelectedPlayer][0][1];
 } else {
 	global.SelectedPlayer = global.PlayerChar;
 }

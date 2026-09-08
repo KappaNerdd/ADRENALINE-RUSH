@@ -27,7 +27,7 @@
   "origin":0,
   "parent":{
     "name":"Default",
-    "path":"folders/Sprites/Results Screen Cards/Character Icons/New/Default.yy",
+    "path":"folders/Sprites/Results Screen/Character Icons/New/Default.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

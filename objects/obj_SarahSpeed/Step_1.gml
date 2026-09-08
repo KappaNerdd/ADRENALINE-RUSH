@@ -78,12 +78,22 @@ if can_MoveFULL {
 						}
 					} else {
 						if face_Left {
-							sprite_index = sprFullSpeedRunLeft;
+							if speedBreak {
+								sprite_index = sprFullSpeedRunLeft;
+								image_speed = 3;
+							} else {
+								sprite_index = sprRunLeft;
+								image_speed = 2.5;
+							}
 						} else {
-							sprite_index = sprFullSpeedRunRight;
+							if speedBreak {
+								sprite_index = sprFullSpeedRunRight;
+								image_speed = 3;
+							} else {
+								sprite_index = sprRunRight;
+								image_speed = 2.5;
+							}
 						}
-					
-						image_speed = 2.5;
 					}
 			   
 				   mask_index = idle_Mask;

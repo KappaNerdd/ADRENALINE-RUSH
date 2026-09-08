@@ -24,6 +24,10 @@ if kysTimer > 0 {
 	if global.LevelForced {
 		obj_Player.can_Move = false;
 		obj_Player.noMoveTimer = 30;
+		
+		if room == rm_HeadSpeedBoss {
+			obj_Player.rushModeTimer = obj_Player.rushModeFrames;
+		}
 	} else {
 		if jump_Key {
 			kysTimer = 0;

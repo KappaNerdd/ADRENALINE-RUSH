@@ -2,8 +2,8 @@
 	var _ringBack = spr_GoalRingBackHalf;
 	var _ringFront = spr_GoalRingFrontHalf;
 	var _ringWhole = spr_GoalRingWhole;
-	var _change = 1;
-	var _change2 = 2;
+	var _change = 1 * image_xscale;
+	var _change2 = 2 * image_xscale;
 	var _col1 = c_white;
 	var _col2 = c_black;
 	

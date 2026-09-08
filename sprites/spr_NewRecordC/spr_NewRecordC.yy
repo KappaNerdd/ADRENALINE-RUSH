@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"New Record",
-    "path":"folders/Sprites/Results Screen Cards/New Record.yy",
+    "path":"folders/Sprites/Results Screen/New Record.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

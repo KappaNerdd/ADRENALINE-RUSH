@@ -8,7 +8,12 @@ getCharacterControls();
 		choiceX = lerp(choiceX, -300, 0.1);
 	} else {
 		bottomY = lerp(bottomY, 100, 0.1);
-		choiceX = lerp(choiceX, 0, 0.1);
+		
+		if !yes && !confirm {
+			choiceX = lerp(choiceX, 0, 0.1);
+		} else {
+			choiceX = lerp(choiceX, -300, 0.1);
+		}
 	}
 		
 	cursorY = lerp(cursorY, 50 * choice, 0.1);

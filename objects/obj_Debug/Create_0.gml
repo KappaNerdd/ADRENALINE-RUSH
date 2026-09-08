@@ -3,7 +3,7 @@ global.DEBUG = false;
 zoomWidth = 0.5;
 zoomHeight = 0.5;
 
-depth = -100000000000;
+depth = -15;
 
 //show_debug_overlay(true);
 

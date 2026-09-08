@@ -1,3 +1,5 @@
+depth = obj_Player.depth + 2;
+
 active = true;
 wallJumpable = true;
 floorAngle = 0;

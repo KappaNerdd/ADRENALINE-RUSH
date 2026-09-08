@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"New",
-    "path":"folders/Sprites/Results Screen Cards/Ranks/Normal/New.yy",
+    "path":"folders/Sprites/Results Screen/Ranks/Normal/New.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

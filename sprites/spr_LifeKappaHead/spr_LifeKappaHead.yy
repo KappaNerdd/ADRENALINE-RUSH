@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Head",
-    "path":"folders/Sprites/Results Screen Cards/Character Icons/New/Head.yy",
+    "path":"folders/Sprites/Results Screen/Character Icons/New/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

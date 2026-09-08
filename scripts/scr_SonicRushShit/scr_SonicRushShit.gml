@@ -13,36 +13,41 @@ function scr_SpeedBreakCreate() {
 function scr_SpeedBreakStep() {
 	if abs(vel) >= max_Speed && !speedBreak {
 		if speedBreakTimer > 0 {
-			speedBreakTimer -= 1;
-		}
-	
-		if speedBreakTimer <= 0 && ground {
-			scr_StopCamMove();
-			scr_ControllerRumble();
-			speedBreak = true;
+			speedBreakTimer--;
+		} else {
+			if ground {
+				scr_StopCamMove();
+				scr_ControllerRumble();
+				speedBreak = true;
 			
-			if vel > 0 {
-				vel += 2;
-			} else if vel < 0 {
-				vel -= 2;
-			}
+				if vel > 0 {
+					vel += 2;
+				} else if vel < 0 {
+					vel -= 2;
+				}
 			
-			if sonicRush {
-				obj_SFXManager.breakSonic = true;
-			} else if blazeRush {
-				obj_SFXManager.breakBlaze = true;
+				if sonicRush {
+					obj_SFXManager.breakSonic = true;
+				} else if blazeRush {
+					obj_SFXManager.breakBlaze = true;
+				}
 			}
 		}
 	} else if abs(vel) < max_Speed && !speedBreak && ground && !stomping && !stomped {
 		speedBreakTimer = 240;
 	}
 
-	if abs(vel) < max_Speed / 2 && ground && !stomping && !stomped && speedBreak {
+	if abs(vel) < max_Speed / 1.5 && ground && !stomping && !stomped && speedBreak {
 		if stopSpeedTimer > 0 {
 			stopSpeedTimer--;
 		} else {
 			speedBreak = false;
 			speedBreakTimer = 240;
+			
+			if boost {
+				boost = false;
+			}
+			
 			obj_SFXManager.UNDERTALEBombFly = true;
 		}
 	}
@@ -286,9 +291,9 @@ function scr_BoostingStep() {
 		}
 		
 		if camShakeTimer > 0 {
-			camShakeTimer -= 1;
+			camShakeTimer--;
 			scr_ControllerRumble(0.5);
-			scr_ScreenShake(0.75)
+			scr_ScreenShake(0.75);
 		}
 		
 		if !rushMode {
@@ -297,12 +302,6 @@ function scr_BoostingStep() {
 			} else {
 				boostBarTimer = boostBarFrames;
 				scr_EnergyPlayer(-1, self);
-			}
-		}
-		
-		if abs(vel) < max_Speed / 2 && ground && !stomping && !stomped {
-			if stopSpeedTimer <= 0 {
-				boost = false;
 			}
 		}
 	} else if !(action1_Key_Held) or boostEnergy == 0 {
@@ -388,7 +387,7 @@ function scr_AirTricksStep() {
 	scr_RailTricksStep();
 	
 	if trickWait > 0 {
-		trickWait -= 1;
+		trickWait--;
 	}
 	
 	if trick or altTrick {
@@ -673,10 +672,7 @@ function scr_AirTricksStep() {
 				
 				rushTrickFinish = true;
 				
-				var _randomBS = random_range(0, 3);
-				var _randomRound = round(_randomBS);
-				
-				scr_RushCatType(round(_randomBS));
+				scr_RushCatType();
 				
 				if global.Particles {
 					var _particles = ceil(random(5));
@@ -690,10 +686,8 @@ function scr_AirTricksStep() {
 		
 		if rushTrickFinish {
 			if rushTrickFinishTimer > 0 {
-				rushTrickFinishTimer -= 1;
-			}
-			
-			if rushTrickFinishTimer == 0 {
+				rushTrickFinishTimer--;
+			} else {
 				rushTrickFinishTimer = -1;
 			}
 		} else {

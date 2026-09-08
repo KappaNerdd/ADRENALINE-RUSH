@@ -58,3 +58,6 @@ icon6Boost = false;
 
 iconAnim = 1 / 12;
 iconFrames = 0;
+
+iconWhite = false;
+iconWhiteTimer = 10;

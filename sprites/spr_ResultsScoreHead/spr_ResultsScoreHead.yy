@@ -28,7 +28,7 @@
   "origin":0,
   "parent":{
     "name":"Head",
-    "path":"folders/Sprites/Results Screen Cards/Misc/Head.yy",
+    "path":"folders/Sprites/Results Screen/Misc/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

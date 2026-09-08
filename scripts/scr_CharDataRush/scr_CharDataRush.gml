@@ -27,7 +27,7 @@ function scr_CharDataRush() {
 	boost_Speed = 19;
 
 	//Jump Speed & Gravity
-	grav = 0.26;
+	grav = 0.25;
 	yspd = 0;
 	jspd = 7.25;
 	normalJspd = 7.25;

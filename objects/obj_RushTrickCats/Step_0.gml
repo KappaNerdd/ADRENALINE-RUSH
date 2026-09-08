@@ -1,17 +1,11 @@
-if waitTimer > 0 {
-	waitTimer--;
-}
-
-
 sprite_index = cats[catSpr];
 
-
-if waitTimer <= 0 {
+if waitTimer > 0 {
+	waitTimer--;
+} else {
 	if disTimer > 0 {
 		disTimer--;
-	}
-	
-	if disTimer <= 0 {
+	} else {
 		instance_destroy();
 	}
 	

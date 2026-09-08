@@ -1,5 +1,4 @@
 if global.Particles {
-	randomize();
 	var _rainRandom = ceil(random(0));
 
 	if _rainRandom == 0 {

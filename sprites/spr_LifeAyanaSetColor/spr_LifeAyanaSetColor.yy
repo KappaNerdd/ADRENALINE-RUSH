@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Colored",
-    "path":"folders/Sprites/Results Screen Cards/Character Icons/New/Colored.yy",
+    "path":"folders/Sprites/Results Screen/Character Icons/New/Colored.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

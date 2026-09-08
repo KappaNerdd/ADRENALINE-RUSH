@@ -3,10 +3,8 @@ if !instance_exists(obj_ResultsCard) {
 	var _camY = camera_get_view_y(view_camera[0]);
 	
 	if explodeTimer > 0 {
-		explodeTimer -= 1;
-	}
-	
-	if explodeTimer <= 0 {
+		explodeTimer--;
+	} else {
 		explodeTimer = random_range(60 / 3, 60 * 3);
 		
 		obj_SFXManager.UNDERTALEBombSplosion = true;

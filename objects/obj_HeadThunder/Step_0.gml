@@ -7,7 +7,3 @@ if thunderComplete {
 		instance_destroy();
 	}
 }
-
-if global.ThunderOpacity > 0 {
-	global.ThunderOpacity -= 0.008;
-}

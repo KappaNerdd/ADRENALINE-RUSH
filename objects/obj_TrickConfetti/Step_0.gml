@@ -1,12 +1,7 @@
-kysTimer -= 1;
+kysTimer--;
 
-if kysTimer <= 75 {
-	moveY += yspd;
-	yspd2 = moveY + 3;
-} else {
-	yspd2 += grav;
-	moveY += yspd2;
-}
+yspd += grav;	
+moveY += yspd;
 
 moveX += ((horiFloatAmplitude) * sin(horiFloatingOffset)) + xspd;
 horiFloatingOffset += horiFloatSpeed;

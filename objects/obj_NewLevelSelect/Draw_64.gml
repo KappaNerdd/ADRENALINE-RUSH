@@ -92,8 +92,8 @@ display_set_gui_size(768, 432);
 			_locks = lockFrames;
 		}
 		
-		draw_sprite_ext(stages[i][2], 0, -43 + srSpikesX + _bigX + _extraX, 119 + (_gap * i), 1, 1, 0, c_black, 1);
-		draw_sprite_ext(stages[i][2], 0, -40 + srSpikesX + _bigX + _extraX, 116 + (_gap * i), 1, 1, 0, c_white, 1);
+		draw_sprite_ext(stages[i][2], 0, -28 + srSpikesX + _bigX + _extraX, 119 + (_gap * i), 1, 1, 0, c_black, 1);
+		draw_sprite_ext(stages[i][2], 0, -25 + srSpikesX + _bigX + _extraX, 116 + (_gap * i), 1, 1, 0, c_white, 1);
 		
 		draw_sprite_ext(spr_PauseArrow, 0, srSpikesX + _bigX - 3 + _extraX, 103 + (_gap * i), 1, 0.5, 0, c_black, 1);
 		draw_text_transformed_color(srSpikesX + _bigX + _extraX - 3, 98 + (_gap * i), scr_LocalText(stages[i][0]), 1, 1, 0, c_black, c_black, c_black, c_black, 1);
@@ -102,12 +102,12 @@ display_set_gui_size(768, 432);
 		draw_text_transformed_color(srSpikesX + _bigX + _extraX, 95 + (_gap * i), scr_LocalText(stages[i][0]), 1, 1, 0, c_white, c_white, _selCol, _selCol, 1);
 		
 		if !stages[i][1] {
-			draw_sprite_ext(spr_FreeplayLock, _locks, -37 + srSpikesX + _bigX + _extraX - 3, 116 + (_gap * i), 1, 1, 0, c_black, 1);
-			draw_sprite_ext(spr_FreeplayLock, _locks, -37 + srSpikesX + _bigX + _extraX, 113 + (_gap * i), 1, 1, 0, c_white, 1);
+			draw_sprite_ext(spr_FreeplayLock, _locks, -22 + srSpikesX + _bigX + _extraX - 3, 116 + (_gap * i), 1, 1, 0, c_black, 1);
+			draw_sprite_ext(spr_FreeplayLock, _locks, -22 + srSpikesX + _bigX + _extraX, 113 + (_gap * i), 1, 1, 0, c_white, 1);
 		}
 	}
 	
-	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][6][2], 0, -30 + srSpikesX + _bigX + _extraX, 130 + (cursorY), 1, 1, 0, c_white, 1);
+	draw_sprite_ext(global.PlayerSelection[global.PlayerChar][6][2], 0, -15 + srSpikesX + _bigX + _extraX, 130 + (cursorY), 1, 1, 0, c_white, 1);
 #endregion
 
 #region //Levels (Speed)

@@ -6,6 +6,10 @@ if global.Rings >= 999 {
 	global.Rings = 999;
 }
 
+if global.GameScore >= 9999999 {
+	global.GameScore = 9999999;
+}
+
 otherRingCount = scr_Approach(otherRingCount, global.Rings, 0.25);
 
 #region //Extra Life 1

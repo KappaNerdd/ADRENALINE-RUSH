@@ -4,7 +4,3 @@ if !bounce && !active {
 } else {
 	image_speed = 2;
 }
-
-if instance_exists(obj_Player) {
-	depth = obj_Player.depth + 1;
-}

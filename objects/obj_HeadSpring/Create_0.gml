@@ -10,3 +10,4 @@ hori = false;
 verti = true;
 
 sprite_index = spr_SpringHead;
+depth = obj_Player.depth + 2;

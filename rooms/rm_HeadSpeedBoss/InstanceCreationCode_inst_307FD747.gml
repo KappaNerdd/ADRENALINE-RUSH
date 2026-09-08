@@ -1,2 +1,2 @@
 launchFrames = 30;
-launchYspd = -25;
+launchYspd = -22;

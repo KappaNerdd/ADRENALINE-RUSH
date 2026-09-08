@@ -13,7 +13,9 @@ function scr_SpeedStageID(_id) {
 function scr_SpeedComplete(_id) {
 	var _level = scr_SpeedStageID(_id);
 
-	return is_struct(_level) && _level.complete;
+	if is_struct(_level) {
+		return _level.complete;
+	}
 }
 
 //Check Speed Stage Rank
@@ -22,6 +24,15 @@ function scr_SpeedRank(_id) {
 	
 	if is_struct(_level) {
 		return _level.rank;
+	}
+}
+
+//Check Speed Stage Cassette
+function scr_SpeedCassette(_id) {
+	var _level = scr_SpeedStageID(_id);
+
+	if is_struct(_level) {
+		return _level.musicSecret;
 	}
 }
 

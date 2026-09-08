@@ -1475,7 +1475,7 @@ function scr_YCollision() { //Didn't feel like renaming this shit
 			#region //Checkpoint
 				var _checkpoint = instance_nearest(x, y, obj_Checkpoint);
 				
-				if distance_to_object(_checkpoint) <= 75 && !_checkpoint.active {
+				if distance_to_object(_checkpoint) <= 50 && !_checkpoint.active {
 					global.RespawnX = _checkpoint.x;
 					global.RespawnY = _checkpoint.y;
 					

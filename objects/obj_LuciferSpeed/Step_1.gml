@@ -90,7 +90,13 @@ if can_MoveFULL {
 							}
 						} else if abs(vel) >= full_Speed {
 							if !leftFacer {
-								sprite_index = sprFullSpeedRun;
+								if speedBreak {
+									sprite_index = sprFullSpeedRun;
+									image_speed = 3;
+								} else {
+									sprite_index = sprRun;
+									image_speed = 2.5;
+								}
 							} else {
 								if face_Left {
 									sprite_index = sprFullSpeedRunLeft;
@@ -98,8 +104,6 @@ if can_MoveFULL {
 									sprite_index = sprFullSpeedRunRight;
 								}
 							}
-						
-							image_speed = 2.5;
 						}
 					}
 					

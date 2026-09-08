@@ -35,7 +35,7 @@ function scr_CharDataSarah() {
 	
 	termVel = 25;
 	normalTermVel = 25;
-	full_TermVel = 40;
+	full_TermVel = 45;
 	
 	backTrickBoost = 8;
 	backTrickUpBoost = -5;

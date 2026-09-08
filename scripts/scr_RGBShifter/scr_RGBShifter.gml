@@ -13,6 +13,7 @@ enum COLORS {
 	ROXXANE = make_colour_rgb(241, 139, 176),
 	RUSH = make_colour_rgb(000, 200, 248),
 	EDGE = make_colour_rgb(046, 036, 052),
+	EDGEALT = make_colour_rgb(255, 130, 40),
 	IVY = make_colour_rgb(255, 189, 000),
 }
 

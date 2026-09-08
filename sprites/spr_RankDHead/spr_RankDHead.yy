@@ -28,7 +28,7 @@
   "origin":0,
   "parent":{
     "name":"Head",
-    "path":"folders/Sprites/Results Screen Cards/Ranks/Head.yy",
+    "path":"folders/Sprites/Results Screen/Ranks/Head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

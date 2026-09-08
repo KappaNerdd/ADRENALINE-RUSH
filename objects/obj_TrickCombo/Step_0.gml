@@ -50,6 +50,17 @@ if !completed && !died {
 	if personalTrick < trickChar.rushTrickCombo {
 		personalTrick = trickChar.rushTrickCombo;
 	}
+	
+	if !global.SimplifyVFX && personalTrick >= 6 {
+		if iconWhiteTimer > 0 {
+			iconWhiteTimer--;
+		} else {
+			iconWhiteTimer = 6;
+			iconWhite = !iconWhite;
+		}
+	} else {
+		iconWhite = false;
+	}
 }
 
 //Completing

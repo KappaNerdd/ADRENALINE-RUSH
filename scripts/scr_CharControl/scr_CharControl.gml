@@ -778,7 +778,7 @@ function scr_GeneralAnimationsSpeed() {
 					}
 				}
 				
-				image_speed = 1.75;
+				image_speed = 1.5;
 				
 				if floor(image_index) >= image_number - 1 {
 					railTrickTres = false;
@@ -1578,10 +1578,6 @@ function scr_PlayerMoveLeft() {
 			}
 		}
 	}
-	
-	
-	//scr_PlayerInputGrounds();
-	//scr_PlayerInputAerial();
 }
 
 function scr_PlayerMoveRight() {
@@ -1610,8 +1606,4 @@ function scr_PlayerMoveRight() {
 			}
 		}
 	}
-	
-	
-	//scr_PlayerInputGrounds();
-	//scr_PlayerInputAerial();
 }

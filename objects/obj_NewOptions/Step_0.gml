@@ -164,7 +164,7 @@ if !done {
 		}
 	#endregion
 	
-	if jump_Key && !changeBind {
+	if (jump_Key or pause_Key) && !changeBind {
 		obj_SFXManager.funkinFav = true;
 		
 		#region //Audio

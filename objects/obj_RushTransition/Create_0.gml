@@ -4,7 +4,7 @@ x = -1000000
 
 target_rm = noone;
 
-rushX = 320;
+rushX = 640;
 transd = false;
 
 sonicRush = false;

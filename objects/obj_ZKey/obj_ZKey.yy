@@ -8,8 +8,8 @@
   "name":"obj_ZKey",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controls",
-    "path":"folders/Objects/User Interface/Controls.yy",
+    "name":"Old",
+    "path":"folders/Objects/Initialization/Global Controls/Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -7,5 +7,4 @@ rankF_Time = 205;
 
 global.StageNum = 3;
 global.StageType = 0;
-global.LevelForced = true;
 global.TargetRM = rm_SarahCut;

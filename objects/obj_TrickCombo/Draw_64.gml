@@ -59,31 +59,67 @@ var _thresh = 15;
 if startI1X >= _thresh {
 	draw_sprite_ext(_iconSprite, _iconFrames, startI1X + 3, startI1Y + 3, 1.5, 1.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_iconSprite, _iconFrames, startI1X, startI1Y, 1.5, 1.5, 0, c_white, image_alpha);
+	
+	if iconWhite && !completed && !died {
+		gpu_set_fog(true, c_white, 0, 1);
+			draw_sprite_ext(_iconSprite, _iconFrames, startI1X, startI1Y, 1.5, 1.5, 0, c_white, image_alpha);
+		gpu_set_fog(false, c_black, 0, 1);
+	}
 }
 
 if startI2X >= _thresh {
 	draw_sprite_ext(_iconSprite, _iconFrames, startI2X + 3, startI2Y + 3, 1.5, 1.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_iconSprite, _iconFrames, startI2X, startI2Y, 1.5, 1.5, 0, c_white, image_alpha);
+	
+	if iconWhite && !completed && !died {
+		gpu_set_fog(true, c_white, 0, 1);
+			draw_sprite_ext(_iconSprite, _iconFrames, startI2X, startI2Y, 1.5, 1.5, 0, c_white, image_alpha);
+		gpu_set_fog(false, c_black, 0, 1);
+	}
 }
 
 if startI3X >= _thresh {
 	draw_sprite_ext(_iconSprite, _iconFrames, startI3X + 3, startI3Y + 3, 1.5, 1.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_iconSprite, _iconFrames, startI3X, startI3Y, 1.5, 1.5, 0, c_white, image_alpha);
+	
+	if iconWhite && !completed && !died {
+		gpu_set_fog(true, c_white, 0, 1);
+			draw_sprite_ext(_iconSprite, _iconFrames, startI3X, startI3Y, 1.5, 1.5, 0, c_white, image_alpha);
+		gpu_set_fog(false, c_black, 0, 1);
+	}
 }
 
 if startI4X >= _thresh {
 	draw_sprite_ext(_iconSprite, _iconFrames, startI4X + 3, startI4Y + 3, 1.5, 1.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_iconSprite, _iconFrames, startI4X, startI4Y, 1.5, 1.5, 0, c_white, image_alpha);
+	
+	if iconWhite && !completed && !died {
+		gpu_set_fog(true, c_white, 0, 1);
+			draw_sprite_ext(_iconSprite, _iconFrames, startI4X, startI4Y, 1.5, 1.5, 0, c_white, image_alpha);
+		gpu_set_fog(false, c_black, 0, 1);
+	}
 }
 
 if startI5X >= _thresh {
 	draw_sprite_ext(_iconSprite, _iconFrames, startI5X + 3, startI5Y + 3, 1.5, 1.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_iconSprite, _iconFrames, startI5X, startI5Y, 1.5, 1.5, 0, c_white, image_alpha);
+	
+	if iconWhite && !completed && !died {
+		gpu_set_fog(true, c_white, 0, 1);
+			draw_sprite_ext(_iconSprite, _iconFrames, startI5X, startI5Y, 1.5, 1.5, 0, c_white, image_alpha);
+		gpu_set_fog(false, c_black, 0, 1);
+	}
 }
 
 if startI6X >= _thresh {
 	draw_sprite_ext(_iconSprite, _iconFrames, startI6X + 3, startI6Y + 3, 1.5, 1.5, 0, c_black, image_alpha);
 	draw_sprite_ext(_iconSprite, _iconFrames, startI6X, startI6Y, 1.5, 1.5, 0, c_white, image_alpha);
+	
+	if iconWhite && !completed && !died {
+		gpu_set_fog(true, c_white, 0, 1);
+			draw_sprite_ext(_iconSprite, _iconFrames, startI6X, startI6Y, 1.5, 1.5, 0, c_white, image_alpha);
+		gpu_set_fog(false, c_black, 0, 1);
+	}
 }
 
 draw_text_transformed_color(textX + 3, textY + 3, string(_trickNum), numberScale, numberScale, 0, c_black, c_black, c_black, c_black, image_alpha);

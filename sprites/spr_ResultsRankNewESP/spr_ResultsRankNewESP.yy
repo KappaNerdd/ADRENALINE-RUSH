@@ -26,7 +26,7 @@
   "origin":3,
   "parent":{
     "name":"Spanish",
-    "path":"folders/Sprites/Results Screen Cards/Misc/Normal/Spanish.yy",
+    "path":"folders/Sprites/Results Screen/Misc/Normal/Spanish.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

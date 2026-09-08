@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Character Icons",
-    "path":"folders/Sprites/Results Screen Cards/Character Icons.yy",
+    "path":"folders/Sprites/Results Screen/Character Icons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -124,7 +124,13 @@ if can_MoveFULL {
 							}
 						} else if abs(vel) >= full_Speed {
 							if !leftFacer {
-								sprite_index = sprFullSpeedRun;
+								if speedBreak {
+									sprite_index = sprFullSpeedRun;
+									image_speed = 3;
+								} else {
+									sprite_index = sprRun;
+									image_speed = 2.5;
+								}
 							} else {
 								if face_Left {
 									sprite_index = sprFullSpeedRunLeft;
@@ -132,8 +138,6 @@ if can_MoveFULL {
 									sprite_index = sprFullSpeedRunRight;
 								}
 							}
-						
-							image_speed = 2.5;
 						}
 					}
 					
@@ -477,7 +481,7 @@ if can_MoveFULL {
 		}
 
 		if stomping {
-			termVel = normalTermVel * 1.5;
+			termVel = normalTermVel * 1.75;
 			yspd = termVel;
 		}
 
@@ -524,10 +528,10 @@ if can_MoveFULL {
 
 	#region //Shooting
 		#region //Charge
-			if !instance_exists(obj_CountdownHead) && !instance_exists(obj_Countdown) && revolverAmmo != 0 && !playerHurt && !stompPow && !hShoot && !hShootWeak && !shootAir && !reload && !prepare && !rampRing && !afterRailJump && !trick && !global.Death {
+			if !instance_exists(obj_CountdownHead) && !instance_exists(obj_Countdown) && revolverAmmo != 0 && !playerHurt && !stompPow && !hShoot && !hShootWeak && !shootAir && !reload && !prepare && !rampRing && !afterRailJump && !trick && !railGrind && !global.Death {
 				if action2_Key_Held {
 					if chargeTimer > 0 {
-						chargeTimer -= 1;
+						chargeTimer--;
 					}
 				
 					if chargeTimer < chargeFrames - 10 {

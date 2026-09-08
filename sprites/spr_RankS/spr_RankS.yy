@@ -55,7 +55,7 @@
   "origin":0,
   "parent":{
     "name":"Old",
-    "path":"folders/Sprites/Results Screen Cards/Ranks/Normal/Old.yy",
+    "path":"folders/Sprites/Results Screen/Ranks/Normal/Old.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

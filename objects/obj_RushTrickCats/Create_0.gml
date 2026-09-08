@@ -1,16 +1,9 @@
-if !global.MIND && global.PlayerChar != 0 {
-	cats = [
-		spr_RTSaiyan,
-		spr_RTLuna,
-		spr_RTSolar,
-	]
-} else {
-	cats = [
-		spr_RTSaiyanHead,
-		spr_RTLunaHead,
-		spr_RTSolarHead,
-	]
-}
+cats = [
+	spr_RTSaiyan,
+	spr_RTLuna,
+	spr_RTSolar,
+	spr_RTTachi
+]
 
 catSpr = 0;
 

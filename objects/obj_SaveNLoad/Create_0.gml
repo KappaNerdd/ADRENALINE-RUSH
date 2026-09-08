@@ -1082,6 +1082,22 @@
 		[c_navy, "col_Navy"],
 		[c_purple, "col_Purple"],
 		[c_fuchsia, "col_Magenta"],
+		[COLORS.KAPPA, "name_Kap"],
+		[COLORS.LUCIFER, "name_Luci"],
+		[COLORS.SARAH, "name_Sar"],
+		[COLORS.SARAHALT, "name_Sar"],
+		[COLORS.LONE, "name_Lone"],
+		[COLORS.BROCK, "name_Bro"],
+		[COLORS.NEEGI, "name_Nee"],
+		[COLORS.CLOEE, "name_Clo"],
+		[COLORS.AKIRA, "name_AK"],
+		[COLORS.TAYLOR, "name_TJ"],
+		[COLORS.AYANA, "name_AA"],
+		[COLORS.ROXXANE, "name_Rocks"],
+		[COLORS.RUSH, "name_Ru"],
+		[COLORS.EDGE, "name_Ed"],
+		[COLORS.EDGEALT, "name_Ed"],
+		[COLORS.IVY, "name_Ivy"],
 	]
 #endregion
 
@@ -1567,7 +1583,7 @@
 		},
 		
 		{ //MIND Level Boss
-			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMindBoss", level_Num: "freeplay_Boss", level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBoss, levelForced: false,
+			stage_Name: "level_MIND", stage_Type: "freeplay_Level", stage_Desc: "freeplay_DescMindBoss", level_Num: "freeplay_Boss", level_Icon: spr_LevelIconMind, stage_RM: rm_HeadSpeedBoss, levelForced: true,
 		
 			rankS_Time: 330, rankA_Time: 340, rankB_Time: 355, rankC_Time: 415, rankD_Time: 440, rankF_Time: 510,
 			

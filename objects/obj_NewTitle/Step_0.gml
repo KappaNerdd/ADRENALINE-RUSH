@@ -20,7 +20,10 @@ getCharacterControls();
 		if scr_GetMainBeat() < scr_GetBeatProg() {
 			if !global.SimplifyVFX {
 				extraScale = 1;
-				pressStart = !pressStart;
+				
+				if !confirm {
+					pressStart = !pressStart;
+				}
 			}
 		}
 	
@@ -66,8 +69,8 @@ if !confirm {
 	}
 	
 	if confirmTimer <= 45 {
-		menuX = lerp(menuX, 300, 0.1);
-		menuY = lerp(menuY, -200, 0.1);
+		menuX = lerp(menuX, 350, 0.1);
+		menuY = lerp(menuY, -250, 0.1);
 	}
 	
 	if !global.SimplifyVFX {
@@ -75,6 +78,7 @@ if !confirm {
 			pressedTimer--;
 		} else {
 			pressed = !pressed;
+			pressStart = !pressed;
 			pressedTimer = 5;
 		}
 	}

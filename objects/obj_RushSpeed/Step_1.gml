@@ -105,8 +105,13 @@ if can_MoveFULL {
 							sprite_index = sprFullSpeedRun;
 							image_speed = 2.5;
 						} else {
-							sprite_index = sprPeelout;
-							image_speed = 3;
+							if speedBreak {
+								sprite_index = sprPeelout;
+								image_speed = 3.25;
+							} else {
+								sprite_index = sprFullSpeedRun;
+								image_speed = 3;
+							}
 						}
 					}
 				

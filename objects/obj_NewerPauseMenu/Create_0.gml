@@ -150,7 +150,6 @@ instance_deactivate_all(true);
 //Reactivate some other shit
 instance_activate_object(obj_TrackerTutorial);
 
-instance_activate_object(obj_PROTOTYPEMessage);
 instance_activate_object(obj_Debug);
 instance_activate_object(obj_Settings);
 instance_activate_object(obj_GlobalControls);
